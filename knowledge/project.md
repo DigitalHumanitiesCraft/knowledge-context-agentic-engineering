@@ -1,5 +1,5 @@
 ---
-title: Projekt-Charter
+title: Project Charter
 project:
   name: knowledge-context-agentic-engineering
   repository: https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering
@@ -9,33 +9,45 @@ method:
 status: draft
 created: 2026-08-20
 updated: 2026-08-20
-language: de
+language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
+knowledge-sources:
+  - https://dhcraft.org/Promptotyping/
+  - https://github.com/chpollin/zbz-ocr-tei
+  - https://github.com/DigitalHumanitiesCraft/brand-assets
 related: [specification.md, governance.md, plan.md]
 ---
 
-# Projekt-Charter
+# Project Charter
 
-Das Repo ist der kanonische Masterbestand der Lehrlinie *Knowledge, Context and Agentic Engineering for Knowledge Work* und trägt die Plattform, die diesen Bestand und seine Workshop-Ableitungen öffentlich zeigt.
+This repo is the canonical home of the master corpus for the teaching line *Knowledge, Context and Agentic Engineering for Knowledge Work*, and it carries the platform that presents the corpus and its workshop derivations. The project covers the teaching material itself, the master script, the master slide texts, the workshop profiles and the platform. The research strand around the corpus (how new knowledge integrates into an existing knowledge structure) lives in the author's research vault.
 
-## Master-Profil-Modell
+## Master and recipe model
 
-Der Master enthält das vollständige Material, domänenneutral: LLM-Grundlagen, die vier Engineering-Ebenen, Promptotyping, Verifikation. Er ist intern zweigeteilt in einen generischen Kern und austauschbare Fallstudien-Module (aktuell Hersch und Zweig für Forschungsdaten und Editionen). Ein Workshop-Profil ist eine dokumentierte Spezialisierung: Es wählt aus dem Master Kern-Abschnitte, Fallstudien und Tiefe für eine konkrete Zielgruppe. Drei Profile sind angelegt, KUG/M3GIM (kompakt, ohne Vorwissen), CLARIAH-AT (Forschungsdaten und Editionen, DH-Studierende), Uni for Life (ausführlich, Firmen und andere Disziplinen).
+The master holds the complete material for a general audience, people who do computer-based, data-driven knowledge work. The text lives exactly once, cut into modules; the module cut is proposed in `drafts/module-map.md` and confirmed by the operator.
 
-## Bestandskarte
+A workshop profile is a recipe over the master. It selects modules, sets depth, case studies and language, and adds only what belongs to that single workshop, such as schedule, hands-on instructions and venue specifics. An improvement to a master module therefore reaches every workshop that uses the module. Case studies are exchangeable modules of their own (currently Hersch and Zweig for research data and digital editions), so the master core stays domain-neutral.
 
-| Bestand | Ort | Status |
-| --- | --- | --- |
-| Master-Skriptum (deutsch) | `skriptum/`, Überführung aus dem Vault offen | geplant |
-| Lecture Notes CLARIAH-AT (englisch) | `skriptum/`, Volltext gesichert | geplant |
-| Master-Folientexte mit Speaker Notes | `slides/`, Überführung aus dem Vault offen | geplant |
-| Workshop-Profile | `workshops/<id>/` | geplant |
-| Folien-Exporte (PPTX je Stand) und Titelbilder (PNG) | `workshops/<id>/` bzw. `docs/assets/covers/` | geplant |
-| Live-Decks | Google Slides, verlinkt im Register `docs/data/workshops.json` | laufend |
-| ausführbares Hands-on-Paket CLARIAH | Repo `chpollin/zbz-ocr-tei`, `workshops/clariah-at-2026/` | extern, verlinkt |
-| Projektkoordination und thematische Wissensbasis | Obsidian-Vault des Autors | extern |
+## Languages
 
-## Zielgruppenmodell
+German is the source language of the master script. The English version is produced module by module through agent translation and counts as canonical only after operator review. The platform interface is English; the script content is shown bilingually with an EN/DE toggle.
 
-Drei Zielgruppen strukturieren die Profile: DH-Studierende mit Vorwissen (akademisch, englisch- oder deutschsprachig), Teilnehmende ohne LLM- und Programmiervorwissen (kompakte Einstiege), Professionals aus Firmen und anderen Disziplinen (Wissensarbeit jenseits der Forschung). Jedes Profil benennt Zielgruppe und Vorwissen explizit.
+## Holdings map
+
+| Holding | Location |
+| --- | --- |
+| Master script in modules (DE source, reviewed EN) | `script/` |
+| Master slide texts with speaker notes | `slides/` |
+| Workshop profiles and materials | `workshops/<id>/` |
+| CLARIAH-AT lecture notes (EN, profile material) | `workshops/clariah-at-2026/` |
+| Slide exports (PPTX per taught state) | `workshops/<id>/` |
+| Title-slide images (PNG, 16:9) | `docs/assets/covers/` |
+| Workshop register | `docs/data/workshops.json` |
+| Live decks | Google Slides, linked from the register |
+| Executable CLARIAH hands-on package | external repo `chpollin/zbz-ocr-tei`, `workshops/clariah-at-2026/` |
+| Project coordination and thematic knowledge base | the author's research vault (private) |
+
+## Audiences
+
+The master audience is general, computer-based and data-driven knowledge work; specialisation happens per workshop profile. Three profiles are planned: KUG/M3GIM (compact, no LLM or programming prerequisites), CLARIAH-AT Summer School (research data workflows and digital editions, DH students), Uni for Life (extended, professionals from companies and other disciplines). Each profile names its audience and prerequisites explicitly.

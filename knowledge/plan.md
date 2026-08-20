@@ -1,5 +1,5 @@
 ---
-title: Aufbauplan
+title: Build Plan
 project:
   name: knowledge-context-agentic-engineering
   repository: https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering
@@ -9,24 +9,35 @@ method:
 status: active
 created: 2026-08-20
 updated: 2026-08-20
-language: de
+language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 related: [project.md, specification.md]
 ---
 
-# Aufbauplan
+# Build Plan
 
-Reihenfolge des Repo-Aufbaus. Die inhaltliche Arbeitsliste gegen den Vault-Wissensbestand (Master-Abgleich, Atom-Lücken, Drift-Entscheidungen) führt das Vault-Wissensdokument *Verknüpfungsanalyse CLARIAH-AT-Skriptum und Vault-Wissensbestand*; dieser Plan hält die Repo-Seite.
+Repo founding (skeleton, register, knowledge folder) is complete (2026-08-20). Two tracks now run in parallel; on conflicts the CLARIAH date (2026-09-25) wins. The content work list against the vault knowledge base (master alignment, atom gaps, drift decisions) is held by the vault document *Verknüpfungsanalyse CLARIAH-AT-Skriptum und Vault-Wissensbestand*; this plan holds the repo side.
 
-| Schritt | Inhalt | Stand |
+## Track A — CLARIAH and platform
+
+| Step | Content | State |
 | --- | --- | --- |
-| 1 | Repo anlegen, klonen, Gerüst mit knowledge-Ordner und Register | erledigt 2026-08-20 |
-| 2 | Master überführen: Master-Skriptum (de), Lecture Notes CLARIAH (en), Master-Folientexte | offen |
-| 3 | Workshop-Profile anlegen: KUG/M3GIM, CLARIAH-AT (mit Verweis auf das zbz-Hands-on-Paket), Uni for Life | offen |
-| 4 | Design entscheiden (Motiv-Freigabe, Font), dann Plattform bauen: `docs/index.html` aus dem Register, Cover-PNGs einbinden | offen |
-| 5 | GitHub Pages aktivieren, Rendering und Links prüfen | offen |
-| 6 | Vault umhängen: Source-of-Truth-Tabellen, Project Overview, Repo-Verzeichnis zeigen auf dieses Repo; Vault-Masterdokumente werden Verweise | offen |
-| 7 | Begriffsmatrix befüllen (nach den Drift-Entscheidungen D1 bis D4), danach Write-back in Skriptum und Folien | offen |
+| A1 | CLARIAH profile in `workshops/clariah-at-2026/` with the lecture notes as material | open |
+| A2 | Design prototypes (start page, example workshop subpage) for the operator's motif, font and page-structure decisions | in progress (agents) |
+| A3 | Build the platform after the design decision: start page plus workshop subpages, driven by the register | open |
+| A4 | Activate GitHub Pages, check rendering and links | open |
 
-Operator-Zulieferungen, sobald verfügbar: Titelfolien-PNGs je Workshop, PPTX-Exporte der bestehenden Decks, Lizenzentscheidung.
+## Track B — Master corpus
+
+| Step | Content | State |
+| --- | --- | --- |
+| B1 | Module cut proposal from the German master script | proposal delivered (`drafts/module-map.md`), operator confirmation open |
+| B2 | Migrate the master script into `script/` as modules (DE source) after the operator confirms the cut | open |
+| B3 | English module versions by agent translation with operator review | open |
+| B4 | Migrate the master slide texts into `slides/`, aligned with the module cut | open |
+| B5 | Fill `terms.md` after the drift decisions, then write back into script, slides and vault atoms | literature draft in progress |
+
+Closing steps after both tracks: re-point the vault (source-of-truth tables, Project Overview, Repo-Verzeichnis; the vault master documents become references) and add the CC BY license statement to the repo.
+
+Operator deliveries when available: title-slide PNGs per workshop (16:9), PPTX exports of the existing decks.

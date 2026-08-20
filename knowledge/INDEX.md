@@ -9,25 +9,27 @@ method:
 status: draft
 created: 2026-08-20
 updated: 2026-08-20
-language: de
+language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 ---
 
 # INDEX
 
-Navigation der Wissensbasis. Leserichtung für einen neuen Agenten: `project.md`, dann `governance.md`, dann das Dokument, das die aktuelle Aufgabe trägt.
+Navigation of the knowledge base. Reading order for a new agent: `project.md`, then `governance.md`, then the document that carries the current task. For platform work read `design.md` and `specification.md`; for terminology work read `terms.md`; for history read `journal.md`.
 
-| Dokument | Funktion | Inhalt |
+| Document | Function | Content |
 | --- | --- | --- |
-| `project.md` | Charter, Material | Was das Projekt ist, Master-Profil-Modell, Bestandskarte |
-| `specification.md` | Specification | Anforderungen an Plattform und Repo-Struktur, Akzeptanzkriterien |
-| `begriffe.md` | Domain Knowledge | Definitionsmatrix der Kernbegriffe DE/EN mit kanonischen Quellen |
-| `design.md` | Design | Designhaltung, Motiv, Farb- und Typografiesystem der Plattform |
-| `governance.md` | Governance | Entscheidungsautorität, Quellenstatus, Write-back, Rechte |
-| `journal.md` | Provenance | Chronik der Entscheidungen und Arbeitsschritte |
-| `plan.md` | Planning | Aufbauplan des Repos in Schritten |
+| `project.md` | Charter, Material | What the project is, the master-and-recipe model, holdings map, audiences |
+| `specification.md` | Specification | Requirements for platform and repo structure, acceptance criteria |
+| `terms.md` | Domain knowledge | Term matrix EN/DE with canonical wording and literature anchors |
+| `design.md` | Design | Design stance, motif, colour and typography system of the platform |
+| `governance.md` | Governance | Decision authority, source status, write-back, versioning, rights |
+| `journal.md` | Provenance | Chronicle of decisions, milestones and workshop deliveries |
+| `plan.md` | Planning | Build plan of the repo, two parallel tracks |
 
-## Konstitutive Begriffe
+`drafts/` holds decision-preparation material written by agents (module map, slides map, term references). Drafts are proposals; nothing in them is canonical.
 
-Die vier Ebenen Prompt Engineering, Context Engineering, Knowledge Engineering und Agentic Engineering, dazu Promptotyping, AI Harness, AI Agent und Wissensdokument. Kanonischer Wortlaut und Quellen in `begriffe.md`.
+## Constitutive terms
+
+The four levels prompt engineering, context engineering, knowledge engineering and agentic engineering, together with Promptotyping, AI harness, AI agent, knowledge document and knowledge work. Canonical wording and sources in `terms.md`.
