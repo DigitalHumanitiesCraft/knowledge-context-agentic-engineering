@@ -1,0 +1,615 @@
+/* ==========================================================================
+   Knowledge, Context and Agentic Engineering — platform stylesheet
+   Shared by the start page and every workshop subpage. No build step.
+   ========================================================================== */
+
+/* ==========================================================================
+   TOKENS
+   The only place where literal values live. Everything below consumes var().
+   Contrast ratios are against --paper unless noted.
+   ========================================================================== */
+:root {
+  color-scheme: light;
+
+  /* --- Typefaces ------------------------------------------------------- */
+  --font-ui: "Space Grotesk", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
+
+  /* --- Type scale ------------------------------------------------------ */
+  --text-xs: 0.75rem;        /* uppercase micro labels */
+  --text-sm: 0.8125rem;      /* module keys, datestamps, sequence numbers */
+  --text-md: 0.875rem;       /* secondary lines, colophon */
+  --text-lg: 0.9375rem;      /* card meta, status labels, imprint, nav */
+  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-title: 1.0625rem;   /* module heading */
+  --text-card: 1.125rem;     /* card heading */
+  --text-lede: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  --text-section: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --text-page: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);   /* subpage title */
+  --text-hero: clamp(2rem, 1.3rem + 3.2vw, 3.5rem);
+
+  /* --- Spacing scale, 8px based ---------------------------------------- */
+  --s1: 0.5rem;
+  --s2: 1rem;
+  --s3: 1.5rem;
+  --s4: 2rem;
+  --s5: 3rem;
+  --s6: 4.5rem;
+  --s7: 7rem;
+  /* Sections are separated by these gaps alone, no rules. Each has to stay
+     clearly larger than any gap inside a section for the order to read. */
+  --gap-section: clamp(var(--s6), 9vw, var(--s7));
+  --gap-block: clamp(var(--s5), 6vw, var(--s6));
+
+  /* --- Ground and ink --------------------------------------------------- */
+  --paper: #FDFDFB;          /* one ground for the whole site */
+  --tint: #F3F3EF;           /* soft ground for media plates and code */
+  --ink: #141413;            /* 18.1:1 */
+  --ink-2: #4A4A46;          /* 8.7:1  */
+  --ink-3: #6C6C65;          /* 5.2:1 on paper, 4.8:1 on tint */
+  --rule: #E4E4DE;           /* quiet object outline, decorative */
+  --rule-mid: #90908A;       /* 3.2:1, visible lines: motif flow, underlines */
+
+  /* --- Accent ----------------------------------------------------------- */
+  /* One turquoise, clears AA, so the same value carries interactive text and
+     the motif highlights without a second variant. */
+  --accent: #0A7E7C;         /* 4.8:1 */
+
+  /* --- Identity palette, derived from the watercolor logo ---------------- */
+  /* Four families measured in the mark itself. Used only as module marks, never
+     for text, so each is tuned for presence as a small filled shape (>=3:1).
+     The blue stays watercolor-light on purpose, the violet stays deep. */
+  --c-orange: #C87000;       /* 3.6:1 */
+  --c-blue:   #5B8FC4;       /* 3.3:1 */
+  --c-green:  #7C9200;       /* 3.5:1 */
+  --c-violet: #8140B8;       /* 6.1:1 */
+
+  /* --- Layout ----------------------------------------------------------- */
+  --measure: 60ch;           /* reading width for prose */
+  --page: 1160px;
+  --radius: 3px;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+p, ul, ol { margin: 0; }
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-mid);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { text-decoration-color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ==========================================================================
+   LAYOUT PRIMITIVES
+   ========================================================================== */
+.wrap {
+  width: min(100% - 2 * var(--s3), var(--page));
+  margin-inline: auto;
+}
+
+.section {
+  padding-top: var(--gap-section);
+  scroll-margin-top: var(--s4);
+}
+
+.section-title { font-size: var(--text-section); }
+
+/* Horizontal escape hatch for content that cannot compress further. */
+.scroll-x {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+/* The one component for artefacts that do not exist yet. Micro gaps stay
+   em-relative so they track the type size. */
+.pending {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  color: var(--ink-3);
+  font-size: var(--text-lg);
+}
+.pending::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--rule-mid);
+  border-radius: 50%;
+}
+
+/* Datestamp, the one place where the mono face carries editorial weight. */
+.stamp {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   HEADER AND NAVIGATION
+   ========================================================================== */
+.site-head > .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2) var(--s4);
+  padding-top: var(--s3);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+.brand img { width: auto; height: 34px; }
+.brand:hover span { text-decoration: underline; text-decoration-color: var(--rule-mid); }
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-lg);
+}
+.site-nav a {
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.site-nav a:hover,
+.site-nav a:focus-visible { color: var(--accent); }
+
+/* ==========================================================================
+   HERO
+   Three elements: title, one sentence, one link.
+   ========================================================================== */
+.hero { padding-block: clamp(var(--s5), 7vw, var(--s7)) var(--s5); }
+
+.hero h1 {
+  max-width: 20ch;
+  font-size: var(--text-hero);
+}
+
+.hero p {
+  max-width: var(--measure);
+  margin-top: var(--s3);
+  color: var(--ink-2);
+  font-size: var(--text-lede);
+  line-height: 1.55;
+}
+
+.hero .repo {
+  margin-top: var(--s4);
+  font-size: var(--text-body);
+}
+
+/* ==========================================================================
+   MOTIF
+   Turquoise only. Two stroke weights for structure and detail, a third,
+   lighter tone for the flow between stations.
+   ========================================================================== */
+.motif { padding-block: var(--s3); }
+
+.motif svg {
+  display: block;
+  width: 100%;
+  min-width: 760px;   /* below this the labels stop being legible, so scroll */
+  height: auto;
+}
+
+.m-line        { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.m-line.m-fill { fill: var(--paper); }
+.m-thin        { fill: none; stroke: var(--ink-2); stroke-width: 1.1; stroke-linecap: round; }
+.m-flow        { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+.m-accent      { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.m-return      { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-dasharray: 3 5; stroke-linecap: round; }
+.m-return-tip  { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+.m-seal        { fill: var(--accent); }
+.m-check       { fill: none; stroke: var(--paper); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.m-label       { font-family: var(--font-ui); font-size: 13px; fill: var(--ink); text-anchor: middle; }
+.m-note        { font-family: var(--font-ui); font-size: 11.5px; fill: var(--ink-3); text-anchor: middle; letter-spacing: 0.06em; }
+
+/* ==========================================================================
+   MODULES
+   The single home of the identity palette. Each module carries one small mark,
+   turquoise plus the four logo colours, assigned by position.
+   ========================================================================== */
+.module-list {
+  display: grid;
+  gap: var(--s3);
+  max-width: 78ch;
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
+}
+
+.module-list li {
+  display: grid;
+  grid-template-columns: 3.2em 1fr;
+  align-items: baseline;
+}
+
+.module-list .key {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.module-list .dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.module-list li:nth-child(1) .dot { background: var(--c-violet); }
+.module-list li:nth-child(2) .dot { background: var(--c-orange); }
+.module-list li:nth-child(3) .dot { background: var(--accent); }
+.module-list li:nth-child(4) .dot { background: var(--c-blue); }
+.module-list li:nth-child(5) .dot { background: var(--c-green); }
+
+.module-list h3 { font-size: var(--text-title); }
+
+.module-list .sub {
+  margin-top: 0.25em;
+  color: var(--ink-3);
+  font-size: var(--text-md);
+  line-height: 1.5;
+}
+
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s4);
+  margin-top: var(--s4);
+}
+
+/* ==========================================================================
+   MEDIA PLATE
+   Either the real title slide or a generated line-art plate in the motif
+   vocabulary, always in the same 16:9 proportion. Each plate highlights the
+   station that the workshop puts its weight on.
+   ========================================================================== */
+.plate {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--tint);
+}
+
+.pl-line { fill: none; stroke: var(--rule-mid); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.pl-flow { fill: none; stroke: var(--rule-mid); stroke-width: 1; stroke-linecap: round; }
+.pl-arc  { fill: none; stroke: var(--rule-mid); stroke-width: 1; stroke-dasharray: 3 6; stroke-linecap: round; }
+.pl-fill { fill: var(--rule-mid); }
+.pl-occ  { fill: var(--tint); }   /* occludes the shape behind it, so a stack reads as a stack */
+.pl-hi .pl-line { stroke: var(--accent); stroke-width: 2.1; }
+.pl-hi .pl-fill { fill: var(--accent); }
+.pl-mark { fill: var(--accent); }
+
+/* ==========================================================================
+   WORKSHOP CARDS
+   The whole card is one link to the workshop subpage.
+   ========================================================================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 264px), 1fr));
+  gap: var(--s3);
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 140ms ease;
+}
+.card:hover { border-color: var(--accent); }
+.card:focus-within { border-color: var(--accent); }
+
+/* Stretched link: the title carries the href, its overlay covers the card. */
+.card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.card h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.card:hover h3 a { text-decoration: underline; text-decoration-color: var(--rule-mid); }
+
+.card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--s2);
+  padding: var(--s3);
+}
+
+.card h3 { font-size: var(--text-card); }
+.card .event { color: var(--ink-2); font-size: var(--text-lg); }
+.card .facts { color: var(--ink-3); font-size: var(--text-md); line-height: 1.5; }
+.card .facts span { display: block; }
+
+.card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s1) var(--s2);
+  margin-top: auto;
+  padding-top: var(--s2);
+  font-size: var(--text-lg);
+}
+.card-foot .ready { color: var(--ink-3); }
+.card-go {
+  color: var(--accent);
+  white-space: nowrap;
+}
+.card-go::after {
+  content: " \2192";
+  display: inline-block;
+  transition: transform 140ms ease;
+}
+.card:hover .card-go::after { transform: translateX(3px); }
+
+/* ==========================================================================
+   WORKSHOP SUBPAGE
+   ========================================================================== */
+.backlink {
+  display: inline-block;
+  margin-top: var(--s5);
+  color: var(--ink-3);
+  font-size: var(--text-lg);
+  text-decoration-color: var(--rule);
+}
+.backlink:hover { color: var(--accent); }
+
+.page-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--s5);
+  padding-block: var(--s4) 0;
+}
+.page-head h1 {
+  margin-top: var(--s2);
+  font-size: var(--text-page);
+}
+.page-head .event {
+  margin-top: var(--s3);
+  max-width: 46ch;
+  color: var(--ink-2);
+  font-size: var(--text-lede);
+  line-height: 1.5;
+}
+.page-head .facts {
+  margin-top: var(--s3);
+  color: var(--ink-3);
+  font-size: var(--text-md);
+  line-height: 1.6;
+}
+.page-head .facts span { display: block; }
+
+.block { padding-top: var(--gap-block); }
+.block h2 { font-size: var(--text-section); }
+.block > p,
+.block > .prose {
+  max-width: var(--measure);
+  margin-top: var(--s3);
+  color: var(--ink-2);
+}
+
+/* Taught sequence. The script fixes no timings, so the list carries order
+   without any clock. */
+.seq {
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
+  counter-reset: seq;
+  columns: 2;
+  column-gap: var(--s5);
+}
+.seq li {
+  display: grid;
+  grid-template-columns: 2.6em 1fr;
+  align-items: baseline;
+  padding-block: 0.35em;
+  break-inside: avoid;
+  font-size: var(--text-lg);
+  line-height: 1.4;
+}
+.seq li::before {
+  counter-increment: seq;
+  content: counter(seq, decimal-leading-zero);
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+.seq .is-handson { color: var(--accent); font-weight: 500; }
+
+/* Link rows with an explicit state, so a missing artefact never becomes a
+   dead link. */
+.linklist {
+  display: grid;
+  gap: var(--s2);
+  max-width: var(--measure);
+  margin-top: var(--s3);
+  padding: 0;
+  list-style: none;
+}
+.linklist li { font-size: var(--text-lg); }
+.linklist .what { display: block; color: var(--ink-3); font-size: var(--text-md); }
+
+/* Material bundle. The same strip repeats in every block of a workshop page, so
+   an instructor finds the right link at a glance while teaching. Artefacts that
+   do not exist yet appear here as a state, never as a dead link. */
+.bundle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s1) var(--s3);
+  margin-top: var(--s3);
+  padding: var(--s2) var(--s3);
+  border-radius: var(--radius);
+  background: var(--tint);
+  font-size: var(--text-lg);
+}
+.bundle .label {
+  flex: none;
+  min-width: 7em;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.bundle .items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s1) var(--s2);
+}
+.bundle .sep { color: var(--rule-mid); }
+
+/* Verbatim passages from the workshop script. */
+.excerpt {
+  max-width: var(--measure);
+  margin: var(--s3) 0 0;
+  padding-left: var(--s3);
+  border-left: 2px solid var(--accent);
+  color: var(--ink-2);
+}
+.excerpt p + p { margin-top: var(--s2); }
+.excerpt cite {
+  display: block;
+  margin-top: var(--s2);
+  color: var(--ink-3);
+  font-size: var(--text-md);
+  font-style: normal;
+}
+
+.prompt {
+  max-width: var(--measure);
+  margin: var(--s3) 0 0;
+  padding: var(--s3);
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--tint);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+/* ==========================================================================
+   FOOTER
+   Same ground as the page, separated by space alone. The logo sits here as
+   the source of the identity palette.
+   ========================================================================== */
+.site-foot { padding-block: var(--gap-section) var(--s5); }
+
+.site-foot > .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s4) var(--s5);
+}
+
+.foot-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+.foot-brand img { width: clamp(112px, 13vw, 140px); }
+
+.imprint {
+  color: var(--ink-3);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+}
+.imprint .name { color: var(--ink); font-weight: 500; }
+.imprint .sep { padding-inline: 0.4em; color: var(--rule-mid); }
+
+.colophon {
+  color: var(--ink-3);
+  font-size: var(--text-md);
+  line-height: 1.9;
+  text-align: right;
+}
+
+/* ==========================================================================
+   NARROW VIEWPORTS AND PREFERENCES
+   ========================================================================== */
+@media (max-width: 860px) {
+  .page-head { grid-template-columns: 1fr; gap: var(--s4); }
+  .seq { columns: 1; }
+}
+
+@media (max-width: 640px) {
+  .colophon { text-align: left; }
+  .foot-brand { gap: var(--s2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; }
+}

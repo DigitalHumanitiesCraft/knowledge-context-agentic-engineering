@@ -71,7 +71,7 @@ The English master holds a block on how large language models work, covering the
 
 ## Deliberate omissions from the masters
 
-These passages were not carried into any module. Nothing else from either master was dropped, and no passage appears twice.
+These passages were not carried into any module. Beyond them and the parallel versions listed above, nothing from either master was dropped, and no passage appears twice.
 
 - the title, author and deck block of both masters
 - the German table of contents and the German list of figures, because they index the monolith; the figure captions themselves are carried in place
