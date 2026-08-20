@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en" data-font="space">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design draft — Knowledge, Context and Agentic Engineering</title>
+<meta name="robots" content="noindex">
+
+<!--
+  DESIGN DRAFT, not the production start page.
+
+  Purpose: one visible page so the operator can decide on the visual motif
+  and the font. Deliberate prototype shortcuts, each with its upgrade path:
+
+  1. Single self-contained file with inline CSS and JS. The production page
+     splits into index.html / css / js per the web guideline; this file is the
+     "in sich geschlossenes Wegwerf-Beispiel" exception.
+  2. Workshop data is hardcoded as static HTML, mirroring docs/data/workshops.json.
+     Production renders the register from that JSON via fetch. Static markup here
+     keeps the draft readable without JS and keeps the focus on the design.
+  3. Cover images are labelled placeholders. Production loads
+     docs/assets/covers/<id>.png supplied by the operator.
+  4. The font toggle (bottom right) is a draft-only control and does not ship.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- Tokens: single source of truth, no raw hex below this block ---------- */
+:root {
+  color-scheme: light;
+
+  /* Font candidates. The toggle rebinds --font-ui and --font-head. */
+  --font-space: "Space Grotesk", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-plex: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
+  --font-ui: var(--font-space);
+  --font-head: var(--font-space);
+
+  /* Ground and ink */
+  --ground: #FCFCFA;
+  --surface: #FFFFFF;
+  --ink: #141413;
+  --ink-2: #4A4A46;
+  --ink-3: #7C7C76;
+  --rule: #E4E4DE;
+  --rule-strong: #C9C9C2;
+
+  /* Turquoise, the only accent. Two values because the bright one is for
+     graphics (>=3:1 non-text contrast) and the deep one for text (>=4.5:1). */
+  --accent: #0E9694;
+  --accent-ink: #0A6F70;
+  --accent-tint: #E6F4F3;
+
+  /* 8px spacing scale */
+  --s1: 0.5rem;
+  --s2: 1rem;
+  --s3: 1.5rem;
+  --s4: 2rem;
+  --s5: 3rem;
+  --s6: 4.5rem;
+  --s7: 7rem;
+
+  --measure: 62ch;
+  --page: 1160px;
+  --radius: 3px;
+}
+
+[data-font="plex"]  { --font-ui: var(--font-plex);  --font-head: var(--font-plex); }
+[data-font="mixed"] { --font-ui: var(--font-plex);  --font-head: var(--font-space); }
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  line-height: 1.6;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p { margin: 0; }
+
+a {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--rule-strong);
+}
+a:hover { text-decoration-color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: min(100% - 2 * var(--s3), var(--page));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+/* ---------- Header ---------- */
+.site-head {
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface);
+}
+.site-head > .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  align-items: baseline;
+  justify-content: space-between;
+  padding-block: var(--s2);
+}
+.site-head strong { font-weight: 600; letter-spacing: 0.02em; }
+
+/* ---------- Hero ---------- */
+.hero { padding-block: clamp(var(--s5), 7vw, var(--s7)) var(--s5); }
+
+.hero h1 {
+  font-size: clamp(2rem, 1.3rem + 3.2vw, 3.5rem);
+  max-width: 20ch;
+  margin-block: var(--s3) 0;
+}
+
+.hero .lede {
+  margin-top: var(--s3);
+  max-width: var(--measure);
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+/* Access row: live artefacts as links, pending ones visibly absent. */
+.access {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
+  align-items: center;
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+.access li { display: flex; align-items: center; gap: 0.55em; }
+.access li::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+.access li[data-state="pending"] { color: var(--ink-3); }
+.access li[data-state="pending"]::before {
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+}
+
+/* ---------- Motif ---------- */
+.motif {
+  margin: 0;
+  padding-block: var(--s5);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.motif-scroll { overflow-x: auto; overscroll-behavior-x: contain; }
+.motif svg {
+  display: block;
+  width: 100%;
+  min-width: 760px;   /* below this the labels stop being legible, so scroll */
+  height: auto;
+}
+.motif figcaption {
+  margin-top: var(--s3);
+  max-width: var(--measure);
+  color: var(--ink-3);
+  font-size: 0.9375rem;
+}
+
+/* SVG line-art vocabulary: one stroke weight for structure, thinner for detail. */
+.m-line   { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.m-thin   { fill: none; stroke: var(--ink-2); stroke-width: 1.1; stroke-linecap: round; }
+.m-flow   { fill: none; stroke: var(--rule-strong); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+.m-accent { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.m-return { fill: none; stroke: var(--rule-strong); stroke-width: 1.1; stroke-dasharray: 3 5; stroke-linecap: round; }
+.m-return-tip { fill: none; stroke: var(--rule-strong); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+.m-line.m-paper { fill: var(--surface); }
+.m-seal   { fill: var(--accent); }
+.m-check  { fill: none; stroke: var(--surface); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.m-label  { font-family: var(--font-ui); font-size: 13px; fill: var(--ink); text-anchor: middle; }
+.m-note   { font-family: var(--font-ui); font-size: 11.5px; fill: var(--ink-3); text-anchor: middle; letter-spacing: 0.06em; }
+
+/* ---------- Prompt sample ---------- */
+.sample { padding-block: var(--s5); }
+.sample p { max-width: var(--measure); color: var(--ink-2); margin-top: var(--s1); }
+.prompt {
+  margin: var(--s3) 0 0;
+  padding: var(--s2) var(--s3);
+  max-width: var(--measure);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--ink);
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+/* ---------- Workshop cards ---------- */
+.register { padding-block: var(--s5) var(--s6); border-top: 1px solid var(--rule); }
+.register h2 { font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem); margin-top: var(--s2); }
+.register > .wrap > p { max-width: var(--measure); color: var(--ink-2); margin-top: var(--s2); }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  gap: var(--s3);
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 120ms ease;
+}
+.card:hover { border-color: var(--rule-strong); }
+.card:focus-within { border-color: var(--accent); }
+
+.cover {
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-content: center;
+  gap: 0.35em;
+  text-align: center;
+  padding: var(--s2);
+  background: var(--accent-tint);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-3);
+}
+.cover .ph { font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.cover code { font-family: var(--font-mono); font-size: 0.75rem; color: var(--ink-3); }
+
+.card-body { padding: var(--s3); display: flex; flex-direction: column; gap: var(--s2); flex: 1; }
+.card h3 { font-size: 1.125rem; }
+.card .event { color: var(--ink-2); font-size: 0.9375rem; }
+
+.meta { margin: 0; font-size: 0.875rem; }
+.meta div { display: flex; gap: 0.6em; padding-block: 0.28em; border-top: 1px solid var(--rule); }
+.meta dt { flex: none; width: 5.5em; color: var(--ink-3); }
+.meta dd { margin: 0; color: var(--ink-2); }
+
+.card-links {
+  margin-top: auto;
+  padding-top: var(--s1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s2);
+  font-size: 0.9375rem;
+}
+.card-links .muted { color: var(--ink-3); }
+
+/* ---------- Footer ---------- */
+.site-foot {
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+  padding-block: var(--s4);
+}
+.site-foot > .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3);
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--ink-3);
+}
+.logo-slot {
+  display: grid;
+  place-content: center;
+  width: 148px;
+  height: 56px;
+  border: 1px dashed var(--rule-strong);
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-align: center;
+}
+
+/* ---------- Draft-only font toggle ---------- */
+.fontbar {
+  position: fixed;
+  right: var(--s2);
+  bottom: var(--s2);
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 8%);
+  max-width: calc(100vw - 2 * var(--s2));
+}
+.fontbar .eyebrow { width: 100%; font-size: 0.6875rem; }
+.fontbar button {
+  font: inherit;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  padding: 0.4em 0.7em;
+  color: var(--ink-2);
+  background: var(--ground);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.fontbar button:hover { border-color: var(--rule-strong); }
+.fontbar button[aria-pressed="true"] {
+  color: var(--surface);
+  background: var(--accent-ink);
+  border-color: var(--accent-ink);
+}
+.fnt-space { font-family: var(--font-space); }
+.fnt-plex  { font-family: var(--font-plex); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <strong>Digital Humanities Craft</strong>
+    <span class="eyebrow">Teaching corpus and workshop instances</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ Hero: master block ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Master corpus</p>
+      <h1>Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
+      <p class="lede">
+        One curated corpus on working with large language models, from fundamentals to
+        verification, and every workshop below is a documented specialisation of it.
+      </p>
+      <ul class="access">
+        <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Repository</a></li>
+        <li data-state="pending">Script &mdash; in preparation</li>
+        <li data-state="pending">Slide texts &mdash; in preparation</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Motif: source to verified artifact ============ -->
+  <div class="wrap">
+    <figure class="motif">
+      <div class="motif-scroll">
+        <svg viewBox="0 0 1200 226" role="img" aria-labelledby="motif-t motif-d">
+          <title id="motif-t">From source to verified artifact</title>
+          <desc id="motif-d">A horizontal flow in six stages: source material, knowledge documents,
+            working context, agentic loop, verification, verified artifact. A dashed return path
+            leads from verification back to the working context when a check fails.</desc>
+
+          <!-- return path: failed verification re-enters the context -->
+          <text class="m-note" x="702" y="28">revise on failure</text>
+          <path class="m-return" d="M 906,102 C 906,52 866,36 806,36 L 598,36 C 538,36 498,52 498,100"/>
+          <polyline class="m-return-tip" points="492,92 498,100 504,92"/>
+
+          <!-- connectors -->
+          <g class="m-flow">
+            <path d="M 138,132 H 244"/><polyline points="238,128 244,132 238,136"/>
+            <path d="M 342,132 H 448"/><polyline points="442,128 448,132 442,136"/>
+            <path d="M 546,132 H 652"/><polyline points="646,128 652,132 646,136"/>
+            <path d="M 750,132 H 856"/><polyline points="850,128 856,132 850,136"/>
+            <path d="M 954,132 H 1060"/><polyline points="1054,128 1060,132 1054,136"/>
+          </g>
+
+          <!-- 1 source: a stack of raw material -->
+          <g transform="translate(90,132)">
+            <rect class="m-line" x="-30" y="-24" width="44" height="32" rx="2"/>
+            <rect class="m-line m-paper" x="-24" y="-16" width="44" height="32" rx="2"/>
+            <rect class="m-line m-paper" x="-18" y="-8" width="44" height="32" rx="2"/>
+            <path class="m-thin" d="M -10,2 H 14 M -10,10 H 6"/>
+          </g>
+
+          <!-- 2 knowledge documents: structured, curated -->
+          <g transform="translate(294,132)">
+            <path class="m-line" d="M -20,-26 H 4 L 16,-14 V 26 H -20 Z"/>
+            <path class="m-thin" d="M 4,-26 V -14 H 16"/>
+            <path class="m-thin" d="M -12,-4 H 8 M -12,4 H 8 M -12,12 H 0"/>
+          </g>
+
+          <!-- 3 working context: a bounded window with what was placed in it -->
+          <g transform="translate(498,132)">
+            <path class="m-line" d="M -28,-14 V -26 H -16 M 16,-26 H 28 V -14 M 28,14 V 26 H 16 M -16,26 H -28 V 14"/>
+            <path class="m-thin" d="M -14,-8 H 14 M -14,2 H 6 M -14,12 H 16"/>
+          </g>
+
+          <!-- 4 agentic loop: the only cyclic element -->
+          <g transform="translate(702,132)">
+            <path class="m-accent" d="M 15.6,-15.6 A 22,22 0 0,0 -15.6,-15.6"/>
+            <polyline class="m-accent" points="-13.5,-23.4 -15.6,-15.6 -7.8,-17.7"/>
+            <path class="m-accent" d="M -15.6,15.6 A 22,22 0 0,0 15.6,15.6"/>
+            <polyline class="m-accent" points="13.5,23.4 15.6,15.6 7.8,17.7"/>
+            <circle class="m-seal" cx="0" cy="0" r="2.6"/>
+          </g>
+
+          <!-- 5 verification: a gate the artifact has to pass -->
+          <g transform="translate(906,132)">
+            <path class="m-line" d="M 0,-28 L 28,0 L 0,28 L -28,0 Z"/>
+            <polyline class="m-accent" points="-9,0 -3,7 10,-8"/>
+          </g>
+
+          <!-- 6 verified artifact: document plus seal -->
+          <g transform="translate(1110,132)">
+            <path class="m-line" d="M -20,-26 H 4 L 16,-14 V 18 H -20 Z"/>
+            <path class="m-thin" d="M 4,-26 V -14 H 16"/>
+            <path class="m-thin" d="M -12,-4 H 8 M -12,4 H 2"/>
+            <circle class="m-seal" cx="16" cy="20" r="10"/>
+            <polyline class="m-check" points="11.5,20 15,23.5 20.5,16.5"/>
+          </g>
+
+          <!-- labels -->
+          <g class="m-label">
+            <text x="90" y="196">Source</text>
+            <text x="294" y="196">Knowledge documents</text>
+            <text x="498" y="196">Working context</text>
+            <text x="702" y="196">Agentic loop</text>
+            <text x="906" y="196">Verification</text>
+            <text x="1110" y="196">Verified artifact</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>
+        The recurring motif of the platform. It reappears as diagram vocabulary throughout the
+        corpus, with turquoise reserved for the loop and the checked result.
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- ============ Small mono sample ============ -->
+  <section class="sample">
+    <div class="wrap">
+      <p class="eyebrow">Working context, in practice</p>
+      <p>Every artifact carries the instruction that produced it and the check it had to pass.</p>
+      <pre class="prompt">&gt; Read knowledge/specification.md.
+&gt; List every acceptance criterion the current
+&gt; build does not meet, with the file and line
+&gt; that shows it. No fixes yet.</pre>
+    </div>
+  </section>
+
+  <!-- ============ Register: workshop instances ============ -->
+  <section class="register">
+    <div class="wrap">
+      <p class="eyebrow">Instances</p>
+      <h2>Workshop instances</h2>
+      <p>
+        Each entry is one documented run of the corpus, cut for its audience. Slides are taught
+        live from Google Slides; scripts and exports are versioned with the instance.
+      </p>
+
+      <!-- Chronological. Mirrors docs/data/workshops.json; production renders from that file. -->
+      <ul class="cards">
+
+        <li class="card">
+          <div class="cover">
+            <span class="ph">Title slide &middot; 16:9</span>
+            <code>assets/covers/2026-09-16-kug-m3gim.png</code>
+          </div>
+          <div class="card-body">
+            <p class="eyebrow">16&ndash;17 September 2026</p>
+            <h3>Promptotyping und Generative AI</h3>
+            <p class="event">KUG Summer School (M3GIM), Kunstuniversit&auml;t Graz</p>
+            <dl class="meta">
+              <div><dt>Audience</dt><dd>Participants without LLM or programming background</dd></div>
+              <div><dt>Focus</dt><dd>Compact introduction, hands-on with low prerequisites</dd></div>
+              <div><dt>Language</dt><dd>German</dd></div>
+            </dl>
+            <p class="card-links"><span class="muted">Slides and script in preparation</span></p>
+          </div>
+        </li>
+
+        <li class="card">
+          <div class="cover">
+            <span class="ph">Title slide &middot; 16:9</span>
+            <code>assets/covers/2026-09-25-clariah-at.png</code>
+          </div>
+          <div class="card-body">
+            <p class="eyebrow">25 September 2026</p>
+            <h3>Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</h3>
+            <p class="event">CLARIAH-AT Summer School 2026: Machine Learning for Digital Scholarly Editions</p>
+            <dl class="meta">
+              <div><dt>Audience</dt><dd>Digital humanities students (BA and MA level)</dd></div>
+              <div><dt>Focus</dt><dd>Research data workflows, digital scholarly editions, Hersch hands-on</dd></div>
+              <div><dt>Language</dt><dd>English</dd></div>
+            </dl>
+            <p class="card-links">
+              <a href="https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit">Slides</a>
+              <a href="https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit">Script</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="card">
+          <div class="cover">
+            <span class="ph">Title slide &middot; 16:9</span>
+            <code>assets/covers/2026-11-09-ufl.png</code>
+          </div>
+          <div class="card-body">
+            <p class="eyebrow">9&ndash;10 November 2026</p>
+            <h3>Agentic-Engineering-Workshop</h3>
+            <p class="event">Uni for Life, Universit&auml;t Graz</p>
+            <dl class="meta">
+              <div><dt>Audience</dt><dd>Professionals from companies and institutions across disciplines</dd></div>
+              <div><dt>Focus</dt><dd>Extended two-day variant for knowledge work beyond academia</dd></div>
+              <div><dt>Language</dt><dd>German</dd></div>
+            </dl>
+            <p class="card-links"><span class="muted">Slides and script in preparation</span></p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="logo-slot">DHCraft logo</div>
+    <p>Built with Promptotyping. Materials released under an open licence.</p>
+  </div>
+</footer>
+
+<!-- Draft-only control, removed before the page ships. -->
+<div class="fontbar" role="group" aria-label="Font comparison, draft control">
+  <span class="eyebrow">Draft: font</span>
+  <button type="button" class="fnt-space" data-font-choice="space" aria-pressed="true">Space Grotesk</button>
+  <button type="button" class="fnt-plex" data-font-choice="plex" aria-pressed="false">IBM Plex Sans</button>
+  <button type="button" class="fnt-plex" data-font-choice="mixed" aria-pressed="false">Mixed</button>
+</div>
+
+<script>
+(() => {
+  const KEY = "kcae-draft-font";
+  const root = document.documentElement;
+  const buttons = [...document.querySelectorAll("[data-font-choice]")];
+  const choices = buttons.map((b) => b.dataset.fontChoice);
+
+  const apply = (choice) => {
+    root.dataset.font = choice;
+    buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.fontChoice === choice)));
+    try { localStorage.setItem(KEY, choice); } catch { /* private mode: session only */ }
+  };
+
+  buttons.forEach((b) => b.addEventListener("click", () => apply(b.dataset.fontChoice)));
+
+  let saved = null;
+  try { saved = localStorage.getItem(KEY); } catch { /* ignore */ }
+  apply(choices.includes(saved) ? saved : choices[0]);
+})();
+</script>
+
+</body>
+</html>
