@@ -15,7 +15,8 @@ updated: 2026-08-20
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
-related: [lecture-notes.md, ../../knowledge/project.md, ../../knowledge/drafts/module-map.md]
+status: in preparation
+related: [lecture-notes.md, ../../knowledge/project.md, ../../knowledge/drafts/module-map.md, ../../knowledge/drafts/specialization-analysis.md]
 ---
 
 # Workshop Profile CLARIAH-AT 2026
@@ -26,7 +27,7 @@ This instance is the single-day unit taught on 2026-09-25 within the CLARIAH-AT 
 
 ## Module selection
 
-The mapping below is derived from the section structure of `lecture-notes.md` against the five modules. It is a derivation, not a confirmed cut. The fine module cut proposed in `knowledge/drafts/module-map.md` is a draft, and the assignment of Promptotyping, verification and the case studies to a top-level module is a working proposal recorded in `knowledge/journal.md`.
+The mapping below is derived from the section structure of `lecture-notes.md` against the five modules. It is a derivation and no confirmed cut exists. The fine module cut proposed in `knowledge/drafts/module-map.md` is a draft, and the assignment of Promptotyping, verification and the case studies to a top-level module is a working proposal recorded in `knowledge/journal.md`.
 
 | Module | Sections drawn on | Depth and emphasis |
 | --- | --- | --- |
