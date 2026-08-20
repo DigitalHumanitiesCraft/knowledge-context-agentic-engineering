@@ -371,7 +371,7 @@ When users upload documents to AI systems, the document doesn't go directly to t
 Users interact with applications (e.g., ChatGPT website), not directly with LLMs (e.g., GPT-4).
 Companies either control both layers (OpenAI) or build only the application layer using third-party LLMs via API.
 Users could achieve identical results by manually copying document text and constructing the prompt themselves. The application simply automates this process.
-Yannic Kilcher. https://www.linkedin.com/posts/ykilcher_what-happens-when-you-upload-a-document-to-activity-7356328462762049537-cOp3?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQiSgsBZnQdWJFeikmtwEMNFlPh1pZv8GY 
+Yannic Kilcher. https://www.linkedin.com/posts/ykilcher_what-happens-when-you-upload-a-document-to-activity-7356328462762049537-cOp3 
 This image was created using the transcript of the LinkedIn video. Opus 4.1 performed the 'reasoning', and the new Gemini 2.5 Flash Image was used.
 
 Appendix

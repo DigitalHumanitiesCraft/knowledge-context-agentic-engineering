@@ -231,7 +231,7 @@ https://www.youtube.com/watch?v=1if6XbzD5Yg&ab_channel=ARCPrize 
 Chollet, François. 2019. „On the Measure of Intelligence“. arXiv. https://doi.org/10.48550/arXiv.1911.01547. 
 Pattern Recognition vs True Intelligence - Francois Chollet. https://youtu.be/JTU8Ha4Jyfc?si=sQVLnJwXepYtKfb1 François Chollet on OpenAI o-models and ARC. https://youtu.be/w9WE1aOPjHc?si=lEgOqvfJJM5Tmbs8&t=3412 
 Interactive Reasoning Benchmarks | ARC-AGI-3 Preview. https://youtu.be/3T4OwBp6d90?si=GhT_oJIZEv7wcTRh 
-https://www.linkedin.com/posts/emollick_looking-at-the-arc-agi-benchmark-is-a-useful-activity-7362742481009942528--eSp?utm_source=share&utm_medium=member_android&rcm=ACoAADQiSgsBZnQdWJFeikmtwEMNFlPh1pZv8GY 
+https://www.linkedin.com/posts/emollick_looking-at-the-arc-agi-benchmark-is-a-useful-activity-7362742481009942528--eSp 
 
 
 ARC-AGI: Problems Easy for Humans and Hard for AI
@@ -247,7 +247,7 @@ From “static reasoning” to “dynamic, interactive intelligence”
 Scaling it up to the max! (Or has it reached a plateau?)
 https://ai-2027.com
 How Scaling Laws Drive Smarter, More Powerful AI. https://blogs.nvidia.com/blog/ai-scaling-laws 
-https://www.linkedin.com/posts/greg-blonder-0b1b027_between-a-rock-and-a-hard-place-activity-7362203632991150083-DK7c?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQiSgsBZnQdWJFeikmtwEMNFlPh1pZv8GY 
+https://www.linkedin.com/posts/greg-blonder-0b1b027_between-a-rock-and-a-hard-place-activity-7362203632991150083-DK7c 
 
 Embodiment and Robots and World Models
 https://www.youtube.com/watch?v=8gfuUzDn4Q8&ab_channel=Figure 
@@ -402,7 +402,7 @@ Mark Daley. AI isn’t running water. It's something different. https://noeticen
 
 Actual LLM agents are coming. They will be trained. http://vintagedata.org/blog/posts/designing-llm-agents 
 Speaking things into existence. https://www.oneusefulthing.org/p/speaking-things-into-existence 
-https://www.linkedin.com/posts/ignacio-de-gregorio-noblejas_ai-openai-vc-activity-7305653160314855425-KmS0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQiSgsBZnQdWJFeikmtwEMNFlPh1pZv8GY 
+https://www.linkedin.com/posts/ignacio-de-gregorio-noblejas_ai-openai-vc-activity-7305653160314855425-KmS0 
 AI Explained. https://www.youtube.com/watch?v=N8dZ6ADCPyc 
 
 Glimpses of AI Progress. https://www.pathwaysai.org/p/glimpses-of-ai-progess?r=1tuby9&utm_medium=ios&triedRedirect=true 

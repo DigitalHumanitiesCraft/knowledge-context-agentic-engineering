@@ -152,7 +152,7 @@ LLM A statistical text predictor. Takes text input, outputs statistically proba
 Reasoning LLMA post-trained model that generates extensive "thinking tokens" before answering. Processes problems step-by-step internally and can now use tools during its thinking phase. The thinking process happens before the final output.
 Agents An LLM with some autonomous capabilities. Can plan, use tools, execute multi-step tasks, and make decisions without human intervention at each step. Operates independently toward a goal.
 Workflow How tasks are structured and sequenced. Can be linear, parallel, or conditional. Defines the arrangement of steps, not the underlying technology.
-Yannic Kilcher. https://www.linkedin.com/posts/ykilcher_what-is-the-difference-between-an-llm-an-activity-7358157615039733760-Z7Qw?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQiSgsBZnQdWJFeikmtwEMNFlPh1pZv8GY 
+Yannic Kilcher. https://www.linkedin.com/posts/ykilcher_what-is-the-difference-between-an-llm-an-activity-7358157615039733760-Z7Qw 
 
 Tool Use
 Read and Write Files
@@ -164,7 +164,7 @@ Vector Database Query (used in RAG)
 API Calls
 SQL Database Operations
 … 
-What is Tool Calling? Connecting LLMs to Your Data. https://youtu.be/h8gMhXYAv1k Yannic Kilcher. https://www.linkedin.com/posts/ykilcher_how-do-agents-use-tools-such-as-internet-activity-7357543216054775808-veZ0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQiSgsBZnQdWJFeikmtwEMNFlPh1pZv8GY 
+What is Tool Calling? Connecting LLMs to Your Data. https://youtu.be/h8gMhXYAv1k Yannic Kilcher. https://www.linkedin.com/posts/ykilcher_how-do-agents-use-tools-such-as-internet-activity-7357543216054775808-veZ0 
 Tool Use is the capability of language models to execute function calls to external systems during inference, extending functionality beyond text generation.
 Demo Tool Use:Analyse this TEI XML file step by step. Focus only on the body. Conduct a statistical analysis. Use a web search to find out more about the TEI and the Bookkeeping Ontology. Do the analysis using Python.
 

@@ -326,7 +326,7 @@ Chain of Draft Xu, Silei, Wenhao Xie, Lingxiao Zhao, und Pengcheng He. 2025. �
 
 Chain of Thought
 Reasoning Models
-https://www.linkedin.com/posts/pascal-wichmann_there-is-somethig-vulnerable-and-cute-about4-activity-7294766190046928898-f7i2?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQiSgsBZnQdWJFeikmtwEMNFlPh1pZv8GY 
+https://www.linkedin.com/posts/pascal-wichmann_there-is-somethig-vulnerable-and-cute-about4-activity-7294766190046928898-f7i2 
 Can AI Think? Debunking AI Limitations.https://youtu.be/CB7NNsI27ks?si=RfEryMT2_wk2AkIl 
 “let's think step by step”Wei, Jason, Xuezhi Wang, Dale Schuurmans, u. a. 2023. „Chain-of-Thought Prompting Elicits Reasoning in Large Language Models“. arXiv:2201.11903. Preprint, arXiv, Januar 10. https://doi.org/10.48550/arXiv.2201.11903. 
 

@@ -8,7 +8,7 @@ workshop:
   audience: university staff in an institutional AI-competence programme
   language: de
   status: delivered
-  slides: null
+  slides: https://docs.google.com/presentation/d/1OCx8nGmlrpwM3X9ShR7z-NlkgyYMCO29Z26nPoXxsYM/edit
   script: null
 created: 2026-08-20
 updated: 2026-08-20
@@ -56,7 +56,7 @@ The opening survey block, which asks which tools participants use privately and 
 | --- | --- | --- |
 | Slide text (DE, with EN speaker notes) | `workshop-script.txt` in this folder | delivered state of 2026-04-22, the authoritative content record of this instance |
 | Slide image exports (PNG) | operator's downloads folder | exports available, intake pending |
-| Live deck | not named in the source | unknown |
+| Live deck | `https://docs.google.com/presentation/d/1OCx8nGmlrpwM3X9ShR7z-NlkgyYMCO29Z26nPoXxsYM/edit` | not named in the script source; found in the operator's vault and verified publicly readable on 2026-08-20 (`knowledge/drafts/google-artefacts.md`) |
 | PPTX export per taught state | absent | not held in this repo |
 | Cover | `docs/assets/covers/2026-04-22-vetmedai-workshop-1.png` | absent |
 | Shared demonstration conversations | linked inside `workshop-script.txt` | external, provider-hosted, no guarantee of persistence |
