@@ -1,0 +1,49 @@
+{
+  "master": {
+    "title": "Knowledge, Context and Agentic Engineering for Knowledge Work",
+    "description": "The full master corpus: LLM fundamentals, prompt, context, knowledge and agentic engineering, Promptotyping, verification. Every workshop below is a documented specialisation.",
+    "slides": null,
+    "script": null
+  },
+  "workshops": [
+    {
+      "id": "2026-09-16-kug-m3gim",
+      "dates": "2026-09-16/17",
+      "title": "Promptotyping und Generative AI",
+      "event": "KUG Summer School (M3GIM), Kunstuniversität Graz",
+      "audience": "participants without LLM or programming background",
+      "focus": "compact introduction, hands-on with low prerequisites",
+      "language": "de",
+      "status": "planned",
+      "slides": null,
+      "script": null,
+      "cover": null
+    },
+    {
+      "id": "2026-09-25-clariah-at",
+      "dates": "2026-09-25",
+      "title": "Knowledge, Context and Agentic Engineering for Research Data Workflows & Digital Editions",
+      "event": "CLARIAH-AT Summer School 2026: Machine Learning for Digital Scholarly Editions",
+      "audience": "digital humanities students (BA/MA level)",
+      "focus": "research data workflows, digital scholarly editions, Hersch hands-on",
+      "language": "en",
+      "status": "planned",
+      "slides": "https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit",
+      "script": "https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit",
+      "cover": null
+    },
+    {
+      "id": "2026-11-09-ufl",
+      "dates": "2026-11-09/10",
+      "title": "Agentic-Engineering-Workshop",
+      "event": "Uni for Life, Universität Graz",
+      "audience": "professionals from companies and institutions across disciplines",
+      "focus": "extended two-day variant for knowledge work beyond academia",
+      "language": "de",
+      "status": "planned",
+      "slides": null,
+      "script": null,
+      "cover": null
+    }
+  ]
+}
