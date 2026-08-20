@@ -7,20 +7,20 @@ created: 2026-08-20
 units: [M7, M11, M14, M16]
 canonical: false
 canonical-gate: operator confirmation of the module cut
-source-masters: [script/master-script-de.md, script/master-script-en.md]
+source-lecture-notes: [script/full-lecture-notes-de.md, script/full-lecture-notes-en.md]
 ---
 
 # Module 2 — Prompt Engineering
 
-> Draft cut of the master corpus. Every passage below is reproduced verbatim from a master
-> script; only the module heading, the unit headings and the provenance lines are added.
-> The masters stay authoritative until the operator confirms the cut. Coverage, discarded
+> Draft cut of the full corpus. Every passage below is reproduced verbatim from the Full
+> Lecture Notes; only the module heading, the unit headings and the provenance lines are added.
+> The Full Lecture Notes stay authoritative until the operator confirms the cut. Coverage, discarded
 > parallel versions and open questions are recorded in `script/COVERAGE.md`.
 
 
 ## Unit M7 — Prompt Engineering
 
-*Source: `master-script-de.md`, sections 3.1 through 3.5.*
+*Source: `full-lecture-notes-de.md`, sections 3.1 through 3.5.*
 
 ## 3.1 Prompt und Prompt Engineering
 
@@ -230,7 +230,7 @@ Folie zur schwierigen Evaluation von Prompt Engineering
 6. Modell und Version dokumentieren.  
 7. Fachliche Qualität getrennt von Stil und Format bewerten.
 
-*Source: `master-script-de.md`, sections 3.7 and 3.8.*
+*Source: `full-lecture-notes-de.md`, sections 3.7 and 3.8.*
 
 ## 3.7 Grenzen des Prompt Engineering
 
@@ -312,7 +312,7 @@ Prüfung:
 - Welche Informationen sollten persistent in Wissensdokumenten stehen?  
 - Welche Entscheidungen kann der Agent ausführen, aber nicht autorisieren?
 
-*Source: `master-script-en.md`, "Prompting Strategies: There Is No Prompt to Rule Them All".*
+*Source: `full-lecture-notes-en.md`, "Prompting Strategies: There Is No Prompt to Rule Them All".*
 
 ## **Prompting Strategies: There Is No Prompt to Rule Them All**
 
@@ -330,7 +330,7 @@ Effective prompting therefore combines **context selection, instruction design, 
 
 ## Unit M11 — Working Environment, API Access and Structured Output
 
-*Source: `master-script-en.md`, "Prepare the Working Environment before the First Prompt".*
+*Source: `full-lecture-notes-en.md`, "Prepare the Working Environment before the First Prompt".*
 
 ## **Prepare the Working Environment before the First Prompt**
 
@@ -340,7 +340,7 @@ A project workspace should contain relevant source material, project documentati
 
 Preparing the workspace determines which files, tools, knowledge and forms of feedback later become available to the model or agent. The environment is therefore part of the methodological design rather than neutral technical plumbing.
 
-*Source: `master-script-en.md`, ".txt to JSON to CSV".*
+*Source: `full-lecture-notes-en.md`, ".txt to JSON to CSV".*
 
 ## **.txt → JSON → CSV**
 
@@ -357,7 +357,7 @@ Row totals, column totals and other invariants can provide strong feedback. Such
 
 ## Unit M14 — From Facsimile to a Research Data Package
 
-*Source: `master-script-en.md`, "Multimodality & Vision Language Models".*
+*Source: `full-lecture-notes-en.md`, "Multimodality & Vision Language Models".*
 
 ## **Multimodality & Vision Language Models**
 
@@ -381,7 +381,7 @@ The ability to transcribe previously unseen handwriting is therefore interesting
 
 ## Unit M16 — Case Study Zweig: Transcribing a Complex Facsimile
 
-*Source: `master-script-en.md`, "Transcribe a Facsimile with Gemini 3.7 Flash" and the two hands-on sections.*
+*Source: `full-lecture-notes-en.md`, "Transcribe a Facsimile with Gemini 3.7 Flash" and the two hands-on sections.*
 
 ## **Transcribe a Facsimile with Gemini 3.7 Flash**
 
@@ -436,9 +436,9 @@ The output should consequently be treated as a **candidate representation** that
 
 ## Notes
 
-*Footnote identifiers and definitions are reproduced unchanged from their master.*
+*Footnote identifiers and definitions are reproduced unchanged from their source lecture notes.*
 
-### Notes carried from the English master
+### Notes carried from the English Full Lecture Notes
 
 [^8]: Sander Schulhoff et al., “The Prompt Report: A Systematic Survey of Prompting Techniques,” 2024, https://doi.org/10.48550/arXiv.2406.06608.
 

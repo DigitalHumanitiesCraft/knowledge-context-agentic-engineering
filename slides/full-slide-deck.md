@@ -1,3 +1,7 @@
+# Full Slide Deck
+
+Slide-text export of the Google deck of the teaching line, state of 2026-08-20. Everything below this header is the export as produced and carries no editorial changes.
+
 Knowledge, Context and Agentic Engineering for Knowledge Work
 
 Full Slidedeck. September 2026.

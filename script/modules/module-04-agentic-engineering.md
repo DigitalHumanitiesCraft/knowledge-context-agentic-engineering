@@ -7,20 +7,20 @@ created: 2026-08-20
 units: [M10, M12]
 canonical: false
 canonical-gate: operator confirmation of the module cut
-source-masters: [script/master-script-de.md, script/master-script-en.md]
+source-lecture-notes: [script/full-lecture-notes-de.md, script/full-lecture-notes-en.md]
 ---
 
 # Module 4 — Agentic Engineering
 
-> Draft cut of the master corpus. Every passage below is reproduced verbatim from a master
-> script; only the module heading, the unit headings and the provenance lines are added.
-> The masters stay authoritative until the operator confirms the cut. Coverage, discarded
+> Draft cut of the full corpus. Every passage below is reproduced verbatim from the Full
+> Lecture Notes; only the module heading, the unit headings and the provenance lines are added.
+> The Full Lecture Notes stay authoritative until the operator confirms the cut. Coverage, discarded
 > parallel versions and open questions are recorded in `script/COVERAGE.md`.
 
 
 ## Unit M10 — Agentic Engineering, AI Harnesses and Controlled Agent Workflows
 
-*Source: `master-script-de.md`, sections 2.3 and 2.4.*
+*Source: `full-lecture-notes-de.md`, sections 2.3 and 2.4.*
 
 ## 2.3 Vom Modell zum Agenten
 
@@ -55,7 +55,7 @@ Das Harness kann beispielsweise festlegen:
 
 Das Harness stellt technische Kontrollmöglichkeiten bereit. Es entscheidet jedoch nicht, ob eine editorische Modellierung wissenschaftlich angemessen ist. Ein XML-Validator kann feststellen, dass `<unclear>` an einer bestimmten Stelle zulässig ist. Er kann nicht entscheiden, ob die Quelle tatsächlich unleserlich ist oder ob eine alternative Lesung wahrscheinlicher wäre.
 
-*Source: `master-script-en.md`, "AI Agents Existed Long Before LLMs".*
+*Source: `full-lecture-notes-en.md`, "AI Agents Existed Long Before LLMs".*
 
 ## **AI Agents Existed Long Before LLMs**
 
@@ -67,7 +67,7 @@ LLMs changed the practical design space because natural language, code and heter
 
 LLM based agents should therefore be understood as a contemporary form of a much older AI concept.
 
-*Source: `master-script-de.md`, sections 6.1 through 6.7.*
+*Source: `full-lecture-notes-de.md`, sections 6.1 through 6.7.*
 
 ## 6.1 Warum mehrschrittige Arbeit organisiert werden muss
 
@@ -240,7 +240,7 @@ Fragen:
 - Welche Modellierungsprobleme werden erst im Interface sichtbar?  
 - Welche Wissensdokumente müssen revidiert werden?
 
-*Source: `master-script-en.md`, "AI Harness Architecture" and "AI Agent Concepts".*
+*Source: `full-lecture-notes-en.md`, "AI Harness Architecture" and "AI Agent Concepts".*
 
 ## **AI Harness Architecture**
 
@@ -256,7 +256,7 @@ Several technical concepts recur across contemporary agent systems. **Tool Use**
 
 These concepts solve different problems. They should not be treated as interchangeable labels for “agent functionality”. The engineering task is to decide which mechanism should carry which type of information or capability.
 
-*Source: `master-script-en.md`, "AGENTS.md and CLAUDE.md" through "Agent Skill".*
+*Source: `full-lecture-notes-en.md`, "AGENTS.md and CLAUDE.md" through "Agent Skill".*
 
 ## **AGENTS.md and CLAUDE.md**
 
@@ -290,7 +290,7 @@ The Agent Skills specification uses **progressive disclosure**. At session start
 
 This design helps control context consumption. A system can maintain many specialised capabilities without injecting all instructions into every task. Examples include skills for producing a PowerPoint presentation, reviewing a legal document or applying a project specific data transformation procedure.
 
-*Source: `master-script-en.md`, "Model Routing" and "Subagents and Epistemic Infrastructure".*
+*Source: `full-lecture-notes-en.md`, "Model Routing" and "Subagents and Epistemic Infrastructure".*
 
 ## **Model Routing**
 
@@ -315,7 +315,7 @@ The purpose of multi agent orchestration is therefore to create structured traje
 
 ## Unit M12 — Promptotyping and Scholar-Centred Design
 
-*Source: `master-script-de.md`, sections 7.1 through 7.6.*
+*Source: `full-lecture-notes-de.md`, sections 7.1 through 7.6.*
 
 ## 7.1 Definition und Grundprinzip
 
@@ -409,7 +409,7 @@ Implementation ist keine neutrale Ausführung einer vollständig bestimmten Spez
 
 Ein Beispiel: Im TEI-Modell werden alle unsicheren Lesungen gleich behandelt. Im Frontend zeigt sich jedoch, dass zwischen „teilweise lesbar“, „editorisch ergänzt“ und „vollständig unleserlich“ unterschieden werden muss. Diese Erkenntnis gehört nicht nur in den Code, sondern zurück in das Wissensdokument und gegebenenfalls in das Datenmodell.
 
-*Source: `master-script-de.md`, sections 7.9 and 7.10.*
+*Source: `full-lecture-notes-de.md`, sections 7.9 and 7.10.*
 
 ## 7.9 Write-back
 
@@ -439,7 +439,7 @@ Ein **Promptotype** ist der dokumentierte und referenzierbare Zustand einer Iter
 
 Ein Promptotype ist kein endgültiges Produkt. Er ist ein hinreichend bestimmter Zustand, von dem weitere Arbeit ausgehen kann.
 
-*Source: `master-script-en.md`, "As a ... I Want to".*
+*Source: `full-lecture-notes-en.md`, "As a ... I Want to".*
 
 ## **As a … I Want to**
 
@@ -455,7 +455,7 @@ The format makes three questions explicit. Who is acting? What capability is req
 
 A liturgy scholar may want to compare the structure of an office across several *Libri Ordinarii* to identify regional differences. A social historian may want to compare network change across several decades to investigate changing economic relationships. The data model alone does not determine these operations. Requirements arise from the relation among data, research questions and scholarly practices.
 
-*Source: `master-script-en.md`, "Mapping Mobile Musicians".*
+*Source: `full-lecture-notes-en.md`, "Mapping Mobile Musicians".*
 
 ## **Mapping Mobile Musicians**
 
@@ -465,7 +465,7 @@ These operations require different representations and different working context
 
 The example therefore illustrates why an AI supported knowledge environment cannot be reduced to a single prompt or one static database. Different phases of work require different combinations of data, knowledge, tools and validation.
 
-*Source: `master-script-en.md`, "Spec Driven Development".*
+*Source: `full-lecture-notes-en.md`, "Spec Driven Development".*
 
 ## **Spec Driven Development**
 
@@ -478,15 +478,15 @@ This reduces the amount of tacit interpretation delegated to the agent and creat
 
 ## Notes
 
-*Footnote identifiers and definitions are reproduced unchanged from their master.*
+*Footnote identifiers and definitions are reproduced unchanged from their source lecture notes.*
 
-### Notes carried from the German master
+### Notes carried from the German Full Lecture Notes
 
 [^3]: Produktbezeichnungen und konkrete Funktionen agentischer Arbeitsumgebungen verändern sich schnell. Die im Skriptum genannten Systeme dienen als Beispiele; Funktionsumfang und Terminologie sollten vor einer Publikation gegen die jeweils aktuelle Dokumentation geprüft werden.
 
 [^5]: MCP bezeichnet eine technische Spezifikation für die Verbindung von LLM-Anwendungen mit Werkzeugen und Datenquellen. Die konkrete Sicherheits- und Berechtigungsarchitektur hängt von der jeweiligen Implementation ab.
 
-### Notes carried from the English master
+### Notes carried from the English Full Lecture Notes
 
 [^12]: Hailin Zhong and Shengxin Zhu, “AI Harness Engineering: A Runtime Substrate for Foundation Model Software Agents,” 2026, https://doi.org/10.48550/arXiv.2605.13357.
 

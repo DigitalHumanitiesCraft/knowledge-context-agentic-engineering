@@ -7,20 +7,20 @@ created: 2026-08-20
 units: [M8, M9]
 canonical: false
 canonical-gate: operator confirmation of the module cut
-source-masters: [script/master-script-de.md, script/master-script-en.md]
+source-lecture-notes: [script/full-lecture-notes-de.md, script/full-lecture-notes-en.md]
 ---
 
 # Module 3 — Knowledge and Context Engineering
 
-> Draft cut of the master corpus. Every passage below is reproduced verbatim from a master
-> script; only the module heading, the unit headings and the provenance lines are added.
-> The masters stay authoritative until the operator confirms the cut. Coverage, discarded
+> Draft cut of the full corpus. Every passage below is reproduced verbatim from the Full
+> Lecture Notes; only the module heading, the unit headings and the provenance lines are added.
+> The Full Lecture Notes stay authoritative until the operator confirms the cut. Coverage, discarded
 > parallel versions and open questions are recorded in `script/COVERAGE.md`.
 
 
 ## Unit M8 — Context Engineering
 
-*Source: `master-script-de.md`, sections 4.1 through 4.6.*
+*Source: `full-lecture-notes-de.md`, sections 4.1 through 4.6.*
 
 ## 4.1 Vom Prompt zum Informationszustand einer Aufgabe
 
@@ -191,7 +191,7 @@ Ordnen Sie jede Ressource einer Kategorie zu:
 
 ## Unit M9 — Knowledge Engineering and Knowledge Documents
 
-*Source: `master-script-en.md`, "Knowledge & Context Engineering", the three-way distinction between the two layers and the prompt.*
+*Source: `full-lecture-notes-en.md`, "Knowledge & Context Engineering", the three-way distinction between the two layers and the prompt.*
 
 ## **Knowledge & Context Engineering**
 
@@ -209,7 +209,7 @@ The distinction can be expressed through three questions:
 
 Knowledge work therefore becomes an engineering problem of maintaining available knowledge and providing the right subset of that knowledge for a particular action.
 
-*Source: `master-script-de.md`, sections 5.1 through 5.8.*
+*Source: `full-lecture-notes-de.md`, sections 5.1 through 5.8.*
 
 ## 5.1 Warum Projektwissen explizit werden muss
 
@@ -480,7 +480,7 @@ Ein Agent kann Probleme lokalisieren und Vorschläge erzeugen. Inhaltlich folgen
 - Ist das Dokument kompakt, aber hinreichend?  
 - Kann es unmittelbar als Kontext für eine TEI-Aufgabe verwendet werden?
 
-*Source: `master-script-en.md`, "Knowledge Modelling, Personal Information Management and Project Management".*
+*Source: `full-lecture-notes-en.md`, "Knowledge Modelling, Personal Information Management and Project Management".*
 
 ## **Knowledge Modelling, Personal Information Management and Project Management**
 
@@ -493,13 +493,13 @@ The goal is not to collapse these traditions into one discipline. It is to recog
 
 ## Notes
 
-*Footnote identifiers and definitions are reproduced unchanged from their master.*
+*Footnote identifiers and definitions are reproduced unchanged from their source lecture notes.*
 
-### Notes carried from the German master
+### Notes carried from the German Full Lecture Notes
 
 [^4]: Die nominelle Kontextgröße ist nicht mit einer garantierten effektiven Nutzung aller enthaltenen Information gleichzusetzen. Forschung zu Long-Context-Systemen untersucht unter anderem Positions-, Distraktor- und Retrievaleffekte.
 
-### Notes carried from the English master
+### Notes carried from the English Full Lecture Notes
 
 [^9]: Bradley P. Allen et al., “Knowledge Engineering Using Large Language Models,” 2023, https://doi.org/10.4230/TGDK.1.1.3; Stuart Russell and Peter Norvig, *Artificial Intelligence: A Modern Approach*, 4th ed., 2020, https://aima.cs.berkeley.edu.
 

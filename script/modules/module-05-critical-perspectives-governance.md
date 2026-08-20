@@ -7,20 +7,20 @@ created: 2026-08-20
 units: [M13, M18, M19]
 canonical: false
 canonical-gate: operator confirmation of the module cut
-source-masters: [script/master-script-de.md, script/master-script-en.md]
+source-lecture-notes: [script/full-lecture-notes-de.md, script/full-lecture-notes-en.md]
 ---
 
 # Module 5 — Critical Perspectives and Governance
 
-> Draft cut of the master corpus. Every passage below is reproduced verbatim from a master
-> script; only the module heading, the unit headings and the provenance lines are added.
-> The masters stay authoritative until the operator confirms the cut. Coverage, discarded
+> Draft cut of the full corpus. Every passage below is reproduced verbatim from the Full
+> Lecture Notes; only the module heading, the unit headings and the provenance lines are added.
+> The Full Lecture Notes stay authoritative until the operator confirms the cut. Coverage, discarded
 > parallel versions and open questions are recorded in `script/COVERAGE.md`.
 
 
 ## Unit M13 — Verification, Validation and the Critical Expert
 
-*Source: `master-script-de.md`, sections 7.7 and 7.8.*
+*Source: `full-lecture-notes-de.md`, sections 7.7 and 7.8.*
 
 ## 7.7 Verification, Validation und Acceptance
 
@@ -74,7 +74,7 @@ Der Critical Expert entscheidet:
 
 Die Rolle ist nicht auf eine einzelne Person beschränkt. Sie bezeichnet die verantwortliche fachliche Autorität im Projekt.
 
-*Source: `master-script-de.md`, section 7.11.*
+*Source: `full-lecture-notes-de.md`, section 7.11.*
 
 ## 7.11 Hands-on: Write-back und Acceptance dokumentieren
 
@@ -159,7 +159,7 @@ Darstellung von Faksimile, diplomatischer Transkription und Normalisierung.
 
 ## Unit M18 — Project Governance and Research Mission Control
 
-No text in either master covers this unit. The nearest adjacent material is carried
+No text in either of the Full Lecture Notes covers this unit. The nearest adjacent material is carried
 elsewhere: knowledge-base governance and curation in module 3 (DE section 5.7),
 least-privilege permissions in module 4 (DE section 6.4) and human intervention points
 in module 4 (DE section 6.6). See `script/COVERAGE.md`.
@@ -167,7 +167,7 @@ in module 4 (DE section 6.6). See `script/COVERAGE.md`.
 
 ## Unit M19 — Limits, Glossary and Apparatus
 
-*Source: `master-script-de.md`, chapter 8, summary and glossary of the four layers.*
+*Source: `full-lecture-notes-de.md`, chapter 8, summary and glossary of the four layers.*
 
 # 8\. Zusammenfassung und Begriffsübersicht
 
@@ -192,7 +192,7 @@ Die zentrale Formel lautet:
 
 Die digitale Edition zeigt, warum diese Verbindung notwendig ist. Quelle, Transkription, Datenmodell, Transformation und Frontend bilden keinen neutralen technischen Ablauf. Jede Stufe enthält Entscheidungen darüber, welche Unterschiede sichtbar, bearbeitbar und interpretierbar werden. AI Agents können diese Arbeit erheblich unterstützen. Sie können jedoch die fachliche Verantwortung für Repräsentation, Validierung und Acceptance nicht übernehmen.
 
-*Source: `master-script-de.md`, chapter 9, bibliography.*
+*Source: `full-lecture-notes-de.md`, chapter 9, bibliography.*
 
 # 9\. Literaturverzeichnis
 
@@ -222,7 +222,7 @@ Schulhoff, Sander, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Li
 
 Yin, Ziqi, Hao Wang, Kaito Horio, Daisuke Kawahara, and Satoshi Sekine. 2024\. “Should We Respect LLMs? A Cross-Lingual Study on the Influence of Prompt Politeness on LLM Performance.” arXiv:2402.14531.
 
-*Source: `master-script-en.md`, "References".*
+*Source: `full-lecture-notes-en.md`, "References".*
 
 ## **References**
 
@@ -288,7 +288,7 @@ Wooldridge, Michael, and Nicholas R. Jennings. “Intelligent Agents: Theory and
 
 Zhong, Hailin, and Shengxin Zhu. “AI Harness Engineering: A Runtime Substrate for Foundation Model Software Agents.” 2026. https://doi.org/10.48550/arXiv.2605.13357.
 
-*Source: `master-script-de.md`, chapter 10, templates A through E.*
+*Source: `full-lecture-notes-de.md`, chapter 10, templates A through E.*
 
 # 10\. Anhang: Vorlagen
 
@@ -476,7 +476,7 @@ last\_reviewed:
 
 \#\# Verantwortliche Entscheidung  
 
-*Source: `master-script-en.md`, appendix templates.*
+*Source: `full-lecture-notes-en.md`, appendix templates.*
 
 ## **Appendix: Knowledge Document Template**
 

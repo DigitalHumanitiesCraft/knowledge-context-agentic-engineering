@@ -3,7 +3,7 @@
 ***Lecture Notes***
 
 * Web Resource:  
-* [Slides](https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit?usp=sharing)
+* [Slides](https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit)
 
 Dr. Christopher Pollin, Digital Humanities Craft OG
 
@@ -17,7 +17,7 @@ The central argument is that effective work with frontier LLMs depends on more t
 
 These lecture notes accompany the corresponding slide deck and follow its dramaturgy. Each substantive slide is represented by a `##` section. The slides condense concepts, processes, examples and exercises visually, while the notes provide the compact explanation that would otherwise be given during the lecture. Concepts may be introduced orientingly and developed more fully at the point where they become methodologically relevant.
 
-The master version is framed around **knowledge work** rather than one disciplinary field. Research data workflows and digital scholarly editions remain central examples because they combine heterogeneous sources, structured data, modelling decisions, software, provenance and expert validation. The same engineering distinctions can also be applied to organisational knowledge, coding, strategy, controlling, administration and other information intensive forms of work.
+The full corpus is framed around **knowledge work** rather than one disciplinary field. Research data workflows and digital scholarly editions remain central examples because they combine heterogeneous sources, structured data, modelling decisions, software, provenance and expert validation. The same engineering distinctions can also be applied to organisational knowledge, coding, strategy, controlling, administration and other information intensive forms of work.
 
 ## **Applied Generative AI for Research Data Workflows**
 

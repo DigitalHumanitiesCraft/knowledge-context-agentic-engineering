@@ -7,20 +7,20 @@ created: 2026-08-20
 units: [M1, M2, M3, M4, M5, M6]
 canonical: false
 canonical-gate: operator confirmation of the module cut
-source-masters: [script/master-script-de.md, script/master-script-en.md]
+source-lecture-notes: [script/full-lecture-notes-de.md, script/full-lecture-notes-en.md]
 ---
 
 # Module 1 — Understanding Large Language Models
 
-> Draft cut of the master corpus. Every passage below is reproduced verbatim from a master
-> script; only the module heading, the unit headings and the provenance lines are added.
-> The masters stay authoritative until the operator confirms the cut. Coverage, discarded
+> Draft cut of the full corpus. Every passage below is reproduced verbatim from the Full
+> Lecture Notes; only the module heading, the unit headings and the provenance lines are added.
+> The Full Lecture Notes stay authoritative until the operator confirms the cut. Coverage, discarded
 > parallel versions and open questions are recorded in `script/COVERAGE.md`.
 
 
 ## Unit M1 — Applied Generative AI in Research Data Workflows
 
-*Source: `master-script-de.md`, Abstract and "Zu diesem Skriptum".*
+*Source: `full-lecture-notes-de.md`, Abstract and "Zu diesem Skriptum".*
 
 ## Abstract
 
@@ -36,7 +36,7 @@ Als durchgehendes Beispiel dient die Entwicklung eines kleinen Demonstrators fü
 
 Dieses Skriptum begleitet den gleichnamigen Foliensatz und folgt grundsätzlich dessen Dramaturgie. Die Folien verdichten Begriffe, Prozesse, Beispiele und Arbeitsaufträge visuell; die zugehörigen Kapitel erläutern die Argumentation, definieren zentrale Konzepte und dokumentieren die Hands-on-Übungen. Begriffe werden zunächst orientierend eingeführt und später an einer maßgeblichen Stelle vollständig ausgearbeitet. Wiederholungen erscheinen nur dort, wo sie für das Verständnis einer neuen Anwendung erforderlich sind. Quellen werden im Text durch Kurzbelege referenziert; vollständige Angaben stehen im Literaturverzeichnis. Ergänzende technische oder begriffliche Hinweise erscheinen in Fußnoten.
 
-*Source: `master-script-en.md`, "Applied Generative AI for Research Data Workflows".*
+*Source: `full-lecture-notes-en.md`, "Applied Generative AI for Research Data Workflows".*
 
 ## **Applied Generative AI for Research Data Workflows**
 
@@ -44,7 +44,7 @@ Dieses Skriptum begleitet den gleichnamigen Foliensatz und folgt grundsätzlich 
 
 Research data workflows provide a demanding field of application. Generative models can interpret and structure research material, transform data between representations, generate code for deterministic operations and operate inside AI harnesses that provide access to project files, tools and executable environments. Frontier models are particularly relevant because multimodality, reasoning, coding, tool use and agentic capabilities are increasingly combined within the same systems. This does not imply that frontier models are appropriate for every task. Smaller, specialised, local or open weight models may be more efficient, controllable or reproducible for particular purposes.
 
-*Source: `master-script-de.md`, sections 1.1 and 1.2.*
+*Source: `full-lecture-notes-de.md`, sections 1.1 and 1.2.*
 
 ## 1.1 Ausgangslage
 
@@ -72,7 +72,7 @@ Nehmen wir an, ein Agent soll für eine digitale Edition eine historische Seite 
 
 Diese Fragen betreffen unterschiedliche Ebenen. Ein Teil gehört zur Gestaltung der aktuellen Aufgabe, ein Teil zum persistenten Projektwissen, ein Teil zur Auswahl des aufgabenspezifischen Kontextes und ein Teil zur Kontrolle der mehrschrittigen Ausführung.
 
-*Source: `master-script-de.md`, sections 1.4 and 1.5.*
+*Source: `full-lecture-notes-de.md`, sections 1.4 and 1.5.*
 
 ## 1.4 Durchgehendes Beispiel: eine digitale Edition
 
@@ -108,7 +108,7 @@ Die Kapitel folgen einer einfachen Bewegung: vom einzelnen Prompt über den akti
 
 ## Unit M2 — Research Data, Representation and Provenance
 
-*Source: `master-script-en.md`, "Humanities Research Data Are Constructed through Scholarly Workflows".*
+*Source: `full-lecture-notes-en.md`, "Humanities Research Data Are Constructed through Scholarly Workflows".*
 
 ## **Humanities Research Data Are Constructed through Scholarly Workflows**
 
@@ -118,7 +118,7 @@ A facsimile, a transcription and a TEI representation of the same historical doc
 
 **AI ready data** are data structured and documented for effective use in AI and machine learning workflows. This includes machine readable formats and metadata, clear provenance and usage conditions, and transparent information about quality, uncertainty and potential biases.[^6] AI readiness complements broader research data principles such as FAIR rather than replacing them.[^7]
 
-*Source: `master-script-en.md`, "Two AI Supported Research Data Workflows & Epistemic Infrastructures".*
+*Source: `full-lecture-notes-en.md`, "Two AI Supported Research Data Workflows & Epistemic Infrastructures".*
 
 ## **Two AI Supported Research Data Workflows & Epistemic Infrastructures**
 
@@ -131,7 +131,7 @@ The surrounding project environment is therefore an **epistemic infrastructure**
 
 ## Unit M3 — The Current LLM Capability Landscape
 
-*Source: `master-script-en.md`, "Which Frontier Models and AI Technologies Do You Use?".*
+*Source: `full-lecture-notes-en.md`, "Which Frontier Models and AI Technologies Do You Use?".*
 
 ## **Which Frontier Models and AI Technologies Do You Use?**
 
@@ -144,7 +144,7 @@ AI harnesses form another layer of this landscape. Claude Code, Codex, Gemini CL
 
 ## Unit M4 — Asymmetric Amplification and the Capability Frontier
 
-*Source: `master-script-en.md`, "Frontier LLMs Asymmetrically Amplify Computational Research".*
+*Source: `full-lecture-notes-en.md`, "Frontier LLMs Asymmetrically Amplify Computational Research".*
 
 ## **Frontier LLMs Asymmetrically Amplify Computational Research**
 
@@ -157,7 +157,7 @@ I describe the practical effect as **asymmetric amplification**. Frontier LLMs p
 
 ## Unit M5 — What an LLM Is: Jagged Capability, Latent Program Space, Assistant Character
 
-*Source: `master-script-en.md`, "LLMs as Jagged Alien Intelligences" through "Embeddings and Contextual Representations".*
+*Source: `full-lecture-notes-en.md`, "LLMs as Jagged Alien Intelligences" through "Embeddings and Contextual Representations".*
 
 ## **LLMs as Jagged Alien “Intelligences”**
 
@@ -231,7 +231,7 @@ The familiar illustration in which `dog` and `cat` appear closer than `dog` and 
 
 A sentence written in Shakespearean English and a semantically similar sentence written in contemporary English can therefore condition different internal representations and activation patterns. This helps explain why wording matters without assuming that the model stores one fixed meaning for each token. Prompting provides a structured pattern of tokens that participates in selecting and combining learned computations.
 
-*Source: `master-script-en.md`, "Prompt Engineering: Finding Coordinates in a Latent Program Space" and the mechanistic-interpretability excursus.*
+*Source: `full-lecture-notes-en.md`, "Prompt Engineering: Finding Coordinates in a Latent Program Space" and the mechanistic-interpretability excursus.*
 
 ## **Prompt Engineering: Finding Coordinates in a Latent Program Space**
 
@@ -257,7 +257,7 @@ Related work by Sofroniew and colleagues identifies internal representations ass
 
 These findings do not provide a complete empirical map of a Latent Program Space. They do, however, support several elements of the theoretical account. Internal computation is structured rather than undifferentiated, different pathways can contribute to different behaviours, and interventions on representations can change outputs systematically. The Latent Program Space thesis generalises from such findings to an account of how learned computational possibilities may be addressed through prompts and context.
 
-*Source: `master-script-en.md`, "Training Builds and Shapes the Latent Program Space" through the assistant-character sections.*
+*Source: `full-lecture-notes-en.md`, "Training Builds and Shapes the Latent Program Space" through the assistant-character sections.*
 
 ## **Training Builds and Shapes the Latent Program Space**
 
@@ -288,7 +288,7 @@ Claude’s behaviour is therefore produced by the interaction between trained mo
 
 ## Unit M6 — The Four Engineering Layers
 
-*Source: `master-script-de.md`, section 1.3.*
+*Source: `full-lecture-notes-de.md`, section 1.3.*
 
 ## 1.3 Zentrale These
 
@@ -311,9 +311,9 @@ Das **AI Harness** vermittelt zwischen diesen Ebenen. Es stellt Werkzeuge und Zu
 
 ## Notes
 
-*Footnote identifiers and definitions are reproduced unchanged from their master.*
+*Footnote identifiers and definitions are reproduced unchanged from their source lecture notes.*
 
-### Notes carried from the English master
+### Notes carried from the English Full Lecture Notes
 
 [^3]: Christopher Pollin, *Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering*, review draft 0.9, 2026.
 
