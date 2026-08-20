@@ -15,13 +15,17 @@
   the maintaining agent rather than through client-side rendering. After any
   register change the cards here are updated in the same work step.
 
-  Covers live in assets/covers/<id>.png. Only two of them exist today, so every
-  cover sits in a slot that carries the 16:9 proportion and the tint ground on its
-  own; a missing file leaves a quiet plate instead of a broken image.
+  Covers live in assets/covers/<id>.png, one per registered instance plus full.png
+  for the corpus. The cover slot carries the proportion and the tint ground on its
+  own, so a missing file would leave a quiet plate instead of a broken image.
 
   Module badge contract, shared with the workshop subpages: <ul class="mods"> with
-  five items <li class="mod m1">1</li> through m5, `lite` for a module that is
-  only touched, `off` for a module that is not part of the instance.
+  five items <li class="mod m1">1</li> through m5, no modifier for a module taught
+  in depth, `half` for a compact treatment, `off` for a module that is not part of
+  the instance. Every item carries its reading as a title attribute. The per
+  instance states are derived from workshops/<id>/profile.md and from
+  knowledge/drafts/specialization-analysis.md and must match the badge row on the
+  matching subpage.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,9 +50,12 @@
     <nav class="site-nav" aria-label="Site">
       <ul>
         <li><a href="index.html#workshops">Workshops</a></li>
-        <li><a href="index.html#modules">Modules</a></li>
         <li><a href="preparation.html">Preparation</a></li>
-        <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
+        <li>
+          <a class="gh" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">
+            <svg class="gh-mark" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub</a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -60,145 +67,15 @@
   <section class="hero">
     <div class="wrap">
       <h1>Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
+      <p class="byline">
+        Christopher Pollin<span class="sep">&middot;</span><a href="https://dhcraft.org">Digital Humanities Craft</a>
+      </p>
       <p>
         A teaching line on working with frontier language models inside AI harnesses,
         for everyone doing computer-based, data-driven knowledge work. The corpus is
         maintained once in five modules, and every workshop below is a documented
         specialisation of it.
       </p>
-      <p class="repo">
-        <a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Repository</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ============ Motif: source to verified artifact ============ -->
-  <div class="wrap">
-    <div class="motif scroll-x">
-      <svg viewBox="0 0 1200 226" role="img" aria-labelledby="motif-t motif-d">
-        <title id="motif-t">From source to verified artifact</title>
-        <desc id="motif-d">A horizontal flow in six stages: source material, knowledge documents,
-          working context, agentic loop, verification, verified artifact. A dashed return path
-          leads from verification back to the working context when a check fails.</desc>
-
-        <!-- return path: a failed check re-enters the context -->
-        <text class="m-note" x="702" y="28">revise on failure</text>
-        <path class="m-return" d="M 906,102 C 906,52 866,36 806,36 L 598,36 C 538,36 498,52 498,100"/>
-        <polyline class="m-return-tip" points="492,92 498,100 504,92"/>
-
-        <!-- connectors -->
-        <g class="m-flow">
-          <path d="M 138,132 H 244"/><polyline points="238,128 244,132 238,136"/>
-          <path d="M 342,132 H 448"/><polyline points="442,128 448,132 442,136"/>
-          <path d="M 546,132 H 652"/><polyline points="646,128 652,132 646,136"/>
-          <path d="M 750,132 H 856"/><polyline points="850,128 856,132 850,136"/>
-          <path d="M 954,132 H 1060"/><polyline points="1054,128 1060,132 1054,136"/>
-        </g>
-
-        <!-- 1 source: a stack of raw material -->
-        <g transform="translate(90,132)">
-          <rect class="m-line" x="-30" y="-24" width="44" height="32" rx="2"/>
-          <rect class="m-line m-fill" x="-24" y="-16" width="44" height="32" rx="2"/>
-          <rect class="m-line m-fill" x="-18" y="-8" width="44" height="32" rx="2"/>
-          <path class="m-thin" d="M -10,2 H 14 M -10,10 H 6"/>
-        </g>
-
-        <!-- 2 knowledge documents: structured, curated -->
-        <g transform="translate(294,132)">
-          <path class="m-line" d="M -20,-26 H 4 L 16,-14 V 26 H -20 Z"/>
-          <path class="m-thin" d="M 4,-26 V -14 H 16"/>
-          <path class="m-thin" d="M -12,-4 H 8 M -12,4 H 8 M -12,12 H 0"/>
-        </g>
-
-        <!-- 3 working context: a bounded window with what was placed in it -->
-        <g transform="translate(498,132)">
-          <path class="m-line" d="M -28,-14 V -26 H -16 M 16,-26 H 28 V -14 M 28,14 V 26 H 16 M -16,26 H -28 V 14"/>
-          <path class="m-thin" d="M -14,-8 H 14 M -14,2 H 6 M -14,12 H 16"/>
-        </g>
-
-        <!-- 4 agentic loop: the only cyclic element -->
-        <g transform="translate(702,132)">
-          <path class="m-accent" d="M 15.6,-15.6 A 22,22 0 0,0 -15.6,-15.6"/>
-          <polyline class="m-accent" points="-13.5,-23.4 -15.6,-15.6 -7.8,-17.7"/>
-          <path class="m-accent" d="M -15.6,15.6 A 22,22 0 0,0 15.6,15.6"/>
-          <polyline class="m-accent" points="13.5,23.4 15.6,15.6 7.8,17.7"/>
-          <circle class="m-seal" cx="0" cy="0" r="2.6"/>
-        </g>
-
-        <!-- 5 verification: a gate the artifact has to pass -->
-        <g transform="translate(906,132)">
-          <path class="m-line" d="M 0,-28 L 28,0 L 0,28 L -28,0 Z"/>
-          <polyline class="m-accent" points="-9,0 -3,7 10,-8"/>
-        </g>
-
-        <!-- 6 verified artifact: document plus seal -->
-        <g transform="translate(1110,132)">
-          <path class="m-line" d="M -20,-26 H 4 L 16,-14 V 18 H -20 Z"/>
-          <path class="m-thin" d="M 4,-26 V -14 H 16"/>
-          <path class="m-thin" d="M -12,-4 H 8 M -12,4 H 2"/>
-          <circle class="m-seal" cx="16" cy="20" r="10"/>
-          <polyline class="m-check" points="11.5,20 15,23.5 20.5,16.5"/>
-        </g>
-
-        <!-- labels -->
-        <g class="m-label">
-          <text x="90" y="196">Source</text>
-          <text x="294" y="196">Knowledge documents</text>
-          <text x="498" y="196">Working context</text>
-          <text x="702" y="196">Agentic loop</text>
-          <text x="906" y="196">Verification</text>
-          <text x="1110" y="196">Verified artifact</text>
-        </g>
-      </svg>
-    </div>
-  </div>
-
-  <!-- ============ Modules ============ -->
-  <section class="section" id="modules">
-    <div class="wrap">
-      <h2 class="section-title">Modules</h2>
-
-      <ol class="module-list" role="list">
-        <li class="m1">
-          <span class="key"><span class="dot"></span>01</span>
-          <div>
-            <h3>Understanding Large Language Models</h3>
-            <p class="sub">Capability landscape, jagged capability, latent program space, the assistant character</p>
-          </div>
-        </li>
-        <li class="m2">
-          <span class="key"><span class="dot"></span>02</span>
-          <div>
-            <h3>Prompt Engineering</h3>
-            <p class="sub">The four-part prompt structure, the prompt as a bounded specification, practical principles</p>
-          </div>
-        </li>
-        <li class="m3">
-          <span class="key"><span class="dot"></span>03</span>
-          <div>
-            <h3>Knowledge and Context Engineering</h3>
-            <p class="sub">Knowledge documents, the working context, research data and provenance</p>
-          </div>
-        </li>
-        <li class="m4">
-          <span class="key"><span class="dot"></span>04</span>
-          <div>
-            <h3>Agentic Engineering</h3>
-            <p class="sub">Harness and agentic loop, Promptotyping, verification, hands-on case studies</p>
-          </div>
-        </li>
-        <li class="m5">
-          <span class="key"><span class="dot"></span>05</span>
-          <div>
-            <h3>Critical Perspectives and Governance</h3>
-            <p class="sub">Governance and decision rights, Research Mission Control, openness, societal implications</p>
-          </div>
-        </li>
-      </ol>
-
-      <div class="notes">
-        <p class="pending">Unit-level structure beneath the five modules in preparation</p>
-      </div>
     </div>
   </section>
 
@@ -214,10 +91,11 @@
         <div>
           <p>
             The corpus exists once, as the Full Slide Deck and the Full Lecture Notes, cut
-            into the five modules above and maintained in one place. A workshop is a recipe
-            over that corpus, meaning a documented selection of modules with its own depth,
-            case material, teaching language and hands-on work. What a given instance selects
-            is recorded in its profile and shown on its card as a module badge row.
+            into five modules and maintained in one place. A workshop is a recipe over that
+            corpus, meaning a documented selection of modules with its own depth, case
+            material, teaching language and hands-on work. What a given instance selects is
+            recorded in its profile and shown on its card as a module badge row, which the
+            key in the workshop section reads out.
           </p>
           <ul class="linklist" role="list">
             <li>
@@ -226,7 +104,11 @@
             </li>
             <li>
               <span class="pending">Full Lecture Notes in preparation</span>
-              <span class="what">German source text and reviewed English translation, held in the repository</span>
+              <span class="what">Two language versions held in the repository, German and English, with the English text in progress</span>
+            </li>
+            <li>
+              <span class="pending">Unit-level structure beneath the five modules in preparation</span>
+              <span class="what">The five modules are the maintained cut; the finer cut into units is a draft</span>
             </li>
           </ul>
         </div>
@@ -239,241 +121,283 @@
     <div class="wrap">
       <h2 class="section-title">Workshops</h2>
       <p class="section-lede">
-        Seven instances in chronological order, each with its own module selection.
-        The badge row states how a workshop uses the five modules.
+        Seven instances along the timeline, grouped by month, each with its own module
+        selection. The key states which colour belongs to which module and how a badge
+        reads.
       </p>
 
-      <ul class="mods-key" role="list">
-        <li><span class="mod m4">4</span> taught in full</li>
-        <li><span class="mod m4 lite">4</span> touched briefly</li>
-        <li><span class="mod m4 off">4</span> not part of this instance</li>
-      </ul>
+      <!-- Module key. Five module marks with their subject, then the three badge states. -->
+      <div class="mod-key">
+        <ul class="mk-list" role="list">
+          <li>
+            <p class="mk-head"><span class="mod m1" aria-hidden="true">1</span>Understanding Large Language Models</p>
+            <p class="mk-sub">Capability landscape, jagged capability, latent program space, the assistant character</p>
+          </li>
+          <li>
+            <p class="mk-head"><span class="mod m2" aria-hidden="true">2</span>Prompt Engineering</p>
+            <p class="mk-sub">The four-part prompt structure, the prompt as a bounded specification, practical principles</p>
+          </li>
+          <li>
+            <p class="mk-head"><span class="mod m3" aria-hidden="true">3</span>Knowledge and Context Engineering</p>
+            <p class="mk-sub">Knowledge documents, the working context, research data and provenance</p>
+          </li>
+          <li>
+            <p class="mk-head"><span class="mod m4" aria-hidden="true">4</span>Agentic Engineering</p>
+            <p class="mk-sub">Harness and agentic loop, Promptotyping, verification, hands-on case studies</p>
+          </li>
+          <li>
+            <p class="mk-head"><span class="mod m5" aria-hidden="true">5</span>Critical Perspectives and Governance</p>
+            <p class="mk-sub">Governance and decision rights, Research Mission Control, openness, societal implications</p>
+          </li>
+        </ul>
 
-      <!-- Chronological. Mirrors docs/data/workshops.json. -->
-      <ul class="cards" role="list">
+        <ul class="mk-states" role="list">
+          <li><span class="mod m2" aria-hidden="true">2</span>taught in depth</li>
+          <li><span class="mod m3 half" aria-hidden="true">3</span>compact</li>
+          <li><span class="mod m5 off" aria-hidden="true">5</span>not part of this instance</li>
+        </ul>
+      </div>
 
-        <!-- 2026-09-16-kug-m3gim -->
-        <li class="card">
-          <div class="card-cover">
-            <img src="assets/covers/2026-09-16-kug-m3gim.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <p class="stamp">16&ndash;17 September 2026<span class="sep">&middot;</span>two days</p>
-            <h3><a href="workshops/2026-09-16-kug-m3gim.html">Promptotyping und Generative AI</a></h3>
-            <p class="event">KUG Summer School (M3GIM), Kunstuniversit&auml;t Graz</p>
-            <p class="facts">
-              <span>Participants without an LLM or programming background</span>
-              <span>Teaching language German</span>
-            </p>
-            <p class="spec">
-              The introductory profile of the line, with what a language model is and how
-              prompting works on the first day and Promptotyping as the working method on the
-              second. Four hands-on units build on one archival holding of the host university,
-              from a cleaned person index through schema extraction and transcription to a small
-              map, all of it in the chat interface without an agent harness.
-            </p>
-            <ul class="mods" role="list" aria-label="Module coverage">
-              <li class="mod m1" title="Module 1 Understanding Large Language Models, taught in full">1</li>
-              <li class="mod m2" title="Module 2 Prompt Engineering, taught in full">2</li>
-              <li class="mod m3 lite" title="Module 3 Knowledge and Context Engineering, touched briefly">3</li>
-              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
-              <li class="mod m5 lite" title="Module 5 Critical Perspectives and Governance, touched briefly">5</li>
-            </ul>
-            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
-          </div>
-        </li>
+      <!--
+        Chronological, in month clusters. Mirrors docs/data/workshops.json.
+        The month you are teaching in carries `is-current` and renders in full
+        colour; every other month renders muted while staying a live link. Move
+        the class by hand when you update this page.
+      -->
 
-        <!-- 2026-09-25-clariah-at -->
-        <li class="card">
-          <div class="card-cover">
-            <img src="assets/covers/2026-09-25-clariah-at.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <p class="stamp">25 September 2026<span class="sep">&middot;</span>one day</p>
-            <h3><a href="workshops/2026-09-25-clariah-at.html">Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</a></h3>
-            <p class="event">CLARIAH-AT Summer School 2026: Machine Learning for Digital Scholarly Editions</p>
-            <p class="facts">
-              <span>Digital humanities students, BA and MA level</span>
-              <span>Teaching language English</span>
-            </p>
-            <p class="spec">
-              The single-day specialisation on research data workflows and digital scholarly
-              editions, with case material from two edition projects at the Zentralbibliothek
-              Z&uuml;rich and the Literaturarchiv Salzburg. Prompt engineering is the one module
-              with a participant exercise of its own, and the two hands-on units run from the
-              transcription of a difficult manuscript page to structured information against an
-              explicit schema.
-            </p>
-            <ul class="mods" role="list" aria-label="Module coverage">
-              <li class="mod m1" title="Module 1 Understanding Large Language Models, taught in full">1</li>
-              <li class="mod m2" title="Module 2 Prompt Engineering, taught in full">2</li>
-              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
-              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
-              <li class="mod m5 lite" title="Module 5 Critical Perspectives and Governance, touched briefly">5</li>
-            </ul>
-            <p class="card-foot">
-              <span class="links">
+      <section class="month is-current" aria-labelledby="month-09">
+        <h3 class="month-head" id="month-09">September 2026</h3>
+        <ul class="cards" role="list">
+
+          <!-- 2026-09-16-kug-m3gim -->
+          <li class="card">
+            <div class="card-cover">
+              <img src="assets/covers/2026-09-16-kug-m3gim.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+            </div>
+            <div class="card-meta">
+              <p>Summer school participants</p>
+              <p>Teaching language German</p>
+              <p><span class="pending">Slides and lecture notes in preparation</span></p>
+            </div>
+            <div class="card-body">
+              <p class="stamp">16&ndash;17 September 2026<span class="sep">&middot;</span>two days</p>
+              <h4 class="card-title"><a href="workshops/2026-09-16-kug-m3gim.html">Promptotyping und Generative AI</a></h4>
+              <p class="event">KUG Summer School (M3GIM), Kunstuniversit&auml;t Graz</p>
+              <p class="spec">
+                Two introductory days, from what a language model is and how prompting works
+                to Promptotyping as the working method. Four hands-on units build on one
+                archival holding of the host university, all of it in the chat interface
+                without an agent harness.
+              </p>
+              <ul class="mods" role="list" aria-label="Module coverage">
+                <li class="mod m1" title="Module 1 &middot; Understanding Large Language Models &middot; taught in depth">1</li>
+                <li class="mod m2 half" title="Module 2 &middot; Prompt Engineering &middot; compact">2</li>
+                <li class="mod m3 half" title="Module 3 &middot; Knowledge and Context Engineering &middot; compact">3</li>
+                <li class="mod m4" title="Module 4 &middot; Agentic Engineering &middot; taught in depth">4</li>
+                <li class="mod m5 half" title="Module 5 &middot; Critical Perspectives and Governance &middot; compact">5</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- 2026-09-25-clariah-at -->
+          <li class="card">
+            <div class="card-cover">
+              <img src="assets/covers/2026-09-25-clariah-at.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+            </div>
+            <div class="card-meta">
+              <p>Digital humanities students, BA and MA level</p>
+              <p>Teaching language English</p>
+              <p class="links">
                 <a href="https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit">Slide deck</a>
                 <a href="https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit">Lecture notes</a>
-              </span>
-            </p>
-          </div>
-        </li>
+              </p>
+            </div>
+            <div class="card-body">
+              <p class="stamp">25 September 2026<span class="sep">&middot;</span>one day</p>
+              <h4 class="card-title"><a href="workshops/2026-09-25-clariah-at.html">Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</a></h4>
+              <p class="event">CLARIAH-AT Summer School 2026: Machine Learning for Digital Scholarly Editions</p>
+              <p class="spec">
+                One day on research data workflows and digital scholarly editions, with case
+                material from two edition projects. Two hands-on units run from the
+                transcription of a difficult manuscript page to structured information
+                against an explicit schema.
+              </p>
+              <ul class="mods" role="list" aria-label="Module coverage">
+                <li class="mod m1" title="Module 1 &middot; Understanding Large Language Models &middot; taught in depth">1</li>
+                <li class="mod m2" title="Module 2 &middot; Prompt Engineering &middot; taught in depth">2</li>
+                <li class="mod m3" title="Module 3 &middot; Knowledge and Context Engineering &middot; taught in depth">3</li>
+                <li class="mod m4" title="Module 4 &middot; Agentic Engineering &middot; taught in depth">4</li>
+                <li class="mod m5" title="Module 5 &middot; Critical Perspectives and Governance &middot; taught in depth">5</li>
+              </ul>
+            </div>
+          </li>
 
-        <!-- 2026-10-05-hedit-heidelberg -->
-        <li class="card">
-          <div class="card-cover">
-            <img src="assets/covers/2026-10-05-hedit-heidelberg.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <p class="stamp">5&ndash;6 October 2026<span class="sep">&middot;</span>two days</p>
-            <h3><a href="workshops/2026-10-05-hedit-heidelberg.html">HEDIT KI-Workshop 2026</a></h3>
-            <p class="event">Forschungsstelle HEDIT, Universit&auml;t Heidelberg</p>
-            <p class="facts">
-              <span>Researchers from the editions projects of the research centre</span>
-              <span>Teaching language German</span>
-            </p>
-            <p class="spec">
-              Two days for an editions research centre, with TEI modelling, context engineering
-              and the knowledge base as steering instruments on the first day and agentic coding
-              as the central method. The second day is a two-part Promptotyping workshop on the
-              participants' own material, ending in a plenary presentation of the prototypes.
-            </p>
-            <ul class="mods" role="list" aria-label="Module coverage">
-              <li class="mod m1 lite" title="Module 1 Understanding Large Language Models, touched briefly">1</li>
-              <li class="mod m2 lite" title="Module 2 Prompt Engineering, touched briefly">2</li>
-              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
-              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
-              <li class="mod m5 off" title="Module 5 Critical Perspectives and Governance, not part of this instance">5</li>
-            </ul>
-            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
-          </div>
-        </li>
+        </ul>
+      </section>
 
-        <!-- 2026-10-08-fachschaft-mittelalterstudien-heidelberg -->
-        <li class="card">
-          <div class="card-cover">
-            <img src="assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <p class="stamp">8 October 2026<span class="sep">&middot;</span>one day</p>
-            <h3><a href="workshops/2026-10-08-fachschaft-mittelalterstudien-heidelberg.html">Knowledge, Context und Agentic Engineering f&uuml;r die Forschung</a></h3>
-            <p class="event">Fachschaft Mittelalterstudien, Universit&auml;t Heidelberg</p>
-            <p class="facts">
-              <span>Students and early-career researchers in medieval studies</span>
-              <span>Teaching language German</span>
-            </p>
-            <p class="spec">
-              One day worked inside a coding agent throughout, opening on language model and
-              agent fundamentals. Participants build structured project knowledge and then run
-              the arc from handwriting recognition on medieval charters through TEI markup and an
-              index of persons and organisations to a small static edition, checking a prepared
-              model transcription against the facsimile.
-            </p>
-            <ul class="mods" role="list" aria-label="Module coverage">
-              <li class="mod m1 lite" title="Module 1 Understanding Large Language Models, touched briefly">1</li>
-              <li class="mod m2 lite" title="Module 2 Prompt Engineering, touched briefly">2</li>
-              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
-              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
-              <li class="mod m5 lite" title="Module 5 Critical Perspectives and Governance, touched briefly">5</li>
-            </ul>
-            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
-          </div>
-        </li>
+      <section class="month" aria-labelledby="month-10">
+        <h3 class="month-head" id="month-10">October 2026</h3>
+        <ul class="cards" role="list">
 
-        <!-- 2026-10-15-gda-goettingen -->
-        <li class="card">
-          <div class="card-cover">
-            <img src="assets/covers/2026-10-15-gda-goettingen.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <p class="stamp">15 October 2026<span class="sep">&middot;</span>half day, hybrid</p>
-            <h3><a href="workshops/2026-10-15-gda-goettingen.html">Generative KI f&uuml;r Datenaufbereitung, Datenmigration und die Pflege von Interfaces</a></h3>
-            <p class="event">G&ouml;ttinger Digitale Akademie, Akademie der Wissenschaften zu G&ouml;ttingen</p>
-            <p class="facts">
-              <span>Staff of academy research projects and library guests</span>
-              <span>Teaching language German</span>
-            </p>
-            <p class="spec">
-              A hybrid half day on agent-supported preparation and migration of research data and
-              on the semi-automated maintenance of interfaces and endpoints. Three existing
-              project pipelines carry the case material, and the hands-on has participants build a
-              small knowledge base for their own data and commission a bounded task from an agent.
-            </p>
-            <ul class="mods" role="list" aria-label="Module coverage">
-              <li class="mod m1 lite" title="Module 1 Understanding Large Language Models, touched briefly">1</li>
-              <li class="mod m2 lite" title="Module 2 Prompt Engineering, touched briefly">2</li>
-              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
-              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
-              <li class="mod m5 lite" title="Module 5 Critical Perspectives and Governance, touched briefly">5</li>
-            </ul>
-            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
-          </div>
-        </li>
+          <!-- 2026-10-05-hedit-heidelberg -->
+          <li class="card">
+            <div class="card-cover">
+              <img src="assets/covers/2026-10-05-hedit-heidelberg.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+            </div>
+            <div class="card-meta">
+              <p>Researchers from the editions projects of the research centre</p>
+              <p>Teaching language German</p>
+              <p><span class="pending">Slides and lecture notes in preparation</span></p>
+            </div>
+            <div class="card-body">
+              <p class="stamp">5&ndash;6 October 2026<span class="sep">&middot;</span>two days</p>
+              <h4 class="card-title"><a href="workshops/2026-10-05-hedit-heidelberg.html">HEDIT KI-Workshop 2026</a></h4>
+              <p class="event">Forschungsstelle HEDIT, Universit&auml;t Heidelberg</p>
+              <p class="spec">
+                Two days for an editions research centre, with TEI modelling and context
+                engineering on the first day and agentic coding as the central method. The
+                second day is a two-part Promptotyping workshop on the participants' own
+                material.
+              </p>
+              <ul class="mods" role="list" aria-label="Module coverage">
+                <li class="mod m1" title="Module 1 &middot; Understanding Large Language Models &middot; taught in depth">1</li>
+                <li class="mod m2" title="Module 2 &middot; Prompt Engineering &middot; taught in depth">2</li>
+                <li class="mod m3" title="Module 3 &middot; Knowledge and Context Engineering &middot; taught in depth">3</li>
+                <li class="mod m4" title="Module 4 &middot; Agentic Engineering &middot; taught in depth">4</li>
+                <li class="mod m5 off" title="Module 5 &middot; Critical Perspectives and Governance &middot; not part of this instance">5</li>
+              </ul>
+            </div>
+          </li>
 
-        <!-- 2026-11-09-ufl -->
-        <li class="card">
-          <div class="card-cover">
-            <img src="assets/covers/2026-11-09-ufl.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <p class="stamp">9&ndash;10 November 2026<span class="sep">&middot;</span>three units of two hours</p>
-            <h3><a href="workshops/2026-11-09-ufl.html">Agentic-Engineering-Workshop</a></h3>
-            <p class="event">Uni for Life, Universit&auml;t Graz</p>
-            <p class="facts">
-              <span>Professionals from companies and institutions across disciplines</span>
-              <span>Teaching language German</span>
-            </p>
-            <p class="spec">
-              Three compact units for knowledge work beyond academia, with the emphasis on
-              steering agentic work. The first unit covers setup, terminal and permissions, the
-              second builds a knowledge base and defines human control points for document and
-              application work, and the third moves into light coding and small prototypes on a
-              synthetic institutional scenario.
-            </p>
-            <ul class="mods" role="list" aria-label="Module coverage">
-              <li class="mod m1 lite" title="Module 1 Understanding Large Language Models, touched briefly">1</li>
-              <li class="mod m2 lite" title="Module 2 Prompt Engineering, touched briefly">2</li>
-              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
-              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
-              <li class="mod m5 lite" title="Module 5 Critical Perspectives and Governance, touched briefly">5</li>
-            </ul>
-            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
-          </div>
-        </li>
+          <!-- 2026-10-08-fachschaft-mittelalterstudien-heidelberg -->
+          <li class="card">
+            <div class="card-cover">
+              <img src="assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+            </div>
+            <div class="card-meta">
+              <p>Students and early-career researchers in medieval studies</p>
+              <p>Teaching language German</p>
+              <p><span class="pending">Slides and lecture notes in preparation</span></p>
+            </div>
+            <div class="card-body">
+              <p class="stamp">8 October 2026<span class="sep">&middot;</span>one day</p>
+              <h4 class="card-title"><a href="workshops/2026-10-08-fachschaft-mittelalterstudien-heidelberg.html">Knowledge, Context und Agentic Engineering f&uuml;r die Forschung</a></h4>
+              <p class="event">Fachschaft Mittelalterstudien, Universit&auml;t Heidelberg</p>
+              <p class="spec">
+                One day inside a coding agent throughout, from handwriting recognition on
+                medieval charters through TEI markup to a small static edition. Participants
+                check a prepared model transcription against the facsimile.
+              </p>
+              <ul class="mods" role="list" aria-label="Module coverage">
+                <li class="mod m1" title="Module 1 &middot; Understanding Large Language Models &middot; taught in depth">1</li>
+                <li class="mod m2 half" title="Module 2 &middot; Prompt Engineering &middot; compact">2</li>
+                <li class="mod m3" title="Module 3 &middot; Knowledge and Context Engineering &middot; taught in depth">3</li>
+                <li class="mod m4" title="Module 4 &middot; Agentic Engineering &middot; taught in depth">4</li>
+                <li class="mod m5 half" title="Module 5 &middot; Critical Perspectives and Governance &middot; compact">5</li>
+              </ul>
+            </div>
+          </li>
 
-        <!-- 2026-11-30-vetmed-winter-school -->
-        <li class="card">
-          <div class="card-cover">
-            <img src="assets/covers/2026-11-30-vetmed-winter-school.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <p class="stamp">30 November &ndash; 4 December 2026<span class="sep">&middot;</span>five days</p>
-            <h3><a href="workshops/2026-11-30-vetmed-winter-school.html">VetMed Winter School</a></h3>
-            <p class="event">Veterin&auml;rmedizinische Universit&auml;t Wien</p>
-            <p class="facts">
-              <span>Administration and research staff</span>
-              <span>Teaching language German</span>
-            </p>
-            <p class="spec">
-              A five-day block week for staff without a coding background, and the fullest
-              derivation of the corpus among the registered instances. Every module is taught in
-              full, with an exercise each day and one application project from the participants'
-              own working area running through the week, from the chat interface through the
-              terminal to an agent harness with local models.
-            </p>
-            <ul class="mods" role="list" aria-label="Module coverage">
-              <li class="mod m1" title="Module 1 Understanding Large Language Models, taught in full">1</li>
-              <li class="mod m2" title="Module 2 Prompt Engineering, taught in full">2</li>
-              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
-              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
-              <li class="mod m5" title="Module 5 Critical Perspectives and Governance, taught in full">5</li>
-            </ul>
-            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
-          </div>
-        </li>
+          <!-- 2026-10-15-gda-goettingen -->
+          <li class="card">
+            <div class="card-cover">
+              <img src="assets/covers/2026-10-15-gda-goettingen.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+            </div>
+            <div class="card-meta">
+              <p>Staff of academy research projects and library guests</p>
+              <p>Teaching language German</p>
+              <p><span class="pending">Slides and lecture notes in preparation</span></p>
+            </div>
+            <div class="card-body">
+              <p class="stamp">15 October 2026<span class="sep">&middot;</span>half day, hybrid</p>
+              <h4 class="card-title"><a href="workshops/2026-10-15-gda-goettingen.html">Generative KI f&uuml;r Datenaufbereitung, Datenmigration und die Pflege von Interfaces</a></h4>
+              <p class="event">G&ouml;ttinger Digitale Akademie, Akademie der Wissenschaften zu G&ouml;ttingen</p>
+              <p class="spec">
+                A hybrid half day on agent-supported preparation and migration of research
+                data and on the maintenance of interfaces and endpoints. Three existing
+                project pipelines carry the case material, and participants build a small
+                knowledge base for their own data.
+              </p>
+              <ul class="mods" role="list" aria-label="Module coverage">
+                <li class="mod m1 half" title="Module 1 &middot; Understanding Large Language Models &middot; compact">1</li>
+                <li class="mod m2 half" title="Module 2 &middot; Prompt Engineering &middot; compact">2</li>
+                <li class="mod m3" title="Module 3 &middot; Knowledge and Context Engineering &middot; taught in depth">3</li>
+                <li class="mod m4" title="Module 4 &middot; Agentic Engineering &middot; taught in depth">4</li>
+                <li class="mod m5 half" title="Module 5 &middot; Critical Perspectives and Governance &middot; compact">5</li>
+              </ul>
+            </div>
+          </li>
 
-      </ul>
+        </ul>
+      </section>
+
+      <section class="month" aria-labelledby="month-11">
+        <h3 class="month-head" id="month-11">November 2026</h3>
+        <ul class="cards" role="list">
+
+          <!-- 2026-11-09-ufl -->
+          <li class="card">
+            <div class="card-cover">
+              <img src="assets/covers/2026-11-09-ufl.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+            </div>
+            <div class="card-meta">
+              <p>Professionals from companies and institutions across disciplines</p>
+              <p>Teaching language German</p>
+              <p><span class="pending">Slides and lecture notes in preparation</span></p>
+            </div>
+            <div class="card-body">
+              <p class="stamp">9&ndash;10 November 2026<span class="sep">&middot;</span>three units of two hours</p>
+              <h4 class="card-title"><a href="workshops/2026-11-09-ufl.html">Agentic-Engineering-Workshop</a></h4>
+              <p class="event">Uni for Life, Universit&auml;t Graz</p>
+              <p class="spec">
+                Three compact units for knowledge work beyond academia, with the emphasis on
+                steering agentic work in the terminal. The arc runs from setup and permissions
+                through a knowledge base with human control points to light coding on a
+                synthetic institutional scenario.
+              </p>
+              <ul class="mods" role="list" aria-label="Module coverage">
+                <li class="mod m1 half" title="Module 1 &middot; Understanding Large Language Models &middot; compact">1</li>
+                <li class="mod m2 half" title="Module 2 &middot; Prompt Engineering &middot; compact">2</li>
+                <li class="mod m3" title="Module 3 &middot; Knowledge and Context Engineering &middot; taught in depth">3</li>
+                <li class="mod m4" title="Module 4 &middot; Agentic Engineering &middot; taught in depth">4</li>
+                <li class="mod m5 half" title="Module 5 &middot; Critical Perspectives and Governance &middot; compact">5</li>
+              </ul>
+            </div>
+          </li>
+
+          <!-- 2026-11-30-vetmed-winter-school -->
+          <li class="card">
+            <div class="card-cover">
+              <img src="assets/covers/2026-11-30-vetmed-winter-school.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+            </div>
+            <div class="card-meta">
+              <p>Administration and research staff, without a coding background</p>
+              <p>Teaching language German</p>
+              <p><span class="pending">Slides and lecture notes in preparation</span></p>
+            </div>
+            <div class="card-body">
+              <p class="stamp">30 November &ndash; 4 December 2026<span class="sep">&middot;</span>five days</p>
+              <h4 class="card-title"><a href="workshops/2026-11-30-vetmed-winter-school.html">VetMed Winter School</a></h4>
+              <p class="event">Veterin&auml;rmedizinische Universit&auml;t Wien</p>
+              <p class="spec">
+                A five-day block week for staff without a coding background, and the fullest
+                derivation of the corpus among the registered instances. Every module is
+                taught in depth, with one application project from the participants' own
+                working area running through the week.
+              </p>
+              <ul class="mods" role="list" aria-label="Module coverage">
+                <li class="mod m1" title="Module 1 &middot; Understanding Large Language Models &middot; taught in depth">1</li>
+                <li class="mod m2" title="Module 2 &middot; Prompt Engineering &middot; taught in depth">2</li>
+                <li class="mod m3" title="Module 3 &middot; Knowledge and Context Engineering &middot; taught in depth">3</li>
+                <li class="mod m4" title="Module 4 &middot; Agentic Engineering &middot; taught in depth">4</li>
+                <li class="mod m5" title="Module 5 &middot; Critical Perspectives and Governance &middot; taught in depth">5</li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
     </div>
   </section>
 

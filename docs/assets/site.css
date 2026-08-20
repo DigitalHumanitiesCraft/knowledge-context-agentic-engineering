@@ -1,10 +1,20 @@
 /* ==========================================================================
    Knowledge, Context and Agentic Engineering — platform stylesheet
-   Shared by the start page and every workshop subpage. No build step.
+   Shared by the start page, the preparation page and every workshop subpage.
+   No build step, no JavaScript.
+
+   Order of this file
+     1  Tokens
+     2  Base
+     3  Layout primitives
+     4  Chrome, meaning header, navigation and footer
+     5  Components used on more than one page
+     6  Page sections
+     7  Narrow viewports and preferences
    ========================================================================== */
 
 /* ==========================================================================
-   TOKENS
+   1  TOKENS
    The only place where literal values live. Everything below consumes var().
    Contrast ratios are against --paper unless noted.
    ========================================================================== */
@@ -17,16 +27,16 @@
 
   /* --- Type scale ------------------------------------------------------ */
   --text-xs: 0.75rem;        /* uppercase micro labels */
-  --text-sm: 0.8125rem;      /* module keys, datestamps, sequence numbers */
-  --text-md: 0.875rem;       /* secondary lines, colophon */
-  --text-lg: 0.9375rem;      /* card meta, status labels, imprint, nav */
+  --text-sm: 0.8125rem;      /* module keys, datestamps, badge digits */
+  --text-md: 0.875rem;       /* secondary lines, card meta, colophon */
+  --text-lg: 0.9375rem;      /* status labels, imprint, nav */
   --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
   --text-title: 1.0625rem;   /* module heading */
-  --text-card: 1.125rem;     /* card heading */
+  --text-card: 1.0625rem;    /* card heading, sized for a half-width card */
   --text-lede: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
   --text-section: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
   --text-page: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);   /* subpage title */
-  --text-hero: clamp(2rem, 1.3rem + 3.2vw, 3.5rem);
+  --text-hero: clamp(1.875rem, 1.4rem + 2.1vw, 2.875rem);
 
   /* --- Spacing scale, 8px based ---------------------------------------- */
   --s1: 0.5rem;
@@ -38,7 +48,7 @@
   --s7: 7rem;
   /* Sections are separated by these gaps alone, no rules. Each has to stay
      clearly larger than any gap inside a section for the order to read. */
-  --gap-section: clamp(var(--s6), 9vw, var(--s7));
+  --gap-section: clamp(var(--s5), 7vw, var(--s6));
   --gap-block: clamp(var(--s5), 6vw, var(--s6));
 
   /* --- Ground and ink --------------------------------------------------- */
@@ -48,11 +58,11 @@
   --ink-2: #4A4A46;          /* 8.7:1  */
   --ink-3: #6C6C65;          /* 5.2:1 on paper, 4.8:1 on tint */
   --rule: #E4E4DE;           /* quiet object outline, decorative */
-  --rule-mid: #90908A;       /* 3.2:1, visible lines: motif flow, underlines */
+  --rule-mid: #90908A;       /* 3.2:1, visible lines and underlines */
 
   /* --- Accent ----------------------------------------------------------- */
   /* One turquoise, clears AA, so the same value carries interactive text and
-     the motif highlights without a second variant. */
+     the module mark of module one without a second variant. */
   --accent: #0A7E7C;         /* 4.8:1 */
 
   /* --- Identity palette, derived from the watercolor logo ---------------- */
@@ -65,9 +75,9 @@
   --c-violet: #8140B8;       /* 6.1:1 */
 
   /* --- Module identity --------------------------------------------------- */
-  /* One colour per module, binding for the module list and for the badge row
-     on every page. The paired *-ink value is the text colour that clears AA on
-     that fill, which is why the light fills carry ink and the dark ones paper. */
+  /* One colour per module, binding for the module key and for the badge row on
+     every page. The paired *-ink value is the text colour that clears AA on that
+     fill, which is why the light fills carry ink and the dark ones paper. */
   --m1: var(--accent);       /* Understanding Large Language Models   paper 4.8:1 */
   --m2: var(--c-orange);     /* Prompt Engineering                    ink   5.1:1 */
   --m3: var(--c-blue);       /* Knowledge and Context Engineering     ink   5.5:1 */
@@ -86,7 +96,7 @@
 }
 
 /* ==========================================================================
-   BASE
+   2  BASE
    ========================================================================== */
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -105,7 +115,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   margin: 0;
   font-weight: 600;
   line-height: 1.15;
@@ -132,8 +142,11 @@ a:hover { text-decoration-color: var(--accent); }
 
 img { max-width: 100%; height: auto; }
 
+/* Inline commands, file names and keystrokes. */
+code { font-family: var(--font-mono); font-size: 0.9em; }
+
 /* ==========================================================================
-   LAYOUT PRIMITIVES
+   3  LAYOUT PRIMITIVES
    ========================================================================== */
 .wrap {
   width: min(100% - 2 * var(--s3), var(--page));
@@ -160,35 +173,9 @@ img { max-width: 100%; height: auto; }
   overscroll-behavior-x: contain;
 }
 
-/* The one component for artefacts that do not exist yet. Micro gaps stay
-   em-relative so they track the type size. */
-.pending {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55em;
-  color: var(--ink-3);
-  font-size: var(--text-lg);
-}
-.pending::before {
-  content: "";
-  flex: none;
-  width: 7px;
-  height: 7px;
-  border: 1px solid var(--rule-mid);
-  border-radius: 50%;
-}
-
-/* Datestamp, the one place where the mono face carries editorial weight. */
-.stamp {
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 /* ==========================================================================
-   HEADER AND NAVIGATION
+   4  CHROME
+   Header, navigation and footer are identical on every page.
    ========================================================================== */
 .site-head > .wrap {
   display: flex;
@@ -214,6 +201,7 @@ img { max-width: 100%; height: auto; }
 .site-nav ul {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: var(--s3);
   padding: 0;
   list-style: none;
@@ -226,61 +214,201 @@ img { max-width: 100%; height: auto; }
 .site-nav a:hover,
 .site-nav a:focus-visible { color: var(--accent); }
 
-/* ==========================================================================
-   HERO
-   Three elements: title, one sentence, one link.
-   ========================================================================== */
-.hero { padding-block: clamp(var(--s5), 7vw, var(--s7)) var(--s5); }
-
-.hero h1 {
-  max-width: 20ch;
-  font-size: var(--text-hero);
+/* Current page in the site navigation. */
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.3em;
 }
 
-.hero p {
-  max-width: var(--measure);
+/* Repository link. The mark is inline SVG and takes its colour from the link,
+   so it follows the hover state of the nav item without a second rule. */
+.site-nav .gh {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.gh-mark {
+  flex: none;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.site-foot { padding-block: var(--gap-section) var(--s5); }
+
+.site-foot > .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s4) var(--s5);
+}
+
+.foot-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+.foot-brand img { width: clamp(112px, 13vw, 140px); }
+
+.imprint {
+  color: var(--ink-3);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+}
+.imprint .name { color: var(--ink); font-weight: 500; }
+.imprint .sep { padding-inline: 0.4em; color: var(--rule-mid); }
+
+.colophon {
+  color: var(--ink-3);
+  font-size: var(--text-md);
+  line-height: 1.9;
+  text-align: right;
+}
+
+/* ==========================================================================
+   5  COMPONENTS
+   ========================================================================== */
+
+/* --- Artefact state -------------------------------------------------------
+   The one component for artefacts that do not exist yet. Micro gaps stay
+   em-relative so they track the type size. */
+.pending {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  color: var(--ink-3);
+  font-size: var(--text-lg);
+}
+.pending::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--rule-mid);
+  border-radius: 50%;
+}
+
+/* --- Datestamp -----------------------------------------------------------
+   The one place where the mono face carries editorial weight. */
+.stamp {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* --- Module badge row -----------------------------------------------------
+   The module mark in its smallest form, shared by the start page and every
+   workshop subpage. Markup contract: <ul class="mods"> with five items
+   <li class="mod m1">1</li> through m5, in module order, each carrying a title
+   attribute that reads out module number, module name and state.
+
+   Three states, one per module and instance:
+     filled      the module is taught in depth
+     .half       compact treatment, a hard-stop gradient filling the lower half
+     .off        the module is not part of this instance
+
+   Legibility of the digit in the .half state. The digit takes near-black ink,
+   which clears AA over the paper half. Over the coloured lower half the ratio
+   drops as far as 3.0:1 for the violet of module four, so the digit is nudged
+   upward by the padding below it and only its lowest quarter crosses the fill
+   line. The state itself is never carried by the digit alone; the title
+   attribute states it, and the module key repeats the three states in words. */
+.mods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  padding: 0;
+  list-style: none;
+}
+
+.mod {
+  display: grid;
+  place-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1.5px solid var(--mc);      /* held on every state so sizes match */
+  border-radius: 50%;
+  background: var(--mc);
+  color: var(--mc-ink);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* The identity class travels with the module number, so a module reads in the
+   same colour in the key and in every badge row. */
+.mod.m1 { --mc: var(--m1); --mc-ink: var(--m1-ink); }
+.mod.m2 { --mc: var(--m2); --mc-ink: var(--m2-ink); }
+.mod.m3 { --mc: var(--m3); --mc-ink: var(--m3-ink); }
+.mod.m4 { --mc: var(--m4); --mc-ink: var(--m4-ink); }
+.mod.m5 { --mc: var(--m5); --mc-ink: var(--m5-ink); }
+
+.mod.half {
+  background: linear-gradient(to top, var(--mc) 0 50%, var(--paper) 50% 100%);
+  color: var(--ink);
+  padding-bottom: 0.3rem;
+}
+
+/* Declared last, so it wins over the fill of the module colour. */
+.mod.off {
+  background: transparent;
+  border-color: var(--rule);
+  color: var(--ink-3);
+  font-weight: 400;
+}
+
+/* --- Module key -----------------------------------------------------------
+   One block above the workshop cards, carrying both readings the badge row
+   needs: which colour belongs to which module, and what the three fill states
+   mean. Used once, on the start page. */
+.mod-key { margin-top: var(--s4); }
+
+.mk-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: var(--s2) var(--s4);
+  padding: 0;
+  list-style: none;
+}
+.mk-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--text-md);
+  font-weight: 500;
+  line-height: 1.3;
+}
+.mk-sub {
+  padding-left: 2.35rem;
+  color: var(--ink-3);
+  font-size: var(--text-sm);
+  line-height: 1.45;
+}
+
+.mk-states {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
   margin-top: var(--s3);
-  color: var(--ink-2);
-  font-size: var(--text-lede);
-  line-height: 1.55;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-3);
+  font-size: var(--text-md);
+}
+.mk-states li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
-.hero .repo {
-  margin-top: var(--s4);
-  font-size: var(--text-body);
-}
-
-/* ==========================================================================
-   MOTIF
-   Turquoise only. Two stroke weights for structure and detail, a third,
-   lighter tone for the flow between stations.
-   ========================================================================== */
-.motif { padding-block: var(--s3); }
-
-.motif svg {
-  display: block;
-  width: 100%;
-  min-width: 760px;   /* below this the labels stop being legible, so scroll */
-  height: auto;
-}
-
-.m-line        { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
-.m-line.m-fill { fill: var(--paper); }
-.m-thin        { fill: none; stroke: var(--ink-2); stroke-width: 1.1; stroke-linecap: round; }
-.m-flow        { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
-.m-accent      { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.m-return      { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-dasharray: 3 5; stroke-linecap: round; }
-.m-return-tip  { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
-.m-seal        { fill: var(--accent); }
-.m-check       { fill: none; stroke: var(--paper); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.m-label       { font-family: var(--font-ui); font-size: 13px; fill: var(--ink); text-anchor: middle; }
-.m-note        { font-family: var(--font-ui); font-size: 11.5px; fill: var(--ink-3); text-anchor: middle; letter-spacing: 0.06em; }
-
-/* ==========================================================================
-   MODULES
-   The single home of the identity palette. Each module carries one small mark,
-   turquoise plus the four logo colours, assigned by position.
-   ========================================================================== */
+/* --- Module list ----------------------------------------------------------
+   Numbered rows with a small mark, a heading and one quiet line. Used on the
+   preparation page for the three setup levels. */
 .module-list {
   display: grid;
   gap: var(--s3);
@@ -312,14 +440,6 @@ img { max-width: 100%; height: auto; }
   border-radius: 50%;
 }
 
-/* The identity class travels with the module number, so the list and the badge
-   row of a workshop card always show a module in the same colour. */
-.module-list li.m1 .dot { background: var(--m1); }
-.module-list li.m2 .dot { background: var(--m2); }
-.module-list li.m3 .dot { background: var(--m3); }
-.module-list li.m4 .dot { background: var(--m4); }
-.module-list li.m5 .dot { background: var(--m5); }
-
 .module-list h3 { font-size: var(--text-title); }
 
 .module-list .sub {
@@ -329,88 +449,16 @@ img { max-width: 100%; height: auto; }
   line-height: 1.5;
 }
 
-.notes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s1) var(--s4);
-  margin-top: var(--s4);
-}
+/* Level marks. The module marks take their fill from the identity palette,
+   which carries module identity, so the three preparation levels get their own
+   ramp from outline to filled. It reads as "more of the machine is involved". */
+.levels .dot { border: 1px solid var(--rule-mid); }
+.levels li:nth-child(2) .dot { border-color: var(--accent); }
+.levels li:nth-child(3) .dot { border-color: var(--accent); background: var(--accent); }
 
-/* ==========================================================================
-   MODULE BADGE ROW
-   The module mark in its smallest form, shared by the start page and every
-   workshop subpage. Markup contract: <ul class="mods"> with five items
-   <li class="mod m1">1</li> through m5, in module order. A filled badge means
-   the module is taught in full, `lite` means it is touched briefly, `off`
-   means it is not part of that instance.
-   ========================================================================== */
-.mods {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4em;
-  padding: 0;
-  list-style: none;
-}
-
-.mod {
-  display: grid;
-  place-content: center;
-  width: 1.85em;
-  height: 1.85em;
-  border: 1.5px solid transparent;   /* held on every state so sizes match */
-  border-radius: 50%;
-  font-size: var(--text-sm);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-}
-
-.mod.m1 { background: var(--m1); color: var(--m1-ink); }
-.mod.m2 { background: var(--m2); color: var(--m2-ink); }
-.mod.m3 { background: var(--m3); color: var(--m3-ink); }
-.mod.m4 { background: var(--m4); color: var(--m4-ink); }
-.mod.m5 { background: var(--m5); color: var(--m5-ink); }
-
-/* Touched briefly. The colour moves to the outline and the digit takes ink,
-   which keeps the light fills of the palette above AA as text. */
-.mod.lite { background: transparent; color: var(--ink); }
-.mod.m1.lite { border-color: var(--m1); }
-.mod.m2.lite { border-color: var(--m2); }
-.mod.m3.lite { border-color: var(--m3); }
-.mod.m4.lite { border-color: var(--m4); }
-.mod.m5.lite { border-color: var(--m5); }
-
-/* Not part of this instance. Declared last, so it wins over the fill. */
-.mod.off {
-  background: transparent;
-  border-color: var(--rule);
-  color: var(--ink-3);
-  font-weight: 400;
-}
-
-/* Legend for the three states, one row of samples with their reading. */
-.mods-key {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s1) var(--s3);
-  margin-top: var(--s3);
-  padding: 0;
-  list-style: none;
-  color: var(--ink-3);
-  font-size: var(--text-md);
-}
-.mods-key li {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
-
-/* ==========================================================================
-   MEDIA PLATE
-   Either the real title slide or a generated line-art plate in the motif
-   vocabulary, always in the same 16:9 proportion. Each plate highlights the
-   station that the workshop puts its weight on.
-   ========================================================================== */
+/* --- Media plate ----------------------------------------------------------
+   A cover image in the 16:9 proportion of the source files, on the tint ground
+   so a missing file leaves a quiet plate instead of a broken image. */
 .plate {
   display: block;
   width: 100%;
@@ -419,32 +467,243 @@ img { max-width: 100%; height: auto; }
   background: var(--tint);
 }
 
-.pl-line { fill: none; stroke: var(--rule-mid); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.pl-flow { fill: none; stroke: var(--rule-mid); stroke-width: 1; stroke-linecap: round; }
-.pl-arc  { fill: none; stroke: var(--rule-mid); stroke-width: 1; stroke-dasharray: 3 6; stroke-linecap: round; }
-.pl-fill { fill: var(--rule-mid); }
-.pl-occ  { fill: var(--tint); }   /* occludes the shape behind it, so a stack reads as a stack */
-.pl-hi .pl-line { stroke: var(--accent); stroke-width: 2.1; }
-.pl-hi .pl-fill { fill: var(--accent); }
-.pl-mark { fill: var(--accent); }
+/* --- Link rows ------------------------------------------------------------
+   Rows with an explicit state, so a missing artefact never becomes a dead
+   link. */
+.linklist {
+  display: grid;
+  gap: var(--s2);
+  max-width: var(--measure);
+  margin-top: var(--s3);
+  padding: 0;
+  list-style: none;
+}
+.linklist li { font-size: var(--text-lg); }
+.linklist .what { display: block; color: var(--ink-3); font-size: var(--text-md); }
+
+/* --- Material bundle ------------------------------------------------------
+   A strip of links with a label, used for the on-page navigation of the
+   preparation page. */
+.bundle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s1) var(--s3);
+  margin-top: var(--s3);
+  padding: var(--s2) var(--s3);
+  border-radius: var(--radius);
+  background: var(--tint);
+  font-size: var(--text-lg);
+}
+.bundle .label {
+  flex: none;
+  min-width: 7em;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.bundle .items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s1) var(--s2);
+}
+.bundle .sep { color: var(--rule-mid); }
+
+/* --- Command and prompt plate --------------------------------------------- */
+.prompt {
+  max-width: var(--measure);
+  margin: var(--s3) 0 0;
+  padding: var(--s3);
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--tint);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+/* Command block. Reuses the plate but keeps each command on one line and
+   scrolls it, because a wrapped shell command reads as two commands. */
+.cmd { margin-top: var(--s2); white-space: pre; }
+.cmd code { font-size: 1em; }
+
+/* Platform-to-command pairs. */
+.cmds { max-width: var(--measure); margin-top: var(--s3); }
+.cmds > div + div { margin-top: var(--s3); }
+.cmds dt { color: var(--ink-3); font-size: var(--text-md); }
+.cmds dd { margin: 0; }
+.cmds .cmd { margin-top: var(--s1); }
+
+/* --- Numbered steps -------------------------------------------------------
+   The one-column form with real list semantics, with room for a command block
+   inside a step. */
+.steps {
+  max-width: var(--measure);
+  margin-top: var(--s3);
+  padding-left: 1.7em;
+  color: var(--ink-2);
+}
+.steps > li + li { margin-top: var(--s2); }
+.steps li::marker { color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-sm); }
+.steps .cmd, .steps .cmds { max-width: none; }
+
+/* --- Taught sequence ------------------------------------------------------
+   Two columns of numbered steps. The workshop material fixes no timings, so
+   the list carries order without any clock. */
+.seq {
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
+  counter-reset: seq;
+  columns: 2;
+  column-gap: var(--s5);
+}
+.seq li {
+  display: grid;
+  grid-template-columns: 2.6em 1fr;
+  align-items: baseline;
+  padding-block: 0.35em;
+  break-inside: avoid;
+  font-size: var(--text-lg);
+  line-height: 1.4;
+}
+.seq li::before {
+  counter-increment: seq;
+  content: counter(seq, decimal-leading-zero);
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+.seq .is-handson { color: var(--accent); font-weight: 500; }
+
+/* --- Table ----------------------------------------------------------------
+   The min-width keeps the columns legible and hands narrow viewports to the
+   .scroll-x wrapper. */
+.table {
+  min-width: 46rem;
+  width: 100%;
+  margin-top: var(--s3);
+  border-collapse: collapse;
+  font-size: var(--text-lg);
+}
+.table th,
+.table td {
+  padding: var(--s2) var(--s3) var(--s2) 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+.table th {
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.table td { color: var(--ink-2); }
+/* Row headers carry a workshop name, so they drop the column-header treatment. */
+.table tbody th {
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.table .lvl { color: var(--ink); font-family: var(--font-mono); font-size: var(--text-md); white-space: nowrap; }
 
 /* ==========================================================================
-   WORKSHOP CARDS
-   Horizontal: the cover sits on the left, a wide information panel on the
-   right carries date and extent, event, audience, teaching language, what the
-   instance specialises on, the module badge row and the link to its subpage.
+   6  PAGE SECTIONS
    ========================================================================== */
+
+/* --- Hero, start page -----------------------------------------------------
+   Title, byline, one paragraph. Kept tight so the workshop cards come into
+   view early. */
+.hero { padding-block: var(--s5) var(--s4); }
+
+.hero h1 {
+  max-width: 24ch;
+  font-size: var(--text-hero);
+}
+
+.byline {
+  margin-top: var(--s2);
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  letter-spacing: 0.04em;
+}
+.byline .sep { padding-inline: 0.45em; color: var(--rule-mid); }
+.byline a { color: var(--ink-2); text-decoration-color: var(--rule-mid); }
+.byline a:hover { color: var(--accent); }
+
+.hero p:not(.byline) {
+  max-width: var(--measure);
+  margin-top: var(--s3);
+  color: var(--ink-2);
+  font-size: var(--text-lede);
+  line-height: 1.55;
+}
+
+/* --- Corpus block, start page ---------------------------------------------
+   The deck plate stands beside the recipe statement and the corpus artefacts. */
+.corpus {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: var(--s4) var(--s5);
+  margin-top: var(--s4);
+}
+.corpus p { max-width: var(--measure); color: var(--ink-2); }
+.corpus .linklist { margin-top: var(--s3); }
+
+/* --- Month clusters, start page -------------------------------------------
+   The workshops run along a timeline, so the cards sit in month groups. The
+   month carrying `is-current` renders in full colour, every other month renders
+   muted. The state is editorial and set by hand in the markup. */
+.month + .month { margin-top: var(--s5); }
+
+.month-head {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.month-head::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* --- Workshop cards, start page -------------------------------------------
+   Two per row on wide viewports. Cover on top, the quiet meta facts directly
+   under it, then the editorial panel. */
 .cards {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--s3);
-  margin-top: var(--s4);
+  margin-top: var(--s3);
   padding: 0;
   list-style: none;
 }
 
 .card {
-  display: grid;
-  grid-template-columns: minmax(0, 310px) minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   overflow: hidden;
@@ -453,10 +712,12 @@ img { max-width: 100%; height: auto; }
 .card:hover { border-color: var(--accent); }
 .card:focus-within { border-color: var(--accent); }
 
-/* The cover slot holds proportion and ground on its own, so an id whose PNG
-   has not been produced yet leaves a quiet plate instead of a broken image. */
+/* The slot holds proportion and ground on its own, so an id whose PNG has not
+   been produced yet leaves a quiet plate instead of a broken image. The slot is
+   a little wider than the 16:9 source, so object-fit crops the upper band that
+   every cover keeps empty by design and the motif sits centred at card size. */
 .card-cover {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 1;
   background: var(--tint);
 }
 .card-cover img {
@@ -464,64 +725,72 @@ img { max-width: 100%; height: auto; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 100%;
+}
+
+.card-meta {
+  padding: var(--s2) var(--s3) 0;
+  color: var(--ink-3);
+  font-size: var(--text-md);
+  line-height: 1.5;
+}
+.card-meta p + p { margin-top: 0.2em; }
+.card-meta .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s2);
 }
 
 .card-body {
   display: flex;
   flex-direction: column;
   gap: var(--s2);
-  padding: var(--s3);
+  padding: var(--s2) var(--s3) var(--s3);
 }
 
-.card h3 { font-size: var(--text-card); }
+.card-title { font-size: var(--text-card); }
 /* The title is the link to the subpage. The arrow carries the affordance, so
    the underline stays off until hover and a two-line title reads as a title. */
-.card h3 a { color: inherit; text-decoration: none; }
-.card h3 a:hover,
-.card h3 a:focus-visible {
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover,
+.card-title a:focus-visible {
   color: var(--accent);
   text-decoration: underline;
   text-decoration-color: var(--accent);
 }
-.card h3 a::after {
+.card-title a::after {
   content: "\2192";
   display: inline-block;
   margin-left: 0.3em;
   color: var(--accent);
   transition: transform 140ms ease;
 }
-.card:hover h3 a::after { transform: translateX(3px); }
+.card:hover .card-title a::after { transform: translateX(3px); }
 
-.card .event { color: var(--ink-2); font-size: var(--text-lg); }
-.card .facts { color: var(--ink-3); font-size: var(--text-md); line-height: 1.5; }
-.card .facts span { display: block; }
+.card .event { color: var(--ink-2); font-size: var(--text-md); }
 .card .spec {
-  max-width: 66ch;
   color: var(--ink-2);
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   line-height: 1.55;
 }
 .card .stamp .sep { padding-inline: 0.4em; color: var(--rule-mid); }
+/* The badge row is the last element of every card, so the rows align across a
+   grid row whatever the length of the panel above them. */
+.card .mods { margin-top: auto; padding-top: var(--s1); }
 
-.card-foot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--s1) var(--s2);
-  margin-top: auto;
-  padding-top: var(--s2);
-  font-size: var(--text-lg);
-}
-.card-foot .links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s1) var(--s2);
-}
+/* Every month except the current one. The muting is visual, each card stays a
+   live link, and the cover returns to full colour under the pointer. */
+.month:not(.is-current) .card-cover img { filter: saturate(0.2) opacity(0.62); }
+.month:not(.is-current) .card:hover .card-cover img,
+.month:not(.is-current) .card:focus-within .card-cover img { filter: none; }
+.month:not(.is-current) .card-title a { color: var(--ink-2); }
+.month:not(.is-current) .card-title a:hover,
+.month:not(.is-current) .card-title a:focus-visible { color: var(--accent); }
+.month:not(.is-current) .mod { opacity: 0.55; }
+.month:not(.is-current) .card:hover .mod,
+.month:not(.is-current) .card:focus-within .mod { opacity: 1; }
 
-/* ==========================================================================
-   WORKSHOP SUBPAGE
-   ========================================================================== */
+/* --- Workshop subpage ----------------------------------------------------- */
 .backlink {
   display: inline-block;
   margin-top: var(--s5);
@@ -557,180 +826,29 @@ img { max-width: 100%; height: auto; }
 }
 .page-head .facts span { display: block; }
 
-.block { padding-top: var(--gap-block); }
+.block {
+  padding-top: var(--gap-block);
+  scroll-margin-top: var(--s4);
+}
 .block h2 { font-size: var(--text-section); }
+.block h3 { margin-top: var(--s4); font-size: var(--text-title); }
 .block > p,
 .block > .prose {
   max-width: var(--measure);
   margin-top: var(--s3);
   color: var(--ink-2);
 }
-
-/* Taught sequence. The script fixes no timings, so the list carries order
-   without any clock. */
-.seq {
-  margin-top: var(--s4);
-  padding: 0;
-  list-style: none;
-  counter-reset: seq;
-  columns: 2;
-  column-gap: var(--s5);
-}
-.seq li {
-  display: grid;
-  grid-template-columns: 2.6em 1fr;
-  align-items: baseline;
-  padding-block: 0.35em;
-  break-inside: avoid;
-  font-size: var(--text-lg);
-  line-height: 1.4;
-}
-.seq li::before {
-  counter-increment: seq;
-  content: counter(seq, decimal-leading-zero);
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-}
-.seq .is-handson { color: var(--accent); font-weight: 500; }
-
-/* Link rows with an explicit state, so a missing artefact never becomes a
-   dead link. */
-.linklist {
-  display: grid;
-  gap: var(--s2);
-  max-width: var(--measure);
-  margin-top: var(--s3);
-  padding: 0;
-  list-style: none;
-}
-.linklist li { font-size: var(--text-lg); }
-.linklist .what { display: block; color: var(--ink-3); font-size: var(--text-md); }
-
-/* Material bundle. The same strip repeats in every block of a workshop page, so
-   an instructor finds the right link at a glance while teaching. Artefacts that
-   do not exist yet appear here as a state, never as a dead link. */
-.bundle {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--s1) var(--s3);
-  margin-top: var(--s3);
-  padding: var(--s2) var(--s3);
-  border-radius: var(--radius);
-  background: var(--tint);
-  font-size: var(--text-lg);
-}
-.bundle .label {
-  flex: none;
-  min-width: 7em;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.bundle .items {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--s1) var(--s2);
-}
-.bundle .sep { color: var(--rule-mid); }
-
-/* Verbatim passages from the workshop script. */
-.excerpt {
-  max-width: var(--measure);
-  margin: var(--s3) 0 0;
-  padding-left: var(--s3);
-  border-left: 2px solid var(--accent);
-  color: var(--ink-2);
-}
-.excerpt p + p { margin-top: var(--s2); }
-.excerpt cite {
-  display: block;
-  margin-top: var(--s2);
-  color: var(--ink-3);
-  font-size: var(--text-md);
-  font-style: normal;
-}
-
-.prompt {
-  max-width: var(--measure);
-  margin: var(--s3) 0 0;
-  padding: var(--s3);
-  border: 1px solid var(--rule);
-  border-left: 2px solid var(--accent);
-  border-radius: var(--radius);
-  background: var(--tint);
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: var(--text-md);
-  line-height: 1.7;
-  white-space: pre-wrap;
-  overflow-x: auto;
-}
+/* Section eyebrow, stating which levels a section applies to. */
+.block > .stamp { margin-top: 0; color: var(--ink-3); }
+.block > .stamp + h2 { margin-top: var(--s1); }
 
 /* ==========================================================================
-   START PAGE ONE-OFF
-   The corpus block, where the deck plate stands beside the recipe statement
-   and the two corpus artefacts. Used once, on index.html.
-   ========================================================================== */
-.corpus {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  align-items: start;
-  gap: var(--s4) var(--s5);
-  margin-top: var(--s4);
-}
-.corpus p { max-width: var(--measure); color: var(--ink-2); }
-.corpus .linklist { margin-top: var(--s3); }
-
-/* ==========================================================================
-   FOOTER
-   Same ground as the page, separated by space alone. The logo sits here as
-   the source of the identity palette.
-   ========================================================================== */
-.site-foot { padding-block: var(--gap-section) var(--s5); }
-
-.site-foot > .wrap {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--s4) var(--s5);
-}
-
-.foot-brand {
-  display: flex;
-  align-items: center;
-  gap: var(--s3);
-}
-.foot-brand img { width: clamp(112px, 13vw, 140px); }
-
-.imprint {
-  color: var(--ink-3);
-  font-size: var(--text-lg);
-  line-height: 1.7;
-}
-.imprint .name { color: var(--ink); font-weight: 500; }
-.imprint .sep { padding-inline: 0.4em; color: var(--rule-mid); }
-
-.colophon {
-  color: var(--ink-3);
-  font-size: var(--text-md);
-  line-height: 1.9;
-  text-align: right;
-}
-
-/* ==========================================================================
-   NARROW VIEWPORTS AND PREFERENCES
+   7  NARROW VIEWPORTS AND PREFERENCES
    ========================================================================== */
 @media (max-width: 860px) {
   .page-head { grid-template-columns: 1fr; gap: var(--s4); }
   .seq { columns: 1; }
-  /* The cover moves above the panel, keeping its proportion. */
-  .card { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
   .corpus { grid-template-columns: 1fr; gap: var(--s4); }
 }
 
