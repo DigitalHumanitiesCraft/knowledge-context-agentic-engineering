@@ -32,7 +32,7 @@ Repo founding (skeleton, register, knowledge folder) is complete (2026-08-20). T
 
 | Step | Content | State |
 | --- | --- | --- |
-| B1 | Module cut proposal from the German master script | proposal delivered (`drafts/module-map.md`), operator confirmation open |
+| B1 | Module cut of the master script | top level set by the operator, five modules (journal 2026-08-20); fine cut beneath them proposed in `drafts/module-map.md`, confirmation open |
 | B2 | Migrate the master script into `script/` as modules (DE source) after the operator confirms the cut | open |
 | B3 | English module versions by agent translation with operator review | open |
 | B4 | Migrate the master slide texts into `slides/`, aligned with the module cut | open |

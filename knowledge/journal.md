@@ -18,6 +18,10 @@ generated-with: Claude Code (Claude Fable 5)
 
 Chronicle of decisions, milestones and workshop deliveries, newest first. Public document; the privacy rule in `governance.md` applies.
 
+## 2026-08-20 — Top-level module structure set
+
+The operator set the top-level structure of the master: five modules, Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, and a fifth module for the critical, societal and governance level (English wording proposed as Critical Perspectives and Governance, confirmation open). The finer cut proposed in `drafts/module-map.md` continues as units beneath these five; the assignment of Promptotyping, verification and the hands-on case studies to Agentic Engineering is a working proposal until confirmed.
+
 ## 2026-08-20 — Design decisions on the first prototypes
 
 The operator reviewed the start-page prototype: direction approved, Space Grotesk chosen as the platform typeface, text hierarchy reduced to at most two levels per section, colours converged to a single turquoise accent on one consistent paper-white ground. The second prototype (`docs/drafts/design-draft-2.html`) implements this and already carries real data, the proposed module structure and the workshop register entries. The workshop-subpage example awaits the operator's reaction.
