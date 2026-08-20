@@ -17,27 +17,21 @@ related: [project.md, specification.md]
 
 # Build Plan
 
-Repo founding (skeleton, register, knowledge folder) is complete (2026-08-20). Two tracks now run in parallel; on conflicts the CLARIAH date (2026-09-25) wins. The content work list against the vault knowledge base (master alignment, atom gaps, drift decisions) is held by the vault document *Verknüpfungsanalyse CLARIAH-AT-Skriptum und Vault-Wissensbestand*; this plan holds the repo side.
+Repo founding, the English switch and four design iterations are complete (2026-08-20). The build now runs as work packages, each delegated to Opus subagents and coordinated by the orchestrator; a package counts as done only after verification against the real file state. On conflicts the CLARIAH date (2026-09-25) wins. The content work list against the vault knowledge base (master alignment, atom gaps, drift decisions) is held by the vault document *Verknüpfungsanalyse CLARIAH-AT-Skriptum und Vault-Wissensbestand*; this plan holds the repo side.
 
-## Track A — CLARIAH and platform
+## Work packages
 
-| Step | Content | State |
-| --- | --- | --- |
-| A1 | CLARIAH profile in `workshops/clariah-at-2026/` with the lecture notes as material | open |
-| A2 | Design prototypes (start page, example workshop subpage) for the operator's motif, font and page-structure decisions | in progress (agents) |
-| A3 | Build the platform after the design decision: start page plus workshop subpages, driven by the register | open |
-| A4 | Activate GitHub Pages, check rendering and links | open |
+| WP | Content | Depends on | State |
+| --- | --- | --- | --- |
+| 1 | Content intake: move the authoritative operator files (current master script WIP, final CLARIAH workshop script, full-slidedeck text, PPTX export, cover-candidate PNGs) from the downloads into their repo locations, following the two triage verdicts in `drafts/` | triage drafts | triage in progress |
+| 2 | Master modularisation: consolidate the current master script WIP with the vault Skriptum into the five modules (units beneath per `drafts/module-map.md`); German source and reviewed English per the language pipeline | WP1; operator: fine-cut confirmation | open |
+| 3 | CLARIAH workshop package: profile (recipe over the master), final workshop script, hands-on links to the zbz package, PPTX per taught state | WP1 | open |
+| 4 | Further workshop profiles: KUG/M3GIM and Uni for Life as thin "in preparation" profiles; VetMedAI if the operator registers it | operator: VetMedAI decision | open |
+| 5 | Platform: promote the approved design to `docs/index.html`, build the workshop subpages in the approved six-block structure, integrate the covers, keep the pages in sync with the registry `docs/data/workshops.json` | operator: design and subpage approval; WP1, WP3 | open |
+| 6 | Knowledge-base completion: `specification.md` rewritten in English with all decisions; `terms.md` filled with English canonical wording, German equivalents and the literature anchors from `drafts/term-references.md` | operator: drift decisions | open |
+| 7 | Vault re-pointing: the vault master documents become references to this repo; Project Overview updated | WP2 | open |
+| 8 | Publication: LICENSE file (CC BY 4.0 for texts), GitHub Pages activation, link and rendering verification | WP5; operator gates | open |
 
-## Track B — Master corpus
+## Open operator gates
 
-| Step | Content | State |
-| --- | --- | --- |
-| B1 | Module cut of the master script | top level set by the operator, five modules (journal 2026-08-20); fine cut beneath them proposed in `drafts/module-map.md`, confirmation open |
-| B2 | Migrate the master script into `script/` as modules (DE source) after the operator confirms the cut | open |
-| B3 | English module versions by agent translation with operator review | open |
-| B4 | Migrate the master slide texts into `slides/`, aligned with the module cut | open |
-| B5 | Fill `terms.md` after the drift decisions, then write back into script, slides and vault atoms | literature draft in progress |
-
-Closing steps after both tracks: re-point the vault (source-of-truth tables, Project Overview, Repo-Verzeichnis; the vault master documents become references) and add the CC BY license statement to the repo.
-
-Operator deliveries when available: title-slide PNGs per workshop (16:9), PPTX exports of the existing decks.
+Design promotion, subpage structure, VetMedAI registration, name of the fifth module, drift decisions on term wording, Pages activation, git tags per taught workshop state.

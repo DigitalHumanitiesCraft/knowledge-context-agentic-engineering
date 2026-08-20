@@ -25,12 +25,12 @@
       "title": "Knowledge, Context and Agentic Engineering for Research Data Workflows & Digital Editions",
       "event": "CLARIAH-AT Summer School 2026: Machine Learning for Digital Scholarly Editions",
       "audience": "digital humanities students (BA/MA level)",
-      "focus": "research data workflows, digital scholarly editions, Hersch hands-on",
+      "focus": "research data workflows, digital scholarly editions, Zweig hands-on",
       "language": "en",
       "status": "planned",
       "slides": "https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit",
       "script": "https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit",
-      "cover": null
+      "cover": "assets/covers/2026-09-25-clariah-at.png"
     },
     {
       "id": "2026-11-09-ufl",
@@ -39,6 +39,19 @@
       "event": "Uni for Life, Universität Graz",
       "audience": "professionals from companies and institutions across disciplines",
       "focus": "extended two-day variant for knowledge work beyond academia",
+      "language": "de",
+      "status": "planned",
+      "slides": null,
+      "script": null,
+      "cover": null
+    },
+    {
+      "id": "2026-11-30-vetmed-winter-school",
+      "dates": "2026-11-30/2026-12-04",
+      "title": "VetMed Winter School",
+      "event": "Veterinärmedizinische Universität Wien",
+      "audience": "administration and research staff",
+      "focus": "five-day extended derivation of the full master, follow-up format to the VetMedAI programme",
       "language": "de",
       "status": "planned",
       "slides": null,

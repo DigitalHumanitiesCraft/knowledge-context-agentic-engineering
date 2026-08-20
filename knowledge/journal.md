@@ -18,6 +18,12 @@ generated-with: Claude Code (Claude Fable 5)
 
 Chronicle of decisions, milestones and workshop deliveries, newest first. Public document; the privacy rule in `governance.md` applies.
 
+## 2026-08-20 — Design approved, register extended, intake prepared
+
+Operator decisions: design iteration 4 is approved and promoted to `docs/index.html`; the six-block workshop-subpage structure is confirmed; the fifth module is named Critical Perspectives and Governance; the VetMed Winter School (2026-11-30 to 2026-12-04, Veterinärmedizinische Universität Wien, five-day extended derivation of the full master) enters the register, its display title is provisional until the operator supplies the final one.
+
+The operator delivered fresh exports to the downloads folder and named the authoritative files: the current master script (work in progress) and the final CLARIAH workshop script. Two agent triage reports in `drafts/` map all downloads to repo targets; the CLARIAH title slide became the interim cover (960 px, re-export at 1280 px wanted). The build plan was recast into eight delegable work packages.
+
 ## 2026-08-20 — Top-level module structure set
 
 The operator set the top-level structure of the master: five modules, Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, and a fifth module for the critical, societal and governance level (English wording proposed as Critical Perspectives and Governance, confirmation open). The finer cut proposed in `drafts/module-map.md` continues as units beneath these five; the assignment of Promptotyping, verification and the hands-on case studies to Agentic Engineering is a working proposal until confirmed.

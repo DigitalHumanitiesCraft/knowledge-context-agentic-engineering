@@ -40,7 +40,7 @@ German is the source language of the master script. The English version is produ
 | Master script in modules (DE source, reviewed EN) | `script/` |
 | Master slide texts with speaker notes | `slides/` |
 | Workshop profiles and materials | `workshops/<id>/` |
-| CLARIAH-AT lecture notes (EN, profile material) | `workshops/clariah-at-2026/` |
+| CLARIAH-AT workshop script (EN, profile material) | `workshops/2026-09-25-clariah-at/` |
 | Slide exports (PPTX per taught state) | `workshops/<id>/` |
 | Title-slide images (PNG, 16:9) | `docs/assets/covers/` |
 | Workshop register | `docs/data/workshops.json` |

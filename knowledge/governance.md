@@ -42,7 +42,7 @@ Changes to canonical text happen here and are committed; Google artefacts are up
 
 ## Versioning
 
-Fine-grained history lives in git. The state actually taught in a workshop receives a git tag (for example `clariah-at-2026`), set by the operator; the register and the workshop page link to the tagged state. PPTX exports are stored per taught state in the workshop folder.
+Fine-grained history lives in git. The state actually taught in a workshop receives a git tag named after the registry id (for example `2026-09-25-clariah-at`), set by the operator; the register and the workshop page link to the tagged state. Workshop folder names equal registry ids; a single id scheme holds across register, folders, covers and tags. PPTX exports are stored per taught state in the workshop folder.
 
 ## Rights and licensing
 

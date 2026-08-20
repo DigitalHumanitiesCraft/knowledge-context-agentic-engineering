@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge, Context and Agentic Engineering for Knowledge Work</title>
+<meta name="description" content="A curated teaching corpus on knowledge, context and agentic engineering for knowledge work, with its documented workshop instances.">
+
+<!--
+  Start page of the platform. Static, no build step, no JavaScript, self-contained
+  except for the Google Fonts stylesheet.
+
+  Known open item: the workshop register is static markup that mirrors
+  docs/data/workshops.json by hand. The specification asks for the register to
+  render from that file, so a new entry appears without an HTML edit. That step
+  is still open and needs the fetch-and-render path.
+
+  Cover images live in assets/covers/<id>.png. Workshops without one show a quiet
+  slot in the same 16:9 proportion, so the grid keeps its rhythm.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   TOKENS
+   The only place where literal values live. Everything below consumes var().
+   Contrast ratios are against --paper unless noted.
+   ========================================================================== */
+:root {
+  color-scheme: light;
+
+  /* --- Typefaces ------------------------------------------------------- */
+  --font-ui: "Space Grotesk", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
+
+  /* --- Type scale ------------------------------------------------------ */
+  --text-xs: 0.75rem;        /* uppercase micro labels */
+  --text-sm: 0.8125rem;      /* module keys */
+  --text-md: 0.875rem;       /* secondary lines, colophon */
+  --text-lg: 0.9375rem;      /* card meta, status labels, imprint */
+  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-title: 1.0625rem;   /* module heading */
+  --text-card: 1.125rem;     /* card heading */
+  --text-lede: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  --text-section: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --text-hero: clamp(2rem, 1.3rem + 3.2vw, 3.5rem);
+
+  /* --- Spacing scale, 8px based ---------------------------------------- */
+  --s1: 0.5rem;
+  --s2: 1rem;
+  --s3: 1.5rem;
+  --s4: 2rem;
+  --s5: 3rem;
+  --s6: 4.5rem;
+  --s7: 7rem;
+  /* Sections are separated by this gap alone, no rules. It has to stay clearly
+     larger than any gap inside a section for the order to read. */
+  --gap-section: clamp(var(--s6), 9vw, var(--s7));
+
+  /* --- Ground and ink --------------------------------------------------- */
+  --paper: #FDFDFB;          /* one ground for the whole page */
+  --tint: #F3F3EF;           /* neutral fill for cover slots */
+  --ink: #141413;            /* 18.1:1 */
+  --ink-2: #4A4A46;          /* 8.7:1  */
+  --ink-3: #6C6C65;          /* 5.2:1 on paper, 4.8:1 on tint */
+  --rule: #E4E4DE;           /* quiet object outline, decorative */
+  --rule-mid: #90908A;       /* 3.2:1, visible lines: motif flow, underlines */
+
+  /* --- Accent ----------------------------------------------------------- */
+  /* One turquoise, clears AA, so the same value carries interactive text and
+     the motif highlights without a second variant. */
+  --accent: #0A7E7C;         /* 4.8:1 */
+
+  /* --- Identity palette, derived from the watercolor logo ---------------- */
+  /* Four families measured in the mark itself. Used only as module marks, never
+     for text, so each is tuned for presence as a small filled shape (>=3:1).
+     The blue stays watercolor-light on purpose, the violet stays deep. */
+  --c-orange: #C87000;       /* 3.6:1 */
+  --c-blue:   #5B8FC4;       /* 3.3:1 */
+  --c-green:  #7C9200;       /* 3.5:1 */
+  --c-violet: #8140B8;       /* 6.1:1 */
+
+  /* --- Layout ----------------------------------------------------------- */
+  --measure: 60ch;           /* reading width for prose */
+  --page: 1160px;
+  --radius: 3px;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+p, ul, ol { margin: 0; }
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-mid);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { text-decoration-color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ==========================================================================
+   LAYOUT PRIMITIVES
+   ========================================================================== */
+.wrap {
+  width: min(100% - 2 * var(--s3), var(--page));
+  margin-inline: auto;
+}
+
+.section { padding-top: var(--gap-section); }
+
+.section-title { font-size: var(--text-section); }
+
+/* Horizontal escape hatch for content that cannot compress further. */
+.scroll-x {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+/* The one component for artefacts that do not exist yet. Micro gaps stay
+   em-relative so they track the type size. */
+.pending {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  color: var(--ink-3);
+  font-size: var(--text-lg);
+}
+.pending::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--rule-mid);
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.site-head > .wrap {
+  padding-top: var(--s3);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   HERO
+   Three elements: title, one sentence, one link.
+   ========================================================================== */
+.hero { padding-block: clamp(var(--s5), 7vw, var(--s7)) var(--s5); }
+
+.hero h1 {
+  max-width: 20ch;
+  font-size: var(--text-hero);
+}
+
+.hero p {
+  max-width: var(--measure);
+  margin-top: var(--s3);
+  color: var(--ink-2);
+  font-size: var(--text-lede);
+  line-height: 1.55;
+}
+
+.hero .repo {
+  margin-top: var(--s4);
+  font-size: var(--text-body);
+}
+
+/* ==========================================================================
+   MOTIF
+   Turquoise only. Two stroke weights for structure and detail, a third,
+   lighter tone for the flow between stations.
+   ========================================================================== */
+.motif { padding-block: var(--s3); }
+
+.motif svg {
+  display: block;
+  width: 100%;
+  min-width: 760px;   /* below this the labels stop being legible, so scroll */
+  height: auto;
+}
+
+.m-line        { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.m-line.m-fill { fill: var(--paper); }
+.m-thin        { fill: none; stroke: var(--ink-2); stroke-width: 1.1; stroke-linecap: round; }
+.m-flow        { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+.m-accent      { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.m-return      { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-dasharray: 3 5; stroke-linecap: round; }
+.m-return-tip  { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+.m-seal        { fill: var(--accent); }
+.m-check       { fill: none; stroke: var(--paper); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.m-label       { font-family: var(--font-ui); font-size: 13px; fill: var(--ink); text-anchor: middle; }
+.m-note        { font-family: var(--font-ui); font-size: 11.5px; fill: var(--ink-3); text-anchor: middle; letter-spacing: 0.06em; }
+
+/* ==========================================================================
+   MODULES
+   The single home of the identity palette. Each module carries one small mark,
+   turquoise plus the four logo colours, assigned by position.
+   ========================================================================== */
+.module-list {
+  display: grid;
+  gap: var(--s3);
+  max-width: 78ch;
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
+}
+
+.module-list li {
+  display: grid;
+  grid-template-columns: 3.2em 1fr;
+  align-items: baseline;
+}
+
+.module-list .key {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.module-list .dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.module-list li:nth-child(1) .dot { background: var(--c-violet); }
+.module-list li:nth-child(2) .dot { background: var(--c-orange); }
+.module-list li:nth-child(3) .dot { background: var(--accent); }
+.module-list li:nth-child(4) .dot { background: var(--c-blue); }
+.module-list li:nth-child(5) .dot { background: var(--c-green); }
+
+.module-list h3 { font-size: var(--text-title); }
+
+.module-list .sub {
+  margin-top: 0.25em;
+  color: var(--ink-3);
+  font-size: var(--text-md);
+  line-height: 1.5;
+}
+
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s4);
+  margin-top: var(--s4);
+}
+
+/* ==========================================================================
+   WORKSHOPS
+   ========================================================================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 264px), 1fr));
+  gap: var(--s3);
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 120ms ease;
+}
+.card:hover { border-color: var(--rule-mid); }
+.card:focus-within { border-color: var(--accent); }
+
+/* Real title slide and empty slot share the 16:9 proportion. */
+.cover-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--tint);
+}
+
+.cover {
+  display: grid;
+  place-content: center;
+  aspect-ratio: 16 / 9;
+  padding: var(--s2);
+  background: var(--tint);
+  color: var(--ink-3);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--s2);
+  padding: var(--s3);
+}
+
+.card .date { color: var(--ink-3); font-size: var(--text-md); letter-spacing: 0.02em; }
+.card h3 { font-size: var(--text-card); }
+.card .event { color: var(--ink-2); font-size: var(--text-lg); }
+.card .facts { color: var(--ink-3); font-size: var(--text-md); line-height: 1.5; }
+.card .facts span { display: block; }
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s2);
+  margin-top: auto;
+  padding-top: var(--s1);
+  font-size: var(--text-lg);
+}
+
+/* ==========================================================================
+   FOOTER
+   Same ground as the page, separated by space alone. The logo sits here as
+   the source of the identity palette.
+   ========================================================================== */
+.site-foot { padding-block: var(--gap-section) var(--s5); }
+
+.site-foot > .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s4) var(--s5);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+.brand img { width: clamp(112px, 13vw, 140px); }
+
+.imprint {
+  color: var(--ink-3);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+}
+.imprint .name { color: var(--ink); font-weight: 500; }
+.imprint .sep { padding-inline: 0.4em; color: var(--rule-mid); }
+
+.colophon {
+  color: var(--ink-3);
+  font-size: var(--text-md);
+  line-height: 1.9;
+  text-align: right;
+}
+
+/* ==========================================================================
+   PREFERENCES AND NARROW VIEWPORTS
+   ========================================================================== */
+@media (max-width: 640px) {
+  .colophon { text-align: left; }
+  .brand { gap: var(--s2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-head">
+  <div class="wrap">Digital Humanities Craft</div>
+</header>
+
+<main>
+
+  <!-- ============ Hero ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
+      <p>
+        One curated corpus on working with large language models, from fundamentals to
+        verification, and every workshop below is a documented specialisation of it.
+      </p>
+      <p class="repo">
+        <a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Repository</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ Motif: source to verified artifact ============ -->
+  <div class="wrap">
+    <div class="motif scroll-x">
+      <svg viewBox="0 0 1200 226" role="img" aria-labelledby="motif-t motif-d">
+        <title id="motif-t">From source to verified artifact</title>
+        <desc id="motif-d">A horizontal flow in six stages: source material, knowledge documents,
+          working context, agentic loop, verification, verified artifact. A dashed return path
+          leads from verification back to the working context when a check fails.</desc>
+
+        <!-- return path: a failed check re-enters the context -->
+        <text class="m-note" x="702" y="28">revise on failure</text>
+        <path class="m-return" d="M 906,102 C 906,52 866,36 806,36 L 598,36 C 538,36 498,52 498,100"/>
+        <polyline class="m-return-tip" points="492,92 498,100 504,92"/>
+
+        <!-- connectors -->
+        <g class="m-flow">
+          <path d="M 138,132 H 244"/><polyline points="238,128 244,132 238,136"/>
+          <path d="M 342,132 H 448"/><polyline points="442,128 448,132 442,136"/>
+          <path d="M 546,132 H 652"/><polyline points="646,128 652,132 646,136"/>
+          <path d="M 750,132 H 856"/><polyline points="850,128 856,132 850,136"/>
+          <path d="M 954,132 H 1060"/><polyline points="1054,128 1060,132 1054,136"/>
+        </g>
+
+        <!-- 1 source: a stack of raw material -->
+        <g transform="translate(90,132)">
+          <rect class="m-line" x="-30" y="-24" width="44" height="32" rx="2"/>
+          <rect class="m-line m-fill" x="-24" y="-16" width="44" height="32" rx="2"/>
+          <rect class="m-line m-fill" x="-18" y="-8" width="44" height="32" rx="2"/>
+          <path class="m-thin" d="M -10,2 H 14 M -10,10 H 6"/>
+        </g>
+
+        <!-- 2 knowledge documents: structured, curated -->
+        <g transform="translate(294,132)">
+          <path class="m-line" d="M -20,-26 H 4 L 16,-14 V 26 H -20 Z"/>
+          <path class="m-thin" d="M 4,-26 V -14 H 16"/>
+          <path class="m-thin" d="M -12,-4 H 8 M -12,4 H 8 M -12,12 H 0"/>
+        </g>
+
+        <!-- 3 working context: a bounded window with what was placed in it -->
+        <g transform="translate(498,132)">
+          <path class="m-line" d="M -28,-14 V -26 H -16 M 16,-26 H 28 V -14 M 28,14 V 26 H 16 M -16,26 H -28 V 14"/>
+          <path class="m-thin" d="M -14,-8 H 14 M -14,2 H 6 M -14,12 H 16"/>
+        </g>
+
+        <!-- 4 agentic loop: the only cyclic element -->
+        <g transform="translate(702,132)">
+          <path class="m-accent" d="M 15.6,-15.6 A 22,22 0 0,0 -15.6,-15.6"/>
+          <polyline class="m-accent" points="-13.5,-23.4 -15.6,-15.6 -7.8,-17.7"/>
+          <path class="m-accent" d="M -15.6,15.6 A 22,22 0 0,0 15.6,15.6"/>
+          <polyline class="m-accent" points="13.5,23.4 15.6,15.6 7.8,17.7"/>
+          <circle class="m-seal" cx="0" cy="0" r="2.6"/>
+        </g>
+
+        <!-- 5 verification: a gate the artifact has to pass -->
+        <g transform="translate(906,132)">
+          <path class="m-line" d="M 0,-28 L 28,0 L 0,28 L -28,0 Z"/>
+          <polyline class="m-accent" points="-9,0 -3,7 10,-8"/>
+        </g>
+
+        <!-- 6 verified artifact: document plus seal -->
+        <g transform="translate(1110,132)">
+          <path class="m-line" d="M -20,-26 H 4 L 16,-14 V 18 H -20 Z"/>
+          <path class="m-thin" d="M 4,-26 V -14 H 16"/>
+          <path class="m-thin" d="M -12,-4 H 8 M -12,4 H 2"/>
+          <circle class="m-seal" cx="16" cy="20" r="10"/>
+          <polyline class="m-check" points="11.5,20 15,23.5 20.5,16.5"/>
+        </g>
+
+        <!-- labels -->
+        <g class="m-label">
+          <text x="90" y="196">Source</text>
+          <text x="294" y="196">Knowledge documents</text>
+          <text x="498" y="196">Working context</text>
+          <text x="702" y="196">Agentic loop</text>
+          <text x="906" y="196">Verification</text>
+          <text x="1110" y="196">Verified artifact</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ============ Modules ============ -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">Modules</h2>
+
+      <ol class="module-list" role="list">
+        <li>
+          <span class="key"><span class="dot"></span>01</span>
+          <div>
+            <h3>Understanding Large Language Models</h3>
+            <p class="sub">Capability landscape, asymmetric amplification, latent program space</p>
+          </div>
+        </li>
+        <li>
+          <span class="key"><span class="dot"></span>02</span>
+          <div>
+            <h3>Prompt Engineering</h3>
+            <p class="sub">Instruction design, prompt structure, program keys</p>
+          </div>
+        </li>
+        <li>
+          <span class="key"><span class="dot"></span>03</span>
+          <div>
+            <h3>Knowledge and Context Engineering</h3>
+            <p class="sub">Knowledge documents, working context, research data and provenance</p>
+          </div>
+        </li>
+        <li>
+          <span class="key"><span class="dot"></span>04</span>
+          <div>
+            <h3>Agentic Engineering</h3>
+            <p class="sub">Agentic loop, harness, Promptotyping, verification, hands-on case studies</p>
+          </div>
+        </li>
+        <li>
+          <span class="key"><span class="dot"></span>05</span>
+          <div>
+            <h3>Critical Perspectives and Governance</h3>
+            <p class="sub">Governance, mission control, societal implications</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="notes">
+        <p class="pending">Subtopic structure in progress</p>
+        <p class="pending">Script and slide texts in preparation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Workshops ============ -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">Workshops</h2>
+
+      <!-- Chronological. Mirrors docs/data/workshops.json. -->
+      <ul class="cards" role="list">
+
+        <li class="card">
+          <div class="cover">Title slide to follow</div>
+          <div class="card-body">
+            <p class="date">16&ndash;17 September 2026</p>
+            <h3>Promptotyping und Generative AI</h3>
+            <p class="event">KUG Summer School (M3GIM), Kunstuniversit&auml;t Graz</p>
+            <p class="facts">
+              <span>Participants without LLM or programming background &middot; German</span>
+              <span>Compact introduction, hands-on with low prerequisites</span>
+            </p>
+            <p class="card-links"><span class="pending">Slides and script in preparation</span></p>
+          </div>
+        </li>
+
+        <li class="card">
+          <img class="cover-img" src="assets/covers/2026-09-25-clariah-at.png"
+               alt="Title slide of Knowledge, Context and Agentic Engineering for Research Data Workflows and Digital Editions, 25 September 2026"
+               width="960" height="540" loading="lazy" decoding="async">
+          <div class="card-body">
+            <p class="date">25 September 2026</p>
+            <h3>Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</h3>
+            <p class="event">CLARIAH-AT Summer School 2026: Machine Learning for Digital Scholarly Editions</p>
+            <p class="facts">
+              <span>Digital humanities students, BA and MA level &middot; English</span>
+              <span>Research data workflows, digital scholarly editions, Hersch hands-on</span>
+            </p>
+            <p class="card-links">
+              <a href="https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit">Slides</a>
+              <a href="https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit">Script</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="card">
+          <div class="cover">Title slide to follow</div>
+          <div class="card-body">
+            <p class="date">9&ndash;10 November 2026</p>
+            <h3>Agentic-Engineering-Workshop</h3>
+            <p class="event">Uni for Life, Universit&auml;t Graz</p>
+            <p class="facts">
+              <span>Professionals from companies and institutions across disciplines &middot; German</span>
+              <span>Extended two-day variant for knowledge work beyond academia</span>
+            </p>
+            <p class="card-links"><span class="pending">Slides and script in preparation</span></p>
+          </div>
+        </li>
+
+        <li class="card">
+          <div class="cover">Title slide to follow</div>
+          <div class="card-body">
+            <p class="date">30 November &ndash; 4 December 2026</p>
+            <h3>VetMed Winter School</h3>
+            <p class="event">Veterin&auml;rmedizinische Universit&auml;t Wien</p>
+            <p class="facts">
+              <span>Administration and research staff &middot; German</span>
+              <span>Five-day extended derivation of the full master, follow-up format to the VetMedAI programme</span>
+            </p>
+            <p class="card-links"><span class="pending">Slides and script in preparation</span></p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="brand">
+      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <div class="imprint">
+        <p class="name">Christopher Pollin</p>
+        <p>Digital Humanities Craft</p>
+        <p>
+          <a href="https://dhcraft.org">dhcraft.org</a>
+          <span class="sep">&middot;</span>
+          <a href="mailto:office@dhcraft.org">office@dhcraft.org</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="colophon">
+      <p>Built with <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a></p>
+      <p>Text content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
