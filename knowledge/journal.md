@@ -18,6 +18,10 @@ generated-with: Claude Code (Claude Fable 5)
 
 Chronicle of decisions, milestones and workshop deliveries, newest first. Public document; the privacy rule in `governance.md` applies.
 
+## 2026-08-20 — Design decisions on the first prototypes
+
+The operator reviewed the start-page prototype: direction approved, Space Grotesk chosen as the platform typeface, text hierarchy reduced to at most two levels per section, colours converged to a single turquoise accent on one consistent paper-white ground. The second prototype (`docs/drafts/design-draft-2.html`) implements this and already carries real data, the proposed module structure and the workshop register entries. The workshop-subpage example awaits the operator's reaction.
+
 ## 2026-08-20 — Specification round and language switch
 
 The knowledge documents were walked through with the operator and the open questions answered. Decisions:

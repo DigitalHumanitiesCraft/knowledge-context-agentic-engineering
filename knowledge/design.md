@@ -1,5 +1,5 @@
 ---
-title: Design der Plattform
+title: Platform Design
 project:
   name: knowledge-context-agentic-engineering
   repository: https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering
@@ -9,31 +9,31 @@ method:
 status: draft
 created: 2026-08-20
 updated: 2026-08-20
-language: de
+language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 related: [specification.md]
 ---
 
-# Design der Plattform
+# Platform Design
 
-Designhaltung, Motiv und Systemwerte für `docs/`. Die Plattform adressiert ein professionelles, internationales Publikum aus Wissenschaft und Firmenkontexten; sie muss ruhig, präzise und hochwertig wirken und die realen Foliendecks als visuelle Anker zeigen statt eigener Illustrationswelten.
+Design stance, motif and system values for `docs/`. The platform addresses a professional, international audience from research and industry; it must feel calm, precise and high-grade, and it shows the real slide decks as visual anchors instead of an invented illustration world.
 
-## Motiv (Vorschlag, Operator-Entscheidung offen)
+## Motif
 
-Leitmotiv ist der Weg von der Quelle zum geprüften Artefakt: Quelle, Wissensdokumente, Working Context, agentische Schleife, Prüfung, Artefakt. Dieses Motiv existiert bereits als weiße Workflow-Hauptvisualisierung der CLARIAH-Titelgrafik und wird zur visuellen Sprache der Plattform weitergeführt, als Linienführung im Header und als wiederkehrendes Diagrammvokabular. Es passt zum Thema, weil die Plattform genau das zeigt, was das Motiv behauptet, einen kuratierten Bestand und seine geprüften Ableitungen.
+The guiding motif is the path from source to verified artefact: source, knowledge documents, working context, agentic loop, verification, artefact. It is drawn as reduced line art (inline SVG, two stroke weights) and serves as the platform's recurring diagram vocabulary; the slide decks can adopt the same vocabulary later. The operator approved this direction on the first prototype (2026-08-20); final tuning happens in the second iteration.
 
-## Systemwerte
+## System values
 
-- **Grund**: Papierweiß, nahezu schwarze Typografie, großzügiger Weißraum; dunkles Theme nachrangig.
-- **Akzent**: Türkis als einzige Signalfarbe, aus dem CLARIAH-Material übernommen, wo es Segment, Evidenz und Prüfpunkte markiert; hier für Links, aktive Zustände und das Motiv.
-- **Marke**: DHCraft-Watercolor-Logo (Standardvariante aus `DigitalHumanitiesCraft/brand-assets`), sparsam gesetzt.
-- **Typografie**: eine gut lesbare Grotesk über Google Fonts mit System-Fallback; Monospace für Prompts und Code, in Anlehnung an die Consolas-Promptrahmen der Decks.
-- **Bildmaterial**: ausschließlich die Titelfolien-PNGs der Workshops und die Workflow-Visualisierung; keine Stockbilder, keine generischen KI-Illustrationen.
-- **Karten**: Workshop-Einträge als Karten mit Titelbild, Datum, Veranstaltung, Zielgruppe und Links; Reihenfolge chronologisch.
+- **Ground**: paper white as one consistent page ground, near-black typography, generous whitespace; light theme only (operator decision 2026-08-20).
+- **Accent**: turquoise as the single accent family for links, active states and motif highlights; exact values are tuned in the second prototype.
+- **Brand**: DHCraft watercolor logo (standard variant from `DigitalHumanitiesCraft/brand-assets`), set sparingly.
+- **Typography**: Space Grotesk throughout with system fallback (operator decision 2026-08-20); IBM Plex Mono for prompts and code.
+- **Hierarchy**: at most two text levels per section, one heading and body; no stacked eyebrow-plus-heading labels; the motif stands without a caption; the hero is title, one sentence and one link.
+- **Imagery**: only the workshop title-slide covers (16:9 PNG, minimum 1280 px wide, at `docs/assets/covers/<id>.png`) and the motif line art; no stock imagery, no generic AI illustrations.
+- **Cards**: workshop entries as cards with cover, date, event, audience and links, in chronological order; missing artefacts appear as quiet "in preparation" labels, never as dead links.
 
-## Offene Designentscheidungen
+## Open design decisions
 
-- Freigabe des Leitmotivs durch den Operator.
-- Fontwahl (Vorschlag folgt mit dem ersten Plattform-Entwurf).
-- Umgang mit dem dunklen Theme (mitliefern oder bewusst hell halten).
+- Final colour tuning and level reduction: second prototype `docs/drafts/design-draft-2.html`, under operator review.
+- Workshop subpage structure: the six-block example `docs/drafts/workshop-page-draft.html` awaits the operator's reaction; its font will be aligned to Space Grotesk afterwards.
