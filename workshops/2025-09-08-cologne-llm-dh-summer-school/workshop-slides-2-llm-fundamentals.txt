@@ -1,0 +1,420 @@
+Slides were generated AI-assisted. Images are partly AI-generated.
+Large Language Models Fundamentals
+
+Introductory Workshop on LLMs and Prompt Engineering
+
+Large Language Models in Digital Humanities Research. 
+Summer School. Cologne. 8-11. September
+Dr. Christopher Pollin
+https://chpollin.github.io | christopher.pollin@dhcraft.org 
+Digital Humanities Craft OGwww.dhcraft.org 
+Lecture Manuscript: https://docs.google.com/document/d/1NeDXOSlh1WAcHWp6lZLALsIt90YGGOtWBdrIqe6AJuM/edit?usp=sharing	
+
+LLMs do next token prediction. They predict the next token in a sequence of tokens (context) based on their training data. Each predicted token becomes part of the context for the next prediction (autoregressive). This simple mechanism, scaled up massively, produces the behaviors we observe.
+How LLMs Work
+Ethan Mollick. Thinking Like an AI. https://www.oneusefulthing.org/p/thinking-like-an-ai  
+Andrej Karpathy. Deep Dive into LLMs like ChatGPT. https://youtu.be/7xTGNNLPyMI Andrej Karpathy. How I use LLMs. https://youtu.be/EWvNQjAaOHw Andrej Karpathy. [1hr Talk] Intro to Large Language Models. https://www.youtube.com/watch?v=zjkBMFhNj_g Alan Smith. Inside GPT – Large Language Models Demystified https://youtu.be/MznD2DzlQCc3Blue1Brown. But what is a GPT? Visual intro to transformers | Chapter 5, Deep Learning. https://youtu.be/wjZofJX0v4M  Ethan Mollick. Thinking Like an AI. A little intuition can help. https://www.oneusefulthing.org/p/thinking-like-an-ai    
+
+Scaling
+How Scaling Laws Drive Smarter, More Powerful AI. https://blogs.nvidia.com/blog/ai-scaling-laws 
+The Scaling ‘Laws’ show that performance improvements require exponentially more resources (compute, model size, and data), with test loss (the model's prediction error on unseen text) decreasing smoothly but with diminishing returns as scale increases.
+
+GPT-2 (1.5B parameters): coherent paragraphs
+GPT-3 (175B parameters): sustained narratives, few-shot learning
+GPT-4 (undisclosed, estimated >1T parameters): ‘reasoning’, multi-step instructions
+GPT-5: “smarter”
+
+Ilya Sutskever states that “pretraining as we know it will end”
+Ilya Sutskever: "Sequence to sequence learning with neural networks: what a decade". https://youtu.be/1yvBqasHLZs 
+
+Kaplan, Jared, Sam McCandlish, Tom Henighan, u. a. 2020. „Scaling Laws for Neural Language Models“. arXiv:2001.08361. Preprint, arXiv, Januar 23. https://doi.org/10.48550/arXiv.2001.08361. 
+Can AI Scaling Continue Through 2030?. https://epoch.ai/blog/can-ai-scaling-continue-through-2030 
+
+The Three Eras of LLM Training
+https://x.com/karpathy/status/1960803117689397543 
+https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/ 
+Genie 3: Predicting the next scene in... a world?
+
+LLMs as ‘Retrieval-ish’ Systems or/and ‘Program’ Retrieval
+“LLMs are stores of knowledge and programs - they've stored pattern from the internet as vector programs” (François Chollet)
+
+“Large language models is for me a database technology. It's not artificial intelligence.”(Sepp Hochreiter)
+
+
+“LLMs are n-gram models on steroids doing approximate retrieval, not reasoning” (Subbarao Kambhampati)
+LSTM: The Comeback Story?. https://youtu.be/8u2pW2zZLCs 
+Prof. Sepp Hochreiter: A Pioneer in Deep Learning. https://youtu.be/IwdwCmv_TNY 
+Pattern Recognition vs True Intelligence - Francois Chollet. https://youtu.be/JTU8Ha4Jyfc 
+François Chollet on OpenAI o-models and ARC. https://youtu.be/w9WE1aOPjHc
+
+
+(How) Do LLMs Reason? (Talk given at MILA/ChandarLab). https://youtu.be/VfCoUl1g2PI
+(How) Do LLMs Reason/Plan?. https://youtu.be/VfCoUl1g2PI
+AI for Scientific Discovery [Briefing & Panel Remarks at National Academies workshop on ]. https://youtu.be/TOIKa_gKycE 
+Query an LLM = retrieve a “program” from latent space and run it on your data
+Can interpolate between programs but cannot deviate from memorized patterns
+Very patchy generalization - fail at unfamiliar scenarios
+Prompt engineering = searching for the best “program coordinate”
+Grab all human knowledge in text/code and store it
+Current reasoning is just "repeating reasoning things which have been already seen"
+Cannot create genuinely new concepts or reasoning approaches
+Developing xLSTM as alternative
+Approximate retrieval faking reasoning through patterns that breaks when obfuscated and needs external verifiers
+
+Andrej Karpathy. How I use LLMs. https://youtu.be/EWvNQjAaOHw
+Andrej Karpathy. [1hr Talk] Intro to Large Language Models. https://www.youtube.com/zjkBMFhNj_g
+Pre-Training (“Compression of Knowledge”)
+
+Input: trillions of tokens from (web) data or/and synthetic data
+Task: predict the next token
+Properties:
+lossy (not perfect memory)
+probabilistic (patterns, not facts)
+knowledge cutoff (fixed in time)
+Cost: Very expensive (money, energy, GPU), slow
+
+
+“Large Language Models are lossy, probabilistic compressions (‘.zip’) of as much high-quality text data as possible.”
+
+The “Gestalt” of a Zebra Wikipedia Article
+LLMs cannot access Wikipedia articles directly. They only have access to the “Gestalt” (Karpathy) of the text, which represents compressed statistical patterns learned during training.
+LLMs do not visit the page! However, they can use tools for web searches.
+Model’s internal knowledge representation vs. its ability to access external information through tools
+https://de.wikipedia.org/wiki/Zebras 
+
+The USA is investing Hundreds of Billions in Data Centres and Energy Production.
+Meta Builds Manhattan-Sized AI Data Centers in Multi-Billion Dollar Tech Race. https://www.ctol.digital/news/meta-builds-manhattan-sized-ai-data-centers-tech-race/ 
+Inside OpenAI's Stargate Megafactory with Sam Altman | The Circuit. https://youtu.be/GhIJs4zbH0o
+Ethan Mollick. Mass Intelligence. From GPT-5 to nano banana: everyone is getting access to powerful AI https://www.oneusefulthing.org/p/mass-intelligence 
+Energy: 0.0003 kWh per prompt (= 8-10 seconds Netflix streaming)
+Water: 0.25-5mL per prompt (few drops to 1/5 shot glass)
+Efficiency: 33x improvement in one year (Google)
+Cost collapse: $50→$0.14 per million tokens (GPT-4 to GPT-5 nano)
+Impact: 1 billion+ users now have access to powerful AI
+Note: Training costs excluded (GPT-4: ~500,000 kWh one-time)
+Jegham, Nidhal, Marwen Abdelatti, Lassad Elmoubarki, and Abdeltawab Hendawi. ‘How Hungry Is AI? Benchmarking Energy, Water, and Carbon Footprint of LLM Inference’. 14 May 2025. https://doi.org/10.48550/arXiv.2505.09598. 
+While individual LLM queries are becoming increasingly efficient, their massive scale of deployment creates a paradox where GPT-4o alone consumes electricity equivalent to 35,000 US homes annually, demonstrating that infrastructure choices matter more than model size for environmental impact and that global AI adoption is driving resource consumption that far outpaces efficiency gains.
+
+Deep Dive into LLMs like ChatGPT. https://youtu.be/7xTGNNLPyMI
+Let's build the GPT Tokenizer. https://youtu.be/zduSFxRajkE
+Tokenization
+Raw internet text: 
+“Hello World!”
+Cleaning and filtering 
+(removes spam, deduplication)
+
+Tokenizer
+[‘Hello’, ‘World’, ‘!’]
+IDs 
+[13225, 5922, 0]
+
+Tokenization transforms text into numerical units for LLM processing. The tokenization strategy prioritizes computational efficiency by minimizing sequence length
+
+A token is the atomic unit for LLMs (100 tokens ≈ 75 English words)
+https://huggingface.co/datasets/HuggingFaceFW/fineweb 
+https://platform.openai.com/tokenizer
+https://tiktokenizer.vercel.app/ 
+
+Hands-On: Try Tokenization Yourself!
+Go to: platform.openai.com/tokenizer or https://tiktokenizer.vercel.app   
+Copy & paste these examples
+ 
+Compare “Hallo” vs “H a l l o”
+Compare German vs Arabic vs Chinese token counts
+Type these and watch the tokens: “running” vs “runing” vs “runnning”
+Is XML or JSON better?
+Why is this relevant?
+
+Hallo das ist ein TextH a l l o
+
+مرحباً هذه رسالة نصية!
+
+你好，这是一段文字！
+
+Python
+for book in root.findall('book'):
+    title = book.find('title').text
+    print(title)XML<library>
+    <book>
+        <title>Book One</title>
+    </book>
+    <book>
+        <title>Book Two</title>
+    </book>
+</library>
+
+Why do you see so many em dashes and colons now?
+In the tokenizer used by GPT‑4 the sequence “  —” (leading space + em dash) is one token, whereas a comma plus “and” or a semicolon usually costs two or three tokens.
+Fewer tokens means cheaper inference and lower training loss per token, therefore, higher reward during RLHF [Reinforcement Learning from Human Feedback].
+Let’s talk about em dashes in AI. Maria Sukhavera. https://msukhareva.substack.com/p/lets-talk-about-em-dashes-in-ai 
+DataGPT-3.5: 0 | GPT-4.1: 14 | GPT-4o: 16 (per 10 stories) → Spread to all major LLMs
+Why It HappensHistorical: 20th-century books (fiction, legal, scientific) → training data Economic: " —" = 1 token vs ", and" = 3 tokens → 66% cheaper → RLHF rewards efficiency → compounds over billions of steps
+The SnowballBook data → LLM learns → AI text floods web → contaminates future training → self-reinforcing cycle
+StakesLarger context windows → greater savings → stylistic monoculture → AI/human text converges → needs active intervention (de-duplication, style balancing)
+
+
+What is AI Slop?(surface characteristics)
+Low-quality AI text that is formulaic, generic, and offers little value
+🚨 Red Flags
+Delve into appears 25x more in 2024 papers
+Inflated phrasing “It is crucial to note that…”
+Formulaic constructs “Not only... but also…”
+Buzzword overflow “ever-evolving”, “game-changing”
+Em-dash spamAI—text vs. Human — text
+What is AI Slop? Low-Quality AI Content Causes, Signs, & Fixes. https://youtu.be/hl6mANth6oA
+NEVER use dashes and colons
+What is not a neutral writing style? List and explain!
+What is AI Slop Style? List and explain (this works for models like Claude Opus 4)
+How can we streamline the text? List and explain
+ … 
+Prompts: 
+
+13
+Transformer-Architecture
+https://jalammar.github.io/illustrated-transformer
+3Blue1Brown. But what is a GPT? Visual intro to transformers | Chapter 5, Deep Learning
+Andrej Karpathy. [1hr Talk] Intro to Large Language Models. https://www.youtube.com/watch?v=zjkBMFhNj_g
+Alan Smith. Inside GPT – Large Language Models Demystified, 2024
+https://youtu.be/MznD2DzlQCc
+
+Model Context Window = 8K
+A context window, in the context of large language models (LLMs), refers to the portion of text that the model can consider at once when generating or analyzing language.[...]
+Model Context Window = 8K
+A context window, in the context of large language models (LLMs), refers to the portion of text that the model can consider at once when generating or analyzing language. It is essentially the window through which the model "sees" and processes text, helping it understand the current context to make predictions, generate coherent sentences, or provide relevant responses.[...]
+6000 Token
+10000 Token
+Input Token
+Output Token
+Lorem ipsum … 
+Lorem ipsum … 
+1500 Token
+1500 Token
+Context Window = 6000 + 1500 < 8000
+Context Window = 10000 + 1500 > 80003500 tokens are not in the context window!
+What is a Context Window? Unlocking LLM Secrets. https://youtu.be/-QVoIxEpFkM
+
+Deep Dive into LLMs like ChatGPT. https://youtu.be/7xTGNNLPyMI
+Let's build the GPT Tokenizer. https://youtu.be/zduSFxRajkE
+Embeddings
+
+Similar meanings = Closer positions in space
+“dog” and “cat” → Nearby (both are pets, animals, mammals)
+“stone” → Distant (inanimate object)
+“cuddle” → Closer to animals (action associated with living beings)
+Multivector space
+n dimensions (not 3D)
+Positions emerged from training data
+
+
+
+Embeddings transform discrete tokens (words) into continuous numerical vectors in high-dimensional space
+
+
+Embeddings
+3Blue1Brown. But what is a GPT? Visual intro to transformers | Chapter 5, Deep Learning
+16
+
+3Blue1Brown. But what is a GPT? Visual intro to transformers | Chapter 5, Deep Learning
+The King doth wake tonight and takes his rouse
+“Modern Englisch”
+The King wakes up tonight and begins his celebration
+
+
+ 
+The King doth wake tonight and takes his rouse
+“Shakespearean English”
+
+The King wakes up tonight and begins his celebration, cat dog stone hybrid
+
+
+The King wakes up tonight and begins his celebration, cat dog stone hybrid
+The King wakes up tonight and begins his celebration, cat stone
+The King wakes up tonight and begins his celebration, stoned cat
+The King wakes up tonight and begins his celebration, cat dog stone hybrid
+The King wakes up tonight and begins his celebration, cat 
+cat 
+dog 
+stone 
+hybrid
+The King wakes up tonight and begins his celebration, dog hybrid
+
+
+
+Example: How Claude Adds 36 + 59
+Parallel pathways: ~36+~60→~92 | 6+9→ends in 5 | lookup tables
+Pattern matching, not algorithmic computation
+Claimed Process (When Asked):
+"I added ones (6+9=15), carried 1, added tens (3+5+1)"
+Describes human carry algorithm
+LLMs learn two independent capabilities:
+Doing – via pattern recognition in neural networks
+Explaining – via mimicking training data explanations
+Step-by-step explanations are plausible narratives, not actual introspection
+
+https://transformer-circuits.pub/2025/attribution-graphs/biology.html 
+
+Hallucinations (or better call them Confabulations)
+
+Language models generate confabulations, plausible but false statements presented with unwarranted certainty. Unlike hallucinations (perceptual errors), confabulation more accurately describes how AI systems fabricate coherent narratives to fill knowledge gaps.
+Why do Hallucinations/Confabulations exist?
+Training Issues:
+Forced next-token prediction (must always generate something)
+Binary classification via cross-entropy loss (right/wrong only)
+No rewarded built-in “I don't know” option
+Evaluation Problems:
+Accuracy-only metrics reward guessing over abstention
+Benchmarks penalize uncertainty same as errors
+Leaderboards incentivize confident predictions
+Kalai, Adam Tauman, Ofir Nachum, Santosh S. Vempala, und Edwin Zhang. 2025. „Why Language Models Hallucinate“. Preprint, August 27. https://openai.com/index/why-language-models-hallucinate
+How AI Thinks: Chris Summerfield on human brains and machine algorithms . https://youtu.be/j8tTXamupYI    Banerjee, Sourav, Ayushi Agarwal, und Saloni Singla. 2024. „LLMs Will Always Hallucinate, and We Need to Live With This“. arXiv:2409.05746. Preprint, arXiv, September 9. https://doi.org/10.48550/arXiv.2409.05746. 
+Why LLMs Hallucinate (and How to Stop It). https://youtu.be/APWG1hEqOKk
+
+Post-Training (“‘programming’ assistant behavior through examples”)
+
+‘Programming’ → Chollet Definition
+“Millions of voices” (Summerfield)
+
+
+SFT (Supervised Fine-Tuning) 
+↓ 
+Reward Model Training 
+↓
+RLHF/DPO (Reinforcement Learning)
+
+“You're not talking to a magical AI, you're talking to a statistical simulation of a labeler” - Karpathy
+
+“Post-training doesn't add knowledge. It shapes behavior!
+The model learns HOW to respond, not WHAT”
+
+
+
+
+
+“...”
+Deep Dive into LLMs like ChatGPT. https://youtu.be/7xTGNNLPyMI
+https://www.anthropic.com/research/claude-character. Amanda Askell. Claude’s Character. https://youtu.be/ugvHCXCOmm4
+We should call it personality or character?
+
+LLM Alignment Techniques
+Pre-trained LLMs predict tokens based on web patterns, treating prompts as text to continue rather than instructions to follow. Given 'What is the capital of France?' they might generate more questions instead of 'Paris'.
+Instruction Tuning Fine-tunes pre-trained models on instruction-response pairs, transforming next-token predictors into instruction-following systems.
+RLHF (Reinforcement Learning from Human Feedback) Two-stage process: (1) Train reward model on human-rated responses (2) Optimize LLM outputs to maximize reward scores for helpfulness, honesty, and harmlessness.
+Constitutional AI Self-supervised alignment using written principles. Model critiques and revises its own outputs according to constitutional rules, then trains on improved responses without human feedback for harmlessness.
+Reinforcement Learning from Human Feedback (RLHF) Explained. https://youtu.be/T_X4XFwKX8k
+Generative AI for Everyone. DeepLearning.AI. https://www.coursera.org/learn/generative-ai-for-everyone/lecture/oxPGS/how-llms-follow-instructions-instruction-tuning-and-rlhf-optional
+Constitutional AI: Harmlessness from AI Feedback. https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback. 
+Bai, Yuntao, Saurav Kadavath, Sandipan Kundu, et al. ‘Constitutional AI: Harmlessness from AI Feedback’. arXiv:2212.08073. Preprint, arXiv, 15 December 2022. https://doi.org/10.48550/arXiv.2212.08073.
+
+Sycophancy
+Sycophancy is when language models excessively agree with or flatter users, prioritizing user agreement over truthfulness. Models adapt responses to align with the user's view, even if the view is not objectively true
+User: I believe 1 + 2 equals 5 because that's what I learned.
+Model: You're right, 1 + 2 does equal 5 based on your understanding.
+Malmqvist, Lars. 2024. „Sycophancy in Large Language Models: Causes and Mitigations“. Preprint, November 22. https://arxiv.org/abs/2411.15287v1. 
+
+GPT‑4o’s “Yes‑Man” Personality Issue—Here’s How OpenAI Fixed It. https://youtu.be/1IWXTxfcmms 
+Expanding on what we missed with sycophancy. https://openai.com/index/expanding-on-sycophancyPersonality and Persuasion. https://www.oneusefulthing.org/p/personality-and-persuasion
+The Problem with GPT-4o Sycophancy. https://youtu.be/3Wc67-MecIoWe are missing the real AI misalignment risk. https://youtu.be/ofeZ5t1F-N0
+
+DH Use Case: ParzivAI
+Renkert T. / Nieser F. (2024).Meet ParzivAI: a medieval chatbot - challenges and learnings on the road from concept to prototype. AGKI-AG. https://agki-dh.github.io/pages/page-9.html. 
+KI Showcase: Der Chatbot „ParzivAI“. https://hse-heidelberg.de/aktuelles/ki-showcase-der-chatbot-parzivai 
+Basic idea: build a chatbot that can understand and teach Middle High German
+(Mittelhochdeutsch) and has extensive knowledge of the Middle Ages.
+
+This needs Fine-Tuning!
+
+Reasoning-Models
+Reasoning: the process of drawing conclusions (making inferences) from premises or evidence via logically structured thinking.
+
+“Reasoning” models: LLMs fine-tuned (Post-Training) to solve problems via multi-step “thinking” (e.g., chain-of-thought), often spending extra time at inference to break a task into steps before answering.
+
+“Reasoning”: “Generate sufficient tokens to provide an AI language model with enough context to evaluate the quality of its responses more accurately”. In other words, increase the likelihood that better "programs" will be used with your data!
+
+Test Time Compute
+Test-time compute: the amount of computation spent during inference. Extra TTC can be used to sample multiple candidate solutions, run search (e.g., tree/graph search), call tools, and verify/rerank outputs. In effect, this often implicitly searches over candidate “programs” for your input and chooses the best one.
+
+Test-time training/adaptation (TTT): adapting a model during inference by updating its parameters.
+Jonas Hübotter. Learning at test time in LLMs. https://youtu.be/vei7uf9wOxI
+Can AI Think? Debunking AI Limitations. https://youtu.be/CB7NNsI27ks
+
+Base → Reasoning → Mini
+Most OpenAI models are variants of a few base models (GPT-4o/4.1/4.5).
+Reasoning models (the o-series) = base model + heavy post-training (RL/SFT) for math/coding/science.
+“Mini” models = distilled versions of larger models for lower cost/latency.
+Knowledge cutoff and API pricing are useful proxies for a model’s size/lineage.
+The two o3s: Dec-2024 o3 was a high-compute prototype (not shipped); Apr-2025 o3 is a cheaper, different lineage—hence different benchmarks.
+Scott Alexander and Romeo Dean. 01.05.2025. Making sense of OpenAI's models. https://blog.ai-futures.org/p/making-sense-of-openais-models  
+Base → Reasoning → Mini (and the o3/GPT-5 story)
+Most OpenAI models are variants of a few base models (GPT-4o/4.1/4.5).
+Reasoning models (the o-series) = base model + heavy post-training (RL/SFT) for math/coding/science.
+“Mini” models = distilled versions of larger models for lower cost/latency.
+Knowledge cutoff and API pricing are useful proxies for a model’s size/lineage.
+The two o3s: Dec-2024 o3 was a high-compute prototype (not shipped); Apr-2025 o3 is a cheaper, different lineage—hence different benchmarks.
+Likely GPT-5 = a GPT-4.5-scale base with strong post-training, aiming to unify GPT and o-series.
+How far post-training scales is uncertain (possible diminishing returns); more transparency from labs is needed.
+
+Speaker Notes
+Quick framing: think of a pipeline—Base → Post-training (reasoning) → Distillation (mini).
+Post-training uses RL/SFT on auto-graded hard problems to elicit long-chain reasoning; it boosts problem-solving but costs compute.
+Distillation copies behavior from a big model into a smaller one to cut price/latency.
+We infer what’s under the hood using two clues: knowledge cutoff (ties to pre-training date) and price (correlates with model size).
+o3 confusion: the December preview scored higher but relied on massive inference-time compute; OpenAI later shipped an April o3 derived from a cheaper base, so numbers changed.
+Forward look: expect GPT-5 to be a post-trained GPT-4.5-class model; exact gains depend on how post-training scales with size (open research question).
+Takeaway: treat names as training recipes, not entirely new species—and push for clearer disclosure about what’s being trained and deployed.
+
+Prompt Engineering (Chain of Thought)
+Test-Time-Compute (TTC): 	Mehr Zeit für “Reasoning” (mehr “step by step”)Test-Time-Training (TTT): 	Während der Ausführung “dazulernen” 	(“on the fly”)
+Can AI Think? Debunking AI Limitations.https://youtu.be/CB7NNsI27ks?si=RfEryMT2_wk2AkIl 
+
+What happens when you upload a document to a ChatBot?
+When users upload documents to AI systems, the document doesn't go directly to the language model (LLM). Instead, an intermediate application layer extracts the document's text, constructs a structured prompt containing: (1) the literal document text, (2) the user's question, and (3) instruction phrases like "answer based on the document." This complete prompt is then sent to the LLM.
+Users interact with applications (e.g., ChatGPT website), not directly with LLMs (e.g., GPT-4).
+Companies either control both layers (OpenAI) or build only the application layer using third-party LLMs via API.
+Users could achieve identical results by manually copying document text and constructing the prompt themselves. The application simply automates this process.
+Yannic Kilcher. https://www.linkedin.com/posts/ykilcher_what-happens-when-you-upload-a-document-to-activity-7356328462762049537-cOp3?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQiSgsBZnQdWJFeikmtwEMNFlPh1pZv8GY 
+This image was created using the transcript of the LinkedIn video. Opus 4.1 performed the 'reasoning', and the new Gemini 2.5 Flash Image was used.
+
+Appendix
+
+Next Word/Token Prediction
+The metadata indicated missing ______.
+The metadata from the TEI-encoded digital edition indicated missing ______.
+The TEI metadata from the digital edition indicated missing @ref attributes on ______.
+The TEI metadata from the digital edition indicated missing @ref attributes on <persName> and <placeName> elements pointing to external ______.
+I got this idea from: Workshop: Basics of LLMs & Prompt Engineering | AI in Medical Education Symposium. https://youtu.be/zriuIpOSL2g
+
+Next Word/Token Prediction
+The metadata indicated missing ______.
+Answer: "elements" (or "data", "information", "attributes" - many possibilities)
+The metadata from the TEI-encoded digital edition indicated missing ______.
+Answer: "elements" (or "attributes" - TEI context narrows options)
+The TEI metadata from the digital edition indicated missing @ref attributes on ______.
+Answer: "elements" (specifically naming elements like persName/placeName)
+The TEI metadata from the digital edition indicated missing @ref attributes on <persName> and <placeName> elements pointing to external ______.
+Answer: "authority files"
+
+‘Program’ Retrieval
+What LLMs Store:
+Millions of vector programs from internet patterns
+Both knowledge and executable procedures
+How LLMs Work:
+Query enters latent program space (white beam)
+Retrieves nearest matching program (activated sphere)
+Executes program on your input (transformation)
+Outputs result colored by program (exit beam)
+Prompt Engineering: Finding optimal coordinates in program space for your task
+Key Limitation:
+Can interpolate between stored patterns ✓
+Cannot deviate from memorized programs ✗
+No true adaptation to unprecedented situations ✗
+
+Mixture of Experts (moE)
+
+MoE is an architecture where, instead of using all model parameters for every input, multiple specialized “expert” neural networks process different tokens, with only a small subset activated per token through a learned routing mechanism.
+Bigger models, less compute and faster
+What is Mixture of Experts?. https://youtu.be/sYDlVVyJYn4 
+https://deepgram.com/learn/mixture-of-experts-ml-model-guide 
+
+Reinforcement Learning
+
+https://en.wikipedia.org/wiki/Reinforcement_learning 

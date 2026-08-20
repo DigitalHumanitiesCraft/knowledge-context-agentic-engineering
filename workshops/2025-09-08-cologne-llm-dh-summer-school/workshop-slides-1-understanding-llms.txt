@@ -1,0 +1,448 @@
+“Understanding” LLMs: Between Fancy Autocomplete and AGI
+
+Introductory Workshop on LLMs and Prompt Engineering
+
+Large Language Models in Digital Humanities Research. Summer School. Cologne. 8-11. September
+Dr. Christopher Pollin
+https://chpollin.github.io | christopher.pollin@dhcraft.org 
+Digital Humanities Craft OGwww.dhcraft.org 
+Slides were generated AI-assisted. Images are partly AI-generated.
+Notes: https://docs.google.com/document/d/1vsQzpNPWPFHdbQjTPnsuSQx-J1NrVjGOh2L5iP2LAbw/edit?usp=sharing
+
+“Understanding” LLMs
+According to Chalmers: 'My glass of understanding is half full.' I excel at explanations and verbal tasks, but I only simulate understanding and miss the phenomenal experience entirely... 	but can you really find out?!
+PHENOMENAL understanding: The subjective “what-it-is-like” experience of understanding 	→ ✗ Absent in LLMs
+EXPLANATORY understanding: Knowing and giving explanations 	→ ✓ LLMs often good at producing explanations 	    (but can confabulate/hallucinate)
+USE understanding: Applying information to achieve goals
+Verbal (answering questions) 	→ ✓✓ Strong
+Behavioral (physical manipulation) → ≈ Limited (multimodal)
+Reasoning (inference/planning)      → ≈ Partial (if they reason at all?)
+Henk W. de Regt. Understanding Scientific Understanding. https://doi.org/10.1093/oso/9780190652913.001.0001Stochastic Parrots or Emergent Reasoners:  Can Large Language Models Understand?. June 2024. https://youtu.be/yyRzTL201zI
+
+LLMs do next token prediction. They predict the next token in a sequence of tokens (context) based on their training data. Each predicted token becomes part of the context for the next prediction (autoregressive). This simple mechanism, scaled up massively, produces the behaviors we observe.
+A very brief Overview of how LLMs work
+Ethan Mollick. Thinking Like an AI. https://www.oneusefulthing.org/p/thinking-like-an-ai  
+
+Is Next Token Prediction Understanding or “Understanding”
+Highlights of the Fireside Chat with Ilya Sutskever & Jensen Huang: AI Today & Vision of the Future. https://youtu.be/GI4Tpi48DlA?si=LLqfmMmJqQxUtgtM&t=1028
+
+Perspectives
+
+Between Failing and “PhD level”
+How can you dare to call it intelligence if it fails to counts characters in Words?
+
+OpenAI: GPT-5 is “Phd-Level!”
+
+FrontierMath: Problems Expert Mathematicians Need Research Projects to Solve
+When mathematicians tested GPT-5 without any prompting strategy or skills, it still solved an open problem but required constant correction of fundamental errors.
+https://epoch.ai/frontiermath 
+
+Glazer, Elliot, Ege Erdil, Tamay Besiroglu, et al. ‘FrontierMath: A Benchmark for Evaluating Advanced Mathematical Reasoning in AI’. arXiv:2411.04872. Preprint, arXiv, 20 December 2024. https://doi.org/10.48550/arXiv.2411.04872. 
+https://x.com/OpenAI/status/1946594928945148246 
+Diez, Charles-Philippe, Luis da Maia, und Ivan Nourdin. 2025. „Mathematical research with GPT-5: a Malliavin-Stein experiment“. arXiv:2509.03065. Preprint, arXiv, September 3. https://doi.org/10.48550/arXiv.2509.03065. 
+
+Andrej Karpathy. Vibe Coding. https://x.com/karpathy/status/1886192184808149383
+The AI Daily Brief. Rick Rubin on Art, Life, and Vibe Coding. https://youtu.be/6BDsFUvPqI0
+Christopher Pollin. “Haters gonna hate”: Warum die Kritik an Vibe Coding berechtigt ist – und welche Proto-AGI-Potenziale sie übersieht. https://dhcraft.org/excellence/blog/Vibe-Coding  
+ 
+ Vibe Coding      
+99% Vibe Code with Claude Opus 4.1 in ~6hBased on real research data (8 Excel Files). 
+
+Pollin, Christopher. ‘Promptotyping: Von der Idee zur Anwendung’. Digital Humanities Craft - Research Blogs, 24 April 2025. https://dhcraft.org/excellence/blog/Promptotyping 
+
+Promptotyping
+https://chpollin.github.io/strashun/web-prototype 
+
+(Very) Quick and Dirty Example (Live Demo with Claude Code)
+Analyse all the files and create a plan for a single-page application that will collect new data entries of transactions in a historical ledger. 
+https://gams.uni-graz.at/o:depcha.wheaton.1 
+
+Stochastic Parrots 				→ statistical mimicry without meaningBender, Emily M., et. al. 2021. ‘On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜’. https://doi.org/10.1145/3442188.3445922
+Exotic Mind-Like Entities 			→ neither mind nor machineShanahan, Murray. 2024. ‘Talking about Large Language Models’. https://doi.org/10.1145/3624724 
+Strange New Minds 				→ emergent phenomenon (that appear cognitive)Summerfield, Christopher. 2025. These Strange New Minds: How AI Learned to Talk and What It Means.
+People Spirits 					→ simulated human psychologyAndrej Karpathy: Software Is Changing (Again). https://youtu.be/LCEmiRjPEtQ
+System-1.42 Machines 				→ between System 1 and System 2Pollin, Christopher. 2025. ‘System 1.42: Wie (Frontier-)LLMs “tatsächlich” funktionieren’. https://dhcraft.org/excellence/blog/System1-42 
+Some Perspectives to LLMs:From Stochastic Models to Agentic Systems?
+
+LLMs as Retrieval-ish Systems
+
+“LLMs are stores of knowledge and programs - they've stored pattern from the internet as vector programs” (François Chollet)
+
+“Large language models is for me a database technology. It's not artificial intelligence.”(Sepp Hochreiter)
+
+
+“LLMs are n-gram models on steroids doing approximate retrieval, not reasoning” (Subbarao Kambhampati)
+LSTM: The Comeback Story?. https://youtu.be/8u2pW2zZLCs 
+Prof. Sepp Hochreiter: A Pioneer in Deep Learning. https://youtu.be/IwdwCmv_TNY 
+Prof. Dr. Sepp Hochreiter: KI Entwicklung, LSTM, OpenAI | Eduard Heindl Energiegespräch #100
+https://youtu.be/LG1If4ccEDc 
+Pattern Recognition vs True Intelligence - Francois Chollet. https://youtu.be/JTU8Ha4Jyfc 
+François Chollet on OpenAI o-models and ARC. https://youtu.be/w9WE1aOPjHc
+
+
+(How) Do LLMs Reason? (Talk given at MILA/ChandarLab). https://youtu.be/VfCoUl1g2PI
+(How) Do LLMs Reason/Plan?. https://youtu.be/VfCoUl1g2PI
+AI for Scientific Discovery [Briefing & Panel Remarks at National Academies workshop on ]. https://youtu.be/TOIKa_gKycE 
+DO REASONING MODELS ACTUALLY SEARCH?. https://youtu.be/2xFTNXK6AzQ 
+Query an LLM = retrieve a “program” from latent space and run it on your data
+Can interpolate between programs but cannot deviate from memorized patterns
+Very patchy generalization - fail at unfamiliar scenarios
+Prompt engineering = searching for the best “program coordinate”
+Grab all human knowledge in text/code and store it
+Current reasoning is just "repeating reasoning things which have been already seen"
+Cannot create genuinely new concepts or reasoning approaches
+Developing xLSTM as alternative
+Approximate retrieval faking reasoning through patterns that breaks when obfuscated and needs external verifiers
+
+
+“On the Biology of a Large Language Model”
+Anthropic. Interpretability: Understanding how AI models think. https://youtu.be/fGKNUvivvnc 
+Anthropic. On the Biology of a Large Language Model. https://transformer-circuits.pub/2025/attribution-graphs/biology.html
+Anthropic researchers traced Claude 3.5 Haiku’s internal computations. They found genuine multi-step ‘reasoning’ (Dallas → Texas → Austin), planning ahead in poetry (activating rhyme words before writing lines), and language-agnostic representations across English, French, and Chinese. 
+
+The model performs these computations automatically, without metacognitive awareness of its own processes.
+
+Statistics or Understanding?
+Why next-token prediction is enough for AGI - Ilya Sutskever (OpenAI Chief Scientist). https://youtu.be/YEUclZdj_Sc
+Core Statements 
+A sufficiently large neural network would be capable of extrapolating: "which persona would be best to solve a specific problem?"
+Deeper Meaning 
+What does it really mean to determine the (perfect/correct) next token? According to Sutskever, it means having “understood” the underlying reality.
+
+LLMs as NLP ToolsMachine Learning
+Andrej Karpathy. https://x.com/karpathy/status/1723140519554105733 
+(Frontier-) LLM as Operating SystemApplied Generative AI
+Sentiment Analysis “XSLT is terrible” → Negative
+Named Entity Recognition “Apple released the iPhone in Cupertino” → [Apple: ORG] [iPhone: PRODUCT] [Cupertino: LOC]
+Translation "Bonjour" → "Hello"
+SummarizationLong article → Short summary
+ClassificationEmail → Spam/Not Spam
+
+Of what other (NLP) task can you think of? 
+“Analyze this Excel file, create visualizations, and write a report” → LLM reads file, runs Python for analysis, generates charts, writes document
+
+Problems
+
+The Hard Problem of Consciousness and LLMs
+Current LLMs are almost certainly not conscious - their transformer architecture lacks key features associated with consciousness like persistent internal states or embodied experience. However, we cannot definitively prove or disprove machine consciousness due to the fundamental explanatory gap between physical processes and subjective experience
+Long, Robert, Jeff Sebo, Patrick Butlin, et al. ‘Taking AI Welfare Seriously’. arXiv:2411.00986. Preprint, arXiv, 4 November 2024. https://doi.org/10.48550/arXiv.2411.00986. 
+LLM Understanding: 23. David CHALMERS. https://youtu.be/yyRzTL201zI Chalmers, David J. ‘Could a Large Language Model Be Conscious?’ arXiv:2303.07103. Preprint, arXiv, 18 August 2024. https://doi.org/10.48550/arXiv.2303.07103   David Chalmers and Michael Graziano discuss consciousness and AI. https://youtu.be/55kStwlulEg Could AI models be conscious?. https://youtu.be/pyXouxa0WnYModel Welfare. https://www.anthropic.com/research/exploring-model-welfareConsciousness, reasoning and the philosophy of AI with Murray Shanahan. https://youtu.be/v1Py_hWcmkU
+Hype or Important?
+People are forming emotional attachments to AI, using chatbots as therapists, and making real decisions based on AI interactions
+If we're wrong about AI consciousness (in either direction), the consequences could be massive. Imagine we create suffering beings while insisting they can't suffer.
+It forces us to confront what we value - The consciousness debate reveals our deeper values: Is it suffering we care about? Intelligence? Self-awareness? Maybe it is much more about learning and thinking about us!
+
+Or are the Tech Companies only “flooding the zone with shit”?  
+“I am a brain in a vat”https://en.wikipedia.org/wiki/Brain_in_a_vat 
+
+(Currently) Hard Problems of LLMs
+Alignment ProblemDuck ProblemEpistemic Asymmetry Problem (“Black Box”)“There-is-no-true-Responsible-Frontier-AI-  Usage” ProblemSystem Coercion Problem“4th-Narcissistic-Injury-to-Humanity” Problem
+The fundamental challenges we cannot (yet) solve. But we have to face!
+
+“Easy” Problems of LLMs 
+The actionable but complex challenges of LLM deployment
+Skills Atrophy Problem“Needs-an-Expert-in-the-Loop” ProblemEvaluation and Benchmark ProblemCommunication & Knowledge Gap ProblemAttribution Problem
+Integration Problem
+Compute & Money Problem
+… 
+
+Are there more Problems? 
+The Terminology Problem
+ChatGPT ≠ AI ≠ GPT ≠ Machine Learning ≠ LLM ≠ …
+The Anthropomorphism Problem
+“Reasoning” — “Thinking” — “Character” — “Hallucination” — “Knows” — “Decides” — … 
+The Hype/Reality Problem
+Addiction to AI?
+Cybersecurity?
+…  
+
+AGI & Crazy Tech-Bros Mindset
+“We are watching the collapse of the international order in real time, and this is just the start,” says investigative journalist Carole Cadwalladr. In a searing talk, she decries the rise of the “broligarchy” — the powerful tech executives who are using their global digital platforms to amass unprecedented geopolitical power, dismantling democracy and enabling authoritarian control across the world. 
+This Is What a Digital Coup Looks Like | Carole Cadwalladr | TED. https://youtu.be/TZOoT8AbkNE . https://www.ted.com/talks/carole_cadwalladr_this_is_what_a_digital_coup_looks_like/transcript 
+Douglas Rushkoff – das Mindset der Tech-Milliardäre | Sternstunde Philosophie | SRF Kultur. https://youtu.be/PU0eQ4mjXK4   → “AI is creating a paranoid society!”
+Douglas Rushkoff. Survival of the Richest.
+Bender, Emily M., und Hanna Alex. 2025. The AI Con: How to Fight Big Tech’s Hype and Create the Future We Want. First edition.
+
+Yuval Noah Harari on AI and Human Evolution | WSJ Leadership Institute. https://youtu.be/Ki5hosohNtQ
+
+'We have to stop it taking over' - the past, present and future of AI with Geoffrey Hinton. https://youtu.be/Y7nrAOmUtRs
+
+… 
+
+
+
+The Terminology Problem
+ChatGPT ≠ AI ≠ GPT ≠ Machine Learning
+LLM ≠ LLM
+LLM as Frontier-Models (~operating system)		LLM as LLM
+
+
+
+
+GPT-4-Tier+
+Claude 4, GPT-5, Gemini 2.5, … 
+Coding, Math, Complex Tasks
+Agents
+More Context Engineering
+Never ever can you train one
+Smaller Models
+NLP Tasks
+Cheaper
+More Machine Learning
+More Prompt Engineering
+Possible to train
+Open Source ≠ Open Weights ≠ Tech-Company Model
+
+What the F*ck Is Artificial General Intelligence (AGI)?
+Bennett, Michael Timothy. What the F*ck Is Artificial General Intelligence? Vol. 16057. 2025. https://doi.org/10.1007/978-3-032-00686-8_4. 
+
+Machine Learning Street Talk, dir. Intelligence Isn’t What You Think. 2025. 01:05:45. https://www.youtube.com/watch?v=K18Gmp2oXIM. 
+
+
+Hype/Reality
+Artificial Super Intelligence (ASI)
+Artificial General Intelligence (AGI)
+Artificial Jagged Intelligence (AJI)
+Advanced Machine Intelligence (AMI)
+Human intelligence is not general.
+“Every cat is smarter than an LLM!”
+Outperform almost all humans in almost all economically valuable tasks
+There is no universally agreed-upon definition
+Alignment
+The term is NOT defined, agreed and not really helpful (like ASI)
+Beyond human comprehension
+Superalignment
+Uneven capabilities, superhuman in some tasks yet unreliable in others
+Continuous dependence on human expertise and guidance
+LeCun, Yann. 2022. A Path Towards Autonomous Machine Intelligence. https://openreview.net/pdf?id=BZ5a1r-kVsf
+Ethan Mollick. On Jagged AGI: o3, Gemini 2.5, and everything after
+New models. https://www.oneusefulthing.org/p/on-jagged-agi-o3-gemini-25-and-everything 
+ 
+Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, und Romeo Dean. AI 2027. https://ai-2027.com
+
+Daniel Kokotajlo. Super Intelligence Speculation - Computerphile. https://youtu.be/5UAvECavmFA 
+Benjamin Todd. The case for AGI by 2030. https://80000hours.org/agi/guide/when-will-agi-arrive 
+
+
+What is intelligence? 
+Intelligence is the efficiency of a system in adapting new skills to noveltyNot measuring skill, but measuring the ability to learn something new.
+“I've updated my AGI timeline” | Francois Chollet + Dwarkesh Patel
+https://www.youtube.com/watch?v=1if6XbzD5Yg&ab_channel=ARCPrize 
+Chollet, François. 2019. „On the Measure of Intelligence“. arXiv. https://doi.org/10.48550/arXiv.1911.01547. 
+Pattern Recognition vs True Intelligence - Francois Chollet. https://youtu.be/JTU8Ha4Jyfc?si=sQVLnJwXepYtKfb1 François Chollet on OpenAI o-models and ARC. https://youtu.be/w9WE1aOPjHc?si=lEgOqvfJJM5Tmbs8&t=3412 
+Interactive Reasoning Benchmarks | ARC-AGI-3 Preview. https://youtu.be/3T4OwBp6d90?si=GhT_oJIZEv7wcTRh 
+https://www.linkedin.com/posts/emollick_looking-at-the-arc-agi-benchmark-is-a-useful-activity-7362742481009942528--eSp?utm_source=share&utm_medium=member_android&rcm=ACoAADQiSgsBZnQdWJFeikmtwEMNFlPh1pZv8GY 
+
+
+ARC-AGI: Problems Easy for Humans and Hard for AI
+https://arcprize.org/arc-agi/1 
+https://arcprize.org/arc-agi/2 
+https://arcprize.org/arc-agi/3 
+Interactive Reasoning Benchmarks | ARC-AGI-3 Preview. https://www.youtube.com/watch?v=3T4OwBp6d90&ab_channel=ARCPrize 
+ARC-1 → ARC-2
+From “can AI reason?” to “can AI reason efficiently?” 
+ARC-2 → ARC-3
+From “static reasoning” to “dynamic, interactive intelligence”
+
+Scaling it up to the max! (Or has it reached a plateau?)
+https://ai-2027.com
+How Scaling Laws Drive Smarter, More Powerful AI. https://blogs.nvidia.com/blog/ai-scaling-laws 
+https://www.linkedin.com/posts/greg-blonder-0b1b027_between-a-rock-and-a-hard-place-activity-7362203632991150083-DK7c?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQiSgsBZnQdWJFeikmtwEMNFlPh1pZv8GY 
+
+Embodiment and Robots and World Models
+https://www.youtube.com/watch?v=8gfuUzDn4Q8&ab_channel=Figure 
+https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/ 
+https://www.youtube.com/watch?v=48pxVdmkMIE&list=PLaHADNRco7n3GKVUD8mAc36pXQ5pnJQVL&index=10 
+
+Measuring AI Ability to Complete Long Tasks
+https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/ 
+
+Anthropic’s Dario Amodei & Jack Clark & Axios’ Jim VandeHei. https://youtu.be/nvXj4HTiYqA?si=R3NEUipBCbeBvqq6 
+
+“Understanding” LLMs
+Perspectives
+Stochastic Parrots, Research Integrity (Dingemanse (2024)
+“Glass half full:” Strange New Minds, Exotic Mind-Like Entities, System 1.42
+Problems
+Alignment, Duck, Epistemic Asymmetry Problem (“Black Box”), “There-is-no-true-Responsible-Frontier-AI-Usage”, System Coercion, “4th-Narcissistic-Injury-to-Humanity” Problem
+Skills Atrophy Problem, “Needs-an-Expert-in-the-Loop”, Evaluation and Benchmark, Communication & Knowledge Gap, Attribution Integration, Compute & Money Problem
+AJI, AMI, AGI, ASI and what is intelligence?
+ChatGPT ≠ AI ≠ GPT ≠ Machine Learning ≠ LLM ≠ Frontier-LLM … 
+Summary
+
+Resources
+Haojin Yang. Sustainability in the Digital Age: Efficient AI Techniques in the LLM Era. https://open.hpi.de/courses/aimethods2025   
+Gunther Rothermel et al. Sustainability in the digital age: AI and Sustainability - Balancing Innovation and Responsibility. https://open.hpi.de/courses/aisolutions2025 
+tante. ‘On “Vibe Coding”’. Smashing Frames (blog), 23 May 2025. https://tante.cc/2025/05/23/on-vibe-coding
+Crawford, Kate. Atlas of AI. https://yalebooks.yale.edu/9780300264630/atlas-of-ai
+AI and the paradox of trust | Yuval Noah Harari. https://youtu.be/8GaW36EfidI 
+Super Intelligence Speculation - Computerphile. https://youtu.be/5UAvECavmFA 
+Anthropic. Interpretability: Understanding how AI models think. https://youtu.be/fGKNUvivvnc 
+Anthropic. On the Biology of a Large Language Model. https://transformer-circuits.pub/2025/attribution-graphs/biology.html
+Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021. ‘On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜’. Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (New York, NY, USA), FAccT ’21, 610–23. https://doi.org/10.1145/3442188.3445922 
+Naveed, Humza, Asad Ullah Khan, Shi Qiu, et al. ‘A Comprehensive Overview of Large Language Models’. ACM Trans. Intell. Syst. Technol., ahead of print, 18 June 2025. https://doi.org/10.1145/3744746. 
+Pollin, Christopher. 2025. ‘System 1.42: Wie (Frontier-)LLMs “tatsächlich” funktionieren’. https://dhcraft.org/excellence/blog/System1-42 
+Shanahan, Murray. 2024. ‘Talking about Large Language Models’. Commun. ACM 67 (2): 68–79. https://doi.org/10.1145/3624724 
+Summerfield, Christopher. 2025. These Strange New Minds: How AI Learned to Talk and What It Means. Viking.
+
+Outlook: Large Language Models for Digital Humanities Research
+Introductory Workshop on LLMs and Prompt Engineering
+Fundamental of LLMs
+Prompt Engineering
+Advanced Prompt Engineering
+AI Engineering
+Hands-On Workshop
+Terms and Concepts (“Understanding” LLMs: Between Fancy Autocomplete and AGI)
+Specialized Workshop Track
+Large Language Models for Qualitative Data Analysis
+Deep Learning in the Computational Literary Studies
+LLM-Supported Modeling, Operationalization, and Exploration for Digital Editions
+Using LLMs for Psycholinguistic Research
+
+Appendix
+
+Learning Objectives
+How LLMs workExplain how LLMs process text (tokenization, embeddings, context windows, attention, etc.) and identify how these mechanisms affect output.
+How to use LLMsInteract with LLMs using appropriate interfaces and understand the technical parameters that influence responses. Create and refine prompts using systematic techniques for (research) tasks. 
+Critical discussion of LLMsDiscuss the technical limitations and broader implications of LLM use, including reliability issues (biases, hallucinations, etc.), data privacy, environmental impacts, and ethical, legal, educational, and social considerations.
+How LLMs affect DH Research	Discuss how LLMs affect research methodologies in Digital Humanities and identify opportunities and risks for specific research contexts.
+How to implement LLMs in DH ResearchDevelop and test AI-assisted workflows for potential LLM integration in research processes.
+
+Stand-Up Survey
+Questions:
+I use LLMs weekly daily in my work
+I feel more excited than worried about AI in general 
+More worried
+both
+I’m confident I can identify GenAI-generated content
+My institution has clear AI guidelines
+I’ve had an ‘aha’ moment with an LLM
+I feel overwhelmed
+I used a frontier model (GPT-5, Claude 4.1 Opus, Gemini 2.5 Pro) in a pro version
+I used an open source model
+I failed in a LLM experiment
+I succeed in a LLM experiment
+I’ve implemented a working LLM(-assisted) workflow
+I have specific concerns about AI use in my field (why?)
+… anything else
+Format: Everyone responds from their seats using hand signals
+Instructions:
+Hand raised high = Strongly agree/yes
+Hand at shoulder level = Somewhat/middle position
+Hand down/on desk = Disagree/no
+Arms crossed = Prefer not to answer
+Open floor: What's missing? Brief comments on aspects we haven't covered or experiences you'd like to share.
+Follow-up:
+"Would 2-3 people share what surprised them?"
+Instructor notes patterns: "I see we have a very mixed group..."
+Goal: Non-invasive temperature check while respecting privacy and physical constraints
+
+Agenda & Resources
+“Understanding” LLMs
+Perspectives
+Problems
+Terms and Concepts
+Applied Generative AI. https://youtube.com/playlist?list=PLaHADNRco7n3GKVUD8mAc36pXQ5pnJQVL 
+DHd-AG Angewandte Generative KI in den Digitalen Geisteswissenschaften (AGKI-DH). https://agki-dh.github.io 
+
+AGKI Zotero Library. https://www.zotero.org/groups/5319178/agki-dh 
+School. https://chpollin.github.io/llmdh
+You can ask anything at any time!
+We can repeat concepts and turns.
+You can leave a comment at any time.
+You can write comments and questions in the slides and documents (lecture manuscripts).
+The slides are mostly complete, and the lecture manuscripts are partly complete. Everything will be finished after school.
+
+Hands-On: Critical Perspectives on GenAI in Research
+According to Dingemanse (2024), GenAI undermines core research virtues:
+Honesty: 		Regurgitates content without comprehension or proper attribution
+Scrupulousness: 	Generates superficial consensus rather than rigorous analysis
+Transparency: 	Black-boxed processes with unreproducible, unstable outputs
+Independence: 	Outsourcing cognition surrenders intellectual autonomy
+Responsibility: 	Cannot be accountable for work you didn't produce or understand
+“Writing is thinking. To outsource writing is to give up on thinking.”
+Read the text individually
+Discuss with your neighbour
+Plenary discussion	→	How does this apply to your own research/work practices?	→	Where are these criticisms justified and compelling?	→	Where might they be overly rigid or miss nuance?          → 	Can GenAI be used while preserving these virtues?
+Dingemanse, Mark. ‘Generative AI and Research Integrity’. Preprint, OSF, 14 May 2024. https://doi.org/10.31219/osf.io/2c48n. 
+
+Discussion: Critical Perspectives on GenAI in Research
+Soft Research vs. Real World
+Documentation: what to document? 
+DeepL, other (AI) tools having influence on academic work
+“Is the content good”
+“Not only discussion environmental concerns is saving the planet”
+Open Source Models
+
+
+Gemini Deep Research: https://docs.google.com/document/d/1LNlSUpKFNWhjwJonxPhMX1Fl04bd3TpcKCIYkl2LrCA/edit?usp=sharing 
+Claude: https://claude.ai/share/b946e0d4-ae7e-4404-bfb4-537316072f65 
+
+Plenum Discussion: Coding and LLM
+Who among you codes with LLMs? 
+What are your experiences? 
+Who has really vibe coded? 
+Who has completed a coding task extremely quickly? 
+Who has gotten really frustrated? 
+What opportunities and problems does it bring? 
+What does this do to research and LLMs? 
+
+Crazy Silicon Valley fantasies?
+Sam Altmann. The Intelligence Age. https://ia.samaltman.com. OpenAI
+Leopold Aschenbrenner. SITUATIONAL AWARENESS. The Decade Ahead. https://situational-awareness.ai (OpenAI)
+
+Dario Amodei. Machines of Loving Grace. https://darioamodei.com/machines-of-loving-grace. Antrophic
+
+
+Proto-AGI (!?) is coming … and it is coming fast! 
+“People still treating it as ‘just another technology’ when in fact it's ‘different in category’”
+Demis Hassabis. https://youtu.be/4poqjZlM8Lo?si=r7z0HIVbQnU2XeAg&t=590 
+Dario Amodei: "The Future of U.S. AI Leadership with CEO of Anthropic Dario Amodei." https://www.youtube.com/live/esCSpbDPJik Machines of Loving Grace. How AI Could Transform the World for the Better." Blog. Oktober 2024. https://darioamodei.com/machines-of-loving-grace 
+Mark Daley. AI isn’t running water. It's something different. https://noeticengines.substack.com/p/ai-isnt-running-water 
+
+Actual LLM agents are coming. They will be trained. http://vintagedata.org/blog/posts/designing-llm-agents 
+Speaking things into existence. https://www.oneusefulthing.org/p/speaking-things-into-existence 
+https://www.linkedin.com/posts/ignacio-de-gregorio-noblejas_ai-openai-vc-activity-7305653160314855425-KmS0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQiSgsBZnQdWJFeikmtwEMNFlPh1pZv8GY 
+AI Explained. https://www.youtube.com/watch?v=N8dZ6ADCPyc 
+
+Glimpses of AI Progress. https://www.pathwaysai.org/p/glimpses-of-ai-progess?r=1tuby9&utm_medium=ios&triedRedirect=true 
+
+AGI is a system that can efficiently acquire new skills outside of its training data. More formally: The intelligence of a system is a measure of its skill-acquisition efficiency over a scope of tasks, with respect to priors, experience, and generalization difficulty
+AGI is reached when it's no longer easy to come up with problems that regular people can solve and that are infeasible for AI models
+- François Chollets. https://arcprize.org/arc
+- François Chollets. https://x.com/fchollet/status/1877477100283740364 
+
+Some Personal Thoughts
+AI is a technological revolution that has been overshadowed by hype. Tech companies are making real, ongoing progress; however the extreme utopian and dystopian scenarios do not really help.
+Implementation of GenAI remains complex and requires us to adapt collectively to something fundamentally new.
+While all criticism of AI is justified, most critics underestimate its rapid evolution. Despite valid concerns, competitive pressures such as global rivalry, career advancement and research funding create irresistible incentives for adoption. What could stop this trend?
+We must critically engage with technology evolving faster than our understanding. The question shifts from whether to use AI to how to preserve integrity and agency amid inevitable change.
+I see no evidence to suggest that tech companies are incapable of building a AGI-like (or better AJI) systems.
+
+“Vibe Hacking” and other Problems with Cybersecurity
+
+Threat Intelligence: How Anthropic stops AI cybercrime. https://youtu.be/EsCNkDrIGCw
+
+https://www.anthropic.com/news/detecting-countering-misuse-aug-2025 
+
+VibeVoice: A Frontier Open-Source Text-to-Speech Model
+https://microsoft.github.io/VibeVoice 
+
+Peng, Zhiliang, Jianwei Yu, Wenhui Wang, et al. ‘VibeVoice Technical Report’. arXiv:2508.19205. Preprint, arXiv, 26 August 2025. https://doi.org/10.48550/arXiv.2508.19205. 
+
+The Weirdness of Mass Intelligence
+Current State
+1 billion+ regular AI users (ChatGPT: 700M weekly)
+Cost per million tokens: $50 (2023) → $0.14 (2025)
+Energy per query: ~0.0003 kWh (comparable to 2008 Google search)
+Key Changes
+Simplified interfaces replacing technical prompting
+Partial free access to advanced reasoning models
+Automated model selection (with implementation challenges)
+Observed Impacts
+Positive: Disease diagnosis, educational access, creative tools
+Negative: Mental health risks, authenticity concerns, potential misuse
+Institutional: Systems designed for "scarce intelligence" facing adaptation pressure
+Open Question How should institutions built on assumptions of limited cognitive resources adapt to widespread AI availability?
+
+Ethan Mollick. The Weirdness of Mass Intelligence. https://www.oneusefulthing.org/p/mass-intelligence  
