@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generative KI f&uuml;r Datenaufbereitung und Datenmigration &middot; G&ouml;ttingen 2026</title>
+<meta name="description" content="The Göttingen instance of the teaching line, a hybrid half day on agent-supported data preparation, migration and interface maintenance in long-running academy projects.">
+
+<!--
+  Workshop subpage. Static, no JavaScript. Chrome copied from docs/drafts/chrome.html
+  with the path prefixes adjusted for docs/workshops/.
+
+  Facts come from docs/data/workshops.json. The specialisation prose is grounded in
+  workshops/2026-10-15-gda-goettingen/profile.md and in the vault-based research draft
+  knowledge/drafts/specialization-analysis.md, section 5. Inferences are marked in the
+  prose itself.
+
+  The cover slot degrades gracefully: assets/covers/<id>.png does not exist yet, and
+  the .plate class holds the 16:9 box with the tint ground until the image lands.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <img src="../assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <span>Digital Humanities Craft</span>
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="../index.html#workshops">Workshops</a></li>
+        <li><a href="../index.html#modules">Modules</a></li>
+        <li><a href="../preparation.html">Preparation</a></li>
+        <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="page-head">
+      <div>
+        <p class="stamp">15 October 2026</p>
+        <h1 lang="de">Generative KI f&uuml;r Datenaufbereitung, Datenmigration und die Pflege von Interfaces</h1>
+        <p class="event">G&ouml;ttinger Digitale Akademie, Akademie der Wissenschaften zu G&ouml;ttingen</p>
+        <p class="facts">
+          <span><b>Date</b> 15 October 2026, a half day of three and a half hours, hybrid</span>
+          <span><b>Event</b> G&ouml;ttinger Digitale Akademie, Akademie der Wissenschaften zu G&ouml;ttingen</span>
+          <span><b>Audience</b> staff of academy research projects and library guests</span>
+          <span><b>Teaching language</b> German</span>
+          <span><b>Status</b> planned</span>
+        </p>
+      </div>
+      <img class="plate" src="../assets/covers/2026-10-15-gda-goettingen.png" alt=""
+           width="960" height="540" loading="lazy" decoding="async">
+    </div>
+
+    <section class="block" id="specialisation">
+      <h2>Specialisation</h2>
+
+      <p>A hybrid half day with a parallel video channel, taught in German as the pre-conference
+      workshop to the closing conference of the academy's digital programme, whose theme pairs
+      sustainability and artificial intelligence. The subject is generative AI for the preparation and
+      migration of research data and for the semi-automated maintenance of user interfaces and service
+      endpoints. At three and a half hours this is the narrowest cut of the upcoming instances, and it
+      sits closer to research data engineering than to the full arc of the line.</p>
+
+      <p>The framing argument ties the instance to its conference. Academy projects produce data,
+      editions and interfaces over decades, and at the end of a funding period migration and
+      maintenance fall due. That work is repetitive, rule-governed and source-bound, which is where
+      coding agents carry it. The stated condition is machine-readable project documentation, because
+      what is documented nowhere can be observed by no agent.</p>
+
+      <p>The central methodological slide separates agent-written scripts from direct model
+      transformation. The agent characterises the data, writes a transformation script, tests it
+      against known cases and executes both, so the script stays deterministic, repeatable and
+      inspectable and every correction becomes a diff under version control. Transformation by the
+      model itself stays limited to small individually verifiable units such as a single recognised
+      page or a boundary case the script does not cover.</p>
+
+      <p>Three existing projects carry the session as case studies, a music-archival pipeline that
+      moves spreadsheet holdings into a linked-data model and generates an exploration interface, a
+      library pipeline that runs from scans to TEI in stages with deterministic schema validation and
+      a human-set workflow status per document, and a static generator for a review journal whose
+      declarative element mapping carries most display decisions without touching code. This is also
+      the one instance among the seven whose teaching text is already written, meaning full slide
+      texts with speaker notes, each fundamentals slide carrying a provenance field that names the
+      slide of the Full Slide Deck it adapts. The time distribution inside the morning is fixed
+      nowhere, and the demonstration dataset is still undecided.</p>
+    </section>
+
+    <section class="block" id="sequence">
+      <h2>Hands-on, on the participants' own material</h2>
+      <ol class="seq">
+        <li><span class="is-handson">Build a knowledge vault with a short instruction file and a
+          document describing the data sample.</span></li>
+        <li><span class="is-handson">Place the sample and have the agent characterise it.</span></li>
+        <li><span class="is-handson">Formulate a bounded commission with acceptance
+          criteria.</span></li>
+        <li><span class="is-handson">Check the result against one's own expertise and run a correction
+          round.</span></li>
+      </ol>
+    </section>
+
+    <section class="block" id="modules">
+      <h2>Module coverage</h2>
+
+      <ul class="mods" aria-hidden="true">
+        <li class="mod m1 lite">1</li>
+        <li class="mod m2 lite">2</li>
+        <li class="mod m3">3</li>
+        <li class="mod m4">4</li>
+        <li class="mod m5">5</li>
+      </ul>
+
+      <ul class="linklist" role="list">
+        <li>Understanding Large Language Models, touched briefly
+          <span class="what">A compact opening, sharpened onto data work, where counting, arithmetic
+          and exact string operations are the unreliable cases.</span>
+        </li>
+        <li>Prompt Engineering, touched briefly
+          <span class="what">One dedicated slide on formulating a commission to an agent, with goal,
+          context, acceptance criteria and constraints, placed immediately before the hands-on as its
+          checklist.</span>
+        </li>
+        <li>Knowledge and Context Engineering, taught in full
+          <span class="what">Why agents need context, context rot, what belongs in an instruction file,
+          and what a knowledge document and a knowledge vault are. The vault is the first working step
+          of the exercise.</span>
+        </li>
+        <li>Agentic Engineering, taught in full and the centre of the session
+          <span class="what">What an agent is, how the agentic loop is shaped, and a two-part live
+          demonstration on data preparation and on interface maintenance with a four-step fallback
+          chain behind it.</span>
+        </li>
+        <li>Critical Perspectives and Governance, taught in full
+          <span class="what">Its own slide on checking artefacts against the holdings, with the two
+          checking levels of deterministic and domain-expert, addressed to the participants as the
+          critical experts in the loop.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="block" id="materials">
+      <h2>Materials</h2>
+      <ul class="linklist" role="list">
+        <li><span class="pending">Slide deck (GDA G&ouml;ttingen 2026)</span>
+          <span class="what">To be generated from the written slide texts once they are accepted. The
+          register carries no link yet.</span>
+        </li>
+        <li><span class="pending">Lecture Notes (GDA G&ouml;ttingen 2026)</span>
+          <span class="what">In preparation in the instance folder. The underlying slide texts with
+          speaker notes exist and were adversarially reviewed with all findings resolved.</span>
+        </li>
+        <li><span class="pending">Demonstration material</span>
+          <span class="what">The partner institute has to clear the demonstration state for public
+          display, and the dataset for the first part is undecided.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="block" id="provenance">
+      <h2>Provenance</h2>
+      <p>This instance is a documented specialisation of the Full Slide Deck and the Full Lecture
+      Notes, which are maintained once and cut into five modules. What this instance selects, cuts and
+      adds is recorded in its repository folder,
+      <a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering/tree/main/workshops/2026-10-15-gda-goettingen">workshops/2026-10-15-gda-goettingen</a>.</p>
+    </section>
+
+    <a class="backlink" href="../index.html#workshops">Back to all workshops</a>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="../assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <div class="imprint">
+        <p class="name">Christopher Pollin</p>
+        <p>Digital Humanities Craft</p>
+        <p>
+          <a href="https://dhcraft.org">dhcraft.org</a>
+          <span class="sep">&middot;</span>
+          <a href="mailto:office@dhcraft.org">office@dhcraft.org</a>
+        </p>
+      </div>
+    </div>
+    <div class="colophon">
+      <p>Built with <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a></p>
+      <p>Text content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

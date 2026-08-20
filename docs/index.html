@@ -4,411 +4,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Knowledge, Context and Agentic Engineering for Knowledge Work</title>
-<meta name="description" content="A curated teaching corpus on knowledge, context and agentic engineering for knowledge work, with its documented workshop instances.">
+<meta name="description" content="A teaching line on knowledge, context and agentic engineering for knowledge work, maintained once in five modules and taught as documented workshop specialisations.">
 
 <!--
   Start page of the platform. Static, no build step, no JavaScript, self-contained
   except for the Google Fonts stylesheet.
 
-  Known open item: the workshop register is static markup that mirrors
-  docs/data/workshops.json by hand. The specification asks for the register to
-  render from that file, so a new entry appears without an HTML edit. That step
-  is still open and needs the fetch-and-render path.
+  The workshop section mirrors docs/data/workshops.json by hand, per the decision
+  in knowledge/specification.md that pages stay in sync with the register through
+  the maintaining agent rather than through client-side rendering. After any
+  register change the cards here are updated in the same work step.
 
-  Cover images live in assets/covers/<id>.png. Workshops without one show a quiet
-  slot in the same 16:9 proportion, so the grid keeps its rhythm.
+  Covers live in assets/covers/<id>.png. Only two of them exist today, so every
+  cover sits in a slot that carries the 16:9 proportion and the tint ground on its
+  own; a missing file leaves a quiet plate instead of a broken image.
+
+  Module badge contract, shared with the workshop subpages: <ul class="mods"> with
+  five items <li class="mod m1">1</li> through m5, `lite` for a module that is
+  only touched, `off` for a module that is not part of the instance.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-/* ==========================================================================
-   TOKENS
-   The only place where literal values live. Everything below consumes var().
-   Contrast ratios are against --paper unless noted.
-   ========================================================================== */
-:root {
-  color-scheme: light;
-
-  /* --- Typefaces ------------------------------------------------------- */
-  --font-ui: "Space Grotesk", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
-
-  /* --- Type scale ------------------------------------------------------ */
-  --text-xs: 0.75rem;        /* uppercase micro labels */
-  --text-sm: 0.8125rem;      /* module keys */
-  --text-md: 0.875rem;       /* secondary lines, colophon */
-  --text-lg: 0.9375rem;      /* card meta, status labels, imprint */
-  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
-  --text-title: 1.0625rem;   /* module heading */
-  --text-card: 1.125rem;     /* card heading */
-  --text-lede: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
-  --text-section: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
-  --text-hero: clamp(2rem, 1.3rem + 3.2vw, 3.5rem);
-
-  /* --- Spacing scale, 8px based ---------------------------------------- */
-  --s1: 0.5rem;
-  --s2: 1rem;
-  --s3: 1.5rem;
-  --s4: 2rem;
-  --s5: 3rem;
-  --s6: 4.5rem;
-  --s7: 7rem;
-  /* Sections are separated by this gap alone, no rules. It has to stay clearly
-     larger than any gap inside a section for the order to read. */
-  --gap-section: clamp(var(--s6), 9vw, var(--s7));
-
-  /* --- Ground and ink --------------------------------------------------- */
-  --paper: #FDFDFB;          /* one ground for the whole page */
-  --tint: #F3F3EF;           /* neutral fill for cover slots */
-  --ink: #141413;            /* 18.1:1 */
-  --ink-2: #4A4A46;          /* 8.7:1  */
-  --ink-3: #6C6C65;          /* 5.2:1 on paper, 4.8:1 on tint */
-  --rule: #E4E4DE;           /* quiet object outline, decorative */
-  --rule-mid: #90908A;       /* 3.2:1, visible lines: motif flow, underlines */
-
-  /* --- Accent ----------------------------------------------------------- */
-  /* One turquoise, clears AA, so the same value carries interactive text and
-     the motif highlights without a second variant. */
-  --accent: #0A7E7C;         /* 4.8:1 */
-
-  /* --- Identity palette, derived from the watercolor logo ---------------- */
-  /* Four families measured in the mark itself. Used only as module marks, never
-     for text, so each is tuned for presence as a small filled shape (>=3:1).
-     The blue stays watercolor-light on purpose, the violet stays deep. */
-  --c-orange: #C87000;       /* 3.6:1 */
-  --c-blue:   #5B8FC4;       /* 3.3:1 */
-  --c-green:  #7C9200;       /* 3.5:1 */
-  --c-violet: #8140B8;       /* 6.1:1 */
-
-  /* --- Layout ----------------------------------------------------------- */
-  --measure: 60ch;           /* reading width for prose */
-  --page: 1160px;
-  --radius: 3px;
-}
-
-/* ==========================================================================
-   BASE
-   ========================================================================== */
-*, *::before, *::after { box-sizing: border-box; }
-
-html { -webkit-text-size-adjust: 100%; }
-
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-ui);
-  font-size: var(--text-body);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3 {
-  margin: 0;
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-  text-wrap: balance;
-}
-
-p, ul, ol { margin: 0; }
-
-a {
-  color: var(--accent);
-  text-decoration: underline;
-  text-decoration-color: var(--rule-mid);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
-}
-a:hover { text-decoration-color: var(--accent); }
-
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
-img { max-width: 100%; height: auto; }
-
-/* ==========================================================================
-   LAYOUT PRIMITIVES
-   ========================================================================== */
-.wrap {
-  width: min(100% - 2 * var(--s3), var(--page));
-  margin-inline: auto;
-}
-
-.section { padding-top: var(--gap-section); }
-
-.section-title { font-size: var(--text-section); }
-
-/* Horizontal escape hatch for content that cannot compress further. */
-.scroll-x {
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-}
-
-/* The one component for artefacts that do not exist yet. Micro gaps stay
-   em-relative so they track the type size. */
-.pending {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55em;
-  color: var(--ink-3);
-  font-size: var(--text-lg);
-}
-.pending::before {
-  content: "";
-  flex: none;
-  width: 7px;
-  height: 7px;
-  border: 1px solid var(--rule-mid);
-  border-radius: 50%;
-}
-
-/* ==========================================================================
-   HEADER
-   ========================================================================== */
-.site-head > .wrap {
-  padding-top: var(--s3);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-/* ==========================================================================
-   HERO
-   Three elements: title, one sentence, one link.
-   ========================================================================== */
-.hero { padding-block: clamp(var(--s5), 7vw, var(--s7)) var(--s5); }
-
-.hero h1 {
-  max-width: 20ch;
-  font-size: var(--text-hero);
-}
-
-.hero p {
-  max-width: var(--measure);
-  margin-top: var(--s3);
-  color: var(--ink-2);
-  font-size: var(--text-lede);
-  line-height: 1.55;
-}
-
-.hero .repo {
-  margin-top: var(--s4);
-  font-size: var(--text-body);
-}
-
-/* ==========================================================================
-   MOTIF
-   Turquoise only. Two stroke weights for structure and detail, a third,
-   lighter tone for the flow between stations.
-   ========================================================================== */
-.motif { padding-block: var(--s3); }
-
-.motif svg {
-  display: block;
-  width: 100%;
-  min-width: 760px;   /* below this the labels stop being legible, so scroll */
-  height: auto;
-}
-
-.m-line        { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
-.m-line.m-fill { fill: var(--paper); }
-.m-thin        { fill: none; stroke: var(--ink-2); stroke-width: 1.1; stroke-linecap: round; }
-.m-flow        { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
-.m-accent      { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.m-return      { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-dasharray: 3 5; stroke-linecap: round; }
-.m-return-tip  { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
-.m-seal        { fill: var(--accent); }
-.m-check       { fill: none; stroke: var(--paper); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.m-label       { font-family: var(--font-ui); font-size: 13px; fill: var(--ink); text-anchor: middle; }
-.m-note        { font-family: var(--font-ui); font-size: 11.5px; fill: var(--ink-3); text-anchor: middle; letter-spacing: 0.06em; }
-
-/* ==========================================================================
-   MODULES
-   The single home of the identity palette. Each module carries one small mark,
-   turquoise plus the four logo colours, assigned by position.
-   ========================================================================== */
-.module-list {
-  display: grid;
-  gap: var(--s3);
-  max-width: 78ch;
-  margin-top: var(--s4);
-  padding: 0;
-  list-style: none;
-}
-
-.module-list li {
-  display: grid;
-  grid-template-columns: 3.2em 1fr;
-  align-items: baseline;
-}
-
-.module-list .key {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-}
-
-.module-list .dot {
-  flex: none;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-.module-list li:nth-child(1) .dot { background: var(--c-violet); }
-.module-list li:nth-child(2) .dot { background: var(--c-orange); }
-.module-list li:nth-child(3) .dot { background: var(--accent); }
-.module-list li:nth-child(4) .dot { background: var(--c-blue); }
-.module-list li:nth-child(5) .dot { background: var(--c-green); }
-
-.module-list h3 { font-size: var(--text-title); }
-
-.module-list .sub {
-  margin-top: 0.25em;
-  color: var(--ink-3);
-  font-size: var(--text-md);
-  line-height: 1.5;
-}
-
-.notes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s1) var(--s4);
-  margin-top: var(--s4);
-}
-
-/* ==========================================================================
-   WORKSHOPS
-   ========================================================================== */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 264px), 1fr));
-  gap: var(--s3);
-  margin-top: var(--s4);
-  padding: 0;
-  list-style: none;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: border-color 120ms ease;
-}
-.card:hover { border-color: var(--rule-mid); }
-.card:focus-within { border-color: var(--accent); }
-
-/* Real title slide and empty slot share the 16:9 proportion. */
-.cover-img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background: var(--tint);
-}
-
-.cover {
-  display: grid;
-  place-content: center;
-  aspect-ratio: 16 / 9;
-  padding: var(--s2);
-  background: var(--tint);
-  color: var(--ink-3);
-  font-size: var(--text-xs);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.card-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: var(--s2);
-  padding: var(--s3);
-}
-
-.card .date { color: var(--ink-3); font-size: var(--text-md); letter-spacing: 0.02em; }
-.card h3 { font-size: var(--text-card); }
-.card .event { color: var(--ink-2); font-size: var(--text-lg); }
-.card .facts { color: var(--ink-3); font-size: var(--text-md); line-height: 1.5; }
-.card .facts span { display: block; }
-
-.card-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s1) var(--s2);
-  margin-top: auto;
-  padding-top: var(--s1);
-  font-size: var(--text-lg);
-}
-
-/* ==========================================================================
-   FOOTER
-   Same ground as the page, separated by space alone. The logo sits here as
-   the source of the identity palette.
-   ========================================================================== */
-.site-foot { padding-block: var(--gap-section) var(--s5); }
-
-.site-foot > .wrap {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--s4) var(--s5);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: var(--s3);
-}
-.brand img { width: clamp(112px, 13vw, 140px); }
-
-.imprint {
-  color: var(--ink-3);
-  font-size: var(--text-lg);
-  line-height: 1.7;
-}
-.imprint .name { color: var(--ink); font-weight: 500; }
-.imprint .sep { padding-inline: 0.4em; color: var(--rule-mid); }
-
-.colophon {
-  color: var(--ink-3);
-  font-size: var(--text-md);
-  line-height: 1.9;
-  text-align: right;
-}
-
-/* ==========================================================================
-   PREFERENCES AND NARROW VIEWPORTS
-   ========================================================================== */
-@media (max-width: 640px) {
-  .colophon { text-align: left; }
-  .brand { gap: var(--s2); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { transition-duration: 0.01ms !important; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="assets/favicon/site.webmanifest">
 </head>
 
 <body>
 
 <header class="site-head">
-  <div class="wrap">Digital Humanities Craft</div>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <span>Digital Humanities Craft</span>
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="index.html#workshops">Workshops</a></li>
+        <li><a href="index.html#modules">Modules</a></li>
+        <li><a href="preparation.html">Preparation</a></li>
+        <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <main>
@@ -418,8 +61,10 @@ img { max-width: 100%; height: auto; }
     <div class="wrap">
       <h1>Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
       <p>
-        One curated corpus on working with large language models, from fundamentals to
-        verification, and every workshop below is a documented specialisation of it.
+        A teaching line on working with frontier language models inside AI harnesses,
+        for everyone doing computer-based, data-driven knowledge work. The corpus is
+        maintained once in five modules, and every workshop below is a documented
+        specialisation of it.
       </p>
       <p class="repo">
         <a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Repository</a>
@@ -509,121 +154,322 @@ img { max-width: 100%; height: auto; }
   </div>
 
   <!-- ============ Modules ============ -->
-  <section class="section">
+  <section class="section" id="modules">
     <div class="wrap">
       <h2 class="section-title">Modules</h2>
 
       <ol class="module-list" role="list">
-        <li>
+        <li class="m1">
           <span class="key"><span class="dot"></span>01</span>
           <div>
             <h3>Understanding Large Language Models</h3>
-            <p class="sub">Capability landscape, asymmetric amplification, latent program space</p>
+            <p class="sub">Capability landscape, jagged capability, latent program space, the assistant character</p>
           </div>
         </li>
-        <li>
+        <li class="m2">
           <span class="key"><span class="dot"></span>02</span>
           <div>
             <h3>Prompt Engineering</h3>
-            <p class="sub">Instruction design, prompt structure, program keys</p>
+            <p class="sub">The four-part prompt structure, the prompt as a bounded specification, practical principles</p>
           </div>
         </li>
-        <li>
+        <li class="m3">
           <span class="key"><span class="dot"></span>03</span>
           <div>
             <h3>Knowledge and Context Engineering</h3>
-            <p class="sub">Knowledge documents, working context, research data and provenance</p>
+            <p class="sub">Knowledge documents, the working context, research data and provenance</p>
           </div>
         </li>
-        <li>
+        <li class="m4">
           <span class="key"><span class="dot"></span>04</span>
           <div>
             <h3>Agentic Engineering</h3>
-            <p class="sub">Agentic loop, harness, Promptotyping, verification, hands-on case studies</p>
+            <p class="sub">Harness and agentic loop, Promptotyping, verification, hands-on case studies</p>
           </div>
         </li>
-        <li>
+        <li class="m5">
           <span class="key"><span class="dot"></span>05</span>
           <div>
             <h3>Critical Perspectives and Governance</h3>
-            <p class="sub">Governance, mission control, societal implications</p>
+            <p class="sub">Governance and decision rights, Research Mission Control, openness, societal implications</p>
           </div>
         </li>
       </ol>
 
       <div class="notes">
-        <p class="pending">Subtopic structure in progress</p>
-        <p class="pending">Script and slide texts in preparation</p>
+        <p class="pending">Unit-level structure beneath the five modules in preparation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ The corpus ============ -->
+  <section class="section" id="corpus">
+    <div class="wrap">
+      <h2 class="section-title">Full Slide Deck and Full Lecture Notes</h2>
+
+      <div class="corpus">
+        <div>
+          <img class="plate" src="assets/covers/full.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <p>
+            The corpus exists once, as the Full Slide Deck and the Full Lecture Notes, cut
+            into the five modules above and maintained in one place. A workshop is a recipe
+            over that corpus, meaning a documented selection of modules with its own depth,
+            case material, teaching language and hands-on work. What a given instance selects
+            is recorded in its profile and shown on its card as a module badge row.
+          </p>
+          <ul class="linklist" role="list">
+            <li>
+              <a href="https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit">Full Slide Deck</a>
+              <span class="what">Google Slides, all five modules, the source every workshop deck is cut from</span>
+            </li>
+            <li>
+              <span class="pending">Full Lecture Notes in preparation</span>
+              <span class="what">German source text and reviewed English translation, held in the repository</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ Workshops ============ -->
-  <section class="section">
+  <section class="section" id="workshops">
     <div class="wrap">
       <h2 class="section-title">Workshops</h2>
+      <p class="section-lede">
+        Seven instances in chronological order, each with its own module selection.
+        The badge row states how a workshop uses the five modules.
+      </p>
+
+      <ul class="mods-key" role="list">
+        <li><span class="mod m4">4</span> taught in full</li>
+        <li><span class="mod m4 lite">4</span> touched briefly</li>
+        <li><span class="mod m4 off">4</span> not part of this instance</li>
+      </ul>
 
       <!-- Chronological. Mirrors docs/data/workshops.json. -->
       <ul class="cards" role="list">
 
+        <!-- 2026-09-16-kug-m3gim -->
         <li class="card">
-          <div class="cover">Title slide to follow</div>
+          <div class="card-cover">
+            <img src="assets/covers/2026-09-16-kug-m3gim.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+          </div>
           <div class="card-body">
-            <p class="date">16&ndash;17 September 2026</p>
-            <h3>Promptotyping und Generative AI</h3>
+            <p class="stamp">16&ndash;17 September 2026<span class="sep">&middot;</span>two days</p>
+            <h3><a href="workshops/2026-09-16-kug-m3gim.html">Promptotyping und Generative AI</a></h3>
             <p class="event">KUG Summer School (M3GIM), Kunstuniversit&auml;t Graz</p>
             <p class="facts">
-              <span>Participants without LLM or programming background &middot; German</span>
-              <span>Compact introduction, hands-on with low prerequisites</span>
+              <span>Participants without an LLM or programming background</span>
+              <span>Teaching language German</span>
             </p>
-            <p class="card-links"><span class="pending">Slides and script in preparation</span></p>
+            <p class="spec">
+              The introductory profile of the line, with what a language model is and how
+              prompting works on the first day and Promptotyping as the working method on the
+              second. Four hands-on units build on one archival holding of the host university,
+              from a cleaned person index through schema extraction and transcription to a small
+              map, all of it in the chat interface without an agent harness.
+            </p>
+            <ul class="mods" role="list" aria-label="Module coverage">
+              <li class="mod m1" title="Module 1 Understanding Large Language Models, taught in full">1</li>
+              <li class="mod m2" title="Module 2 Prompt Engineering, taught in full">2</li>
+              <li class="mod m3 lite" title="Module 3 Knowledge and Context Engineering, touched briefly">3</li>
+              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
+              <li class="mod m5 lite" title="Module 5 Critical Perspectives and Governance, touched briefly">5</li>
+            </ul>
+            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
           </div>
         </li>
 
+        <!-- 2026-09-25-clariah-at -->
         <li class="card">
-          <img class="cover-img" src="assets/covers/2026-09-25-clariah-at.png"
-               alt="Title slide of Knowledge, Context and Agentic Engineering for Research Data Workflows and Digital Editions, 25 September 2026"
-               width="960" height="540" loading="lazy" decoding="async">
+          <div class="card-cover">
+            <img src="assets/covers/2026-09-25-clariah-at.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+          </div>
           <div class="card-body">
-            <p class="date">25 September 2026</p>
-            <h3>Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</h3>
+            <p class="stamp">25 September 2026<span class="sep">&middot;</span>one day</p>
+            <h3><a href="workshops/2026-09-25-clariah-at.html">Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</a></h3>
             <p class="event">CLARIAH-AT Summer School 2026: Machine Learning for Digital Scholarly Editions</p>
             <p class="facts">
-              <span>Digital humanities students, BA and MA level &middot; English</span>
-              <span>Research data workflows, digital scholarly editions, Hersch hands-on</span>
+              <span>Digital humanities students, BA and MA level</span>
+              <span>Teaching language English</span>
             </p>
-            <p class="card-links">
-              <a href="https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit">Slides</a>
-              <a href="https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit">Script</a>
+            <p class="spec">
+              The single-day specialisation on research data workflows and digital scholarly
+              editions, with case material from two edition projects at the Zentralbibliothek
+              Z&uuml;rich and the Literaturarchiv Salzburg. Prompt engineering is the one module
+              with a participant exercise of its own, and the two hands-on units run from the
+              transcription of a difficult manuscript page to structured information against an
+              explicit schema.
+            </p>
+            <ul class="mods" role="list" aria-label="Module coverage">
+              <li class="mod m1" title="Module 1 Understanding Large Language Models, taught in full">1</li>
+              <li class="mod m2" title="Module 2 Prompt Engineering, taught in full">2</li>
+              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
+              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
+              <li class="mod m5 lite" title="Module 5 Critical Perspectives and Governance, touched briefly">5</li>
+            </ul>
+            <p class="card-foot">
+              <span class="links">
+                <a href="https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit">Slide deck</a>
+                <a href="https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit">Lecture notes</a>
+              </span>
             </p>
           </div>
         </li>
 
+        <!-- 2026-10-05-hedit-heidelberg -->
         <li class="card">
-          <div class="cover">Title slide to follow</div>
+          <div class="card-cover">
+            <img src="assets/covers/2026-10-05-hedit-heidelberg.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+          </div>
           <div class="card-body">
-            <p class="date">9&ndash;10 November 2026</p>
-            <h3>Agentic-Engineering-Workshop</h3>
+            <p class="stamp">5&ndash;6 October 2026<span class="sep">&middot;</span>two days</p>
+            <h3><a href="workshops/2026-10-05-hedit-heidelberg.html">HEDIT KI-Workshop 2026</a></h3>
+            <p class="event">Forschungsstelle HEDIT, Universit&auml;t Heidelberg</p>
+            <p class="facts">
+              <span>Researchers from the editions projects of the research centre</span>
+              <span>Teaching language German</span>
+            </p>
+            <p class="spec">
+              Two days for an editions research centre, with TEI modelling, context engineering
+              and the knowledge base as steering instruments on the first day and agentic coding
+              as the central method. The second day is a two-part Promptotyping workshop on the
+              participants' own material, ending in a plenary presentation of the prototypes.
+            </p>
+            <ul class="mods" role="list" aria-label="Module coverage">
+              <li class="mod m1 lite" title="Module 1 Understanding Large Language Models, touched briefly">1</li>
+              <li class="mod m2 lite" title="Module 2 Prompt Engineering, touched briefly">2</li>
+              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
+              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
+              <li class="mod m5 off" title="Module 5 Critical Perspectives and Governance, not part of this instance">5</li>
+            </ul>
+            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
+          </div>
+        </li>
+
+        <!-- 2026-10-08-fachschaft-mittelalterstudien-heidelberg -->
+        <li class="card">
+          <div class="card-cover">
+            <img src="assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <p class="stamp">8 October 2026<span class="sep">&middot;</span>one day</p>
+            <h3><a href="workshops/2026-10-08-fachschaft-mittelalterstudien-heidelberg.html">Knowledge, Context und Agentic Engineering f&uuml;r die Forschung</a></h3>
+            <p class="event">Fachschaft Mittelalterstudien, Universit&auml;t Heidelberg</p>
+            <p class="facts">
+              <span>Students and early-career researchers in medieval studies</span>
+              <span>Teaching language German</span>
+            </p>
+            <p class="spec">
+              One day worked inside a coding agent throughout, opening on language model and
+              agent fundamentals. Participants build structured project knowledge and then run
+              the arc from handwriting recognition on medieval charters through TEI markup and an
+              index of persons and organisations to a small static edition, checking a prepared
+              model transcription against the facsimile.
+            </p>
+            <ul class="mods" role="list" aria-label="Module coverage">
+              <li class="mod m1 lite" title="Module 1 Understanding Large Language Models, touched briefly">1</li>
+              <li class="mod m2 lite" title="Module 2 Prompt Engineering, touched briefly">2</li>
+              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
+              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
+              <li class="mod m5 lite" title="Module 5 Critical Perspectives and Governance, touched briefly">5</li>
+            </ul>
+            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
+          </div>
+        </li>
+
+        <!-- 2026-10-15-gda-goettingen -->
+        <li class="card">
+          <div class="card-cover">
+            <img src="assets/covers/2026-10-15-gda-goettingen.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <p class="stamp">15 October 2026<span class="sep">&middot;</span>half day, hybrid</p>
+            <h3><a href="workshops/2026-10-15-gda-goettingen.html">Generative KI f&uuml;r Datenaufbereitung, Datenmigration und die Pflege von Interfaces</a></h3>
+            <p class="event">G&ouml;ttinger Digitale Akademie, Akademie der Wissenschaften zu G&ouml;ttingen</p>
+            <p class="facts">
+              <span>Staff of academy research projects and library guests</span>
+              <span>Teaching language German</span>
+            </p>
+            <p class="spec">
+              A hybrid half day on agent-supported preparation and migration of research data and
+              on the semi-automated maintenance of interfaces and endpoints. Three existing
+              project pipelines carry the case material, and the hands-on has participants build a
+              small knowledge base for their own data and commission a bounded task from an agent.
+            </p>
+            <ul class="mods" role="list" aria-label="Module coverage">
+              <li class="mod m1 lite" title="Module 1 Understanding Large Language Models, touched briefly">1</li>
+              <li class="mod m2 lite" title="Module 2 Prompt Engineering, touched briefly">2</li>
+              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
+              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
+              <li class="mod m5 lite" title="Module 5 Critical Perspectives and Governance, touched briefly">5</li>
+            </ul>
+            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
+          </div>
+        </li>
+
+        <!-- 2026-11-09-ufl -->
+        <li class="card">
+          <div class="card-cover">
+            <img src="assets/covers/2026-11-09-ufl.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <p class="stamp">9&ndash;10 November 2026<span class="sep">&middot;</span>three units of two hours</p>
+            <h3><a href="workshops/2026-11-09-ufl.html">Agentic-Engineering-Workshop</a></h3>
             <p class="event">Uni for Life, Universit&auml;t Graz</p>
             <p class="facts">
-              <span>Professionals from companies and institutions across disciplines &middot; German</span>
-              <span>Extended two-day variant for knowledge work beyond academia</span>
+              <span>Professionals from companies and institutions across disciplines</span>
+              <span>Teaching language German</span>
             </p>
-            <p class="card-links"><span class="pending">Slides and script in preparation</span></p>
+            <p class="spec">
+              Three compact units for knowledge work beyond academia, with the emphasis on
+              steering agentic work. The first unit covers setup, terminal and permissions, the
+              second builds a knowledge base and defines human control points for document and
+              application work, and the third moves into light coding and small prototypes on a
+              synthetic institutional scenario.
+            </p>
+            <ul class="mods" role="list" aria-label="Module coverage">
+              <li class="mod m1 lite" title="Module 1 Understanding Large Language Models, touched briefly">1</li>
+              <li class="mod m2 lite" title="Module 2 Prompt Engineering, touched briefly">2</li>
+              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
+              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
+              <li class="mod m5 lite" title="Module 5 Critical Perspectives and Governance, touched briefly">5</li>
+            </ul>
+            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
           </div>
         </li>
 
+        <!-- 2026-11-30-vetmed-winter-school -->
         <li class="card">
-          <div class="cover">Title slide to follow</div>
+          <div class="card-cover">
+            <img src="assets/covers/2026-11-30-vetmed-winter-school.png" alt="" width="960" height="540" loading="lazy" decoding="async">
+          </div>
           <div class="card-body">
-            <p class="date">30 November &ndash; 4 December 2026</p>
-            <h3>VetMed Winter School</h3>
+            <p class="stamp">30 November &ndash; 4 December 2026<span class="sep">&middot;</span>five days</p>
+            <h3><a href="workshops/2026-11-30-vetmed-winter-school.html">VetMed Winter School</a></h3>
             <p class="event">Veterin&auml;rmedizinische Universit&auml;t Wien</p>
             <p class="facts">
-              <span>Administration and research staff &middot; German</span>
-              <span>Five-day extended derivation of the full master, follow-up format to the VetMedAI programme</span>
+              <span>Administration and research staff</span>
+              <span>Teaching language German</span>
             </p>
-            <p class="card-links"><span class="pending">Slides and script in preparation</span></p>
+            <p class="spec">
+              A five-day block week for staff without a coding background, and the fullest
+              derivation of the corpus among the registered instances. Every module is taught in
+              full, with an exercise each day and one application project from the participants'
+              own working area running through the week, from the chat interface through the
+              terminal to an agent harness with local models.
+            </p>
+            <ul class="mods" role="list" aria-label="Module coverage">
+              <li class="mod m1" title="Module 1 Understanding Large Language Models, taught in full">1</li>
+              <li class="mod m2" title="Module 2 Prompt Engineering, taught in full">2</li>
+              <li class="mod m3" title="Module 3 Knowledge and Context Engineering, taught in full">3</li>
+              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
+              <li class="mod m5" title="Module 5 Critical Perspectives and Governance, taught in full">5</li>
+            </ul>
+            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
           </div>
         </li>
 
@@ -635,7 +481,7 @@ img { max-width: 100%; height: auto; }
 
 <footer class="site-foot">
   <div class="wrap">
-    <div class="brand">
+    <div class="foot-brand">
       <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
       <div class="imprint">
         <p class="name">Christopher Pollin</p>
@@ -647,7 +493,6 @@ img { max-width: 100%; height: auto; }
         </p>
       </div>
     </div>
-
     <div class="colophon">
       <p>Built with <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a></p>
       <p>Text content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>

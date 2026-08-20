@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Data Workflows &amp; Digital Editions &middot; CLARIAH-AT Summer School 2026</title>
+<meta name="description" content="The CLARIAH-AT Summer School instance of the teaching line, one English day on a source-bound research data workflow with two transcription and extraction exercises.">
+
+<!--
+  Workshop subpage. Static, no JavaScript. Chrome copied from docs/drafts/chrome.html
+  with the path prefixes adjusted for docs/workshops/.
+
+  Facts come from docs/data/workshops.json. The specialisation prose is grounded in
+  workshops/2026-09-25-clariah-at/profile.md, the lecture notes in the same folder and
+  knowledge/drafts/specialization-analysis.md, section 2.
+
+  This is the one instance whose cover image exists. The .plate class holds the same
+  16:9 box with a tint ground for every instance, so a missing file degrades quietly.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <img src="../assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <span>Digital Humanities Craft</span>
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="../index.html#workshops">Workshops</a></li>
+        <li><a href="../index.html#modules">Modules</a></li>
+        <li><a href="../preparation.html">Preparation</a></li>
+        <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="page-head">
+      <div>
+        <p class="stamp">25 September 2026</p>
+        <h1>Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</h1>
+        <p class="event">CLARIAH-AT Summer School 2026: Machine Learning for Digital Scholarly Editions</p>
+        <p class="facts">
+          <span><b>Date</b> 25 September 2026</span>
+          <span><b>Event</b> CLARIAH-AT Summer School 2026</span>
+          <span><b>Audience</b> digital humanities students, BA and MA level</span>
+          <span><b>Teaching language</b> English</span>
+          <span><b>Status</b> planned</span>
+        </p>
+      </div>
+      <img class="plate" src="../assets/covers/2026-09-25-clariah-at.png" alt=""
+           width="960" height="540" loading="lazy" decoding="async">
+    </div>
+
+    <section class="block" id="specialisation">
+      <h2>Specialisation</h2>
+
+      <p>One day in English inside a summer school on machine learning for digital scholarly editions.
+      The corpus is specialised on research data workflows and edition work, so the framing runs
+      through humanities research data as constructed representations, and the case material comes
+      from two edition projects, the Jeanne Hersch workflow with the Zentralbibliothek Z&uuml;rich and
+      the Stefan Zweig workflow with Stefan Zweig Digital at the Literaturarchiv Salzburg. This is the
+      only instance whose lecture notes are already written out in full, which makes it the reference
+      text the other instances draw on.</p>
+
+      <p>The worked subject is a source-bound workflow on one Hersch document of 1973, two facsimile
+      pages in French. The analytical unit runs from Hersch's own heading to the next contributor's
+      heading, end exclusive, so physical page and analytical unit diverge and segmentation becomes a
+      research decision rather than a technical step. Four model calls form a controlled progression
+      in which each call adds exactly one control, and the archived run shows that the two middle
+      calls pull material in from the neighbouring contributions while the fully specified call
+      removes that contamination.</p>
+
+      <p>The methodological core is a three-way status contract. One field records how a passage
+      carries a claim, a second records a named human comparison against the source, a third records
+      disciplinary acceptance. A model-generated confidence value is deliberately unused, and the rule
+      that model agreement is not scholarly verification is stated as such. Evidence and status
+      discipline is a learning objective of the day rather than a side condition of the exercises.</p>
+
+      <p>Both participant exercises work on Zweig material. The first transcribes a manuscript page
+      with a reusable prompt skeleton, a catalogue metadata block for the context section and an added
+      rule against reconstructing readings from linguistic context, followed by a critical review of
+      the generated transcription against the facsimile. The second takes that transcription as input
+      for information extraction against an explicit schema, so the two representational transitions
+      keep their own failure modes and acceptance criteria. Image and distribution rights for the
+      facsimiles need institutional clearance, so the repository carries text and specification and no
+      images.</p>
+    </section>
+
+    <section class="block" id="sequence">
+      <h2>The four model calls</h2>
+      <ol class="seq">
+        <li><span>Full multimodal transcription of both pages, which establishes the text the later
+          calls annotate.</span></li>
+        <li><span>Open baseline without research question, segment boundary, codebook or schema.</span></li>
+        <li><span>Generic schema run with the research question explicitly recorded as
+          unspecified.</span></li>
+        <li><span>Research-question-bound and evidence-bound annotation, which removes the scope
+          contamination the two preceding calls show.</span></li>
+      </ol>
+    </section>
+
+    <section class="block" id="modules">
+      <h2>Module coverage</h2>
+
+      <ul class="mods" aria-hidden="true">
+        <li class="mod m1">1</li>
+        <li class="mod m2">2</li>
+        <li class="mod m3">3</li>
+        <li class="mod m4">4</li>
+        <li class="mod m5">5</li>
+      </ul>
+
+      <ul class="linklist" role="list">
+        <li>Understanding Large Language Models, taught in full
+          <span class="what">The greatest textual depth of this instance. The section on
+          vision-language models carries the specialisation, because the failure it names, a
+          contextually plausible reading unsupported by the facsimile, is what the transcription
+          exercise has to expose.</span>
+        </li>
+        <li>Prompt Engineering, taught in full
+          <span class="what">The only module with a participant exercise of its own. The four-part
+          structure of task, context, rules and output is introduced on a compact example and then
+          applied to a difficult manuscript page.</span>
+        </li>
+        <li>Knowledge and Context Engineering, taught in full
+          <span class="what">Conceptual depth without an exercise, from the three-way distinction of
+          what the project knows, what the model needs now and what it should do now, through to the
+          properties of a knowledge document.</span>
+        </li>
+        <li>Agentic Engineering, taught in full
+          <span class="what">Carried by the two edition workflows as case material rather than by
+          agent operation. Promptotyping appears as one section with the flow from maintained project
+          knowledge through context selection and implementation to curated feedback.</span>
+        </li>
+        <li>Critical Perspectives and Governance, distributed across the day
+          <span class="what">The separation of evaluation, validation and scholarly verification
+          stands as its own section; openness, local deployment and the governance dilemma sit inside
+          the fundamentals sections.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="block" id="materials">
+      <h2>Materials</h2>
+      <ul class="linklist" role="list">
+        <li><a href="https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit">Slide deck (CLARIAH-AT Summer School 2026)</a>
+          <span class="what">The teaching surface for the day, editable up to the workshop.</span>
+        </li>
+        <li><a href="https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit">Lecture Notes (CLARIAH-AT Summer School 2026)</a>
+          <span class="what">Working surface in Google Docs. The canonical text state lives in the
+          instance folder of the repository.</span>
+        </li>
+        <li><a href="https://github.com/chpollin/zbz-ocr-tei">Executable hands-on package</a>
+          <span class="what">Maintained outside this repository, in the workshop folder of the
+          transcription pipeline repo.</span>
+        </li>
+        <li><span class="pending">Slide export of the taught state</span>
+          <span class="what">Added to the instance folder after the workshop.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="block" id="provenance">
+      <h2>Provenance</h2>
+      <p>This instance is a documented specialisation of the Full Slide Deck and the Full Lecture
+      Notes, which are maintained once and cut into five modules. What this instance selects, cuts and
+      adds is recorded in its repository folder,
+      <a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering/tree/main/workshops/2026-09-25-clariah-at">workshops/2026-09-25-clariah-at</a>.</p>
+    </section>
+
+    <a class="backlink" href="../index.html#workshops">Back to all workshops</a>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="../assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <div class="imprint">
+        <p class="name">Christopher Pollin</p>
+        <p>Digital Humanities Craft</p>
+        <p>
+          <a href="https://dhcraft.org">dhcraft.org</a>
+          <span class="sep">&middot;</span>
+          <a href="mailto:office@dhcraft.org">office@dhcraft.org</a>
+        </p>
+      </div>
+    </div>
+    <div class="colophon">
+      <p>Built with <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a></p>
+      <p>Text content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

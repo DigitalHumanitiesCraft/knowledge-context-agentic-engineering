@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preparation &middot; Knowledge, Context and Agentic Engineering</title>
+<meta name="description" content="Accounts, Claude Code, Visual Studio Code, Python and a final check, everything participants set up before a workshop of the Knowledge, Context and Agentic Engineering line.">
+
+<!--
+  Preparation subpage. Static, no build step, no JavaScript. Content follows
+  knowledge/drafts/preparation-page.md, section 2 for the copy and section 3 for
+  the per-workshop mapping. Chrome blocks are copied from docs/drafts/chrome.html
+  with the paths as written there, because this page sits directly in docs/.
+
+  MAINTENANCE (knowledge/drafts/preparation-page.md, section 4)
+  1. The "last verified" datestamp below the title is the only thing a pass has
+     to move when nothing else changed.
+  2. Every tool section ends at its official installation page instead of
+     reproducing it. The four addresses are code.claude.com/docs/en/setup,
+     code.visualstudio.com, www.python.org/downloads and desktop.github.com.
+  3. No version numbers in prose, no prices, no model name as a current
+     recommendation. Those live behind the linked pages.
+
+  OPEN ITEMS carried over from the draft
+  - The first-run check for Claude Code names no command, because no source
+    states one. It asks for a harmless question about the folder instead.
+  - The older Node.js and npm install route is deliberately left out. Two
+    competing install routes on one page produce support cases.
+  - No Python version is named. The draft source named one that has since aged.
+  - The troubleshooting path points at the workshop page for a contact address,
+    so one edit covers every instance.
+  - The three October 2026 instances were absent from the draft's mapping.
+    Their level-3 rows derive from the documented Claude Code centrality in
+    knowledge/drafts/additional-past-instances.md and specialization-analysis.md.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="assets/favicon/site.webmanifest">
+
+<style data-merge="site.css">
+/* Rules this page needs and assets/site.css does not carry yet. Everything else
+   here uses the shared classes and tokens unchanged. Merge upstream when a
+   second page needs the same components. */
+
+/* Anchor targets. .section carries scroll-margin-top upstream, .block does not. */
+.block { scroll-margin-top: var(--s4); }
+
+/* Current page in the site navigation. */
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.3em;
+}
+
+/* Section eyebrow, stating which levels a section applies to. */
+.block > .stamp { margin-top: 0; color: var(--ink-3); }
+.block > .stamp + h2 { margin-top: var(--s1); }
+
+/* Subheadings inside a block, used for the three account types. */
+.block h3 { margin-top: var(--s4); font-size: var(--text-title); }
+
+/* Inline commands, file names and keystrokes. No code element is styled upstream. */
+code { font-family: var(--font-mono); font-size: 0.9em; }
+
+/* Command block. Reuses the .prompt plate but keeps each command on one line and
+   scrolls it, because a wrapped shell command reads as two commands. */
+.cmd { margin-top: var(--s2); white-space: pre; }
+.cmd code { font-size: 1em; }
+
+/* Platform-to-command pairs. */
+.cmds { max-width: var(--measure); margin-top: var(--s3); }
+.cmds > div + div { margin-top: var(--s3); }
+.cmds dt { color: var(--ink-3); font-size: var(--text-md); }
+.cmds dd { margin: 0; }
+.cmds .cmd { margin-top: var(--s1); }
+
+/* Numbered setup steps. .seq upstream is the two-column taught sequence and has
+   no room for a command block inside a step, so this is the one-column form with
+   real list semantics. */
+.steps {
+  max-width: var(--measure);
+  margin-top: var(--s3);
+  padding-left: 1.7em;
+  color: var(--ink-2);
+}
+.steps > li + li { margin-top: var(--s2); }
+.steps li::marker { color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-sm); }
+.steps .cmd, .steps .cmds { max-width: none; }
+
+/* Level marks. The module dots upstream take their fill from --m1..--m5, which
+   carry module identity, so the three preparation levels get their own ramp from
+   outline to filled. It reads as "more of the machine is involved". */
+.levels .dot { border: 1px solid var(--rule-mid); }
+.levels li:nth-child(2) .dot { border-color: var(--accent); }
+.levels li:nth-child(3) .dot { border-color: var(--accent); background: var(--accent); }
+
+/* Applicability table. No table rules exist upstream. The min-width keeps the
+   four columns legible and hands narrow viewports to the .scroll-x wrapper. */
+.table {
+  min-width: 46rem;
+  width: 100%;
+  margin-top: var(--s3);
+  border-collapse: collapse;
+  font-size: var(--text-lg);
+}
+.table th,
+.table td {
+  padding: var(--s2) var(--s3) var(--s2) 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+.table th {
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.table td { color: var(--ink-2); }
+/* Row headers carry a workshop name, so they drop the column-header treatment. */
+.table tbody th {
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.table .lvl { color: var(--ink); font-family: var(--font-mono); font-size: var(--text-md); white-space: nowrap; }
+</style>
+</head>
+
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <span>Digital Humanities Craft</span>
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="index.html#workshops">Workshops</a></li>
+        <li><a href="index.html#modules">Modules</a></li>
+        <li><a href="preparation.html" aria-current="page">Preparation</a></li>
+        <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <a class="backlink" href="index.html">&larr; Knowledge, Context and Agentic Engineering</a>
+
+  <!-- ============ Page head ============ -->
+  <header class="page-head">
+    <div>
+      <h1>Preparation</h1>
+      <p class="event">
+        Every workshop in this line works on a real machine. The preparation below makes sure
+        the session can start at the first substantive prompt instead of at an installation,
+        so bring a laptop you are allowed to install software on, a browser, and access to a
+        frontier language model. Which of the following sections apply to you depends on the
+        workshop you booked; the <a href="#levels">table at the end of this page</a> states it
+        per instance, and the workshop page you came from names its own level.
+      </p>
+    </div>
+    <div>
+      <p class="stamp">Last verified 2026-08-20</p>
+      <p class="facts">
+        <span>Work through it in this order.</span>
+        <span>Set up the accounts first, because an installed tool without an account gets you nowhere.</span>
+        <span>Install second.</span>
+        <span>Run the check third, and do it on the laptop you will actually bring.</span>
+      </p>
+    </div>
+  </header>
+
+  <nav class="bundle" aria-label="On this page">
+    <span class="label">On this page</span>
+    <span class="items">
+      <a href="#claude-code">Claude Code</a>
+      <span class="sep">&middot;</span>
+      <a href="#vscode">Visual Studio Code</a>
+      <span class="sep">&middot;</span>
+      <a href="#python">Python</a>
+      <span class="sep">&middot;</span>
+      <a href="#accounts">Accounts and access</a>
+      <span class="sep">&middot;</span>
+      <a href="#check">Final check</a>
+      <span class="sep">&middot;</span>
+      <a href="#trouble">If something breaks</a>
+      <span class="sep">&middot;</span>
+      <a href="#levels">Which parts apply to you</a>
+    </span>
+  </nav>
+
+  <!-- ============ Claude Code ============ -->
+  <section class="block" id="claude-code" aria-labelledby="claude-code-h">
+    <p class="stamp">Level 3</p>
+    <h2 id="claude-code-h">Claude Code</h2>
+
+    <p class="prose">
+      Claude Code is a terminal-based coding agent from Anthropic. It reads and writes files in
+      the folder you start it in, runs commands, searches the web, and takes instructions in
+      ordinary language. The difference to the Claude web interface is that it works directly in
+      your file system rather than through copy and paste.
+    </p>
+    <p class="prose">
+      Claude Code is not part of the free Claude tier. You need either a paid plan or an API key
+      with billing before the installation is of any use, so settle that first under
+      <a href="#accounts">Accounts and access</a>.
+    </p>
+
+    <ol class="steps">
+      <li>
+        Open a terminal. On Windows use PowerShell, on macOS or Linux use the Terminal app.
+        If Visual Studio Code is already installed, its built-in terminal does the same job
+        (Terminal, then New Terminal).
+      </li>
+      <li>
+        Run the install command for your system.
+        <dl class="cmds">
+          <div>
+            <dt>macOS, Linux or Windows Subsystem for Linux</dt>
+            <dd><pre class="prompt cmd"><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre></dd>
+          </div>
+          <div>
+            <dt>Windows PowerShell</dt>
+            <dd><pre class="prompt cmd"><code>irm https://claude.ai/install.ps1 | iex</code></pre></dd>
+          </div>
+          <div>
+            <dt>macOS with Homebrew</dt>
+            <dd><pre class="prompt cmd"><code>brew install --cask claude-code</code></pre></dd>
+          </div>
+          <div>
+            <dt>Windows with WinGet</dt>
+            <dd><pre class="prompt cmd"><code>winget install Anthropic.ClaudeCode</code></pre></dd>
+          </div>
+        </dl>
+      </li>
+      <li>On Windows, install Git for Windows as well. Claude Code expects it.</li>
+      <li>
+        Create an empty folder for the workshop somewhere you will find it again, without spaces
+        or special characters in the path.
+      </li>
+      <li>
+        In the terminal, move into that folder with <code>cd</code> and the folder name, then type
+        <code>claude</code> and press Enter. The login opens in your browser. Sign in with the
+        account that holds your plan.
+      </li>
+      <li>
+        First run check. Ask it something harmless about the folder, for example to list the files
+        it can see. An answer that names your folder means the installation, the login and the file
+        access all work.
+      </li>
+    </ol>
+
+    <p class="prose">
+      The official installation page at
+      <a href="https://code.claude.com/docs/en/setup">code.claude.com/docs/en/setup</a>
+      is the authority on all of this and is updated when the commands change.
+    </p>
+  </section>
+
+  <!-- ============ Visual Studio Code ============ -->
+  <section class="block" id="vscode" aria-labelledby="vscode-h">
+    <p class="stamp">Levels 2 and 3</p>
+    <h2 id="vscode-h">Visual Studio Code</h2>
+
+    <p class="prose">
+      Visual Studio Code is a free code editor from Microsoft. It runs on Windows, macOS and Linux,
+      it can be extended, and it has a terminal built in, which is where you will run things during
+      the workshop.
+    </p>
+
+    <ol class="steps">
+      <li>
+        Download it from <a href="https://code.visualstudio.com">code.visualstudio.com</a> and run
+        the installer. On macOS, drag the app into the Applications folder.
+      </li>
+      <li>
+        Open the Extensions view with the icon in the left bar, or with <code>Ctrl+Shift+X</code>
+        (<code>Cmd+Shift+X</code> on macOS).
+      </li>
+      <li>
+        Search for "Python" and install the extension published by Microsoft. Install "Pylance" the
+        same way.
+      </li>
+      <li>
+        If your workshop builds a web page, install "Live Server" as well. It starts a small local
+        web server, which a browser needs before it will let a page load data files from your own
+        machine.
+      </li>
+      <li>
+        Open the built-in terminal through the menu, Terminal and then New Terminal. On Windows this
+        is PowerShell, on macOS and Linux it is zsh or bash. For everything on this page the
+        difference does not matter.
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ Python ============ -->
+  <section class="block" id="python" aria-labelledby="python-h">
+    <p class="stamp">Levels 2 and 3</p>
+    <h2 id="python-h">Python</h2>
+
+    <p class="prose">
+      You do not need to learn Python. You need it installed, because during the workshop the model
+      writes scripts and you run them. What you actually do is run a file, read the message when it
+      fails, and hand that message back to the model.
+    </p>
+
+    <ol class="steps">
+      <li>
+        Install Python. On Windows, open the Microsoft Store, search for Python and install the
+        version published by the Python Software Foundation. On macOS and Linux, download it from
+        <a href="https://www.python.org/downloads">python.org/downloads</a>.
+      </li>
+      <li>
+        If you install on Windows from python.org instead of the Store, tick "Add Python to PATH" on
+        the first installer screen. Skipping it is the single most common reason the workshop machine
+        later reports that <code>python</code> is not recognized.
+      </li>
+      <li>
+        Check it. Type this in the terminal, and a version number as the answer means it works. On
+        macOS, try <code>python3 --version</code> if <code>python</code> produces nothing.
+        <pre class="prompt cmd"><code>python --version</code></pre>
+      </li>
+      <li>
+        Tell the editor which Python to use. In Visual Studio Code press <code>Ctrl+Shift+P</code>,
+        type "Python: Select Interpreter", and choose the version you just installed.
+      </li>
+      <li>
+        Run one script before you arrive. Create a file called <code>test.py</code> in your workshop
+        folder, put one line in it, save with <code>Ctrl+S</code>, and run it in the terminal. Seeing
+        your own word printed back is the whole test.
+        <pre class="prompt cmd"><code>print("ready")</code></pre>
+        <pre class="prompt cmd"><code>python test.py</code></pre>
+      </li>
+      <li>
+        When a script asks for something you do not have, the terminal says
+        <code>ModuleNotFoundError</code>. The fix is one command, for example
+        <code>pip install pandas</code>. Nothing needs to be installed in advance.
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ Accounts and access ============ -->
+  <section class="block" id="accounts" aria-labelledby="accounts-h">
+    <p class="stamp">All levels</p>
+    <h2 id="accounts-h">Accounts and access</h2>
+
+    <h3>Claude account</h3>
+    <p class="prose">
+      Create it at <a href="https://claude.com">claude.com</a>. For workshops that only use the chat
+      interface the free tier is enough. For workshops that run Claude Code you need a paid plan (Pro
+      or Max), and the usage limit is shared between Claude and Claude Code. The alternative is an
+      account at <a href="https://console.anthropic.com">console.anthropic.com</a> with a payment
+      method and an API key, which bills per use instead of per month. Current prices are on
+      <a href="https://claude.com/pricing">claude.com/pricing</a>.
+    </p>
+    <p class="prose">
+      If you prefer a different provider, the concepts transfer and you can follow everything in the
+      chat-based parts with the model of your choice. The agentic parts assume Claude Code.
+    </p>
+
+    <h3>Google account</h3>
+    <p class="prose">
+      Some instances keep their material in a Drive folder, and some hands-on units run in Google
+      Colab, which is a Python environment in the browser. If your workshop page links either, sign
+      in once beforehand and confirm you can open the link.
+    </p>
+
+    <h3>GitHub account</h3>
+    <p class="prose">
+      Not required to download workshop material, because public repositories download without an
+      account. You need one only if your workshop puts your own work under version control, in which
+      case install GitHub Desktop from
+      <a href="https://desktop.github.com">desktop.github.com</a> and connect it to your account.
+    </p>
+  </section>
+
+  <!-- ============ Final check ============ -->
+  <section class="block" id="check" aria-labelledby="check-h">
+    <p class="stamp">All levels</p>
+    <h2 id="check-h">Final check before you arrive</h2>
+
+    <p class="prose">Do this on the laptop you are bringing. A check on a second machine proves nothing.</p>
+
+    <ol class="steps">
+      <li><code>python --version</code> in the terminal answers with a version number.</li>
+      <li>Visual Studio Code opens, and the Python extension is listed as installed.</li>
+      <li>You ran <code>test.py</code> once and saw its output.</li>
+      <li>You can sign in to your model account in the browser.</li>
+      <li>
+        For agentic workshops, <code>claude</code> starts in your workshop folder and has completed
+        its browser login once.
+      </li>
+      <li>The workshop folder exists, and you know its path.</li>
+    </ol>
+  </section>
+
+  <!-- ============ Troubleshooting ============ -->
+  <section class="block" id="trouble" aria-labelledby="trouble-h">
+    <h2 id="trouble-h">If something breaks</h2>
+
+    <ol class="steps">
+      <li>Read the error message. It usually names the problem, and often the fix.</li>
+      <li>
+        Paste the error message into a language model and ask what it means. You will work the same
+        way during the workshop.
+      </li>
+      <li>
+        If it still fails, write to the contact address on your workshop page, with one sentence on
+        what you tried, the error message, and a screenshot.
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ Levels and per-workshop mapping ============ -->
+  <section class="block" id="levels" aria-labelledby="levels-h">
+    <h2 id="levels-h">Which parts apply to you</h2>
+
+    <p class="prose">
+      Three levels keep this page short enough that you read only your own row.
+    </p>
+
+    <ol class="module-list levels" role="list">
+      <li>
+        <span class="key"><span class="dot"></span>L1</span>
+        <div>
+          <h3>Browser only</h3>
+          <p class="sub">Model access in a browser. Nothing is installed.</p>
+        </div>
+      </li>
+      <li>
+        <span class="key"><span class="dot"></span>L2</span>
+        <div>
+          <h3>Editor and Python</h3>
+          <p class="sub">
+            Level 1 plus Visual Studio Code, Python, the terminal, and a local server where a browser
+            prototype is built.
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="key"><span class="dot"></span>L3</span>
+        <div>
+          <h3>Harness</h3>
+          <p class="sub">
+            Level 2 plus Claude Code and a paid plan, plus a working folder the agent operates in.
+          </p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="scroll-x">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Workshop</th>
+            <th scope="col">Dates</th>
+            <th scope="col">Level</th>
+            <th scope="col">What that means for you</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">KUG Summer School (M3GIM), Kunstuniversit&auml;t Graz</th>
+            <td>16&ndash;17 September 2026</td>
+            <td class="lvl">1, with 2 conditional</td>
+            <td>
+              A browser and model access carry the session. If you run the map demo on your own
+              machine rather than following it, add the editor, Python and a local server.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">CLARIAH-AT Summer School 2026</th>
+            <td>25 September 2026</td>
+            <td class="lvl">1, with 3 conditional</td>
+            <td>
+              A browser and access to a multimodal frontier model carry both hands-on units. The
+              executable package lives in an external repository, so running it locally puts you at
+              level 3.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">HEDIT KI-Workshop, Universit&auml;t Heidelberg</th>
+            <td>5&ndash;6 October 2026</td>
+            <td class="lvl">3</td>
+            <td>
+              Agentic coding starts on day one, and the whole second day is a workshop on your own
+              material in Claude Code, so bring the full setup including a paid plan.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Fachschaft Mittelalterstudien, Universit&auml;t Heidelberg</th>
+            <td>8 October 2026</td>
+            <td class="lvl">3</td>
+            <td>
+              The day runs in Claude Code throughout, from the charters to a small static edition,
+              so bring the full setup including a paid plan.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">G&ouml;ttinger Digitale Akademie</th>
+            <td>15 October 2026</td>
+            <td class="lvl">3, with 1 possible</td>
+            <td>
+              Following the demonstration works in the browser. The guided run on your own material
+              uses Claude Code, so the full setup pays off in this half day.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Uni for Life, Universit&auml;t Graz</th>
+            <td>9&ndash;10 November 2026</td>
+            <td class="lvl">3</td>
+            <td>
+              Day one installs and configures Claude Code and works in the terminal, so bring the
+              full setup including a paid plan.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">VetMed Winter School, Veterin&auml;rmedizinische Universit&auml;t Wien</th>
+            <td>30 November &ndash; 4 December 2026</td>
+            <td class="lvl">3</td>
+            <td>
+              The first two days build on editor, Python, terminal and a local server, then the week
+              moves through a harness and local models to your own project.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="prose">
+      The three October levels derive from the documented centrality of Claude Code in those
+      instances rather than from a published schedule. If your workshop page names Claude Code,
+      work through the whole of this page.
+    </p>
+  </section>
+
+</div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <div class="imprint">
+        <p class="name">Christopher Pollin</p>
+        <p>Digital Humanities Craft</p>
+        <p>
+          <a href="https://dhcraft.org">dhcraft.org</a>
+          <span class="sep">&middot;</span>
+          <a href="mailto:office@dhcraft.org">office@dhcraft.org</a>
+        </p>
+      </div>
+    </div>
+    <div class="colophon">
+      <p>Built with <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a></p>
+      <p>Text content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

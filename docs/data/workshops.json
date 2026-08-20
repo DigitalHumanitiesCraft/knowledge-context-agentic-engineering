@@ -3,7 +3,8 @@
     "title": "Knowledge, Context and Agentic Engineering for Knowledge Work",
     "description": "The complete corpus of the teaching line, maintained once as the Full Slide Deck and the Full Lecture Notes and cut into five modules. Every workshop below is a documented specialisation of it.",
     "slides": "https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit",
-    "script": null
+    "script": null,
+    "cover": "assets/covers/full.png"
   },
   "workshops": [
     {
@@ -12,12 +13,12 @@
       "title": "Promptotyping und Generative AI",
       "event": "KUG Summer School (M3GIM), Kunstuniversität Graz",
       "audience": "participants without LLM or programming background",
-      "focus": "compact introduction, hands-on with low prerequisites",
+      "focus": "LLM fundamentals and Promptotyping with hands-on work on an archival estate",
       "language": "de",
       "status": "planned",
       "slides": null,
       "script": null,
-      "cover": null
+      "cover": "assets/covers/2026-09-16-kug-m3gim.png"
     },
     {
       "id": "2026-09-25-clariah-at",
@@ -43,7 +44,7 @@
       "status": "planned",
       "slides": null,
       "script": null,
-      "cover": null
+      "cover": "assets/covers/2026-10-05-hedit-heidelberg.png"
     },
     {
       "id": "2026-10-08-fachschaft-mittelalterstudien-heidelberg",
@@ -56,7 +57,7 @@
       "status": "planned",
       "slides": null,
       "script": null,
-      "cover": null
+      "cover": "assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png"
     },
     {
       "id": "2026-10-15-gda-goettingen",
@@ -69,7 +70,7 @@
       "status": "planned",
       "slides": null,
       "script": null,
-      "cover": null
+      "cover": "assets/covers/2026-10-15-gda-goettingen.png"
     },
     {
       "id": "2026-11-09-ufl",
@@ -77,12 +78,12 @@
       "title": "Agentic-Engineering-Workshop",
       "event": "Uni for Life, Universität Graz",
       "audience": "professionals from companies and institutions across disciplines",
-      "focus": "extended two-day variant for knowledge work beyond academia",
+      "focus": "three two-hour units for knowledge work beyond academia",
       "language": "de",
       "status": "planned",
       "slides": null,
       "script": null,
-      "cover": null
+      "cover": "assets/covers/2026-11-09-ufl.png"
     },
     {
       "id": "2026-11-30-vetmed-winter-school",
@@ -90,12 +91,12 @@
       "title": "VetMed Winter School",
       "event": "Veterinärmedizinische Universität Wien",
       "audience": "administration and research staff",
-      "focus": "five-day extended derivation of the full master, follow-up format to the VetMedAI programme",
+      "focus": "five-day derivation covering all five modules in full breadth",
       "language": "de",
       "status": "planned",
       "slides": null,
       "script": null,
-      "cover": null
+      "cover": "assets/covers/2026-11-30-vetmed-winter-school.png"
     }
   ]
 }
