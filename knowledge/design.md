@@ -26,7 +26,8 @@ The guiding motif is the path from source to verified artefact: source, knowledg
 ## System values
 
 - **Ground**: paper white as one consistent page ground, near-black typography, generous whitespace; light theme only (operator decision 2026-08-20).
-- **Accent**: turquoise as the single accent family for links, active states and motif highlights; exact values are tuned in the second prototype.
+- **Accent**: turquoise `#0A7E7C` as the primary accent for links, active states and motif highlights; the motif line art stays turquoise-only.
+- **Identity palette**: four accents derived from the watercolor logo, orange `#C87000`, blue `#5B8FC4`, green `#7C9200`, violet `#8140B8`. Their single application is the five module marks (violet 01, orange 02, turquoise 03, blue 04, green 05); everything else stays monochrome plus turquoise, so the footer logo reads as the source of the palette. Text-carrying colours must pass WCAG AA, pure marks at least 3:1.
 - **Brand**: DHCraft watercolor logo (standard variant from `DigitalHumanitiesCraft/brand-assets`), set sparingly.
 - **Typography**: Space Grotesk throughout with system fallback (operator decision 2026-08-20); IBM Plex Mono for prompts and code.
 - **Hierarchy**: at most two text levels per section, one heading and body; no stacked eyebrow-plus-heading labels; the motif stands without a caption; the hero is title, one sentence and one link.
@@ -35,5 +36,5 @@ The guiding motif is the path from source to verified artefact: source, knowledg
 
 ## Open design decisions
 
-- Final colour tuning and level reduction: second prototype `docs/drafts/design-draft-2.html`, under operator review.
+- Fourth prototype `docs/drafts/design-draft-4.html` (logo palette, refactored token CSS) under operator review; on approval it is promoted to `docs/index.html`.
 - Workshop subpage structure: the six-block example `docs/drafts/workshop-page-draft.html` awaits the operator's reaction; its font will be aligned to Space Grotesk afterwards.
