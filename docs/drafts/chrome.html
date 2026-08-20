@@ -1,0 +1,59 @@
+<!-- =====================================================================
+  BINDING PAGE CHROME for every page under docs/.
+  Copy these blocks verbatim; adjust only the path prefix and the nav
+  current-page marking. Pages in docs/ use the paths as written here.
+  Pages in docs/workshops/ replace  assets/ -> ../assets/  and
+  index.html -> ../index.html  and  preparation.html -> ../preparation.html.
+  This file is a build template, deleted in the cleanup pass.
+====================================================================== -->
+
+<!-- HEAD block: after <title> and <meta name="description"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="assets/favicon/site.webmanifest">
+
+<!-- HEADER: first element inside <body> -->
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <span>Digital Humanities Craft</span>
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="index.html#workshops">Workshops</a></li>
+        <li><a href="index.html#modules">Modules</a></li>
+        <li><a href="preparation.html">Preparation</a></li>
+        <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- FOOTER: last element inside <body> -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <div class="imprint">
+        <p class="name">Christopher Pollin</p>
+        <p>Digital Humanities Craft</p>
+        <p>
+          <a href="https://dhcraft.org">dhcraft.org</a>
+          <span class="sep">&middot;</span>
+          <a href="mailto:office@dhcraft.org">office@dhcraft.org</a>
+        </p>
+      </div>
+    </div>
+    <div class="colophon">
+      <p>Built with <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a></p>
+      <p>Text content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+    </div>
+  </div>
+</footer>
