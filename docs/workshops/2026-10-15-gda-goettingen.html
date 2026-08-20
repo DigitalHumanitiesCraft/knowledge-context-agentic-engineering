@@ -15,8 +15,8 @@
   knowledge/drafts/specialization-analysis.md, section 5. Inferences are marked in the
   prose itself.
 
-  The cover slot degrades gracefully: assets/covers/<id>.png does not exist yet, and
-  the .plate class holds the 16:9 box with the tint ground until the image lands.
+  The cover assets/covers/<id>.png exists; the .plate class keeps the 16:9 box
+  with the tint ground as a quiet fallback.
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,7 +124,7 @@
         <li class="mod m2 lite">2</li>
         <li class="mod m3">3</li>
         <li class="mod m4">4</li>
-        <li class="mod m5">5</li>
+        <li class="mod m5 lite">5</li>
       </ul>
 
       <ul class="linklist" role="list">
@@ -147,7 +147,7 @@
           demonstration on data preparation and on interface maintenance with a four-step fallback
           chain behind it.</span>
         </li>
-        <li>Critical Perspectives and Governance, taught in full
+        <li>Critical Perspectives and Governance, touched briefly
           <span class="what">Its own slide on checking artefacts against the holdings, with the two
           checking levels of deterministic and domain-expert, addressed to the participants as the
           critical experts in the loop.</span>
