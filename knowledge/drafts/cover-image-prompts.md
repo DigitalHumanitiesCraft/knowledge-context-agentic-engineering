@@ -1,121 +1,127 @@
-# Cover Image Prompts for Workshop Title Slides
+# Production Prompts for Cover Images
 
-Generation prompts for the title-slide images of the master deck and the four workshop decks. The images are produced with an image generator (ChatGPT image generation, Imagen), placed on the title slide in Google Slides, and the exported title slide becomes the platform cover under `docs/assets/covers/<id>.png`. The prompts are written against the design system in `knowledge/design.md`, so the covers on the platform and the decks in the room read as one family. Nothing here is decided; the prompts are drafts for the first generation round.
+These prompts document the selected visual direction for the Full Slide Deck and its seven workshop specialisations. Each prompt is designed for ChatGPT image generation and can be used for a new generation or as the basis for editing the current cover.
 
-## Shared visual language
+## Files
 
-One vocabulary carries all five images. The ground is warm paper white, the drawing is thin near-black line art in two stroke weights, and the drawing behaves like a workflow diagram rather than an illustration, with small abstract stations, hairline connectors, right-angle turns and named nodes. This is the same motif vocabulary the platform uses for the path from source to verified artefact, so a cover is a fragment of that diagram rather than a decorative parallel world.
+| Cover | File |
+|---|---|
+| Full Slide Deck | `docs/assets/covers/full.png` |
+| KUG M3GIM | `docs/assets/covers/2026-09-16-kug-m3gim.png` |
+| CLARIAH-AT | `docs/assets/covers/2026-09-25-clariah-at.png` |
+| HEDIT Heidelberg | `docs/assets/covers/2026-10-05-hedit-heidelberg.png` |
+| Fachschaft Mittelalterstudien | `docs/assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png` |
+| GDA Göttingen | `docs/assets/covers/2026-10-15-gda-goettingen.png` |
+| Uni for Life | `docs/assets/covers/2026-11-09-ufl.png` |
+| VetMed Winter School | `docs/assets/covers/2026-11-30-vetmed-winter-school.png` |
 
-Exactly one accent colour appears per image, applied to a single path or a single station, and everything else stays near-black on paper. A faint watercolour wash in the accent colour may bleed under one element, echoing the DHCraft watercolor logo without imitating it; it stays optional because a generator often overdoes it, and a clean line drawing is the acceptable result.
+## Shared production constraints
 
-Every image is 16:9 and keeps the upper third empty, so the slide typography of title, event and date sits on paper rather than on drawing. Excluded throughout are text, letters, numerals and logos, photorealism, and the generic AI iconography of robots, brains, circuit boards and glowing neural networks.
+- Wide 16:9 landscape composition, minimum width 1280 px.
+- Warm paper-white ground with the upper third left empty for slide typography.
+- One integrated emblem or object in the lower centre, readable at card-thumbnail size.
+- Precise deep-navy ink contours in two consistent stroke weights.
+- Restrained watercolor held mainly inside designed shapes.
+- DHCraft semantic palette: violet `#8140B8` for model capability, orange `#C87000` for prompting, turquoise `#0A7E7C` for knowledge and context, blue `#5B8FC4` for agentic action, green `#7C9200` for governance and verification.
+- No text, letters, numerals, pseudo-writing, logos or watermarks.
+- Avoid robots, brains, circuit-board metaphors, generic dashboards, decorative orbit lines, checkmarks, badges and meaningless network graphs.
 
-Fixed constraints in every prompt:
+## Full Slide Deck
 
-- 16:9 aspect ratio, wide landscape composition
-- warm paper-white or very light ground
-- thin precise line art, two stroke weights, workflow-diagram vocabulary
-- one restrained accent colour, named with its hex value
-- optional faint watercolour wash in the accent colour
-- generous negative space in the upper third
-- no text, no letters, no numerals, no logos, no photorealism, no robot or brain imagery
-
-## What varies
-
-| Subject | Content emphasis | Accent | Motif focus |
-|---|---|---|---|
-| Master deck | The whole path from source to verified artefact | turquoise `#0A7E7C` | all six stations, none enlarged |
-| CLARIAH-AT | Research data workflows and digital scholarly editions | blue `#5B8FC4` | source sheet into structured record, verification gate |
-| KUG (M3GIM) | First encounter with LLMs and prompting, low threshold | orange `#C87000` | prompt and response, iteration, a low step |
-| Uni for Life | Knowledge work in organisations, documents to decisions | violet `#8140B8` | convergence of many documents into one decision |
-| VetMed Winter School | Five-day derivation with a governance accent | green `#7C9200` | five segments inside a policy boundary |
-
-The accent assignment uses each of the four identity colours once, so the five covers in the platform's card row reproduce the logo palette as a set, with turquoise carrying the master. Two assignments also agree with the module marks, orange for prompt engineering as the KUG centre and green for governance as the VetMed accent. The assignment is a cover-layer decision and encodes no module reference; the design rule that the identity palette is otherwise reserved for the five module marks stays untouched.
-
-## Master deck
-
-Emphasis: the complete path from source to verified artefact, the corpus in one line.
-
-### Variant A, horizontal chain
-
-```
-Wide 16:9 editorial line-art illustration on a warm paper-white ground, drawn like a precise technical workflow diagram. A single horizontal chain of six small abstract stations runs across the lower half, formed by a stack of sheets, a folder of documents, a bracketed frame, a closed circular loop, a diamond checkpoint and a sealed rectangular block, connected by hairline rules with right-angle turns. Two stroke weights only, near-black hairlines, one restrained accent in deep turquoise #0A7E7C on the connecting path and the final block. A faint turquoise watercolour wash bleeds under the last station. The upper third stays empty paper. No text, no letters, no numerals, no logos, no photorealism, no robots, brains or glowing neural networks.
+```text
+Use case: stylized-concept
+Asset type: 16:9 title-slide cover for the Full Slide Deck
+Input images: Image 1 is the DHCraft watercolor logo, used only for palette, paper texture and pigment character. If supplied, Image 2 is the current full.png, used as a composition anchor.
+Primary request: Create one compact emblem of maintained project knowledge becoming a verified research artefact. Show a precise stack of knowledge documents with a transparent turquoise context frame cut into the front sheet. Inside the selected frame sits one small faceted artefact core. A single blue agentic tool stroke enters the frame, acts on the core and returns to the document stack. Enclose the object with one incomplete turquoise feedback circle and one quiet green registration notch. Use tiny restrained facets in violet, orange, turquoise, blue and green inside the core.
+Style: human-directed editorial illustration, deep-navy technical ink, controlled DHCraft watercolor, flat frontal view.
+Composition: one emblem in the lower centre, strong silhouette, upper third completely empty.
+Constraints: apply the shared production constraints; remove all readable page marks and decorative symbols.
 ```
 
-### Variant B, grouped arrangement
+## KUG Summer School M3GIM
 
-```
-Wide 16:9 minimal line-art composition on warm paper white, drawn with thin architectural precision. Six small abstract objects rest on a shallow ground line in the lower right, a leaf of paper, a folder, an open bracket frame, a coiled loop, a small gate and a sealed block, threaded by one continuous hairline that folds back on itself once at the loop. Ample empty paper across the upper third and the left side. Two stroke weights, near-black lines, a single accent in deep turquoise #0A7E7C limited to the folded loop and the gate, plus a soft turquoise watercolour bloom at the lower left. No text, no letters, no numerals, no logos, no photorealism, no robot, brain or circuit imagery.
+```text
+Use case: stylized-concept
+Asset type: 16:9 workshop title-slide cover
+Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current KUG cover, used as the subject and composition anchor.
+Primary request: Create one open opera promptbook whose covers form an elegant proscenium stage. Use restrained red-violet curtains, a shallow orchestra-pit curve and a clear stage opening. Place one compact archival bundle of programmes, correspondence and historical photographs on the stage as the knowledge source. A transparent turquoise aperture selects one archival item. Three clean unlabeled data slips emerge into a compact index integrated into the right side of the proscenium. One blue agentic thread passes through archive, selected context and extracted data, then returns through the orchestra pit.
+Style: refined archival watercolor and precise deep-navy ink, detailed enough to establish opera while remaining clear at thumbnail size.
+Palette: orange #C87000 and violet #8140B8 for prompting and model capability, turquoise #0A7E7C for context, blue #5B8FC4 for the agentic path.
+Constraints: apply the shared production constraints; avoid musical notation, map pins and decorative theatre ornament.
 ```
 
 ## CLARIAH-AT Summer School
 
-Emphasis: archival source into structured, verified research data for digital scholarly editions.
-
-### Variant A, sheet into structure
-
-```
-Wide 16:9 line-art illustration on warm paper-white ground, drawn as a calm technical diagram. In the lower left an abstract archival leaf carries a few soft wavy hairlines suggesting handwriting without any readable characters. A hairline path leads right into a nested bracket tree of small indented rectangles, an abstract structured record, and continues to a diamond checkpoint and a sealed data block at the lower right. Two stroke weights, near-black lines, one restrained accent in muted blue #5B8FC4 on the path and the checkpoint. A faint blue watercolour wash bleeds under the archival leaf. The upper third stays empty paper for typography. No text, no letters, no numerals, no logos, no photorealism, no robots or brains.
-```
-
-### Variant B, fanned leaves and grid
-
-```
-Wide 16:9 minimal editorial line art on very light paper ground. Three abstract archival leaves lie fanned in the lower left, marked only by faint wavy strokes with no readable writing. Thin lines rise from one leaf and cross to a fine grid of small nested rectangles in the lower right, where a single cell is outlined more strongly and marked by a small magnifier glyph for verification. Two stroke weights, near-black hairlines, one accent in muted blue #5B8FC4 on the crossing line and the marked cell, and an optional pale blue watercolour wash under the leaves. Generous empty paper in the upper third. No text, no letters, no numerals, no logos, no photorealism, no AI robot or brain imagery.
+```text
+Use case: stylized-concept
+Asset type: 16:9 workshop title-slide cover
+Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current CLARIAH-AT cover, used as the subject and composition anchor.
+Primary request: Create one open scholarly codex that contains a complete research-data transformation. The left page holds an archival manuscript facsimile made from abstract, nonlinguistic traces. A transparent turquoise context window selects one passage. The centre resolves the passage into a clean transcription layer. The right page contains a compact structured record and a restrained evidence view for information extraction. One blue agentic path connects source, selected context, transcription and structured result, then returns to the facsimile through a quiet green verification notch.
+Style: archival conservation plate combined with translucent technical overlays, deep-navy ink and controlled watercolor.
+Palette: turquoise #0A7E7C and blue #5B8FC4 dominant, small orange #C87000 and green #7C9200 details.
+Constraints: apply the shared production constraints; omit charts with labels, checkmarks, topic-model diagrams and dashboard styling.
 ```
 
-## KUG Summer School (M3GIM)
+## HEDIT Heidelberg
 
-Emphasis: an approachable first encounter with LLMs and prompting, deliberately low threshold.
-
-### Variant A, exchange over a low step
-
+```text
+Use case: stylized-concept
+Asset type: 16:9 workshop title-slide cover
+Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current HEDIT cover, used as the subject and composition anchor.
+Primary request: Create one fold-out scholarly edition workstation. A bound archival manuscript bundle rests in a precise bookbinding tray at the left. A turquoise context aperture selects one passage from the participant material. Two integrated fold-out boards extend to the right. The upper board transforms selected source fragments into a restrained extraction model. The lower board transforms the same passage into clean structural zones for a digital edition. One continuous blue agentic thread connects the source, both Promptotyping stages and a verified return to the manuscript. Use one orange removable adapter at the hinge.
+Style: precision bookbinding and technical product illustration, shallow axonometric view, deep-navy ink and matte watercolor.
+Palette: turquoise #0A7E7C and blue #5B8FC4 dominant, orange #C87000 and violet #8140B8 as small working accents.
+Constraints: apply the shared production constraints; avoid readable XML, generic network graphs and software dashboards.
 ```
-Wide 16:9 friendly minimal line-art illustration on warm paper-white ground. Two empty rounded frames face each other in the lower centre, suggesting an exchange, with nothing written inside them. Beneath them three shallow wide steps rise gently from left to right, a very low threshold, traced by one continuous line. Strokes are thin and softly curved rather than strictly geometric, in two weights, near-black, with a single warm accent in ochre orange #C87000 on the step line and the right-hand frame. A soft orange watercolour wash sits faintly under the steps. The upper third remains empty paper. No text, no letters, no numerals, no logos, no photorealism, no robots, brains or glowing neural networks.
+
+## Fachschaft Mittelalterstudien Heidelberg
+
+```text
+Use case: stylized-concept
+Asset type: 16:9 workshop title-slide cover
+Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current medieval-studies cover, used as the subject and composition anchor.
+Primary request: Create one authentic medieval charter with a restrained pendent wax seal. A transparent turquoise aperture selects one precise passage from the parchment. Three small unlabeled structured record slips emerge from that passage and align along the right edge, representing handwriting recognition, structured extraction and the small digital edition. One controlled blue path connects the source passage with the three records and returns to the charter as verified write-back. Preserve natural parchment irregularity and a clear documentary silhouette.
+Style: scholarly facsimile and archival conservation drawing, precise deep-navy contours, restrained mineral watercolor.
+Palette: turquoise #0A7E7C and blue #5B8FC4, orange #C87000 for the wax seal, one small green #7C9200 verification detail.
+Constraints: apply the shared production constraints; omit heraldry, XML brackets and decorative medieval motifs.
 ```
 
-### Variant B, notebook and loop
+## GDA Göttingen
 
-```
-Wide 16:9 warm minimal line drawing on very light paper ground, thin lines with a slightly relaxed hand-drawn quality. In the lower right an open notebook shape lies beside a simple rounded speech frame with no writing inside; one hairline runs from the notebook to the frame, curls back once and returns, with three small dots marking the repetitions. Everything else is empty paper, especially the upper third and the left half. Two stroke weights, near-black, one accent in ochre orange #C87000 on the curling line and the three dots, plus an optional faint orange watercolour bloom under the notebook. No text, no letters, no numerals, no logos, no photorealism, no robot or brain motifs.
+```text
+Use case: stylized-concept
+Asset type: 16:9 workshop title-slide cover
+Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current GDA cover, used as the subject and composition anchor.
+Primary request: Create one modular research-software maintenance workbench. Several heterogeneous research-data packages and legacy carriers enter from the left. A replaceable turquoise compatibility layer selects and aligns the active context. Clean blue service modules transform the material and connect it to a maintained interface-and-endpoints component on the right. An orange removable update cartridge represents migration and repair. One integrated blue agentic feedback path connects source data, transformation, interface maintenance and verified return.
+Style: Swiss technical product illustration, shallow exploded view, precise deep-navy ink and matte watercolor enamel.
+Palette: turquoise #0A7E7C and blue #5B8FC4 dominant, orange #C87000 for the update component, green #7C9200 for one maintenance registration mark.
+Constraints: apply the shared production constraints; avoid literal computer plugs, database cylinders, leaf icons, recycle symbols, checkmarks and generic network diagrams.
 ```
 
 ## Uni for Life
 
-Emphasis: knowledge work in organisations, from scattered documents to a decision that holds.
-
-### Variant A, convergence into a decision
-
-```
-Wide 16:9 line-art illustration on warm paper-white ground, drawn like a precise process diagram. In the lower left a loose fan of abstract document sheets spreads out; hairlines run from each sheet and converge through a narrow lens-shaped opening in the lower centre into one single clear line, which ends at a small solid marker in the lower right, the decision. Two stroke weights, near-black hairlines, one restrained accent in violet #8140B8 on the converging lines and the final marker. A faint violet watercolour wash lies under the fan of sheets. The upper third stays generous empty paper for typography. No text, no letters, no numerals, no logos, no photorealism, no robots or brains.
-```
-
-### Variant B, shelf and single outgoing line
-
-```
-Wide 16:9 minimal editorial line art on very light paper ground. In the lower left a tidy grid of stacked rectangular document blocks suggests an organisation's holdings. Thin hairlines leave the grid, meet at one small round node in the lower centre, and continue as a single line to a diamond checkpoint and a small flag shape at the lower right. Precise geometry, two stroke weights, near-black, with one restrained accent in violet #8140B8 on the single outgoing line and the flag, and an optional pale violet watercolour wash behind the document grid. The upper third and upper right stay empty paper. No text, no letters, no numerals, no logos, no photorealism, no AI robot or brain imagery.
+```text
+Use case: stylized-concept
+Asset type: 16:9 workshop title-slide cover
+Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current Uni for Life cover, used as the subject and composition anchor.
+Primary request: Create one professional knowledge-work instrument. A structured violet document tray holds several layered source briefs. A movable turquoise context lens selects one relevant packet. A non-humanoid articulated agent tool lifts the selected packet, works on it at a restrained drafting surface and returns a corrected version into a clearly marked write-back tray. One blue path connects source knowledge, selected context, agentic action and write-back. The tool has no head, face, torso or character traits.
+Style: high-end editorial paper construction with mechanical precision, deep-navy ink, matte watercolor and subtle asymmetry.
+Palette: violet #8140B8 dominant, turquoise #0A7E7C and blue #5B8FC4.
+Constraints: apply the shared production constraints; avoid robots, humanoid figures, office clip art, screens and decorative cable loops.
 ```
 
 ## VetMed Winter School
 
-Emphasis: the full five-day derivation, held inside a governance frame with an EU AI Act accent.
-
-### Variant A, five segments and a seal
-
-```
-Wide 16:9 line-art illustration on warm paper-white ground, drawn as a calm technical diagram. Five slender vertical bands of gently increasing internal detail stand side by side across the lower half, each holding a few small abstract nodes. One continuous hairline threads through all five from left to right and ends at a simple gate framed by a bracket, beside a small circular seal outline. Two stroke weights, near-black lines, one restrained accent in olive green #7C9200 on the threading line, the gate and the seal. A faint green watercolour wash bleeds under the last band. The upper third remains empty paper. No text, no letters, no numerals, no logos, no photorealism, no robots, brains or circuit boards.
-```
-
-### Variant B, process inside a policy boundary
-
-```
-Wide 16:9 minimal line-art composition on very light paper ground. A horizontal chain of five small abstract stations, connected by hairlines with right-angle turns, runs across the lower half. A thin dashed boundary line encloses the whole chain like a policy frame, and small diamond checkpoints sit where the chain crosses that boundary. Precise technical drawing, two stroke weights, near-black, with one restrained accent in olive green #7C9200 on the dashed boundary and the checkpoints, plus an optional soft green watercolour wash inside one corner of the frame. Generous empty paper above the boundary across the entire upper third. No text, no letters, no numerals, no logos, no photorealism, no robot or brain imagery.
+```text
+Use case: scientific-educational
+Asset type: 16:9 workshop title-slide cover
+Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current VetMed cover, used as the subject and composition anchor.
+Primary request: Create one scientifically plausible veterinary histopathology specimen from animal tissue, rendered as a large cellular cross-section. A transparent turquoise microscopy region of interest selects one subtle tissue pattern. Inside it, a precise blue segmentation contour shows how AI-assisted image analysis can identify and compare relevant structures. Beneath the specimen, integrate a restrained evidence path from whole sample to selected context, analytical model and expert verification, returning to the specimen. Use the five semantic colors across anatomical and analytical layers without turning them into decorative rainbow bands.
+Style: museum-quality veterinary scientific plate, deep-navy ink and translucent watercolor, precise and research-oriented.
+Palette: violet #8140B8, orange #C87000, turquoise #0A7E7C, blue #5B8FC4 and green #7C9200.
+Constraints: apply the shared production constraints; avoid human anatomy, mascots, paws, medical shields, checkmarks and generic AI symbols.
 ```
 
-## Usage
+## Regeneration workflow
 
-Generate four to six images per prompt before judging, because the variance between runs of the same prompt is larger than the difference between the two variants. Pick one, then regenerate around it by changing a single clause, usually the composition line, the number of stations, the strength of the watercolour wash or the position of the empty zone. Keep the hex value verbatim in every regeneration, since generators drift towards a saturated default the moment the colour is named without its code. If a run writes letters or pseudo-writing into the image anyway, discard it and generate again; retouching a fake glyph out of line art costs more than a new run.
-
-The stated empty zone follows the requirement that slide typography sits on paper. The existing CLARIAH title slide places its text block in the right two thirds, so if that layout stays, replace the upper-third clause with a request for the right half to stay empty, and keep the drawing in the left band.
-
-The generated image is an input, never the published cover. Place it on the title slide in Google Slides, set title, event and date over the empty zone, and export the finished title slide as a 16:9 PNG of at least 1280 px width to `docs/assets/covers/<id>.png`. The platform card shows that exported slide, so the cover carries the deck's own typography and the raw image alone never appears on the platform.
+Use the current cover as Image 2 when refining a selected composition. Preserve its main silhouette and change one targeted property per iteration. Reject runs containing readable or pseudo-readable text. Export the selected result as PNG under the exact path listed above.

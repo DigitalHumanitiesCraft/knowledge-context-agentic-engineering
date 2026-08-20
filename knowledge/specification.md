@@ -27,30 +27,35 @@ Requirements for the public platform (`docs/`, GitHub Pages) and the carrying re
 ## Usage scenarios
 
 1. A participant opens the workshop page during the course, follows the schedule, uses the hands-on links and prompts, and returns later to the same page as follow-up material.
-2. An organiser or programme committee checks what a taught unit covers, sees the real title slide, the audience and the linked deck.
+2. An organizer or program committee checks what a unit covers, sees the real cover image, the audience and the linked deck.
 3. A professional from a company or another discipline evaluates the extended variant and finds audience, prerequisites and scope without reading the whole corpus.
-4. An agent working on the corpus reads the registry and the knowledge base to know which artefacts exist and where they live.
+4. An agent working on the corpus reads the registry and the knowledge base to know which artifacts exist and where they live.
 
 ## Requirements
 
-1. The start page shows the master (title, one-sentence description, the five modules, repository link) and the register of all workshop instances as cards.
-2. Each workshop card shows date, title, event, audience and language, the cover image, and the links that exist; missing artefacts appear as quiet "in preparation" labels, never as dead links.
-3. Each workshop has its own subpage that serves as the live course resource and as follow-up material, in six blocks: header (title, event, date, audience, cover), schedule, slides (Google Slides link plus PPTX per taught state), the script excerpt of this workshop with an EN/DE toggle, hands-on (instructions, prompts, material links), follow-up. Empty blocks are omitted per workshop.
-4. The register lives as one file, `docs/data/workshops.json`; a new workshop is exactly one entry there plus one profile folder. One id scheme holds across registry, `workshops/<id>/` folders, `docs/assets/covers/<id>.png` and git tags.
-5. Teaching always runs on Google Slides; the platform links the live decks and the repo holds PPTX exports per taught state under `workshops/<id>/`. An embedded viewer is optional and secondary to link plus cover.
-6. Covers are the title-slide PNG per workshop, 16:9, minimum 1280 px wide, with alt text carrying title and date.
-7. The site is static without a build step, plain HTML and CSS, English interface, responsive, and loads no external resources beyond Google Fonts. The script content on workshop pages is bilingual (German source, reviewed English translation).
+1. The landing page shows the corpus (title, one-sentence description, the five modules, repository link) and the upcoming instances as horizontal cards, each carrying the module badges of the modules it uses.
+2. Each card shows date, title, event, audience and language, the cover image, and the links that exist; missing artifacts appear as quiet "in preparation" labels, never as dead links.
+3. Each registered instance has its own subpage that serves as the live course resource and as follow-up material. It is built from the blocks header (title, event, date, audience, cover), schedule, slides (link to the live deck plus PPTX per taught state), the lecture notes of this instance, hands-on (instructions, prompts, material links) and follow-up. Empty blocks are omitted per instance. The page carries the language of the material it presents, and there is no page-level EN/DE toggle.
+4. A preparation page holds what participants do before a course, so an instance page can point at it instead of repeating it.
+5. The register lives as one file, `docs/data/workshops.json`; a new instance is exactly one entry there plus one folder. One id scheme of the form `YYYY-MM-DD-slug` holds across registry, `workshops/<id>/` folders, `docs/assets/covers/<id>.png` and git tags. The register carries only upcoming instances; a delivered one leaves both register and tree and stays reachable in git history.
+6. Teaching runs on the live decks; the platform links them and the repo holds PPTX exports per taught state under `workshops/<id>/`. An embedded viewer is optional and secondary to link plus cover.
+7. Covers are PNG, 16:9, at least 1280 px wide, with the upper third free of content and no text in the image, delivered by the external image pipeline as `docs/assets/covers/<id>.png`, with alt text carrying title and date.
+8. The site is static without a build step, plain HTML and CSS, no JavaScript required for any content, English interface, responsive, and loads no external resources beyond Google Fonts. Published links carry no tracking or sharing query parameters.
 
 ## Acceptance criteria
 
-- Every artefact named in the registry resolves; every `null` artefact appears as an "in preparation" label.
-- The pages and the registry never contradict each other: after any registry change, the maintaining agent updates the affected pages in the same work step and verifies the match before committing.
+- Every artifact named in the registry resolves; every `null` artifact appears as an "in preparation" label.
+- The pages and the registry never contradict each other. After any registry change the maintaining agent updates the affected pages in the same work step and verifies the match before committing.
+- Every registered instance has a subpage, and every subpage has a register entry.
 - The site is fully readable without JavaScript.
 - Covers meet the format specification; alt texts carry title and date.
+- No published URL carries a tracking or sharing query parameter.
 
 ## Decisions
 
-- Registry as one JSON file instead of a frontmatter collection, because one entry per workshop is the smallest maintenance unit and machine-readable state must live in one place (2026-08-20).
-- Covers as PNG exports of the real first slide, supplied by the operator, because they show the actual deck variants (2026-08-20).
-- Subpage per workshop instead of a single register page, because the subpage is referenced directly in teaching and carries the course materials (operator decision 2026-08-20).
+- Registry as one JSON file instead of a frontmatter collection, because one entry per instance is the smallest maintenance unit and machine-readable state must live in one place (2026-08-20).
+- Covers as PNG at 16:9 with a free upper third and no text in the image, produced by the external image pipeline, because the chrome sets the title over the image (2026-08-20).
+- Subpage per instance instead of a single register page, because the subpage is referenced directly in teaching and carries the course materials (operator decision 2026-08-20).
 - Pages are static markup kept in sync with the registry by agents, instead of client-side rendering from JSON, because at this scale a no-JavaScript page is more robust and the sync is verifiable; revisit if the register outgrows manual sync (2026-08-20).
+- The platform shows only upcoming instances, because a public course platform answers what someone can attend; delivered instances stay retrievable in git history under their tag (operator decision 2026-08-20, reversing the earlier decision to present the register as the full history of the teaching line).
+- Language per module and per instance instead of a bilingual page toggle, because a taught instance has one language and a toggle would promise a parallel version that does not exist for every module (operator decision 2026-08-20).
