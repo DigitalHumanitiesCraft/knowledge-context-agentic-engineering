@@ -6,6 +6,11 @@ project:
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
+template:
+  name: Vorlage Journal
+  version: 0.3
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
 status: active
 created: 2026-08-20
 updated: 2026-08-20
@@ -16,45 +21,30 @@ generated-with: Claude Code (Claude Fable 5)
 
 # Journal
 
-Chronicle of decisions, milestones and workshop deliveries, newest first. Public document; the privacy rule in `governance.md` applies.
+The journal holds the working history of this repo as a narrative of its Promptotyping iterations, with decisions, their reasons and documented dead ends. It is neither git log nor session minutes; the commits live in the git history, the journal condenses them. Addressed are the operator returning after weeks and the agent continuing without loss of context. The journal is public; the privacy rule in `governance.md` applies.
 
-## 2026-08-20 — Design approved, register extended, intake prepared
+## August 2026
 
-Operator decisions: design iteration 4 is approved and promoted to `docs/index.html`; the six-block workshop-subpage structure is confirmed; the fifth module is named Critical Perspectives and Governance; the VetMed Winter School (2026-11-30 to 2026-12-04, Veterinärmedizinische Universität Wien, five-day extended derivation of the full master) enters the register, its display title is provisional until the operator supplies the final one.
+### 2026-08-20 — Founding, language regime and specification round
 
-The operator delivered fresh exports to the downloads folder and named the authoritative files: the current master script (work in progress) and the final CLARIAH workshop script. Two agent triage reports in `drafts/` map all downloads to repo targets; the CLARIAH title slide became the interim cover (960 px, re-export at 1280 px wanted). The build plan was recast into eight delegable work packages.
+**Goal.** Create the canonical home of the teaching line and settle its operating rules.
 
-## 2026-08-20 — Top-level module structure set
+**Course.** The repo was founded public under DigitalHumanitiesCraft, preceded by a vault-side linking analysis that mapped the CLARIAH lecture notes against the author's knowledge base; its findings ground `terms.md` and `plan.md`. A specification round with the operator settled the rules: main title *Knowledge, Context and Agentic Engineering for Knowledge Work*, no subtitle; the repo is canonical for the master texts, the vault versions become references, Google artefacts remain derived surfaces; all repository files are English including file and folder names (`begriffe.md` became `terms.md`, the planned `skriptum/` became `script/`), while the script content is bilingual, German source and reviewed English translation with an EN/DE toggle on the platform; recipe model, the master text lives once in modules and every workshop profile selects from it; the German script is the module source and the CLARIAH lecture notes become profile material; the master audience is generalised to computer-based, data-driven knowledge work; each workshop gets a subpage as live course resource; texts are licensed CC BY 4.0; the repo is single-author; master and CLARIAH tracks run in parallel with the CLARIAH date (2026-09-25) as fixpoint; taught states receive operator-set git tags named after registry ids.
 
-The operator set the top-level structure of the master: five modules, Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, and a fifth module for the critical, societal and governance level (English wording proposed as Critical Perspectives and Governance, confirmation open). The finer cut proposed in `drafts/module-map.md` continues as units beneath these five; the assignment of Promptotyping, verification and the hands-on case studies to Agentic Engineering is a working proposal until confirmed.
+**Outcome.** The rules are encoded in charter, governance, specification and plan; the founding documents were rewritten in English the same day (originals in the git history).
 
-## 2026-08-20 — Design decisions on the first prototypes
+### 2026-08-20 — Design iterations and module structure
 
-The operator reviewed the start-page prototype: direction approved, Space Grotesk chosen as the platform typeface, text hierarchy reduced to at most two levels per section, colours converged to a single turquoise accent on one consistent paper-white ground. The second prototype (`docs/drafts/design-draft-2.html`) implements this and already carries real data, the proposed module structure and the workshop register entries. The workshop-subpage example awaits the operator's reaction.
+**Goal.** Find the platform design at the visible object and set the master's top-level structure.
 
-## 2026-08-20 — Specification round and language switch
+**Course.** Four prototype iterations, each reviewed by the operator. The first established the line-art motif (the path from source to verified artifact) and two font candidates. The second, approved in direction, fixed Space Grotesk, removed the stacked text levels and unified the page on one paper-white ground with turquoise `#0A7E7C` as the single accent. The third removed all section hairlines, introduced the operator's five modules (Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, Critical Perspectives and Governance) and built the footer with watercolor logo, imprint, Promptotyping line and CC BY notice. The fourth, approved and promoted, derived the identity palette from the logo (orange `#C87000`, blue `#5B8FC4`, green `#7C9200`, violet `#8140B8`), applied solely at the five module marks, and refactored the CSS into a documented token architecture with verified WCAG AA contrast. The 19-unit fine cut beneath the five modules stays a draft; Promptotyping, verification and the case studies sit under module 4 as a working setting.
 
-The knowledge documents were walked through with the operator and the open questions answered. Decisions:
+**Outcome.** The design system is encoded in `design.md`; the fourth iteration became `docs/index.html`.
 
-- All repository files are English, including file and folder names (`begriffe.md` became `terms.md`, the planned `skriptum/` became `script/`). The script content is bilingual, German source and reviewed English translation, with an EN/DE toggle on the platform; the platform interface stays English. The founding documents were rewritten in English the same day (originals in git history); `design.md`, `specification.md` and `terms.md` follow once the commissioned drafts are in.
-- The master title stands alone; there is no subtitle.
-- Recipe model: the master text lives once, cut into modules; a workshop profile selects modules and adds only workshop-specific content.
-- The German master script is the module source. The English CLARIAH lecture notes become material of the CLARIAH profile. English master versions arise through agent translation with operator review.
-- The master audience is generalised to computer-based, data-driven knowledge work; specialisation happens per profile.
-- Each workshop gets its own platform subpage that serves as the live course resource and as follow-up material. Page structure and visual motif will be decided on prototypes; drafts were commissioned.
-- Textual content is licensed CC BY 4.0; slide decks are checked separately for third-party image rights.
-- Single-author repo; co-teachers contribute material through the operator.
-- Master migration and CLARIAH profile are built in parallel; on conflicts the CLARIAH date (2026-09-25) wins.
-- The state actually taught in a workshop is marked with a git tag set by the operator.
-- Preparation drafts were commissioned from agents: module map, slides-to-chapter map, term literature anchors, and design prototypes (start page and example workshop subpage). The module-map proposal arrived the same day (`drafts/module-map.md`).
+### 2026-08-20 — Intake, CLARIAH package and platform build-out
 
-## 2026-08-20 — Repository founding
+**Goal.** Bring the authoritative texts into the repo, build the first workshop package, and launch the platform build-out.
 
-The repo was created as a public repository under DigitalHumanitiesCraft, with the knowledge folder, the workshop register and the root documents. It was preceded by a linking analysis in the author's vault that mapped the CLARIAH lecture notes against the existing knowledge base; its findings (term coverage register, deficit zones, execution plan) ground `terms.md` and `plan.md`.
+**Course.** Two triage agents mapped the operator's downloads; the operator named the authoritative files, the master script (English, work in progress) and the final CLARIAH workshop script. Intake copied both, the German Skriptum export and the master deck export; the CLARIAH PPTX deliberately waits for the taught state per the versioning rule. The CLARIAH profile was derived from the final script and corrected the register: the hands-ons are Zweig-based (Radiovortrag transcription, then information extraction), Hersch is case material whose executable package lives in the external zbz repo. The VetMed Winter School (2026-11-30 to 2026-12-04, five-day extended derivation of the full master) entered the register with a provisional display title. Specification decisions: subpage per workshop; static pages kept in sync with the registry by agents instead of client-side rendering; covers 16:9 PNG at 1280 px minimum. Facsimile-bearing images stay out per the rights rule. Commissioned in parallel: the platform build-out (header brand, navigation, reworked cards, four subpages, following the functional model of the operator's earlier teaching site llmdh), the thin workshop profiles, the draft modularisation of the German script, the decision-ready terms draft, and the title-image generation prompts. The knowledge documents adopted the template fields of the Promptotyping catalogue.
 
-Operator decisions of that day:
-
-- Main title *Knowledge, Context and Agentic Engineering for Knowledge Work*; research data and editions are one specialisation (CLARIAH profile), alongside the compact KUG variant and the extended Uni for Life variant.
-- The repo is the canonical home of the master texts; the vault versions become references, Google artefacts remain derived surfaces.
-- Repo public, platform via GitHub Pages, platform language English.
-- Teaching runs on Google Slides; PPTX exports per taught state and title-slide PNGs are kept in the repo.
+**Outcome.** The platform is live in the repo with real register data and the real CLARIAH cover; the remaining work runs as delegated packages; the open operator gates are listed in `plan.md`.

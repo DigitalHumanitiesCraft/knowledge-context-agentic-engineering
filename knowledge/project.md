@@ -6,6 +6,11 @@ project:
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
+template:
+  name: Vorlage Projekt-Wissensdokument
+  version: 0.2
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/project
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-project
 status: draft
 created: 2026-08-20
 updated: 2026-08-20
@@ -50,4 +55,4 @@ German is the source language of the master script. The English version is produ
 
 ## Audiences
 
-The master audience is general, computer-based and data-driven knowledge work; specialisation happens per workshop profile. Three profiles are planned: KUG/M3GIM (compact, no LLM or programming prerequisites), CLARIAH-AT Summer School (research data workflows and digital editions, DH students), Uni for Life (extended, professionals from companies and other disciplines). Each profile names its audience and prerequisites explicitly.
+The master audience is general, computer-based and data-driven knowledge work; specialisation happens per workshop profile. Four profiles are registered: KUG/M3GIM (compact, no LLM or programming prerequisites), CLARIAH-AT Summer School (research data workflows and digital editions, DH students), Uni for Life (extended two-day variant, professionals from companies and other disciplines), VetMed Winter School (five-day extended derivation of the full master, administration and research staff). Each profile names its audience and prerequisites explicitly.

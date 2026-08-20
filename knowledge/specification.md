@@ -6,6 +6,11 @@ project:
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
+template:
+  name: Vorlage Specification
+  version: 0.3
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/specification
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-specification
 status: draft
 created: 2026-08-20
 updated: 2026-08-20

@@ -6,6 +6,11 @@ project:
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
+template:
+  name: Vorlage Index
+  version: 0.2
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/index
+  alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
 status: draft
 created: 2026-08-20
 updated: 2026-08-20
