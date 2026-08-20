@@ -36,7 +36,7 @@ A workshop profile is a recipe over the master. It selects modules, sets depth, 
 
 ## Languages
 
-German is the source language of the master script. The English version is produced module by module through agent translation and counts as canonical only after operator review. The platform interface is English; the script content is shown bilingually with an EN/DE toggle.
+Each module carries the source language it was authored in; the other language version is produced by agent translation and counts as canonical only after operator review (operator decision 2026-08-20). The platform interface is English; the script content is shown bilingually with an EN/DE toggle where both versions exist.
 
 ## Holdings map
 

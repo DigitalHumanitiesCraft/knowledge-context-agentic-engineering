@@ -30,7 +30,7 @@ Repo founded; all repository files English; four design iterations approved; sta
 | 1 | Content intake from the operator's downloads per the triage verdicts; CLARIAH PPTX stays outside until the taught state | triage | done 2026-08-20 |
 | 2 | Master modularisation: consolidate the master script WIP with the German Skriptum into the five modules (units per `drafts/module-map.md`); German source, reviewed English | operator: fine-cut confirmation | open |
 | 3 | CLARIAH workshop package: profile, final script, hands-on links | WP1 | done except PPTX and delivery notes, which follow the taught state |
-| 4 | Further workshop profiles: KUG/M3GIM, Uni for Life, VetMed Winter School as thin profiles; past instances (VetMedAI workshop 1, ÖAW winter school) if the operator registers them | operator: past-instance decision | open |
+| 4 | Further workshop profiles: KUG/M3GIM, Uni for Life, VetMed Winter School as thin profiles; past instances VetMedAI workshop 1 and ÖAW AI Winter School as delivered entries (operator decision 2026-08-20: the register documents the whole history of the teaching line) | WP5 finishes before the registry grows | in progress (agents) |
 | 5 | Platform: header brand with logo, top navigation, reworked workshop cards, and the workshop subpages (CLARIAH full six blocks, three thin) | WP3 | in progress (agent) |
 | 6 | Terms: fill `terms.md` with English canonical wording, German equivalents and the literature anchors from `drafts/term-references.md` | operator: drift decisions D1–D4 | open |
 | 7 | Vault re-pointing: the vault master documents become references to this repo; Project Overview updated | WP2 | open |
@@ -40,6 +40,8 @@ Repo founded; all repository files English; four design iterations approved; sta
 
 Register and pages stay in sync in the same work step (specification acceptance criterion). Each taught workshop gets its git tag, PPTX export, cover and delivery notes. Decisions land in `journal.md` the day they are made.
 
-## Operator deliveries
+## Operator deliveries and open gates
 
-CLARIAH title slide re-export at 1280 px; title-slide PNGs for the other workshops when their decks exist; final display title of the VetMed Winter School.
+Deliveries: title images per workshop via the generation-prompt workflow (prompts in preparation), then the exported title slides as covers; the final display title of the VetMed Winter School.
+
+Gates: fine-cut confirmation at the modularisation coverage report; drift decisions D1–D4 at the terms draft; git tags per taught workshop state. Pages activation is agreed for after the current build-out and a full verification pass (operator decision 2026-08-20).
