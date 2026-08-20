@@ -69,7 +69,7 @@ Rights state. The rights-restricted material of the Zentralbibliothek Zürich is
 | Programme, learning objectives and prerequisites | operator's research vault | complete, the substance of this profile |
 | Drive folder | operator's Drive | exists, URL deliberately not reproduced here |
 | Demo material | worked Zweig example plus synthetic teiCrafter fixtures | decided 2026-08-05 |
-| Cover | `docs/assets/covers/2026-10-05-hedit-heidelberg.png` | absent |
+| Cover | `docs/assets/covers/2026-10-05-hedit-heidelberg.png` | present |
 
 ## Open points
 

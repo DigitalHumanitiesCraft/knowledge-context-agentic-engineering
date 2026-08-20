@@ -75,7 +75,7 @@ Rights state. The material is archive holdings of a partner institution and reac
 | Lecture Notes (KUG Summer School 2026) | this folder | in preparation |
 | PPTX export per taught state | this folder | in preparation |
 | Map demo | external Teaching repo, `workshops/m3gim-map-demo` | working, maintained outside this repo |
-| Cover | `docs/assets/covers/2026-09-16-kug-m3gim.png` | in preparation |
+| Cover | `docs/assets/covers/2026-09-16-kug-m3gim.png` | present |
 
 ## Open points
 

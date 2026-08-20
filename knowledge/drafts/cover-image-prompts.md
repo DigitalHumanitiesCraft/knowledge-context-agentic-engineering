@@ -23,8 +23,21 @@ These prompts document the selected visual direction for the Full Slide Deck and
 - Precise deep-navy ink contours in two consistent stroke weights.
 - Restrained watercolor held mainly inside designed shapes.
 - DHCraft semantic palette: violet `#8140B8` for model capability, orange `#C87000` for prompting, turquoise `#0A7E7C` for knowledge and context, blue `#5B8FC4` for agentic action, green `#7C9200` for governance and verification.
-- No text, letters, numerals, pseudo-writing, logos or watermarks.
+- No text, letters, numerals, pseudo-writing, unrelated logos or watermarks. A named tool icon may appear only where a workshop prompt explicitly requires it.
+- Historical source surfaces use sparse non-letter-like ink textures. They contain no word-shaped marks or repeated glyph sequences.
 - Avoid robots, brains, circuit-board metaphors, generic dashboards, decorative orbit lines, checkmarks, badges and meaningless network graphs.
+
+## Selection status and regeneration risks
+
+All eight covers are selected and present in the repository. The prompts below are the production contract for later regeneration. Four subjects need explicit protection against recurrent generator defaults.
+
+| Cover | Stable element | Regeneration guardrail |
+|---|---|---|
+| CLARIAH-AT | open codex carrying source, transcription and structured result | exactly three internal zones, no charts, labels or dashboard furniture |
+| HEDIT Heidelberg | manuscript tray with two fold-out Promptotyping boards | page and bookbinding geometry only, no interface panels or generic networks |
+| Uni for Life | document tray, context lens and agentic write-back | anchored document-handling arm, no body, head, floating polyhedron or character |
+| VetMed Winter School | microscopy selection and AI-assisted analysis | equine hoof lamellar tissue as the species-specific veterinary sample |
+| Fachschaft Mittelalterstudien | charter, extracted records and small Claude Code agents | current cover is a required identity reference for the agent figure |
 
 ## Full Slide Deck
 
@@ -56,10 +69,10 @@ Constraints: apply the shared production constraints; avoid musical notation, ma
 Use case: stylized-concept
 Asset type: 16:9 workshop title-slide cover
 Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current CLARIAH-AT cover, used as the subject and composition anchor.
-Primary request: Create one open scholarly codex that contains a complete research-data transformation. The left page holds an archival manuscript facsimile made from abstract, nonlinguistic traces. A transparent turquoise context window selects one passage. The centre resolves the passage into a clean transcription layer. The right page contains a compact structured record and a restrained evidence view for information extraction. One blue agentic path connects source, selected context, transcription and structured result, then returns to the facsimile through a quiet green verification notch.
+Primary request: Create one open scholarly codex that contains a complete research-data transformation in exactly three internal zones. The left zone holds an archival manuscript facsimile made from sparse non-letter-like ink textures. A transparent turquoise context window selects one passage. The centre zone resolves the passage into a clean transcription field made from broad blank rules. The right zone contains four unlabeled structured fields for information extraction. One blue agentic path connects source, selected context, transcription and structured result, then returns to the facsimile through a quiet green verification notch. The codex remains the only object.
 Style: archival conservation plate combined with translucent technical overlays, deep-navy ink and controlled watercolor.
 Palette: turquoise #0A7E7C and blue #5B8FC4 dominant, small orange #C87000 and green #7C9200 details.
-Constraints: apply the shared production constraints; omit charts with labels, checkmarks, topic-model diagrams and dashboard styling.
+Constraints: apply the shared production constraints; use exactly three internal zones and no more than five major shapes; omit charts, axes, legends, checkmarks, topic-model diagrams, interface cards and dashboard styling.
 ```
 
 ## HEDIT Heidelberg
@@ -68,10 +81,10 @@ Constraints: apply the shared production constraints; omit charts with labels, c
 Use case: stylized-concept
 Asset type: 16:9 workshop title-slide cover
 Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current HEDIT cover, used as the subject and composition anchor.
-Primary request: Create one fold-out scholarly edition workstation. A bound archival manuscript bundle rests in a precise bookbinding tray at the left. A turquoise context aperture selects one passage from the participant material. Two integrated fold-out boards extend to the right. The upper board transforms selected source fragments into a restrained extraction model. The lower board transforms the same passage into clean structural zones for a digital edition. One continuous blue agentic thread connects the source, both Promptotyping stages and a verified return to the manuscript. Use one orange removable adapter at the hinge.
+Primary request: Create one fold-out scholarly edition workstation. A bound archival manuscript bundle rests in a precise bookbinding tray at the left. A turquoise context aperture selects one passage from the participant material. Exactly two integrated paper boards extend to the right. The upper board groups four selected source fragments through simple color fields and connecting rules. The lower board arranges the same passage into four nested editorial zones. One continuous blue agentic thread connects the source, both Promptotyping stages and a verified return to the manuscript. Use one orange removable adapter at the hinge. Every component is made from paper, board, thread or bookbinding hardware.
 Style: precision bookbinding and technical product illustration, shallow axonometric view, deep-navy ink and matte watercolor.
 Palette: turquoise #0A7E7C and blue #5B8FC4 dominant, orange #C87000 and violet #8140B8 as small working accents.
-Constraints: apply the shared production constraints; avoid readable XML, generic network graphs and software dashboards.
+Constraints: apply the shared production constraints; use exactly two fold-out boards; avoid readable XML, charts, interface panels, software windows, generic network graphs and dashboard styling.
 ```
 
 ## Fachschaft Mittelalterstudien Heidelberg
@@ -79,11 +92,11 @@ Constraints: apply the shared production constraints; avoid readable XML, generi
 ```text
 Use case: stylized-concept
 Asset type: 16:9 workshop title-slide cover
-Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current medieval-studies cover, used as the subject and composition anchor.
-Primary request: Create one authentic medieval charter with a restrained pendent wax seal. A transparent turquoise aperture selects one precise passage from the parchment. Three small unlabeled structured record slips emerge from that passage and align along the right edge, representing handwriting recognition, structured extraction and the small digital edition. One controlled blue path connects the source passage with the three records and returns to the charter as verified write-back. Preserve natural parchment irregularity and a clear documentary silhouette.
+Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. Image 2 is the current medieval-studies cover and is required as the identity and composition reference.
+Primary request: Create one authentic medieval charter with a restrained pendent wax seal. A transparent turquoise aperture selects one precise passage from the parchment. Three small unlabeled structured record slips emerge from that passage and align along the right edge, representing handwriting recognition, structured extraction and the small digital edition. Preserve the same small geometric Claude Code agent figure from the reference image in three purposeful poses: inspecting the charter with a magnifier, selecting the passage from a small ladder and managing the verified return at the lower edge. One controlled blue path connects the source passage with the three records and returns to the charter as verified write-back. Preserve natural parchment irregularity and a clear documentary silhouette.
 Style: scholarly facsimile and archival conservation drawing, precise deep-navy contours, restrained mineral watercolor.
 Palette: turquoise #0A7E7C and blue #5B8FC4, orange #C87000 for the wax seal, one small green #7C9200 verification detail.
-Constraints: apply the shared production constraints; omit heraldry, XML brackets and decorative medieval motifs.
+Constraints: apply the shared production constraints; preserve the supplied Claude Code agent figure consistently; keep all three figures small and subordinate to the charter; omit heraldry, XML brackets, alternative robot faces and decorative medieval motifs.
 ```
 
 ## GDA Göttingen
@@ -104,10 +117,10 @@ Constraints: apply the shared production constraints; avoid literal computer plu
 Use case: stylized-concept
 Asset type: 16:9 workshop title-slide cover
 Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current Uni for Life cover, used as the subject and composition anchor.
-Primary request: Create one professional knowledge-work instrument. A structured violet document tray holds several layered source briefs. A movable turquoise context lens selects one relevant packet. A non-humanoid articulated agent tool lifts the selected packet, works on it at a restrained drafting surface and returns a corrected version into a clearly marked write-back tray. One blue path connects source knowledge, selected context, agentic action and write-back. The tool has no head, face, torso or character traits.
+Primary request: Create one professional knowledge-work instrument. A structured violet document tray holds several layered source briefs. A movable turquoise context lens selects one relevant packet. An articulated document-handling arm is anchored directly to the tray and built from three simple hinged bars. It lifts the selected packet, works on it at a restrained drafting surface and returns a corrected version into a clearly marked write-back tray. One blue path connects source knowledge, selected context, agentic action and write-back. Replace any humanoid figure from the reference with this anchored arm.
 Style: high-end editorial paper construction with mechanical precision, deep-navy ink, matte watercolor and subtle asymmetry.
 Palette: violet #8140B8 dominant, turquoise #0A7E7C and blue #5B8FC4.
-Constraints: apply the shared production constraints; avoid robots, humanoid figures, office clip art, screens and decorative cable loops.
+Constraints: apply the shared production constraints; the arm has no head, face, torso, hands, floating polyhedron or character traits; avoid robots, office clip art, screens and decorative cable loops.
 ```
 
 ## VetMed Winter School
@@ -116,7 +129,7 @@ Constraints: apply the shared production constraints; avoid robots, humanoid fig
 Use case: scientific-educational
 Asset type: 16:9 workshop title-slide cover
 Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current VetMed cover, used as the subject and composition anchor.
-Primary request: Create one scientifically plausible veterinary histopathology specimen from animal tissue, rendered as a large cellular cross-section. A transparent turquoise microscopy region of interest selects one subtle tissue pattern. Inside it, a precise blue segmentation contour shows how AI-assisted image analysis can identify and compare relevant structures. Beneath the specimen, integrate a restrained evidence path from whole sample to selected context, analytical model and expert verification, returning to the specimen. Use the five semantic colors across anatomical and analytical layers without turning them into decorative rainbow bands.
+Primary request: Create one scientifically plausible histological cross-section of equine hoof lamellar tissue, showing the characteristic interlocking epidermal and dermal lamellae. A transparent turquoise microscopy region of interest selects one subtle tissue pattern. Inside it, a precise blue segmentation contour shows how AI-assisted image analysis can identify and compare relevant structures. Beneath the specimen, integrate a restrained evidence path from whole sample to selected context, analytical model and veterinary expert verification, returning to the specimen. Use the five semantic colors across anatomical and analytical layers without turning them into decorative rainbow bands.
 Style: museum-quality veterinary scientific plate, deep-navy ink and translucent watercolor, precise and research-oriented.
 Palette: violet #8140B8, orange #C87000, turquoise #0A7E7C, blue #5B8FC4 and green #7C9200.
 Constraints: apply the shared production constraints; avoid human anatomy, mascots, paws, medical shields, checkmarks and generic AI symbols.

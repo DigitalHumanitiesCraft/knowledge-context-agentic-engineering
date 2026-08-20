@@ -65,7 +65,7 @@ Rights state. The partner institute must clear the demo state for public display
 | Learning objectives | four, in finished prose | complete |
 | Block raster for the morning | arrival, introduction, demo, break, hands-on, discussion | complete at block level, carries no time values |
 | Demo script | two parts with a four-step fallback chain, meaning live demonstration, prepared screencast, screenshot sequence in the deck, and a walkable end state through git log and diffs | drafted |
-| Cover | `docs/assets/covers/2026-10-15-gda-goettingen.png` | absent |
+| Cover | `docs/assets/covers/2026-10-15-gda-goettingen.png` | present |
 
 Each fundamentals slide of the written texts carries a provenance field pointing at the slide of the Full Slide Deck it adapts, which is the delta model applied cleanly. Two of the slides are already phrased occasion-free and are candidates for intake into the full corpus rather than into this profile alone, namely the agent-transformation slide and the artefact-checking slide.
 

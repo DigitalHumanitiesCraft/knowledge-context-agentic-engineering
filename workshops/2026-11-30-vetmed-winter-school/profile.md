@@ -21,7 +21,7 @@ related: [../../knowledge/project.md, ../../knowledge/drafts/module-map.md]
 
 ## Profile
 
-This instance is the five-day block week registered for 2026-11-30 to 2026-12-04 at the Veterinärmedizinische Universität Wien, taught in German for administration and research staff. The register describes it as a five-day extended derivation of the full corpus and as a follow-up format to the VetMedAI programme, whose first workshop was held in German at the same institution as staff AI-competence building. It is therefore the fullest derivation of the full corpus among the registered instances, the one profile with room for every module and for hands-on work in each of them. The display title *VetMed Winter School* is provisional and stands until the operator supplies the final one, as recorded in `knowledge/journal.md`. The register in `docs/data/workshops.json` holds the entry and currently carries no deck, script or cover. This document is a thin profile, so it states the planned shape of the instance rather than a settled content state.
+This instance is the five-day block week registered for 2026-11-30 to 2026-12-04 at the Veterinärmedizinische Universität Wien, taught in German for administration and research staff. The register describes it as a five-day extended derivation of the full corpus and as a follow-up format to the VetMedAI programme, whose first workshop was held in German at the same institution as staff AI-competence building. It is therefore the fullest derivation of the full corpus among the registered instances, the one profile with room for every module and for hands-on work in each of them. The display title *VetMed Winter School* is provisional and stands until the operator supplies the final one, as recorded in `knowledge/journal.md`. The register in `docs/data/workshops.json` holds the entry with its cover and currently carries no deck or script surface. This profile states the planned shape of the instance; a settled content state will exist once the slides and notes for the week are written.
 
 ## Planned module selection
 
@@ -44,7 +44,7 @@ The predecessor instance of the VetMedAI series is the workshop *Grundlagen Gene
 | Live deck | to be linked from `docs/data/workshops.json`, register field currently null | in preparation |
 | Workshop script | this folder | in preparation |
 | PPTX export per taught state | this folder | in preparation |
-| Cover | `docs/assets/covers/2026-11-30-vetmed-winter-school.png` | in preparation |
+| Cover | `docs/assets/covers/2026-11-30-vetmed-winter-school.png` | present |
 
 ## Delivery notes
 

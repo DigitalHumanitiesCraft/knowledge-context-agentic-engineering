@@ -65,7 +65,7 @@ Rights state. A fictitious scenario with synthetic Office files carries no third
 | Lecture Notes (Uni for Life 2026) | this folder | in preparation |
 | PPTX export per taught state | this folder | in preparation |
 | Example data (IBW scenario) | operator's Drive | fixed 2026-08-05, not held in this repo |
-| Cover | `docs/assets/covers/2026-11-09-ufl.png` | in preparation |
+| Cover | `docs/assets/covers/2026-11-09-ufl.png` | present |
 
 ## Open points
 

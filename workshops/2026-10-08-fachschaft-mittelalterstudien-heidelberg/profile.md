@@ -65,7 +65,7 @@ The licence file of the source corpus names CC BY 4.0 with copyright at the Univ
 | Drive folder and participant data folder | operator's Drive | exist, URLs deliberately not reproduced here, publication blocked by the rights gate |
 | Mini repository with instruction layer and `knowledge/` folder | not created | planned |
 | Term apparatus | drawn from the glossary of the full corpus and the Promptotyping paper definitions | available |
-| Cover | `docs/assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png` | absent |
+| Cover | `docs/assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png` | present |
 
 ## Open points
 
