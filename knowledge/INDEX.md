@@ -25,13 +25,13 @@ Navigation of the knowledge base. Reading order for a new agent is `project.md`,
 
 | Document | Function | Content |
 | --- | --- | --- |
-| `project.md` | Charter, Material | What the project is, the corpus and recipe model, holdings map, audiences |
+| `project.md` | Charter, Material | What the project is, the material and its derivation by profile, holdings map, audiences |
 | `specification.md` | Specification | Requirements for platform and repo structure, acceptance criteria |
 | `terms.md` | Domain knowledge | Term matrix EN/DE with canonical wording and literature anchors |
 | `design.md` | Design | Design stance, motif, color and typography system of the platform, iteration status |
 | `governance.md` | Governance | Decision authority, source status, write-back, versioning, rights |
 | `journal.md` | Provenance | Chronicle of decisions, milestones and workshop deliveries |
-| `plan.md` | Planning | Build plan of the repo as work packages with their state |
+| `plan.md` | Planning | Plan of the repo as work packages with their state |
 
 `drafts/` holds decision-preparation material written by agents (module map, slides map, term references, specialization analysis). Drafts are proposals; nothing in them is canonical.
 

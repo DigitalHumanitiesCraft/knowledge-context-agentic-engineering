@@ -673,18 +673,18 @@ img { max-width: 100%; height: auto; }
 
 /* ==========================================================================
    START PAGE ONE-OFF
-   The corpus block, where the deck plate stands beside the recipe statement
-   and the two corpus artefacts. Used once, on index.html.
+   The material block, where the deck plate stands beside the derivation statement
+   and the two holdings. Used once, on index.html.
    ========================================================================== */
-.corpus {
+.material {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   align-items: start;
   gap: var(--s4) var(--s5);
   margin-top: var(--s4);
 }
-.corpus p { max-width: var(--measure); color: var(--ink-2); }
-.corpus .linklist { margin-top: var(--s3); }
+.material p { max-width: var(--measure); color: var(--ink-2); }
+.material .linklist { margin-top: var(--s3); }
 
 /* ==========================================================================
    FOOTER
@@ -731,7 +731,7 @@ img { max-width: 100%; height: auto; }
   .seq { columns: 1; }
   /* The cover moves above the panel, keeping its proportion. */
   .card { grid-template-columns: 1fr; }
-  .corpus { grid-template-columns: 1fr; gap: var(--s4); }
+  .material { grid-template-columns: 1fr; gap: var(--s4); }
 }
 
 @media (max-width: 640px) {

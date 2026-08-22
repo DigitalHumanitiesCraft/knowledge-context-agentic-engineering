@@ -23,7 +23,7 @@ related: [lecture-notes.md, ../../knowledge/project.md, ../../knowledge/drafts/m
 
 ## Profile
 
-This instance is the single-day unit taught on 2026-09-25 within the CLARIAH-AT Summer School 2026 *Machine Learning for Digital Scholarly Editions*, held in English for digital humanities students at BA and MA level. It specialises the full corpus on research data workflows and digital scholarly editions, so the domain framing runs through humanities research data as constructed representations, and the case material comes from two edition projects, the Jeanne Hersch workflow with the Zentralbibliothek Zürich and the Stefan Zweig workflow with Stefan Zweig Digital at the Literaturarchiv Salzburg. The authoritative content state is the lecture notes in `lecture-notes.md`; the register in `docs/data/workshops.json` holds the entry, the live deck and the script surface.
+This instance is the single-day unit taught on 2026-09-25 within the CLARIAH-AT Summer School 2026 *Machine Learning for Digital Scholarly Editions*, held in English for digital humanities students at BA and MA level. It specialises the complete material on research data workflows and digital scholarly editions, so the domain framing runs through humanities research data as constructed representations, and the case material comes from two edition projects, the Jeanne Hersch workflow with the Zentralbibliothek Zürich and the Stefan Zweig workflow with Stefan Zweig Digital at the Literaturarchiv Salzburg. The authoritative content state is the lecture notes in `lecture-notes.md`; the register in `docs/data/workshops.json` holds the entry, the live deck and the script surface.
 
 ## Module selection
 

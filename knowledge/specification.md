@@ -28,12 +28,12 @@ Requirements for the public platform (`docs/`, GitHub Pages) and the carrying re
 
 1. A participant opens the workshop page during the course, follows the schedule, uses the hands-on links and prompts, and returns later to the same page as follow-up material.
 2. An organizer or program committee checks what a unit covers, sees the real cover image, the audience and the linked deck.
-3. A professional from a company or another discipline evaluates the instance aimed beyond academia and finds audience, prerequisites and scope without reading the whole corpus.
-4. An agent working on the corpus reads the registry and the knowledge base to know which artifacts exist and where they live.
+3. A professional from a company or another discipline evaluates the instance aimed beyond academia and finds audience, prerequisites and scope without reading the material as a whole.
+4. An agent working on the material reads the registry and the knowledge base to know which artifacts exist and where they live.
 
 ## Requirements
 
-1. The landing page shows the corpus (title, one-sentence description, the five modules, repository link) and the upcoming instances as horizontal cards, each carrying the module badges of the modules it uses.
+1. The landing page shows the material (title, one-sentence description, the five modules, repository link) and the upcoming instances as horizontal cards, each carrying the module badges of the modules it uses.
 2. Each card shows date, title, event, audience and language, the cover image, and the links that exist; missing artifacts appear as quiet "in preparation" labels, never as dead links.
 3. Each registered instance has its own subpage that serves as the live course resource and as follow-up material. It is built from the blocks header (title, event, date, audience, cover), specialisation prose, hands-on sequence, module coverage, materials (live deck and lecture notes where they exist) and provenance; a follow-up block joins when published material exists for the instance. Empty blocks are omitted per instance. The page carries the language of the material it presents, and there is no page-level EN/DE toggle.
 4. A preparation page holds what participants do before a course, so an instance page can point at it instead of repeating it.

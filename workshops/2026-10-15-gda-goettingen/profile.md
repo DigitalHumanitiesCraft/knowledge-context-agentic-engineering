@@ -67,7 +67,7 @@ Rights state. The partner institute must clear the demo state for public display
 | Demo script | two parts with a four-step fallback chain, meaning live demonstration, prepared screencast, screenshot sequence in the deck, and a walkable end state through git log and diffs | drafted |
 | Cover | `docs/assets/covers/2026-10-15-gda-goettingen.png` | present |
 
-Each fundamentals slide of the written texts carries a provenance field pointing at the slide of the Full Slide Deck it adapts, which is the delta model applied cleanly. Two of the slides are already phrased occasion-free and are candidates for intake into the full corpus rather than into this profile alone, namely the agent-transformation slide and the artefact-checking slide.
+Each fundamentals slide of the written texts carries a provenance field pointing at the slide of the Full Slide Deck it adapts, which is the delta model applied cleanly. Two of the slides are already phrased occasion-free and are candidates for intake into the complete material rather than into this profile alone, namely the agent-transformation slide and the artefact-checking slide.
 
 A cut from the KUG hands-on material is recorded for this instance, namely the table-cleaning exercise as the centre for preparation and authority-data matching, the pipeline-maintenance angle of the music-archival case as agent-supported maintenance, and the recognition exercise for the interface and endpoint part.
 

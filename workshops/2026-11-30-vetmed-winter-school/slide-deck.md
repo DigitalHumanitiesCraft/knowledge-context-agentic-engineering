@@ -24,6 +24,6 @@ Modules drawn on.
 - [`Agentic Engineering`](../../script/modules/module-04-agentic-engineering.md), taught in full, with a participant exercise
 - [`Critical Perspectives and Governance`](../../script/modules/module-05-critical-perspectives-governance.md), taught in full and with its own weight
 
-What this instance localises. Taught in German across a five-day block week for administration and research staff. It is the fullest derivation of the corpus among the registered instances.
+What this instance localises. Taught in German across a five-day block week for administration and research staff. It is the fullest derivation of the material among the registered instances.
 
 This file is replaced by the slide text of the instance once that text is cut and accepted.

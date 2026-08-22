@@ -31,7 +31,7 @@ The register audience string, participants without an LLM or programming backgro
 
 Day 1 carries the fundamentals. The agent material is cut to how a model works and where it fails, and knowledge and context engineering is cut to the slides that ground the checking principle and the concept of a knowledge base. The deep knowledge-modelling material of the Full Slide Deck, meaning knowledge transformations, the four-axis model, the bootstrap sequence and the layer model, is dropped explicitly for this audience. Hands-on units A and B run on day 1.
 
-Day 2 carries Promptotyping as the method block together with the remaining hands-on units. The Promptotyping section is newly written for this instance because the Full Slide Deck carries it as bare slides without speaker notes, and the vault marks that new text as fit for write-back into the full corpus. Governance and skills close the day as an outlook of two to three slides.
+Day 2 carries Promptotyping as the method block together with the remaining hands-on units. The Promptotyping section is newly written for this instance because the Full Slide Deck carries it as bare slides without speaker notes, and the vault marks that new text as fit for write-back into the complete material. Governance and skills close the day as an outlook of two to three slides.
 
 Execution environment. The instance never leaves the browser. Text tasks run through a chat interface and the vision task through a separate environment with a vision-capable model, a split the vault makes deliberately. No harness and no repository work are part of this instance, which is what keeps the prerequisites low.
 
@@ -85,7 +85,7 @@ Rights state. The material is archive holdings of a partner institution and reac
 - The two missing digitisates for the OCR ladder and the two prepared exercise files.
 - The model assignment checked against the model state at teaching time, including whether the vision task really needs a separate environment.
 - Whether the governance and skills outlook stays at two to three slides.
-- Write-back of the newly written Promptotyping section into the full corpus.
+- Write-back of the newly written Promptotyping section into the complete material.
 
 ## Delivery notes
 

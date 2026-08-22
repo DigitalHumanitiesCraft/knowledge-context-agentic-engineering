@@ -1,11 +1,12 @@
 # CLAUDE.md
 
-Corpus and workshop platform for the teaching line *Knowledge, Context and Agentic Engineering for Knowledge Work*. Read `knowledge/INDEX.md` first; the knowledge base in `knowledge/` is the working context for every substantial task.
+Teaching material and workshop platform for the teaching line *Knowledge, Context and Agentic Engineering for Knowledge Work*. Read `knowledge/INDEX.md` first; the knowledge base in `knowledge/` is the working context for every substantial task.
 
 ## Naming
 
-- Never write the word "Master" in this repo. The two holdings are the **Full Slide Deck** (`slides/full-slide-deck.md`) and the **Full Lecture Notes** (`script/full-lecture-notes-en.md`, `script/full-lecture-notes-de.md`). The corpus they carry is cut into five modules, Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, Critical Perspectives and Governance.
-- A workshop is a documented specialization of the corpus. Its profile selects modules and adds what belongs to that instance alone. Corpus text is referenced from the workshop folder rather than duplicated into it.
+- Never write the word "Master" in this repo. The two holdings are the **Full Slide Deck** (`slides/full-slide-deck.md`) and the **Full Lecture Notes** (`script/full-lecture-notes-en.md`, `script/full-lecture-notes-de.md`). The material they carry is cut into five modules, Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, Critical Perspectives and Governance.
+- A workshop is a documented specialization of the material. Its profile selects modules and adds what belongs to that instance alone. Shared text is referenced from the workshop folder rather than duplicated into it.
+- The material is never called a corpus. Corpus keeps its technical sense of research data, which this line teaches on in the Hersch, Zweig and charter material. Say "the material" or "teaching material" for the whole, name the holding (Full Slide Deck, Full Lecture Notes) or the module where that is meant, and call the relation of a workshop to it a profile or a documented specialization.
 
 ## Register and instances
 
@@ -24,7 +25,7 @@ Never publish a URL carrying tracking or sharing parameters, among them `ouid=`,
 
 ## Content boundaries
 
-- No third-party personal names in documents produced here. Use role and institution. Names inside slide-text exports, lecture notes, transcripts and other corpus material are research data and stay untouched.
+- No third-party personal names in documents produced here. Use role and institution. Names inside slide-text exports, lecture notes, transcripts and other teaching material are research data and stay untouched.
 - No monetary amounts anywhere in this repo, including offers, rates and budgets.
 - No facsimiles. Image rights for the Hersch and Zweig material remain with the source projects; link, do not copy.
 - Grokipedia is never a source.

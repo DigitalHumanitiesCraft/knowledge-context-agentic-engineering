@@ -80,3 +80,11 @@ The operator selected all seven workshop images and retained the existing Full S
 The selected PNG files remain publication assets even where the generator introduced incidental pseudo-lettering, chart furniture or character-like elements. Those details are recorded as generation risks. The production prompts now constrain CLARIAH-AT to three codex zones, HEDIT to paper and bookbinding geometry, Uni for Life to a non-humanoid document-handling arm and VetMed to equine hoof lamellar tissue. The medieval prompt requires the selected cover as an identity reference for its agent figure.
 
 **Outcome.** `docs/assets/covers/` contains the complete eight-image series, `docs/data/workshops.json` resolves every cover, the workshop profiles record the assets as present, and `knowledge/drafts/cover-image-prompts.md` holds the reproducible prompt contract for all images.
+
+### 2026-08-22 — Naming of the material and of the knowledge documents
+
+**Goal.** Remove two names the operator rejected, corpus for the teaching material and the labels Charter and Build Plan on the knowledge documents.
+
+**Course.** Operator decision of 2026-08-22. Corpus keeps its technical sense of research data, which this line teaches on in the Hersch, Zweig and charter material. The teaching material is therefore called the material or teaching material, its holdings keep their names Full Slide Deck and Full Lecture Notes, and the relation of a workshop to it is a profile or a documented specialization; the recipe metaphor is retired with it. `project.md` carries the title Project and `plan.md` the title Plan, while the function keys Charter and Planning of the Promptotyping convention stay as keys in `INDEX.md`. The sweep covered the canonical documents, the platform pages and stylesheet hooks, the profiles, the coverage report, the module-cut headers and the drafts. Research-data uses of corpus stayed untouched, and the earlier entries of this journal keep their wording as provenance. The repository description on GitHub follows the same wording, and the naming rule is written into `CLAUDE.md`.
+
+**Outcome.** Repository, platform and vault share one vocabulary of material, holdings, modules, profiles and instances.

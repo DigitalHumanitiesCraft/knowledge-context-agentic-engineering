@@ -1,5 +1,5 @@
 ---
-title: Project Charter
+title: Project
 project:
   name: knowledge-context-agentic-engineering
   repository: https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering
@@ -24,15 +24,15 @@ knowledge-sources:
 related: [specification.md, governance.md, plan.md]
 ---
 
-# Project Charter
+# Project
 
-This repo is the canonical home of the corpus for the teaching line *Knowledge, Context and Agentic Engineering for Knowledge Work*, and it carries the platform that presents the corpus and its workshop derivations. The project covers the teaching material itself, the Full Lecture Notes, the Full Slide Deck, the workshop profiles and the platform. The research strand around the corpus (how new knowledge integrates into an existing knowledge structure) lives in the author's research vault.
+This repo is the canonical home of the material for the teaching line *Knowledge, Context and Agentic Engineering for Knowledge Work*, and it carries the platform that presents the material and its workshop derivations. The project covers the teaching material itself, the Full Lecture Notes, the Full Slide Deck, the workshop profiles and the platform. The research strand around the material (how new knowledge integrates into an existing knowledge structure) lives in the author's research vault.
 
-## Corpus and recipe model
+## Material and derivation by profile
 
-The corpus is maintained once, as the Full Slide Deck and the Full Lecture Notes, and holds the complete material for a general audience of people who do computer-based, data-driven knowledge work. The text lives exactly once, cut into five modules, Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, Critical Perspectives and Governance. The cut is drafted in `drafts/module-map.md` and in `script/modules/`, and it becomes canonical on operator confirmation.
+The material is maintained once, as the Full Slide Deck and the Full Lecture Notes, and covers the whole subject for a general audience of people who do computer-based, data-driven knowledge work. The text lives exactly once, cut into five modules, Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, Critical Perspectives and Governance. The cut is drafted in `drafts/module-map.md` and in `script/modules/`, and it becomes canonical on operator confirmation.
 
-A workshop is a documented specialization of the corpus. Its profile selects modules, sets depth, case studies and language, and adds only what belongs to that single instance, such as schedule, hands-on instructions and venue specifics. An improvement to a module therefore reaches every workshop that uses the module. Case studies are exchangeable modules of their own (currently Hersch and Zweig for research data and digital editions), so the corpus core stays domain-neutral.
+A workshop is a documented specialization of the material. Its profile selects modules, sets depth, case studies and language, and adds only what belongs to that single instance, such as schedule, hands-on instructions and venue specifics. An improvement to a module therefore reaches every workshop that uses the module. Case studies are exchangeable modules of their own (currently Hersch and Zweig for research data and digital editions), so the core of the material stays domain-neutral.
 
 The canonical names of the two holdings are Full Slide Deck and Full Lecture Notes; the earlier working name they carried is retired and is not used anywhere in the repo (operator decision 2026-08-20, rule text in `CLAUDE.md`).
 
@@ -60,4 +60,4 @@ Only upcoming instances live in the working tree. A delivered instance is remove
 
 ## Audiences
 
-The corpus audience is general, computer-based and data-driven knowledge work; specialization happens per workshop profile. Each profile names its audience and prerequisites explicitly, and the register holds the current set of instances with their audience and language fields. The registered range runs from summer-school participants without LLM or programming background, through digital humanities students and staff of academy and editions projects, to professionals from companies and institutions outside academia.
+The audience of the material is general, computer-based and data-driven knowledge work; specialization happens per workshop profile. Each profile names its audience and prerequisites explicitly, and the register holds the current set of instances with their audience and language fields. The registered range runs from summer-school participants without LLM or programming background, through digital humanities students and staff of academy and editions projects, to professionals from companies and institutions outside academia.

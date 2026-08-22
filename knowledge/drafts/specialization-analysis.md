@@ -27,15 +27,15 @@ Two of the four instances that do have a folder carry a thin profile whose conte
 
 ### Vault coverage
 
-One workshop document carries everything, *2026-09-16 KUG Summer School Promptotyping und Generative AI*. It is the longest workshop document in the vault. Supporting documents are the *Project Overview M³GIM* for the corpus provenance, the master slide set *2026-07-14 Knowledge und Context Engineering Master Slides* as the derivation base, *LLM-Modelllandschaft* for the model state at teaching time, and the `ACTIVE-WORK` entry.
+One workshop document carries everything, *2026-09-16 KUG Summer School Promptotyping und Generative AI*. It is the longest workshop document in the vault. Supporting documents are the *Project Overview M³GIM* for the material provenance, the vault slide-text document *2026-07-14 Knowledge und Context Engineering Foliensatz* as the derivation base, *LLM-Modelllandschaft* for the model state at teaching time, and the `ACTIVE-WORK` entry.
 
 ### Specialisation
 
-Two days at introductory level, German, with an explicit statement that the deep vault-modelling slides of the master (knowledge transformations, four-axis model, bootstrap sequence, layer model) are dropped for this audience.
+Two days at introductory level, German, with an explicit statement that the deep vault-modelling slides of the Full Slide Deck (knowledge transformations, four-axis model, bootstrap sequence, layer model) are dropped for this audience.
 
-Day 1 carries fundamentals. The AI-agents section of the master is cut to how a model works and where it fails, the knowledge and context engineering section is cut to the slides that ground the checking principle and the concept of a knowledge base. Hands-on A and B run on day 1.
+Day 1 carries fundamentals. The AI-agents section of the material is cut to how a model works and where it fails, the knowledge and context engineering section is cut to the slides that ground the checking principle and the concept of a knowledge base. Hands-on A and B run on day 1.
 
-Day 2 carries Promptotyping as the method block plus the remaining hands-on units, with governance and skills reduced to a two-to-three-slide outlook. The Promptotyping section is newly written rather than referenced, because the master carries that section as bare slides without speaker notes; the vault marks the new text as fit for write-back into the master.
+Day 2 carries Promptotyping as the method block plus the remaining hands-on units, with governance and skills reduced to a two-to-three-slide outlook. The Promptotyping section is newly written rather than referenced, because the material carries that section as bare slides without speaker notes; the vault marks the new text as fit for write-back into the material.
 
 The single strongest structural decision is the hands-on chain. Four exercises build on one holding, each stage changing only the technique while the domain stays constant, ordered from easy to visually impressive so that table and text precede image and map. A delivers the cleaned person index, B the schema and the extraction prompt, C the participants' own transcription, D the map.
 
@@ -52,9 +52,9 @@ Model assignment is split deliberately, text tasks A, B and D through claude.ai,
 
 ### Material available for intake
 
-- Complete slide-text derivation under the delta model, meaning each slide is either a named reference to a master slide with the cut stated, or fully written text with speaker notes and sources. This is teaching-ready prose, not an outline.
+- Complete slide-text derivation under the delta model, meaning each slide is either a named reference to a slide of the Full Slide Deck with the cut stated, or fully written text with speaker notes and sources. This is teaching-ready prose, not an outline.
 - Four hands-on units with verbatim prompts, learning objectives, task slides and stepwise instruction slides.
-- Two condensed slides the vault itself marks as fit for the master, *Die OCR-Treppe* and *Generieren oder Nachschlagen?*, both with speaker notes and a note on how to phrase them occasion-free.
+- Two condensed slides the vault itself marks as fit for the material, *Die OCR-Treppe* and *Generieren oder Nachschlagen?*, both with speaker notes and a note on how to phrase them occasion-free.
 - Newly written Promptotyping section covering the definition against vibe coding, the four phases, the `knowledge/` folder with the three analytical document types and their diagnostic use, and the Critical Expert with four checking questions.
 - A working map demo exists outside this repo in the Teaching repo under `workshops/m3gim-map-demo` with `index.html` and `data.csv`.
 
@@ -64,7 +64,7 @@ The Malaniuk material is archive holdings of a partner institution and is distri
 
 ### Open preparation items
 
-Operator acceptance of the hands-on material and the slide-text derivation, which gates deck production; audience, participant count and prior-knowledge level; scope per day and the split between input and hands-on; the two missing OCR digitisates; the two prepared data files; the model assignment checked against the model state at teaching time and the question whether the vision task really uses a separate environment; whether the governance and skills outlook stays at this level; write-back of the new Promptotyping section into the master.
+Operator acceptance of the hands-on material and the slide-text derivation, which gates deck production; audience, participant count and prior-knowledge level; scope per day and the split between input and hands-on; the two missing OCR digitisates; the two prepared data files; the model assignment checked against the model state at teaching time and the question whether the vision task really uses a separate environment; whether the governance and skills outlook stays at this level; write-back of the new Promptotyping section into the material.
 
 ### Deltas against register and profile
 
@@ -110,7 +110,7 @@ Five critical-expert gates stand unreviewed in the external hands-on package, co
 
 ### Deltas against register and profile
 
-- The vault's Source-of-Truth table names this repo as planned and not yet instantiated, and lists "Sichtbarkeit und Einrichtung offen" for the master repository. The repo exists. Inference: the vault entry is stale by one step and should name the repo, with `workshop-script.md` as canonical text and the Google Doc as working surface, which is how the profile already describes it.
+- The vault's Source-of-Truth table names this repo as planned and not yet instantiated, and lists "Sichtbarkeit und Einrichtung offen" for the repository. The repo exists. Inference: the vault entry is stale by one step and should name the repo, with `workshop-script.md` as canonical text and the Google Doc as working surface, which is how the profile already describes it.
 - The vault names the Google Doc as the authority for the worked slide sections, the repo names `workshop-script.md`. This is a genuine two-way split rather than a contradiction, because the two artefacts cover different surfaces, but it deserves one sentence in the profile so the split is deliberate.
 - Dates, title, audience and language match across all three artefacts.
 
@@ -138,16 +138,16 @@ Decided on 2026-08-05, the worked example `o_szd.1079`, a Zweig letter from Stef
 
 ### Material available for intake
 
-Programme structure with named blocks and their content, six learning objectives, the participant prerequisites including the requirement of a one-page material description, and the host's prior survey of participant experience. No slide texts exist. Inference: this is the instance where a profile would carry programme and prerequisites but no teaching text, and where the module-4 content is closest to what the master already holds.
+Programme structure with named blocks and their content, six learning objectives, the participant prerequisites including the requirement of a one-page material description, and the host's prior survey of participant experience. No slide texts exist. Inference: this is the instance where a profile would carry programme and prerequisites but no teaching text, and where the module-4 content is closest to what the material already holds.
 
 ### Open preparation items
 
-The workshop concept and its slide set are still to be derived from the master deck; EditionCrafter is to be removed from concept and task list, which a standing operator decision requires and which the document has not yet carried through; the prior-experience survey is to be coordinated with the host; the demo material needs a defined state of the agentic edition pipeline and teiCrafter by the teaching date. The honorarium contract draft is outstanding on the host side, which the vault records as a precondition before material is sent.
+The workshop concept and its slide set are still to be derived from the Full Slide Deck; EditionCrafter is to be removed from concept and task list, which a standing operator decision requires and which the document has not yet carried through; the prior-experience survey is to be coordinated with the host; the demo material needs a defined state of the agentic edition pipeline and teiCrafter by the teaching date. The honorarium contract draft is outstanding on the host side, which the vault records as a precondition before material is sent.
 
 ### Deltas against register and profile
 
 - No folder under `workshops/` exists for this registered id.
-- Module 5 of the master is not programmed. Neither the concept nor the learning objectives name a verification, governance or limits block. The earlier draft judges this a gap against the master rather than a documented decision, and this analysis confirms it against the full document.
+- Module 5 of the material is not programmed. Neither the concept nor the learning objectives name a verification, governance or limits block. The earlier draft judges this a gap against the material rather than a documented decision, and this analysis confirms it against the full document.
 - The register title *HEDIT KI-Workshop 2026* is an inference. The vault heading reads *HEDIT KI-Workshop Heidelberg 2026* and no externally announced title exists.
 - Dates, language and audience match.
 
@@ -175,7 +175,7 @@ The licence file of the source corpus names CC BY 4.0 with copyright at the Univ
 
 ### Material available for intake
 
-The two candidate charter sets with their selection rationale, the script finding with its expected failure mode, the recommended exercise format, the term apparatus drawn from the master glossary and the Promptotyping paper definitions, and the four-step next-steps list. A deck copy of the master deck exists in Google Slides, created 2026-08-05 and not yet cut to this instance. Slide texts are to be written in Markdown and transferred by the operator.
+The two candidate charter sets with their selection rationale, the script finding with its expected failure mode, the recommended exercise format, the term apparatus drawn from the glossary of the teaching line and the Promptotyping paper definitions, and the four-step next-steps list. A deck copy of the Full Slide Deck exists in Google Slides, created 2026-08-05 and not yet cut to this instance. Slide texts are to be written in Markdown and transferred by the operator.
 
 ### Open preparation items
 
@@ -184,7 +184,7 @@ Two standing operator decisions, namely switching the hands-on base to the Näze
 ### Deltas against register and profile
 
 - No folder under `workshops/` exists for this registered id.
-- The register `slides` field is null while a deck copy exists. The earlier draft recommends keeping it null until the deck is cut, on the ground that publishing the link would expose master material under this instance's name. That reasoning holds and should be preserved in the profile.
+- The register `slides` field is null while a deck copy exists. The earlier draft recommends keeping it null until the deck is cut, on the ground that publishing the link would expose shared material under this instance's name. That reasoning holds and should be preserved in the profile.
 - Module 2 is not named as a block anywhere in the vault, and module 5 lives inside the hands-on design rather than in a block, because the recommended exercise teaches verification by having participants perform it. Both readings come from the earlier draft and are confirmed here.
 - Dates, title, audience and language match.
 
@@ -216,7 +216,7 @@ The document additionally records a cut from the KUG hands-on material for this 
 
 ### Material available for intake
 
-- Full slide texts with speaker notes, each fundamentals slide carrying a provenance field pointing at the master slide it adapts, which is the delta model applied cleanly.
+- Full slide texts with speaker notes, each fundamentals slide carrying a provenance field pointing at the slide of the Full Slide Deck it adapts, which is the delta model applied cleanly.
 - Four learning objectives in finished prose.
 - A block raster for the morning, namely arrival, introduction, demo, break, hands-on, discussion.
 - A two-part demo script with a four-step fallback chain, meaning live demonstration, prepared screencast, screenshot sequence in the deck, and a walkable end state through git log and diffs.
@@ -231,7 +231,7 @@ The schedule finding deserves separate mention. The block raster carries no time
 ### Deltas against register and profile
 
 - No folder under `workshops/` exists for this registered id.
-- The earlier draft names this document a candidate for intake into the master corpus rather than only into a profile. This analysis supports that for two items specifically, the agent-transformation slide and the artefact-checking slide, both of which are stated occasion-free already.
+- The earlier draft names this document a candidate for intake into the teaching material rather than only into a profile. This analysis supports that for two items specifically, the agent-transformation slide and the artefact-checking slide, both of which are stated occasion-free already.
 - The one qualification the earlier draft raises stands. At 3.5 hours this is the narrowest cut of the seven and sits closer to research data engineering than to the full arc of the line.
 - Dates, title, audience and language match.
 
@@ -261,17 +261,17 @@ Inference on rights: a fictitious scenario with synthetic Office files carries n
 
 ### Material available for intake
 
-The three-unit structure in the host's own wording, the recurring-course schedule for 2027, the scenario description with its file types, the vocabulary decision, and the pointer to *Steuerung agentischer Coding-Zusammenarbeit* as the conceptual base for the steering layer. No slide texts exist; the cut from the master deck onto the three units is an open task.
+The three-unit structure in the host's own wording, the recurring-course schedule for 2027, the scenario description with its file types, the vocabulary decision, and the pointer to *Steuerung agentischer Coding-Zusammenarbeit* as the conceptual base for the steering layer. No slide texts exist; the cut from the Full Slide Deck onto the three units is an open task.
 
 ### Open preparation items
 
-Audience, participant count and prior-knowledge level; the honorarium frame; the derivation of the cut from the master deck onto the three units; the time of day for the first run.
+Audience, participant count and prior-knowledge level; the honorarium frame; the derivation of the cut from the Full Slide Deck onto the three units; the time of day for the first run.
 
 A vault-internal drift is worth flagging for any sync pass. The `ACTIVE-WORK` entry asks for the example-data state to be carried into the workshop document, on the ground that the document still lists the Office example data as open. The workshop document was updated on 2026-08-19 and now carries the IBW scenario, so the `ACTIVE-WORK` task is stale rather than the document.
 
 ### Deltas against register and profile
 
-- The profile calls this "the extended two-day variant" and concludes that "the extended format allows the full breadth of the master corpus". Both statements are wrong against the vault. Six contact hours over two half-days is the second-shortest instance of the seven, ahead only of the 3.5-hour Göttingen half day. The register `focus` string carries the same error and is its likely source.
+- The profile calls this "the extended two-day variant" and concludes that "the extended format allows the full breadth of the teaching material". Both statements are wrong against the vault. Six contact hours over two half-days is the second-shortest instance of the seven, ahead only of the 3.5-hour Göttingen half day. The register `focus` string carries the same error and is its likely source.
 - The profile marks modules 3 and 4 as emphases and modules 1, 2 and 5 as drawn on. That reading survives the correction, because the three units do centre on the knowledge base and on agent operation. Inference: what changes is the depth claim, not the selection.
 - The profile correctly states that the CLARIAH case material does not transfer. The vault names the concrete substitute, which the profile does not have.
 - The register carries no trace of the two 2027 runs, so the instance is registered as a one-off while the vault treats it as recurring.
@@ -311,12 +311,12 @@ The full five-day block structure, eight learning objectives, the audience and p
 
 The data-protection-compliant harness, which hangs on an unresolved data-protection question in the parent project and decides the shape of day four; local-model logistics covering participants' own hardware against a cloud pseudo-local solution, memory requirements and model choice; the two example datasets with their input-rights clearance; the exact split between input-led days and independent work; the closing format; whether prior participation in the AI-literacy series is required or recommended; participant cap and room equipment.
 
-`ACTIVE-WORK` adds one content item, namely that the concept document still derives from the generic summer-school format and does not yet know the master corpus, which is to be pulled in as the derivation base.
+`ACTIVE-WORK` adds one content item, namely that the concept document still derives from the generic summer-school format and does not yet know the teaching material, which is to be pulled in as the derivation base.
 
 ### Deltas against register and profile
 
 - The profile plans an EU AI Act emphasis under module 5, carried over from the predecessor series. The vault's day structure contains no such block. What it has instead is a compact critical block on day one covering social, ecological and legal dimensions plus digital sovereignty, and a data-critique block on day three. Inference: either the profile's module-5 plan is a proposal the concept document has not adopted, or the concept document is missing a governance decision. This needs an operator answer before the profile is written out.
-- Day four carries local models and digital sovereignty as a substantial practical strand with a hardware requirement attached. No module in the fine cut `module-map.md` covers running a local model on one's own machine. Inference: this is either a module gap in the master or an instance-specific addition that stays in the profile.
+- Day four carries local models and digital sovereignty as a substantial practical strand with a hardware requirement attached. No module in the fine cut `module-map.md` covers running a local model on one's own machine. Inference: this is either a module gap in the material or an instance-specific addition that stays in the profile.
 - The register audience string "administration and research staff" omits the prerequisite the vault states, namely without coding background. That prerequisite is what makes days one and two setup-led and is therefore load-bearing for the profile.
 - The register carries no duration beyond the date span. Six hours per day and thirty over the week is a fact the vault holds and the register does not.
 - The display title is provisional in both artefacts, which is consistent.
@@ -340,7 +340,7 @@ The data-protection-compliant harness, which hangs on an unresolved data-protect
 
 **The harness boundary is the sharpest line.** Three instances never leave the browser, four install and operate an agent. That decides prerequisites, room requirements and failure modes, and it is currently visible in no register field.
 
-**Two instances hold teaching-ready text the repo does not have.** The KUG document and the GDA document each hold complete slide texts with speaker notes and sources under the delta model. Both are awaiting operator acceptance and neither has a deck. These are the two largest intake candidates, and the GDA document additionally holds two slides that are already phrased occasion-free and belong in the master rather than in a profile.
+**Two instances hold teaching-ready text the repo does not have.** The KUG document and the GDA document each hold complete slide texts with speaker notes and sources under the delta model. Both are awaiting operator acceptance and neither has a deck. These are the two largest intake candidates, and the GDA document additionally holds two slides that are already phrased occasion-free and belong in the material rather than in a profile.
 
 **Rights states differ enough to need recording per instance.** CLARIAH facsimiles need institutional clearance, Fachschaft charter images have an undocumented rights state and a pending licence, HEDIT deliberately splits its material into a distributable part and a projector-only part, KUG uses partner archive holdings without a stated licence, Uni for Life uses a synthetic scenario with no rights encumbrance, VetMed has not chosen its data and names input-rights clearance as a precondition. Inference: a `rights` field per profile would carry real information, unlike the current uniform silence.
 

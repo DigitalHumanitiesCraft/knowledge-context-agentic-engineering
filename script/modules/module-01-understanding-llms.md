@@ -12,7 +12,7 @@ source-lecture-notes: [script/full-lecture-notes-de.md, script/full-lecture-note
 
 # Module 1 — Understanding Large Language Models
 
-> Draft cut of the full corpus. Every passage below is reproduced verbatim from the Full
+> Draft cut of the Full Lecture Notes. Every passage below is reproduced verbatim from the Full
 > Lecture Notes; only the module heading, the unit headings and the provenance lines are added.
 > The Full Lecture Notes stay authoritative until the operator confirms the cut. Coverage, discarded
 > parallel versions and open questions are recorded in `script/COVERAGE.md`.

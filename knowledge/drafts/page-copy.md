@@ -4,15 +4,15 @@ Complete text inventory for the platform under `docs/`, written so that a later 
 
 Two marking conventions hold throughout. `[TBD: ...]` marks a fact that no artifact of this repo states, so the sync pass either fills it from an operator answer or drops the sentence. A note beginning with "Inference" marks a claim derived from the sources rather than stated in them.
 
-Spelling is American throughout this document, as commissioned. The existing repo texts use British spelling ("specialisation", "organised", "programme"), so a sync pass has to unify one way or the other before publication; the mixture is currently a real delta. Two terms keep their canonical spelling regardless, "Scholar-Centred Design" and "Research Mission Control", because they are named terms of the corpus rather than ordinary words.
+Spelling is American throughout this document, as commissioned. The existing repo texts use British spelling ("specialisation", "organised", "programme"), so a sync pass has to unify one way or the other before publication; the mixture is currently a real delta. Two terms keep their canonical spelling regardless, "Scholar-Centred Design" and "Research Mission Control", because they are named terms of the material rather than ordinary words.
 
-Module numbering follows the master, meaning 1 Understanding Large Language Models, 2 Prompt Engineering, 3 Knowledge and Context Engineering, 4 Agentic Engineering, 5 Critical Perspectives and Governance. Unit ids `M1` to `M19` refer to the 19-unit fine cut in `drafts/module-map.md`, which is a draft.
+Module numbering follows the material, meaning 1 Understanding Large Language Models, 2 Prompt Engineering, 3 Knowledge and Context Engineering, 4 Agentic Engineering, 5 Critical Perspectives and Governance. Unit ids `M1` to `M19` refer to the 19-unit fine cut in `drafts/module-map.md`, which is a draft.
 
 ## 1. Start page lead
 
-> Knowledge, Context and Agentic Engineering for Knowledge Work is a teaching line on working with frontier language models inside AI harnesses, addressed to everyone doing computer-based, data-driven knowledge work. The material exists once as a master corpus in five modules, from what a language model is through prompt, context and knowledge engineering to agentic workflows, verification and governance. Every workshop listed below is a profile over that corpus, meaning a documented selection of modules with its own depth, case material, language and hands-on.
+> Knowledge, Context and Agentic Engineering for Knowledge Work is a teaching line on working with frontier language models inside AI harnesses, addressed to everyone doing computer-based, data-driven knowledge work. The material exists once as a teaching material in five modules, from what a language model is through prompt, context and knowledge engineering to agentic workflows, verification and governance. Every workshop listed below is a profile over that material, meaning a documented selection of modules with its own depth, case material, language and hands-on.
 
-Optional line beneath the module list, recommended in `media-map.md` so that the master page carries the running long form without individual links.
+Optional line beneath the module list, recommended in `media-map.md` so that the landing page carries the running long form without individual links.
 
 > The blog and the video channel of Digital Humanities Craft carry the same material in its running long form; the per-workshop selection lives on the workshop pages.
 
@@ -37,7 +37,7 @@ Unit subpoints.
 - Training stages and the assistant character (M5)
 - Multimodality and vision-language models (from M14, taught inside this module in the CLARIAH-AT profile)
 
-Note. The German instances add architecture material that the fine cut does not list as its own unit, meaning next-token prediction, the transformer, pre-training against post-training, embeddings and tokenization. `workshops/2026-04-22-vetmedai-workshop-1/profile.md` records that block as the most complete German version of module 1 in the corpus. Whether it becomes a unit of the master or stays instance material is open.
+Note. The German instances add architecture material that the fine cut does not list as its own unit, meaning next-token prediction, the transformer, pre-training against post-training, embeddings and tokenization. `workshops/2026-04-22-vetmedai-workshop-1/profile.md` records that block as the most complete German version of module 1 in the material. Whether it becomes a unit of the material or stays instance material is open.
 
 ### Module 2 Prompt Engineering
 
@@ -84,7 +84,7 @@ Note. The assignment of M13 is contested. `journal.md` records the operator deci
 
 ### Module 5 Critical Perspectives and Governance
 
-> Documented rules, roles and decision rights for authority, permissions, review status, rights and write-back, together with Research Mission Control as the method that separates research, operational and verification functions and fixes the passage from clarification to implementation. The module also carries the critical line running through the whole corpus, meaning openness and open-washing, the concentration of technical power and the ecological cost of frontier systems, the regulatory obligations an institution actually carries, and the rule that model agreement is no substitute for scholarly verification.
+> Documented rules, roles and decision rights for authority, permissions, review status, rights and write-back, together with Research Mission Control as the method that separates research, operational and verification functions and fixes the passage from clarification to implementation. The module also carries the critical line running through the material as a whole, meaning openness and open-washing, the concentration of technical power and the ecological cost of frontier systems, the regulatory obligations an institution actually carries, and the rule that model agreement is no substitute for scholarly verification.
 
 Unit subpoints.
 
@@ -105,7 +105,7 @@ One right-panel text, one extent label and one module coverage table per registe
 
 Register note. This instance is prepared in `drafts/past-instances-registry.md` and is not yet an entry in `docs/data/workshops.json`. The card text below assumes the entry is applied first; without it the card has no register row to render from.
 
-> The session builds the German-language foundation of the corpus, from next-token prediction and the transformer through pre-training and post-training, embeddings, tokenization and the limitations of language models. Prompt engineering follows on a labeled prompt anatomy that is extended through a chain of follow-up prompts, so iteration becomes visible as the working mode. Context window, context rot, Markdown and the knowledge document give the conceptual bridge, and a short closing block defines AI agents and agentic AI without operating a harness. The EU AI Act block carries the participant exercise, in which the regulation is distilled into a knowledge document that is then loaded into a fresh conversation and queried, so the governance content and the knowledge-document method are taught in one movement. The audience is university staff in an institutional AI-competence program. `[TBD: prerequisites; the source records none]`
+> The session builds the German-language foundation of the material, from next-token prediction and the transformer through pre-training and post-training, embeddings, tokenization and the limitations of language models. Prompt engineering follows on a labeled prompt anatomy that is extended through a chain of follow-up prompts, so iteration becomes visible as the working mode. Context window, context rot, Markdown and the knowledge document give the conceptual bridge, and a short closing block defines AI agents and agentic AI without operating a harness. The EU AI Act block carries the participant exercise, in which the regulation is distilled into a knowledge document that is then loaded into a fresh conversation and queried, so the governance content and the knowledge-document method are taught in one movement. The audience is university staff in an institutional AI-competence program. `[TBD: prerequisites; the source records none]`
 
 Extent label.
 
@@ -125,7 +125,7 @@ Units worth exposing on this card, since the card may show subpoints per `drafts
 
 ### KUG Summer School (M3GIM), 2026-09-16 and 17
 
-> The compact profile of the corpus, for participants who bring neither an LLM nor a programming background. The opening carries module 1, so the session starts at what a language model is and where its capabilities are jagged. Prompt engineering follows as the module with the participant exercise, because a prompting exercise runs without programming prerequisites. Knowledge and context engineering are introduced far enough that the working context and the knowledge document become usable ideas, and agentic engineering appears as an outlook on what the introduced layers lead to. Teaching language is German.
+> The compact profile of the material, for participants who bring neither an LLM nor a programming background. The opening carries module 1, so the session starts at what a language model is and where its capabilities are jagged. Prompt engineering follows as the module with the participant exercise, because a prompting exercise runs without programming prerequisites. Knowledge and context engineering are introduced far enough that the working context and the knowledge document become usable ideas, and agentic engineering appears as an outlook on what the introduced layers lead to. Teaching language is German.
 
 Extent label.
 
@@ -145,7 +145,7 @@ Note on the badge row. The vocabulary holds three values and this instance needs
 
 ### CLARIAH-AT Summer School 2026, 2026-09-25
 
-> The single-day unit specializes the corpus on research data workflows and digital scholarly editions, so humanities research data appear as constructed representations and the case material comes from two edition projects, the Jeanne Hersch workflow with the Zentralbibliothek Zürich and the Stefan Zweig workflow with Stefan Zweig Digital at the Literaturarchiv Salzburg. Module 1 runs at the greatest textual depth of any instance, and its vision-language section carries the specialization, because the failure mode it names, a contextually plausible reading unsupported by the facsimile, is what the transcription exercise has to expose. Prompt engineering is the one module with a participant exercise of its own, introduced on a compact example and then applied to a difficult manuscript page. Knowledge, context and agentic engineering are taught conceptually and through the two edition workflows rather than through agent operation by the participants, and the separation of evaluation, validation and scholarly verification stands as its own section. The audience is digital humanities students at BA and MA level, and the teaching language is English.
+> The single-day unit specializes the material on research data workflows and digital scholarly editions, so humanities research data appear as constructed representations and the case material comes from two edition projects, the Jeanne Hersch workflow with the Zentralbibliothek Zürich and the Stefan Zweig workflow with Stefan Zweig Digital at the Literaturarchiv Salzburg. Module 1 runs at the greatest textual depth of any instance, and its vision-language section carries the specialization, because the failure mode it names, a contextually plausible reading unsupported by the facsimile, is what the transcription exercise has to expose. Prompt engineering is the one module with a participant exercise of its own, introduced on a compact example and then applied to a difficult manuscript page. Knowledge, context and agentic engineering are taught conceptually and through the two edition workflows rather than through agent operation by the participants, and the separation of evaluation, validation and scholarly verification stands as its own section. The audience is digital humanities students at BA and MA level, and the teaching language is English.
 
 Extent label.
 
@@ -183,11 +183,11 @@ Note. `[TBD: prerequisites]`. The profile names none, and the audience descripti
 
 ### VetMed Winter School, 2026-11-30 to 2026-12-04
 
-> The five-day block week is the fullest derivation of the master corpus among the registered instances, the one profile with room for every module and for hands-on work in each of them. The audience is administration and research staff, and the instance is the follow-up format to the institution's earlier AI-competence program, whose German LLM-fundamentals material is the closest existing source for module 1. Prompt engineering, knowledge and context engineering and agentic engineering each run in full and each with a participant exercise, including the prepared working environment and controlled agent workflows. Critical perspectives and governance carry their own weight here, meaning the AI-literacy obligation, the definitions and the risk tiers of the EU AI Act alongside verification and the limits of model agreement. Teaching language is German.
+> The five-day block week is the fullest derivation of the teaching material among the registered instances, the one profile with room for every module and for hands-on work in each of them. The audience is administration and research staff, and the instance is the follow-up format to the institution's earlier AI-competence program, whose German LLM-fundamentals material is the closest existing source for module 1. Prompt engineering, knowledge and context engineering and agentic engineering each run in full and each with a participant exercise, including the prepared working environment and controlled agent workflows. Critical perspectives and governance carry their own weight here, meaning the AI-literacy obligation, the definitions and the risk tiers of the EU AI Act alongside verification and the limits of model agreement. Teaching language is German.
 
 Extent label.
 
-> five days, full derivation of the master, participant exercise in every module `[TBD: distribution over the five days and placement of the hands-on units]`
+> five days, full derivation of the material, participant exercise in every module `[TBD: distribution over the five days and placement of the hands-on units]`
 
 Note. The display title *VetMed Winter School* is provisional per `journal.md` and stands until the operator supplies the final one, so the card headline is `[TBD: final title]`. `[TBD: prerequisites]`, which the profile does not state.
 
@@ -355,7 +355,7 @@ Method line.
 
 Optional source line, for the requirement in `specification.md` that the repository is reachable.
 
-> Source and master corpus on GitHub
+> Source and teaching material on GitHub
 
 ## 6. Open points
 

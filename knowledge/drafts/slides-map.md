@@ -1,16 +1,16 @@
-# Master slide fund mapped onto the Skriptum chapters
+# Full Slide Deck mapped onto the Skriptum chapters
 
-Analysis draft, no decisions taken. Sources are the master slide fund (vault document `2026-07-14 Knowledge und Context Engineering Master Slides`, 89 entries of which 6 are section dividers), the German master Skriptum (`Knowledge, Context and Agentic Engineering (Skriptum)`, 10 chapters), and the CLARIAH-AT workshop document with its Slides companion for the current deck state (state 2026-08-19).
+Analysis draft, no decisions taken. Sources are the Full Slide Deck (vault document `2026-07-14 Knowledge und Context Engineering Foliensatz`, 89 entries of which 6 are section dividers), the German Full Lecture Notes (`Knowledge, Context and Agentic Engineering (Skriptum)`, 10 chapters), and the CLARIAH-AT workshop document with its Slides companion for the current deck state (state 2026-08-19).
 
 ## Mapping
 
 Coherent slide groups are collapsed into one row. Fit is rated `direct` where the Skriptum carries the same argument, `partial` where it carries a neighbouring or narrower claim, `thin` where a single sentence is the whole anchor.
 
-| Master slide or group | Skriptum chapter | Fit |
+| Slide or group | Skriptum chapter | Fit |
 |---|---|---|
 | Titel, Lernziele und Ablauf | front matter (Abstract, Lernziele) | direct |
 | Einstiegsbeispiel Subagenten-Verifikation | 3.5, 5.1 | direct |
-| Knowledge und Context Engineering (definition), Was ist eine Wissensbasis, was ist ein Wissenssystem | 2.3, 2.4, 9.1 | partial; *Wissenssystem* is a master-only term, the Skriptum says Project Knowledge Base plus Governance |
+| Knowledge und Context Engineering (definition), Was ist eine Wissensbasis, was ist ein Wissenssystem | 2.3, 2.4, 9.1 | partial; *Wissenssystem* is a deck-only term, the Skriptum says Project Knowledge Base plus Governance |
 | Obsidian und der Vault, Strukturmittel im Vault, Alternativen zu Obsidian, Obsidian einrichten, Demo Obsidian und Claude Code | none | unanchored |
 | Claude Code als AI Harness, AI Harness, Einen AI Harness einrichten | 3.2 | direct; the five harness functions match one to one |
 | Was ist der Agentic Loop | 3.3 | direct |
@@ -83,13 +83,13 @@ Six planned slide texts are marked "Noch nicht im Deck" in the CLARIAH Slides do
 
 ## Skriptum chapters with no or thin slide coverage
 
-| Chapter | Coverage in the master fund |
+| Chapter | Coverage in the Full Slide Deck |
 |---|---|
 | 1. Forschungsdaten, Repräsentation und Provenienz | thin; only 1.2 is covered by the capta slide. 1.1 (Forschungsdaten as project-bound term), 1.3 (Primär-, Intermediär-, Meta- und Paradaten) and 1.4 (Provenienz, PROV-O) have no slide at all |
 | 5. Verifikation, Validierung und Critical Expert | partial; 5.1 and 5.2 are covered, 5.3 (Assessment Result und Scholarly Decision), 5.4 (three status axes) and 5.5 (Acceptance und Publication) have none |
 | 6. Vom Faksimile zum Forschungsdatenpaket | uncovered; only the zbz-ocr-tei case-study slide and parts of the data glossary touch it |
-| 7. Hersch-Fallstudie | uncovered; the master fund carries no slide of the tutorial. The CLARIAH deck covers it in full |
-| 8. Topic Annotation und statistisches Topic Modeling | uncovered; no master slide. The CLARIAH deck has one slide |
+| 7. Hersch-Fallstudie | uncovered; the Full Slide Deck carries no slide of the tutorial. The CLARIAH deck covers it in full |
+| 8. Topic Annotation und statistisches Topic Modeling | uncovered; no slide in the Full Slide Deck. The CLARIAH deck has one slide |
 | 9. Project Governance und Forschungsleitstelle | partial; 9.1 and 9.2 are covered, 9.3 (Klärung zur Umsetzung), 9.4 (verification by object and error risk) and 9.5 (minimal exchange and synchronisation) have none |
 | 10. Grenzen, Glossar und Referenzen | thin; the data glossary slide is a different vocabulary, the methodological limits of 10.1 appear on no slide |
 
@@ -97,4 +97,4 @@ Chapters 2, 3 and 4 are the well covered part, each with several direct anchors 
 
 ## Verdict
 
-Deck and script overlap on a stable core and diverge at both ends. The four engineering levels, the harness and agentic loop, and Promptotyping (chapters 2 to 4) are carried by direct slide anchors on nearly every section, so a derivation from the master fund can teach those chapters without new material. Beyond that core the two artefacts pull apart in opposite directions. The master fund invests heavily in material the Skriptum never took up, above all the Obsidian and vault-architecture line, the LLM-property and interpretability line, the agent-history line and the ecosystem standards (MCP, A2A, Skills), which together account for 36 unanchored slides, roughly two fifths of the fund. The Skriptum in turn built out the research-data half (chapters 1, 5 to 8) that the master fund never had, and the Hersch tutorial now sits in the CLARIAH deck. The alignment gap is therefore a division of labour that hardened over time. No case exists where slide and chapter assert different things; the substantive divergences amount to terminology drift at two points (Action Document against Agent Instruction Document, Wissenssystem against Project Knowledge Base plus Governance) and one differing `knowledge/` file list.
+Deck and script overlap on a stable core and diverge at both ends. The four engineering levels, the harness and agentic loop, and Promptotyping (chapters 2 to 4) are carried by direct slide anchors on nearly every section, so a derivation from the Full Slide Deck can teach those chapters without new material. Beyond that core the two artefacts pull apart in opposite directions. The Full Slide Deck invests heavily in material the Skriptum never took up, above all the Obsidian and vault-architecture line, the LLM-property and interpretability line, the agent-history line and the ecosystem standards (MCP, A2A, Skills), which together account for 36 unanchored slides, roughly two fifths of the fund. The Skriptum in turn built out the research-data half (chapters 1, 5 to 8) that the Full Slide Deck never had, and the Hersch tutorial now sits in the CLARIAH deck. The alignment gap is therefore a division of labour that hardened over time. No case exists where slide and chapter assert different things; the substantive divergences amount to terminology drift at two points (Action Document against Agent Instruction Document, Wissenssystem against Project Knowledge Base plus Governance) and one differing `knowledge/` file list.

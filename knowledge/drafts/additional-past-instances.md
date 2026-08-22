@@ -47,15 +47,15 @@ The one genuinely delivered instance among the four, and the direct programme te
 
 ### Module mapping
 
-| Master module | Coverage in this instance |
+| Module | Coverage in this instance |
 | --- | --- |
 | 1 Understanding Large Language Models | Taught in full as the opening of block 1, with transformer architecture, attention and tokenization named explicitly as the technical foundations |
 | 2 Prompt Engineering | Taught in full across blocks 1 and 2, with zero-shot, few-shot and chain-of-thought as the named techniques and TEI-XML generation as the applied target |
-| 3 Knowledge and Context Engineering | Present as a compact unit called *Context Engineering Grundlagen* at the end of block 2. Thinner than in every later instance of the line, which is consistent with the corpus state of late 2025 |
+| 3 Knowledge and Context Engineering | Present as a compact unit called *Context Engineering Grundlagen* at the end of block 2. Thinner than in every later instance of the line, which is consistent with the material state of late 2025 |
 | 4 Agentic Engineering | Block 3 carries LLM integration into edition workflows, the Promptotyping method and a unit called *Agentic Coding*. Both hands-on units of day 2 apply it to participant material |
 | 5 Critical Perspectives and Governance | Distributed rather than taught as a block. The summary states the critical-constructive framing as central, meaning hallucination, bias and absent domain expertise as systematically examined limits, with the hands-on exercises designed to show where human validation stays indispensable |
 
-The edition domain layer of the master corpus, meaning the path from source through TEI to a research data package, carries the whole instance rather than appearing as one module.
+The edition domain layer of the teaching material, meaning the path from source through TEI to a research data package, carries the whole instance rather than appearing as one module.
 
 ### Materials
 
@@ -70,7 +70,7 @@ One finding needs recording, because it affects any later intake. The vault fold
 
 ### Teaching-line verdict
 
-Belongs, as the precursor instance of the line. The five-module structure is fully recognisable, the method core is Promptotyping, and the vault names this workshop as the explicit programme template for the 2026 Heidelberg repeat. The qualification is chronological. The master corpus was assembled from July 2026 onward, so this instance is upstream of the master rather than a derivation from it, which is the same relation the register already accepts for the ÖAW and VetMedAI entries.
+Belongs, as the precursor instance of the line. The five-module structure is fully recognisable, the method core is Promptotyping, and the vault names this workshop as the explicit programme template for the 2026 Heidelberg repeat. The qualification is chronological. The teaching material was assembled from July 2026 onward, so this instance is upstream of the material rather than a derivation from it, which is the same relation the register already accepts for the ÖAW and VetMedAI entries.
 
 ### Register entry
 
@@ -108,19 +108,19 @@ The second workshop for the same research centre, at the university this time ra
 
 ### Module mapping
 
-| Master module | Coverage in this instance |
+| Module | Coverage in this instance |
 | --- | --- |
 | 1 Understanding Large Language Models | Day 1 block 1, with how LLMs work and the frontier landscape at workshop time, including locally runnable open models |
 | 2 Prompt Engineering | Day 1 block 1 continued, with vibe coding against informed vibe coding as the framing pair |
 | 3 Knowledge and Context Engineering | Day 1 block 2, with context engineering, context rot and the knowledge vault as a steering instrument, applied to TEI-XML modelling and TEI generation |
 | 4 Agentic Engineering | Day 1 block 3 and the whole of day 2. Claude Code in practice, Promptotyping as the structured middle path, teiCrafter as the convergence point of the edition tooling, the agentic edition pipeline as a forkable template, and the multi-repo vault pattern for longer projects |
-| 5 Critical Perspectives and Governance | Not programmed as a unit. The concept and the learning objectives name no verification, governance or limits block. This is a gap against the master rather than a documented decision |
+| 5 Critical Perspectives and Governance | Not programmed as a unit. The concept and the learning objectives name no verification, governance or limits block. This is a gap against the material rather than a documented decision |
 
 ### Materials
 
 | Artefact | Location | State |
 | --- | --- | --- |
-| Live deck | none | to be derived from the KCE master deck, not yet created |
+| Live deck | none | to be derived from the Full Slide Deck, not yet created |
 | Slide texts | none | not yet written |
 | Drive folder | operator's Drive, URL held in the vault workshop document | exists, deliberately not reproduced in this public repo |
 | Demo material | Stefan Zweig Digital worked example with a CC-BY TEI header, plus synthetic teiCrafter fixtures | decided 2026-08-05. Rights-restricted Zentralbibliothek Zürich material is excluded from the shared folder and shown on the projector at most |
@@ -128,7 +128,7 @@ The second workshop for the same research centre, at the university this time ra
 
 ### Teaching-line verdict
 
-Belongs, squarely. The vault states the deck as a derivation from the master deck *Knowledge und Context Engineering für AI Agents*, and the master-corpus strand KCE-5 in the project overview names this instance as one of three trials for the master slides, alongside the KUG summer school and Uni for Life. It is a domain specialisation of the line toward digital scholarly editions.
+Belongs, squarely. The vault states the deck as a derivation from the Full Slide Deck *Knowledge und Context Engineering für AI Agents*, and the teaching-material strand KCE-5 in the project overview names this instance as one of three trials for the Full Slide Deck, alongside the KUG summer school and Uni for Life. It is a domain specialisation of the line toward digital scholarly editions.
 
 ### Register entry
 
@@ -168,7 +168,7 @@ The instance whose announced title is the teaching line itself, in German.
 
 ### Module mapping
 
-| Master module | Coverage in this instance |
+| Module | Coverage in this instance |
 | --- | --- |
 | 1 Understanding Large Language Models | Opening block, LLM and AI agent fundamentals, stated as the conceptual entry the audience needs |
 | 2 Prompt Engineering | Implied by the hands-on rather than named as a block. The source names no prompt-engineering unit |
@@ -182,14 +182,14 @@ The hands-on, decided on 2026-08-05, is a small TEI and handwritten-text-recogni
 
 | Artefact | Location | State |
 | --- | --- | --- |
-| Live deck | `https://docs.google.com/presentation/d/1JSwP61Uam4oMN1drzJcKsWLGMhK8whs0WzPq6_c53CQ/edit` | created 2026-08-05 as a copy of the master deck, adaptation pending |
+| Live deck | `https://docs.google.com/presentation/d/1JSwP61Uam4oMN1drzJcKsWLGMhK8whs0WzPq6_c53CQ/edit` | created 2026-08-05 as a copy of the Full Slide Deck, adaptation pending |
 | Slide texts | none | to be written in Markdown, transferred to the deck by the operator |
 | Drive folder and participant data folder | operator's Drive, URLs held in the vault workshop document | exist, deliberately not reproduced here. The charter material carries a pending licence and undocumented image rights, so the folder must not be published |
 | Cover | `docs/assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png` | absent |
 
 ### Teaching-line verdict
 
-Belongs, with the strongest claim of the three planned instances. The fixed title *Knowledge, Context und Agentic Engineering für die Forschung* is the German form of the line title, the deck is a copy of the master deck, and the term apparatus comes from the master glossary together with the Promptotyping paper definitions. The audience is the least technical of the four, which makes this instance the closest counterpart to the KUG profile that is already registered.
+Belongs, with the strongest claim of the three planned instances. The fixed title *Knowledge, Context und Agentic Engineering für die Forschung* is the German form of the line title, the deck is a copy of the Full Slide Deck, and the term apparatus comes from the glossary of the teaching line together with the Promptotyping paper definitions. The audience is the least technical of the four, which makes this instance the closest counterpart to the KUG profile that is already registered.
 
 ### Register entry
 
@@ -209,7 +209,7 @@ Belongs, with the strongest claim of the three planned instances. The fixed titl
 }
 ```
 
-The `slides` value points at a deck that currently holds the unadapted master copy. Publishing that link before the adaptation would expose master material under the name of this instance, so the field should stay null in the register until the deck is cut.
+The `slides` value points at a deck that currently holds the unadapted copy of the Full Slide Deck. Publishing that link before the adaptation would expose shared material under the name of this instance, so the field should stay null in the register until the deck is cut.
 
 ## 4. GDA Göttingen Pre-Conference Workshop, planned 2026-10-15
 
@@ -228,7 +228,7 @@ The only hybrid instance in the whole register, and the only one whose slide tex
 
 ### Module mapping
 
-| Master module | Coverage in this instance |
+| Module | Coverage in this instance |
 | --- | --- |
 | 1 Understanding Large Language Models | Compact opening. Frontier LLMs in 2026 and the jagged-capability slide, sharpened onto data work, meaning that counting, arithmetic and exact string operations are the unreliable cases |
 | 2 Prompt Engineering | One dedicated slide on formulating a commission to an agent, with the four elements of goal, context, acceptance criteria and constraints, placed immediately before the hands-on as its checklist |
@@ -243,13 +243,13 @@ Three case studies carry the instance, a music-archival pipeline from spreadshee
 | Artefact | Location | State |
 | --- | --- | --- |
 | Live deck | none | to be generated from the vault slide-text document, awaiting operator acceptance of the texts |
-| Slide texts with speaker notes | vault document `Teaching/Workshops/2026-10-15 GDA Göttingen Workshop.md` | written and adversarially reviewed on 2026-07-18, all findings resolved, acceptance pending. This is the richest slide-text asset among the four instances and is a candidate for intake into the master corpus rather than only into a profile |
+| Slide texts with speaker notes | vault document `Teaching/Workshops/2026-10-15 GDA Göttingen Workshop.md` | written and adversarially reviewed on 2026-07-18, all findings resolved, acceptance pending. This is the richest slide-text asset among the four instances and is a candidate for intake into the teaching material rather than only into a profile |
 | Demo scripts | drafted inside the same document as a two-part demo script with a four-step fallback chain | demo dataset and change task undecided |
 | Cover | `docs/assets/covers/2026-10-15-gda-goettingen.png` | absent |
 
 ### Teaching-line verdict
 
-Belongs, as the infrastructure and data-migration specialisation of the line. The slide texts carry explicit provenance fields pointing at the KCE master deck for every fundamentals slide, which is the delta model the vault defines for derivations, so this instance is a documented recipe over the master in exactly the sense the project charter describes. The one qualification worth naming is coverage. At 3.5 hours the instance takes a narrow cut, and its subject sits closer to research data engineering than to the full arc of the line.
+Belongs, as the infrastructure and data-migration specialisation of the line. The slide texts carry explicit provenance fields pointing at the Full Slide Deck for every fundamentals slide, which is the delta model the vault defines for derivations, so this instance is a documented specialization over the material in exactly the sense the project description describes. The one qualification worth naming is coverage. At 3.5 hours the instance takes a narrow cut, and its subject sits closer to research data engineering than to the full arc of the line.
 
 ### Register entry
 

@@ -51,7 +51,7 @@ Derived from the programme blocks and the six documented learning objectives. It
 | 2 Prompt Engineering | Day 1 block 1 continued, with vibe coding against informed vibe coding as the framing pair. |
 | 3 Knowledge and Context Engineering | Day 1 block 2, with context engineering, context rot and the knowledge vault as a steering instrument, applied to TEI-XML modelling and TEI generation. |
 | 4 Agentic Engineering | Day 1 block 3 and the whole of day 2. Claude Code in practice, Promptotyping, teiCrafter as the convergence point of the edition tooling, the agentic edition pipeline as a forkable template, and the multi-repo vault pattern. This is the emphasis of the instance. |
-| 5 Critical Perspectives and Governance | Not programmed. Neither the concept nor the learning objectives name a verification, governance or limits block. This is a documented absence in the sources rather than a documented decision, and it is the one gap of this instance against the full corpus. |
+| 5 Critical Perspectives and Governance | Not programmed. Neither the concept nor the learning objectives name a verification, governance or limits block. This is a documented absence in the sources rather than a documented decision, and it is the one gap of this instance against the complete material. |
 
 ## Case material
 

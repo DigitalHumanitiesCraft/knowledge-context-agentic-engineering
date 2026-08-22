@@ -157,7 +157,7 @@ Note. `[TBD: whether the page shows all six rows or only the future four]`. The 
 
 ## 4. Maintenance
 
-Install instructions age faster than any other content on the platform, and the corpus already carries proof. Between February and April 2026 the Claude Code installation moved from a Node.js and npm route to a native installer with four platform variants, and the documentation address named in the older material now redirects to a different host. A Python version recommended in April is a recommendation with a shelf life. Three rules follow.
+Install instructions age faster than any other content on the platform, and the material already carries proof. Between February and April 2026 the Claude Code installation moved from a Node.js and npm route to a native installer with four platform variants, and the documentation address named in the older material now redirects to a different host. A Python version recommended in April is a recommendation with a shelf life. Three rules follow.
 
 1. The page carries one "last verified" date at the top, and that date is the only thing a maintenance pass has to move when nothing else changed. Proposed initial value 2026-08-20, the date of the source check behind this draft.
 2. Every tool section ends at its official installation page rather than reproducing it. The four addresses are https://code.claude.com/docs/en/setup, https://code.visualstudio.com, https://www.python.org/downloads and https://desktop.github.com. All four resolved on 2026-08-20.

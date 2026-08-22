@@ -1,36 +1,36 @@
 # Module Map (Proposal)
 
-Draft cut of the master corpus into modules. Two sources were read in full, the German master Skriptum *Knowledge, Context and Agentic Engineering* (vault, ten chapters) and the English CLARIAH-AT lecture notes *Knowledge, Context and Agentic Engineering for Research Data Workflows & Digital Editions*. Nothing here is decided. The numbering follows a proposed teaching sequence, so module order and chapter order of the Skriptum diverge where the lecture notes place a block earlier.
+Draft cut of the teaching material into modules. Two sources were read in full, the German Full Lecture Notes *Knowledge, Context and Agentic Engineering* (vault, ten chapters) and the English CLARIAH-AT lecture notes *Knowledge, Context and Agentic Engineering for Research Data Workflows & Digital Editions*. Nothing here is decided. The numbering follows a proposed teaching sequence, so module order and chapter order of the Skriptum diverge where the lecture notes place a block earlier.
 
-Classification follows the master-profile model in `project.md`. "master-general" means the module belongs to the domain-neutral core and is available to every profile. "workshop-specific (CLARIAH)" means the module carries the case material of the CLARIAH-AT Summer School unit and would be exchanged in another profile.
+Classification follows the material-profile model in `project.md`. "shared" means the module belongs to the domain-neutral core and is available to every profile. "workshop-specific (CLARIAH)" means the module carries the case material of the CLARIAH-AT Summer School unit and would be exchanged in another profile.
 
 ## Module list
 
 | ID | Module title | Skriptum source | Class |
 | --- | --- | --- | --- |
-| M1 | Applied Generative AI in Research Data Workflows | Front matter (Abstract, Lernziele, Verwendung) | master-general |
-| M2 | Research Data, Representation and Provenance | Ch. 1 | master-general |
-| M3 | The Current LLM Capability Landscape | none | master-general |
-| M4 | Asymmetric Amplification and the Capability Frontier | none | master-general |
-| M5 | What an LLM Is: Jagged Capability, Latent Program Space, Assistant Character | Ch. 3.1 (one paragraph) | master-general |
-| M6 | The Four Engineering Layers | Ch. 2.1, 2.6 | master-general |
-| M7 | Prompt Engineering | Ch. 2.2 | master-general |
-| M8 | Context Engineering | Ch. 2.3 | master-general |
-| M9 | Knowledge Engineering and Knowledge Documents | Ch. 2.4 | master-general |
-| M10 | Agentic Engineering, AI Harnesses and Controlled Agent Workflows | Ch. 2.5, Ch. 3 | master-general |
-| M11 | Working Environment, API Access and Structured Output | Ch. 3.4, 6.5 (partial) | master-general |
-| M12 | Promptotyping and Scholar-Centred Design | Ch. 4 | master-general |
-| M13 | Verification, Validation and the Critical Expert | Ch. 5 | master-general |
-| M14 | From Facsimile to a Research Data Package | Ch. 6 | master-general (edition domain layer) |
+| M1 | Applied Generative AI in Research Data Workflows | Front matter (Abstract, Lernziele, Verwendung) | shared |
+| M2 | Research Data, Representation and Provenance | Ch. 1 | shared |
+| M3 | The Current LLM Capability Landscape | none | shared |
+| M4 | Asymmetric Amplification and the Capability Frontier | none | shared |
+| M5 | What an LLM Is: Jagged Capability, Latent Program Space, Assistant Character | Ch. 3.1 (one paragraph) | shared |
+| M6 | The Four Engineering Layers | Ch. 2.1, 2.6 | shared |
+| M7 | Prompt Engineering | Ch. 2.2 | shared |
+| M8 | Context Engineering | Ch. 2.3 | shared |
+| M9 | Knowledge Engineering and Knowledge Documents | Ch. 2.4 | shared |
+| M10 | Agentic Engineering, AI Harnesses and Controlled Agent Workflows | Ch. 2.5, Ch. 3 | shared |
+| M11 | Working Environment, API Access and Structured Output | Ch. 3.4, 6.5 (partial) | shared |
+| M12 | Promptotyping and Scholar-Centred Design | Ch. 4 | shared |
+| M13 | Verification, Validation and the Critical Expert | Ch. 5 | shared |
+| M14 | From Facsimile to a Research Data Package | Ch. 6 | shared (edition domain layer) |
 | M15 | Case Study Hersch: A Documented Pilot Dataset | Ch. 7 | workshop-specific (CLARIAH) |
 | M16 | Case Study Zweig: Transcribing a Complex Facsimile | none | workshop-specific (CLARIAH) |
-| M17 | Topic Annotation and Statistical Topic Modeling | Ch. 8 | master-general |
-| M18 | Project Governance and Research Mission Control | Ch. 9 | master-general |
-| M19 | Limits, Glossary and Apparatus | Ch. 10 | master-general (cross-cutting) |
+| M17 | Topic Annotation and Statistical Topic Modeling | Ch. 8 | shared |
+| M18 | Project Governance and Research Mission Control | Ch. 9 | shared |
+| M19 | Limits, Glossary and Apparatus | Ch. 10 | shared (cross-cutting) |
 
 ## Module summaries
 
-M1 Applied Generative AI in Research Data Workflows. Frames the subject as the adaptation of generative methods to domain research practice rather than model development, states the learning objectives and names the four engineering layers as the conceptual spine of the corpus. Also carries the deliberate focus on frontier models with its qualifications, including the standing of smaller and open-weight models and the ecological and power-concentration questions. The Skriptum holds this only as abstract and learning objectives, while the argued framing exists in the lecture notes.
+M1 Applied Generative AI in Research Data Workflows. Frames the subject as the adaptation of generative methods to domain research practice rather than model development, states the learning objectives and names the four engineering layers as the conceptual spine of the material. Also carries the deliberate focus on frontier models with its qualifications, including the standing of smaller and open-weight models and the ecological and power-concentration questions. The Skriptum holds this only as abstract and learning objectives, while the argued framing exists in the lecture notes.
 
 M2 Research Data, Representation and Provenance. Develops research data as a functional and institutional category, the capta argument, the representational chain from source to publication, and the four data levels of primary, intermediate, meta and para data. Adds provenance as a reconstructible relation with PROV-O classes and the Web Annotation Data Model, plus the minimal provenance record and its check criterion. The lecture-notes counterpart adds AI readiness and the standards frame of FAIR, Croissant, CARE and TEI.
 
@@ -145,8 +145,8 @@ Coverage states how the lecture-notes section relates to the Skriptum material b
 ## Open questions for the operator
 
 1. Hands-on identity for the CLARIAH unit. The task framing names an OCR-to-TEI hands-on on a correspondence corpus, the Skriptum tutorial works on two journal pages from the Hersch material and produces JSON annotations, and the lecture notes work on Stefan Zweig manuscripts and produce plain-text transcriptions. Which case is canonical for 2026-09-25, and does TEI become a target representation, which no source currently teaches as an output format.
-2. Whether M15 and M16 both survive as parallel case-study modules or one replaces the other. The repo charter names Hersch and Zweig as the exchangeable case studies, which supports keeping both, while a single session probably carries one.
-3. Whether the LLM-nature blocks M3, M4 and M5 enter the German master Skriptum as chapters, or stay an English lecture-notes layer that profiles draw on. This is the largest one-sided delta and decides whether the Skriptum stays the single master or becomes one of two masters.
+2. Whether M15 and M16 both survive as parallel case-study modules or one replaces the other. The project description names Hersch and Zweig as the exchangeable case studies, which supports keeping both, while a single session probably carries one.
+3. Whether the LLM-nature blocks M3, M4 and M5 enter the German Full Lecture Notes as chapters, or stay an English lecture-notes layer that profiles draw on. This is the largest one-sided delta and decides whether the Skriptum stays the single source text or becomes one of two source texts.
 4. Granularity of chapter 2. The proposal splits it into M6 through M9 so that a profile can select prompt engineering at depth without taking all four layers, at the cost of four modules where the Skriptum has one chapter.
 5. Whether M19 counts as a module at all or as an appendix that every module references.
 6. Model pins in the hands-on modules. The lecture notes name one Gemini model in the demonstration and a different Gemini identifier for the Zweig project run, and the Skriptum documents its Hersch run under a different provider entirely. A module map needs one decided pin per hands-on, or an explicit statement that the pin belongs to the run and not to the module.

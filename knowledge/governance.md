@@ -30,7 +30,7 @@ Decision authority, source status and boundaries for humans and agents in this r
 | Holding | Canonical place |
 | --- | --- |
 | Full Lecture Notes, Full Slide Deck | this repo (`script/`, `slides/`) |
-| Terms | `terms.md` in this repo; it is filled from the corpus and supersedes the vault atoms, whose wording is now examined against it as a delta |
+| Terms | `terms.md` in this repo; it is filled from the material and supersedes the vault atoms, whose wording is now examined against it as a delta |
 | Workshop register and the current set of instances | `docs/data/workshops.json` |
 | Delivered instances | git history, reachable through the tag of the taught state |
 | Live decks and documents | Google Workspace, as derived surfaces; divergent wording is examined as a delta |

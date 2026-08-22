@@ -1,5 +1,5 @@
 ---
-title: Build Plan
+title: Plan
 project:
   name: knowledge-context-agentic-engineering
   repository: https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering
@@ -8,20 +8,20 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: active
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-08-22
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 related: [project.md, specification.md]
 ---
 
-# Build Plan
+# Plan
 
 The build runs as work packages, each delegated to Opus subagents and coordinated by the orchestrator; a package counts as done only after verification against the real file state. On conflicts the CLARIAH date (2026-09-25) wins. The content work list against the vault knowledge base (alignment of the Full Lecture Notes, atom gaps) is held by the vault document *Verknüpfungsanalyse CLARIAH-AT-Skriptum und Vault-Wissensbestand*; this plan holds the repo side.
 
 ## Done (2026-08-20)
 
-Repo founded; all repository files English; design iteration 4 approved and in force, with page chrome and favicon set committed; platform built out from `docs/index.html` with one subpage per registered instance and a shared preparation page, and a cover file present for every instance; content intake complete, the Full Lecture Notes in both languages in `script/`, the Full Slide Deck export in `slides/`, the CLARIAH lecture notes and profile in `workshops/2026-09-25-clariah-at/`; draft module cut with coverage report in `script/modules/` and `script/COVERAGE.md`; `terms.md` filled from the corpus; downloads triage reports in `drafts/`; specification rewritten with all decisions; id scheme unified across register, folders, covers and tags; register cut to the upcoming instances and the Full naming adopted.
+Repo founded; all repository files English; design iteration 4 approved and in force, with page chrome and favicon set committed; platform built out from `docs/index.html` with one subpage per registered instance and a shared preparation page, and a cover file present for every instance; content intake complete, the Full Lecture Notes in both languages in `script/`, the Full Slide Deck export in `slides/`, the CLARIAH lecture notes and profile in `workshops/2026-09-25-clariah-at/`; draft module cut with coverage report in `script/modules/` and `script/COVERAGE.md`; `terms.md` filled from the material; downloads triage reports in `drafts/`; specification rewritten with all decisions; id scheme unified across register, folders, covers and tags; register cut to the upcoming instances and the Full naming adopted.
 
 ## Work packages
 
@@ -33,7 +33,7 @@ Repo founded; all repository files English; design iteration 4 approved and in f
 | 4 | Workshop instances: one folder per upcoming instance in the shape `profile.md`, `slide-deck.md`, `lecture-notes.md`, `data/`, each entry matching its register record | register | every registered instance has its folder 2026-08-20 |
 | 5 | Platform: landing page with the horizontal instance cards and module badges, one subpage per registered instance, and the preparation page | WP3, WP4 | pages built 2026-08-20 and cover fields filled; no register field yet carries the module selection of an instance |
 | 6 | Terms: canonical English wording, German equivalents and literature anchors in `terms.md` | operator: confirmation of the six editorial decisions recorded in the document | filled 2026-08-20; the editorial decisions stay reversible until the operator confirms them |
-| 7 | Vault re-pointing: the corresponding vault documents become references to this repo; Project Overview updated | WP2 | open |
+| 7 | Vault re-pointing: the corresponding vault documents become references to this repo; Project Overview updated | WP2 | done 2026-08-22; ACTIVE-WORK entry, Project Overview and the workshop documents in the vault point to this repo and use its names |
 | 8 | Publication: LICENSE file (CC BY 4.0 for texts, done), GitHub Pages activation, full link and rendering verification, then announcement-ready | WP5; operator gates | license done; activation and verification open |
 
 ## Steady-state duties after the build

@@ -25,7 +25,7 @@ This instance is registered for 2026-11-09 and 10 in the Uni for Life programme 
 
 Six contact hours make this one of the shortest instances of the line, so the profile takes a narrow cut. Its subject is the steering of agentic work, which is what separates the instance from the foundational generative-AI series of the same programme. The audience sits outside academia, so the domain framing runs through professional knowledge work and the case material of the CLARIAH-AT profile does not transfer here. The register in `docs/data/workshops.json` holds the entry and currently carries no deck, script or cover.
 
-An earlier state of this profile and of the register described the instance as an extended two-day variant carrying the full breadth of the corpus. That claim was wrong by a factor of two in contact hours and is corrected here against the operator's research vault, as analysed in `knowledge/drafts/specialization-analysis.md`.
+An earlier state of this profile and of the register described the instance as an extended two-day variant carrying the full breadth of the material. That claim was wrong by a factor of two in contact hours and is corrected here against the operator's research vault, as analysed in `knowledge/drafts/specialization-analysis.md`.
 
 ## Unit structure
 
@@ -47,7 +47,7 @@ The selection below is derived from the three-unit structure held in the operato
 | --- | --- |
 | 1 Understanding Large Language Models | Drawn on inside unit 1, at the depth the distinction between chatbot, assistant and agent requires. |
 | 2 Prompt Engineering | Drawn on as the entry layer inside units 1 and 2. Six contact hours leave no room for a block of its own. |
-| 3 Knowledge and Context Engineering | Emphasis. Unit 2 builds the knowledge base as the working basis for agents, which is the part of the corpus that transfers most directly to professional knowledge work. |
+| 3 Knowledge and Context Engineering | Emphasis. Unit 2 builds the knowledge base as the working basis for agents, which is the part of the material that transfers most directly to professional knowledge work. |
 | 4 Agentic Engineering | Emphasis. Unit 1 carries harness setup, permissions and security, unit 3 carries the progression to a small own application. |
 | 5 Critical Perspectives and Governance | Present through the verification of agent results against one's own holdings in unit 2 and through permissions and security in unit 1. No governance block of its own is programmed. |
 

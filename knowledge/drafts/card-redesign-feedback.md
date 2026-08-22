@@ -10,8 +10,8 @@ Operator feedback on the workshop cards, to be applied in the next platform iter
 
 ## Module badges
 
-- A badge row per card showing which of the five master modules the workshop includes, using the identity colour scheme already reserved for the module marks (orange, blue, green, violet plus turquoise per `design.md`).
-- A badge signals inclusion and ideally depth of coverage (e.g. full / touched / absent), so the recipe model becomes visible on the card.
+- A badge row per card showing which of the five modules the workshop includes, using the identity colour scheme already reserved for the module marks (orange, blue, green, violet plus turquoise per `design.md`).
+- A badge signals inclusion and ideally depth of coverage (e.g. full / touched / absent), so the derivation by profile becomes visible on the card.
 - Modules may expose subpoints (units from the module map) on the card; some workshops list units, some do not. Keep this optional per workshop.
 
 ## Constraints

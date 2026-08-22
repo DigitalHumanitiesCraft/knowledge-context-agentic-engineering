@@ -10,7 +10,7 @@ covers: script/modules/
 
 ## Status of these files
 
-The five files in `script/modules/` are draft-canonical. They hold the text of the full corpus cut into the five modules of the teaching line, assembled from `script/full-lecture-notes-de.md` and `script/full-lecture-notes-en.md` by exact passage, without rewriting, summarising or translating. Both Full Lecture Notes files are untouched and remain the authoritative source. The module cut is an operator gate. Once the operator confirms it, the modules become canonical and the Full Lecture Notes retire.
+The five files in `script/modules/` are draft-canonical. They hold the text of the Full Lecture Notes cut into the five modules of the teaching line, assembled from `script/full-lecture-notes-de.md` and `script/full-lecture-notes-en.md` by exact passage, without rewriting, summarising or translating. Both Full Lecture Notes files are untouched and remain the authoritative source. The module cut is an operator gate. Once the operator confirms it, the modules become canonical and the Full Lecture Notes retire.
 
 Each unit of the nineteen-unit fine cut in `knowledge/drafts/module-map.md` was assigned one language version. Where both Full Lecture Notes cover a unit, the fuller version was carried and the other one is recorded below under parallel versions not carried. Material that exists only in the CLARIAH-AT lecture notes was not copied, because it is profile material; it is recorded as a gap.
 
@@ -54,7 +54,7 @@ One version per unit was kept. The other version stays in its Full Lecture Notes
 
 | Unit | Version kept | Version not carried | What the discarded version adds |
 | --- | --- | --- | --- |
-| M1 | DE abstract and "Zu diesem Skriptum" | EN "Abstract", EN "About These Lecture Notes" | the framing of the full corpus around knowledge work rather than one disciplinary field, which no German passage states |
+| M1 | DE abstract and "Zu diesem Skriptum" | EN "Abstract", EN "About These Lecture Notes" | the framing of the complete material around knowledge work rather than one disciplinary field, which no German passage states |
 | M6 | DE 1.3 | EN "Learning Objectives and Core Concepts" | cited definitions of the four layers, and the paired definitions of AI agent and AI harness |
 | M5 | EN sections | DE 2.1, 2.2, 3.6 | figures 3, 7 and 8 with their captions, and the German formulation of the latent-program-space metaphor |
 | M7 | DE 3.1 through 3.5, 3.7, 3.8 | EN "Prompt Engineering", EN "Prompting Is Weird, and Keeps Changing", EN "Persona Engineering" | the three organising claims of the prompt chapter, and the persona as a structured perspective for evaluation work |
@@ -91,8 +91,8 @@ These passages were not carried into any module. Beyond them and the parallel ve
 3. Unit M6 spans two modules. The four definitions and the central thesis open module 1, while the layer table and the closing formula sit in the German summary chapter in module 5. Confirm, or pull the summary chapter forward into module 1.
 4. Taking one language version per unit discards a substantial part of the English Full Lecture Notes, listed above. Decide per case whether a discarded passage merges into the kept unit or whether the other language version becomes the translation input for the second language.
 5. The English block on how large language models work needs a unit id, or M5 needs to be widened explicitly to cover it.
-6. Unit M16 is classified as workshop-specific for the CLARIAH profile in the map, yet its material sits in the English Full Lecture Notes and is therefore carried into module 2. Either the case study leaves the full corpus and becomes profile material, or the classification changes.
-7. The German Full Lecture Notes run a digital edition as their example throughout, while the English Full Lecture Notes use research data workflows and knowledge work in general. The two framings now stand side by side in modules 1 to 4. Decide which framing the full corpus carries and whether the other becomes a profile substitution.
+6. Unit M16 is classified as workshop-specific for the CLARIAH profile in the map, yet its material sits in the English Full Lecture Notes and is therefore carried into module 2. Either the case study leaves the complete material and becomes profile material, or the classification changes.
+7. The German Full Lecture Notes run a digital edition as their example throughout, while the English Full Lecture Notes use research data workflows and knowledge work in general. The two framings now stand side by side in modules 1 to 4. Decide which framing the complete material carries and whether the other becomes a profile substitution.
 8. The English Full Lecture Notes name a specific model in the transcription example and in the heading of that section. A heading that carries a version number ages with the model. Decide whether the pin belongs to the documented run or to the module.
 9. Module 5 carries two bibliographies and two template sets. Decide whether they merge into one apparatus or stay separated by source language.
 10. The escaped Markdown and the empty anchors in the German Full Lecture Notes are an export artefact. Decide whether a cleanup pass runs on the modules after confirmation or on the Full Lecture Notes before the cut is confirmed.

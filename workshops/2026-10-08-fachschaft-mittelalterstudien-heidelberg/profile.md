@@ -59,12 +59,12 @@ The licence file of the source corpus names CC BY 4.0 with copyright at the Univ
 
 | Artefact | Location | State |
 | --- | --- | --- |
-| Live deck | a copy of the Full Slide Deck exists in the operator's Drive, created 2026-08-05 | unadapted. The register field stays null and the URL is not published here, because the copy currently holds full-corpus material under the name of this instance |
+| Live deck | a copy of the Full Slide Deck exists in the operator's Drive, created 2026-08-05 | unadapted. The register field stays null and the URL is not published here, because the copy currently holds shared material under the name of this instance |
 | Slide texts | none | to be written in Markdown and transferred to the deck by the operator |
 | Lecture Notes (Fachschaft Mittelalterstudien Heidelberg 2026) | this folder | in preparation |
 | Drive folder and participant data folder | operator's Drive | exist, URLs deliberately not reproduced here, publication blocked by the rights gate |
 | Mini repository with instruction layer and `knowledge/` folder | not created | planned |
-| Term apparatus | drawn from the glossary of the full corpus and the Promptotyping paper definitions | available |
+| Term apparatus | drawn from the glossary of the complete material and the Promptotyping paper definitions | available |
 | Cover | `docs/assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png` | present |
 
 ## Open points

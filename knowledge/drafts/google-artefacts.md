@@ -8,27 +8,27 @@ The Cologne block was checked in a second pass on the same day against the same 
 
 ## What exists
 
-The corpus itself is fully covered on both surfaces, meaning the master deck and the master script both live as public Google files. Of the four registered future instances only CLARIAH-AT has a live deck and a script surface, and both are public, which is why the register already carries them.
+The material itself is fully covered on both surfaces, meaning the Full Slide Deck and the Full Lecture Notes both live as public Google files. Of the four registered future instances only CLARIAH-AT has a live deck and a script surface, and both are public, which is why the register already carries them.
 
 The two delivered instances close a gap the register still shows as `null`. The ÖAW AI Winter School has a public deck, public lecture notes, a public hands-on sheet and a public material folder, all reachable through the two short links printed on its title slide. The VetMedAI workshop 1 has a public German deck recorded in the vault, so the `slides` field of that entry can be filled.
 
 The Cologne summer school of September 2025 is the best-documented unregistered instance of the line on the script side, and it is the inverse case of every other instance here. All five lecture manuscripts linked from the title slides of its exports are public, so the taught prose of the whole introductory strand is available, while the instance has no deck URL anywhere in its material. Three further findings came out of the same pass. A deep-research output shown as a demonstration in the opening unit is gone, since its id answers HTTP 410 on both endpoints, which is the response for a deleted file rather than for a restricted one. The exercise image of the prompt-engineering unit is public and serves its bytes without a login. The two decks that the editions track cites as prior work belong to a different line and have moved into the exclusion list.
 
-What is missing is the middle of the pipeline. KUG/M3GIM, Uni for Life and the VetMed Winter School have no deck and no script surface at all, because their slide texts are still being worked out in the vault and the decks are derived from the master only after the operator has signed off the hands-on material. For KUG and Uni for Life the only Google artefacts are two Drive folders each, one for workshop material and one for participant data, and all four are login-gated, so nothing from them can go on a public subpage. The VetMed Winter School has no Google artefact whatsoever.
+What is missing is the middle of the pipeline. KUG/M3GIM, Uni for Life and the VetMed Winter School have no deck and no script surface at all, because their slide texts are still being worked out in the vault and the decks are derived from the material only after the operator has signed off the hands-on material. For KUG and Uni for Life the only Google artefacts are two Drive folders each, one for workshop material and one for participant data, and all four are login-gated, so nothing from them can go on a public subpage. The VetMed Winter School has no Google artefact whatsoever.
 
 Four constraints apply before anything is published.
 
 - The ÖAW spreadsheet URL as recorded in the source material carries the numeric id of the owning Google account (`ouid=` parameter) together with `rtpof` and `sd` parameters from an upload. The file is public, so the link works after the query string is cut back to `/edit?usp=sharing`. This inventory stores only the cleaned form; the source form must never be published, and the ÖAW profile has to be redacted accordingly before it enters the repo.
 - The two short links of the ÖAW instance resolve to the canonical document URLs given below. A short link hides its target and can be repointed, so the register should carry the resolved URL and keep the short link only where it is quoted as printed material.
 - The five Cologne script documents are recorded here as plain `/edit` links. Their source form on the title slides carries `?usp=sharing` on three of them and a `?tab=` anchor on two. The sharing parameter is a tracking remnant of the share dialog, and the tab anchor would open a public reader on one sub-tab of the manuscript instead of at its head, so both are stripped here. The same cleaning applies to the exercise image URL. The ÖAW spreadsheet row keeps `?usp=sharing`, because that is the cut-back point the constraint above defines for it, and the two forms should be unified before anything is published.
-- The master script document holds two appendices after the script text, an older workshop concept with its glossary and slide planning, and the infographic design system. Publishing the document publishes those as well.
+- The Full Lecture Notes document holds two appendices after the script text, an older workshop concept with its glossary and slide planning, and the infographic design system. Publishing the document publishes those as well.
 
 ## Inventory
 
-| Workshop or corpus | Artefact and type | Lang | URL | Access state | Linkable |
+| Workshop or material | Artefact and type | Lang | URL | Access state | Linkable |
 | --- | --- | --- | --- | --- | --- |
-| Master corpus | Master slide deck *Knowledge, Context and Agentic Engineering for Knowledge Work. Full Slidedeck.* | de, English title slide | https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit | public, export granted | yes; canonical live deck of the corpus, referenced from `script/master-script-en.md` |
-| Master corpus | Master script as Google Doc, same title as the deck | de | https://docs.google.com/document/d/1yYEGgC2R8CDnkqqh8z6ApKfQYSETsYyez2vxwPHK8_k/edit | public, export granted | with reservation; the document continues past the script into two internal appendices (older workshop concept with glossary and slide planning, infographic design system), which a public link exposes |
+| Teaching material | Full Slide Deck *Knowledge, Context and Agentic Engineering for Knowledge Work. Full Slidedeck.* | de, English title slide | https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit | public, export granted | yes; canonical live deck of the material, referenced from `script/full-lecture-notes-en.md` |
+| Teaching material | Full Lecture Notes as Google Doc, same title as the deck | de | https://docs.google.com/document/d/1yYEGgC2R8CDnkqqh8z6ApKfQYSETsYyez2vxwPHK8_k/edit | public, export granted | with reservation; the document continues past the script into two internal appendices (older workshop concept with glossary and slide planning, infographic design system), which a public link exposes |
 | CLARIAH-AT 2026-09-25 | Live deck *CLARIAH-AT Summer School 2026 Machine Learning for Digital Scholarly Editions* | en | https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit | public, export granted | yes; already the `slides` value in the register |
 | CLARIAH-AT 2026-09-25 | Script surface *CLARIAH AT Summer School 2026 Final Workshop Script* | en | https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit | public, export granted | yes; already the `script` value in the register. The canonical text state stays `workshops/2026-09-25-clariah-at/workshop-script.md` |
 | ÖAW AI Winter School 2026-02-17 (delivered) | Deck *ÖAW AI Winter School 2026. Vibe Coding & Promptotyping* | en | https://docs.google.com/presentation/d/1Fnyj8AhGy2difRHr_X5xa0vT7UYr5jVjOS8l7FAyo7w/edit | public, export granted | yes; this is the target of the title-slide short link `https://tinyurl.com/vibing-26`, which the profile records unresolved |
@@ -42,22 +42,22 @@ Four constraints apply before anything is published.
 | Uni for Life 2026-11-09 | Drive folder, participant data for the fictional-institute scenario with office files and a sample vault | de | https://drive.google.com/drive/folders/1qFTFVFYaV8e_7JwgGzG1DYTZF8wTtY6A | login-gated | no |
 | VetMed Winter School 2026-11-30 | none | de | none | none | nothing exists; the concept document derives from the generic format and no Google surface has been created |
 
-### Unregistered derivations of the master
+### Unregistered derivations of the material
 
-These three instances are named in the vault as derivations of the master corpus and are absent from `docs/data/workshops.json`. They are listed apart because registering them is an operator decision, and none of their artefacts is publishable today.
+These three instances are named in the vault as derivations of the teaching material and are absent from `docs/data/workshops.json`. They are listed apart because registering them is an operator decision, and none of their artefacts is publishable today.
 
 | Workshop | Artefact and type | Lang | URL | Access state | Linkable |
 | --- | --- | --- | --- | --- | --- |
 | HEDIT Heidelberg 2026-10-05 | Drive folder, workshop material | de | https://drive.google.com/drive/folders/1HvO-_JWl3-r2opnCw6V805cIvq79WYgt | login-gated | no |
 | HEDIT Heidelberg 2026-10-05 | Drive folder, participant data for the edition demo material | de | https://drive.google.com/drive/folders/1jVgB96iKYKvhPqQh4e-FwQTqjG8uhoVm | login-gated | no |
-| Fachschaft Mittelalterstudien Heidelberg 2026-10-08 | Deck, a copy of the master deck taken as the derivation base | de | https://docs.google.com/presentation/d/1JSwP61Uam4oMN1drzJcKsWLGMhK8whs0WzPq6_c53CQ/edit | restricted, HTTP 401 on export, no title served | no; the file is not shared, and the deck is a working copy rather than a taught state |
+| Fachschaft Mittelalterstudien Heidelberg 2026-10-08 | Deck, a copy of the Full Slide Deck taken as the derivation base | de | https://docs.google.com/presentation/d/1JSwP61Uam4oMN1drzJcKsWLGMhK8whs0WzPq6_c53CQ/edit | restricted, HTTP 401 on export, no title served | no; the file is not shared, and the deck is a working copy rather than a taught state |
 | Fachschaft Mittelalterstudien Heidelberg 2026-10-08 | Drive folder, workshop material | de | https://drive.google.com/drive/folders/1sq_U3hcJFBtAJrWl4yjRyYT6J6Nic9wy | login-gated | no |
 | Fachschaft Mittelalterstudien Heidelberg 2026-10-08 | Drive folder, participant data for the charter selection | de | https://drive.google.com/drive/folders/1pk-sNdtffVJvXDAJu1810nJbM9aqfrNM | login-gated | no; the licence of the charter set and the image rights of the source portal are unsettled |
-| GDA Göttingen 2026-10-15 | none | de | none | none | the slide texts exist in the vault and carry origin fields into the master deck; no deck has been built |
+| GDA Göttingen 2026-10-15 | none | de | none | none | the slide texts exist in the vault and carry origin fields into the Full Slide Deck; no deck has been built |
 
 ### Unregistered precursor instance, Cologne summer school
 
-The instance is taught and documented, its profile lies in `workshops/2025-09-08-cologne-llm-dh-summer-school/`, and it predates the master corpus rather than deriving from it, which is the same relation the register already accepts for the ÖAW and VetMedAI entries. Registering it is an operator decision and is held in the sync pass named in `knowledge/plan.md`. The artefacts below are the nine Google URLs carried by the six slide-text exports, minus the two that belong to a different line and now sit in the exclusion list.
+The instance is taught and documented, its profile lies in `workshops/2025-09-08-cologne-llm-dh-summer-school/`, and it predates the teaching material rather than deriving from it, which is the same relation the register already accepts for the ÖAW and VetMedAI entries. Registering it is an operator decision and is held in the sync pass named in `knowledge/plan.md`. The artefacts below are the nine Google URLs carried by the six slide-text exports, minus the two that belong to a different line and now sit in the exclusion list.
 
 | Workshop | Artefact and type | Lang | URL | Access state | Linkable |
 | --- | --- | --- | --- | --- | --- |
@@ -72,12 +72,12 @@ The instance is taught and documented, its profile lies in `workshops/2025-09-08
 
 ## Exclusion list
 
-Artefacts found in the same vault folders, or referenced from the slide text of an instance, that belong to a different lecture line. The boundary criterion is derivation from the master corpus, meaning a document counts as inside the line when the vault records it as a master derivation or when this repository registers the instance.
+Artefacts found in the same vault folders, or referenced from the slide text of an instance, that belong to a different lecture line. The boundary criterion is derivation from the teaching material, meaning a document counts as inside the line when the vault records it as a derivation of the material or when this repository registers the instance.
 
 - The community workshop deck *Generative KI, LLMs und GPT bei digitalen Editionen* (`https://docs.google.com/presentation/d/1e9rr7icqfiRbCKWyI2OJA4FeT24ZTkIP0NxpGO73FMU/edit`), public, verified 2026-08-20. The title slide dates it to the DHd conference in Passau on 2024-02-27 and names the Institut für Dokumentologie und Editorik with a large group of presenters, so it is a conference workshop of the editions community. The Cologne editions track cites it as prior work, which is a citation rather than a teaching artefact of the instance.
 - The conference deck *New Ways of Creating Research Data: Conversion of Unstructured Text to TEI XML using GPT on the Correspondence of Hugo Schuchard with a Web Prototype for Prompt Engineering* (`https://docs.google.com/presentation/d/1wilgLV1mm8xria4yvaUkghiO7G534JyxRjjR45RkMWw/edit`), public, verified 2026-08-20. Its export redirect resolves under a different owning Google account than every other artefact of this inventory, which confirms it as external material. The Cologne editions track cites it as prior work on TEI conversion of a historical correspondence corpus.
-- HEDIT Heidelberg 2025, deck of the first Heidelberg workshop (`https://docs.google.com/presentation/d/1ZnOUip67gxaHt0h-Bk6p_4C7H7an486ULM_3lk5gTYc/edit`), public. It belongs to the 2025 LLM and digital editions school that predates the master corpus.
-- Uni for Life *Generative KI Theorie und Praxis* (`https://docs.google.com/presentation/d/1BmPZTnL2JULg_nXrU8mx2EBfmhaDPaVnoiaZU8G1rjI/edit`), the recurring two-hour fundamentals webinar that runs beside the agentic-engineering workshop and covers the basics rather than deriving from the master.
+- HEDIT Heidelberg 2025, deck of the first Heidelberg workshop (`https://docs.google.com/presentation/d/1ZnOUip67gxaHt0h-Bk6p_4C7H7an486ULM_3lk5gTYc/edit`), public. It belongs to the 2025 LLM and digital editions school that predates the teaching material.
+- Uni for Life *Generative KI Theorie und Praxis* (`https://docs.google.com/presentation/d/1BmPZTnL2JULg_nXrU8mx2EBfmhaDPaVnoiaZU8G1rjI/edit`), the recurring two-hour fundamentals webinar that runs beside the agentic-engineering workshop and covers the basics rather than deriving from the material.
 - VetMedAI workshops 2 to 6, five separate decks inside the institutional competence programme at the veterinary university. Only workshop 1 is registered here as a delivered instance, so the rest stay outside.
 - The museum line with the three-part *KI im Museum* series of autumn 2025, *Programmieren 2.0* with its preparation deck and material folder, the two decks of the 2026 museum-association workshop at the natural history museum, and the brainstorming workshop on cultural-history objects.
 - Single events on adjacent subjects, meaning the economics-institute workshop *AI for Data Analysis* with its deck and notes document, the regional-museums collection talk, and the three decks of the computing-centre training at Trier.
@@ -87,7 +87,7 @@ Artefacts found in the same vault folders, or referenced from the slide text of 
 ## Consequences for the register
 
 - Fill the two delivered entries. The ÖAW entry can carry the resolved deck and notes URLs instead of the short links; the VetMedAI entry can carry its deck.
-- Decide the master entry. `master.slides` and `master.script` are `null` while both public master artefacts exist. The reservation on the script document is the only open question.
+- Decide the full entry. `full.slides` and `full.script` are `null` while both public Full artefacts exist. The reservation on the script document is the only open question.
 - Leave KUG, Uni for Life and VetMed Winter School at `null`. Every Google artefact they have is login-gated, and a gated link on a public page is worse than no link.
 - Keep the login-gated folder ids out of `docs/`. They are recorded here so the operator sees the full state of each instance.
 
@@ -95,7 +95,7 @@ Artefacts found in the same vault folders, or referenced from the slide text of 
 
 `docs/data/workshops.json` was not touched. The fields a sync pass could now fill, with the reasoning held in the section above.
 
-- `master.slides` and `master.script`, both candidates public.
+- `full.slides` and `full.script`, both candidates public.
 - ÖAW AI Winter School, `slides` and `script`, resolved URLs in place of the two short links.
 - VetMedAI workshop 1, `slides`.
 - Cologne summer school, `script`, once the instance is registered at all. Five public manuscripts exist for a schema field holding one URL, so the operator either names the introduction manuscript or leaves the field `null` and lets the workshop subpage carry all five.

@@ -1,12 +1,12 @@
 # Media Map (Proposal)
 
-Mapping of the author's published blog posts and videos to the five master modules and to the registered workshop instances, so that the follow-up blocks of the workshop subpages can be filled from existing material. Sources are the content collection of the DHCraft site repository (`src/content/blog`, nine live posts), the channel feed cache of that repository (`src/lib/videos-cache.json`, the fifteen most recent uploads) and the videography document in the author's vault, which carries the topic descriptions and five further video identifiers that the feed no longer holds. Nothing here is decided; module and workshop assignments are proposals derived from the post metadata, the video descriptions and the module selections in the four workshop profiles.
+Mapping of the author's published blog posts and videos to the five modules and to the registered workshop instances, so that the follow-up blocks of the workshop subpages can be filled from existing material. Sources are the content collection of the DHCraft site repository (`src/content/blog`, nine live posts), the channel feed cache of that repository (`src/lib/videos-cache.json`, the fifteen most recent uploads) and the videography document in the author's vault, which carries the topic descriptions and five further video identifiers that the feed no longer holds. Nothing here is decided; module and workshop assignments are proposals derived from the post metadata, the video descriptions and the module selections in the four workshop profiles.
 
-Module numbering follows the master, meaning 1 Understanding Large Language Models, 2 Prompt Engineering, 3 Knowledge and Context Engineering, 4 Agentic Engineering, 5 Critical Perspectives and Governance. Workshop shorthands are KUG for the KUG/M3GIM summer school, CLARIAH for the CLARIAH-AT Summer School, UFL for Uni for Life, VetMed for the VetMed Winter School, plus the two delivered instances VetMedAI workshop 1 and ÖAW AI Winter School.
+Module numbering follows the material, meaning 1 Understanding Large Language Models, 2 Prompt Engineering, 3 Knowledge and Context Engineering, 4 Agentic Engineering, 5 Critical Perspectives and Governance. Workshop shorthands are KUG for the KUG/M3GIM summer school, CLARIAH for the CLARIAH-AT Summer School, UFL for Uni for Life, VetMed for the VetMed Winter School, plus the two delivered instances VetMedAI workshop 1 and ÖAW AI Winter School.
 
 ## Blog posts
 
-All nine live posts sit on the subject of the corpus, so the table maps all of them. The language column states the language of the post; the site serves every post under both a German and an English route, and the text itself is not translated.
+All nine live posts sit on the subject of the material, so the table maps all of them. The language column states the language of the post; the site serves every post under both a German and an English route, and the text itself is not translated.
 
 | Title | URL | Lang | Modules | Workshops | Why |
 | --- | --- | --- | --- | --- | --- |
@@ -23,7 +23,7 @@ All nine live posts sit on the subject of the corpus, so the table maps all of t
 ### Not mapped
 
 - `Asymmetric-Amplification-v1.md` and `Asymmetric-Amplification-v2.md` in the site repository carry `published: false` and produce no public page. The second is a substantially revised version of the live post and declares the same URL, so the live text under `/Asymmetric-Amplification` may change without the link changing. Check the state before a follow-up block cites the argument in detail.
-- No live post is off topic. The blog runs on the same subject as the corpus, which is why the table has no discarded entries.
+- No live post is off topic. The blog runs on the same subject as the material, which is why the table has no discarded entries.
 
 ## Videos
 
@@ -82,4 +82,4 @@ Covers therefore keep coming from the real title slides, of which one exists so 
 
 ## Integration recommendation
 
-Media belong on the workshop subpages inside the existing follow-up block and stay off the master page, with one exception. Each subpage carries four to six entries at most, selected for the modules that instance emphasises, each with title, language label and one sentence stating what it shows and which module it continues, so the block reads as a curated continuation of the session rather than as a list of everything published. The English CLARIAH page needs the language label on every video entry and should lead with the two English posts. The master page gets a single line beneath the module list pointing to the blog and the channel as the running long form of the material, without individual links, which keeps the corpus the subject of the page and leaves the mapping in this document as the place where the per-instance selection is decided.
+Media belong on the workshop subpages inside the existing follow-up block and stay off the landing page, with one exception. Each subpage carries four to six entries at most, selected for the modules that instance emphasises, each with title, language label and one sentence stating what it shows and which module it continues, so the block reads as a curated continuation of the session rather than as a list of everything published. The English CLARIAH page needs the language label on every video entry and should lead with the two English posts. The landing page gets a single line beneath the module list pointing to the blog and the channel as the running long form of the material, without individual links, which keeps the material the subject of the page and leaves the mapping in this document as the place where the per-instance selection is decided.
