@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
 status: active
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-08-24
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -88,3 +88,27 @@ The selected PNG files remain publication assets even where the generator introd
 **Course.** Operator decision of 2026-08-22. Corpus keeps its technical sense of research data, which this line teaches on in the Hersch, Zweig and charter material. The teaching material is therefore called the material or teaching material, its holdings keep their names Full Slide Deck and Full Lecture Notes, and the relation of a workshop to it is a profile or a documented specialization; the recipe metaphor is retired with it. `project.md` carries the title Project and `plan.md` the title Plan, while the function keys Charter and Planning of the Promptotyping convention stay as keys in `INDEX.md`. The sweep covered the canonical documents, the platform pages and stylesheet hooks, the profiles, the coverage report, the module-cut headers and the drafts. Research-data uses of corpus stayed untouched, and the earlier entries of this journal keep their wording as provenance. The repository description on GitHub follows the same wording, and the naming rule is written into `CLAUDE.md`.
 
 **Outcome.** Repository, platform and vault share one vocabulary of material, holdings, modules, profiles and instances.
+
+### 2026-08-24 — KUG English specialization
+
+**Goal.** Replace the provisional KUG profile with the confirmed four-session workflow and make every prepared teaching artefact English.
+
+**Course.** The Wednesday session now uses Stefan Zweig Digital as the explanatory case for the route from a digitised estate object through metadata, TEI XML, data modelling, authority data, semantic links and repository ingest to a research platform. Thursday transfers that logic to M³GIM: large language model foundations and AI readiness lead into source-faithful transcription and schema-based extraction with Gemini, followed by Promptotyping a small research application from the checked structured data. A reduced question from the Mobility Studies keynote can guide the hands-on sequence once supplied. The existing English course reader was imported into the workshop folder. A native Google Slides copy of the research-infrastructure material supplied the visual basis for a new 45-slide KUG deck. Reused content was translated and adapted; visible German text from the copied title graphic was replaced with an English workflow diagram. The deck passed the automated output check with zero issues and was visually inspected after PDF export. The KUG register entry, landing-page card and workshop subpage now point to the English deck and course reader.
+
+**Outcome.** The KUG specialization has one coherent English text and slide state ready for operator review. M³GIM digitisates with matching records, reuse confirmation, the reduced keynote question and the spoken teaching language remain external inputs.
+
+### 2026-08-24 — KUG source-slide recovery and native reuse
+
+**Goal.** Replace the newly composed KUG draft with a presentation that directly reuses the existing teaching slides.
+
+**Course.** All 236 slides in the three Research Infrastructure decks, the Knowledge, Context and Agentic Engineering deck, and the Promptotyping deck were inspected. Sixty-three slides were selected and copied into one presentation before translation. The resulting sequence uses 29 slides for the Stefan Zweig source-to-platform workflow, 16 for LLM foundations and the transcription case, eight for the M³GIM extraction exercise, and ten for Promptotyping. English text replaced the instructional German while source transcriptions, identifiers, interface screenshots and bibliographic titles retained their documentary form. One embedded German pipeline diagram was redrawn with native English shapes. The local deck passed overflow and template-fidelity checks with zero issues. The native Google Slides import was checked through its outline and fresh thumbnails; three import-specific text shifts were corrected in place.
+
+**Outcome.** The live KUG deck now contains 63 verified recycled slides with an exact source inventory. The earlier 45-slide presentation is superseded as a draft. User acceptance and the external M³GIM and keynote inputs remain open.
+
+### 2026-08-24 — Bilingual workshop-page redesign
+
+**Goal.** Make every workshop page usable as a compact teaching and reference surface.
+
+**Course.** The operator found that the workshop structure, session sequence and module coverage repeated the same information. Design iteration 5 replaces these blocks with one overview containing the abstract, ordered outline and learning objectives. The live slide deck now occupies the first content position in an embedded Google Slides viewer, and an available course reader appears in an embedded Google Docs viewer below the overview. Missing artefacts keep the same position as a visible preparation state. Selected literature and references close the public content. Cover images, required project inputs, module coverage and provenance were removed from detail pages. The source-to-artifact motif was also removed from the landing page. Each of the seven registered instances now has a static English and German page pair connected through the header language control. Teaching language and material language remain explicit metadata and do not change with the interface language.
+
+**Outcome.** Fourteen workshop pages follow one responsive and accessible template. The landing page and preparation guide also have English and German variants. The KUG and CLARIAH pages embed their registered slide decks and course readers. The remaining instances present stable placeholders until their artefacts exist. Local HTTP checks confirmed both language variants, reciprocal structure and the absence of the retired public blocks; operator visual acceptance remains open.

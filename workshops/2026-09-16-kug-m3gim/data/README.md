@@ -1,19 +1,42 @@
 ---
-title: "Example Data (KUG Summer School 2026)"
+title: "Example Data KUG Summer School 2026"
 workshop: 2026-09-16-kug-m3gim
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-08-24
 language: en
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Fable 5)
-status: stub
-related: [profile.md, ../profile.md]
+status: in preparation
+related: [../profile.md, ../lecture-notes.md]
 ---
 
-# Example Data (KUG Summer School 2026)
+# Example Data KUG Summer School 2026
 
-The intended example data is the estate of the mezzo-soprano Ira Malaniuk in the archive of the Kunstuniversität Graz, signature UAKUG/NIM. Four hands-on units draw on it, working from index tables of the holding and from poster digitisates. `profile.md` documents the chain and the rights state.
+Thursday uses an access-controlled M³GIM working set. The public repository documents the data package and exercise logic. It does not store partner facsimiles or other files whose reuse rights have not been confirmed.
 
-None of it is held in this repository. The material is archive holdings of a partner institution, no source states a licence for it, and it reaches participants through the operator's Drive.
+## Current working files
 
-Two dependencies are open. The digitisates for the second and third step of the recognition ladder are requested from the project team and not yet available, and the two prepared exercise files, the persons table and the place lookup, are named as deliverables and do not exist yet.
+| File | Intended use | State |
+| --- | --- | --- |
+| `prompts.md` | English prompts for Gemini transcription, schema-based extraction, validation, and Promptotyping | synchronised with the four-session workflow on 2026-08-24 |
+| `plakattext-pl04.txt` | text-based extraction exercise and reference material | present |
+| `personenindex-uebung.xlsx` | person data inspection and normalisation | present |
+| `orte-lookup.csv` | controlled place lookup for structured output | present |
+| `m3gim-map-demo.zip` | browser-based map prototype used as a reference artefact | present |
+
+These files are distributed through the controlled workshop Drive. They are listed here so that the repository describes the actual exercise package without publishing the source material.
+
+## Required M³GIM package
+
+The preferred exercise package contains, for the same small set of objects:
+
+1. an image or scan of each object;
+2. its existing descriptive or structured record;
+3. permission for use in the Summer School;
+4. a stable object identifier;
+5. a reference transcription where one is available.
+
+Using the same objects throughout makes it possible to compare the source image, the existing record, the generated transcription, the extracted data, and the prototype view.
+
+## Exercise outputs
+
+Participant outputs are derived teaching artefacts. They must retain the source object identifier, the model and prompt context, a distinction between source statements and inferred values, uncertainty markers, and the result of human validation. No generated value is treated as a verified research claim until it has been checked against the source and the available project documentation.

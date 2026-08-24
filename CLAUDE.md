@@ -32,9 +32,9 @@ Never publish a URL carrying tracking or sharing parameters, among them `ouid=`,
 
 ## Platform
 
-- The platform in `docs/` is static HTML and CSS with no build step and no JavaScript required for any content. External resources are limited to Google Fonts.
-- The page chrome of header brand, navigation and footer is binding and identical across pages, and the favicon set in `docs/assets/favicon/` is linked by every page. Before any UI work read `knowledge/design.md` and follow it. Design iteration 4 is the state in force.
-- Language is handled per module and per instance. A page carries the language of the material it presents, and there is no page-level EN/DE toggle.
+- The platform in `docs/` is static HTML and CSS with no build step and no JavaScript required for any content. External resources are limited to Google Fonts and the Google Slides or Google Docs viewers explicitly linked by an instance.
+- The page chrome of header brand, navigation, language control and footer is binding and identical across public pages, and the favicon set in `docs/assets/favicon/` is linked by every page. Before any UI work read `knowledge/design.md` and follow it. Design iteration 5 is the state in force.
+- Public pages are paired static files. The landing page uses `index.html` and `index.de.html`, preparation uses `preparation.html` and `preparation.de.html`, and workshops use `docs/workshops/<id>.html` and `docs/workshops/<id>.de.html`. The EN/DE control links each pair. Interface language does not change the documented language of the course material or spoken teaching.
 
 ## Working rules
 

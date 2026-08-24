@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
 status: draft
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-08-24
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -32,6 +32,7 @@ Navigation of the knowledge base. Reading order for a new agent is `project.md`,
 | `governance.md` | Governance | Decision authority, source status, write-back, versioning, rights |
 | `journal.md` | Provenance | Chronicle of decisions, milestones and workshop deliveries |
 | `plan.md` | Planning | Plan of the repo as work packages with their state |
+| `handoff.md` | Process inbox | Open received deltas awaiting verification and integration |
 
 `drafts/` holds decision-preparation material written by agents (module map, slides map, term references, specialization analysis). Drafts are proposals; nothing in them is canonical.
 

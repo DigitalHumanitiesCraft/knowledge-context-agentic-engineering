@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Preparation &middot; Knowledge, Context and Agentic Engineering</title>
 <meta name="description" content="Accounts, Claude Code, Visual Studio Code, Python and a final check, everything participants set up before a workshop of the Knowledge, Context and Agentic Engineering line.">
+<link rel="alternate" hreflang="en" href="preparation.html">
+<link rel="alternate" hreflang="de" href="preparation.de.html">
 
 <!--
   Preparation subpage. Static, no build step, no JavaScript. Content follows
@@ -44,100 +46,6 @@
 <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
 <link rel="manifest" href="assets/favicon/site.webmanifest">
 
-<style data-merge="site.css">
-/* Rules this page needs and assets/site.css does not carry yet. Everything else
-   here uses the shared classes and tokens unchanged. Merge upstream when a
-   second page needs the same components. */
-
-/* Anchor targets. .section carries scroll-margin-top upstream, .block does not. */
-.block { scroll-margin-top: var(--s4); }
-
-/* Current page in the site navigation. */
-.site-nav a[aria-current="page"] {
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-underline-offset: 0.3em;
-}
-
-/* Section eyebrow, stating which levels a section applies to. */
-.block > .stamp { margin-top: 0; color: var(--ink-3); }
-.block > .stamp + h2 { margin-top: var(--s1); }
-
-/* Subheadings inside a block, used for the three account types. */
-.block h3 { margin-top: var(--s4); font-size: var(--text-title); }
-
-/* Inline commands, file names and keystrokes. No code element is styled upstream. */
-code { font-family: var(--font-mono); font-size: 0.9em; }
-
-/* Command block. Reuses the .prompt plate but keeps each command on one line and
-   scrolls it, because a wrapped shell command reads as two commands. */
-.cmd { margin-top: var(--s2); white-space: pre; }
-.cmd code { font-size: 1em; }
-
-/* Platform-to-command pairs. */
-.cmds { max-width: var(--measure); margin-top: var(--s3); }
-.cmds > div + div { margin-top: var(--s3); }
-.cmds dt { color: var(--ink-3); font-size: var(--text-md); }
-.cmds dd { margin: 0; }
-.cmds .cmd { margin-top: var(--s1); }
-
-/* Numbered setup steps. .seq upstream is the two-column taught sequence and has
-   no room for a command block inside a step, so this is the one-column form with
-   real list semantics. */
-.steps {
-  max-width: var(--measure);
-  margin-top: var(--s3);
-  padding-left: 1.7em;
-  color: var(--ink-2);
-}
-.steps > li + li { margin-top: var(--s2); }
-.steps li::marker { color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-sm); }
-.steps .cmd, .steps .cmds { max-width: none; }
-
-/* Level marks. The module dots upstream take their fill from --m1..--m5, which
-   carry module identity, so the three preparation levels get their own ramp from
-   outline to filled. It reads as "more of the machine is involved". */
-.levels .dot { border: 1px solid var(--rule-mid); }
-.levels li:nth-child(2) .dot { border-color: var(--accent); }
-.levels li:nth-child(3) .dot { border-color: var(--accent); background: var(--accent); }
-
-/* Applicability table. No table rules exist upstream. The min-width keeps the
-   four columns legible and hands narrow viewports to the .scroll-x wrapper. */
-.table {
-  min-width: 46rem;
-  width: 100%;
-  margin-top: var(--s3);
-  border-collapse: collapse;
-  font-size: var(--text-lg);
-}
-.table th,
-.table td {
-  padding: var(--s2) var(--s3) var(--s2) 0;
-  border-bottom: 1px solid var(--rule);
-  text-align: left;
-  vertical-align: top;
-}
-.table th {
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.table td { color: var(--ink-2); }
-/* Row headers carry a workshop name, so they drop the column-header treatment. */
-.table tbody th {
-  color: var(--ink);
-  font-family: var(--font-ui);
-  font-size: var(--text-lg);
-  font-weight: 500;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.table .lvl { color: var(--ink); font-family: var(--font-mono); font-size: var(--text-md); white-space: nowrap; }
-</style>
 </head>
 
 <body>
@@ -148,14 +56,20 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
       <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
       <span>Digital Humanities Craft</span>
     </a>
-    <nav class="site-nav" aria-label="Site">
-      <ul>
-        <li><a href="index.html#workshops">Workshops</a></li>
-        <li><a href="index.html#modules">Modules</a></li>
-        <li><a href="preparation.html" aria-current="page">Preparation</a></li>
-        <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
-      </ul>
-    </nav>
+    <div class="head-tools">
+      <nav class="site-nav" aria-label="Site">
+        <ul>
+          <li><a href="index.html#workshops">Workshops</a></li>
+          <li><a href="index.html#modules">Modules</a></li>
+          <li><a href="preparation.html" aria-current="page">Preparation</a></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
+        </ul>
+      </nav>
+      <nav class="language-nav" aria-label="Language">
+        <a href="preparation.html" lang="en" aria-current="page">EN</a>
+        <a href="preparation.de.html" lang="de">DE</a>
+      </nav>
+    </div>
   </div>
 </header>
 

@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-project
 status: draft
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-08-24
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -38,7 +38,7 @@ The canonical names of the two holdings are Full Slide Deck and Full Lecture Not
 
 ## Languages
 
-Each module carries the source language it was authored in; the other language version is produced by agent translation and counts as canonical only after operator review (operator decision 2026-08-20). The platform interface is English. Language is handled per module and per instance, so a page shows the language its material was taught in and the register field `language` carries the instance language (operator decision 2026-08-20, replacing the earlier requirement of a bilingual page toggle).
+Each module carries the source language it was authored in; the other language version is produced by agent translation and counts as canonical only after operator review (operator decision 2026-08-20). The landing page, preparation guide and every workshop instance are presented through paired English and German static pages. Interface language is independent of teaching language, while the register field `language` continues to record the language of the course material (operator decision 2026-08-24, replacing the single-language workshop pages fixed on 2026-08-20).
 
 ## Holdings map
 

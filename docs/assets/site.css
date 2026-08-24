@@ -199,6 +199,14 @@ img { max-width: 100%; height: auto; }
   padding-top: var(--s3);
 }
 
+.head-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--s2) var(--s4);
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -226,6 +234,30 @@ img { max-width: 100%; height: auto; }
 .site-nav a:hover,
 .site-nav a:focus-visible { color: var(--accent); }
 
+.language-nav {
+  display: inline-flex;
+  padding: 2px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--tint);
+}
+.language-nav a {
+  min-width: 2.55rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+}
+.language-nav a[aria-current="page"] {
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 0 0 1px var(--rule);
+}
+
 /* ==========================================================================
    HERO
    Three elements: title, one sentence, one link.
@@ -249,32 +281,6 @@ img { max-width: 100%; height: auto; }
   margin-top: var(--s4);
   font-size: var(--text-body);
 }
-
-/* ==========================================================================
-   MOTIF
-   Turquoise only. Two stroke weights for structure and detail, a third,
-   lighter tone for the flow between stations.
-   ========================================================================== */
-.motif { padding-block: var(--s3); }
-
-.motif svg {
-  display: block;
-  width: 100%;
-  min-width: 760px;   /* below this the labels stop being legible, so scroll */
-  height: auto;
-}
-
-.m-line        { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
-.m-line.m-fill { fill: var(--paper); }
-.m-thin        { fill: none; stroke: var(--ink-2); stroke-width: 1.1; stroke-linecap: round; }
-.m-flow        { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
-.m-accent      { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.m-return      { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-dasharray: 3 5; stroke-linecap: round; }
-.m-return-tip  { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
-.m-seal        { fill: var(--accent); }
-.m-check       { fill: none; stroke: var(--paper); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.m-label       { font-family: var(--font-ui); font-size: 13px; fill: var(--ink); text-anchor: middle; }
-.m-note        { font-family: var(--font-ui); font-size: 11.5px; fill: var(--ink-3); text-anchor: middle; letter-spacing: 0.06em; }
 
 /* ==========================================================================
    MODULES
@@ -532,11 +538,8 @@ img { max-width: 100%; height: auto; }
 .backlink:hover { color: var(--accent); }
 
 .page-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  align-items: start;
-  gap: var(--s5);
-  padding-block: var(--s4) 0;
+  max-width: 920px;
+  padding-block: var(--s5) 0;
 }
 .page-head h1 {
   margin-top: var(--s2);
@@ -544,18 +547,22 @@ img { max-width: 100%; height: auto; }
 }
 .page-head .event {
   margin-top: var(--s3);
-  max-width: 46ch;
+  max-width: 62ch;
   color: var(--ink-2);
   font-size: var(--text-lede);
   line-height: 1.5;
 }
 .page-head .facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
   margin-top: var(--s3);
   color: var(--ink-3);
   font-size: var(--text-md);
   line-height: 1.6;
 }
-.page-head .facts span { display: block; }
+.page-head .facts span { display: inline-flex; align-items: baseline; gap: 0.35em; }
+.page-head .facts b { color: var(--ink-2); font-weight: 500; }
 
 .block { padding-top: var(--gap-block); }
 .block h2 { font-size: var(--text-section); }
@@ -564,6 +571,93 @@ img { max-width: 100%; height: auto; }
   max-width: var(--measure);
   margin-top: var(--s3);
   color: var(--ink-2);
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s1) var(--s3);
+}
+.section-head .action { font-size: var(--text-lg); }
+
+.media-frame {
+  position: relative;
+  width: 100%;
+  margin-top: var(--s3);
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--tint);
+  box-shadow: 0 14px 38px color-mix(in srgb, var(--ink) 8%, transparent);
+}
+.media-frame.slides { aspect-ratio: 16 / 9; }
+.media-frame.reader { height: min(76vh, 900px); min-height: 560px; }
+.media-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.media-pending {
+  display: grid;
+  min-height: 18rem;
+  place-items: center;
+  padding: var(--s4);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--tint);
+  color: var(--ink-3);
+  text-align: center;
+}
+.media-pending p { max-width: 42ch; }
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) repeat(2, minmax(0, 1fr));
+  gap: var(--s4) var(--s5);
+  padding-top: var(--gap-block);
+}
+.overview-grid article { min-width: 0; }
+.overview-grid h2 { font-size: var(--text-section); }
+.overview-grid p,
+.overview-grid ol,
+.overview-grid ul {
+  margin-top: var(--s3);
+  color: var(--ink-2);
+}
+.overview-grid ol,
+.overview-grid ul {
+  padding-left: 1.2em;
+}
+.overview-grid li + li { margin-top: var(--s2); }
+.overview-grid time {
+  display: block;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.references {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s2) var(--s5);
+  margin-top: var(--s3);
+  padding: 0;
+  list-style: none;
+}
+.references li {
+  padding-top: var(--s2);
+  border-top: 1px solid var(--rule);
+  color: var(--ink-2);
+  font-size: var(--text-lg);
+}
+.references .what {
+  display: block;
+  margin-top: 0.25em;
+  color: var(--ink-3);
+  font-size: var(--text-md);
 }
 
 /* Taught sequence. The script fixes no timings, so the list carries order
@@ -672,6 +766,80 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ==========================================================================
+   PREPARATION PAGE
+   ========================================================================== */
+.block { scroll-margin-top: var(--s4); }
+
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.3em;
+}
+
+.block > .stamp { margin-top: 0; color: var(--ink-3); }
+.block > .stamp + h2 { margin-top: var(--s1); }
+.block h3 { margin-top: var(--s4); font-size: var(--text-title); }
+
+code { font-family: var(--font-mono); font-size: 0.9em; }
+.cmd { margin-top: var(--s2); white-space: pre; }
+.cmd code { font-size: 1em; }
+
+.cmds { max-width: var(--measure); margin-top: var(--s3); }
+.cmds > div + div { margin-top: var(--s3); }
+.cmds dt { color: var(--ink-3); font-size: var(--text-md); }
+.cmds dd { margin: 0; }
+.cmds .cmd { margin-top: var(--s1); }
+
+.steps {
+  max-width: var(--measure);
+  margin-top: var(--s3);
+  padding-left: 1.7em;
+  color: var(--ink-2);
+}
+.steps > li + li { margin-top: var(--s2); }
+.steps li::marker { color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-sm); }
+.steps .cmd,
+.steps .cmds { max-width: none; }
+
+.levels .dot { border: 1px solid var(--rule-mid); }
+.levels li:nth-child(2) .dot { border-color: var(--accent); }
+.levels li:nth-child(3) .dot { border-color: var(--accent); background: var(--accent); }
+
+.table {
+  min-width: 46rem;
+  width: 100%;
+  margin-top: var(--s3);
+  border-collapse: collapse;
+  font-size: var(--text-lg);
+}
+.table th,
+.table td {
+  padding: var(--s2) var(--s3) var(--s2) 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+.table th {
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.table td { color: var(--ink-2); }
+.table tbody th {
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.table .lvl { color: var(--ink); font-family: var(--font-mono); font-size: var(--text-md); white-space: nowrap; }
+
+/* ==========================================================================
    START PAGE ONE-OFF
    The material block, where the deck plate stands beside the derivation statement
    and the two holdings. Used once, on index.html.
@@ -727,7 +895,8 @@ img { max-width: 100%; height: auto; }
    NARROW VIEWPORTS AND PREFERENCES
    ========================================================================== */
 @media (max-width: 860px) {
-  .page-head { grid-template-columns: 1fr; gap: var(--s4); }
+  .overview-grid { grid-template-columns: 1fr 1fr; }
+  .overview-grid article:first-child { grid-column: 1 / -1; }
   .seq { columns: 1; }
   /* The cover moves above the panel, keeping its proportion. */
   .card { grid-template-columns: 1fr; }
@@ -735,6 +904,14 @@ img { max-width: 100%; height: auto; }
 }
 
 @media (max-width: 640px) {
+  .site-head > .wrap,
+  .head-tools { align-items: flex-start; }
+  .head-tools { width: 100%; justify-content: space-between; }
+  .site-nav ul { gap: var(--s2); }
+  .overview-grid,
+  .references { grid-template-columns: 1fr; }
+  .overview-grid article:first-child { grid-column: auto; }
+  .media-frame.reader { min-height: 460px; }
   .colophon { text-align: left; }
   .foot-brand { gap: var(--s2); }
 }

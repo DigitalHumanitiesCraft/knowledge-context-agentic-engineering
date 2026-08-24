@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vorbereitung · Knowledge, Context and Agentic Engineering</title>
+<meta name="description" content="Konten, Claude Code, Visual Studio Code, Python und der abschließende Systemcheck für Workshops der Reihe Knowledge, Context and Agentic Engineering.">
+<link rel="alternate" hreflang="en" href="preparation.html">
+<link rel="alternate" hreflang="de" href="preparation.de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="assets/favicon/site.webmanifest">
+</head>
+
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.de.html">
+      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <span>Digital Humanities Craft</span>
+    </a>
+    <div class="head-tools">
+      <nav class="site-nav" aria-label="Seite">
+        <ul>
+          <li><a href="index.de.html#workshops">Workshops</a></li>
+          <li><a href="index.de.html#modules">Module</a></li>
+          <li><a href="preparation.de.html" aria-current="page">Vorbereitung</a></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
+        </ul>
+      </nav>
+      <nav class="language-nav" aria-label="Sprache">
+        <a href="preparation.html" lang="en">EN</a>
+        <a href="preparation.de.html" lang="de" aria-current="page">DE</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <a class="backlink" href="index.de.html">← Knowledge, Context and Agentic Engineering</a>
+
+  <header class="page-head">
+    <h1>Vorbereitung</h1>
+    <p class="event">
+      Die Workshops arbeiten auf dem eigenen Laptop. Welche Teile dieser Vorbereitung erforderlich
+      sind, hängt vom jeweiligen Workshop ab. Die Tabelle am Ende der Seite ordnet jeder Veranstaltung
+      eine Stufe zu.
+    </p>
+    <p class="facts">
+      <span><b>Zuletzt geprüft</b> 20. August 2026</span>
+      <span><b>Reihenfolge</b> Konten einrichten, Werkzeuge installieren, Systemcheck durchführen</span>
+    </p>
+  </header>
+
+  <nav class="bundle" aria-label="Auf dieser Seite">
+    <span class="label">Auf dieser Seite</span>
+    <span class="items">
+      <a href="#claude-code">Claude Code</a>
+      <span class="sep">·</span>
+      <a href="#vscode">Visual Studio Code</a>
+      <span class="sep">·</span>
+      <a href="#python">Python</a>
+      <span class="sep">·</span>
+      <a href="#accounts">Konten</a>
+      <span class="sep">·</span>
+      <a href="#check">Systemcheck</a>
+      <span class="sep">·</span>
+      <a href="#levels">Workshop-Stufen</a>
+    </span>
+  </nav>
+
+  <section class="block" id="claude-code" aria-labelledby="claude-code-h">
+    <p class="stamp">Stufe 3</p>
+    <h2 id="claude-code-h">Claude Code</h2>
+    <p class="prose">
+      Claude Code ist ein terminalbasiertes AI Harness. Es kann Dateien im geöffneten Arbeitsordner
+      lesen und bearbeiten, Befehle ausführen und Zwischenergebnisse prüfen. Für die agentischen
+      Workshops wird ein Konto mit Zugriff auf Claude Code benötigt.
+    </p>
+    <ol class="steps">
+      <li>Öffne unter Windows PowerShell und unter macOS oder Linux die Terminal-App.</li>
+      <li>
+        Führe den Installationsbefehl für dein System aus.
+        <dl class="cmds">
+          <div>
+            <dt>macOS, Linux oder Windows Subsystem for Linux</dt>
+            <dd><pre class="prompt cmd"><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre></dd>
+          </div>
+          <div>
+            <dt>Windows PowerShell</dt>
+            <dd><pre class="prompt cmd"><code>irm https://claude.ai/install.ps1 | iex</code></pre></dd>
+          </div>
+          <div>
+            <dt>macOS mit Homebrew</dt>
+            <dd><pre class="prompt cmd"><code>brew install --cask claude-code</code></pre></dd>
+          </div>
+          <div>
+            <dt>Windows mit WinGet</dt>
+            <dd><pre class="prompt cmd"><code>winget install Anthropic.ClaudeCode</code></pre></dd>
+          </div>
+        </dl>
+      </li>
+      <li>Unter Windows wird zusätzlich Git for Windows benötigt.</li>
+      <li>Lege einen leeren Workshop-Ordner an und öffne ihn im Terminal.</li>
+      <li>Starte Claude Code mit <code>claude</code> und schließe die Anmeldung im Browser ab.</li>
+      <li>Bitte Claude Code, die Dateien des geöffneten Ordners aufzulisten. Damit sind Installation, Anmeldung und Dateizugriff geprüft.</li>
+    </ol>
+    <p class="prose">
+      Die aktuellen Installationshinweise stehen in der
+      <a href="https://code.claude.com/docs/en/setup">offiziellen Dokumentation</a>.
+    </p>
+  </section>
+
+  <section class="block" id="vscode" aria-labelledby="vscode-h">
+    <p class="stamp">Stufen 2 und 3</p>
+    <h2 id="vscode-h">Visual Studio Code</h2>
+    <p class="prose">
+      Visual Studio Code ist der Editor für Dateien, Code und das integrierte Terminal.
+    </p>
+    <ol class="steps">
+      <li>Lade den Editor von <a href="https://code.visualstudio.com">code.visualstudio.com</a> und installiere ihn.</li>
+      <li>Installiere in der Erweiterungsansicht die von Microsoft veröffentlichten Erweiterungen „Python“ und „Pylance“.</li>
+      <li>Installiere für Workshops mit einer lokalen Webseite zusätzlich „Live Server“.</li>
+      <li>Öffne über „Terminal“ und „New Terminal“ das integrierte Terminal.</li>
+    </ol>
+  </section>
+
+  <section class="block" id="python" aria-labelledby="python-h">
+    <p class="stamp">Stufen 2 und 3</p>
+    <h2 id="python-h">Python</h2>
+    <p class="prose">
+      Python führt die im Workshop erzeugten Skripte aus. Programmierkenntnisse sind dafür keine Voraussetzung.
+    </p>
+    <ol class="steps">
+      <li>Installiere Python über den Microsoft Store oder über <a href="https://www.python.org/downloads">python.org</a>.</li>
+      <li>Aktiviere bei einer Windows-Installation von python.org die Option „Add Python to PATH“.</li>
+      <li>
+        Prüfe die Installation im Terminal.
+        <pre class="prompt cmd"><code>python --version</code></pre>
+      </li>
+      <li>Wähle in Visual Studio Code über „Python: Select Interpreter“ die installierte Python-Version.</li>
+      <li>
+        Lege eine Datei <code>test.py</code> mit einer Zeile an und führe sie aus.
+        <pre class="prompt cmd"><code>print("ready")</code></pre>
+        <pre class="prompt cmd"><code>python test.py</code></pre>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block" id="accounts" aria-labelledby="accounts-h">
+    <p class="stamp">Alle Stufen</p>
+    <h2 id="accounts-h">Konten und Zugänge</h2>
+
+    <h3>Modellzugang</h3>
+    <p class="prose">
+      Für browserbasierte Einheiten genügt der in der Workshopseite angegebene Modellzugang.
+      Agentische Einheiten mit Claude Code erfordern ein Konto mit einem geeigneten Abonnement
+      oder einen eingerichteten API-Zugang.
+    </p>
+
+    <h3>Google-Konto</h3>
+    <p class="prose">
+      Einige Materialien liegen in Google Drive oder Google Colab. Öffne die auf der Workshopseite
+      verlinkten Materialien vorab und prüfe den Zugriff.
+    </p>
+
+    <h3>GitHub-Konto</h3>
+    <p class="prose">
+      Öffentliche Workshop-Repositories können ohne Konto gelesen und heruntergeladen werden.
+      Ein Konto wird benötigt, wenn eigene Ergebnisse in einem Repository versioniert werden.
+    </p>
+  </section>
+
+  <section class="block" id="check" aria-labelledby="check-h">
+    <p class="stamp">Alle Stufen</p>
+    <h2 id="check-h">Systemcheck</h2>
+    <ol class="steps">
+      <li><code>python --version</code> gibt eine Versionsnummer aus.</li>
+      <li>Visual Studio Code startet und zeigt die Python-Erweiterung als installiert.</li>
+      <li><code>test.py</code> wurde einmal erfolgreich ausgeführt.</li>
+      <li>Die Anmeldung beim verwendeten Modell funktioniert im Browser.</li>
+      <li>Bei Stufe 3 startet <code>claude</code> im Workshop-Ordner.</li>
+      <li>Die auf der Workshopseite verlinkten Materialien sind erreichbar.</li>
+    </ol>
+  </section>
+
+  <section class="block" id="trouble" aria-labelledby="trouble-h">
+    <h2 id="trouble-h">Fehlerbehebung</h2>
+    <ol class="steps">
+      <li>Lies die vollständige Fehlermeldung und sichere sie als Text.</li>
+      <li>Gib die Fehlermeldung zusammen mit dem ausgeführten Befehl an ein Sprachmodell weiter.</li>
+      <li>Bleibt der Fehler bestehen, sende Fehlermeldung, Betriebssystem und Screenshot an den Workshopkontakt.</li>
+    </ol>
+  </section>
+
+  <section class="block" id="levels" aria-labelledby="levels-h">
+    <h2 id="levels-h">Welche Vorbereitung gilt für welchen Workshop?</h2>
+
+    <ol class="module-list levels" role="list">
+      <li>
+        <span class="key"><span class="dot"></span>L1</span>
+        <div><h3>Nur Browser</h3><p class="sub">Modellzugang im Browser, keine lokale Installation.</p></div>
+      </li>
+      <li>
+        <span class="key"><span class="dot"></span>L2</span>
+        <div><h3>Editor und Python</h3><p class="sub">Stufe 1 sowie Visual Studio Code, Python, Terminal und lokaler Webserver.</p></div>
+      </li>
+      <li>
+        <span class="key"><span class="dot"></span>L3</span>
+        <div><h3>AI Harness</h3><p class="sub">Stufe 2 sowie Claude Code und ein eigener Arbeitsordner.</p></div>
+      </li>
+    </ol>
+
+    <div class="scroll-x">
+      <table class="table">
+        <thead>
+          <tr><th scope="col">Workshop</th><th scope="col">Datum</th><th scope="col">Stufe</th><th scope="col">Bedeutung</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">KUG Summer School</th><td>16.–17. September</td><td class="lvl">L1, L2 optional</td><td>Browser und Modellzugang tragen die Einheiten. Für lokale Prototypen kommt Stufe 2 hinzu.</td></tr>
+          <tr><th scope="row">CLARIAH-AT Summer School</th><td>25. September</td><td class="lvl">L1, L3 optional</td><td>Die Hands-ons funktionieren im Browser. Das lokale Paket verwendet Stufe 3.</td></tr>
+          <tr><th scope="row">HEDIT KI-Workshop</th><td>5.–6. Oktober</td><td class="lvl">L3</td><td>Die Arbeit am eigenen Material findet in Claude Code statt.</td></tr>
+          <tr><th scope="row">Mittelalterstudien Heidelberg</th><td>8. Oktober</td><td class="lvl">L3</td><td>Der gesamte Source-to-Edition-Workflow läuft im AI Harness.</td></tr>
+          <tr><th scope="row">Göttinger Digitale Akademie</th><td>15. Oktober</td><td class="lvl">L3, L1 möglich</td><td>Die Demonstration kann im Browser verfolgt werden. Die eigene Aufgabe verwendet Stufe 3.</td></tr>
+          <tr><th scope="row">UNI for LIFE</th><td>9.–10. November</td><td class="lvl">L3</td><td>Die erste Einheit richtet Claude Code und den Arbeitsordner ein.</td></tr>
+          <tr><th scope="row">VetMed Winter School</th><td>30. November–4. Dezember</td><td class="lvl">L3</td><td>Die Woche führt von lokaler Codeausführung zu kontrollierten Agenten-Workflows.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <div class="imprint">
+        <p class="name">Christopher Pollin</p>
+        <p>Digital Humanities Craft</p>
+        <p><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">·</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
+      </div>
+    </div>
+    <div class="colophon">
+      <p>Erstellt mit <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a></p>
+      <p>Seitentext unter <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+

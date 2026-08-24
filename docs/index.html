@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Knowledge, Context and Agentic Engineering for Knowledge Work</title>
 <meta name="description" content="A teaching line on knowledge, context and agentic engineering for knowledge work, maintained once in five modules and taught as documented workshop specialisations.">
+<link rel="alternate" hreflang="en" href="index.html">
+<link rel="alternate" hreflang="de" href="index.de.html">
 
 <!--
   Start page of the platform. Static, no build step, no JavaScript, self-contained
@@ -43,14 +45,20 @@
       <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
       <span>Digital Humanities Craft</span>
     </a>
-    <nav class="site-nav" aria-label="Site">
-      <ul>
-        <li><a href="index.html#workshops">Workshops</a></li>
-        <li><a href="index.html#modules">Modules</a></li>
-        <li><a href="preparation.html">Preparation</a></li>
-        <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
-      </ul>
-    </nav>
+    <div class="head-tools">
+      <nav class="site-nav" aria-label="Site">
+        <ul>
+          <li><a href="index.html#workshops">Workshops</a></li>
+          <li><a href="index.html#modules">Modules</a></li>
+          <li><a href="preparation.html">Preparation</a></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
+        </ul>
+      </nav>
+      <nav class="language-nav" aria-label="Language">
+        <a href="index.html" lang="en" aria-current="page">EN</a>
+        <a href="index.de.html" lang="de">DE</a>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -71,87 +79,6 @@
       </p>
     </div>
   </section>
-
-  <!-- ============ Motif: source to verified artifact ============ -->
-  <div class="wrap">
-    <div class="motif scroll-x">
-      <svg viewBox="0 0 1200 226" role="img" aria-labelledby="motif-t motif-d">
-        <title id="motif-t">From source to verified artifact</title>
-        <desc id="motif-d">A horizontal flow in six stages: source material, knowledge documents,
-          working context, agentic loop, verification, verified artifact. A dashed return path
-          leads from verification back to the working context when a check fails.</desc>
-
-        <!-- return path: a failed check re-enters the context -->
-        <text class="m-note" x="702" y="28">revise on failure</text>
-        <path class="m-return" d="M 906,102 C 906,52 866,36 806,36 L 598,36 C 538,36 498,52 498,100"/>
-        <polyline class="m-return-tip" points="492,92 498,100 504,92"/>
-
-        <!-- connectors -->
-        <g class="m-flow">
-          <path d="M 138,132 H 244"/><polyline points="238,128 244,132 238,136"/>
-          <path d="M 342,132 H 448"/><polyline points="442,128 448,132 442,136"/>
-          <path d="M 546,132 H 652"/><polyline points="646,128 652,132 646,136"/>
-          <path d="M 750,132 H 856"/><polyline points="850,128 856,132 850,136"/>
-          <path d="M 954,132 H 1060"/><polyline points="1054,128 1060,132 1054,136"/>
-        </g>
-
-        <!-- 1 source: a stack of raw material -->
-        <g transform="translate(90,132)">
-          <rect class="m-line" x="-30" y="-24" width="44" height="32" rx="2"/>
-          <rect class="m-line m-fill" x="-24" y="-16" width="44" height="32" rx="2"/>
-          <rect class="m-line m-fill" x="-18" y="-8" width="44" height="32" rx="2"/>
-          <path class="m-thin" d="M -10,2 H 14 M -10,10 H 6"/>
-        </g>
-
-        <!-- 2 knowledge documents: structured, curated -->
-        <g transform="translate(294,132)">
-          <path class="m-line" d="M -20,-26 H 4 L 16,-14 V 26 H -20 Z"/>
-          <path class="m-thin" d="M 4,-26 V -14 H 16"/>
-          <path class="m-thin" d="M -12,-4 H 8 M -12,4 H 8 M -12,12 H 0"/>
-        </g>
-
-        <!-- 3 working context: a bounded window with what was placed in it -->
-        <g transform="translate(498,132)">
-          <path class="m-line" d="M -28,-14 V -26 H -16 M 16,-26 H 28 V -14 M 28,14 V 26 H 16 M -16,26 H -28 V 14"/>
-          <path class="m-thin" d="M -14,-8 H 14 M -14,2 H 6 M -14,12 H 16"/>
-        </g>
-
-        <!-- 4 agentic loop: the only cyclic element -->
-        <g transform="translate(702,132)">
-          <path class="m-accent" d="M 15.6,-15.6 A 22,22 0 0,0 -15.6,-15.6"/>
-          <polyline class="m-accent" points="-13.5,-23.4 -15.6,-15.6 -7.8,-17.7"/>
-          <path class="m-accent" d="M -15.6,15.6 A 22,22 0 0,0 15.6,15.6"/>
-          <polyline class="m-accent" points="13.5,23.4 15.6,15.6 7.8,17.7"/>
-          <circle class="m-seal" cx="0" cy="0" r="2.6"/>
-        </g>
-
-        <!-- 5 verification: a gate the artifact has to pass -->
-        <g transform="translate(906,132)">
-          <path class="m-line" d="M 0,-28 L 28,0 L 0,28 L -28,0 Z"/>
-          <polyline class="m-accent" points="-9,0 -3,7 10,-8"/>
-        </g>
-
-        <!-- 6 verified artifact: document plus seal -->
-        <g transform="translate(1110,132)">
-          <path class="m-line" d="M -20,-26 H 4 L 16,-14 V 18 H -20 Z"/>
-          <path class="m-thin" d="M 4,-26 V -14 H 16"/>
-          <path class="m-thin" d="M -12,-4 H 8 M -12,4 H 2"/>
-          <circle class="m-seal" cx="16" cy="20" r="10"/>
-          <polyline class="m-check" points="11.5,20 15,23.5 20.5,16.5"/>
-        </g>
-
-        <!-- labels -->
-        <g class="m-label">
-          <text x="90" y="196">Source</text>
-          <text x="294" y="196">Knowledge documents</text>
-          <text x="498" y="196">Working context</text>
-          <text x="702" y="196">Agentic loop</text>
-          <text x="906" y="196">Verification</text>
-          <text x="1110" y="196">Verified artifact</text>
-        </g>
-      </svg>
-    </div>
-  </div>
 
   <!-- ============ Modules ============ -->
   <section class="section" id="modules">
@@ -259,27 +186,33 @@
           </div>
           <div class="card-body">
             <p class="stamp">16&ndash;17 September 2026<span class="sep">&middot;</span>two days</p>
-            <h3><a href="workshops/2026-09-16-kug-m3gim.html">Promptotyping und Generative AI</a></h3>
-            <p class="event">KUG Summer School (M3GIM), Kunstuniversit&auml;t Graz</p>
+            <h3><a href="workshops/2026-09-16-kug-m3gim.html">Making Estate Materials Digitally Accessible</a></h3>
+            <p class="event">KUG Summer School 2026, University of Music and Performing Arts Graz</p>
             <p class="facts">
-              <span>Participants without an LLM or programming background</span>
-              <span>Teaching language German</span>
+              <span>KUG Summer School participants</span>
+              <span>Materials language English</span>
+              <span>Spoken language to be confirmed</span>
             </p>
             <p class="spec">
-              The introductory profile of the line, with what a language model is and how
-              prompting works on the first day and Promptotyping as the working method on the
-              second. Four hands-on units build on one archival holding of the host university,
-              from a cleaned person index through schema extraction and transcription to a small
-              map, all of it in the chat interface without an agent harness.
+              Four connected sessions follow a complete research data workflow. Stefan Zweig
+              Digital explains the route from estate material to a research platform. The M³GIM
+              hands-on units use large language models for transcription and structured extraction,
+              then turn the checked data into a small digital research application through
+              Promptotyping.
             </p>
             <ul class="mods" role="list" aria-label="Module coverage">
-              <li class="mod m1" title="Module 1 Understanding Large Language Models, taught in full">1</li>
-              <li class="mod m2" title="Module 2 Prompt Engineering, taught in full">2</li>
-              <li class="mod m3 lite" title="Module 3 Knowledge and Context Engineering, touched briefly">3</li>
-              <li class="mod m4" title="Module 4 Agentic Engineering, taught in full">4</li>
+              <li class="mod m1" title="Module 1 Understanding Large Language Models">1</li>
+              <li class="mod m2" title="Module 2 Prompt Engineering">2</li>
+              <li class="mod m3" title="Module 3 Knowledge and Context Engineering">3</li>
+              <li class="mod m4" title="Module 4 Agentic Engineering">4</li>
               <li class="mod m5 lite" title="Module 5 Critical Perspectives and Governance, touched briefly">5</li>
             </ul>
-            <p class="card-foot"><span class="pending">Slides and script in preparation</span></p>
+            <p class="card-foot">
+              <span class="links">
+                <a href="https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/edit">Slide deck</a>
+                <a href="https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/edit">Course reader</a>
+              </span>
+            </p>
           </div>
         </li>
 

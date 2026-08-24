@@ -3,25 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Promptotyping und Generative AI &middot; KUG Summer School 2026</title>
-<meta name="description" content="The KUG Summer School (M3GIM) instance of the teaching line, two introductory days in German with four hands-on units on one archival holding.">
-
-<!--
-  Workshop subpage. Static, no JavaScript. Chrome copied from docs/drafts/chrome.html
-  with the path prefixes adjusted for docs/workshops/.
-
-  Facts come from docs/data/workshops.json. The specialisation prose is grounded in
-  workshops/2026-09-16-kug-m3gim/profile.md and in the vault-based research draft
-  knowledge/drafts/specialization-analysis.md, section 1. Inferences are marked in
-  the prose itself.
-
-  The cover assets/covers/<id>.png exists; the .plate class keeps the 16:9 box
-  with the tint ground as a quiet fallback.
--->
-
+<title>Making Estate Materials Digitally Accessible · KUG Summer School 2026, University of Music and Performing Arts Graz</title>
+<meta name="description" content="Across four connected sessions, the workshop follows estate material from digitisation to a usable digital research artefact. The Wednesday session uses Stefan Zweig Digital to explain metadata, TEI XML, data modelling, authority data, repository ingest and publication. On Thursday, participants work with M³GIM objects, examine the role of large language models, extract and validate structured data, and develop a small browser-based application through Promptotyping.">
+<link rel="alternate" hreflang="en" href="2026-09-16-kug-m3gim.html">
+<link rel="alternate" hreflang="de" href="2026-09-16-kug-m3gim.de.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
@@ -31,159 +19,104 @@
 </head>
 
 <body>
-
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="../index.html">
       <img src="../assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
       <span>Digital Humanities Craft</span>
     </a>
-    <nav class="site-nav" aria-label="Site">
-      <ul>
-        <li><a href="../index.html#workshops">Workshops</a></li>
-        <li><a href="../index.html#modules">Modules</a></li>
-        <li><a href="../preparation.html">Preparation</a></li>
-        <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
-      </ul>
-    </nav>
+    <div class="head-tools">
+      <nav class="site-nav" aria-label="Site">
+        <ul>
+          <li><a href="../index.html#workshops">Workshops</a></li>
+          <li><a href="../index.html#modules">Modules</a></li>
+          <li><a href="../preparation.html">Preparation</a></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
+        </ul>
+      </nav>
+      <nav class="language-nav" aria-label="Language">
+        <a href="2026-09-16-kug-m3gim.html" lang="en" aria-current="page">EN</a>
+        <a href="2026-09-16-kug-m3gim.de.html" lang="de">DE</a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <main>
   <div class="wrap">
+    <header class="page-head">
+      <p class="stamp">16 and 17 September 2026</p>
+      <h1>Making Estate Materials Digitally Accessible</h1>
+      <p class="event">Research Data Workflows with Large Language Models and Promptotyping</p>
+      <p class="facts">
+        <span><b>Event</b> KUG Summer School 2026, University of Music and Performing Arts Graz</span>
+        <span><b>Audience</b> KUG Summer School participants</span>
+        <span><b>Material</b> English</span>
+        <span><b>Spoken language</b> to be confirmed</span>
+        <span><b>Licence</b> Page text and original course material · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+      </p>
+    </header>
 
-    <div class="page-head">
-      <div>
-        <p class="stamp">16 and 17 September 2026</p>
-        <h1 lang="de">Promptotyping und Generative AI</h1>
-        <p class="event">KUG Summer School (M3GIM), Kunstuniversit&auml;t Graz</p>
-        <p class="facts">
-          <span><b>Date</b> 16 and 17 September 2026</span>
-          <span><b>Event</b> KUG Summer School (M3GIM), Kunstuniversit&auml;t Graz</span>
-          <span><b>Audience</b> participants without LLM or programming background</span>
-          <span><b>Teaching language</b> German</span>
-          <span><b>Status</b> planned</span>
-        </p>
+    <section class="block" id="slides" aria-labelledby="slides-heading">
+      <div class="section-head">
+        <h2 id="slides-heading">Slides</h2>
+        <a class="action" href="https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/edit">Open in Google Slides</a>
       </div>
-      <img class="plate" src="../assets/covers/2026-09-16-kug-m3gim.png" alt=""
-           width="960" height="540" loading="lazy" decoding="async">
-    </div>
-
-    <section class="block" id="specialisation">
-      <h2>Specialisation</h2>
-
-      <p>Two days at introductory level in German. The instance drops the deep knowledge-modelling
-      material of the Full Slide Deck for this audience, meaning the knowledge transformations, the
-      four-axis model, the bootstrap sequence and the layer model, and keeps the slides that ground
-      the checking principle and the idea of a knowledge base. Day one carries the fundamentals and
-      the first two hands-on units, day two carries Promptotyping as the method block together with
-      the remaining exercises and closes on a short governance outlook.</p>
-
-      <p>The case material is the estate of the mezzo-soprano Ira Malaniuk in the archive of the
-      Kunstuniversit&auml;t Graz. Four exercises build on that one holding, each stage changing the
-      technique while the domain stays constant, ordered so that table and text work precede image
-      and map. The exercise excerpts are drawn verbatim from six index tables of the estate,
-      including their real defects, among them competing life-date formats, a duplicate that only
-      context knowledge resolves, and a fabricated authority identifier that serves as the bait for
-      the checking rule the prompt carries.</p>
-
-      <p>Participants stay in the browser for both days. The text tasks run through a hosted chat
-      interface and the transcription task through a separate vision environment, so nothing has to
-      be installed and no agent harness is operated. Whether the vision task really needs its own
-      environment is an open preparation item rather than a settled decision.</p>
-
-      <p>Preparation is well advanced. A complete
-      slide-text derivation exists under the delta model, meaning every slide is either a named
-      reference to a slide of the Full Slide Deck with the cut stated or fully written text with
-      speaker notes and sources, and the four hands-on units carry their prompts verbatim. Both await
-      acceptance before a deck is produced. Two of the three digitisates for the transcription
-      exercise are still requested from the project team, so that ladder currently holds its first
-      step. The audience line above comes from the register; the underlying documents record audience,
-      participant count and prior knowledge as open, so read the line as provisional.</p>
+      <div class="media-frame slides">
+        <iframe
+          src="https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/embed?start=false&amp;loop=false&amp;delayms=3000"
+          title="Slides: Making Estate Materials Digitally Accessible"
+          allowfullscreen></iframe>
+      </div>
+      <p class="prose">The embedded viewer requires access to Google Slides.</p>
     </section>
 
-    <section class="block" id="sequence">
-      <h2>Hands-on chain</h2>
-      <ol class="seq">
-        <li><span class="is-handson">Cleaned person index from a prepared spreadsheet with seven
-          defect classes, worked against an explicit checking rule.</span></li>
-        <li><span class="is-handson">Controlled tuple schema of type, name and role over the verbatim
-          text of a 1942 concert poster, including the line that carries historical weight and
-          produces no tuple.</span></li>
-        <li><span class="is-handson">Recognition ladder over three sources of rising difficulty, with
-          the poster text from the previous step as the reference transcription.</span></li>
-        <li><span class="is-handson">Places and dates normalised, an authority identifier proposed
-          under the same checking rule and looked up by hand, then a minimal static map from the
-          resulting table.</span></li>
-      </ol>
+    <section class="overview-grid" id="overview" aria-label="Workshop overview">
+      <article>
+        <h2>Abstract</h2>
+        <p>Across four connected sessions, the workshop follows estate material from digitisation to a usable digital research artefact. The Wednesday session uses Stefan Zweig Digital to explain metadata, TEI XML, data modelling, authority data, repository ingest and publication. On Thursday, participants work with M³GIM objects, examine the role of large language models, extract and validate structured data, and develop a small browser-based application through Promptotyping.</p>
+      </article>
+      <article>
+        <h2>Outline</h2>
+        <ol><li><time>Wednesday, 17:00–19:00</time>The Stefan Zweig Digital workflow from archival object to research platform</li>
+            <li><time>Thursday, 11:30–13:00</time>Large language models in research data workflows</li>
+            <li><time>Thursday, 15:00–16:30</time>OCR and schema-based information extraction with M³GIM objects</li>
+            <li><time>Thursday, 17:00–18:30</time>Promptotyping a digital research application</li></ol>
+      </article>
+      <article>
+        <h2>Learning objectives</h2>
+        <ul><li>Explain the transformations between a digitised source and a published research resource.</li>
+            <li>Identify suitable roles for large language models and define the required checks.</li>
+            <li>Create structured data while recording source relations, provenance and uncertainty.</li>
+            <li>Translate a reduced research question and checked data into application requirements.</li></ul>
+      </article>
     </section>
 
-    <section class="block" id="modules">
-      <h2>Module coverage</h2>
+    <section class="block" id="reader" aria-labelledby="reader-heading">
+      <div class="section-head">
+        <h2 id="reader-heading">Course reader</h2>
+        <a class="action" href="https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/edit">Open in Google Docs</a>
+      </div>
+      <div class="media-frame reader">
+        <iframe
+          src="https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/preview"
+          title="Course reader: Making Estate Materials Digitally Accessible"
+          loading="lazy"></iframe>
+      </div>
+      <p class="prose">The embedded viewer requires access to Google Docs.</p>
+    </section>
 
-      <ul class="mods" aria-hidden="true">
-        <li class="mod m1">1</li>
-        <li class="mod m2">2</li>
-        <li class="mod m3 lite">3</li>
-        <li class="mod m4">4</li>
-        <li class="mod m5 lite">5</li>
-      </ul>
-
-      <ul class="linklist" role="list">
-        <li>Understanding Large Language Models, taught in full and the emphasis of day one
-          <span class="what">Cut to how a model works and where it fails.</span>
-        </li>
-        <li>Prompt Engineering, carried by the exercises
-          <span class="what">Drawn on throughout the four hands-on units, each of which supplies its
-          own prompt with its checking rule. No prompt-engineering block of its own is
-          programmed.</span>
-        </li>
-        <li>Knowledge and Context Engineering, touched briefly
-          <span class="what">Reduced to the slides that ground the checking principle and the concept
-          of a knowledge base.</span>
-        </li>
-        <li>Agentic Engineering, taught in full
-          <span class="what">Promptotyping carries the whole of day two, with the method definition
-          against vibe coding, the four phases, the knowledge folder with its three document types
-          and the critical expert with four checking questions. Agent operation by the participants
-          is not part of it.</span>
-        </li>
-        <li>Critical Perspectives and Governance, touched briefly
-          <span class="what">A closing outlook of two to three slides, with dropping it recorded as an
-          open question.</span>
-        </li>
+    <section class="block" id="references">
+      <h2>Literature and references</h2>
+      <ul class="references" role="list">
+          <li><a href="https://resolver.obvsg.at/urn:nbn:at:at-ubg:1-220602">Digital Scholarly Editions als Interface</a><span class="what">Dissertation on Stefan Zweig Digital and the interface as part of the scholarly edition.</span></li>
+          <li><a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI P5 Guidelines</a><span class="what">Reference for representing textual sources in TEI XML.</span></li>
+          <li><a href="https://www.w3.org/DesignIssues/LinkedData.html">Linked Data</a><span class="what">Foundational design note on publishing and connecting structured data on the web.</span></li>
+          <li><a href="https://dhcraft.org/Promptotyping/">Promptotyping</a><span class="what">Method and knowledge-document convention for inspectable research artefacts.</span></li>
       </ul>
     </section>
 
-    <section class="block" id="materials">
-      <h2>Materials</h2>
-      <ul class="linklist" role="list">
-        <li><span class="pending">Slide deck (KUG Summer School 2026)</span>
-          <span class="what">To be derived from the Full Slide Deck once the slide texts are accepted.
-          The register carries no link yet.</span>
-        </li>
-        <li><span class="pending">Lecture Notes (KUG Summer School 2026)</span>
-          <span class="what">The slide-text derivation with speaker notes exists outside this
-          repository and is not published yet.</span>
-        </li>
-        <li><span class="pending">Hands-on package</span>
-          <span class="what">Exercise files and the map demo are held by the operator. The estate
-          material is partner archive holdings without a stated licence, so it is distributed to
-          participants rather than published.</span>
-        </li>
-      </ul>
-    </section>
-
-    <section class="block" id="provenance">
-      <h2>Provenance</h2>
-      <p>This instance is a documented specialisation of the Full Slide Deck and the Full Lecture
-      Notes, which are maintained once and cut into five modules. What this instance selects, cuts and
-      adds is recorded in its repository folder,
-      <a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering/tree/main/workshops/2026-09-16-kug-m3gim">workshops/2026-09-16-kug-m3gim</a>.</p>
-    </section>
-
-    <a class="backlink" href="../index.html#workshops">Back to all workshops</a>
-
+    <a class="backlink" href="../index.html#workshops">← All workshops</a>
   </div>
 </main>
 
@@ -194,19 +127,14 @@
       <div class="imprint">
         <p class="name">Christopher Pollin</p>
         <p>Digital Humanities Craft</p>
-        <p>
-          <a href="https://dhcraft.org">dhcraft.org</a>
-          <span class="sep">&middot;</span>
-          <a href="mailto:office@dhcraft.org">office@dhcraft.org</a>
-        </p>
+        <p><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">·</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
       </div>
     </div>
     <div class="colophon">
       <p>Built with <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a></p>
-      <p>Text content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+      <p>Text and original course material <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
     </div>
   </div>
 </footer>
-
 </body>
 </html>

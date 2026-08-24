@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-design
 status: draft
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-08-24
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -22,11 +22,13 @@ related: [specification.md]
 
 # Platform Design
 
-Design stance, motif and system values for `docs/`. The platform addresses a professional, international audience from research and industry; it must feel calm, precise and high-grade, and it shows the real slide decks as visual anchors instead of an invented illustration world.
+Design stance and system values for `docs/`. The platform addresses a professional, international audience from research and industry. Real slide decks and course readers are the visual and functional anchors of each workshop page.
 
-## Motif
+## Workshop page hierarchy
 
-The guiding motif is the path from source to verified artifact, drawn as source, knowledge documents, working context, agentic loop, verification, artifact. It is drawn as reduced line art (inline SVG, two stroke weights) and serves as the platform's recurring diagram vocabulary; the slide decks can adopt the same vocabulary later. The operator approved this direction on the first prototype and confirmed it through the following iterations (2026-08-20).
+The workshop page begins with a compact text header and the real slide deck in a 16:9 Google Slides viewer. Abstract, outline and learning objectives follow as one three-column overview. The course reader occupies a separate embedded document viewer, followed by selected literature and references. This order supports use during teaching and later consultation from the same page.
+
+Cover images remain on the landing-page cards as identifiers for the workshop series. Detail pages contain no cover image or decorative process diagram. The source-to-artifact motif developed in the earlier design round was removed from the landing page on 2026-08-24 after the operator found that it no longer contributed to the workshop-oriented information architecture.
 
 ## System values
 
@@ -35,10 +37,12 @@ The guiding motif is the path from source to verified artifact, drawn as source,
 - **Identity palette**: four accents derived from the watercolor logo, orange `#C87000`, blue `#5B8FC4`, green `#7C9200`, violet `#8140B8`. The interface applies them to the five module marks (turquoise 01, orange 02, blue 03, violet 04, green 05, as implemented in `docs/assets/site.css`). Cover illustrations may use the same colors semantically inside their depicted objects. Text-carrying colors must pass WCAG AA, pure marks at least 3:1.
 - **Brand**: DHCraft watercolor logo (standard variant from `DigitalHumanitiesCraft/brand-assets`), set sparingly.
 - **Typography**: Space Grotesk throughout with system fallback (operator decision 2026-08-20); IBM Plex Mono for prompts and code.
-- **Hierarchy**: at most two text levels per section, one heading and body; no stacked eyebrow-plus-heading labels; the motif stands without a caption; the hero is title, one sentence and one link.
-- **Imagery**: only the covers (16:9 PNG, minimum 1280 px wide, upper third free of content, at `docs/assets/covers/<id>.png`) and the motif line art; no stock imagery. Future regeneration excludes readable text and generic AI illustration defaults.
+- **Hierarchy**: at most two text levels per section, one heading and body; no stacked eyebrow-plus-heading labels. The workshop header carries title, subtitle and compact metadata. The viewer is the first large surface.
+- **Imagery**: covers appear on landing-page cards only. Workshop detail pages use the live slide deck as their visual surface and contain no decorative header image. Future cover regeneration excludes readable text and generic AI illustration defaults.
 - **Cards**: workshop entries as horizontal cards with cover, date, event, audience, the module badges of the modules the instance uses, and the links that exist, in chronological order; missing artifacts appear as quiet "in preparation" labels, never as dead links.
-- **Chrome**: header brand, top navigation and footer are a single binding template; the favicon set in `docs/assets/favicon/` is committed and every page links it. Page chrome is not re-invented per page.
+- **Chrome**: header brand, top navigation, EN/DE control and footer are one binding public-page template; the favicon set in `docs/assets/favicon/` is committed and every page links it. Page chrome is not re-invented per page.
+- **Language control**: English and German are separate static pages connected by a compact segmented control. The active language carries `aria-current="page"`; the paired files carry reciprocal `hreflang` links.
+- **Embedded material**: Google Slides uses a 16:9 viewer and a visible direct link. Google Docs uses a tall reading surface and a visible direct link. Missing artefacts retain the same page position as a quiet preparation state.
 
 ## Cover series
 
@@ -56,6 +60,4 @@ The current PNG files are the selected publication assets. Some retain incidenta
 
 ## Iteration status
 
-Design iteration 4 is approved and in force (operator decision 2026-08-20). It derived the identity palette from the watercolor logo, applied it solely at the five module marks, and refactored the CSS into a documented token architecture with verified WCAG AA contrast. It is the state that `docs/index.html` and every subpage follow; the earlier prototypes in `docs/drafts/` are superseded and kept only as a record of the path.
-
-The requirement of a bilingual EN/DE page toggle is dropped. Language is handled per module and per instance, so a page carries the language of the material it presents (operator decision 2026-08-20).
+Design iteration 5 is approved and in force (operator decision 2026-08-24). It retains the typography, colour tokens, page ground, brand chrome and accessibility baseline of iteration 4. It replaces the cover-led detail page and repeated descriptive blocks with the embedded slides, the three-column overview, the embedded course reader and selected references. The landing page, preparation page and every registered instance have English and German page pairs. The landing-page motif was removed in the same revision.

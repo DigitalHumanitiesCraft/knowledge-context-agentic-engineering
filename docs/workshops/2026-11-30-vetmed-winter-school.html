@@ -3,26 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VetMed Winter School 2026 &middot; Veterin&auml;rmedizinische Universit&auml;t Wien</title>
-<meta name="description" content="The VetMed Winter School instance of the teaching line, five days of six hours with every module in full and one application project as the through-line.">
-
-<!--
-  Workshop subpage. Static, no JavaScript. Chrome copied from docs/drafts/chrome.html
-  with the path prefixes adjusted for docs/workshops/.
-
-  Facts come from docs/data/workshops.json. The specialisation prose is grounded in
-  workshops/2026-11-30-vetmed-winter-school/profile.md and, for the day structure and
-  the level logic, in the vault-based research draft
-  knowledge/drafts/specialization-analysis.md, section 7. The one divergence between
-  the two sources is named in the prose.
-
-  The cover assets/covers/<id>.png exists; the .plate class keeps the 16:9 box
-  with the tint ground as a quiet fallback.
--->
-
+<title>VetMed Winter School · University of Veterinary Medicine Vienna</title>
+<meta name="description" content="The five-day block course develops a complete working environment for generative AI, data work and agentic processes. Participants progress from model foundations and prompting to local code execution, structured knowledge, data transformation and controlled agent workflows. One application project from the participant’s own working area connects the exercises across the week.">
+<link rel="alternate" hreflang="en" href="2026-11-30-vetmed-winter-school.html">
+<link rel="alternate" hreflang="de" href="2026-11-30-vetmed-winter-school.de.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 <link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
@@ -32,165 +19,85 @@
 </head>
 
 <body>
-
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="../index.html">
       <img src="../assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
       <span>Digital Humanities Craft</span>
     </a>
-    <nav class="site-nav" aria-label="Site">
-      <ul>
-        <li><a href="../index.html#workshops">Workshops</a></li>
-        <li><a href="../index.html#modules">Modules</a></li>
-        <li><a href="../preparation.html">Preparation</a></li>
-        <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
-      </ul>
-    </nav>
+    <div class="head-tools">
+      <nav class="site-nav" aria-label="Site">
+        <ul>
+          <li><a href="../index.html#workshops">Workshops</a></li>
+          <li><a href="../index.html#modules">Modules</a></li>
+          <li><a href="../preparation.html">Preparation</a></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
+        </ul>
+      </nav>
+      <nav class="language-nav" aria-label="Language">
+        <a href="2026-11-30-vetmed-winter-school.html" lang="en" aria-current="page">EN</a>
+        <a href="2026-11-30-vetmed-winter-school.de.html" lang="de">DE</a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <main>
   <div class="wrap">
+    <header class="page-head">
+      <p class="stamp">30 November to 4 December 2026</p>
+      <h1>VetMed Winter School</h1>
+      <p class="event">Generative AI, research data and agentic workflows</p>
+      <p class="facts">
+        <span><b>Event</b> University of Veterinary Medicine Vienna</span>
+        <span><b>Audience</b> Administration and research staff</span>
+        <span><b>Material</b> German</span>
+        <span><b>Spoken language</b> German</span>
+        <span><b>Licence</b> Page text and original course material · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+      </p>
+    </header>
 
-    <div class="page-head">
-      <div>
-        <p class="stamp">30 November to 4 December 2026</p>
-        <h1>VetMed Winter School</h1>
-        <p class="event">Veterin&auml;rmedizinische Universit&auml;t Wien</p>
-        <p class="facts">
-          <span><b>Date</b> 30 November to 4 December 2026, five days of six hours</span>
-          <span><b>Event</b> Veterin&auml;rmedizinische Universit&auml;t Wien</span>
-          <span><b>Audience</b> administration and research staff, without coding background</span>
-          <span><b>Teaching language</b> German</span>
-          <span><b>Status</b> planned</span>
-        </p>
-      </div>
-      <img class="plate" src="../assets/covers/2026-11-30-vetmed-winter-school.png" alt=""
-           width="960" height="540" loading="lazy" decoding="async">
-    </div>
-
-    <section class="block" id="specialisation">
-      <h2>Specialisation</h2>
-
-      <p>A five-day block week on site, six teaching hours a day, taught in German for administration
-      staff and researchers, and the fullest derivation of the material among the registered instances.
-      It follows an AI-competence programme at the same institution, so the entry threshold is lowered
-      by what that series already supplied rather than by repeating it. The register omits one
-      prerequisite the underlying documents state, namely that participants come without a coding
-      background, which is what makes the first two days setup-led.</p>
-
-      <p>The stated purpose is a transition, from the pure chat interface to controlled and documented
-      work with code, local models and an agent harness. The didactic line follows a competence
-      framework in levels. Days one and two establish direct chat-based interaction together with
-      local code execution, day three deepens that in independent data work, day four reaches process
-      orchestration with an agent, and day five integrates both in an application project. The
-      cross-cutting competence over all five days is judgement, the ability to assess the quality of a
-      generated artefact, which presupposes domain knowledge no model supplies.</p>
-
-      <p>One application project from the participant's own working area runs across the whole week as
-      the through-line, and every new topic is tried on it. Administration participants anchor on
-      report-adjacent or performance-record table data, researchers on measurement data from the
-      institution's core-facility strand. The concrete datasets are not chosen yet, and clearance of
-      input rights is named as a precondition before any model use. Day four adds a strand no other
-      instance carries, running a local model on one's own hardware as practical digital sovereignty,
-      which brings a hardware requirement with it.</p>
-
-      <p>Two open points are worth naming. The profile plans an emphasis on European AI regulation
-      inside the fifth module, carried over from the predecessor series, while the day structure
-      instead holds a compact critical block on day one covering social, ecological and legal
-      dimensions and a data-critique block on day three. Whether the profile plan or the day structure
-      governs needs an operator answer, and the reading that these are two different things is an
-      inference. The display title is provisional in every source and stands until the final one is
-      supplied.</p>
+    <section class="block" id="slides" aria-labelledby="slides-heading">
+      <div class="section-head"><h2 id="slides-heading">Slides</h2></div>
+      <div class="media-pending" role="status"><p>The slide deck for this workshop is in preparation.</p></div>
     </section>
 
-    <section class="block" id="sequence">
-      <h2>The five days</h2>
-      <ol class="seq">
-        <li><span>Fundamentals of generative AI and setup, meaning the model landscape as frontier
-          against open weights, how models work and where their limits are, a compact critical block
-          with digital sovereignty as the bridge to practice, then the working environment and a first
-          script in the terminal.</span></li>
-        <li><span>Prompt and context engineering plus code in the terminal, with a vague and a precise
-          prompt demonstrated on the same data, then
-          <span class="is-handson">data analysis with model support, run locally and checked</span>.</span></li>
-        <li><span>Data formats and data work, from tabular to unstructured, structured knowledge
-          representation in Markdown, a data-critique block, then
-          <span class="is-handson">a dataset prepared, transformed and displayed</span>.</span></li>
-        <li><span>Agent harness and local models, meaning configuring a harness, process control and
-          verification at scale, the data-protection question in this institutional context, and
-          <span class="is-handson">a bounded task delegated to an agent and spot-verified</span>.</span></li>
-        <li><span class="is-handson">The application project from the participant's own working area,
-          presented at the close, with transfer into everyday work and an outlook beyond the
-          week.</span></li>
-      </ol>
+    <section class="overview-grid" id="overview" aria-label="Workshop overview">
+      <article>
+        <h2>Abstract</h2>
+        <p>The five-day block course develops a complete working environment for generative AI, data work and agentic processes. Participants progress from model foundations and prompting to local code execution, structured knowledge, data transformation and controlled agent workflows. One application project from the participant’s own working area connects the exercises across the week.</p>
+      </article>
+      <article>
+        <h2>Outline</h2>
+        <ol><li><time>Day one</time>Model foundations, limits and working environment</li>
+            <li><time>Day two</time>Prompt and context engineering with local code</li>
+            <li><time>Day three</time>Data formats, transformation and representation</li>
+            <li><time>Day four</time>AI harnesses, local models and controlled agent work</li>
+            <li><time>Day five</time>Application project, presentation and transfer</li></ol>
+      </article>
+      <article>
+        <h2>Learning objectives</h2>
+        <ul><li>Choose an appropriate model and working environment for a bounded task.</li>
+            <li>Prepare and transform structured and unstructured data with inspectable checks.</li>
+            <li>Represent project knowledge in a form usable by people and AI systems.</li>
+            <li>Develop and assess an application project through a controlled agent workflow.</li></ul>
+      </article>
     </section>
 
-    <section class="block" id="modules">
-      <h2>Module coverage</h2>
+    <section class="block" id="reader" aria-labelledby="reader-heading">
+      <div class="section-head"><h2 id="reader-heading">Course reader</h2></div>
+      <div class="media-pending" role="status"><p>The course reader for this workshop is in preparation.</p></div>
+    </section>
 
-      <ul class="mods" aria-hidden="true">
-        <li class="mod m1">1</li>
-        <li class="mod m2">2</li>
-        <li class="mod m3">3</li>
-        <li class="mod m4">4</li>
-        <li class="mod m5">5</li>
-      </ul>
-
-      <ul class="linklist" role="list">
-        <li>Understanding Large Language Models, taught in full
-          <span class="what">Day one, with the model landscape and the limits stated before any tool is
-          installed.</span>
-        </li>
-        <li>Prompt Engineering, taught in full, with an exercise
-          <span class="what">Day two, demonstrated on the contrast between a vague and a precise prompt
-          on the same data.</span>
-        </li>
-        <li>Knowledge and Context Engineering, taught in full, with an exercise
-          <span class="what">Carried by day three, where structured knowledge representation in
-          Markdown becomes the working form for the week's project.</span>
-        </li>
-        <li>Agentic Engineering, taught in full, with an exercise
-          <span class="what">Day four, including harness configuration, verification at scale and a
-          local model on the participants' own hardware.</span>
-        </li>
-        <li>Critical Perspectives and Governance, taught in full
-          <span class="what">Distributed over the compact critical block of day one and the
-          data-critique block of day three. The planned emphasis on European AI regulation is an open
-          operator question.</span>
-        </li>
+    <section class="block" id="references">
+      <h2>Literature and references</h2>
+      <ul class="references" role="list">
+          <li><a href="https://dhcraft.org/Promptotyping/">Promptotyping</a><span class="what">Method and knowledge-document convention for inspectable research artefacts.</span></li>
+          <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Knowledge, Context and Agentic Engineering for Knowledge Work</a><span class="what">Repository containing the shared slide material and lecture notes.</span></li>
       </ul>
     </section>
 
-    <section class="block" id="materials">
-      <h2>Materials</h2>
-      <ul class="linklist" role="list">
-        <li><span class="pending">Slide deck (VetMed Winter School 2026)</span>
-          <span class="what">To be derived from the Full Slide Deck. The register carries no link
-          yet.</span>
-        </li>
-        <li><span class="pending">Lecture Notes (VetMed Winter School 2026)</span>
-          <span class="what">In preparation in the instance folder. The concept document still derives
-          from a generic block-week format and is to be rebased on the complete material.</span>
-        </li>
-        <li><span class="pending">Example datasets</span>
-          <span class="what">One administration dataset and one research dataset are still to be
-          chosen, with input rights cleared before use.</span>
-        </li>
-      </ul>
-    </section>
-
-    <section class="block" id="provenance">
-      <h2>Provenance</h2>
-      <p>This instance is a documented specialisation of the Full Slide Deck and the Full Lecture
-      Notes, which are maintained once and cut into five modules. What this instance selects, cuts and
-      adds is recorded in its repository folder,
-      <a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering/tree/main/workshops/2026-11-30-vetmed-winter-school">workshops/2026-11-30-vetmed-winter-school</a>.</p>
-    </section>
-
-    <a class="backlink" href="../index.html#workshops">Back to all workshops</a>
-
+    <a class="backlink" href="../index.html#workshops">← All workshops</a>
   </div>
 </main>
 
@@ -201,19 +108,14 @@
       <div class="imprint">
         <p class="name">Christopher Pollin</p>
         <p>Digital Humanities Craft</p>
-        <p>
-          <a href="https://dhcraft.org">dhcraft.org</a>
-          <span class="sep">&middot;</span>
-          <a href="mailto:office@dhcraft.org">office@dhcraft.org</a>
-        </p>
+        <p><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">·</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
       </div>
     </div>
     <div class="colophon">
       <p>Built with <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a></p>
-      <p>Text content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+      <p>Text and original course material <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
     </div>
   </div>
 </footer>
-
 </body>
 </html>
