@@ -34,7 +34,7 @@ Repo founded; all repository files English; design iteration 4 approved and in f
 | 5 | Platform: paired English and German landing, preparation and workshop pages | WP3, WP4 | all public page pairs follow design iteration 5; KUG and CLARIAH embed their registered slides and readers, while missing artefacts retain explicit preparation states; local structural and HTTP verification completed 2026-08-24 |
 | 6 | Terms: canonical English wording, German equivalents and literature anchors in `terms.md` | operator: confirmation of the six editorial decisions recorded in the document | filled 2026-08-20; the editorial decisions stay reversible until the operator confirms them |
 | 7 | Vault re-pointing: the corresponding vault documents become references to this repo; Project Overview updated | WP2 | done 2026-08-22; ACTIVE-WORK entry, Project Overview and the workshop documents in the vault point to this repo and use its names |
-| 8 | Publication: LICENSE file (CC BY 4.0 for texts, done), GitHub Pages activation, full link and rendering verification, then announcement-ready | WP5; operator gates | license done; activation and verification open |
+| 8 | Publication: LICENSE file, GitHub Pages activation and live verification | WP5; operator gates | complete 2026-08-24; Pages publishes `main/docs`, and both landing-page languages plus both KUG page languages returned HTTP 200 for commit `c88d093` |
 
 ## Steady-state duties after the build
 
@@ -44,6 +44,6 @@ Register and pages stay in sync in the same work step (specification acceptance 
 
 The operator delivers the cover images per instance from the external image pipeline, placed as `docs/assets/covers/<id>.png`, and the final display title of the VetMed Winter School.
 
-Three gates stay with the operator, the fine-cut confirmation at the module coverage report, the confirmation of the editorial decisions recorded in `terms.md`, and the git tag per taught workshop state. Pages activation is agreed for after the current build-out and a full verification pass (operator decision 2026-08-20).
+Three gates stay with the operator, the fine-cut confirmation at the module coverage report, the confirmation of the editorial decisions recorded in `terms.md`, and the git tag per taught workshop state. GitHub Pages activation and the first live verification were completed on 2026-08-24.
 
 The KUG workshop additionally requires the M³GIM digitisates for objects that already have matching records, confirmation of their Summer School use, a reduced Mobility Studies research question, and confirmation of the spoken teaching language. The prepared course reader, slide deck, prompts and participant-facing instructions are English.
