@@ -144,3 +144,11 @@ The selected PNG files remain publication assets even where the generator introd
 **Course.** The German landing page now localises the descriptive module titles. Prompt Engineering and Agentic Engineering retain their established method names. The first references to Large Language Models and AI Harnesses use the full terms and link to two compact definitions beneath the module list. The definitions remain visible in the page flow and require no modal, tooltip or JavaScript.
 
 **Outcome.** The two language versions now differ where interface language requires it and share the same explicit conceptual entry points.
+
+### 2026-08-25 — Stylesheet cache mismatch corrected
+
+**Goal.** Ensure that a newly published HTML structure cannot appear with a cached earlier stylesheet.
+
+**Course.** The first deployment of the concept definitions reached the browser before its updated CSS. The page therefore displayed semantic definition-list markup with browser defaults. All eighteen public pages now reference one explicit version of the shared stylesheet. Future CSS changes require the same version update across the static page set.
+
+**Outcome.** HTML and the design system now form one observable publication state across language and detail pages.

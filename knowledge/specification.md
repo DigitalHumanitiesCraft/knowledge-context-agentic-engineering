@@ -44,7 +44,7 @@ Requirements for the public platform (`docs/`, GitHub Pages) and the carrying re
 9. The register lives as one file, `docs/data/workshops.json`; a new instance is exactly one entry there plus one folder. One id scheme of the form `YYYY-MM-DD-slug` holds across registry, `workshops/<id>/` folders, `docs/assets/covers/<id>.png` and git tags. The register carries only upcoming instances; a delivered one leaves both register and tree and stays reachable in git history.
 10. Teaching runs on the live decks; the platform embeds and links them, and the repo holds PPTX exports per taught state under `workshops/<id>/`.
 11. Covers remain available for the landing-page cards. Workshop detail pages contain no cover or motif image.
-12. The site is static without a build step, plain HTML and CSS, no JavaScript required for any content, responsive, and loads no external resources beyond Google Fonts and registered Google Slides or Google Docs viewers. Published links carry no tracking or sharing parameters.
+12. The site is static without a build step, plain HTML and CSS, no JavaScript required for any content, responsive, and loads no external resources beyond Google Fonts and registered Google Slides or Google Docs viewers. Every public page uses the same explicit version parameter for the shared stylesheet. Published content links carry no tracking or sharing parameters.
 13. Teaching Materials follows the hero immediately and retains the direct material links. Workshops follow as the next substantial section. A compact Preparation section links to the full guide. The anchors `#modules`, `#material`, `#workshops` and `#preparation` remain directly addressable.
 14. The top navigation contains GitHub as its only content link on the landing pages, preparation pages and workshop pages. Branding returns to the language-matched landing page, and the EN/DE control connects every page pair.
 15. The shared footer identifies Digital Humanities Craft as the implementer and names the production systems and method. It records Claude Code with Fable 5 and Opus 5, Codex with GPT-5.6 Sol, and Promptotyping. Labelled GitHub links expose the project repository and the Promptotyping repository. The licence line consists of the linked licence identifier `CC BY 4.0`.
@@ -64,6 +64,7 @@ Requirements for the public platform (`docs/`, GitHub Pages) and the carrying re
 - The site is fully readable without JavaScript.
 - Cover images on the landing page meet the format specification and carry an empty alt attribute beside text that identifies the workshop.
 - No published URL carries a tracking or sharing query parameter.
+- All public pages reference the same current stylesheet version, and that asset resolves with HTTP 200 after publication.
 - Every public footer links the project repository and the Promptotyping repository, identifies Digital Humanities Craft as the implementer, and names the documented AI harnesses and models.
 
 ## Decisions
