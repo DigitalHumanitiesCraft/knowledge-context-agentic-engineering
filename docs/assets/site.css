@@ -286,6 +286,11 @@ img { max-width: 100%; height: auto; }
   line-height: 1.65;
 }
 
+.hero-copy .hero-preparation {
+  margin-top: var(--s2);
+  font-size: var(--text-lg);
+}
+
 .concept-link {
   color: var(--ink);
   font-weight: 600;
