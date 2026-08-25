@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 03 · Knowledge and Context Engineering</title>
+<meta name="description" content="A source-grounded route from maintained project knowledge and current task state to selected working context.">
+<link rel="alternate" hreflang="en" href="03-knowledge-context-engineering.html">
+<link rel="alternate" hreflang="de" href="03-knowledge-context-engineering.de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20260825-19">
+<link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+<body class="module-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-head"><div class="wrap"><div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Digital Humanities Craft website"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="../index.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div><div class="head-tools"><nav class="site-nav" aria-label="Site"><ul><li><a href="../preparation.html">Preparation</a></li><li><a href="../about.html">About &amp; Imprint</a></li><li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li></ul></nav><nav class="language-nav" aria-label="Language"><a href="03-knowledge-context-engineering.html" lang="en" aria-current="page">EN</a><a href="03-knowledge-context-engineering.de.html" lang="de">DE</a></nav></div></div></header>
+<main id="main-content" tabindex="-1"><div class="wrap">
+  <article class="module-hub m3">
+    <header class="page-head module-hub__head"><div class="module-hub__mark" aria-hidden="true"><span class="module-hub__icon" aria-hidden="true"></span><span>03</span></div><div><p class="eyebrow">Maintained knowledge and selected context</p><h1>Module 03 · Knowledge and Context Engineering</h1><p class="event">The maintenance of reusable knowledge and the deliberate selection of task-specific context.</p></div></header>
+    <nav class="module-nav" aria-label="Teaching modules"><ol><li><a href="../preparation.html"><span>00</span> Preparation and AI Coding Literacy</a></li><li><a href="01-understanding-large-language-models.html"><span>01</span> Understanding Large Language Models</a></li><li><a href="02-prompt-engineering.html"><span>02</span> Prompt Engineering</a></li><li><a href="03-knowledge-context-engineering.html" aria-current="page"><span>03</span> Knowledge and Context Engineering</a></li><li><a href="04-agentic-engineering.html"><span>04</span> Agentic Engineering</a></li><li><a href="05-critical-perspectives-governance.html"><span>05</span> Critical Perspectives and Governance</a></li></ol></nav>
+
+    <section>
+      <h2 id="scope">Scope and learning question</h2>
+      <p class="definition"><strong>Learning question:</strong> Which knowledge should persist, which state belongs to the current task and which material should enter the working context now?</p>
+      <p>Knowledge Engineering creates and maintains explicit, inspectable and revisable project knowledge. Context Engineering selects, organises and provides the task-specific information state in which a prompt is interpreted.</p>
+      <h3>Learning objectives</h3>
+      <ul><li>Distinguish a Project Knowledge Base, Working Context and technical context window.</li><li>Distil bounded Knowledge Documents while preserving relevant provenance, uncertainty and revision paths.</li><li>Select information, instructions, retrieval routes and tool outputs for a dense and sufficient task context.</li></ul>
+    </section>
+
+    <section>
+      <h2 id="concepts">Concept map and starter sequence</h2>
+      <div class="concept-map" role="group" aria-label="Two reading paths meet in task-specific context">
+        <ol><li><strong>Maintained knowledge</strong><span>documented concepts, rules, evidence and decisions</span></li><li><strong>Selection rules</strong><span>determine relevance, representation and timing</span></li><li><strong>Task-specific context</strong><span>supports the current model call or agent action</span></li></ol>
+        <ol><li><strong>Current task state</strong><span>task, requirements, data access, results and feedback</span></li><li><strong>Working Context</strong><span>assembles selected knowledge, instructions, tools and state</span></li><li><strong>Task-specific context</strong><span>enters the bounded context window as needed</span></li></ol>
+      </div>
+      <p class="source-note"><strong>Read in two paths:</strong> maintained knowledge flows through selection rules; current task state flows through the Working Context. Both meet in the task-specific context provided for the current action.</p>
+      <div class="learning-sequence">
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>01</span><strong>Boundary</strong></div><div class="learning-copy"><h3>Separate prompt, context and knowledge base</h3><p>The Project Knowledge Base preserves available project knowledge. The Working Context assembles what a concrete task requires. The prompt specifies the current action and expected result within that information state.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>02</span><strong>Selection</strong></div><div class="learning-copy"><h3>Treat the context window as bounded capacity</h3><p>Longer context can suffer from position effects, distractors, conflicting material and obsolete state. Context rot names this observed degradation. The practical target is a dense, relevant and sufficient context.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>03</span><strong>Acquisition</strong></div><div class="learning-copy"><h3>Make relevant knowledge explicit</h3><p>Knowledge acquisition draws from documents, data, established artefacts, interviews, workshops and observed workflows. It makes rules, exceptions, rationales and tacit decisions available for inspection and revision.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>04</span><strong>Documents</strong></div><div class="learning-copy"><h3>Maintain bounded Knowledge Documents</h3><p>A Knowledge Document represents one subject or function through explicit concepts, relations, rules, evidence, uncertainty and provenance. Markdown is one practical serialisation; schemas, databases, TEI and RDF remain suitable where their semantics are required.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>05</span><strong>Distillation</strong></div><div class="learning-copy"><h3>Select, structure and distil for a purpose</h3><p>Compression reduces the amount of active material. Distillation also preserves the distinctions, conditions and open questions required for a specific purpose. Over-distillation removes provenance, uncertainty or operational detail that later work needs.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>06</span><strong>Access</strong></div><div class="learning-copy"><h3>Combine persistent instructions, Skills, retrieval and tools</h3><p>Instruction files govern recurring work. Skills operationalise reusable procedures. Retrieval selects external passages, while tools and MCP resources can expose files, databases or services. Retrieval failure and stale instructions must remain observable.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>07</span><strong>Integration</strong></div><div class="learning-copy"><h3>Join data context with method context</h3><p>A file becomes useful to the model through the representation supplied by a parser, script, tool or multimodal system. A sound Working Context connects selected data with the methods, schemas, examples, permissions and checks needed to act on it.</p></div></article>
+      </div>
+    </section>
+
+    <section class="hub-routes">
+      <h2 id="routes">Learning routes</h2>
+      <ul class="route-list">
+        <li><div><p class="eyebrow">Harness tutorial · available</p><h3>Project instructions and Working Context</h3><p>Follow the Claude Code tutorial routes for <a href="../tutorials/claude-code.html#instructions">persistent project instructions</a> and <a href="../tutorials/claude-code.html#context">selected Working Context</a>.</p></div></li>
+        <li><div><p class="eyebrow">Related Module 04 route · available</p><h3><a href="04-agentic-engineering.html#curated-skills">Curated Skills and reusable procedures</a></h3><p>The Agentic Engineering hub maintains the curated Skills entries. This module links to that collection without repeating it.</p></div></li>
+        <li><div><p class="eyebrow">Deep dive · prepared</p><h3>Research Data and Knowledge Work</h3><p>The source-grounded route is prepared for integration; no public page is linked yet.</p></div></li>
+        <li><div><p class="eyebrow">Deep dive · prepared</p><h3>Knowledge and Project Management</h3><p>The source-grounded route is prepared for integration; no public page is linked yet.</p></div></li>
+        <li><div><p class="eyebrow">Workshop Web Module · available</p><h3><a href="../workshops/2026-09-16-kug-m3gim.html#web-module-browser-application">From research question to browser application</a></h3><p>Connects documented research context with requirements, tests and observable browser views.</p></div></li>
+      </ul>
+    </section>
+
+    <section class="hub-material"><h2 id="material">Teaching material</h2><ul class="material-links"><li><a href="https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit">Full Slide Deck</a><span> Complete shared teaching structure in Google Slides.</span></li><li><a href="https://docs.google.com/document/d/1eaGx86RFr4Xywnxmf4Krdy4GKMYMcnW8pAYPXVH-Lr8/edit">Full Lecture Notes, English</a><span> Maintained chapters on Context Engineering and Knowledge Engineering.</span></li></ul></section>
+
+    <section><h2 id="videos">Selected primary videos</h2><p>Five of the six primary Module 03 videos are shown here. Research Mission Control remains a related route whose primary classification is Module 04.</p><ul class="hub-videos"><li><a href="https://www.youtube.com/watch?v=Qx0fCqpkBus">What Is Context Engineering? Why It Matters for AI Agents</a><span>9:56</span></li><li><a href="https://www.youtube.com/watch?v=VGN22pPpb-8">Thinner Agents on a Smarter Substrate: The Ontology-based Semantic Layer</a><span>11:06</span></li><li><a href="https://www.youtube.com/watch?v=Sir59K8ZDPU">Why Agentic Systems Need Ontologies</a><span>21:18</span></li><li><a href="https://www.youtube.com/watch?v=H7puB0RwJMM">Citation Needed: Provenance for LLM-Built Knowledge Graphs</a><span>20:54</span></li><li><a href="https://www.youtube.com/watch?v=31Y6uRLnkQA" lang="de">Wissens- und Projektmanagement mit Obsidian und Claude Code</a><span>1:06:27</span></li></ul><p><a href="../index.html#video-module-03">Open all six primary Module 03 videos in the Video Library</a> · <a href="https://www.youtube.com/playlist?list=PLXY4kw40KBaY">Open the ordered Video Playlist</a></p></section>
+
+    <section><h2 id="workshops">Representative workshops</h2><p>All seven registered workshops include Module 03. These three profiles show knowledge and context work in distinct institutional settings.</p><ul class="hub-workshops"><li><a href="../workshops/2026-09-16-kug-m3gim.html">Making Estate Materials Digitally Accessible</a><span>16–17 September 2026 · KUG Summer School · planned</span></li><li><a href="../workshops/2026-09-25-clariah-at.html">Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</a><span>25 September 2026 · CLARIAH-AT Summer School · planned</span></li><li><a href="../workshops/2026-10-05-hedit-heidelberg.html" lang="de">HEDIT KI-Workshop 2026</a><span>5–6 October 2026 · Knowledge and Context Engineering · planned</span></li></ul><p><a href="../index.html#workshops">Browse all workshop profiles</a></p></section>
+
+    <aside class="source-note" aria-label="Source and maintenance note"><p>This overview is derived from the maintained Full Slide Deck, Full Lecture Notes and Module 03 source text. Video and workshop routes reflect the public registers checked on 25 August 2026.</p></aside>
+    <nav class="hub-continue" aria-label="Continue through the teaching line"><a href="02-prompt-engineering.html">← Module 02: Prompt Engineering</a><a href="../index.html">Complete teaching line</a><a href="04-agentic-engineering.html">Module 04: Agentic Engineering →</a></nav>
+  </article>
+</div></main>
+<footer class="site-foot"><div class="wrap"><div class="foot-publisher"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"><div class="imprint"><p class="name">Christopher Pollin</p><p>Digital Humanities Craft</p><p class="contact"><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p></div></div><p class="foot-provenance">Developed and maintained by <a href="https://dhcraft.org">Digital Humanities Craft</a> using <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a> and <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a>.</p><nav class="foot-nav" aria-label="Footer"><p class="foot-nav-label">Further links</p><ul><li><a href="../about.html">About &amp; Imprint</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Teaching material</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a></li><li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li><li><a href="https://dhcraft.org/imprint">Legal notice on dhcraft.org</a></li></ul></nav></div></footer>
+</body>
+</html>

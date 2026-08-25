@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modul 02 · Prompt Engineering</title>
+<meta name="description" content="Eine quellenbasierte Lernroute zum Spezifizieren, Vergleichen und Prüfen eines begrenzten Modellaufrufs.">
+<link rel="alternate" hreflang="en" href="02-prompt-engineering.html">
+<link rel="alternate" hreflang="de" href="02-prompt-engineering.de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20260825-19">
+<link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+<body class="module-page">
+<a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
+<header class="site-head"><div class="wrap"><div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Website von Digital Humanities Craft"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="../index.de.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div><div class="head-tools"><nav class="site-nav" aria-label="Seite"><ul><li><a href="../preparation.de.html">Vorbereitung</a></li><li><a href="../about.de.html">Über &amp; Impressum</a></li><li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li></ul></nav><nav class="language-nav" aria-label="Sprache"><a href="02-prompt-engineering.html" lang="en">EN</a><a href="02-prompt-engineering.de.html" lang="de" aria-current="page">DE</a></nav></div></div></header>
+<main id="main-content" tabindex="-1"><div class="wrap">
+  <article class="module-hub m2">
+    <header class="page-head module-hub__head"><div class="module-hub__mark" aria-hidden="true"><span class="module-hub__icon" aria-hidden="true"></span><span>02</span></div><div><p class="eyebrow">Begrenzter Modellaufruf</p><h1>Modul 02 · Prompt Engineering</h1><p class="event">Die Spezifikation eines begrenzten Modellaufrufs durch Aufgabe, Material, Anforderungen, Einschränkungen, Ausgabeform und Abschlusskriterien.</p></div></header>
+    <nav class="module-nav" aria-label="Lehrmodule"><ol><li><a href="../preparation.de.html"><span>00</span> Vorbereitung und AI Coding Literacy</a></li><li><a href="01-understanding-large-language-models.de.html"><span>01</span> Large Language Models verstehen</a></li><li><a href="02-prompt-engineering.de.html" aria-current="page"><span>02</span> Prompt Engineering</a></li><li><a href="03-knowledge-context-engineering.de.html"><span>03</span> Knowledge and Context Engineering</a></li><li><a href="04-agentic-engineering.de.html"><span>04</span> Agentic Engineering</a></li><li><a href="05-critical-perspectives-governance.de.html"><span>05</span> Kritische Perspektiven und Governance</a></li></ol></nav>
+
+    <section>
+      <h2 id="scope">Gegenstand und Lernfrage</h2>
+      <p class="definition"><strong>Lernfrage:</strong> Wie formuliere ich einen Modellaufruf, dessen Ergebnis geprüft und verglichen werden kann?</p>
+      <p>Ein Prompt spezifiziert die unmittelbare Aufgabe und das erwartete Ergebnis. Er kann Quellenmaterial und begrenzten Context enthalten. Context Engineering steuert die weitergehende Auswahl und Pflege der für die Aufgabe verfügbaren Informationen.</p>
+      <h3>Lernziele</h3>
+      <ul><li>Aufgabe, Material, Anforderungen, Einschränkungen, Ausgabeform und Abschlusskriterien trennen.</li><li>Beispiele und Schemas einsetzen, um ein angefordertes Ergebnis besser prüfbar zu machen.</li><li>Prompt-Varianten auf festem Material mit expliziten Quellen- und Formalprüfungen vergleichen.</li></ul>
+    </section>
+
+    <section>
+      <h2 id="concepts">Begriffslandkarte und Einstiegssequenz</h2>
+      <ol class="concept-map" aria-label="Lesereihenfolge der Begriffslandkarte für Modul 02"><li><strong>Aufgabe und Material</strong><span>definieren den begrenzten Vorgang und seine Evidenz</span></li><li><strong>Anforderungen und Einschränkungen</strong><span>nennen die Bedingungen für das Ergebnis</span></li><li><strong>Beispiele und Schema</strong><span>machen Struktur und Grenzfälle explizit</span></li><li><strong>Ausgabe und Abschlusskriterien</strong><span>machen das Ergebnis prüfbar</span></li><li><strong>Vergleich und Prüfungen</strong><span>bewerten Varianten auf einer stabilen Grundlage</span></li></ol>
+      <p class="source-note"><strong>Lesereihenfolge:</strong> Aufgabe und Material festlegen; geltende Regeln nennen; Beispiele oder ein Schema zur Klärung verwenden; Ergebnis und Prüfungen definieren; Ausgaben unter kontrollierten Bedingungen vergleichen.</p>
+      <div class="learning-sequence">
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>01</span><strong>Grenze</strong></div><div class="learning-copy"><h3>Prompt und Context Engineering unterscheiden</h3><p>Prompt Engineering entwirft und evaluiert die Anweisungen für einen konkreten Modellaufruf. Context Engineering entscheidet, welche Informationen, Repräsentationen und Ressourcen für die weiter gefasste Aufgabe verfügbar sein sollen.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>02</span><strong>Aufgabe</strong></div><div class="learning-copy"><h3>Vorgang und Material benennen</h3><p>Identifiziere Quelle, Datei oder Datensatz und formuliere die erforderliche Transformation oder Analyse. Erhalte die Unterscheidung zwischen Quelle, generiertem Kandidaten und akzeptiertem Forschungsartefakt.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>03</span><strong>Regeln</strong></div><div class="learning-copy"><h3>Anforderungen, Einschränkungen und Ausgabeform festlegen</h3><p>Trenne die unmittelbare Aufgabe vom Quellenkontext, den geltenden Regeln und dem Ausgabevertrag. Eine Rolle kann eine Bewertungsperspektive oder Zielgruppe festlegen; fehlendes Faktenwissen entsteht dadurch nicht.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>04</span><strong>Struktur</strong></div><div class="learning-copy"><h3>Beispiele und Schemas gezielt ergänzen</h3><p>Beispiele klären erwartete Fälle und Grenzbedingungen. Ein Schema kann syntaktische und strukturelle Validierung unterstützen. Semantische Korrektheit und wissenschaftliche Angemessenheit verlangen eigene Evidenz.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>05</span><strong>Vergleich</strong></div><div class="learning-copy"><h3>Prompt-Varianten an festen Fällen evaluieren</h3><p>Prompt-Effekte unterscheiden sich nach Modell, Version, Aufgabe und Context. Halte Beispiele und Kriterien stabil, dokumentiere die geprüfte Konfiguration und untersuche Unterschiede als lokale Befunde.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>06</span><strong>Prüfung</strong></div><div class="learning-copy"><h3>Quellenprüfungen mit formalen Prüfungen verbinden</h3><p>Vergleiche extrahierte oder generierte Aussagen mit ihren Quellen. Verwende deterministische Validatoren, Schemas, Tests oder arithmetische Invarianten, sofern sie verfügbar sind. Self-Revision kann einen Kandidaten verbessern; unabhängige Verifikation erfordert eine gesonderte Prüfung.</p></div></article>
+      </div>
+    </section>
+
+    <section class="hub-routes"><h2 id="routes">Lernrouten</h2><ul class="route-list"><li><div><p class="eyebrow">Vertiefung · in Vorbereitung</p><h3>Prompt-Engineering-Lektion</h3><p>Eine Web-Lektion aus dem gepflegten Prompt-Engineering-Material wird vorbereitet. Eine öffentliche Route ist noch nicht verlinkt.</p></div></li><li><div><p class="eyebrow">Verfügbares Workshop-Web-Modul</p><h3><a href="../workshops/2026-09-16-kug-m3gim.de.html#web-module-checked-data">Von der Quelle zu geprüften strukturierten Daten</a></h3><p>Wendet eine begrenzte Aufgabenspezifikation, explizite Ausgabefelder und Quellenprüfungen auf einen synthetischen Nachlassdatensatz an.</p></div></li></ul></section>
+
+    <section class="hub-material"><h2 id="material">Lehrmaterial</h2><ul class="material-links"><li><a href="https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit">Full Slide Deck</a><span> Vollständige gemeinsame Lehrstruktur in Google Slides.</span></li><li><a href="https://docs.google.com/document/d/1rJRraAfBfnkrb_3ik4savYuboLPhZ-zAFvlj4CmmMcE/edit">Full Lecture Notes, Deutsch</a><span> Gepflegte Erklärung begrenzter Spezifikationen, Iteration und Evaluation.</span></li></ul></section>
+
+    <section><h2 id="videos">Primär zugeordnetes Video</h2><ul class="hub-videos"><li><a href="https://www.youtube.com/watch?v=Sj3F4oPWB8A" lang="en">Prompt Engineering</a><span>54:20</span></li></ul><p><a href="../index.de.html#video-module-02">Vollständige Modul-02-Gruppe in der Video Library öffnen</a> · <a href="https://www.youtube.com/playlist?list=PLXY4kw40KBaY">Geordnete Video-Playlist öffnen</a></p></section>
+
+    <section><h2 id="workshops">Repräsentative Workshops</h2><p>Alle sieben registrierten Workshops enthalten Modul 02. Diese drei Profile zeigen verschiedene Zielgruppen und Aufgabenspezifikationen.</p><ul class="hub-workshops"><li><a href="../workshops/2026-09-16-kug-m3gim.de.html" lang="en">Making Estate Materials Digitally Accessible</a><span>16.–17. September 2026 · KUG Summer School · geplant</span></li><li><a href="../workshops/2026-09-25-clariah-at.de.html" lang="en">Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</a><span>25. September 2026 · CLARIAH-AT Summer School · geplant</span></li><li><a href="../workshops/2026-10-05-hedit-heidelberg.de.html">HEDIT KI-Workshop 2026</a><span>5.–6. Oktober 2026 · Teilnehmendenmaterial und digitale Editionen · geplant</span></li></ul><p><a href="../index.de.html#workshops">Alle Workshop-Profile durchsuchen</a></p></section>
+
+    <aside class="source-note" aria-label="Quellen- und Pflegehinweis"><p>Diese Übersicht ist aus dem gepflegten Full Slide Deck, den Full Lecture Notes und dem Quelltext für Modul 02 abgeleitet. Video- und Workshop-Routen entsprechen den am 25. August 2026 geprüften öffentlichen Registern.</p></aside>
+    <nav class="hub-continue" aria-label="In der Lehrlinie fortsetzen"><a href="01-understanding-large-language-models.de.html">← Modul 01: LLMs verstehen</a><a href="../index.de.html">Vollständige Lehrlinie</a><a href="03-knowledge-context-engineering.de.html">Modul 03: Knowledge and Context Engineering →</a></nav>
+  </article>
+</div></main>
+<footer class="site-foot"><div class="wrap"><div class="foot-publisher"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"><div class="imprint"><p class="name">Christopher Pollin</p><p>Digital Humanities Craft</p><p class="contact"><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p></div></div><p class="foot-provenance">Entwickelt und gepflegt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a> und <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a>.</p><nav class="foot-nav" aria-label="Fußzeile"><p class="foot-nav-label">Weiterführende Links</p><ul><li><a href="../about.de.html">Über &amp; Impressum</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Lehrmaterial</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Forschungsleitstelle</a></li><li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li><li><a href="https://dhcraft.org/imprint">Rechtstext auf dhcraft.org</a></li></ul></nav></div></footer>
+</body>
+</html>

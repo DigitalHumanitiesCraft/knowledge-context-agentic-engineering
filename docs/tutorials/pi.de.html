@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einführung in Pi mit lokalem Modell &middot; KCE</title>
+<meta name="description" content="Eine quellengeprüfte Einführung in Pi, Provider-Konfiguration, Grenzen lokaler Inferenz, Projektanweisungen und eine lesende erste Aufgabe.">
+<link rel="alternate" hreflang="en" href="pi.html">
+<link rel="alternate" hreflang="de" href="pi.de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20260825-19">
+<link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+<body class="preparation-page">
+<a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
+<header class="site-head"><div class="wrap">
+  <div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Website von Digital Humanities Craft"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="../index.de.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div>
+  <div class="head-tools"><nav class="site-nav" aria-label="Seite"><ul><li><a href="../preparation.de.html">Vorbereitung</a></li><li><a href="../about.de.html">Über &amp; Impressum</a></li><li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li></ul></nav><nav class="language-nav" aria-label="Sprache"><a href="pi.html" lang="en">EN</a><a href="pi.de.html" lang="de" aria-current="page">DE</a></nav></div>
+</div></header>
+<main id="main-content" tabindex="-1"><div class="wrap">
+  <a class="backlink" href="../modules/04-agentic-engineering.de.html">&larr; Modul 04 &middot; Agentic Engineering</a>
+  <header class="page-head preparation-head"><div><h1>Einführung in Pi mit lokalem Modell</h1><p class="event">Dieses Tutorial führt Pi als Open-Source-AI-Harness mit expliziter Provider-Konfiguration ein. Es trennt Harness-Quelle, Provider-Endpunkt und Evidenz für lokal ausgeführte Modellinferenz.</p></div><div><p class="stamp">Quellen und Produktdetails geprüft am 25. August 2026</p><p class="facts"><span>Verwende ein entbehrliches Übungsrepository ohne vertrauliche Dateien.</span><span>Begrenze die erste Aufgabe durch eine explizite Allowlist für lesende Werkzeuge.</span></p></div></header>
+  <div class="tutorial-shell">
+    <aside class="tutorial-sidebar">
+      <nav class="tutorial-nav" aria-label="Tutorialabschnitte">
+        <p class="tutorial-nav__title">Pi mit lokalem Modell</p>
+        <p class="tutorial-nav__group">Vergleichbare Sequenz</p>
+        <ol><li><a href="#goal"><span>01</span>Lernziel</a></li><li><a href="#prerequisites"><span>02</span>Voraussetzungen</a></li><li><a href="#install"><span>03</span>Installation</a></li><li><a href="#workspace"><span>04</span>Workspace</a></li><li><a href="#instructions"><span>05</span>Anweisungen</a></li><li><a href="#permissions"><span>06</span>Berechtigungen</a></li><li><a href="#extensions"><span>07</span>Erweiterungen</a></li><li><a href="#first-check"><span>08</span>Erste Prüfung</a></li></ol>
+      </nav>
+    </aside>
+
+    <div class="tutorial-sequence harness-steps">
+      <section class="tutorial-panel tutorial-panel--opening harness-step" id="goal">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span><img class="route-icon" src="../assets/routes/pi-local.svg" alt="" width="48" height="48"></span><strong>Pi</strong><small>Open-Source-Harness</small></div><div class="path-node"><span>02</span><strong>Provider</strong><small>getrennt konfigurierter Endpunkt</small></div><div class="path-node"><span>03</span><strong>Inferenz</strong><small>lokaler Zustand verlangt Beobachtung</small></div></div>
+          <figcaption>Harness-Quelle, Provider-Endpunkt und Inferenzort sind drei getrennte Tatsachen.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 1</p>
+          <h2>Bestimme Harness und die drei Prüfgrenzen</h2>
+          <p class="definition">Pi ist ein AI Harness unter MIT-Lizenz, dessen Modell-Provider getrennt konfiguriert wird. Ein lokaler Pi-Prozess belegt den Ort des Harnesses. Lokale Modellinferenz verlangt zusätzlich einen lokalen Endpunkt und beobachtbare lokale Ausführung.</p>
+          <ol class="goal-list"><li>Prüfe Harness-Quelle und installierte Paketversion.</li><li>Identifiziere den gewählten Provider und seinen Endpunkt.</li><li>Beobachte den Prozess oder Dienst für die Inferenz.</li><li>Prüfe Modelllizenz und Modellfähigkeiten getrennt von der Harness-Lizenz.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Du kannst die Evidenz für Harness-Quelle, Provider-Weg und Inferenzort einzeln benennen.</p>
+          <p class="source-note"><a href="https://pi.dev/docs/latest">Offizielle Pi-Dokumentation</a> &middot; <a href="https://github.com/earendil-works/pi">Offizielles Repository</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="prerequisites">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="tool-stack"><div><span>01</span><strong>Workspace</strong><small>entbehrliches Git-Repository</small></div><div><span>02</span><strong>Runtime</strong><small>aktueller Node.js- und npm-Weg</small></div><div><span>03</span><strong>Modelldienst</strong><small>lokaler Endpunkt bei lokaler Auswahl</small></div><div><span>04</span><strong>Ausgangslage</strong><small>bekannter Git-Zustand</small></div></div></div>
+          <figcaption>Der lokale Modellweg benötigt Harness-Runtime, konfigurierten Modelldienst und bekannten Repository-Zustand.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 2</p>
+          <h2>Bereite Workspace und Modelldienst vor</h2>
+          <ol class="steps"><li>Verwende ein entbehrliches Git-Repository ohne vertrauliche Dateien oder Zugangsdaten.</li><li>Prüfe vor der Installation die aktuellen Runtime-Anforderungen in der Pi-Dokumentation.</li><li>Starte den gewählten lokalen Modelldienst und dokumentiere seinen Loopback-Endpunkt, wenn lokale Inferenz vorgesehen ist.</li><li>Führe <code>git status --short</code> außerhalb von Pi aus und sichere den Ausgangszustand.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Workspace, Runtime, Modell-Endpunkt und Git-Ausgangslage sind vor dem Start verfügbar.</p>
+          <p class="source-note">Voraussetzungen am 25. August 2026 anhand der <a href="https://pi.dev/docs/latest">offiziellen Pi-Dokumentation</a> geprüft.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="install">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="mock-window mock-window--terminal"><div class="mock-window__bar"><span class="mock-window__controls"></span><span class="mock-window__title">practice-repository</span></div><pre><code>npm install -g --ignore-scripts \
+  @earendil-works/pi-coding-agent
+
+pi --version</code></pre></div></div>
+          <figcaption>Die Installation endet mit einer gemeinsamen Dokumentation von Paketquelle und installierter Version.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 3</p>
+          <h2>Installiere Pi aus dem aktuellen gepflegten Paket</h2>
+          <ol class="steps"><li>Vergleiche den Paket-Namespace mit dem aktuellen offiziellen Repository und der Dokumentation.</li><li>Installiere mit <code>npm install -g --ignore-scripts @earendil-works/pi-coding-agent</code>.</li><li>Öffne ein neues Terminal, wenn die ausführbare Datei in der aktuellen Shell noch nicht sichtbar ist.</li><li>Führe <code>pi --version</code> aus und dokumentiere das Ergebnis zusammen mit dem Prüfdatum der Quelle.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Die installierte ausführbare Datei meldet eine Version und ihr Paketweg entspricht der gepflegten Pi-Quelle.</p>
+          <p class="source-note">Paket-Namespace und Befehl am 25. August 2026 anhand des <a href="https://github.com/earendil-works/pi">offiziellen Repositorys</a> geprüft.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="workspace">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>01</span><strong>Harness</strong><small>Pi-Prozess im Workspace</small></div><div class="path-node"><span>02</span><strong>Endpunkt</strong><small>konfigurierte Provider-Adresse</small></div><div class="path-node"><span>03</span><strong>Modellprozess</strong><small>beobachtbarer Inferenzdienst</small></div></div>
+          <figcaption>Die Aussage über einen lokalen Provider verlangt einen Loopback-Endpunkt und einen beobachtbaren lokalen Modellprozess.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 4</p>
+          <h2>Bestätige Workspace, Provider und Inferenzweg</h2>
+          <ol class="steps"><li>Starte Pi im vorgesehenen Repository und bestätige den aktuellen Arbeitsordner.</li><li>Prüfe vor dem ersten Prompt den konfigurierten Provider, das Modell und den Endpunkt.</li><li>Verwende für einen lokalen Weg den dokumentierten, an <code>127.0.0.1</code> gebundenen llama.cpp-Router oder die gepflegte Ollama-Integration.</li><li>Beobachte während einer Anfrage den lokalen Modellprozess oder das Dienstprotokoll. Dokumentiere jede auftretende Remote-Verbindung.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Sichtbarer Endpunkt und beobachteter Prozesszustand stützen den angegebenen Inferenzort.</p>
+          <p class="source-note"><a href="https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/llama-cpp.md">Offizielle llama.cpp-Integration</a> &middot; <a href="https://docs.ollama.com/integrations/pi">Offizielle Ollama-Integration</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="instructions">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>01</span><strong><code>AGENTS.md</code></strong><small>hierarchische Projektanweisungen</small></div><div class="path-node"><span>02</span><strong><code>CLAUDE.md</code></strong><small>kompatible Anweisungsquelle</small></div><div class="path-node"><span>03</span><strong><code>AGENTS.override.md</code></strong><small>Ersetzung auf derselben Ebene</small></div></div>
+          <figcaption>Pi liest hierarchische Projektanweisungen und unterstützt eine explizite Ersetzung auf derselben Ebene.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 5</p>
+          <h2>Prüfe Anweisungshierarchie und Overrides</h2>
+          <p class="definition">Pi liest hierarchische <code>AGENTS.md</code>-Dateien und kann außerdem <code>CLAUDE.md</code> verwenden. Eine <code>AGENTS.override.md</code> ersetzt die Anweisungsdatei auf derselben Verzeichnisebene.</p>
+          <ol class="steps"><li>Bestimme Anweisungsdateien von der Projektwurzel bis zum aktuellen Arbeitsordner.</li><li>Ordne jeder Datei ihren Verzeichnis-Scope und die Regeln für die aktuelle Aufgabe zu.</li><li>Prüfe, ob eine <code>AGENTS.override.md</code> die reguläre Datei auf ihrer Ebene ersetzt.</li><li>Löse widersprüchliche Anweisungen auf, bevor ein schreibfähiges Werkzeug verfügbar wird.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Du kannst die wirksamen Anweisungsdateien und jedes aktive Override benennen.</p>
+          <p class="source-note">Laden der Anweisungen am 25. August 2026 in der <a href="https://pi.dev/docs/latest/usage">offiziellen Nutzungsdokumentation</a> geprüft.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="permissions">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="tool-stack"><div><span>01</span><strong>OS-Nutzer</strong><small>für Pi verfügbare Prozessrechte</small></div><div><span>02</span><strong>Tool-Allowlist</strong><small><code>read,grep,find,ls</code></small></div><div><span>03</span><strong>Project Trust</strong><small>steuert das Laden von Ressourcen</small></div><div><span>04</span><strong>Container</strong><small>optionale stärkere Isolation</small></div></div></div>
+          <figcaption>Pi verwendet Betriebssystemrechte und expliziten Werkzeug-Scope, weil Project Trust keine Aktions-Sandbox bildet.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 6</p>
+          <h2>Setze eine explizite Allowlist für lesende Werkzeuge</h2>
+          <p class="definition">Pi läuft mit den Betriebssystemrechten des startenden Nutzers. Pi besitzt keine eingebaute Ausführungs-Sandbox. Project Trust steuert das Laden von Projektressourcen, während Handlungen bereitgestellter Werkzeuge unter den Betriebssystemrechten des Nutzers ausgeführt werden.</p>
+          <ol class="steps"><li>Stelle für die erste Aufgabe ausschließlich <code>read</code>, <code>grep</code>, <code>find</code> und <code>ls</code> bereit.</li><li>Prüfe die Wirkung jedes zusätzlichen Werkzeugs vor seiner Aufnahme in die Allowlist.</li><li>Verwende einen Container oder einen eingeschränkten Betriebssystem-Account für Aufgaben mit stärkerem Isolationsbedarf.</li><li>Halte Zugangsdaten und vertrauliche Dateien außerhalb des Übungs-Workspaces.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Die aktiven Werkzeuge unterstützen Repository-Inspektion und stellen keinen Weg zum Schreiben von Dateien oder Ausführen einer Shell bereit.</p>
+          <p class="source-note"><a href="https://pi.dev/docs/latest/security">Offizielle Pi-Sicherheitsdokumentation</a>, geprüft am 25. August 2026.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="extensions">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="tool-stack"><div><span>01</span><strong>Skills</strong><small>wiederverwendbare Anweisungen</small></div><div><span>02</span><strong>Extensions</strong><small>Anpassung des kleinen Harness-Kerns</small></div><div><span>03</span><strong>Getrennter Prozess</strong><small>parallele Arbeit bei Bedarf</small></div><div><span>04</span><strong>Built-in-Grenze</strong><small>explizit ausgelassene Fähigkeiten</small></div></div></div>
+          <figcaption>Pi hält die eingebaute Oberfläche klein und legt zusätzliche Funktionen in nutzerkontrollierte Anpassungen.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 7</p>
+          <h2>Bestimme Erweiterungen und bewusst ausgelassene Built-ins</h2>
+          <p class="definition">Pi unterstützt Skills, Extensions und Packages. Eingebaute Permission Prompts, Plan Mode, Model Context Protocol und Subagents fehlen im Kernprodukt.</p>
+          <ol class="steps"><li>Prüfe Quelle und bereitgestellte Werkzeuge einer Extension vor dem Laden.</li><li>Verwende Skills für gepflegte Verfahren mit expliziten Triggern und Prüfungen.</li><li>Verwende getrennte Prozesse und isolierte Workspaces für unabhängige parallele Arbeit.</li><li>Füge Allowlists, Container oder Extensions für einen definierten Funktionsbedarf hinzu.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Jede ergänzte Funktion besitzt eine bekannte Quelle, einen Werkzeug-Scope und eine Prüfmethode.</p>
+          <p class="source-note">Produktgrenzen am 25. August 2026 in der <a href="https://pi.dev/docs/latest/usage">offiziellen Nutzungsdokumentation</a> geprüft.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="first-check">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--dark" aria-hidden="true"><div class="status-visual"><span><code>source</code><strong>offizielles Repository und Version</strong></span><span><code>endpoint</code><strong>konfigurierte Provider-Adresse</strong></span><span><code>inference</code><strong>beobachteter lokaler Modellprozess</strong></span><span><code>git status --short</code><strong>unveränderter Workspace</strong></span></div></div>
+          <figcaption>Die abschließende Prüfung dokumentiert Quelle, Endpunkt, Inferenz und Repository-Zustand getrennt.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 8</p>
+          <h2>Führe eine reversible Orientierung aus und prüfe jede Grenze</h2>
+          <p class="definition">Starte Pi mit einer expliziten Allowlist für lesende Werkzeuge und fordere eine Repository-Orientierung an, deren Aussagen direkt prüfbar sind.</p>
+          <ol class="steps"><li>Führe <code>pi --tools read,grep,find,ls -p "Summarize this repository and explain how its checks are run."</code> aus.</li><li>Vergleiche die Antwort mit den zitierten Anweisungsdateien und Prüfdefinitionen.</li><li>Dokumentiere Pi-Quelle und Version, konfigurierten Provider-Endpunkt und beobachteten Modellprozess als getrennte Evidenz.</li><li>Führe <code>git status --short</code> außerhalb von Pi aus und vergleiche das Ergebnis mit der Ausgangslage.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Die Orientierung ist quellengebunden, die Evidenz für lokale Inferenz ist explizit und das Repository bleibt unverändert.</p>
+          <p class="source-note"><a href="https://pi.dev/docs/latest">Pi-Dokumentation</a> &middot; <a href="https://pi.dev/docs/latest/security">Sicherheitsgrenze</a> &middot; Quellen geprüft am 25. August 2026</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div></main>
+<footer class="site-foot"><div class="wrap"><div class="foot-publisher"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"><div class="imprint"><p class="name">Christopher Pollin</p><p>Digital Humanities Craft</p><p class="contact"><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p></div></div><p class="foot-provenance">Entwickelt und gepflegt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a> und <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a>.</p><nav class="foot-nav" aria-label="Fußzeile"><p class="foot-nav-label">Weiterführende Links</p><ul><li><a href="../about.de.html">Über &amp; Impressum</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Lehrmaterial</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Forschungsleitstelle</a></li><li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li><li><a href="https://dhcraft.org/imprint">Rechtstext auf dhcraft.org</a></li></ul></nav></div></footer>
+</body>
+</html>

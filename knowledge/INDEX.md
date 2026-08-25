@@ -25,16 +25,18 @@ Navigation of the knowledge base. Reading order for a new agent is `project.md`,
 
 | Document | Function | Content |
 | --- | --- | --- |
-| `project.md` | Charter, Material | What the project is, the material and its derivation by profile, holdings map, audiences |
-| `specification.md` | Specification | Requirements for platform and repo structure, acceptance criteria |
+| `project.md` | Charter, Material | What the project is, the material, public learning architecture and derivation by profile |
+| `specification.md` | Specification | Requirements for platform, module hubs, Harness routes, repo structure and acceptance criteria |
 | `terms.md` | Domain knowledge | Term matrix EN/DE with canonical wording and literature anchors |
-| `design.md` | Design | Information hierarchy, interface contract, responsive component system and iteration status |
+| `design.md` | Design | Information hierarchy, module and Harness components, responsive system and installation status |
 | `governance.md` | Governance | Decision authority, source status, write-back, versioning, rights |
 | `journal.md` | Provenance | Chronicle of decisions, milestones and workshop deliveries |
 | `plan.md` | Planning | Plan of the repo as work packages with their state |
 | `handoff.md` | Process inbox | Open received deltas awaiting verification and integration |
 
-`drafts/` holds decision-preparation material written by agents, including module and slide maps, term references, specialisation analysis, product evidence notes and the proposed web-native teaching and deep-dive architecture. Drafts are proposals; nothing in them is canonical.
+`drafts/` holds decision-preparation material written by agents, including module and slide maps, term references, specialisation analysis, product evidence notes, the module-hub architecture, Harness route research and the Curated Skills source assessment. Drafts are proposals; nothing in them is canonical.
+
+The active v0.3 working tree contains 36 public HTML files in eighteen language pairs on stylesheet version `20260825-19`. Module 00, the ten subject-hub files, the five landing-page learning routes, the three bilingual Harness introductions and the embedded Module 04 Curated Skills area are installed. Formal validation and browser observation are complete; `handoff.md` carries the remaining pre-release boundary because commit, tag, push, deployment and Research Director acceptance remain open.
 
 ## Research Mission Control exchange
 

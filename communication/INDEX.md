@@ -17,7 +17,7 @@ This register locates the active Research and Operations exchange for this repos
 
 | Thread | State | Objective | Expected message |
 | --- | --- | --- | --- |
-| `kce-research-operations-sync` | active release | Integrate and verify KCE interface iteration 16 and its corrected orchestration contract | Operations Result with Evidence |
+| `kce-research-operations-sync` | v0.3 release authorised | Commit, tag, push and verify the validated Module 00, module-hub, Harness and Curated Skills state | v0.3 release result with remote and deployment evidence |
 
 ## Completed capsules
 

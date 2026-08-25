@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 01 · “Understanding” Large Language Models</title>
+<meta name="description" content="A source-grounded introduction to language-model representations, prediction, training, inference, uneven capability and system boundaries.">
+<link rel="alternate" hreflang="en" href="01-understanding-large-language-models.html">
+<link rel="alternate" hreflang="de" href="01-understanding-large-language-models.de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20260825-19">
+<link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+<body class="module-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-head"><div class="wrap">
+  <div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Digital Humanities Craft website"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="../index.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div>
+  <div class="head-tools"><nav class="site-nav" aria-label="Site"><ul><li><a href="../preparation.html">Preparation</a></li><li><a href="../about.html">About &amp; Imprint</a></li><li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li></ul></nav><nav class="language-nav" aria-label="Language"><a href="01-understanding-large-language-models.html" lang="en" aria-current="page">EN</a><a href="01-understanding-large-language-models.de.html" lang="de">DE</a></nav></div>
+</div></header>
+<main id="main-content" tabindex="-1"><div class="wrap">
+  <article class="module-hub m1">
+    <header class="page-head module-hub__head">
+      <div class="module-hub__mark" aria-hidden="true"><span class="module-hub__icon" aria-hidden="true"></span><span>01</span></div>
+      <div><p class="eyebrow">System understanding</p><h1>Module 01 · “Understanding” Large Language Models</h1><p class="event">A functional account of what language models represent and generate, including uneven capability and the distinction between model, product, harness and infrastructure.</p></div>
+    </header>
+    <nav class="module-nav" aria-label="Teaching modules"><ol>
+      <li><a href="../preparation.html"><span>00</span> Preparation and AI Coding Literacy</a></li>
+      <li><a href="01-understanding-large-language-models.html" aria-current="page"><span>01</span> Understanding Large Language Models</a></li>
+      <li><a href="02-prompt-engineering.html"><span>02</span> Prompt Engineering</a></li>
+      <li><a href="03-knowledge-context-engineering.html"><span>03</span> Knowledge and Context Engineering</a></li>
+      <li><a href="04-agentic-engineering.html"><span>04</span> Agentic Engineering</a></li>
+      <li><a href="05-critical-perspectives-governance.html"><span>05</span> Critical Perspectives and Governance</a></li>
+    </ol></nav>
+
+    <section>
+      <h2 id="scope">Scope and learning question</h2>
+      <p class="definition"><strong>Learning question:</strong> Which properties of an observed result follow from the model, its context and the surrounding system?</p>
+      <p>Language models generate continuations from token sequences. Their observable behaviour also depends on training, runtime context, product design, harness functions and deployment infrastructure.</p>
+      <h3>Learning objectives</h3>
+      <ul><li>Explain next-token prediction, tokens, contextual representations, training and inference at a functional level.</li><li>Analyse model output as a representation that requires source-sensitive checking.</li><li>Locate an observed capability or failure within the model, current context or surrounding system.</li></ul>
+    </section>
+
+    <section>
+      <h2 id="concepts">Concept map and starter sequence</h2>
+      <ol class="concept-map" aria-label="Reading order for the Module 01 concept map">
+        <li><strong>Research material</strong><span>is represented as text, images, data or metadata</span></li>
+        <li><strong>Tokens and context</strong><span>form the input available for the current inference</span></li>
+        <li><strong>Trained model</strong><span>estimates and generates a next-token sequence</span></li>
+        <li><strong>Product and harness</strong><span>add runtime instructions, tools, state and interface behaviour</span></li>
+        <li><strong>Observed result</strong><span>inherits capabilities and limits from the compound system</span></li>
+      </ol>
+      <p class="source-note"><strong>Read in order:</strong> a scholarly object is represented for computation; that representation enters a bounded context; a trained model generates a continuation; product, harness and infrastructure shape the result that can be observed.</p>
+
+      <div class="learning-sequence">
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>01</span><strong>Representation</strong></div><div class="learning-copy"><h3>Research data are constructed representations</h3><p>A facsimile, transcription and TEI file expose different features of one source. Each representation carries scholarly decisions, affordances and uncertainty, so generated transformations must remain connected to the material and rules that justify them.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>02</span><strong>Prediction</strong></div><div class="learning-copy"><h3>Next-token prediction drives generation</h3><p>An autoregressive language model estimates a probability distribution over possible next tokens. Transformer layers and self-attention build context-dependent representations that let information at different sequence positions influence the continuation.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>03</span><strong>Context</strong></div><div class="learning-copy"><h3>Tokens become contextual representations</h3><p>Tokenisation converts character sequences into discrete units. Embeddings initialise numerical representations, which repeated model layers transform according to surrounding tokens and the current task.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>04</span><strong>Behaviour</strong></div><div class="learning-copy"><h3>Training and inference play different roles</h3><p>Pretraining and posttraining change model parameters and shape available capabilities and assistant behaviour. Ordinary inference uses those trained parameters with current instructions and examples; it does not normally update the weights.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>05</span><strong>Jaggedness</strong></div><div class="learning-copy"><h3>Capability and failure are uneven</h3><p>A model can solve a demanding task and fail on a nearby task that appears simple. Plausible unsupported claims, bias, sycophancy and incomplete interpretability make external evidence and task-specific evaluation necessary.</p></div></article>
+        <article class="learning-panel"><div class="learning-visual" aria-hidden="true"><span>06</span><strong>Boundary</strong></div><div class="learning-copy"><h3>Model, product and deployment form distinct layers</h3><p>Parametric knowledge, retrieved resources and current context are different information layers. Runtime instructions, tools, permissions and infrastructure extend the model into a compound system whose behaviour cannot be attributed to model weights alone.</p></div></article>
+      </div>
+    </section>
+
+    <section class="hub-routes">
+      <h2 id="routes">Learning routes</h2>
+      <ul class="route-list">
+        <li><div><p class="eyebrow">Available workshop Web Module</p><h3><a href="../workshops/2026-09-16-kug-m3gim.html#web-module-model-assistance">Where language models can assist</a></h3><p>Relates model-supported tasks in an estate-material workflow to the sources and rules required for checking.</p></div></li>
+        <li><div><p class="eyebrow">Available teaching route</p><h3><a href="../index.html#video-module-01">Module 01 Video Library</a></h3><p>Extends the starter sequence through the maintained primary-module selection.</p></div></li>
+      </ul>
+    </section>
+
+    <section class="hub-material">
+      <h2 id="material">Teaching material</h2>
+      <ul class="material-links">
+        <li><a href="https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit">Full Slide Deck</a><span> Complete shared teaching structure in Google Slides.</span></li>
+        <li><a href="https://docs.google.com/document/d/1eaGx86RFr4Xywnxmf4Krdy4GKMYMcnW8pAYPXVH-Lr8/edit">Full Lecture Notes, English</a><span> Maintained explanations, evidence boundaries and literature.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 id="videos">Primary videos</h2>
+      <ul class="hub-videos">
+        <li><a href="https://www.youtube.com/watch?v=-0HRzXk8vlk">Why AI Tokens are so Expensive</a><span>25:22</span></li>
+        <li><a href="https://www.youtube.com/watch?v=u4RRxi5tgTA" lang="de">Wie LLMs funktionieren</a><span>1:00:46</span></li>
+        <li><a href="https://www.youtube.com/watch?v=7xTGNNLPyMI">Deep Dive into LLMs like ChatGPT</a><span>3:31:23</span></li>
+        <li><a href="https://www.youtube.com/watch?v=J51oZYcNvP8">What is Multimodal AI? How LLMs Process Text, Images, and More</a><span>9:15</span></li>
+        <li><a href="https://www.youtube.com/watch?v=-j4shkNnYVw">Just Go Local Solves Nothing. Here's What Does</a><span>11:45</span></li>
+      </ul>
+      <p><a href="../index.html#video-module-01">Open the complete Module 01 group in the Video Library</a> · <a href="https://www.youtube.com/playlist?list=PLXY4kw40KBaY">Open the ordered Video Playlist</a></p>
+    </section>
+
+    <section>
+      <h2 id="workshops">Representative workshops</h2>
+      <p>All seven registered workshops include Module 01. These three profiles show different audiences and research-data settings.</p>
+      <ul class="hub-workshops">
+        <li><a href="../workshops/2026-09-16-kug-m3gim.html">Making Estate Materials Digitally Accessible</a><span>16–17 September 2026 · KUG Summer School · planned</span></li>
+        <li><a href="../workshops/2026-09-25-clariah-at.html">Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</a><span>25 September 2026 · CLARIAH-AT Summer School · planned</span></li>
+        <li><a href="../workshops/2026-10-05-hedit-heidelberg.html" lang="de">HEDIT KI-Workshop 2026</a><span>5–6 October 2026 · digital scholarly editions · planned</span></li>
+      </ul>
+      <p><a href="../index.html#workshops">Browse all workshop profiles</a></p>
+    </section>
+
+    <aside class="source-note" aria-label="Source and maintenance note"><p>This overview is derived from the maintained Full Slide Deck, Full Lecture Notes and Module 01 source text. Video and workshop routes reflect the public registers checked on 25 August 2026.</p></aside>
+    <nav class="hub-continue" aria-label="Continue through the teaching line"><a href="../preparation.html">← Module 00: Preparation</a><a href="../index.html">Complete teaching line</a><a href="02-prompt-engineering.html">Module 02: Prompt Engineering →</a></nav>
+  </article>
+</div></main>
+<footer class="site-foot"><div class="wrap"><div class="foot-publisher"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"><div class="imprint"><p class="name">Christopher Pollin</p><p>Digital Humanities Craft</p><p class="contact"><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p></div></div><p class="foot-provenance">Developed and maintained by <a href="https://dhcraft.org">Digital Humanities Craft</a> using <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a> and <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a>.</p><nav class="foot-nav" aria-label="Footer"><p class="foot-nav-label">Further links</p><ul><li><a href="../about.html">About &amp; Imprint</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Teaching material</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a></li><li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li><li><a href="https://dhcraft.org/imprint">Legal notice on dhcraft.org</a></li></ul></nav></div></footer>
+</body>
+</html>

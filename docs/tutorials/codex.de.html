@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einführung in die Codex CLI &middot; KCE</title>
+<meta name="description" content="Eine quellengeprüfte Einführung in die Codex CLI, Projektanweisungen, Berechtigungen, Erweiterungen und eine reversible erste Aufgabe.">
+<link rel="alternate" hreflang="en" href="codex.html">
+<link rel="alternate" hreflang="de" href="codex.de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20260825-19">
+<link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+<body class="preparation-page">
+<a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
+<header class="site-head"><div class="wrap">
+  <div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Website von Digital Humanities Craft"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="../index.de.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div>
+  <div class="head-tools"><nav class="site-nav" aria-label="Seite"><ul><li><a href="../preparation.de.html">Vorbereitung</a></li><li><a href="../about.de.html">Über &amp; Impressum</a></li><li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li></ul></nav><nav class="language-nav" aria-label="Sprache"><a href="codex.html" lang="en">EN</a><a href="codex.de.html" lang="de" aria-current="page">DE</a></nav></div>
+</div></header>
+<main id="main-content" tabindex="-1"><div class="wrap">
+  <a class="backlink" href="../modules/04-agentic-engineering.de.html">&larr; Modul 04 &middot; Agentic Engineering</a>
+  <header class="page-head preparation-head"><div><h1>Einführung in die Codex CLI</h1><p class="event">Dieses Tutorial führt die Codex CLI als AI Harness für begrenzte Arbeit in einem lokalen Repository ein. Es verbindet Repository-Anweisungen, Werkzeugberechtigungen, prüfbare Änderungen und Verifikation.</p></div><div><p class="stamp">Quellen und Produktdetails geprüft am 25. August 2026</p><p class="facts"><span>Verwende ein entbehrliches Übungsrepository ohne vertrauliche Dateien.</span><span>Schließe vor dem Einstieg den Vorbereitungspfad ab.</span></p></div></header>
+  <div class="tutorial-shell">
+    <aside class="tutorial-sidebar">
+      <nav class="tutorial-nav" aria-label="Tutorialabschnitte">
+        <p class="tutorial-nav__title">Codex CLI</p>
+        <p class="tutorial-nav__group">Vergleichbare Sequenz</p>
+        <ol><li><a href="#goal"><span>01</span>Lernziel</a></li><li><a href="#prerequisites"><span>02</span>Voraussetzungen</a></li><li><a href="#install"><span>03</span>Installation</a></li><li><a href="#workspace"><span>04</span>Workspace</a></li><li><a href="#instructions"><span>05</span>Anweisungen</a></li><li><a href="#permissions"><span>06</span>Berechtigungen</a></li><li><a href="#extensions"><span>07</span>Erweiterungen</a></li><li><a href="#first-check"><span>08</span>Erste Prüfung</a></li></ol>
+      </nav>
+    </aside>
+
+    <div class="tutorial-sequence harness-steps">
+      <section class="tutorial-panel tutorial-panel--opening harness-step" id="goal">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span><img class="route-icon" src="../assets/routes/codex.svg" alt="" width="48" height="48"></span><strong>Codex CLI</strong><small>Terminal in einem lokalen Repository</small></div><div class="path-node"><span>02</span><strong>Werkzeuge</strong><small>im Scope untersuchen und handeln</small></div><div class="path-node"><span>03</span><strong>Evidenz</strong><small>Diffs, Prüfungen und Rückgabe</small></div></div>
+          <figcaption>Die Codex CLI verbindet ein Modell mit einem begrenzten lokalen Workspace, Werkzeugen und prüfbarer Evidenz.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 1</p>
+          <h2>Bestimme Harness und Arbeitsoberfläche</h2>
+          <p class="definition">Die Codex CLI ist ein terminalbasierter AI Harness für die Arbeit mit Projektdateien, Repository-Anweisungen, Werkzeugen und Ausführungsfeedback.</p>
+          <ol class="goal-list"><li>Bestimme den Workspace als Grenze des autorisierten Dateibereichs.</li><li>Identifiziere das aktive Modell und die bereitgestellten Werkzeuge.</li><li>Fordere Evidenz durch Diffs, Befehle und gemeldete Prüfungen an.</li><li>Behandle die menschliche Abnahme als eigenen Zustand nach der technischen Validierung.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Du kannst Modell, Codex, Workspace und die Evidenz für die Prüfung unterscheiden.</p>
+          <p class="source-note"><a href="https://developers.openai.com/codex/cli/">Offizielle Codex-CLI-Dokumentation</a> &middot; <a href="https://academy.openai.com/public/videos/codex-bootcamp-101-agentic-coding-2026-07-31">Codex bootcamp 101</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="prerequisites">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="tool-stack"><div><span>01</span><strong>Workspace</strong><small>entbehrliches Übungsrepository</small></div><div><span>02</span><strong>Git-Zustand</strong><small>bekannte Ausgangslage</small></div><div><span>03</span><strong>Zugang</strong><small>aktueller Account und Produktweg</small></div><div><span>04</span><strong>Prüfungen</strong><small>bereits gepflegte Projektbefehle</small></div></div></div>
+          <figcaption>Ein bekannter Repository-Zustand macht das erste Ergebnis beobachtbar und reversibel.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 2</p>
+          <h2>Bereite ein begrenztes Repository vor</h2>
+          <ol class="steps"><li>Verwende ein entbehrliches Repository ohne vertrauliche Dateien oder Zugangsdaten.</li><li>Führe <code>git status --short</code> außerhalb von Codex aus und halte den Ausgangszustand fest.</li><li>Bestimme die Repository-Anweisungen und die Befehle zur Prüfung der vorhandenen Artefakte.</li><li>Prüfe den aktuellen Account oder Workspace-Zugang für die gewählte Codex-Oberfläche.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Repository-Grenze, Git-Ausgangszustand und verfügbare Prüfungen sind vor dem Start bekannt.</p>
+          <p class="source-note">Produktvoraussetzungen am 25. August 2026 anhand der <a href="https://developers.openai.com/codex/cli/">offiziellen CLI-Dokumentation</a> geprüft.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="install">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="mock-window mock-window--terminal"><div class="mock-window__bar"><span class="mock-window__controls"></span><span class="mock-window__title">practice-repository</span></div><pre><code>codex --version
+codex --sandbox read-only
+
+Workspace: practice-repository</code></pre></div></div>
+          <figcaption>Der offizielle Installationsweg endet mit einer sichtbaren Version und einem lesenden Start.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 3</p>
+          <h2>Installiere die Codex CLI über den gepflegten Weg</h2>
+          <ol class="steps"><li>Folge dem aktuellen Installationsweg in der offiziellen Codex-CLI-Dokumentation.</li><li>Öffne ein neues Terminal, wenn die Installation den Suchpfad für ausführbare Dateien verändert.</li><li>Führe <code>codex --version</code> aus und dokumentiere die im Übungsweg verwendete Version.</li><li>Starte die CLI mit <code>codex --sandbox read-only</code> aus dem Übungsrepository.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Codex meldet seine Version und öffnet das vorgesehene Repository mit ausgewählter Read-only-Sandbox.</p>
+          <p class="source-note">Installationsbefehl und CLI-Flags am 25. August 2026 geprüft. <a href="https://developers.openai.com/codex/cli/">Offizielle CLI-Anleitung öffnen</a>.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="workspace">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>01</span><strong>Workspace</strong><small>Repository und Branch</small></div><div class="path-node"><span>02</span><strong>Modell</strong><small>aktives Modell oder Provider</small></div><div class="path-node"><span>03</span><strong>Aufgabe</strong><small>begrenzte Anfrage und Abschlusskriterium</small></div></div>
+          <figcaption>Die Arbeitsoberfläche soll Repository, Modellweg und aktuelle Aufgabengrenze sichtbar machen.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 4</p>
+          <h2>Bestätige Workspace und aktiven Modellweg</h2>
+          <ol class="steps"><li>Prüfe Repository und Branch, bevor du die Aufgabe übergibst.</li><li>Identifiziere das aktive Modell oder den Provider in der CLI.</li><li>Nenne die Dateien für die Untersuchung und die erwartete Rückgabe-Evidenz.</li><li>Ordne <code>codex --oss --local-provider ollama</code> und <code>codex --oss --local-provider lmstudio</code> als optionale lokale Provider-Wege ein. Diese Einführung verwendet den Standardweg.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Repository, Branch, Modellweg und Aufgabengrenze lassen sich aus dem sichtbaren Sitzungszustand benennen.</p>
+          <p class="source-note"><code>--oss</code> und <code>--local-provider</code> am 25. August 2026 in der <a href="https://developers.openai.com/codex/cli/reference/">offiziellen Codex-CLI-Referenz</a> geprüft.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="instructions">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>01</span><strong>Globaler Scope</strong><small><code>AGENTS.override.md</code> oder <code>AGENTS.md</code></small></div><div class="path-node"><span>02</span><strong>Projektpfad</strong><small>Wurzel bis Arbeitsordner</small></div><div class="path-node"><span>03</span><strong>Wirksame Kette</strong><small>tiefere Anweisungen gelten später</small></div></div>
+          <figcaption>Codex kombiniert eine globale Anweisungsdatei mit Projektanweisungen von der Repository-Wurzel bis zum Arbeitsordner.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 5</p>
+          <h2>Lies die vollständige Anweisungshierarchie</h2>
+          <p class="definition">Codex lädt zuerst eine globale Datei aus <code>CODEX_HOME</code>: <code>AGENTS.override.md</code> hat Vorrang vor <code>AGENTS.md</code>. Anschließend prüft Codex jeden Ordner von der Projektwurzel bis zum Arbeitsordner und bevorzugt erneut <code>AGENTS.override.md</code>. Die Anweisungen werden von der Wurzel abwärts kombiniert, sodass tiefere Regeln später gelten.</p>
+          <ol class="steps"><li>Bestimme die globale <code>AGENTS.override.md</code> oder <code>AGENTS.md</code> in <code>CODEX_HOME</code>.</li><li>Bestimme die geltende Anweisungsdatei in jedem Ordner von der Projektwurzel bis zum aktuellen Ordner.</li><li>Lies die wirksame Kette in Reihenfolge und ordne jeder Regel ihren Scope zu.</li><li>Verwende <code>/init</code>, wenn das Repository eine geprüfte erste Anweisungsdatei benötigt.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Du kannst die geltenden globalen und projektbezogenen Anweisungsdateien sowie ihren Vorrang benennen.</p>
+          <p class="source-note"><a href="https://developers.openai.com/codex/guides/agents-md/">Offizielle Anleitung zu <code>AGENTS.md</code></a>, geprüft am 25. August 2026.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="permissions">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="tool-stack"><div><span>01</span><strong>Sandbox</strong><small>technische Ausführungsgrenze</small></div><div><span>02</span><strong>Approval Policy</strong><small>Zeitpunkt der Nutzerbestätigung</small></div><div><span>03</span><strong><code>/permissions</code></strong><small>sichtbare aktuelle Konfiguration</small></div><div><span>04</span><strong>Aufgaben-Scope</strong><small>autorisierte Handlung und Dateien</small></div></div></div>
+          <figcaption>Sandbox, Approval Policy und Aufgaben-Scope sind getrennte Kontrollen, die zusammenpassen müssen.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 6</p>
+          <h2>Prüfe Werkzeuge und Berechtigungsgrenzen vor einer Handlung</h2>
+          <p class="definition">Die Sandbox setzt die technische Grenze für Befehle. Die Approval Policy bestimmt, wann Codex vor dem Überschreiten dieser Grenze anhalten und eine Autorisierung anfordern muss.</p>
+          <ol class="steps"><li>Öffne <code>/permissions</code> und prüfe aktive Sandbox und Approval Policy.</li><li>Halte die erste Übung in der Read-only-Sandbox und erlaube ausschließlich Dateiinspektion.</li><li>Prüfe jede angeforderte Berechtigungs- oder Sandbox-Ausweitung anhand von Aufgabe und Repository-Grenze.</li><li>Fordere von Codex die Meldung ausgeführter Befehle, beobachteter Ausgaben und verbleibender Unsicherheit.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Die angezeigten Berechtigungen erlauben Inspektion und schließen Workspace-Änderungen während der ersten Übung aus.</p>
+          <p class="source-note"><a href="https://learn.chatgpt.com/docs/sandboxing">Sandboxing</a> und <a href="https://learn.chatgpt.com/docs/agent-approvals-security">Agent Approvals</a> am 25. August 2026 in der offiziellen OpenAI-Dokumentation geprüft.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="extensions">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="tool-stack"><div><span>01</span><strong>Skills</strong><small>gepflegte Verfahren</small></div><div><span>02</span><strong>MCP</strong><small>externe Werkzeuge und Context</small></div><div><span>03</span><strong>Subagents</strong><small>begrenzte delegierte Untersuchungen</small></div><div><span>04</span><strong>Worktrees</strong><small>isolierte Dateiänderungen</small></div></div></div>
+          <figcaption>Codex besitzt getrennte Mechanismen für Verfahren, Verbindungen, Delegation und Datei-Isolation.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 7</p>
+          <h2>Bestimme Erweiterungen und Mechanismen für parallele Arbeit</h2>
+          <div class="requirement-list"><div><h3>Skills und MCP</h3><p>Skills stellen gepflegte Aufgabenverfahren bereit. Verbindungen über das Model Context Protocol liefern externe Ressourcen und Werkzeuge mit einem prüfbaren Scope.</p></div><div><h3>Subagents und Worktrees</h3><p>Subagents liefern Evidenz aus begrenzten Kontexten. Worktrees isolieren gleichzeitige Dateiänderungen vor der Integration.</p></div></div>
+          <p class="checkpoint"><strong>Prüfung:</strong> Jeder aktive Mechanismus besitzt eine definierte Funktion, Quelle, Reichweite und Prüfroute.</p>
+          <p class="source-note"><a href="https://developers.openai.com/codex/skills/">Skills</a> &middot; <a href="https://developers.openai.com/codex/mcp/">MCP</a> &middot; <a href="https://developers.openai.com/codex/subagents/">Subagents</a> &middot; <a href="https://developers.openai.com/codex/app/worktrees/">Worktrees</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel harness-step" id="first-check">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--dark" aria-hidden="true"><div class="status-visual"><span><code>read-only</code><strong>Repository untersuchen</strong></span><span><code>AGENTS.md</code><strong>geltende Anweisungen benennen</strong></span><span><code>checks</code><strong>vorhandene Befehle melden</strong></span><span><code>git status --short</code><strong>unveränderten Zustand bestätigen</strong></span></div></div>
+          <figcaption>Die erste Aufgabe endet mit Evidenz aus Codex und einer unabhängigen Git-Prüfung.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 8</p>
+          <h2>Führe eine reversible Repository-Orientierung aus</h2>
+          <p class="definition">Bitte Codex um die Untersuchung des Repositorys, die geltenden Anweisungen und eine Erklärung der gepflegten Prüfungen. Die Aufgabe bleibt in der Read-only-Sandbox.</p>
+          <ol class="steps"><li>Fordere eine kompakte Repository-Zusammenfassung mit direkten Dateiverweisen an.</li><li>Lass Codex die geltenden globalen und projektbezogenen Anweisungsdateien sowie vorhandene Prüfbefehle benennen.</li><li>Untersuche die zitierten Dateien und vergleiche die Antwort mit dem Repository-Zustand.</li><li>Beende die Sitzung und führe <code>git status --short</code> außerhalb von Codex aus.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Repository-Evidenz stützt die Zusammenfassung und der abschließende Git-Zustand entspricht der dokumentierten Ausgangslage.</p>
+          <p class="source-note">Der Arbeitsloop folgt den quellengeprüften Lernzielen von <a href="https://academy.openai.com/public/videos/codex-bootcamp-101-agentic-coding-2026-07-31">Codex bootcamp 101</a>.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div></main>
+<footer class="site-foot"><div class="wrap"><div class="foot-publisher"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"><div class="imprint"><p class="name">Christopher Pollin</p><p>Digital Humanities Craft</p><p class="contact"><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p></div></div><p class="foot-provenance">Entwickelt und gepflegt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a> und <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a>.</p><nav class="foot-nav" aria-label="Fußzeile"><p class="foot-nav-label">Weiterführende Links</p><ul><li><a href="../about.de.html">Über &amp; Impressum</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Lehrmaterial</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Forschungsleitstelle</a></li><li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li><li><a href="https://dhcraft.org/imprint">Rechtstext auf dhcraft.org</a></li></ul></nav></div></footer>
+</body>
+</html>

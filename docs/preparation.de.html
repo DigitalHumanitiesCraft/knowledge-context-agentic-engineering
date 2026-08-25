@@ -7,7 +7,7 @@
 <link rel="alternate" hreflang="en" href="preparation.html"><link rel="alternate" hreflang="de" href="preparation.de.html">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20260825-18">
+<link rel="stylesheet" href="assets/site.css?v=20260825-19">
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png"><link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png"><link rel="manifest" href="assets/favicon/site.webmanifest">
 </head>
 <body class="preparation-page">
@@ -15,19 +15,24 @@
 <header class="site-head"><div class="wrap"><div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Website von Digital Humanities Craft"><img src="assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="index.de.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div><div class="head-tools"><nav class="site-nav" aria-label="Seite"><ul><li><a href="preparation.de.html" aria-current="page">Vorbereitung</a></li><li><a href="about.de.html">Über &amp; Impressum</a></li><li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li></ul></nav><nav class="language-nav" aria-label="Sprache"><a href="preparation.html" lang="en">EN</a><a href="preparation.de.html" lang="de" aria-current="page">DE</a></nav></div></div></header>
 <main id="main-content" tabindex="-1"><div class="wrap">
   <a class="backlink" href="index.de.html">&larr; Knowledge, Context and Agentic Engineering</a>
-  <header class="page-head preparation-head"><div><h1>Arbeitsumgebung einrichten</h1><p class="event">Dieses Tutorial verbindet Editor, Terminal, Python, eine lokale Webseite und ein AI Harness in einem eigens angelegten Übungsordner ohne vertrauliche Daten. Es setzt keine Programmiererfahrung voraus und ist unabhängig von einem Projekt oder Workshop.</p></div><div><p class="stamp">Zuletzt geprüft am 25. August 2026</p><p class="facts"><span>Arbeite auf dem Laptop, den du später verwendest.</span><span>Halte vertrauliche und unersetzliche Dateien außerhalb des Übungsordners.</span></p></div></header>
-  <div class="tutorial-shell">
-    <aside class="tutorial-sidebar">
+  <nav class="module-nav" aria-label="Module"><ol><li><a href="preparation.de.html" aria-current="page"><span>00</span>Vorbereitung</a></li><li class="m1"><a href="modules/01-understanding-large-language-models.de.html"><span>01</span>LLMs</a></li><li class="m2"><a href="modules/02-prompt-engineering.de.html"><span>02</span>Prompts</a></li><li class="m3"><a href="modules/03-knowledge-context-engineering.de.html"><span>03</span>Wissen &amp; Kontext</a></li><li class="m4"><a href="modules/04-agentic-engineering.de.html"><span>04</span>Agenten</a></li><li class="m5"><a href="modules/05-critical-perspectives-governance.de.html"><span>05</span>Governance</a></li></ol></nav>
+  <header class="page-head preparation-head"><div><p class="module-kicker"><img src="assets/modules/00-workspace.svg" alt="" width="48" height="48">Neutrales Voraussetzungenmodul</p><h1>Modul 00 &middot; Vorbereitung und AI Coding Literacy</h1><p class="event">Modul 00 schafft die beobachtbare technische und methodische Arbeitsfähigkeit, die vor der Delegation an ein AI Harness erforderlich ist. Dieses Tutorial verbindet Editor, Terminal, Python, eine lokale Webseite und eine begrenzte Harness-Aufgabe in einem eigens angelegten Übungsordner.</p><p class="module-question"><strong>Lernfrage:</strong> Was muss ich beobachten, beschreiben, ausführen und prüfen können, bevor ich eine Aufgabe delegiere?</p></div><div><p class="stamp">Zuletzt geprüft am 25. August 2026</p><p class="facts"><span>Arbeite auf dem Laptop, den du später verwendest.</span><span>Halte vertrauliche und unersetzliche Dateien außerhalb des Übungsordners.</span></p></div></header>
+  <div class="tutorial-shell learning-shell">
+    <aside class="tutorial-sidebar learning-nav">
       <nav class="tutorial-nav" aria-label="Tutorialabschnitte">
         <p class="tutorial-nav__title">Setup-Tutorial</p>
-        <p class="tutorial-nav__group">Start</p>
-        <ol><li><a href="#goals"><span>00</span>Orientierung</a></li><li><a href="#requirements"><span>01</span>Voraussetzungen</a></li></ol>
-        <p class="tutorial-nav__group">Lokale Umgebung</p>
+        <p class="tutorial-nav__group">Orientierung</p>
+        <ol><li><a href="#goals"><span>00</span>Zweck</a></li></ol>
+        <p class="tutorial-nav__group">Voraussetzungen</p>
+        <ol><li><a href="#requirements"><span>01</span>Voraussetzungen</a></li></ol>
+        <p class="tutorial-nav__group">Arbeitsumgebung</p>
         <ol><li><a href="#vscode"><span>02</span>Workspace</a></li><li><a href="#terminal"><span>03</span>Terminal</a></li><li><a href="#python"><span>04</span>Python</a></li><li><a href="#server"><span>05</span>Localhost</a></li><li><a href="#local-check"><span>06</span>Zwischenziel</a></li></ol>
-        <p class="tutorial-nav__group">AI Harness</p>
+        <p class="tutorial-nav__group">Harness</p>
         <ol><li><a href="#harnesses"><span>07</span>Auswahl</a></li><li><a href="#claude-code"><span>A</span>Claude Code</a></li><li><a href="#codex"><span>B</span>Codex</a></li><li><a href="#pi"><span>C</span>Pi</a></li></ol>
-        <p class="tutorial-nav__group">Abschluss</p>
-        <ol><li><a href="#git"><span>08</span>Git</a></li><li><a href="#check"><span>09</span>Prüfung</a></li><li><a href="#trouble"><span>10</span>Diagnose</a></li></ol>
+        <p class="tutorial-nav__group">Verifikation</p>
+        <ol><li><a href="#git"><span>08</span>Git</a></li><li><a href="#check"><span>09</span>Prüfung</a></li></ol>
+        <p class="tutorial-nav__group">Diagnose</p>
+        <ol><li><a href="#trouble"><span>10</span>Diagnose</a></li></ol>
       </nav>
     </aside>
 
@@ -52,6 +57,7 @@
             <li>Einem AI Harness kontrollierten, überprüfbaren Zugriff auf diesen Ordner geben.</li>
             <li>Fehler anhand des vollständigen Befehls und seiner Ausgabe untersuchen.</li>
           </ol>
+          <div class="module00-routes"><h3>Von der gemeinsamen Grundlage weiterlernen</h3><ul><li><a href="https://digitalhumanitiescraft.github.io/ai-coding-literacy/de/">AI Coding Literacy</a> ist ein externes deutschsprachiges Curriculum zum systematischen Üben.</li><li><a href="#harnesses">Vergleiche die drei Harness-Einführungen</a>, nachdem die lokale Arbeitsumgebung ihre Prüfungen bestanden hat.</li></ul></div>
         </div>
       </section>
 
@@ -177,9 +183,9 @@ python ready</code></pre></div></div>
           <h2>Wähle ein AI Harness</h2>
           <p class="definition">Ein Chatbot erhält übergebene Nachrichten und Dateien. Ein AI Harness verbindet ein Modell zusätzlich mit Arbeitsordner, Werkzeugen und Befehlen und legt Freigabepunkte fest.</p>
           <div class="harness-grid">
-            <article><p class="harness-kind">Anthropic &middot; proprietär</p><h3>Claude Code</h3><p>VS-Code-Erweiterung und Terminaloberfläche.</p><p class="harness-access">Claude-Konto, API-Guthaben oder unterstützter Organisationszugang.</p><a href="#claude-code">Tutorial</a></article>
-            <article><p class="harness-kind">OpenAI &middot; offene CLI</p><h3>Codex</h3><p>VS-Code-Erweiterung und quelloffenes Terminal-Harness.</p><p class="harness-access">Unterstützter ChatGPT-Plan oder OpenAI-API-Schlüssel.</p><a href="#codex">Tutorial</a></article>
-            <article><p class="harness-kind">Earendil Works &middot; MIT</p><h3>Pi</h3><p>Minimales Multi-Provider-Harness im Terminal.</p><p class="harness-access">Node.js sowie unterstütztes Abonnement oder Provider-Schlüssel.</p><a href="#pi">Tutorial</a></article>
+            <article><p class="harness-kind">Anthropic &middot; proprietär</p><h3>Claude Code</h3><p>VS-Code-Erweiterung und Terminaloberfläche.</p><p class="harness-access">Claude-Konto, API-Guthaben oder unterstützter Organisationszugang.</p><a href="tutorials/claude-code.de.html">Vollständige Einführung</a> &middot; <a href="#claude-code">Setup-Schritt</a></article>
+            <article><p class="harness-kind">OpenAI &middot; offene CLI</p><h3>Codex</h3><p>VS-Code-Erweiterung und quelloffenes Terminal-Harness.</p><p class="harness-access">Unterstützter ChatGPT-Plan oder OpenAI-API-Schlüssel.</p><a href="tutorials/codex.de.html">Vollständige Einführung</a> &middot; <a href="#codex">Setup-Schritt</a></article>
+            <article><p class="harness-kind">Earendil Works &middot; MIT</p><h3>Pi mit lokalem Modell</h3><p>Nachvollziehbares Terminal-Harness mit mehreren Anbietern und optionalem lokalem Modellendpunkt.</p><p class="harness-access">Node.js, Pi und ein getrennt konfigurierter Anbieter oder lokaler Modelldienst.</p><a href="tutorials/pi.de.html">Vollständige Einführung</a> &middot; <a href="#pi">Setup-Schritt</a></article>
             <article><p class="harness-kind">Anomaly &middot; MIT</p><h3>OpenCode</h3><p>Multi-Provider-Harness mit Terminal-, Desktop- und Editoroberflächen.</p><p class="harness-access">Zugang hängt vom verbundenen Provider ab.</p><a href="https://opencode.ai/docs/">Dokumentation</a></article>
           </div>
           <p class="source-note">Ältere Materialien nennen Gemini CLI. Google verlagerte den allgemeinen Zugang für Individualkonten im Juni 2026 zu Antigravity CLI. Prüfe vor einer Einrichtung den <a href="https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/">aktuellen Google-Hinweis</a>.</p>

@@ -6,6 +6,8 @@ This repository is the home of a teaching line on working with large language mo
 
 The material is maintained through three holdings, each with its own function. The **Full Slide Deck** is the complete overview of the teaching material in slide form. It serves as a reference work and as the source from which workshop-specific decks are assembled, and it is not presented as one teaching session. The **Full Lecture Notes** are the written-out counterpart of the slides and carry the explanations and context needed for reading and later reference. The **Video Playlist** combines DHCraft videos with selected contributions by others; its deliberate sequence runs from the foundations to more complex topics and forms a structured learning path that is curated, maintained and extended as suitable material appears. All three holdings share the same five modules, and the playlist assigns every entry one primary module.
 
+The public learning architecture adds **Module 00 · Preparation and AI Coding Literacy** as a neutral prerequisite. Modules 01 through 05 each have a bilingual overview hub that connects their concepts, starter sequence, teaching material, videos and workshop uses. Module 00 does not enter workshop module arrays or video classification.
+
 | Module | Title |
 | --- | --- |
 | 1 | Understanding Large Language Models |
@@ -29,13 +31,19 @@ Only upcoming instances live in this repository. Once an instance has been taugh
 | `docs/data/videos.json` | The Video Playlist inventory, including order, primary module, any related modules and duration |
 | `workshops/<id>/` | One folder per upcoming instance, holding `profile.md`, `slide-deck.md`, `lecture-notes.md` and `data/` |
 | `docs/` | The platform (static site, GitHub Pages), including the register `docs/data/workshops.json` and the covers in `docs/assets/covers/` |
+| `docs/modules/` | Five bilingual subject-module hubs for Modules 01 through 05 |
+| `docs/tutorials/` | Bilingual AI Harness introductions for Claude Code, Codex and Pi |
 | `communication/` | The Research Mission Control transport for current briefs, results and recipient state |
 
 Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the register, the workshop folder, the cover file, the subpage and the git tag.
 
 ## The platform
 
-The platform is a static site served by GitHub Pages from `docs/`. The landing page presents the material with its five modules and the upcoming instances as cards; each instance has its own subpage, which is the live resource during the course and the follow-up material afterwards. A shared preparation page holds what participants set up before a course.
+The platform is a no-build static site in `docs/`; its content and navigation require no JavaScript. The installed v0.3 tree contains 36 HTML files in eighteen English/German pairs on stylesheet version `20260825-19`. Module 00 retains the stable Preparation routes, and ten files under `docs/modules/` provide the five bilingual subject hubs. Every visible module marker routes to the language-matched hub.
+
+The landing pages organise five learning routes into Foundation, AI Harness introductions and Research workflow. AI Coding Literacy is the external German foundation. Claude Code, Codex and Pi are local bilingual Module 04 routes. Research Data and Knowledge Work remains visibly in preparation. The three Harness introductions use a comparable eight-step sequence from purpose and prerequisites to a first reversible check. Module 04 also carries an embedded Curated Skills area with externally maintained examples and explicit review status.
+
+This v0.3 working tree is actively installed, formally validated and browser-observed at the seven required widths. Commit, tag, push, deployment and Research Director acceptance remain separate states.
 
 https://digitalhumanitiescraft.github.io/knowledge-context-agentic-engineering/
 

@@ -4,7 +4,7 @@ Register of every contribution still required from the Research Director, coveri
 
 The log is current coordination state. Durable project knowledge stays in `knowledge/`, and `knowledge/journal.md` receives the provenance of a contribution once it has been written back and verified. `communication/PROTOCOL.md` defines the lifecycle, and every `What I need from you` section is derived from the entries below.
 
-Identifiers are stable and are never reused. An `open` entry can be answered now. A `waiting` entry names the trigger that has to occur first. Twenty-three entries are current, eleven of them open and twelve waiting.
+Identifiers are stable and are never reused. An `open` entry can be answered now. A `waiting` entry names the trigger that has to occur first. Twenty-three entries are current, thirteen of them open and ten waiting.
 
 ## RD-001 Fine module cut
 
@@ -175,7 +175,7 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 ## RD-017 v0.2 interface release
 
 - **Type**: Acceptance
-- **Status**: waiting
+- **Status**: open
 - **Trigger**: Operations has installed the complete brief set, returned formal and browser evidence, pushed the milestone and confirmed the deployed state.
 - **Required contribution**: Inspect the guided acceptance route and accept the v0.2 interface or name concrete corrections.
 - **Recommendation**: Review one representative page per component family instead of rereading all 22 pages; automated parity checks cover the repeated structure.
@@ -186,7 +186,7 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 ## RD-018 KUG Web Module pilot
 
 - **Type**: Acceptance
-- **Status**: waiting
+- **Status**: open
 - **Trigger**: Both language versions of the five-unit KUG Web Module are implemented and technically verified.
 - **Required contribution**: Accept or correct the learning sequence, the relation of visuals to explanations and the boundary between Web Module, Slide Deck and Lecture Notes.
 - **Recommendation**: Accept the component architecture independently of the later M3GIM exercise-data release; the rights-safe conceptual sequence can be reviewed first.
