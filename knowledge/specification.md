@@ -33,7 +33,7 @@ Requirements for the public platform (`docs/`, GitHub Pages) and the carrying re
 
 ## Requirements
 
-1. Paired English and German landing pages begin with a compact hero. The main column contains the title and a substantive abstract covering subject, audience, the common five-module teaching material and the derivation of workshop profiles. The five module titles occupy a separate right column without subtitles and move below the abstract on narrow viewports.
+1. Paired English and German landing pages begin with a compact hero. The main column contains the title and a substantive abstract covering subject, audience, the common five-module teaching material and the derivation of workshop profiles. The five module titles occupy a separate right column without subtitles and move below the abstract on narrow viewports. The German page localises the descriptive module titles. Large Language Models and AI Harnesses are emphasised at first mention and link to compact, language-matched definitions in the hero.
 2. Each card shows date, title, event, audience and language, the cover image, and the links that exist; missing artifacts appear as quiet "in preparation" labels, never as dead links.
 3. Each registered instance has a paired English and German subpage that serves as the live course resource and as follow-up material. The compact header carries title, subtitle, date, event, language and page licence. No cover image appears on the detail page.
 4. One overview grid is the first content block. Its three columns carry the abstract, the ordered outline and the learning objectives. It replaces the earlier separate specialisation, sequence and module-coverage blocks.
@@ -58,6 +58,7 @@ Requirements for the public platform (`docs/`, GitHub Pages) and the carrying re
 - Every public page has one GitHub link in the top navigation and no Workshops, Modules or Preparation link there. Its brand link resolves to the language-matched landing page.
 - Both landing pages contain the four stable anchors `#modules`, `#material`, `#workshops` and `#preparation`; the preparation anchor links to the full language-matched guide.
 - The hero module lists contain exactly the five canonical module titles and no subtitles. Teaching Materials is the first section after the hero.
+- The German hero uses its language-matched module titles. Both landing pages expose visible definitions for Large Language Models and AI Harnesses without a modal, tooltip or JavaScript dependency.
 - Every workshop page contains one overview grid, one slide position, one course-reader position and one references section in that order. It contains no cover image, module-coverage block, public project-input block or provenance block.
 - Existing Google Slides and Google Docs links resolve through an embedded viewer and a visible direct link. Every existing slide deck also resolves through its registered PDF export.
 - The site is fully readable without JavaScript.

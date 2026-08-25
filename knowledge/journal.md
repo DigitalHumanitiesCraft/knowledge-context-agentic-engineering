@@ -136,3 +136,11 @@ The selected PNG files remain publication assets even where the generator introd
 **Course.** The footer on all eighteen public pages now identifies Digital Humanities Craft, names the documented AI harnesses and Promptotyping, and links both the project repository and the Promptotyping repository with a restrained GitHub mark. The two-family type system remains unchanged. Unused motif, sequence and excerpt selectors were removed from the shared stylesheet, and the responsive footer layout was reduced to its active elements.
 
 **Outcome.** Every public page carries the same compact provenance and repository contract. The change adds no script or external runtime dependency.
+
+### 2026-08-25 — Landing-page terms and German module titles corrected
+
+**Goal.** Correct the language switch and make the two central technical terms understandable at first contact.
+
+**Course.** The German landing page now localises the descriptive module titles. Prompt Engineering and Agentic Engineering retain their established method names. The first references to Large Language Models and AI Harnesses use the full terms and link to two compact definitions beneath the module list. The definitions remain visible in the page flow and require no modal, tooltip or JavaScript.
+
+**Outcome.** The two language versions now differ where interface language requires it and share the same explicit conceptual entry points.

@@ -54,6 +54,7 @@
   /* One turquoise, clears AA, so the same value carries interactive text and
      the motif highlights without a second variant. */
   --accent: #0A7E7C;         /* 4.8:1 */
+  --accent-soft: #DDEDEC;    /* quiet term highlight */
 
   /* --- Identity palette, derived from the watercolor logo ---------------- */
   /* Four families measured in the mark itself. Used only as module marks, never
@@ -285,6 +286,16 @@ img { max-width: 100%; height: auto; }
   line-height: 1.65;
 }
 
+.concept-link {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.14em;
+}
+
+.concept-link:hover { color: var(--accent); }
+
 .hero-modules {
   scroll-margin-top: var(--s4);
 }
@@ -337,6 +348,33 @@ img { max-width: 100%; height: auto; }
 .module-list li.m5 .dot { background: var(--m5); }
 
 .module-list h3 { font-size: var(--text-title); }
+
+.concept-definitions {
+  display: grid;
+  gap: var(--s1);
+  margin: var(--s3) 0 0;
+}
+
+.concept-definitions > div {
+  scroll-margin-top: var(--s3);
+  padding: 0.75rem var(--s2);
+  border-radius: var(--radius);
+  background: var(--tint);
+}
+
+.concept-definitions > div:target { background: var(--accent-soft); }
+
+.concept-definitions dt {
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.concept-definitions dd {
+  margin: 0.2rem 0 0;
+  color: var(--ink-2);
+  font-size: var(--text-md);
+  line-height: 1.45;
+}
 
 /* ==========================================================================
    MODULE BADGE ROW

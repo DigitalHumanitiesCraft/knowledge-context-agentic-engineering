@@ -26,7 +26,7 @@ Design stance and system values for `docs/`. The platform addresses a profession
 
 ## Landing-page hierarchy
 
-The landing page begins with a compact two-column hero. Title and a substantive abstract occupy the main reading column. The five module titles form a compact index in the right column without subtitles; on narrow viewports this index moves below the abstract. The abstract identifies the subject, audience, shared teaching material and derivation of workshops as documented specialisations.
+The landing page begins with a compact two-column hero. Title and a substantive abstract occupy the main reading column. The five module titles form a compact index in the right column without subtitles; on narrow viewports this index moves below the abstract. The abstract identifies the subject, audience, shared teaching material and derivation of workshops as documented specialisations. Its first references to Large Language Models and AI Harnesses use the full terms as visible links. Two compact definition cards below the module list explain both terms without a modal, tooltip or additional page.
 
 Teaching Materials follows the hero without an intervening overview block or large section gap. It keeps direct access to the Full Slide Deck and the preparation state of the Full Lecture Notes. Workshops follow in chronological order, and a compact Preparation section links to the full bilingual guide. The anchors `#modules`, `#material`, `#workshops` and `#preparation` remain stable entry points.
 
@@ -48,6 +48,7 @@ Cover images remain on the landing-page cards as identifiers for the workshop se
 - **Cards**: workshop entries as horizontal cards with cover, date, event, audience, the module badges of the modules the instance uses, and the links that exist, in chronological order; missing artifacts appear as quiet "in preparation" labels, never as dead links.
 - **Chrome**: header brand, top navigation, EN/DE control and footer are one binding public-page template; the favicon set in `docs/assets/favicon/` is committed and every page links it. GitHub is the only content link in the top navigation. The linked brand returns to the language-matched landing page, while detail pages retain their existing backlinks. The footer identifies DHCraft as the implementer, names the AI harnesses and Promptotyping, and links both the project and Promptotyping repositories with a quiet GitHub destination mark. Page chrome is not re-invented per page.
 - **Language control**: English and German are separate static pages connected by a compact segmented control. The active language carries `aria-current="page"`; the paired files carry reciprocal `hreflang` links.
+- **Module language**: the English page uses the canonical English module titles. The German page translates descriptive titles and retains established method names such as Prompt Engineering and Agentic Engineering.
 - **Embedded material**: Google Slides uses a 16:9 viewer, a visible direct link and a direct PDF export where a deck exists. Google Docs uses a tall reading surface and a visible direct link. Missing artefacts retain the same page position as a quiet preparation state. The interface does not claim that an embedded viewer requires a particular browser or account when the registered resource is publicly accessible.
 
 ## Cover series
