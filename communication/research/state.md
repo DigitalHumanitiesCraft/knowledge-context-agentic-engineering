@@ -4,7 +4,7 @@ Owned by Research. Update the cursor only after the referenced Operations messag
 
 | Sender outbox | Last processed message |
 | --- | --- |
-| Operations | operations-2026-08-25-v0-3-pre-commit-result |
+| Operations | operations-2026-08-25-v0-3-release-result |
 
 ## Current threads
 

@@ -4,7 +4,7 @@ Register of every contribution still required from the Research Director, coveri
 
 The log is current coordination state. Durable project knowledge stays in `knowledge/`, and `knowledge/journal.md` receives the provenance of a contribution once it has been written back and verified. `communication/PROTOCOL.md` defines the lifecycle, and every `What I need from you` section is derived from the entries below.
 
-Identifiers are stable and are never reused. An `open` entry can be answered now. A `waiting` entry names the trigger that has to occur first. Twenty-three entries are current, thirteen of them open and ten waiting.
+Identifiers are stable and are never reused. An `open` entry can be answered now. A `waiting` entry names the trigger that has to occur first. Twenty-three entries are current, sixteen of them open and seven waiting.
 
 ## RD-001 Fine module cut
 
@@ -218,7 +218,7 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 ## RD-021 Module 00
 
 - **Type**: Acceptance
-- **Status**: waiting
+- **Status**: open
 - **Trigger**: The existing Preparation page has been refactored into the bilingual Module 00 learning surface and technically verified.
 - **Required contribution**: Accept or correct the relation between workshop setup and the AI Coding Literacy foundation.
 - **Recommendation**: Keep the practical preparation path and the literacy path distinct inside one page, and use a neutral visual identity outside the five subject-module colours.
@@ -229,7 +229,7 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 ## RD-022 Module hubs 01 through 05
 
 - **Type**: Acceptance
-- **Status**: waiting
+- **Status**: open
 - **Trigger**: All five bilingual module hubs, their inbound links and their first source-grounded learning routes are implemented and technically verified.
 - **Required contribution**: Accept the common module-hub structure and the substantive cut of each hub, including the two-track structure inside Knowledge and Context Engineering.
 - **Recommendation**: Review the shared component once and then assess each hub's learning question, concept map and deep-dive structure; automated checks cover repeated navigation and accessibility.
@@ -240,7 +240,7 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 ## RD-023 AI Harness introduction routes
 
 - **Type**: Acceptance
-- **Status**: waiting
+- **Status**: open
 - **Trigger**: The Claude Code, Codex and Pi tutorial pairs, their shared icon system and the Pi local-model check are implemented and technically verified.
 - **Required contribution**: Accept or correct the shared tutorial sequence, the distinction between AI Coding Literacy and product instruction, and the accuracy of the Pi harness, provider and inference-location boundary.
 - **Recommendation**: Review the common component once, then inspect the first reversible check and source note on each product page. Give the Pi boundary a separate substantive check because a locally running harness can still call a remote model.

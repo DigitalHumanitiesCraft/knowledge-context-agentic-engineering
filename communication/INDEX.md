@@ -17,7 +17,7 @@ This register locates the active Research and Operations exchange for this repos
 
 | Thread | State | Objective | Expected message |
 | --- | --- | --- | --- |
-| `kce-research-operations-sync` | v0.3 release authorised | Commit, tag, push and verify the validated Module 00, module-hub, Harness and Curated Skills state | v0.3 release result with remote and deployment evidence |
+| `kce-research-operations-sync` | v0.3 released | Preserve release evidence and obtain substantive Research Director acceptance for Module 00, the five module hubs and the three Harness routes | RD-021, RD-022 and RD-023 contributions |
 
 ## Completed capsules
 
