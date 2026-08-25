@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vorbereitung · Knowledge, Context and Agentic Engineering</title>
-<meta name="description" content="Konten, Claude Code, Visual Studio Code, Python und der abschließende Systemcheck für Workshops der Reihe Knowledge, Context and Agentic Engineering.">
+<title>Arbeitsumgebung einrichten &middot; Knowledge, Context and Agentic Engineering</title>
+<meta name="description" content="Ein projektunabhängiges Tutorial zur Einrichtung von Browserzugang, Visual Studio Code, Python, lokalem Webserver und Claude Code in einem geprüften Übungsordner.">
 <link rel="alternate" hreflang="en" href="preparation.html">
 <link rel="alternate" hreflang="de" href="preparation.de.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,11 +26,7 @@
       <span>Digital Humanities Craft</span>
     </a>
     <div class="head-tools">
-      <nav class="site-nav" aria-label="Seite">
-        <ul>
-          <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
-        </ul>
-      </nav>
+      <nav class="site-nav" aria-label="Seite"><ul><li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li></ul></nav>
       <nav class="language-nav" aria-label="Sprache">
         <a href="preparation.html" lang="en">EN</a>
         <a href="preparation.de.html" lang="de" aria-current="page">DE</a>
@@ -41,196 +37,155 @@
 
 <main>
 <div class="wrap">
-  <a class="backlink" href="index.de.html">← Knowledge, Context and Agentic Engineering</a>
+  <a class="backlink" href="index.de.html">&larr; Knowledge, Context and Agentic Engineering</a>
 
   <header class="page-head">
-    <h1>Vorbereitung</h1>
-    <p class="event">
-      Die Workshops arbeiten auf dem eigenen Laptop. Welche Teile dieser Vorbereitung erforderlich
-      sind, hängt vom jeweiligen Workshop ab. Die Tabelle am Ende der Seite ordnet jeder Veranstaltung
-      eine Stufe zu.
-    </p>
-    <p class="facts">
-      <span><b>Zuletzt geprüft</b> 20. August 2026</span>
-      <span><b>Reihenfolge</b> Konten einrichten, Werkzeuge installieren, Systemcheck durchführen</span>
-    </p>
+    <div>
+      <h1>Arbeitsumgebung einrichten</h1>
+      <p class="event">
+        Dieses Tutorial richtet eine wiederverwendbare Umgebung für die Arbeit mit Sprachmodellen,
+        lokalen Dateien, Python und einem AI Harness ein. Es ist unabhängig von einem bestimmten
+        Projekt oder einer Veranstaltung. Beginne mit dem Browser-Pfad und arbeite bis zu den
+        Werkzeugen weiter, die du für deine Arbeit benötigst.
+      </p>
+    </div>
+    <div>
+      <p class="stamp">Zuletzt geprüft am 25. August 2026</p>
+      <p class="facts">
+        <span>Verwende einen Übungsordner ohne vertrauliche oder unersetzliche Dateien.</span>
+        <span>Jeder Abschnitt endet mit einem beobachtbaren Prüfergebnis.</span>
+      </p>
+    </div>
   </header>
 
   <nav class="bundle" aria-label="Auf dieser Seite">
     <span class="label">Auf dieser Seite</span>
     <span class="items">
-      <a href="#claude-code">Claude Code</a>
-      <span class="sep">·</span>
-      <a href="#vscode">Visual Studio Code</a>
-      <span class="sep">·</span>
-      <a href="#python">Python</a>
-      <span class="sep">·</span>
-      <a href="#accounts">Konten</a>
-      <span class="sep">·</span>
-      <a href="#check">Systemcheck</a>
-      <span class="sep">·</span>
-      <a href="#levels">Workshop-Stufen</a>
+      <a href="#paths">Pfad wählen</a><span class="sep">&middot;</span>
+      <a href="#accounts">Modellzugang</a><span class="sep">&middot;</span>
+      <a href="#vscode">Editor und Terminal</a><span class="sep">&middot;</span>
+      <a href="#python">Python</a><span class="sep">&middot;</span>
+      <a href="#server">Lokaler Server</a><span class="sep">&middot;</span>
+      <a href="#claude-code">AI Harness</a><span class="sep">&middot;</span>
+      <a href="#check">Systemcheck</a><span class="sep">&middot;</span>
+      <a href="#trouble">Fehlerbehebung</a>
     </span>
   </nav>
 
-  <section class="block" id="claude-code" aria-labelledby="claude-code-h">
-    <p class="stamp">Stufe 3</p>
-    <h2 id="claude-code-h">Claude Code</h2>
-    <p class="prose">
-      Claude Code ist ein terminalbasiertes AI Harness. Es kann Dateien im geöffneten Arbeitsordner
-      lesen und bearbeiten, Befehle ausführen und Zwischenergebnisse prüfen. Für die agentischen
-      Workshops wird ein Konto mit Zugriff auf Claude Code benötigt.
-    </p>
-    <ol class="steps">
-      <li>Öffne unter Windows PowerShell und unter macOS oder Linux die Terminal-App.</li>
-      <li>
-        Führe den Installationsbefehl für dein System aus.
-        <dl class="cmds">
-          <div>
-            <dt>macOS, Linux oder Windows Subsystem for Linux</dt>
-            <dd><pre class="prompt cmd"><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre></dd>
-          </div>
-          <div>
-            <dt>Windows PowerShell</dt>
-            <dd><pre class="prompt cmd"><code>irm https://claude.ai/install.ps1 | iex</code></pre></dd>
-          </div>
-          <div>
-            <dt>macOS mit Homebrew</dt>
-            <dd><pre class="prompt cmd"><code>brew install --cask claude-code</code></pre></dd>
-          </div>
-          <div>
-            <dt>Windows mit WinGet</dt>
-            <dd><pre class="prompt cmd"><code>winget install Anthropic.ClaudeCode</code></pre></dd>
-          </div>
-        </dl>
-      </li>
-      <li>Unter Windows wird zusätzlich Git for Windows benötigt.</li>
-      <li>Lege einen leeren Workshop-Ordner an und öffne ihn im Terminal.</li>
-      <li>Starte Claude Code mit <code>claude</code> und schließe die Anmeldung im Browser ab.</li>
-      <li>Bitte Claude Code, die Dateien des geöffneten Ordners aufzulisten. Damit sind Installation, Anmeldung und Dateizugriff geprüft.</li>
-    </ol>
-    <p class="prose">
-      Die aktuellen Installationshinweise stehen in der
-      <a href="https://code.claude.com/docs/en/setup">offiziellen Dokumentation</a>.
-    </p>
-  </section>
-
-  <section class="block" id="vscode" aria-labelledby="vscode-h">
-    <p class="stamp">Stufen 2 und 3</p>
-    <h2 id="vscode-h">Visual Studio Code</h2>
-    <p class="prose">
-      Visual Studio Code ist der Editor für Dateien, Code und das integrierte Terminal.
-    </p>
-    <ol class="steps">
-      <li>Lade den Editor von <a href="https://code.visualstudio.com">code.visualstudio.com</a> und installiere ihn.</li>
-      <li>Installiere in der Erweiterungsansicht die von Microsoft veröffentlichten Erweiterungen „Python“ und „Pylance“.</li>
-      <li>Installiere für Workshops mit einer lokalen Webseite zusätzlich „Live Server“.</li>
-      <li>Öffne über „Terminal“ und „New Terminal“ das integrierte Terminal.</li>
-    </ol>
-  </section>
-
-  <section class="block" id="python" aria-labelledby="python-h">
-    <p class="stamp">Stufen 2 und 3</p>
-    <h2 id="python-h">Python</h2>
-    <p class="prose">
-      Python führt die im Workshop erzeugten Skripte aus. Programmierkenntnisse sind dafür keine Voraussetzung.
-    </p>
-    <ol class="steps">
-      <li>Installiere Python über den Microsoft Store oder über <a href="https://www.python.org/downloads">python.org</a>.</li>
-      <li>Aktiviere bei einer Windows-Installation von python.org die Option „Add Python to PATH“.</li>
-      <li>
-        Prüfe die Installation im Terminal.
-        <pre class="prompt cmd"><code>python --version</code></pre>
-      </li>
-      <li>Wähle in Visual Studio Code über „Python: Select Interpreter“ die installierte Python-Version.</li>
-      <li>
-        Lege eine Datei <code>test.py</code> mit einer Zeile an und führe sie aus.
-        <pre class="prompt cmd"><code>print("ready")</code></pre>
-        <pre class="prompt cmd"><code>python test.py</code></pre>
-      </li>
+  <section class="block" id="paths" aria-labelledby="paths-h">
+    <h2 id="paths-h">Einrichtungspfad wählen</h2>
+    <p class="prose">Die Pfade bauen aufeinander auf. Bearbeite nur den höchsten Pfad, den deine Arbeit benötigt.</p>
+    <ol class="module-list levels" role="list">
+      <li><span class="key"><span class="dot"></span>L1</span><div><h3>Browser-Arbeitsplatz</h3><p class="sub">Ein Modellkonto und ein aktueller Browser. Keine lokale Installation.</p></div></li>
+      <li><span class="key"><span class="dot"></span>L2</span><div><h3>Lokale Arbeitsumgebung</h3><p class="sub">Stufe 1 sowie Visual Studio Code, Terminal, Python und ein lokaler Webserver.</p></div></li>
+      <li><span class="key"><span class="dot"></span>L3</span><div><h3>AI Harness</h3><p class="sub">Stufe 2 sowie Claude Code oder ein anderes Harness, das in einem kontrollierten Arbeitsordner agiert.</p></div></li>
     </ol>
   </section>
 
   <section class="block" id="accounts" aria-labelledby="accounts-h">
-    <p class="stamp">Alle Stufen</p>
-    <h2 id="accounts-h">Konten und Zugänge</h2>
-
-    <h3>Modellzugang</h3>
+    <p class="stamp">Stufe 1</p>
+    <h2 id="accounts-h">Modellzugang einrichten</h2>
     <p class="prose">
-      Für browserbasierte Einheiten genügt der in der Workshopseite angegebene Modellzugang.
-      Agentische Einheiten mit Claude Code erfordern ein Konto mit einem geeigneten Abonnement
-      oder einen eingerichteten API-Zugang.
+      Öffne den gewünschten Sprachmodelldienst und melde dich an. Für Stufe 1 genügt ein
+      browserbasiertes Konto. Ein AI Harness kann einen geeigneten Bezahlplan, einen API-Schlüssel
+      oder ein Organisationskonto voraussetzen. Prüfe die Zugangsbedingungen des gewählten Harness
+      vor der Installation.
     </p>
+    <ol class="steps">
+      <li>Öffne den Dienst im Browser und schließe die Anmeldung einschließlich einer erforderlichen Mehrfaktor-Authentifizierung ab.</li>
+      <li>Beginne eine neue Unterhaltung und bitte das Modell um die exakte Ausgabe <code>browser ready</code>.</li>
+      <li>Prüfe, wo Downloads gespeichert werden und wie du eine lokale Datei anhängst.</li>
+    </ol>
+    <p class="prose">Der Pfad ist abgeschlossen, wenn das Modell in einer neuen Unterhaltung antwortet und du eine unvertrauliche Testdatei anhängen kannst.</p>
+  </section>
 
-    <h3>Google-Konto</h3>
-    <p class="prose">
-      Einige Materialien liegen in Google Drive oder Google Colab. Öffne die auf der Workshopseite
-      verlinkten Materialien vorab und prüfe den Zugriff.
-    </p>
+  <section class="block" id="vscode" aria-labelledby="vscode-h">
+    <p class="stamp">Stufe 2</p>
+    <h2 id="vscode-h">Editor installieren und Terminal öffnen</h2>
+    <p class="prose">Visual Studio Code bündelt Dateien, Code und Terminal in einer Oberfläche. Das Terminal führt Befehle im geöffneten Ordner aus und zeigt die für die Diagnose erforderlichen Ausgaben.</p>
+    <ol class="steps">
+      <li>Lade Visual Studio Code von <a href="https://code.visualstudio.com">code.visualstudio.com</a> herunter und installiere es.</li>
+      <li>Lege an einem wiederauffindbaren Ort einen Ordner namens <code>ai-workspace</code> an.</li>
+      <li>Öffne diesen Ordner über Datei und anschließend Ordner öffnen.</li>
+      <li>Öffne über Terminal und anschließend Neues Terminal das integrierte Terminal. Die Eingabezeile soll auf <code>ai-workspace</code> verweisen.</li>
+      <li>Lege <code>readme.md</code> an, schreibe einen Satz, speichere die Datei und prüfe, ob sie im Explorer erscheint.</li>
+    </ol>
+    <p class="prose">Der Editor ist eingerichtet, wenn das integrierte Terminal und die gespeicherte Datei auf denselben Ordner verweisen.</p>
+  </section>
 
-    <h3>GitHub-Konto</h3>
+  <section class="block" id="python" aria-labelledby="python-h">
+    <p class="stamp">Stufe 2</p>
+    <h2 id="python-h">Python installieren und prüfen</h2>
+    <p class="prose">Python führt Skripte aus und stellt den lokalen Webserver für den nächsten Abschnitt bereit.</p>
+    <ol class="steps">
+      <li>Installiere Python von <a href="https://www.python.org/downloads/">python.org/downloads</a>. Aktiviere unter Windows die Option <q>Add Python to PATH</q>, sofern sie angeboten wird.</li>
+      <li>Installiere in der Erweiterungsansicht von Visual Studio Code die Microsoft-Erweiterung <q>Python</q>.</li>
+      <li>Führe die Versionsprüfung aus. Verwende unter macOS oder Linux <code>python3</code>, falls <code>python</code> nicht verfügbar ist.<pre class="prompt cmd"><code>python --version</code></pre></li>
+      <li>Lege <code>check.py</code> mit der folgenden Zeile an und führe die Datei aus.<pre class="prompt cmd"><code>print("python ready")</code></pre><pre class="prompt cmd"><code>python check.py</code></pre></li>
+    </ol>
+    <p class="prose">Python ist eingerichtet, wenn das Terminal eine Versionsnummer und anschließend <code>python ready</code> ausgibt.</p>
+  </section>
+
+  <section class="block" id="server" aria-labelledby="server-h">
+    <p class="stamp">Stufe 2</p>
+    <h2 id="server-h">Lokalen Webserver starten</h2>
+    <p class="prose">Browser beschränken Seiten, die direkt aus dem Dateisystem geöffnet werden. Ein lokaler Server gibt einem Prototyp eine reguläre Webadresse und erlaubt das Laden lokaler Datendateien.</p>
+    <ol class="steps">
+      <li>Lege <code>index.html</code> in <code>ai-workspace</code> an und füge <code>&lt;h1&gt;Local server ready&lt;/h1&gt;</code> ein.</li>
+      <li>Starte den Server im integrierten Terminal.<pre class="prompt cmd"><code>python -m http.server 8000</code></pre></li>
+      <li>Öffne <a href="http://localhost:8000">http://localhost:8000</a> im Browser.</li>
+      <li>Prüfe, ob die Überschrift erscheint. Kehre zum Terminal zurück und beende den Server mit <code>Ctrl+C</code>.</li>
+    </ol>
+    <p class="prose">Die lokale Umgebung ist eingerichtet, wenn der Browser die Datei über <code>localhost</code> anzeigt.</p>
+  </section>
+
+  <section class="block" id="claude-code" aria-labelledby="claude-code-h">
+    <p class="stamp">Stufe 3</p>
+    <h2 id="claude-code-h">AI Harness installieren und begrenzen</h2>
     <p class="prose">
-      Öffentliche Workshop-Repositories können ohne Konto gelesen und heruntergeladen werden.
-      Ein Konto wird benötigt, wenn eigene Ergebnisse in einem Repository versioniert werden.
+      Ein AI Harness verbindet ein Sprachmodell mit lokalen Dateien, Werkzeugen und ausführbaren
+      Befehlen. Dieses Tutorial verwendet Claude Code als konkrete Umsetzung. Für vergleichbare
+      Harnesses gilt dieselbe Sicherheitsgrenze: Starte sie nur in einem Ordner, dessen Inhalte sie
+      einsehen und verändern dürfen.
     </p>
+    <ol class="steps">
+      <li>Prüfe, ob dein Claude-Konto oder API-Zugang Claude Code umfasst.</li>
+      <li>Öffne das Terminal in <code>ai-workspace</code> und führe einen offiziellen Installationsbefehl aus.
+        <dl class="cmds">
+          <div><dt>macOS, Linux oder Windows Subsystem for Linux</dt><dd><pre class="prompt cmd"><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre></dd></div>
+          <div><dt>Windows PowerShell</dt><dd><pre class="prompt cmd"><code>irm https://claude.ai/install.ps1 | iex</code></pre></dd></div>
+          <div><dt>macOS mit Homebrew</dt><dd><pre class="prompt cmd"><code>brew install --cask claude-code</code></pre></dd></div>
+          <div><dt>Windows mit WinGet</dt><dd><pre class="prompt cmd"><code>winget install Anthropic.ClaudeCode</code></pre></dd></div>
+        </dl>
+      </li>
+      <li>Prüfe die Installation und führe die nur lesende Diagnose aus.<pre class="prompt cmd"><code>claude --version</code></pre><pre class="prompt cmd"><code>claude doctor</code></pre></li>
+      <li>Starte <code>claude</code>, schließe die Anmeldung im Browser ab und kehre zum Terminal zurück.</li>
+      <li>Bitte das Harness, die Dateien im aktuellen Ordner aufzulisten, ohne sie zu verändern. Die Antwort soll <code>readme.md</code>, <code>check.py</code> und <code>index.html</code> nennen.</li>
+      <li>Beende die Sitzung. Erprobe Dateiänderungen beim ersten Start ausschließlich im unvertraulichen Übungsordner.</li>
+    </ol>
+    <p class="prose">Prüfe bei geänderten Installationsbefehlen oder Zugangsbedingungen die <a href="https://code.claude.com/docs/en/setup">offizielle Einrichtungsdokumentation für Claude Code</a>.</p>
   </section>
 
   <section class="block" id="check" aria-labelledby="check-h">
-    <p class="stamp">Alle Stufen</p>
-    <h2 id="check-h">Systemcheck</h2>
+    <h2 id="check-h">Vollständigen Systemcheck durchführen</h2>
     <ol class="steps">
-      <li><code>python --version</code> gibt eine Versionsnummer aus.</li>
-      <li>Visual Studio Code startet und zeigt die Python-Erweiterung als installiert.</li>
-      <li><code>test.py</code> wurde einmal erfolgreich ausgeführt.</li>
-      <li>Die Anmeldung beim verwendeten Modell funktioniert im Browser.</li>
-      <li>Bei Stufe 3 startet <code>claude</code> im Workshop-Ordner.</li>
-      <li>Die auf der Workshopseite verlinkten Materialien sind erreichbar.</li>
+      <li>Das Browserkonto öffnet eine neue Unterhaltung und nimmt einen Testanhang an.</li>
+      <li>Visual Studio Code öffnet <code>ai-workspace</code>, und das Terminal verweist auf diesen Ordner.</li>
+      <li><code>python --version</code> gibt eine Version aus, und <code>python check.py</code> zeigt den erwarteten Text.</li>
+      <li><code>http://localhost:8000</code> zeigt bei laufendem Server die Datei <code>index.html</code>.</li>
+      <li>Für Stufe 3 laufen <code>claude --version</code> und <code>claude doctor</code> durch, und das Harness kann den Übungsordner lesen.</li>
     </ol>
   </section>
 
   <section class="block" id="trouble" aria-labelledby="trouble-h">
-    <h2 id="trouble-h">Fehlerbehebung</h2>
+    <h2 id="trouble-h">Fehler anhand von Evidenz untersuchen</h2>
     <ol class="steps">
-      <li>Lies die vollständige Fehlermeldung und sichere sie als Text.</li>
-      <li>Gib die Fehlermeldung zusammen mit dem ausgeführten Befehl an ein Sprachmodell weiter.</li>
-      <li>Bleibt der Fehler bestehen, sende Fehlermeldung, Betriebssystem und Screenshot an den Workshopkontakt.</li>
+      <li>Kopiere den vollständigen Befehl und die vollständige Fehlermeldung als Text.</li>
+      <li>Notiere Betriebssystem, Terminal und aktuellen Ordner.</li>
+      <li>Prüfe die offizielle Installationsseite des betroffenen Werkzeugs.</li>
+      <li>Bitte ein Sprachmodell um eine Erklärung des Fehlers und einen reversiblen Diagnosebefehl.</li>
+      <li>Ändere jeweils nur eine Bedingung und führe denselben Test erneut aus.</li>
     </ol>
-  </section>
-
-  <section class="block" id="levels" aria-labelledby="levels-h">
-    <h2 id="levels-h">Welche Vorbereitung gilt für welchen Workshop?</h2>
-
-    <ol class="module-list levels" role="list">
-      <li>
-        <span class="key"><span class="dot"></span>L1</span>
-        <div><h3>Nur Browser</h3><p class="sub">Modellzugang im Browser, keine lokale Installation.</p></div>
-      </li>
-      <li>
-        <span class="key"><span class="dot"></span>L2</span>
-        <div><h3>Editor und Python</h3><p class="sub">Stufe 1 sowie Visual Studio Code, Python, Terminal und lokaler Webserver.</p></div>
-      </li>
-      <li>
-        <span class="key"><span class="dot"></span>L3</span>
-        <div><h3>AI Harness</h3><p class="sub">Stufe 2 sowie Claude Code und ein eigener Arbeitsordner.</p></div>
-      </li>
-    </ol>
-
-    <div class="scroll-x">
-      <table class="table">
-        <thead>
-          <tr><th scope="col">Workshop</th><th scope="col">Datum</th><th scope="col">Stufe</th><th scope="col">Bedeutung</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">KUG Summer School</th><td>16.–17. September</td><td class="lvl">L1, L2 optional</td><td>Browser und Modellzugang tragen die Einheiten. Für lokale Prototypen kommt Stufe 2 hinzu.</td></tr>
-          <tr><th scope="row">CLARIAH-AT Summer School</th><td>25. September</td><td class="lvl">L1, L3 optional</td><td>Die Hands-ons funktionieren im Browser. Das lokale Paket verwendet Stufe 3.</td></tr>
-          <tr><th scope="row">HEDIT KI-Workshop</th><td>5.–6. Oktober</td><td class="lvl">L3</td><td>Die Arbeit am eigenen Material findet in Claude Code statt.</td></tr>
-          <tr><th scope="row">Mittelalterstudien Heidelberg</th><td>8. Oktober</td><td class="lvl">L3</td><td>Der gesamte Source-to-Edition-Workflow läuft im AI Harness.</td></tr>
-          <tr><th scope="row">Göttinger Digitale Akademie</th><td>15. Oktober</td><td class="lvl">L3, L1 möglich</td><td>Die Demonstration kann im Browser verfolgt werden. Die eigene Aufgabe verwendet Stufe 3.</td></tr>
-          <tr><th scope="row">UNI for LIFE</th><td>9.–10. November</td><td class="lvl">L3</td><td>Die erste Einheit richtet Claude Code und den Arbeitsordner ein.</td></tr>
-          <tr><th scope="row">VetMed Winter School</th><td>30. November–4. Dezember</td><td class="lvl">L3</td><td>Die Woche führt von lokaler Codeausführung zu kontrollierten Agenten-Workflows.</td></tr>
-        </tbody>
-      </table>
-    </div>
   </section>
 </div>
 </main>
@@ -240,15 +195,14 @@
     <div class="foot-brand">
       <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
       <div class="imprint">
-        <p class="name">Christopher Pollin</p>
-        <p>Digital Humanities Craft</p>
-        <p><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">·</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
+        <p class="name">Christopher Pollin</p><p>Digital Humanities Craft</p>
+        <p><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
       </div>
     </div>
     <div class="colophon">
-  <p>Umgesetzt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit den AI-Harnesses Claude Code (Fable 5 und Opus 5) und Codex (GPT-5.6 Sol), unter Anwendung von <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a>.</p>
-  <p class="foot-links"><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub-Repository</a><span class="sep">&middot;</span><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping-Repository</a><span class="sep">&middot;</span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
-</div>
+      <p>Umgesetzt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit den AI-Harnesses Claude Code (Fable 5 und Opus 5) und Codex (GPT-5.6 Sol), unter Anwendung von <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a>.</p>
+      <p class="foot-links"><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub-Repository</a><span class="sep">&middot;</span><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping-Repository</a><span class="sep">&middot;</span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+    </div>
   </div>
 </footer>
 </body>
