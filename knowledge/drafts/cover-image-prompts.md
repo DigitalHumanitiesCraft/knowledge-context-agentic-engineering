@@ -1,6 +1,6 @@
 # Production Prompts for Cover Images
 
-These prompts document the selected visual direction for the Full Slide Deck and its seven workshop specialisations. Each prompt is designed for ChatGPT image generation and can be used for a new generation or as the basis for editing the current cover.
+These prompts document the working visual direction for the Full Slide Deck and its seven workshop specialisations. The current PNG files are placeholders. Each prompt is designed for a new generation that can use the current cover as a composition reference after the motif brief has received operator approval.
 
 ## Files
 
@@ -24,20 +24,23 @@ These prompts document the selected visual direction for the Full Slide Deck and
 - Restrained watercolor held mainly inside designed shapes.
 - DHCraft semantic palette: violet `#8140B8` for model capability, orange `#C87000` for prompting, turquoise `#0A7E7C` for knowledge and context, blue `#5B8FC4` for agentic action, green `#7C9200` for governance and verification.
 - No text, letters, numerals, pseudo-writing, unrelated logos or watermarks. A named tool icon may appear only where a workshop prompt explicitly requires it.
-- Historical source surfaces use sparse non-letter-like ink textures. They contain no word-shaped marks or repeated glyph sequences.
+- Historical source surfaces are synthetic and non-identifiable. They use sparse non-letter-like ink textures without word-shaped marks or repeated glyph sequences.
 - Avoid robots, brains, circuit-board metaphors, generic dashboards, decorative orbit lines, checkmarks, badges and meaningless network graphs.
 
-## Selection status and regeneration risks
+## Motif status and regeneration priorities
 
-All eight covers are selected and present in the repository. The prompts below are the production contract for later regeneration. Four subjects need explicit protection against recurrent generator defaults.
+All eight covers are present as placeholders. Their format is usable, while their motifs require renewed approval. The following matrix records the minimum semantic contract for regeneration.
 
-| Cover | Stable element | Regeneration guardrail |
-|---|---|---|
-| CLARIAH-AT | open codex carrying source, transcription and structured result | exactly three internal zones, no charts, labels or dashboard furniture |
-| HEDIT Heidelberg | manuscript tray with two fold-out Promptotyping boards | page and bookbinding geometry only, no interface panels or generic networks |
-| Uni for Life | document tray, context lens and agentic write-back | anchored document-handling arm, no body, head, floating polyhedron or character |
-| VetMed Winter School | microscopy selection and AI-assisted analysis | equine hoof lamellar tissue as the species-specific veterinary sample |
-| Fachschaft Mittelalterstudien | charter, extracted records and small Claude Code agents | current cover is a required identity reference for the agent figure |
+| Cover | Action | Motif contract | Main guardrail |
+|---|---|---|---|
+| Full Slide Deck | targeted revision | maintained knowledge documents, context selection, agentic action and verified write-back in one compact emblem | integrate all five module colours into the artefact core and remove the detached pen-nib symbol |
+| KUG M3GIM | retain composition, simplify surface | opera promptbook and archival bundle transformed into structured research material | synthetic source surfaces, no identifiable portraits, pseudo-writing or theatre ornament overload |
+| CLARIAH-AT | new generation | one codex with exactly three zones for source selection, transcription and structured extraction | no text, charts, checks, dashboard furniture or topic-modelling graphics |
+| HEDIT Heidelberg | targeted new generation | manuscript tray and exactly two paper boards for contextual modelling and TEI-oriented editorial work | no software windows, charts, networks or pseudo-writing |
+| Fachschaft Mittelalterstudien | revise composition | synthetic charter, selected passage, three records and three small Claude Code agents | preserve the agent identity, move all figures out of the title area and avoid facsimile imitation |
+| GDA Göttingen | new generation | modular maintenance workbench for research data migration and interface upkeep | no storage-media nostalgia, leaf, recycle, checkmark or network symbols |
+| Uni for Life | new generation | professional document instrument with context lens, anchored arm and verified return tray | no humanoid body, head, hands, floating polyhedron or character pose |
+| VetMed Winter School | hold for domain confirmation | veterinary specimen with region-of-interest selection, comparison and expert verification | the equine hoof-lamellae example requires confirmation in the workshop profile before generation |
 
 ## Full Slide Deck
 
@@ -57,7 +60,7 @@ Constraints: apply the shared production constraints; remove all readable page m
 Use case: stylized-concept
 Asset type: 16:9 workshop title-slide cover
 Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current KUG cover, used as the subject and composition anchor.
-Primary request: Create one open opera promptbook whose covers form an elegant proscenium stage. Use restrained red-violet curtains, a shallow orchestra-pit curve and a clear stage opening. Place one compact archival bundle of programmes, correspondence and historical photographs on the stage as the knowledge source. A transparent turquoise aperture selects one archival item. Three clean unlabeled data slips emerge into a compact index integrated into the right side of the proscenium. One blue agentic thread passes through archive, selected context and extracted data, then returns through the orchestra pit.
+Primary request: Create one open opera promptbook whose covers form an elegant proscenium stage. Use restrained red-violet curtains, a shallow orchestra-pit curve and a clear stage opening. Place one compact archival bundle of synthetic programmes, correspondence and non-identifiable image surfaces on the stage as the knowledge source. A transparent turquoise aperture selects one archival item. Three clean unlabeled data slips emerge into a compact index integrated into the right side of the proscenium. One blue agentic thread passes through archive, selected context and extracted data, then returns through the orchestra pit.
 Style: refined archival watercolor and precise deep-navy ink, detailed enough to establish opera while remaining clear at thumbnail size.
 Palette: orange #C87000 and violet #8140B8 for prompting and model capability, turquoise #0A7E7C for context, blue #5B8FC4 for the agentic path.
 Constraints: apply the shared production constraints; avoid musical notation, map pins and decorative theatre ornament.
@@ -69,7 +72,7 @@ Constraints: apply the shared production constraints; avoid musical notation, ma
 Use case: stylized-concept
 Asset type: 16:9 workshop title-slide cover
 Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current CLARIAH-AT cover, used as the subject and composition anchor.
-Primary request: Create one open scholarly codex that contains a complete research-data transformation in exactly three internal zones. The left zone holds an archival manuscript facsimile made from sparse non-letter-like ink textures. A transparent turquoise context window selects one passage. The centre zone resolves the passage into a clean transcription field made from broad blank rules. The right zone contains four unlabeled structured fields for information extraction. One blue agentic path connects source, selected context, transcription and structured result, then returns to the facsimile through a quiet green verification notch. The codex remains the only object.
+Primary request: Create one open scholarly codex that contains a complete research-data transformation in exactly three internal zones. The left zone holds a synthetic, non-identifiable manuscript surface made from sparse non-letter-like ink textures. A transparent turquoise context window selects one passage. The centre zone resolves the passage into a clean transcription field made from broad blank rules. The right zone contains four unlabeled structured fields for information extraction. One blue agentic path connects source, selected context, transcription and structured result, then returns to the source surface through a quiet green verification notch. The codex remains the only object.
 Style: archival conservation plate combined with translucent technical overlays, deep-navy ink and controlled watercolor.
 Palette: turquoise #0A7E7C and blue #5B8FC4 dominant, small orange #C87000 and green #7C9200 details.
 Constraints: apply the shared production constraints; use exactly three internal zones and no more than five major shapes; omit charts, axes, legends, checkmarks, topic-model diagrams, interface cards and dashboard styling.
@@ -81,7 +84,7 @@ Constraints: apply the shared production constraints; use exactly three internal
 Use case: stylized-concept
 Asset type: 16:9 workshop title-slide cover
 Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current HEDIT cover, used as the subject and composition anchor.
-Primary request: Create one fold-out scholarly edition workstation. A bound archival manuscript bundle rests in a precise bookbinding tray at the left. A turquoise context aperture selects one passage from the participant material. Exactly two integrated paper boards extend to the right. The upper board groups four selected source fragments through simple color fields and connecting rules. The lower board arranges the same passage into four nested editorial zones. One continuous blue agentic thread connects the source, both Promptotyping stages and a verified return to the manuscript. Use one orange removable adapter at the hinge. Every component is made from paper, board, thread or bookbinding hardware.
+Primary request: Create one fold-out scholarly edition workstation. A bound bundle of synthetic, non-identifiable manuscript surfaces rests in a precise bookbinding tray at the left. A turquoise context aperture selects one passage. Exactly two integrated paper boards extend to the right. The upper board groups four selected source fragments through simple color fields and connecting rules. The lower board arranges the same passage into four nested editorial zones. One continuous blue agentic thread connects the source, both Promptotyping stages and a verified return to the manuscript. Use one orange removable adapter at the hinge. Every component is made from paper, board, thread or bookbinding hardware.
 Style: precision bookbinding and technical product illustration, shallow axonometric view, deep-navy ink and matte watercolor.
 Palette: turquoise #0A7E7C and blue #5B8FC4 dominant, orange #C87000 and violet #8140B8 as small working accents.
 Constraints: apply the shared production constraints; use exactly two fold-out boards; avoid readable XML, charts, interface panels, software windows, generic network graphs and dashboard styling.
@@ -93,8 +96,8 @@ Constraints: apply the shared production constraints; use exactly two fold-out b
 Use case: stylized-concept
 Asset type: 16:9 workshop title-slide cover
 Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. Image 2 is the current medieval-studies cover and is required as the identity and composition reference.
-Primary request: Create one authentic medieval charter with a restrained pendent wax seal. A transparent turquoise aperture selects one precise passage from the parchment. Three small unlabeled structured record slips emerge from that passage and align along the right edge, representing handwriting recognition, structured extraction and the small digital edition. Preserve the same small geometric Claude Code agent figure from the reference image in three purposeful poses: inspecting the charter with a magnifier, selecting the passage from a small ladder and managing the verified return at the lower edge. One controlled blue path connects the source passage with the three records and returns to the charter as verified write-back. Preserve natural parchment irregularity and a clear documentary silhouette.
-Style: scholarly facsimile and archival conservation drawing, precise deep-navy contours, restrained mineral watercolor.
+Primary request: Create one synthetic, non-identifiable medieval charter surface with a restrained pendent wax seal. A transparent turquoise aperture selects one precise passage from the parchment. Three small unlabeled structured record slips emerge from that passage and align along the right edge, representing handwriting recognition, structured extraction and the small digital edition. Preserve the same small geometric Claude Code agent figure from the reference image in three purposeful poses: inspecting the charter with a magnifier, selecting the passage from a small ladder and managing the verified return at the lower edge. Keep every figure below the upper third. One controlled blue path connects the source passage with the three records and returns to the charter as verified write-back. Preserve natural parchment irregularity and a clear documentary silhouette.
+Style: archival conservation illustration, precise deep-navy contours, restrained mineral watercolor.
 Palette: turquoise #0A7E7C and blue #5B8FC4, orange #C87000 for the wax seal, one small green #7C9200 verification detail.
 Constraints: apply the shared production constraints; preserve the supplied Claude Code agent figure consistently; keep all three figures small and subordinate to the charter; omit heraldry, XML brackets, alternative robot faces and decorative medieval motifs.
 ```
@@ -105,10 +108,10 @@ Constraints: apply the shared production constraints; preserve the supplied Clau
 Use case: stylized-concept
 Asset type: 16:9 workshop title-slide cover
 Input images: Image 1 is the DHCraft watercolor logo, used only for palette and material character. If supplied, Image 2 is the current GDA cover, used as the subject and composition anchor.
-Primary request: Create one modular research-software maintenance workbench. Several heterogeneous research-data packages and legacy carriers enter from the left. A replaceable turquoise compatibility layer selects and aligns the active context. Clean blue service modules transform the material and connect it to a maintained interface-and-endpoints component on the right. An orange removable update cartridge represents migration and repair. One integrated blue agentic feedback path connects source data, transformation, interface maintenance and verified return.
+Primary request: Create one modular research-software maintenance workbench. Several heterogeneous research-data packages enter from the left as abstract, unlabeled documentary modules. A replaceable turquoise compatibility layer selects and aligns the active context. Clean blue service modules transform the material and connect it to a maintained interface-and-endpoints component on the right. An orange removable update cartridge represents migration and repair. One integrated blue agentic feedback path connects source data, transformation, interface maintenance and verified return.
 Style: Swiss technical product illustration, shallow exploded view, precise deep-navy ink and matte watercolor enamel.
 Palette: turquoise #0A7E7C and blue #5B8FC4 dominant, orange #C87000 for the update component, green #7C9200 for one maintenance registration mark.
-Constraints: apply the shared production constraints; avoid literal computer plugs, database cylinders, leaf icons, recycle symbols, checkmarks and generic network diagrams.
+Constraints: apply the shared production constraints; avoid floppy disks, optical discs, USB media, literal computer plugs, database cylinders, leaf icons, recycle symbols, checkmarks and generic network diagrams.
 ```
 
 ## Uni for Life
@@ -137,4 +140,4 @@ Constraints: apply the shared production constraints; avoid human anatomy, masco
 
 ## Regeneration workflow
 
-Use the current cover as Image 2 when refining a selected composition. Preserve its main silhouette and change one targeted property per iteration. Reject runs containing readable or pseudo-readable text. Export the selected result as PNG under the exact path listed above.
+Approve the motif contract before generation. Use the current cover as Image 2 only where the matrix retains its composition or identity. Generate a new base image for full redesigns. Inspect each result for domain accuracy, upper-third clearance, source anonymity and generator artefacts. Iterate with one targeted change and repeat the invariants. Export an accepted result as a new versioned PNG beside the placeholder; replace the canonical filename only after operator acceptance.

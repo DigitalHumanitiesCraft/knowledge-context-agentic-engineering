@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
 status: draft
 created: 2026-08-20
-updated: 2026-08-24
+updated: 2026-08-25
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -28,13 +28,17 @@ Navigation of the knowledge base. Reading order for a new agent is `project.md`,
 | `project.md` | Charter, Material | What the project is, the material and its derivation by profile, holdings map, audiences |
 | `specification.md` | Specification | Requirements for platform and repo structure, acceptance criteria |
 | `terms.md` | Domain knowledge | Term matrix EN/DE with canonical wording and literature anchors |
-| `design.md` | Design | Design stance, motif, color and typography system of the platform, iteration status |
+| `design.md` | Design | Information hierarchy, interface contract, responsive component system and iteration status |
 | `governance.md` | Governance | Decision authority, source status, write-back, versioning, rights |
 | `journal.md` | Provenance | Chronicle of decisions, milestones and workshop deliveries |
 | `plan.md` | Planning | Plan of the repo as work packages with their state |
 | `handoff.md` | Process inbox | Open received deltas awaiting verification and integration |
 
-`drafts/` holds decision-preparation material written by agents (module map, slides map, term references, specialization analysis). Drafts are proposals; nothing in them is canonical.
+`drafts/` holds decision-preparation material written by agents, including module and slide maps, term references, specialisation analysis, product evidence notes and the proposed web-native teaching and deep-dive architecture. Drafts are proposals; nothing in them is canonical.
+
+## Research Mission Control exchange
+
+An agent taking part in an active Research and Operations exchange reads `communication/PROTOCOL.md` and the message that carries its task before acting, and it takes every required Research Director contribution from `communication/research/director-log.md` by its `RD-###` identifier. The documents listed above remain the canonical project memory; `communication/` transports current briefs, results and recipient state and holds no durable knowledge.
 
 ## Constitutive terms
 

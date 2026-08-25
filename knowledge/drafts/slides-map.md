@@ -95,6 +95,12 @@ Six planned slide texts are marked "Noch nicht im Deck" in the CLARIAH Slides do
 
 Chapters 2, 3 and 4 are the well covered part, each with several direct anchors and no gap worth naming.
 
+## Claude Code subchapter proposal
+
+The operator supplied an official introductory webinar transcript, a conceptual knowledge document and five slide montages on 2026-08-25. The source set supports Claude Code as an applied case study inside Agentic Engineering. It also exposes duplication across the current deck, especially for Plan Mode and `CLAUDE.md`, and it contains product claims that require correction against the current official documentation.
+
+`knowledge/drafts/claude-code-agentic-engineering-subchapter.md` carries the source assessment, verified corrections, proposed placement, nine-slide talk sequence, screenshot brief and relation to the Preparation tutorial. The proposal keeps the generic agent history in the existing module and moves volatile product inventories into optional reference slides.
+
 ## Verdict
 
 Deck and script overlap on a stable core and diverge at both ends. The four engineering levels, the harness and agentic loop, and Promptotyping (chapters 2 to 4) are carried by direct slide anchors on nearly every section, so a derivation from the Full Slide Deck can teach those chapters without new material. Beyond that core the two artefacts pull apart in opposite directions. The Full Slide Deck invests heavily in material the Skriptum never took up, above all the Obsidian and vault-architecture line, the LLM-property and interpretability line, the agent-history line and the ecosystem standards (MCP, A2A, Skills), which together account for 36 unanchored slides, roughly two fifths of the fund. The Skriptum in turn built out the research-data half (chapters 1, 5 to 8) that the Full Slide Deck never had, and the Hersch tutorial now sits in the CLARIAH deck. The alignment gap is therefore a division of labour that hardened over time. No case exists where slide and chapter assert different things; the substantive divergences amount to terminology drift at two points (Action Document against Agent Instruction Document, Wissenssystem against Project Knowledge Base plus Governance) and one differing `knowledge/` file list.

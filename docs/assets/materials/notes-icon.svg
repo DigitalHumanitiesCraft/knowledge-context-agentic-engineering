@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">Lecture Notes</title>
+  <path d="M5 3.5h9l5 5v12H5z" fill="#fff" stroke="#141413" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M14 3.5v5h5" fill="none" stroke="#141413" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M8 12h8M8 15h8M8 18h5" stroke="#6c6c65" stroke-width="1.25" stroke-linecap="round"/>
+  <circle cx="7" cy="7" r="1" fill="#0a7e7c"/>
+  <circle cx="10" cy="7" r="1" fill="#8140b8"/>
+</svg>

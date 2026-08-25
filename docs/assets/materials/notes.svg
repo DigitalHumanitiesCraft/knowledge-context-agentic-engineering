@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Lecture notes</title>
+  <desc id="desc">Two language versions of a structured lecture script.</desc>
+  <rect width="640" height="400" fill="#fff"/>
+  <path d="M158 88h254l70 70v174H158z" fill="#fff" stroke="#141413" stroke-width="8"/>
+  <path d="M412 88v70h70" fill="none" stroke="#141413" stroke-width="8"/>
+  <rect x="202" y="140" width="150" height="16" rx="8" fill="#141413"/>
+  <rect x="202" y="188" width="232" height="9" rx="4.5" fill="#6c6c65"/>
+  <rect x="202" y="214" width="206" height="9" rx="4.5" fill="#6c6c65"/>
+  <rect x="202" y="240" width="232" height="9" rx="4.5" fill="#6c6c65"/>
+  <rect x="202" y="266" width="178" height="9" rx="4.5" fill="#6c6c65"/>
+  <g aria-hidden="true">
+    <rect x="188" y="298" width="184" height="44" rx="22" fill="#fff" stroke="#6c6c65" stroke-width="3"/>
+    <path d="M280 301v38" stroke="#e4e4de" stroke-width="2"/>
+    <circle cx="210" cy="320" r="6" fill="#0a7e7c"/>
+    <circle cx="302" cy="320" r="6" fill="#8140b8"/>
+    <text x="248" y="327" fill="#141413" font-family="system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle">EN</text>
+    <text x="340" y="327" fill="#141413" font-family="system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle">DE</text>
+  </g>
+</svg>

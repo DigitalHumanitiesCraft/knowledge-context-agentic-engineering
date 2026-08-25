@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Video playlist</title>
+  <desc id="desc">An ordered sequence of videos marked with the five module colours.</desc>
+  <rect width="640" height="400" fill="#fff"/>
+  <rect x="104" y="94" width="332" height="212" rx="10" fill="#fff" stroke="#141413" stroke-width="8"/>
+  <path d="m241 151 94 49-94 49z" fill="#fff" stroke="#141413" stroke-width="8" stroke-linejoin="round"/>
+  <rect x="478" y="112" width="58" height="9" rx="4.5" fill="#6c6c65"/>
+  <rect x="478" y="153" width="58" height="9" rx="4.5" fill="#6c6c65"/>
+  <rect x="478" y="194" width="58" height="9" rx="4.5" fill="#6c6c65"/>
+  <rect x="478" y="235" width="58" height="9" rx="4.5" fill="#6c6c65"/>
+  <rect x="478" y="276" width="58" height="9" rx="4.5" fill="#6c6c65"/>
+  <circle cx="457" cy="116.5" r="7" fill="#0a7e7c"/>
+  <circle cx="457" cy="157.5" r="7" fill="#c87000"/>
+  <circle cx="457" cy="198.5" r="7" fill="#5b8fc4"/>
+  <circle cx="457" cy="239.5" r="7" fill="#8140b8"/>
+  <circle cx="457" cy="280.5" r="7" fill="#7c9200"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Slide deck</title>
+  <desc id="desc">A stack of presentation slides marked with the five module colours.</desc>
+  <rect width="640" height="400" fill="#fff"/>
+  <rect x="126" y="82" width="340" height="224" rx="8" fill="#fff" stroke="#141413" stroke-width="8"/>
+  <rect x="160" y="116" width="340" height="224" rx="8" fill="#fff" stroke="#141413" stroke-width="8"/>
+  <rect x="194" y="150" width="340" height="224" rx="8" fill="#fff" stroke="#141413" stroke-width="8"/>
+  <rect x="226" y="185" width="172" height="16" rx="8" fill="#141413"/>
+  <rect x="226" y="220" width="262" height="9" rx="4.5" fill="#6c6c65"/>
+  <rect x="226" y="244" width="220" height="9" rx="4.5" fill="#6c6c65"/>
+  <circle cx="238" cy="318" r="9" fill="#0a7e7c"/>
+  <circle cx="278" cy="318" r="9" fill="#c87000"/>
+  <circle cx="318" cy="318" r="9" fill="#5b8fc4"/>
+  <circle cx="358" cy="318" r="9" fill="#8140b8"/>
+  <circle cx="398" cy="318" r="9" fill="#7c9200"/>
+</svg>

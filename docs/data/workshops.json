@@ -1,9 +1,25 @@
 {
   "full": {
     "title": "Knowledge, Context and Agentic Engineering for Knowledge Work",
-    "description": "The complete material of the teaching line, maintained once as the Full Slide Deck and the Full Lecture Notes and cut into five modules. Every workshop below is a documented specialisation of it.",
-    "slides": "https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit",
-    "script": null,
+    "description": "The complete material of the teaching line, maintained as the Full Slide Deck, the bilingual Full Lecture Notes and an ordered Video Playlist. Every workshop below is a documented specialisation of it.",
+    "slide_deck": {
+      "google": "https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit",
+      "markdown": null,
+      "pdf": null
+    },
+    "lecture_notes": {
+      "en": {
+        "google": "https://docs.google.com/document/d/1eaGx86RFr4Xywnxmf4Krdy4GKMYMcnW8pAYPXVH-Lr8/edit",
+        "markdown": null,
+        "pdf": null
+      },
+      "de": {
+        "google": "https://docs.google.com/document/d/1rJRraAfBfnkrb_3ik4savYuboLPhZ-zAFvlj4CmmMcE/edit",
+        "markdown": null,
+        "pdf": null
+      }
+    },
+    "playlist": "https://www.youtube.com/playlist?list=PLXY4kw40KBaY",
     "cover": "assets/covers/full.png"
   },
   "workshops": [
@@ -14,11 +30,28 @@
       "event": "KUG Summer School 2026, University of Music and Performing Arts Graz",
       "audience": "KUG Summer School participants",
       "focus": "a complete research data workflow from digitised estate materials to structured data and a small research application, using Stefan Zweig Digital and M³GIM",
+      "modules": ["01", "02", "03", "04", "05"],
       "language": "en",
       "status": "planned",
-      "slides": "https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/edit",
-      "slides_pdf": "https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/export/pdf",
-      "script": "https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/edit",
+      "materials_status": "in_preparation",
+      "web_module": {
+        "status": "available"
+      },
+      "licence": {
+        "label": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "scope": "page-and-original-text"
+      },
+      "slide_deck": {
+        "google": "https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/edit",
+        "markdown": null,
+        "pdf": "https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/export/pdf"
+      },
+      "lecture_notes": {
+        "google": "https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/edit",
+        "markdown": null,
+        "pdf": null
+      },
       "cover": "assets/covers/2026-09-16-kug-m3gim.png"
     },
     {
@@ -28,11 +61,28 @@
       "event": "CLARIAH-AT Summer School 2026: Machine Learning for Digital Scholarly Editions",
       "audience": "digital humanities students (BA/MA level)",
       "focus": "research data workflows, digital scholarly editions, Zweig hands-on",
+      "modules": ["01", "02", "03", "04", "05"],
       "language": "en",
       "status": "planned",
-      "slides": "https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit",
-      "slides_pdf": "https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/export/pdf",
-      "script": "https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit",
+      "materials_status": "in_preparation",
+      "web_module": {
+        "status": "in_preparation"
+      },
+      "licence": {
+        "label": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "scope": "page-and-original-text"
+      },
+      "slide_deck": {
+        "google": "https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit",
+        "markdown": null,
+        "pdf": "https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/export/pdf"
+      },
+      "lecture_notes": {
+        "google": "https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit",
+        "markdown": null,
+        "pdf": null
+      },
       "cover": "assets/covers/2026-09-25-clariah-at.png"
     },
     {
@@ -41,12 +91,21 @@
       "title": "HEDIT KI-Workshop 2026",
       "event": "Forschungsstelle HEDIT, Universität Heidelberg",
       "audience": "researchers from the editions projects of the research centre",
-      "focus": "agentic engineering for digital scholarly editions, with knowledge and context engineering on day 1 and a two-part Promptotyping workshop on participant material on day 2",
+      "focus": "agentic engineering for digital scholarly editions, with Knowledge and Context Engineering on day 1 and a two-part Promptotyping workshop on participant material on day 2",
+      "modules": ["01", "02", "03", "04"],
       "language": "de",
       "status": "planned",
-      "slides": null,
-      "slides_pdf": null,
-      "script": null,
+      "materials_status": "in_preparation",
+      "web_module": {
+        "status": "in_preparation"
+      },
+      "licence": {
+        "label": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "scope": "page-and-original-text"
+      },
+      "slide_deck": { "google": null, "markdown": null, "pdf": null },
+      "lecture_notes": { "google": null, "markdown": null, "pdf": null },
       "cover": "assets/covers/2026-10-05-hedit-heidelberg.png"
     },
     {
@@ -56,11 +115,20 @@
       "event": "Fachschaft Mittelalterstudien, Universität Heidelberg",
       "audience": "students and early-career researchers in medieval studies",
       "focus": "one-day Claude Code workshop, from LLM and agent fundamentals to a medieval charter mini-edition, handwriting recognition through TEI to a small static edition",
+      "modules": ["01", "02", "03", "04", "05"],
       "language": "de",
       "status": "planned",
-      "slides": null,
-      "slides_pdf": null,
-      "script": null,
+      "materials_status": "in_preparation",
+      "web_module": {
+        "status": "in_preparation"
+      },
+      "licence": {
+        "label": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "scope": "page-and-original-text"
+      },
+      "slide_deck": { "google": null, "markdown": null, "pdf": null },
+      "lecture_notes": { "google": null, "markdown": null, "pdf": null },
       "cover": "assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png"
     },
     {
@@ -70,11 +138,20 @@
       "event": "Göttinger Digitale Akademie, Akademie der Wissenschaften zu Göttingen",
       "audience": "staff of academy research projects and library guests",
       "focus": "hybrid half-day on agent-supported research data preparation and migration and on semi-automated maintenance of interfaces and endpoints, with three project case studies and a hands-on on participant material",
+      "modules": ["01", "02", "03", "04", "05"],
       "language": "de",
       "status": "planned",
-      "slides": null,
-      "slides_pdf": null,
-      "script": null,
+      "materials_status": "in_preparation",
+      "web_module": {
+        "status": "in_preparation"
+      },
+      "licence": {
+        "label": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "scope": "page-and-original-text"
+      },
+      "slide_deck": { "google": null, "markdown": null, "pdf": null },
+      "lecture_notes": { "google": null, "markdown": null, "pdf": null },
       "cover": "assets/covers/2026-10-15-gda-goettingen.png"
     },
     {
@@ -84,11 +161,20 @@
       "event": "Uni for Life, Universität Graz",
       "audience": "professionals from companies and institutions across disciplines",
       "focus": "three two-hour units for knowledge work beyond academia",
+      "modules": ["01", "02", "03", "04", "05"],
       "language": "de",
       "status": "planned",
-      "slides": null,
-      "slides_pdf": null,
-      "script": null,
+      "materials_status": "in_preparation",
+      "web_module": {
+        "status": "in_preparation"
+      },
+      "licence": {
+        "label": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "scope": "page-and-original-text"
+      },
+      "slide_deck": { "google": null, "markdown": null, "pdf": null },
+      "lecture_notes": { "google": null, "markdown": null, "pdf": null },
       "cover": "assets/covers/2026-11-09-ufl.png"
     },
     {
@@ -98,11 +184,20 @@
       "event": "Veterinärmedizinische Universität Wien",
       "audience": "administration and research staff",
       "focus": "five-day derivation covering all five modules in full breadth",
+      "modules": ["01", "02", "03", "04", "05"],
       "language": "de",
       "status": "planned",
-      "slides": null,
-      "slides_pdf": null,
-      "script": null,
+      "materials_status": "in_preparation",
+      "web_module": {
+        "status": "in_preparation"
+      },
+      "licence": {
+        "label": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "scope": "page-and-original-text"
+      },
+      "slide_deck": { "google": null, "markdown": null, "pdf": null },
+      "lecture_notes": { "google": null, "markdown": null, "pdf": null },
       "cover": "assets/covers/2026-11-30-vetmed-winter-school.png"
     }
   ]

@@ -1,0 +1,69 @@
+{
+  "playlist": "https://www.youtube.com/playlist?list=PLXY4kw40KBaY",
+  "checked": "2026-08-25",
+  "modules": {
+    "01": {
+      "en": "Understanding Large Language Models",
+      "de": "Large Language Models verstehen"
+    },
+    "02": {
+      "en": "Prompt Engineering",
+      "de": "Prompt Engineering"
+    },
+    "03": {
+      "en": "Knowledge and Context Engineering",
+      "de": "Wissens- und Kontext-Engineering"
+    },
+    "04": {
+      "en": "Agentic Engineering",
+      "de": "Agentic Engineering"
+    },
+    "05": {
+      "en": "Critical Perspectives and Governance",
+      "de": "Kritische Perspektiven und Governance"
+    }
+  },
+  "videos": [
+    {"index": 1, "id": "k5jYwyhDMxA", "title": "5 AI Agent Terms You Need to Know", "module": "04", "duration": "11:07"},
+    {"index": 2, "id": "ZELPNFXJ4_o", "title": "AI Model vs Agentic Harness: What Actually Drives AI", "module": "04", "duration": "8:30"},
+    {"index": 3, "id": "-0HRzXk8vlk", "title": "Why AI Tokens are so Expensive", "module": "01", "duration": "25:22"},
+    {"index": 4, "id": "u4RRxi5tgTA", "title": "Wie LLMs funktionieren", "module": "01", "duration": "1:00:46"},
+    {"index": 5, "id": "7xTGNNLPyMI", "title": "Deep Dive into LLMs like ChatGPT", "module": "01", "duration": "3:31:23"},
+    {"index": 6, "id": "J51oZYcNvP8", "title": "What is Multimodal AI? How LLMs Process Text, Images, and More", "module": "01", "duration": "9:15"},
+    {"index": 7, "id": "Sj3F4oPWB8A", "title": "Prompt Engineering", "module": "02", "duration": "54:20"},
+    {"index": 8, "id": "Qx0fCqpkBus", "title": "What Is Context Engineering? Why It Matters for AI Agents", "module": "03", "duration": "9:56"},
+    {"index": 9, "id": "goU9VIXA8II", "title": "MCP vs Skills: Which Is Right for Your AI Agent and LLMs?", "module": "04", "duration": "8:02"},
+    {"index": 10, "id": "qYNs80FKIVc", "title": "5 Best Practices for Building AI Agent Skills", "module": "04", "duration": "13:22"},
+    {"index": 11, "id": "FgaBdwSvOGM", "title": "Agentic Engineering vs Software Engineering: Beyond Vibe Coding", "module": "04", "duration": "10:45"},
+    {"index": 12, "id": "UngVdAsQEiU", "title": "The Best Local Agentic Coding Workflow (Complete Guide)", "module": "04", "duration": "44:57"},
+    {"index": 13, "id": "-j4shkNnYVw", "title": "Just Go Local Solves Nothing. Here's What Does", "module": "01", "related_modules": ["05"], "duration": "11:45"},
+    {"index": 14, "id": "DogTO1jjFtI", "title": "What I Use Instead", "module": "04", "duration": "19:58"},
+    {"index": 15, "id": "RKHaecOi0CA", "title": "Meet Pi: The Minimalist, Self-Modifying Coding Agent", "module": "04", "duration": "11:22"},
+    {"index": 16, "id": "n5f51gtuGHE", "title": "Building Pi, and What Makes Self-Modifying Software So Fascinating", "module": "04", "duration": "1:33:56"},
+    {"index": 17, "id": "Dli5slNaJu0", "title": "I Hated Every Coding Agent, So I Built My Own (Pi)", "module": "04", "duration": "27:15"},
+    {"index": 18, "id": "8sUe4Jkh3uQ", "title": "Einführung in Promptotyping (Teil 1)", "module": "04", "duration": "42:11"},
+    {"index": 19, "id": "hd_a-NBO_S4", "title": "Einführung in Promptotyping (Teil 2, Live Demo mit Claude Code)", "module": "04", "duration": "34:12"},
+    {"index": 20, "id": "WnmVGVOPtrA", "title": "Anthropic's Dynamic Workflows: What Everyone Gets Wrong", "module": "04", "duration": "17:23"},
+    {"index": 21, "id": "l5rae4LMKBc", "title": "Claude Can Now Build Its Own Harness for Every Task", "module": "04", "duration": "13:24"},
+    {"index": 22, "id": "eQ6tb7j3Z2U", "title": "Agentic AI and the Future of Software Development", "module": "04", "duration": "41:32"},
+    {"index": 23, "id": "VGN22pPpb-8", "title": "Thinner Agents on a Smarter Substrate: The Ontology-based Semantic Layer", "module": "03", "duration": "11:06"},
+    {"index": 24, "id": "Sir59K8ZDPU", "title": "Why Agentic Systems Need Ontologies", "module": "03", "duration": "21:18"},
+    {"index": 25, "id": "H7puB0RwJMM", "title": "Citation Needed: Provenance for LLM-Built Knowledge Graphs", "module": "03", "duration": "20:54"},
+    {"index": 26, "id": "31Y6uRLnkQA", "title": "Wissens- und Projektmanagement mit Obsidian und Claude Code", "module": "03", "duration": "1:06:27"},
+    {"index": 27, "id": "TvGYsjTYC-I", "title": "Agentic Engineering für digitale Editionen mit Claude Code, TEI und GND", "module": "04", "duration": "1:39:07"},
+    {"index": 28, "id": "kQaTu4oFjSo", "title": "Agentic Engineering und digitale Edition mit Claude Code", "module": "04", "duration": "2:26:48"},
+    {"index": 29, "id": "K1sZBOUSZ_0", "title": "Grounded Vault: Quellenbasiertes Arbeiten mit AI Agents", "module": "03", "duration": "1:32:26"},
+    {"index": 30, "id": "B7TCJjcVA2k", "title": "Research Mission Control: Eine Forschungsleitstelle mit mehreren KI-Agenten", "module": "04", "related_modules": ["03"], "duration": "1:33:41"},
+    {"index": 31, "id": "yyJpwHBKRCg", "title": "How to Use Multiple AI Agents in Your IDE", "module": "04", "duration": "11:00"},
+    {"index": 32, "id": "141biWM1mlE", "title": "This Meta-Harness Changes How You Run AI Agents", "module": "04", "duration": "14:09"},
+    {"index": 33, "id": "7BrxIBkX3mg", "title": "Loop Engineering: Why Everyone Is Talking About Agentic Loops", "module": "04", "duration": "11:03"},
+    {"index": 34, "id": "ju7R6jer6_M", "title": "Stop Building AI Agents the Old Way", "module": "04", "duration": "14:50"},
+    {"index": 35, "id": "64xK-SEl3nA", "title": "Matrix 2025: Gefangen in der Kalifornischen Ideologie – scobel", "module": "05", "duration": "33:13"},
+    {"index": 36, "id": "Hgdplv8Mde8", "title": "Douglas Rushkoff – das Mindset der Tech-Milliardäre | Sternstunde Philosophie | SRF Kultur", "module": "05", "duration": "58:05"},
+    {"index": 37, "id": "cvZW3TD2jNE", "title": "Die geheime Steuerung, die niemand wählte – scobel im Gespräch: Mit Anna-Verena Nosthoff", "module": "05", "duration": "1:15:24"},
+    {"index": 38, "id": "BZo-3ni4paU", "title": "Kybernetik kurz erklärt | 5 Fragen an Anna-Verena Nosthoff", "module": "05", "duration": "7:55"},
+    {"index": 39, "id": "31Uhv12ZLHU", "title": "What the hell happened with AGI timelines in 2026?", "module": "05", "duration": "49:28"},
+    {"index": 40, "id": "zOSptyQ3j9A", "title": "Where AGI timelines go wrong | Toby Ord, Oxford University", "module": "05", "duration": "2:46:03"},
+    {"index": 41, "id": "QYeNESqKbSc", "title": "Can $500 Billion Win the AI Race? | Anton Leicht", "module": "05", "duration": "1:33:58"}
+  ]
+}

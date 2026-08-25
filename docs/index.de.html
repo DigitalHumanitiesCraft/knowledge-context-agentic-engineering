@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20260825-2">
+<link rel="stylesheet" href="assets/site.css?v=20260825-18">
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
@@ -19,15 +19,15 @@
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="index.de.html">
-      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
-      <span>Digital Humanities Craft</span>
-    </a>
+    <div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Website von Digital Humanities Craft"><img src="assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="index.de.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div>
     <div class="head-tools">
       <nav class="site-nav" aria-label="Seite">
         <ul>
+          <li><a href="preparation.de.html">Vorbereitung</a></li>
+          <li><a href="about.de.html">Über &amp; Impressum</a></li>
           <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
         </ul>
       </nav>
@@ -39,44 +39,30 @@
   </div>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1">
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <h1>Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
         <p>
-          Diese Lehrreihe untersucht den Einsatz von <a class="concept-link" href="#concept-llm">Large Language Models (LLMs)</a> in
-          <a class="concept-link" href="#concept-harness">AI Harnesses</a> für
-          computergestützte und datenbasierte Wissensarbeit. Sie richtet sich an Forschende,
-          Studierende und Fachkräfte, die Wissen mit digitalen Systemen erzeugen, transformieren,
-          prüfen oder vermitteln. Die gemeinsame methodische Grundlage ist ein in fünf Modulen
-          gepflegtes Lehrmaterial. Die Module verbinden Modellverständnis und Promptgestaltung
-          mit Knowledge und Context Engineering, agentischen Arbeitsabläufen, Verifikation und
-          Governance. Jeder Workshop ist eine dokumentierte Spezialisierung, die Teile dieses
-          Materials auswählt und Tiefe, Beispiele, Übungen sowie Lehrsprache an eine bestimmte
-          Zielgruppe anpasst.
+          Diese Lehrreihe untersucht, wie <span class="term term--m1"><button class="term-trigger" type="button" aria-describedby="term-llm-definition">Large Language Models (LLMs)</button><span class="term-tooltip" id="term-llm-definition" role="tooltip">Sprachmodelle, die auf umfangreichen Textkorpora trainiert sind, Anweisungen verarbeiten und kontextabhängige Sprache erzeugen.</span></span> in
+          <span class="term term--m4"><button class="term-trigger" type="button" aria-describedby="term-harness-definition">AI Harnesses</button><span class="term-tooltip" id="term-harness-definition" role="tooltip">Arbeitsumgebungen, die ein Sprachmodell mit Projektkontext, Dateien, Werkzeugen und kontrollierten Handlungsmöglichkeiten verbinden.</span></span> für computer- und datenbasierte Wissensarbeit eingesetzt werden. Die fünf Module verbinden Modellgrundlagen mit
+          <span class="term term--m2"><button class="term-trigger" type="button" aria-describedby="term-prompt-definition">Prompt Engineering</button><span class="term-tooltip" id="term-prompt-definition" role="tooltip">Die iterative Gestaltung und Prüfung von Anweisungen für ein bestimmtes Modell und eine bestimmte Aufgabe.</span></span>,
+          <span class="term term--m3"><button class="term-trigger" type="button" aria-describedby="term-context-definition">Wissens- und Kontext-Engineering</button><span class="term-tooltip" id="term-context-definition" role="tooltip">Explizites Projektwissen pflegen und die Informationen zusammenstellen, die ein Modell für die aktuelle Aufgabe benötigt.</span></span>,
+          <span class="term term--m4"><button class="term-trigger" type="button" aria-describedby="term-agentic-definition">Agentic Engineering</button><span class="term-tooltip" id="term-agentic-definition" role="tooltip">Erweiterte Arbeit über Werkzeugnutzung, Zwischenergebnisse, Berechtigungen, Rückmeldungen und menschliche Prüfung organisieren.</span></span> sowie
+          <span class="term term--m5"><button class="term-trigger" type="button" aria-describedby="term-governance-definition">Verifikation und Governance</button><span class="term-tooltip" id="term-governance-definition" role="tooltip">Technische Eigenschaften prüfen, fachliche Akzeptanz dokumentieren und Verantwortung für die Nutzung festlegen.</span></span>. Das gemeinsame Full Slide Deck, zwei Sprachfassungen der Full Lecture Notes und eine geordnete Video-Playlist tragen das Material; jeder Workshop wählt daraus aus und passt Inhalte, Aufgaben und Lehrsprache an ein definiertes Fachgebiet an.
         </p>
-        <p class="hero-preparation">Ein eigenes <a href="preparation.de.html">Einrichtungstutorial</a> behandelt Browserzugang, lokale Werkzeuge und ein AI Harness.</p>
+        <p class="hero-preparation">Im <a href="preparation.de.html">Vorbereitungstutorial</a> erfährst du, wie du alles für die Teilnahme an einem Workshop einrichtest.</p>
       </div>
       <aside class="hero-modules" id="modules" aria-labelledby="modules-title">
         <h2 id="modules-title">Module</h2>
         <ol class="module-list" role="list">
-          <li class="m1"><span class="key"><span class="dot"></span>01</span><h3>Large Language Models &bdquo;verstehen&ldquo;</h3></li>
-          <li class="m2"><span class="key"><span class="dot"></span>02</span><h3>Prompt Engineering</h3></li>
-          <li class="m3"><span class="key"><span class="dot"></span>03</span><h3>Wissens- und Kontext-Engineering</h3></li>
-          <li class="m4"><span class="key"><span class="dot"></span>04</span><h3>Agentic Engineering</h3></li>
-          <li class="m5"><span class="key"><span class="dot"></span>05</span><h3>Kritische Perspektiven und Governance</h3></li>
+          <li class="m1" id="module-01"><span class="key"><span class="module-icon" aria-hidden="true"></span>01</span><h3>Large Language Models &bdquo;verstehen&ldquo;</h3></li>
+          <li class="m2" id="module-02"><span class="key"><span class="module-icon" aria-hidden="true"></span>02</span><h3>Prompt Engineering</h3></li>
+          <li class="m3" id="module-03"><span class="key"><span class="module-icon" aria-hidden="true"></span>03</span><h3>Wissens- und Kontext-Engineering</h3></li>
+          <li class="m4" id="module-04"><span class="key"><span class="module-icon" aria-hidden="true"></span>04</span><h3>Agentic Engineering</h3></li>
+          <li class="m5" id="module-05"><span class="key"><span class="module-icon" aria-hidden="true"></span>05</span><h3>Kritische Perspektiven und Governance</h3></li>
         </ol>
-        <dl class="concept-definitions" aria-label="Zentrale Begriffe">
-          <div id="concept-llm">
-            <dt>Large Language Models (LLMs)</dt>
-            <dd>Sprachmodelle, die auf umfangreichen Textkorpora trainiert sind, Anweisungen verarbeiten und kontextabhängige Sprache erzeugen.</dd>
-          </div>
-          <div id="concept-harness">
-            <dt>AI Harnesses</dt>
-            <dd>Arbeitsumgebungen, die ein Sprachmodell mit Projektkontext, Dateien, Werkzeugen und kontrollierten Handlungsmöglichkeiten verbinden.</dd>
-          </div>
-        </dl>
       </aside>
     </div>
   </section>
@@ -84,20 +70,93 @@
   <section class="section teaching-materials" id="material">
     <div class="wrap">
       <h2 class="section-title">Unterrichtsmaterialien</h2>
-      <div class="material">
-        <div><img class="plate" src="assets/covers/full.png" alt="" width="960" height="540" loading="lazy" decoding="async"></div>
-        <div>
-          <p>
-            Das Full Slide Deck stellt alle fünf Module bereit. Die Full Lecture Notes
-            dokumentieren dasselbe Material auf Deutsch und Englisch. Beide Bestände werden
-            zentral gepflegt und liefern die Modulauswahl, Fallstudien und Übungen für die
-            Workshopprofile.
-          </p>
-          <ul class="linklist" role="list">
-            <li><a href="https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit">Full Slide Deck</a><span class="what">Google Slides mit allen fünf Modulen</span></li>
-            <li><span class="pending">Full Lecture Notes in Vorbereitung</span><span class="what">Deutsche und englische Fassung im Repository</span></li>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-summary">
+            <img class="resource-mark" src="assets/materials/slides.svg" alt="" width="640" height="400" loading="lazy" decoding="async">
+            <div class="resource-copy">
+              <p class="resource-kind">Vollständiges Material</p>
+              <h3>Full Slide Deck</h3>
+              <p>Ein vollständiger Überblick über das Lehrmaterial in einem Foliensatz. Er dient als Nachschlagewerk und als Quelle für workshopspezifische Foliensätze.</p>
+            </div>
+          </div>
+          <ul class="resource-actions">
+            <li><a class="resource-action" href="https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit" aria-label="Full Slide Deck in Google Slides öffnen"><img src="assets/materials/slides-icon.svg" alt="">Google</a></li>
+            <li><span class="resource-action resource-action--pending">Markdown &middot; folgt</span></li>
+            <li><span class="resource-action resource-action--pending">PDF &middot; folgt</span></li>
           </ul>
+        </article>
+        <article class="resource-card">
+          <div class="resource-summary">
+            <img class="resource-mark" src="assets/materials/notes.svg?v=20260825-2" alt="" width="640" height="400" loading="lazy" decoding="async">
+            <div class="resource-copy">
+              <p class="resource-kind">Vollständiges Material</p>
+              <h3>Full Lecture Notes</h3>
+              <p>Die ausformulierte Fassung der Folien mit Erklärungen und Kontext zum Lesen und Nachschlagen.</p>
+            </div>
+          </div>
+          <div class="resource-editions">
+            <div class="resource-edition">
+              <p class="resource-edition-label">Deutsch</p>
+              <ul class="resource-actions">
+                <li><a class="resource-action" href="https://docs.google.com/document/d/1rJRraAfBfnkrb_3ik4savYuboLPhZ-zAFvlj4CmmMcE/edit" aria-label="Deutsche Full Lecture Notes in Google Docs öffnen"><img src="assets/materials/notes-icon.svg" alt="">Google</a></li>
+                <li><span class="resource-action resource-action--pending">Markdown &middot; folgt</span></li>
+                <li><span class="resource-action resource-action--pending">PDF &middot; folgt</span></li>
+              </ul>
+            </div>
+            <div class="resource-edition">
+              <p class="resource-edition-label">English</p>
+              <ul class="resource-actions">
+                <li><a class="resource-action" href="https://docs.google.com/document/d/1eaGx86RFr4Xywnxmf4Krdy4GKMYMcnW8pAYPXVH-Lr8/edit" aria-label="Englische Full Lecture Notes in Google Docs öffnen"><img src="assets/materials/notes-icon.svg" alt="">Google</a></li>
+                <li><span class="resource-action resource-action--pending">Markdown &middot; folgt</span></li>
+                <li><span class="resource-action resource-action--pending">PDF &middot; folgt</span></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-summary">
+            <img class="resource-mark" src="assets/materials/videos.svg" alt="" width="640" height="400" loading="lazy" decoding="async">
+            <div class="resource-copy">
+              <p class="resource-kind">YouTube</p>
+              <h3><a href="https://www.youtube.com/playlist?list=PLXY4kw40KBaY">Video-Playlist</a></h3>
+              <p>Eine geordnete Videoreihe von den Grundlagen zu vertiefenden Themen, die laufend gepflegt und erweitert wird.</p>
+            </div>
+          </div>
+          <ul class="resource-actions">
+            <li><a class="resource-action" href="https://www.youtube.com/playlist?list=PLXY4kw40KBaY">Playlist öffnen</a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Vertiefungen ============ -->
+  <section class="section deep-dives" id="deep-dives" aria-labelledby="deep-dives-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Spezialisierte Lernwege</p>
+          <h2 class="section-title" id="deep-dives-title">Vertiefungen</h2>
         </div>
+        <p class="section-lede">Fokussierte Lernwege vertiefen einzelne Module innerhalb der gemeinsamen Fünf-Modul-Struktur.</p>
+      </div>
+      <div class="deep-dive-grid">
+        <article class="deep-dive-card">
+          <p class="deep-dive-kind">Externes Curriculum · Deutsch</p>
+          <h3><a href="https://digitalhumanitiescraft.github.io/ai-coding-literacy/de/">AI Coding Literacy <span aria-hidden="true">↗</span></a></h3>
+          <p>Ein spezialisiertes Curriculum zum Aufbau von Kompetenz im KI-gestützten Programmieren.</p>
+        </article>
+        <article class="deep-dive-card">
+          <p class="deep-dive-kind">Modul 04 · Produktspezifisch</p>
+          <h3><a href="tutorials/claude-code.de.html">Einführung in Claude Code</a></h3>
+          <p>Ein lokaler Lernweg zu Harness, Projektkontext, Erweiterungen und delegierter Arbeit.</p>
+        </article>
+        <article class="deep-dive-card deep-dive-card--pending">
+          <p class="deep-dive-kind">Forschungsworkflow</p>
+          <h3>Forschungsdaten und Wissensarbeit</h3>
+          <p class="deep-dive-state">In Vorbereitung</p>
+        </article>
       </div>
     </div>
   </section>
@@ -105,135 +164,792 @@
   <section class="section" id="workshops">
     <div class="wrap">
       <h2 class="section-title">Workshops</h2>
-      <p class="section-lede">Die geplanten Veranstaltungen in chronologischer Reihenfolge.</p>
-      <ul class="cards" role="list">
-<li class="card">
+      <p class="section-lede">Jeder Workshop ist eine domänenspezifische Ableitung des Full Slide Decks. Er wählt gemeinsame Module aus, ordnet sie für die Veranstaltung neu und ergänzt passende Fälle, Übungen und Abläufe. Einige Erklärungen wiederholen sich bewusst, damit jeder Workshop eigenständig nutzbar bleibt.</p>
+      <ol class="workshop-timeline">
+<li class="timeline-item timeline-item--in-preparation">
+  <div class="timeline-date"><time datetime="2026-09-16"><span class="timeline-date-day">16.&ndash;17.</span><span class="timeline-date-month">September 2026</span></time></div>
+  <article class="card card--in-preparation">
   <div class="card-cover">
     <img src="assets/covers/2026-09-16-kug-m3gim.png" alt="" width="960" height="540" loading="lazy" decoding="async">
   </div>
   <div class="card-body">
-    <p class="stamp">16.–17. September 2026<span class="sep">·</span>zwei Tage</p>
     <h3><a href="workshops/2026-09-16-kug-m3gim.de.html">Making Estate Materials Digitally Accessible</a></h3>
-    <p class="event">KUG Summer School 2026, Kunstuniversität Graz</p>
-    <p class="facts"><span>Teilnehmende der KUG Summer School</span><span>Lehrmaterialien auf Englisch</span></p>
+    <dl class="card-meta">
+      <div><dt>Veranstaltung</dt><dd>KUG Summer School 2026, Kunstuniversität Graz</dd></div>
+      <div><dt>Sprache</dt><dd>Englisch</dd></div>
+      <div><dt>Lizenz</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div>
+    </dl>
+    <div class="module-series">
+      <p class="module-series__label" id="modules-2026-09-16-kug-m3gim-label">Module</p>
+      <ol class="module-series__list" aria-labelledby="modules-2026-09-16-kug-m3gim-label" role="list">
+        <li class="module-series__item m1">
+          <a class="module-series__link" href="#module-01" aria-label="Modul 01: Large Language Models &bdquo;verstehen&ldquo;" data-tooltip="Modul 01: Large Language Models &bdquo;verstehen&ldquo;">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">01</span>
+          </a>
+        </li>
+        <li class="module-series__item m2">
+          <a class="module-series__link" href="#module-02" aria-label="Modul 02: Prompt Engineering" data-tooltip="Modul 02: Prompt Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">02</span>
+          </a>
+        </li>
+        <li class="module-series__item m3">
+          <a class="module-series__link" href="#module-03" aria-label="Modul 03: Wissens- und Kontext-Engineering" data-tooltip="Modul 03: Wissens- und Kontext-Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">03</span>
+          </a>
+        </li>
+        <li class="module-series__item m4">
+          <a class="module-series__link" href="#module-04" aria-label="Modul 04: Agentic Engineering" data-tooltip="Modul 04: Agentic Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">04</span>
+          </a>
+        </li>
+        <li class="module-series__item m5">
+          <a class="module-series__link" href="#module-05" aria-label="Modul 05: Kritische Perspektiven und Governance" data-tooltip="Modul 05: Kritische Perspektiven und Governance">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">05</span>
+          </a>
+        </li>
+      </ol>
+    </div>
     <p class="spec">Vier verbundene Einheiten verfolgen einen vollständigen Forschungsdaten-Workflow. Stefan Zweig Digital erklärt den Weg vom Nachlassmaterial zur Forschungsplattform. Die Hands-ons mit M³GIM führen über Informationsextraktion zu einer kleinen digitalen Forschungsanwendung.</p>
-    <ul class="mods" role="list" aria-label="Modulabdeckung"><li class="mod m1" title="Modul 1">1</li><li class="mod m2" title="Modul 2">2</li><li class="mod m3" title="Modul 3">3</li><li class="mod m4" title="Modul 4">4</li><li class="mod m5 lite" title="Modul 5">5</li></ul>
-    <p class="card-foot"><span class="links"><a href="https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/edit">Foliensatz</a><a href="https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/edit">Skriptum</a></span></p>
+    <p class="card-foot"><span class="material-state">Slide Deck und Lecture Notes in Vorbereitung</span></p>
   </div>
+  </article>
 </li>
-<li class="card">
+<li class="timeline-item timeline-item--in-preparation">
+  <div class="timeline-date"><time datetime="2026-09-25"><span class="timeline-date-day">25.</span><span class="timeline-date-month">September 2026</span></time></div>
+  <article class="card card--in-preparation">
   <div class="card-cover">
     <img src="assets/covers/2026-09-25-clariah-at.png" alt="" width="960" height="540" loading="lazy" decoding="async">
   </div>
   <div class="card-body">
-    <p class="stamp">25. September 2026<span class="sep">·</span>ein Tag</p>
     <h3><a href="workshops/2026-09-25-clariah-at.de.html">Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</a></h3>
-    <p class="event">CLARIAH-AT Summer School 2026</p>
-    <p class="facts"><span>Studierende der Digital Humanities auf BA- und MA-Niveau</span><span>Lehrsprache Englisch</span></p>
+    <dl class="card-meta">
+      <div><dt>Veranstaltung</dt><dd>CLARIAH-AT Summer School 2026, Machine Learning for Digital Scholarly Editions</dd></div>
+      <div><dt>Sprache</dt><dd>Englisch</dd></div>
+      <div><dt>Lizenz</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div>
+    </dl>
+    <div class="module-series">
+      <p class="module-series__label" id="modules-2026-09-25-clariah-at-label">Module</p>
+      <ol class="module-series__list" aria-labelledby="modules-2026-09-25-clariah-at-label" role="list">
+        <li class="module-series__item m1">
+          <a class="module-series__link" href="#module-01" aria-label="Modul 01: Large Language Models &bdquo;verstehen&ldquo;" data-tooltip="Modul 01: Large Language Models &bdquo;verstehen&ldquo;">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">01</span>
+          </a>
+        </li>
+        <li class="module-series__item m2">
+          <a class="module-series__link" href="#module-02" aria-label="Modul 02: Prompt Engineering" data-tooltip="Modul 02: Prompt Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">02</span>
+          </a>
+        </li>
+        <li class="module-series__item m3">
+          <a class="module-series__link" href="#module-03" aria-label="Modul 03: Wissens- und Kontext-Engineering" data-tooltip="Modul 03: Wissens- und Kontext-Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">03</span>
+          </a>
+        </li>
+        <li class="module-series__item m4">
+          <a class="module-series__link" href="#module-04" aria-label="Modul 04: Agentic Engineering" data-tooltip="Modul 04: Agentic Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">04</span>
+          </a>
+        </li>
+        <li class="module-series__item m5">
+          <a class="module-series__link" href="#module-05" aria-label="Modul 05: Kritische Perspektiven und Governance" data-tooltip="Modul 05: Kritische Perspektiven und Governance">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">05</span>
+          </a>
+        </li>
+      </ol>
+    </div>
     <p class="spec">Der eintägige Workshop verbindet Forschungsdaten-Workflows und digitale Editionen. Zwei praktische Einheiten führen von der multimodalen Transkription einer Manuskriptseite zur schemabasierten Informationsextraktion und wissenschaftlichen Prüfung.</p>
-    <ul class="mods" role="list" aria-label="Modulabdeckung"><li class="mod m1" title="Modul 1">1</li><li class="mod m2" title="Modul 2">2</li><li class="mod m3" title="Modul 3">3</li><li class="mod m4" title="Modul 4">4</li><li class="mod m5 lite" title="Modul 5">5</li></ul>
-    <p class="card-foot"><span class="links"><a href="https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit">Foliensatz</a><a href="https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit">Skriptum</a></span></p>
+    <p class="card-foot"><span class="material-state">Slide Deck und Lecture Notes in Vorbereitung</span></p>
   </div>
+  </article>
 </li>
-<li class="card">
+<li class="timeline-item timeline-item--in-preparation">
+  <div class="timeline-date"><time datetime="2026-10-05"><span class="timeline-date-day">5.&ndash;6.</span><span class="timeline-date-month">Oktober 2026</span></time></div>
+  <article class="card card--in-preparation">
   <div class="card-cover">
     <img src="assets/covers/2026-10-05-hedit-heidelberg.png" alt="" width="960" height="540" loading="lazy" decoding="async">
   </div>
   <div class="card-body">
-    <p class="stamp">5.–6. Oktober 2026<span class="sep">·</span>zwei Tage</p>
     <h3><a href="workshops/2026-10-05-hedit-heidelberg.de.html">HEDIT KI-Workshop 2026</a></h3>
-    <p class="event">Forschungsstelle HEDIT, Universität Heidelberg</p>
-    <p class="facts"><span>Forschende aus digitalen Editionsprojekten</span><span>Lehrsprache Deutsch</span></p>
+    <dl class="card-meta"><div><dt>Veranstaltung</dt><dd>Forschungsstelle HEDIT, Universität Heidelberg</dd></div><div><dt>Sprache</dt><dd>Deutsch</dd></div><div><dt>Lizenz</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div></dl>
+    <div class="module-series">
+      <p class="module-series__label" id="modules-2026-10-05-hedit-heidelberg-label">Module</p>
+      <ol class="module-series__list" aria-labelledby="modules-2026-10-05-hedit-heidelberg-label" role="list">
+        <li class="module-series__item m1">
+          <a class="module-series__link" href="#module-01" aria-label="Modul 01: Large Language Models &bdquo;verstehen&ldquo;" data-tooltip="Modul 01: Large Language Models &bdquo;verstehen&ldquo;">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">01</span>
+          </a>
+        </li>
+        <li class="module-series__item m2">
+          <a class="module-series__link" href="#module-02" aria-label="Modul 02: Prompt Engineering" data-tooltip="Modul 02: Prompt Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">02</span>
+          </a>
+        </li>
+        <li class="module-series__item m3">
+          <a class="module-series__link" href="#module-03" aria-label="Modul 03: Wissens- und Kontext-Engineering" data-tooltip="Modul 03: Wissens- und Kontext-Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">03</span>
+          </a>
+        </li>
+        <li class="module-series__item m4">
+          <a class="module-series__link" href="#module-04" aria-label="Modul 04: Agentic Engineering" data-tooltip="Modul 04: Agentic Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">04</span>
+          </a>
+        </li>
+      </ol>
+    </div>
     <p class="spec">Der erste Tag verbindet Modellgrundlagen, TEI-Modellierung, Context Engineering und Agentic Coding. Am zweiten Tag entwickeln die Teilnehmenden mit eigenem Material eine dokumentierte Wissensbasis und einen kleinen Editionsprototyp.</p>
-    <ul class="mods" role="list" aria-label="Modulabdeckung"><li class="mod m1" title="Modul 1">1</li><li class="mod m2" title="Modul 2">2</li><li class="mod m3" title="Modul 3">3</li><li class="mod m4" title="Modul 4">4</li><li class="mod m5 off" title="Modul 5">5</li></ul>
-    <p class="card-foot"><span class="pending">Folien und Skriptum in Vorbereitung</span></p>
+    <p class="card-foot"><span class="material-state">Slide Deck und Lecture Notes in Vorbereitung</span></p>
   </div>
+  </article>
 </li>
-<li class="card">
+<li class="timeline-item timeline-item--in-preparation">
+  <div class="timeline-date"><time datetime="2026-10-08"><span class="timeline-date-day">8.</span><span class="timeline-date-month">Oktober 2026</span></time></div>
+  <article class="card card--in-preparation">
   <div class="card-cover">
     <img src="assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png" alt="" width="960" height="540" loading="lazy" decoding="async">
   </div>
   <div class="card-body">
-    <p class="stamp">8. Oktober 2026<span class="sep">·</span>ein Tag</p>
     <h3><a href="workshops/2026-10-08-fachschaft-mittelalterstudien-heidelberg.de.html">Knowledge, Context und Agentic Engineering für die Forschung</a></h3>
-    <p class="event">Fachschaft Mittelalterstudien, Universität Heidelberg</p>
-    <p class="facts"><span>Studierende und Forschende in frühen Karrierephasen</span><span>Lehrsprache Deutsch</span></p>
+    <dl class="card-meta"><div><dt>Veranstaltung</dt><dd>Fachschaft Mittelalterstudien, Universität Heidelberg</dd></div><div><dt>Sprache</dt><dd>Deutsch</dd></div><div><dt>Lizenz</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div></dl>
+    <div class="module-series">
+      <p class="module-series__label" id="modules-2026-10-08-fachschaft-mittelalterstudien-heidelberg-label">Module</p>
+      <ol class="module-series__list" aria-labelledby="modules-2026-10-08-fachschaft-mittelalterstudien-heidelberg-label" role="list">
+        <li class="module-series__item m1">
+          <a class="module-series__link" href="#module-01" aria-label="Modul 01: Large Language Models &bdquo;verstehen&ldquo;" data-tooltip="Modul 01: Large Language Models &bdquo;verstehen&ldquo;">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">01</span>
+          </a>
+        </li>
+        <li class="module-series__item m2">
+          <a class="module-series__link" href="#module-02" aria-label="Modul 02: Prompt Engineering" data-tooltip="Modul 02: Prompt Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">02</span>
+          </a>
+        </li>
+        <li class="module-series__item m3">
+          <a class="module-series__link" href="#module-03" aria-label="Modul 03: Wissens- und Kontext-Engineering" data-tooltip="Modul 03: Wissens- und Kontext-Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">03</span>
+          </a>
+        </li>
+        <li class="module-series__item m4">
+          <a class="module-series__link" href="#module-04" aria-label="Modul 04: Agentic Engineering" data-tooltip="Modul 04: Agentic Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">04</span>
+          </a>
+        </li>
+        <li class="module-series__item m5">
+          <a class="module-series__link" href="#module-05" aria-label="Modul 05: Kritische Perspektiven und Governance" data-tooltip="Modul 05: Kritische Perspektiven und Governance">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">05</span>
+          </a>
+        </li>
+      </ol>
+    </div>
     <p class="spec">Die Teilnehmenden arbeiten im AI Harness an mittelalterlichen Urkunden. Der Workflow führt von Handschriftenerkennung und Quellenprüfung über TEI XML und Entitätenregister zu einer kleinen statischen Edition.</p>
-    <ul class="mods" role="list" aria-label="Modulabdeckung"><li class="mod m1" title="Modul 1">1</li><li class="mod m2 lite" title="Modul 2">2</li><li class="mod m3" title="Modul 3">3</li><li class="mod m4" title="Modul 4">4</li><li class="mod m5 lite" title="Modul 5">5</li></ul>
-    <p class="card-foot"><span class="pending">Folien und Skriptum in Vorbereitung</span></p>
+    <p class="card-foot"><span class="material-state">Slide Deck und Lecture Notes in Vorbereitung</span></p>
   </div>
+  </article>
 </li>
-<li class="card">
+<li class="timeline-item timeline-item--in-preparation">
+  <div class="timeline-date"><time datetime="2026-10-15"><span class="timeline-date-day">15.</span><span class="timeline-date-month">Oktober 2026</span></time><p class="timeline-date-detail">Halber Tag &middot; hybrid</p></div>
+  <article class="card card--in-preparation">
   <div class="card-cover">
     <img src="assets/covers/2026-10-15-gda-goettingen.png" alt="" width="960" height="540" loading="lazy" decoding="async">
   </div>
   <div class="card-body">
-    <p class="stamp">15. Oktober 2026<span class="sep">·</span>halber Tag</p>
     <h3><a href="workshops/2026-10-15-gda-goettingen.de.html">Generative KI für Datenaufbereitung, Datenmigration und die Pflege von Interfaces</a></h3>
-    <p class="event">Göttinger Digitale Akademie</p>
-    <p class="facts"><span>Mitarbeitende von Akademieprojekten und Gäste aus Bibliotheken</span><span>Lehrsprache Deutsch</span></p>
+    <dl class="card-meta"><div><dt>Veranstaltung</dt><dd>Göttinger Digitale Akademie, Akademie der Wissenschaften zu Göttingen</dd></div><div><dt>Sprache</dt><dd>Deutsch</dd></div><div><dt>Lizenz</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div></dl>
+    <div class="module-series">
+      <p class="module-series__label" id="modules-2026-10-15-gda-goettingen-label">Module</p>
+      <ol class="module-series__list" aria-labelledby="modules-2026-10-15-gda-goettingen-label" role="list">
+        <li class="module-series__item m1">
+          <a class="module-series__link" href="#module-01" aria-label="Modul 01: Large Language Models &bdquo;verstehen&ldquo;" data-tooltip="Modul 01: Large Language Models &bdquo;verstehen&ldquo;">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">01</span>
+          </a>
+        </li>
+        <li class="module-series__item m2">
+          <a class="module-series__link" href="#module-02" aria-label="Modul 02: Prompt Engineering" data-tooltip="Modul 02: Prompt Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">02</span>
+          </a>
+        </li>
+        <li class="module-series__item m3">
+          <a class="module-series__link" href="#module-03" aria-label="Modul 03: Wissens- und Kontext-Engineering" data-tooltip="Modul 03: Wissens- und Kontext-Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">03</span>
+          </a>
+        </li>
+        <li class="module-series__item m4">
+          <a class="module-series__link" href="#module-04" aria-label="Modul 04: Agentic Engineering" data-tooltip="Modul 04: Agentic Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">04</span>
+          </a>
+        </li>
+        <li class="module-series__item m5">
+          <a class="module-series__link" href="#module-05" aria-label="Modul 05: Kritische Perspektiven und Governance" data-tooltip="Modul 05: Kritische Perspektiven und Governance">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">05</span>
+          </a>
+        </li>
+      </ol>
+    </div>
     <p class="spec">Der Workshop behandelt agentengestützte Datenaufbereitung, Migration und Interfacepflege. Fallstudien und ein Hands-on zeigen dokumentierte Transformationen mit maschinenlesbarem Projektwissen, Skripten und überprüfbaren Ergebnissen.</p>
-    <ul class="mods" role="list" aria-label="Modulabdeckung"><li class="mod m1 lite" title="Modul 1">1</li><li class="mod m2 lite" title="Modul 2">2</li><li class="mod m3" title="Modul 3">3</li><li class="mod m4" title="Modul 4">4</li><li class="mod m5" title="Modul 5">5</li></ul>
-    <p class="card-foot"><span class="pending">Folien und Skriptum in Vorbereitung</span></p>
+    <p class="card-foot"><span class="material-state">Slide Deck und Lecture Notes in Vorbereitung</span></p>
   </div>
+  </article>
 </li>
-<li class="card">
+<li class="timeline-item timeline-item--in-preparation">
+  <div class="timeline-date"><time datetime="2026-11-09"><span class="timeline-date-day">9.&ndash;10.</span><span class="timeline-date-month">November 2026</span></time><p class="timeline-date-detail">3 &times; 2 Stunden</p></div>
+  <article class="card card--in-preparation">
   <div class="card-cover">
     <img src="assets/covers/2026-11-09-ufl.png" alt="" width="960" height="540" loading="lazy" decoding="async">
   </div>
   <div class="card-body">
-    <p class="stamp">9.–10. November 2026<span class="sep">·</span>drei Einheiten</p>
     <h3><a href="workshops/2026-11-09-ufl.de.html">Agentic-Engineering-Workshop</a></h3>
-    <p class="event">UNI for LIFE, Universität Graz</p>
-    <p class="facts"><span>Fachkräfte aus Unternehmen und Institutionen</span><span>Lehrsprache Deutsch</span></p>
+    <dl class="card-meta"><div><dt>Veranstaltung</dt><dd>UNI for LIFE, Universität Graz</dd></div><div><dt>Sprache</dt><dd>Deutsch</dd></div><div><dt>Lizenz</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div></dl>
+    <div class="module-series">
+      <p class="module-series__label" id="modules-2026-11-09-ufl-label">Module</p>
+      <ol class="module-series__list" aria-labelledby="modules-2026-11-09-ufl-label" role="list">
+        <li class="module-series__item m1">
+          <a class="module-series__link" href="#module-01" aria-label="Modul 01: Large Language Models &bdquo;verstehen&ldquo;" data-tooltip="Modul 01: Large Language Models &bdquo;verstehen&ldquo;">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">01</span>
+          </a>
+        </li>
+        <li class="module-series__item m2">
+          <a class="module-series__link" href="#module-02" aria-label="Modul 02: Prompt Engineering" data-tooltip="Modul 02: Prompt Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">02</span>
+          </a>
+        </li>
+        <li class="module-series__item m3">
+          <a class="module-series__link" href="#module-03" aria-label="Modul 03: Wissens- und Kontext-Engineering" data-tooltip="Modul 03: Wissens- und Kontext-Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">03</span>
+          </a>
+        </li>
+        <li class="module-series__item m4">
+          <a class="module-series__link" href="#module-04" aria-label="Modul 04: Agentic Engineering" data-tooltip="Modul 04: Agentic Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">04</span>
+          </a>
+        </li>
+        <li class="module-series__item m5">
+          <a class="module-series__link" href="#module-05" aria-label="Modul 05: Kritische Perspektiven und Governance" data-tooltip="Modul 05: Kritische Perspektiven und Governance">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">05</span>
+          </a>
+        </li>
+      </ol>
+    </div>
     <p class="spec">Drei Einheiten führen von Setup und Terminal über die eigene Wissensbasis zu einer kleinen Anwendung. Die Übungen verwenden ein synthetisches institutionelles Szenario und lassen sich auf den eigenen beruflichen Kontext übertragen.</p>
-    <ul class="mods" role="list" aria-label="Modulabdeckung"><li class="mod m1 lite" title="Modul 1">1</li><li class="mod m2 lite" title="Modul 2">2</li><li class="mod m3" title="Modul 3">3</li><li class="mod m4" title="Modul 4">4</li><li class="mod m5 lite" title="Modul 5">5</li></ul>
-    <p class="card-foot"><span class="pending">Folien und Skriptum in Vorbereitung</span></p>
+    <p class="card-foot"><span class="material-state">Slide Deck und Lecture Notes in Vorbereitung</span></p>
   </div>
+  </article>
 </li>
-<li class="card">
+<li class="timeline-item timeline-item--in-preparation">
+  <div class="timeline-date"><time datetime="2026-11-30"><span class="timeline-date-day">30. Nov.&ndash;4. Dez.</span><span class="timeline-date-month">2026</span></time></div>
+  <article class="card card--in-preparation">
   <div class="card-cover">
     <img src="assets/covers/2026-11-30-vetmed-winter-school.png" alt="" width="960" height="540" loading="lazy" decoding="async">
   </div>
   <div class="card-body">
-    <p class="stamp">30. November–4. Dezember 2026<span class="sep">·</span>fünf Tage</p>
     <h3><a href="workshops/2026-11-30-vetmed-winter-school.de.html">VetMed Winter School</a></h3>
-    <p class="event">Veterinärmedizinische Universität Wien</p>
-    <p class="facts"><span>Mitarbeitende aus Verwaltung und Forschung</span><span>Lehrsprache Deutsch</span></p>
+    <dl class="card-meta"><div><dt>Veranstaltung</dt><dd>Veterinärmedizinische Universität Wien</dd></div><div><dt>Sprache</dt><dd>Deutsch</dd></div><div><dt>Lizenz</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div></dl>
+    <div class="module-series">
+      <p class="module-series__label" id="modules-2026-11-30-vetmed-winter-school-label">Module</p>
+      <ol class="module-series__list" aria-labelledby="modules-2026-11-30-vetmed-winter-school-label" role="list">
+        <li class="module-series__item m1">
+          <a class="module-series__link" href="#module-01" aria-label="Modul 01: Large Language Models &bdquo;verstehen&ldquo;" data-tooltip="Modul 01: Large Language Models &bdquo;verstehen&ldquo;">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">01</span>
+          </a>
+        </li>
+        <li class="module-series__item m2">
+          <a class="module-series__link" href="#module-02" aria-label="Modul 02: Prompt Engineering" data-tooltip="Modul 02: Prompt Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">02</span>
+          </a>
+        </li>
+        <li class="module-series__item m3">
+          <a class="module-series__link" href="#module-03" aria-label="Modul 03: Wissens- und Kontext-Engineering" data-tooltip="Modul 03: Wissens- und Kontext-Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">03</span>
+          </a>
+        </li>
+        <li class="module-series__item m4">
+          <a class="module-series__link" href="#module-04" aria-label="Modul 04: Agentic Engineering" data-tooltip="Modul 04: Agentic Engineering">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">04</span>
+          </a>
+        </li>
+        <li class="module-series__item m5">
+          <a class="module-series__link" href="#module-05" aria-label="Modul 05: Kritische Perspektiven und Governance" data-tooltip="Modul 05: Kritische Perspektiven und Governance">
+            <span class="module-series__icon module-icon" aria-hidden="true"></span>
+            <span class="module-series__number" aria-hidden="true">05</span>
+          </a>
+        </li>
+      </ol>
+    </div>
     <p class="spec">Der Blockkurs führt von Modellgrundlagen und Prompting über lokale Codeausführung und strukturierte Daten zu kontrollierten Agenten-Workflows. Ein eigenes Anwendungsprojekt verbindet die Übungen der gesamten Woche.</p>
-    <ul class="mods" role="list" aria-label="Modulabdeckung"><li class="mod m1" title="Modul 1">1</li><li class="mod m2" title="Modul 2">2</li><li class="mod m3" title="Modul 3">3</li><li class="mod m4" title="Modul 4">4</li><li class="mod m5" title="Modul 5">5</li></ul>
-    <p class="card-foot"><span class="pending">Folien und Skriptum in Vorbereitung</span></p>
+    <p class="card-foot"><span class="material-state">Slide Deck und Lecture Notes in Vorbereitung</span></p>
   </div>
+  </article>
 </li>
-      </ul>
+      </ol>
     </div>
   </section>
   <section class="section" id="preparation">
     <div class="wrap compact-section">
       <h2 class="section-title">Vorbereitung</h2>
       <p>
-        Der Vorbereitungsleitfaden behandelt Konten, lokale Werkzeuge und den abschließenden
-        Systemcheck. Jeder Workshop weist die für seine Teilnehmenden geltende Vorbereitungsstufe aus.
+        Der Vorbereitungsleitfaden führt dich Schritt für Schritt durch alles, was du für die
+        Teilnahme an einem Workshop vorbereiten musst. Jeder Schritt endet mit einer überprüfbaren
+        Kontrolle.
       </p>
       <p><a href="preparation.de.html">Vorbereitungsleitfaden öffnen</a></p>
+    </div>
+  </section>
+  <section class="section" id="videos" aria-labelledby="video-library-title">
+    <div class="wrap">
+      <h2 class="section-title" id="video-library-title">Videothek</h2>
+      <p class="section-lede">Die <a href="https://www.youtube.com/playlist?list=PLXY4kw40KBaY">Video-Playlist</a> enthält die aktuell gepflegte Reihenfolge. Beim Öffnen eines Moduls mit Videos können Vorschaubilder von YouTube geladen werden.</p>
+      <div class="video-library">
+        <details class="video-module m1" open>
+          <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">01</span> <span class="video-module__title">Large Language Models verstehen</span> <span class="video-module__count">(5 Videos)</span></summary>
+          <ol class="video-grid" role="list">
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=-0HRzXk8vlk">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/-0HRzXk8vlk/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Why AI Tokens are so Expensive</span>
+                  <time class="video-card__duration" datetime="PT25M22S">25:22</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=u4RRxi5tgTA">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/u4RRxi5tgTA/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Wie LLMs funktionieren</span>
+                  <time class="video-card__duration" datetime="PT1H0M46S">1:00:46</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=7xTGNNLPyMI">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/7xTGNNLPyMI/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Deep Dive into LLMs like ChatGPT</span>
+                  <time class="video-card__duration" datetime="PT3H31M23S">3:31:23</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=J51oZYcNvP8">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/J51oZYcNvP8/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">What is Multimodal AI? How LLMs Process Text, Images, and More</span>
+                  <time class="video-card__duration" datetime="PT9M15S">9:15</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=-j4shkNnYVw">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/-j4shkNnYVw/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Just Go Local Solves Nothing. Here&#39;s What Does</span>
+                  <time class="video-card__duration" datetime="PT11M45S">11:45</time>
+                </span>
+              </a>
+            </li>
+          </ol>
+        </details>
+        <details class="video-module m2">
+          <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">02</span> <span class="video-module__title">Prompt Engineering</span> <span class="video-module__count">(1 Video)</span></summary>
+          <ol class="video-grid" role="list">
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=Sj3F4oPWB8A">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/Sj3F4oPWB8A/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Prompt Engineering</span>
+                  <time class="video-card__duration" datetime="PT54M20S">54:20</time>
+                </span>
+              </a>
+            </li>
+          </ol>
+        </details>
+        <details class="video-module m3">
+          <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">03</span> <span class="video-module__title">Wissens- und Kontext-Engineering</span> <span class="video-module__count">(6 Videos)</span></summary>
+          <ol class="video-grid" role="list">
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=Qx0fCqpkBus">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/Qx0fCqpkBus/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">What Is Context Engineering? Why It Matters for AI Agents</span>
+                  <time class="video-card__duration" datetime="PT9M56S">9:56</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=VGN22pPpb-8">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/VGN22pPpb-8/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Thinner Agents on a Smarter Substrate: The Ontology-based Semantic Layer</span>
+                  <time class="video-card__duration" datetime="PT11M6S">11:06</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=Sir59K8ZDPU">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/Sir59K8ZDPU/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Why Agentic Systems Need Ontologies</span>
+                  <time class="video-card__duration" datetime="PT21M18S">21:18</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=H7puB0RwJMM">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/H7puB0RwJMM/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Citation Needed: Provenance for LLM-Built Knowledge Graphs</span>
+                  <time class="video-card__duration" datetime="PT20M54S">20:54</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=31Y6uRLnkQA">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/31Y6uRLnkQA/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Wissens- und Projektmanagement mit Obsidian und Claude Code</span>
+                  <time class="video-card__duration" datetime="PT1H6M27S">1:06:27</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=K1sZBOUSZ_0">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/K1sZBOUSZ_0/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Grounded Vault: Quellenbasiertes Arbeiten mit AI Agents</span>
+                  <time class="video-card__duration" datetime="PT1H32M26S">1:32:26</time>
+                </span>
+              </a>
+            </li>
+          </ol>
+        </details>
+        <details class="video-module m4">
+          <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">04</span> <span class="video-module__title">Agentic Engineering</span> <span class="video-module__count">(22 Videos)</span></summary>
+          <ol class="video-grid" role="list">
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=k5jYwyhDMxA">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/k5jYwyhDMxA/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">5 AI Agent Terms You Need to Know</span>
+                  <time class="video-card__duration" datetime="PT11M7S">11:07</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=ZELPNFXJ4_o">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/ZELPNFXJ4_o/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">AI Model vs Agentic Harness: What Actually Drives AI</span>
+                  <time class="video-card__duration" datetime="PT8M30S">8:30</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=goU9VIXA8II">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/goU9VIXA8II/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">MCP vs Skills: Which Is Right for Your AI Agent and LLMs?</span>
+                  <time class="video-card__duration" datetime="PT8M2S">8:02</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=qYNs80FKIVc">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/qYNs80FKIVc/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">5 Best Practices for Building AI Agent Skills</span>
+                  <time class="video-card__duration" datetime="PT13M22S">13:22</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=FgaBdwSvOGM">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/FgaBdwSvOGM/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Agentic Engineering vs Software Engineering: Beyond Vibe Coding</span>
+                  <time class="video-card__duration" datetime="PT10M45S">10:45</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=UngVdAsQEiU">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/UngVdAsQEiU/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">The Best Local Agentic Coding Workflow (Complete Guide)</span>
+                  <time class="video-card__duration" datetime="PT44M57S">44:57</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=DogTO1jjFtI">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/DogTO1jjFtI/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">What I Use Instead</span>
+                  <time class="video-card__duration" datetime="PT19M58S">19:58</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=RKHaecOi0CA">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/RKHaecOi0CA/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Meet Pi: The Minimalist, Self-Modifying Coding Agent</span>
+                  <time class="video-card__duration" datetime="PT11M22S">11:22</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=n5f51gtuGHE">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/n5f51gtuGHE/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Building Pi, and What Makes Self-Modifying Software So Fascinating</span>
+                  <time class="video-card__duration" datetime="PT1H33M56S">1:33:56</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=Dli5slNaJu0">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/Dli5slNaJu0/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">I Hated Every Coding Agent, So I Built My Own (Pi)</span>
+                  <time class="video-card__duration" datetime="PT27M15S">27:15</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=8sUe4Jkh3uQ">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/8sUe4Jkh3uQ/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Einf&#252;hrung in Promptotyping (Teil 1)</span>
+                  <time class="video-card__duration" datetime="PT42M11S">42:11</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=hd_a-NBO_S4">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/hd_a-NBO_S4/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Einf&#252;hrung in Promptotyping (Teil 2, Live Demo mit Claude Code)</span>
+                  <time class="video-card__duration" datetime="PT34M12S">34:12</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=WnmVGVOPtrA">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/WnmVGVOPtrA/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Anthropic&#39;s Dynamic Workflows: What Everyone Gets Wrong</span>
+                  <time class="video-card__duration" datetime="PT17M23S">17:23</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=l5rae4LMKBc">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/l5rae4LMKBc/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Claude Can Now Build Its Own Harness for Every Task</span>
+                  <time class="video-card__duration" datetime="PT13M24S">13:24</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=eQ6tb7j3Z2U">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/eQ6tb7j3Z2U/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Agentic AI and the Future of Software Development</span>
+                  <time class="video-card__duration" datetime="PT41M32S">41:32</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=TvGYsjTYC-I">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/TvGYsjTYC-I/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Agentic Engineering f&#252;r digitale Editionen mit Claude Code, TEI und GND</span>
+                  <time class="video-card__duration" datetime="PT1H39M7S">1:39:07</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=kQaTu4oFjSo">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/kQaTu4oFjSo/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Agentic Engineering und digitale Edition mit Claude Code</span>
+                  <time class="video-card__duration" datetime="PT2H26M48S">2:26:48</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=B7TCJjcVA2k">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/B7TCJjcVA2k/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Research Mission Control: Eine Forschungsleitstelle mit mehreren KI-Agenten</span>
+                  <time class="video-card__duration" datetime="PT1H33M41S">1:33:41</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=yyJpwHBKRCg">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/yyJpwHBKRCg/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">How to Use Multiple AI Agents in Your IDE</span>
+                  <time class="video-card__duration" datetime="PT11M0S">11:00</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=141biWM1mlE">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/141biWM1mlE/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">This Meta-Harness Changes How You Run AI Agents</span>
+                  <time class="video-card__duration" datetime="PT14M9S">14:09</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=7BrxIBkX3mg">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/7BrxIBkX3mg/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Loop Engineering: Why Everyone Is Talking About Agentic Loops</span>
+                  <time class="video-card__duration" datetime="PT11M3S">11:03</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=ju7R6jer6_M">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/ju7R6jer6_M/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Stop Building AI Agents the Old Way</span>
+                  <time class="video-card__duration" datetime="PT14M50S">14:50</time>
+                </span>
+              </a>
+            </li>
+          </ol>
+        </details>
+        <details class="video-module m5">
+          <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">05</span> <span class="video-module__title">Kritische Perspektiven und Governance</span> <span class="video-module__count">(7 Videos)</span></summary>
+          <ol class="video-grid" role="list">
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=64xK-SEl3nA">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/64xK-SEl3nA/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Matrix 2025: Gefangen in der Kalifornischen Ideologie – scobel</span>
+                  <time class="video-card__duration" datetime="PT33M13S">33:13</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=Hgdplv8Mde8">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/Hgdplv8Mde8/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Douglas Rushkoff – das Mindset der Tech-Milliardäre | Sternstunde Philosophie | SRF Kultur</span>
+                  <time class="video-card__duration" datetime="PT58M5S">58:05</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=cvZW3TD2jNE">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/cvZW3TD2jNE/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Die geheime Steuerung, die niemand wählte – scobel im Gespräch: Mit Anna-Verena Nosthoff</span>
+                  <time class="video-card__duration" datetime="PT1H15M24S">1:15:24</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=BZo-3ni4paU">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/BZo-3ni4paU/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Kybernetik kurz erklärt | 5 Fragen an Anna-Verena Nosthoff</span>
+                  <time class="video-card__duration" datetime="PT7M55S">7:55</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=31Uhv12ZLHU">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/31Uhv12ZLHU/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">What the hell happened with AGI timelines in 2026?</span>
+                  <time class="video-card__duration" datetime="PT49M28S">49:28</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=zOSptyQ3j9A">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/zOSptyQ3j9A/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Where AGI timelines go wrong | Toby Ord, Oxford University</span>
+                  <time class="video-card__duration" datetime="PT2H46M3S">2:46:03</time>
+                </span>
+              </a>
+            </li>
+            <li class="video-card">
+              <a class="video-card__link" href="https://www.youtube.com/watch?v=QYeNESqKbSc">
+                <span class="video-card__media"><img class="video-card__thumbnail" src="https://i.ytimg.com/vi/QYeNESqKbSc/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"></span>
+                <span class="video-card__body">
+                  <span class="video-card__title">Can $500 Billion Win the AI Race? | Anton Leicht</span>
+                  <time class="video-card__duration" datetime="PT1H33M58S">1:33:58</time>
+                </span>
+              </a>
+            </li>
+          </ol>
+        </details>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="site-foot">
   <div class="wrap">
-    <div class="foot-brand">
-      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+    <div class="foot-publisher">
+      <img src="assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367">
       <div class="imprint">
         <p class="name">Christopher Pollin</p>
         <p>Digital Humanities Craft</p>
-        <p><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">·</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
+        <p class="contact"><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
       </div>
     </div>
-    <div class="colophon">
-  <p>Umgesetzt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit den AI-Harnesses Claude Code (Fable 5 und Opus 5) und Codex (GPT-5.6 Sol), unter Anwendung von <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a>.</p>
-  <p class="foot-links"><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub-Repository</a><span class="sep">&middot;</span><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping-Repository</a><span class="sep">&middot;</span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
-</div>
+    <p class="foot-provenance">Entwickelt und gepflegt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a> und <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a>.</p>
+    <nav class="foot-nav" aria-label="Fußzeile"><p class="foot-nav-label">Weiterführende Links</p>
+      <ul>
+        <li><a href="about.de.html">Über &amp; Impressum</a></li>
+        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Lehrmaterial</a></li>
+        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping</a></li>
+        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Forschungsleitstelle</a></li>
+        <li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li>
+        <li><a href="https://dhcraft.org/imprint">Rechtstext auf dhcraft.org</a></li>
+      </ul>
+    </nav>
   </div>
 </footer>
 </body>

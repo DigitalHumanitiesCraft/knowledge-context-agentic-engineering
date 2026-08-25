@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einführung in Claude Code &middot; Knowledge, Context and Agentic Engineering</title>
+<meta name="description" content="Eine strukturierte Einführung in Claude Code, Context Management, Erweiterungen, delegierte Recherche, parallele Sitzungen und Remote Control.">
+<link rel="alternate" hreflang="en" href="claude-code.html">
+<link rel="alternate" hreflang="de" href="claude-code.de.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css?v=20260825-18">
+<link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="../assets/favicon/site.webmanifest">
+</head>
+<body class="preparation-page">
+<a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
+<header class="site-head"><div class="wrap">
+  <div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Website von Digital Humanities Craft"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="../index.de.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div>
+  <div class="head-tools"><nav class="site-nav" aria-label="Seite"><ul><li><a href="../preparation.de.html">Vorbereitung</a></li><li><a href="../about.de.html">Über &amp; Impressum</a></li><li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li></ul></nav><nav class="language-nav" aria-label="Sprache"><a href="claude-code.html" lang="en">EN</a><a href="claude-code.de.html" lang="de" aria-current="page">DE</a></nav></div>
+</div></header>
+<main id="main-content" tabindex="-1"><div class="wrap">
+  <a class="backlink" href="../preparation.de.html">&larr; Setup-Tutorial</a>
+  <header class="page-head preparation-head"><div><h1>Einführung in Claude Code</h1><p class="event">Dieses Tutorial erklärt Claude Code als AI Harness. Es verbindet die erste sichere Aufgabe mit Projektanweisungen, Working Context, externen Werkzeugen und delegierter Recherche.</p></div><div><p class="stamp">Zuletzt geprüft am 25. August 2026</p><p class="facts"><span>Schließe vor dem Einstieg den Setup-Pfad ab.</span><span>Verwende einen entbehrlichen Übungsordner ohne vertrauliche Dateien.</span></p></div></header>
+  <div class="tutorial-shell">
+    <aside class="tutorial-sidebar">
+      <nav class="tutorial-nav" aria-label="Tutorialabschnitte">
+        <p class="tutorial-nav__title">Claude Code</p>
+        <p class="tutorial-nav__group">Einstieg</p>
+        <ol><li><a href="#system"><span>00</span>System</a></li><li><a href="#install"><span>01</span>Installation</a></li><li><a href="#first-task"><span>02</span>Erste Aufgabe</a></li></ol>
+        <p class="tutorial-nav__group">Arbeitsloop</p>
+        <ol><li><a href="#modes"><span>03</span>Modi</a></li><li><a href="#instructions"><span>04</span>Anweisungen</a></li><li><a href="#context"><span>05</span>Context</a></li><li><a href="#screenshots"><span>06</span>Screenshots</a></li></ol>
+        <p class="tutorial-nav__group">Erweiterungen</p>
+        <ol><li><a href="#extensions"><span>07</span>Überblick</a></li><li><a href="#mcp"><span>08</span>MCP</a></li><li><a href="#skills"><span>09</span>Skills</a></li><li><a href="#plugins"><span>10</span>Plugins</a></li><li><a href="#subagents"><span>11</span>Subagents</a></li></ol>
+        <p class="tutorial-nav__group">Koordinieren</p>
+        <ol><li><a href="#parallel-sessions"><span>12</span>Sitzungen</a></li><li><a href="#remote-control"><span>13</span>Remote Control</a></li></ol>
+        <p class="tutorial-nav__group">Fortsetzen</p>
+        <ol><li><a href="#deepen"><span>14</span>Vertiefen</a></li></ol>
+      </nav>
+    </aside>
+
+    <div class="tutorial-sequence">
+      <section class="tutorial-panel tutorial-panel--opening" id="system">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true">
+            <div class="path-node"><span>01</span><strong>Modell</strong><small>interpretiert die aktuelle Aufgabe</small></div>
+            <div class="path-node"><span>02</span><strong>Harness</strong><small>organisiert Werkzeuge und Berechtigungen</small></div>
+            <div class="path-node"><span>03</span><strong>Projekt</strong><small>liefert Dateien, Regeln und Feedback</small></div>
+          </div>
+          <figcaption>Claude Code wird durch die Beziehung zwischen Modell, Harness und Projektumgebung verständlich.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Orientierung</p>
+          <h2>Betrachte Claude Code als vollständiges Arbeitssystem</h2>
+          <p class="definition">Claude Code ist ein AI Harness, das ein Sprachmodell mit Projektdateien, Werkzeugen, Berechtigungen und Ausführungsfeedback verbindet.</p>
+          <ol class="goal-list"><li>Eine Anfrage definiert das aktuelle Ziel und seine Grenzen.</li><li>Das Harness wählt Context und stellt verfügbare Handlungen bereit.</li><li>Werkzeugergebnisse werden zur Evidenz für den nächsten Modellaufruf.</li><li>Prüfungen bestimmen, ob die Aufgabe fortgesetzt oder abgeschlossen wird.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Du kannst in einer Claude-Code-Sitzung Modell, Harness und Projektzustand unterscheiden.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="install">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="mock-window mock-window--terminal"><div class="mock-window__bar"><span class="mock-window__controls"></span><span class="mock-window__title">ai-workspace</span></div><pre><code>claude --version
+claude doctor
+claude
+
+Ordner: ai-workspace</code></pre></div></div>
+          <figcaption>Die Installation ist abgeschlossen, wenn Claude Code im vorgesehenen Ordner startet und die lokale Diagnose durchläuft.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 1</p>
+          <h2>Installiere, öffne und prüfe einen kontrollierten Workspace</h2>
+          <ol class="steps"><li>Folge der passenden Route in der <a href="https://code.claude.com/docs/en/installation">offiziellen Installationsanleitung</a>.</li><li>Schließe den <a href="../preparation.de.html#claude-code">Claude-Code-Setup-Schritt</a> im gemeinsamen Ordner <code>ai-workspace</code> ab.</li><li>Führe <code>claude --version</code> und <code>claude doctor</code> in einem neu geöffneten Terminal aus.</li><li>Starte <code>claude</code> aus dem Übungsordner und prüfe das angezeigte Arbeitsverzeichnis.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Die installierte Oberfläche und der aktuelle Ordner sind vor der ersten Anfrage sichtbar.</p>
+          <p class="source-note"><a href="https://youtu.be/0kILa02vKuI">Video: Installing Claude Code</a> &middot; <a href="https://code.claude.com/docs/en/quickstart">Offizieller Quickstart</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="first-task">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="mock-window mock-window--agent"><div class="mock-window__bar"><span class="mock-window__controls"></span><span class="mock-window__title">Claude Code</span></div><div class="mock-agent"><p>Liste die Dateien in diesem Ordner auf. Erstelle, bearbeite, verschiebe und lösche nichts und führe keine Befehle aus.</p><div><strong>Workspace untersucht</strong><span>readme.md</span><span>check.py</span><span>site/</span></div></div></div></div>
+          <figcaption>Die erste Aufgabe hat ein beobachtbares Ergebnis und schließt technische Änderungen aus.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Schritt 2</p>
+          <h2>Beginne mit einer begrenzten lesenden Aufgabe</h2>
+          <p class="definition">Eine geeignete erste Anfrage nennt den Gegenstand, die erlaubte Handlung und die Abschluss-Evidenz.</p>
+          <ol class="steps"><li>Nenne den genauen Ordner oder die Dateien, die Claude Code untersuchen darf.</li><li>Lege fest, dass Dateien und Befehle während dieser Prüfung unverändert bleiben.</li><li>Fordere ein kurzes Inventar an und bitte um Kennzeichnung von Unsicherheit.</li><li>Vergleiche die Antwort mit dem sichtbaren Explorer, bevor du die Aufgabe erweiterst.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Die gemeldete Dateiliste entspricht dem Ordner und seine Änderungszeiten bleiben unverändert.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="modes">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="tool-stack"><div><span>01</span><strong>Plan</strong><small>untersuchen und vorschlagen</small></div><div><span>02</span><strong>Edit</strong><small>innerhalb der Berechtigungen handeln</small></div><div><span>03</span><strong>Bash</strong><small>einen Befehl direkt ausführen</small></div><div><span>04</span><strong>Interrupt</strong><small>den laufenden Loop steuern</small></div></div></div>
+          <figcaption>Modi und Eingriffe verändern, was das Harness während derselben Aufgabe ausführen darf.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Arbeitsloop</p>
+          <h2>Wähle einen Modus für die nächste Handlung</h2>
+          <ol class="steps"><li>Verwende Plan Mode, um das Projekt zu untersuchen und vor Quelländerungen einen Ausführungsplan zu erhalten.</li><li>Gib Änderungen frei, sobald vorgeschlagener Umfang und Prüfmethode klar sind.</li><li>Verwende Bash Mode für einen bereits ausgewählten Befehl, den du selbst ausführen möchtest.</li><li>Unterbrich einen laufenden Loop mit <code>Esc</code> und ergänze neue Informationen oder Grenzen.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Der gewählte Modus erlaubt die erforderliche Arbeit und blockiert Handlungen außerhalb der aktuellen Aufgabe.</p>
+          <p class="source-note"><a href="https://code.claude.com/docs/en/permission-modes">Permission Modes</a> &middot; <a href="https://code.claude.com/docs/en/interactive-mode">Interaktive Steuerung</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="instructions">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>A</span><strong><code>CLAUDE.md</code></strong><small>dauerhafte Arbeitsregeln</small></div><div class="path-node"><span>B</span><strong>Projektwissen</strong><small>gepflegte Konzepte und Entscheidungen</small></div><div class="path-node"><span>C</span><strong>Technische Kontrollen</strong><small>Berechtigungen, Hooks und Umgebung</small></div></div>
+          <figcaption>Anweisungen, gepflegtes Wissen und technische Kontrollen erfüllen unterschiedliche Funktionen.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Projektkontext</p>
+          <h2>Halte dauerhafte Projektregeln in <code>CLAUDE.md</code> fest</h2>
+          <p class="definition"><code>CLAUDE.md</code> beschreibt, wie Claude Code in einem Projekt arbeitet. Die Datei kann in einen größeren Wissensbestand führen, ohne dessen Inhalt in jede Sitzung zu kopieren.</p>
+          <ol class="steps"><li>Dokumentiere stabile Befehle, Dateikonventionen und Abschlussprüfungen.</li><li>Verlinke für jedes inhaltliche Konzept oder jede Entscheidung das zuständige Wissensdokument.</li><li>Bewahre aufgabenspezifische Evidenz in ihrer Quelldatei und lade sie bei Bedarf.</li><li>Verwende Berechtigungen und Hooks, wenn eine Regel technisch durchgesetzt werden muss.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Jede dauerhafte Anweisung hat einen klaren Geltungsbereich und kann ohne Raten befolgt werden.</p>
+          <p class="source-note"><a href="https://code.claude.com/docs/en/memory">Projektanweisungen und Auto Memory</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="context">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--dark" aria-hidden="true"><div class="status-visual"><span><code>/context</code><strong>aktuelle Belegung prüfen</strong></span><span><code>/compact</code><strong>Sitzung zusammenfassen</strong></span><span><code>/clear</code><strong>getrennte Aufgabe beginnen</strong></span><span><code>@datei</code><strong>direkte Evidenz benennen</strong></span></div></div>
+          <figcaption>Context Management richtet den aktuellen Arbeitsbestand auf den unmittelbar anstehenden Schritt aus.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Context Management</p>
+          <h2>Kuratiere den Working Context für den aktuellen Schritt</h2>
+          <p class="definition">Das Context Window enthält Anweisungen, ausgewählte Dateien, Werkzeugausgaben und Gesprächsverlauf für den aktuellen Modellaufruf.</p>
+          <ol class="steps"><li>Prüfe mit <code>/context</code>, welche Inhalte das aktuelle Fenster belegen.</li><li>Nenne relevante Dateien direkt und schließe Ordner ohne mögliche Evidenz aus.</li><li>Verwende <code>/compact</code>, wenn dieselbe Aufgabe nach einer langen Untersuchung fortgesetzt wird.</li><li>Verwende <code>/clear</code>, wenn eine getrennte Aufgabe einen leeren Working Context verlangt. Die gespeicherte Sitzung bleibt später wiederaufnehmbar.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Jedes große Context-Element trägt zur nächsten Entscheidung oder Werkzeughandlung bei.</p>
+          <p class="source-note"><a href="https://code.claude.com/docs/en/context-window">Context Window</a> &middot; <a href="https://code.claude.com/docs/en/how-claude-code-works">Funktionsweise von Claude Code</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="screenshots">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>01</span><strong>Screenshot</strong><small>beobachtbarer Interface-Zustand</small></div><div class="path-node"><span>02</span><strong>Begrenzte Änderung</strong><small>eine prüfbare Korrektur</small></div><div class="path-node"><span>03</span><strong>Rendern und vergleichen</strong><small>neue Evidenz</small></div></div>
+          <figcaption>Ein Screenshot wird als Evidenz eines konkreten Interface-Zustands Teil der Prüfschleife.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Visuelles Feedback</p>
+          <h2>Überführe Screenshots in eindeutige Abnahmekriterien</h2>
+          <ol class="steps"><li>Erfasse den kleinsten stabilen Ausschnitt, der das Problem zeigt.</li><li>Entferne Accounts, persönliche Pfade, Tokens und vertrauliche Projektdaten.</li><li>Beschreibe beobachteten und erforderlichen Zustand als Text.</li><li>Rendere das Ergebnis im selben Viewport und vergleiche es anhand eines Abnahmekriteriums.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Der abschließende Screenshot belegt den angeforderten Zustand unter denselben Bedingungen.</p>
+          <p class="source-note"><a href="https://code.claude.com/docs/en/common-workflows">Übliche Workflows</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="extensions">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="tool-stack"><div><span>01</span><strong><code>CLAUDE.md</code></strong><small>dauerhafte Projektanweisungen</small></div><div><span>02</span><strong>Skill</strong><small>wiederverwendbares Verfahren</small></div><div><span>03</span><strong>MCP</strong><small>externe Werkzeuge und Daten</small></div><div><span>04</span><strong>Plugin</strong><small>installierbares Erweiterungspaket</small></div></div></div>
+          <figcaption>Die Erweiterungsmechanismen greifen an verschiedenen Stellen in das agentische Arbeitssystem ein.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Erweiterungslandkarte</p>
+          <h2>Wähle den Mechanismus nach seiner Funktion</h2>
+          <p class="definition">Dauerhafte Anweisungen prägen jede Sitzung. Skills laden wiederverwendbare Verfahren, MCP verbindet externe Systeme und Plugins bündeln Erweiterungen für Installation und Verteilung.</p>
+          <div class="requirement-list"><div><h3>Projektregel</h3><p>Verwende <code>CLAUDE.md</code> für Konventionen, die bei jeder Arbeit von Claude Code in diesem Projekt gelten.</p></div><div><h3>Verfahren</h3><p>Verwende einen Skill für eine wiederholbare Methode, die bei einer passenden Aufgabe geladen werden soll.</p></div><div><h3>Verbindung oder Verteilung</h3><p>Verwende MCP für externe Systeme und ein Plugin, wenn mehrere Erweiterungskomponenten gemeinsam verteilt werden.</p></div></div>
+          <p class="source-note"><a href="https://code.claude.com/docs/en/features-overview">Offizieller Überblick über Erweiterungen</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="mcp">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>01</span><strong>Claude Code</strong><small>fordert eine begrenzte Handlung an</small></div><div class="path-node"><span>02</span><strong>MCP-Server</strong><small>stellt benannte Werkzeuge bereit</small></div><div class="path-node"><span>03</span><strong>Externes System</strong><small>liefert Daten oder ein Ergebnis</small></div></div>
+          <figcaption>MCP bildet eine standardisierte Werkzeuggrenze zwischen Harness und externem System.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Externe Systeme</p>
+          <h2>Füge eine MCP-Verbindung für einen definierten externen Bedarf hinzu</h2>
+          <p class="definition">Das Model Context Protocol ermöglicht Claude Code die Nutzung von Werkzeugen, die ein externer Dienst oder lokaler Server bereitstellt.</p>
+          <ol class="steps"><li>Benenne die externen Daten oder Handlungen, die die Aufgabe erfordert.</li><li>Prüfe Serverquelle, angeforderte Zugangsdaten und verfügbare Werkzeuge.</li><li>Trenne Lesezugriffe von Werkzeugen, die Informationen anlegen, verändern oder versenden.</li><li>Füge den Server mit dem engsten angemessenen Geltungsbereich hinzu und prüfe seinen Zustand mit <code>/mcp</code>.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Jedes bereitgestellte Werkzeug ist für den Workflow erforderlich und seine lesende oder schreibende Wirkung ist verstanden.</p>
+          <p class="source-note"><a href="https://code.claude.com/docs/en/mcp">Offizielle MCP-Anleitung</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="skills">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>01</span><strong>Beschreibung</strong><small>benennt den passenden Einsatz</small></div><div class="path-node"><span>02</span><strong><code>SKILL.md</code></strong><small>lädt das Verfahren bei Bedarf</small></div><div class="path-node"><span>03</span><strong>Ressourcen</strong><small>unterstützen den aktuellen Workflow</small></div></div>
+          <figcaption>Ein Skill legt detaillierte Anweisungen und Ressourcen offen, sobald seine Aufgabe relevant wird.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Wiederverwendbare Verfahren</p>
+          <h2>Verwende Skills für Wissen, das mit einem Workflow verbunden bleibt</h2>
+          <p class="definition">Ein Skill ist ein wiederverwendbares Anweisungspaket für eine definierte Aufgabenklasse. Claude Code kann ihn bei passender Beschreibung laden oder auf direkte Anforderung verwenden.</p>
+          <ol class="steps"><li>Stabilisiere Verfahren und Abschlussprüfung zunächst in einem erfolgreich wiederholten Workflow.</li><li>Definiere eine konkrete Aufgabenklasse und den Trigger, der den Skill laden soll.</li><li>Halte das zentrale Verfahren in <code>SKILL.md</code> und unterstützende Beispiele oder Skripte in eigenen Ressourcen fest.</li><li>Führe den Skill an einem neuen Fall aus und prüfe das Artefakt anhand seiner Abschlusskriterien.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Der Skill ersetzt wiederholte prozedurale Prompts und hält Evidenz sowie Prüfungen nachvollziehbar.</p>
+          <p class="source-note"><a href="https://code.claude.com/docs/en/features-overview">Skills im Erweiterungsüberblick</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="plugins">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="tool-stack"><div><span>01</span><strong>Skills</strong><small>Verfahren und Wissen</small></div><div><span>02</span><strong>Subagents und Hooks</strong><small>Delegation und Automatisierung</small></div><div><span>03</span><strong>MCP-Server</strong><small>externe Verbindungen</small></div><div><span>04</span><strong>Plugin-Manifest</strong><small>Installation und Versionierung</small></div></div></div>
+          <figcaption>Ein Plugin bündelt zusammengehörige Erweiterungskomponenten als installierbares Erweiterungspaket.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Verteilung</p>
+          <h2>Verpacke eine stabile Erweiterung für ihre Wiederverwendung</h2>
+          <p class="definition">Plugins können Skills, Subagents, Hooks und MCP-Server zur Installation in mehreren Projekten oder Teams bündeln.</p>
+          <ol class="steps"><li>Entwickle eine projektspezifische Erweiterung in <code>.claude/</code>, solange sich ihr Vertrag verändert.</li><li>Verpacke die Komponenten, sobald ihre Trigger, Berechtigungen und Prüfungen stabil sind.</li><li>Prüfe ein Plugin und seine enthaltenen Server vor der Installation.</li><li>Verwende einen Marketplace als Katalog und installiere nur das ausgewählte Plugin.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Das Plugin besitzt einen definierten Zweck, eine vertrauenswürdige Quelle und eine prüfbare Komponentenliste.</p>
+          <p class="source-note"><a href="https://code.claude.com/docs/en/plugins">Plugins erstellen</a> &middot; <a href="https://code.claude.com/docs/en/discover-plugins">Plugins finden</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="subagents">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>01</span><strong>Hauptagent</strong><small>Teilfrage, Quellenrahmen, Rückgabeformat</small></div><div class="path-node"><span>02</span><strong>Frischer Context</strong><small>begrenzte Recherche oder Gegenprüfung</small></div><div class="path-node"><span>03</span><strong>Hauptagent</strong><small>Evidenz vergleichen, integrieren und prüfen</small></div></div>
+          <figcaption>Ein Subagent untersucht eine begrenzte Frage in einem isolierten Context und liefert ein kompaktes Ergebnis zurück.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Delegierte Recherche</p>
+          <h2>Delegiere eine klare Recherchefrage an einen frischen Context</h2>
+          <p class="definition">Subagents eignen sich, wenn die Richtung bereits bekannt ist und eine eigenständige Frage konzentrierte Untersuchung oder umfangreiche Dateilektüre verlangt. Jeder Subagent beginnt mit einem frischen, isolierten Context Window; nur seine Rückgabe gelangt in das Hauptgespräch.</p>
+          <ol class="steps"><li>Formuliere eine beantwortbare Frage und ihre Bedeutung für die Hauptaufgabe.</li><li>Gib den erforderlichen Quellenrahmen, Grenzen und das Rückgabeformat vor.</li><li>Fordere Befunde, Evidenz und verbleibende Unsicherheit an.</li><li>Lass den Hauptagenten die Ergebnisse vergleichen, akzeptierte Befunde integrieren und die abschließenden Prüfungen ausführen.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Die Rückgabe beantwortet die delegierte Frage und nennt die für die Integration erforderliche Evidenz.</p>
+          <p class="source-note"><a href="https://code.claude.com/docs/en/sub-agents">Offizielle Subagent-Anleitung</a> &middot; <a href="https://code.claude.com/docs/en/agents">Parallele Agentenmuster</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="parallel-sessions">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>01</span><strong>Subagent</strong><small>delegierte Frage, kompakte Rückgabe</small></div><div class="path-node"><span>02</span><strong>Parallele Sitzung</strong><small>eigenständige Aufgabe und Context</small></div><div class="path-node"><span>03</span><strong>Worktree</strong><small>isolierte Arbeitskopie für Änderungen</small></div><div class="path-node"><span>04</span><strong>Integration</strong><small>vergleichen, abgleichen und prüfen</small></div></div>
+          <figcaption>Context-Isolation und Datei-Isolation lösen unterschiedliche Koordinationsprobleme.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Paralleles Arbeiten</p>
+          <h2>Ordne Aufgabe, Worker und Arbeitsbereich einander zu</h2>
+          <p class="definition">Ein Subagent unterstützt eine Hauptsitzung. Eine parallele Sitzung ist ein eigenständig beaufsichtigter Arbeitsstrang. Ein Git-Worktree gibt einer schreibenden Sitzung eine eigene Arbeitskopie, damit gleichzeitige Änderungen nicht kollidieren.</p>
+          <ol class="steps"><li>Verwende einen Subagent für eine begrenzte Untersuchung, deren ausführliche Zwischenschritte außerhalb des Hauptkontexts bleiben sollen.</li><li>Verwende eine eigene Sitzung, wenn eine unabhängige Aufgabe direkte Betreuung und einen eigenen Context benötigt.</li><li>Starte eine schreibende Sitzung mit <code>claude --worktree &lt;name&gt;</code>, wenn eine andere Sitzung dasselbe Repository bearbeitet.</li><li>Vergleiche die Ergebnisse, löse widersprüchliche Annahmen auf und führe vor der Integration gemeinsame Prüfungen aus.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Jeder Worker besitzt eine unabhängige Frage oder einen eigenen Dateibereich, und gleichzeitige Änderungen können einander nicht überschreiben.</p>
+          <p class="source-note"><a href="https://code.claude.com/docs/en/agents">Parallele Agentenmuster</a> &middot; <a href="https://code.claude.com/docs/en/worktrees">Claude-Code-Worktrees</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="remote-control">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>01</span><strong>Lokale Sitzung</strong><small>Projekt, Werkzeuge und Ausführung</small></div><div class="path-node"><span>02</span><strong>Sichere Verbindung</strong><small>verknüpft die aktuelle Sitzung</small></div><div class="path-node"><span>03</span><strong>Remote-Oberfläche</strong><small>Steuerung im Browser oder mobil</small></div></div>
+          <figcaption>Remote Control macht eine laufende lokale Sitzung über eine weitere Oberfläche zugänglich, während die Ausführung auf dem lokalen Rechner bleibt.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Optionale Steuerungsoberfläche</p>
+          <h2>Setze eine lokale Sitzung über eine Remote-Oberfläche fort</h2>
+          <p class="definition">Remote Control ist eine Research-Preview für dieselbe lokale Claude-Code-Sitzung. Browser oder mobile App steuern sie; Arbeitsordner, Werkzeuge und Berechtigungen verbleiben auf dem Host-Rechner.</p>
+          <ol class="steps"><li>Prüfe die aktuellen offiziellen Anforderungen an Verfügbarkeit, Account und Organisation.</li><li>Starte mit <code>claude remote-control</code>, <code>claude --remote-control</code> oder <code>/remote-control</code> in einer laufenden Sitzung.</li><li>Öffne den angezeigten Link oder QR-Code auf dem vorgesehenen Remote-Gerät.</li><li>Bestätige Sitzung und Arbeitsordner, bevor du eine Handlung freigibst oder unterbrichst.</li></ol>
+          <p class="checkpoint"><strong>Prüfung:</strong> Beide Oberflächen zeigen dasselbe Gespräch und Projekt, während die Ausführung auf dem lokalen Host verbleibt.</p>
+          <p class="source-note"><a href="https://code.claude.com/docs/en/remote-control">Offizielle Remote-Control-Anleitung</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="deepen">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true"><div class="path-node"><span>A</span><strong>Context</strong><small>Anweisungen, Auswahl und Verdichtung</small></div><div class="path-node"><span>B</span><strong>Verbindungen</strong><small>MCP, Berechtigungen und Plugins</small></div><div class="path-node"><span>C</span><strong>Koordination</strong><small>Delegation, Sitzungen und Integration</small></div></div>
+          <figcaption>Die Einführung bildet einen Hub für gezielte Vertiefungen in die Mechanismen eines konkreten Workflows.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Nächste Routen</p>
+          <h2>Setze mit dem Mechanismus fort, den deine Arbeit verlangt</h2>
+          <div class="harness-grid"><article><p class="harness-kind">Context Engineering</p><h3>Anweisungen und Working Context</h3><p>Entwickle einen pflegbaren Weg von Projektregeln und Wissensdokumenten zur ausgewählten Aufgaben-Evidenz.</p><a href="#instructions">Mit Anweisungen beginnen</a></article><article><p class="harness-kind">Werkzeugintegration</p><h3>MCP und Erweiterungs-Scope</h3><p>Verbinde ein externes System und dokumentiere Werkzeuge, Zugangsdaten, Berechtigungen und Prüfungen.</p><a href="#mcp">Mit MCP beginnen</a></article><article><p class="harness-kind">Delegierte Recherche</p><h3>Subagents und Synthese</h3><p>Zerlege eine Forschungsfrage in isolierte Untersuchungen und einen expliziten Integrationsschritt.</p><a href="#subagents">Mit Subagents beginnen</a></article><article><p class="harness-kind">Paralleles Arbeiten</p><h3>Sitzungen und Worktrees</h3><p>Führe unabhängige Arbeit in getrennten Kontexten aus und isoliere gleichzeitige Dateiänderungen vor der Integration.</p><a href="#parallel-sessions">Mit Sitzungen beginnen</a></article><article><p class="harness-kind">Remote-Workflow</p><h3>Lokale Ausführung, Remote-Steuerung</h3><p>Verbinde eine weitere Steuerungsoberfläche mit einer laufenden lokalen Sitzung, deren Host die Projektausführung behält.</p><a href="#remote-control">Mit Remote Control beginnen</a></article><article><p class="harness-kind">Visuelle Workflows</p><h3>Screenshot-basierte Prüfung</h3><p>Verwende stabile Aufnahmen und übereinstimmende Viewports, um eine Interface-Beobachtung in prüfbare Evidenz zu überführen.</p><a href="#screenshots">Mit Screenshots beginnen</a></article></div>
+          <p class="checkpoint"><strong>Prüfung:</strong> Wähle eine Route, weil sie einen konkreten Bedarf im aktuellen Projekt löst.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div></main>
+<footer class="site-foot"><div class="wrap"><div class="foot-publisher"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"><div class="imprint"><p class="name">Christopher Pollin</p><p>Digital Humanities Craft</p><p class="contact"><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p></div></div><p class="foot-provenance">Entwickelt und gepflegt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a> und <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a>.</p><nav class="foot-nav" aria-label="Fußzeile"><p class="foot-nav-label">Weiterführende Links</p><ul><li><a href="../about.de.html">Über &amp; Impressum</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Lehrmaterial</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Forschungsleitstelle</a></li><li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li><li><a href="https://dhcraft.org/imprint">Rechtstext auf dhcraft.org</a></li></ul></nav></div></footer>
+</body>
+</html>

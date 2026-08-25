@@ -4,203 +4,285 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Set up your working environment &middot; Knowledge, Context and Agentic Engineering</title>
-<meta name="description" content="A project-agnostic tutorial for setting up browser access, Visual Studio Code, Python, a local web server and Claude Code in a verified practice folder.">
+<meta name="description" content="A project-agnostic tutorial for setting up Visual Studio Code, the terminal, Python, a local website and an AI harness.">
 <link rel="alternate" hreflang="en" href="preparation.html">
 <link rel="alternate" hreflang="de" href="preparation.de.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20260825-2">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=20260825-18">
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
 <link rel="manifest" href="assets/favicon/site.webmanifest">
 </head>
-
-<body>
-<header class="site-head">
-  <div class="wrap">
-    <a class="brand" href="index.html">
-      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
-      <span>Digital Humanities Craft</span>
-    </a>
-    <div class="head-tools">
-      <nav class="site-nav" aria-label="Site"><ul><li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li></ul></nav>
-      <nav class="language-nav" aria-label="Language">
-        <a href="preparation.html" lang="en" aria-current="page">EN</a>
-        <a href="preparation.de.html" lang="de">DE</a>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<main>
-<div class="wrap">
+<body class="preparation-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-head"><div class="wrap">
+  <div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Digital Humanities Craft website"><img src="assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="index.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div>
+  <div class="head-tools"><nav class="site-nav" aria-label="Site"><ul><li><a href="preparation.html" aria-current="page">Preparation</a></li><li><a href="about.html">About &amp; Imprint</a></li><li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li></ul></nav><nav class="language-nav" aria-label="Language"><a href="preparation.html" lang="en" aria-current="page">EN</a><a href="preparation.de.html" lang="de">DE</a></nav></div>
+</div></header>
+<main id="main-content" tabindex="-1"><div class="wrap">
   <a class="backlink" href="index.html">&larr; Knowledge, Context and Agentic Engineering</a>
+  <header class="page-head preparation-head"><div><h1>Set up your working environment</h1><p class="event">This tutorial connects an editor, a terminal, Python, a local website and an AI harness in one disposable practice folder. It assumes no programming experience and is independent of a particular project or workshop.</p></div><div><p class="stamp">Last verified 25 August 2026</p><p class="facts"><span>Work on the laptop you will use later.</span><span>Keep confidential and irreplaceable files outside the practice folder.</span></p></div></header>
+  <div class="tutorial-shell">
+    <aside class="tutorial-sidebar">
+      <nav class="tutorial-nav" aria-label="Tutorial sections">
+        <p class="tutorial-nav__title">Setup tutorial</p>
+        <p class="tutorial-nav__group">Start</p>
+        <ol><li><a href="#goals"><span>00</span>Orientation</a></li><li><a href="#requirements"><span>01</span>Requirements</a></li></ol>
+        <p class="tutorial-nav__group">Local setup</p>
+        <ol><li><a href="#vscode"><span>02</span>Workspace</a></li><li><a href="#terminal"><span>03</span>Terminal</a></li><li><a href="#python"><span>04</span>Python</a></li><li><a href="#server"><span>05</span>Localhost</a></li><li><a href="#local-check"><span>06</span>Milestone</a></li></ol>
+        <p class="tutorial-nav__group">AI harness</p>
+        <ol><li><a href="#harnesses"><span>07</span>Choose</a></li><li><a href="#claude-code"><span>A</span>Claude Code</a></li><li><a href="#codex"><span>B</span>Codex</a></li><li><a href="#pi"><span>C</span>Pi</a></li></ol>
+        <p class="tutorial-nav__group">Finish</p>
+        <ol><li><a href="#git"><span>08</span>Git</a></li><li><a href="#check"><span>09</span>Final check</a></li><li><a href="#trouble"><span>10</span>Diagnose</a></li></ol>
+      </nav>
+    </aside>
 
-  <header class="page-head">
-    <div>
-      <h1>Set up your working environment</h1>
-      <p class="event">
-        This tutorial prepares a reusable environment for work with language models, local files,
-        Python and an AI harness. It is independent of any project or event. Start with the browser
-        path and continue until the tools required for your work have passed their checks.
-      </p>
-    </div>
-    <div>
-      <p class="stamp">Last verified 25 August 2026</p>
-      <p class="facts">
-        <span>Use a practice folder that contains no confidential or irreplaceable files.</span>
-        <span>Each section ends with an observable result.</span>
-      </p>
-    </div>
-  </header>
+    <div class="tutorial-sequence">
+      <section class="tutorial-panel tutorial-panel--opening" id="goals">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--path" aria-hidden="true">
+            <div class="path-node"><span>P1</span><strong>Browser</strong><small>model access</small></div>
+            <div class="path-node"><span>P2</span><strong>Local setup</strong><small>editor + Python</small></div>
+            <div class="path-node"><span>P3</span><strong>AI harness</strong><small>folder + tools</small></div>
+          </div>
+          <figcaption>Each path includes the checks from the preceding path.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Orientation</p>
+          <h2>Choose the result you need</h2>
+          <p class="definition">The tutorial has three cumulative paths. Begin with browser access and stop after the last path your work requires.</p>
+          <span class="anchor-alias" id="paths" aria-hidden="true"></span>
+          <ol class="goal-list">
+            <li>Use a language model in a browser and exchange a non-sensitive test file.</li>
+            <li>Connect an editor, a terminal, Python and a local website in one folder.</li>
+            <li>Give one AI harness controlled, observable access to that folder.</li>
+            <li>Diagnose failures from the complete command and output.</li>
+          </ol>
+        </div>
+      </section>
 
-  <nav class="bundle" aria-label="On this page">
-    <span class="label">On this page</span>
-    <span class="items">
-      <a href="#paths">Choose a path</a><span class="sep">&middot;</span>
-      <a href="#accounts">Model access</a><span class="sep">&middot;</span>
-      <a href="#vscode">Editor and terminal</a><span class="sep">&middot;</span>
-      <a href="#python">Python</a><span class="sep">&middot;</span>
-      <a href="#server">Local server</a><span class="sep">&middot;</span>
-      <a href="#claude-code">AI harness</a><span class="sep">&middot;</span>
-      <a href="#check">System check</a><span class="sep">&middot;</span>
-      <a href="#trouble">Troubleshooting</a>
-    </span>
-  </nav>
+      <section class="tutorial-panel" id="requirements">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true">
+            <div class="tool-stack">
+              <div><span>01</span><strong>Browser</strong><small>model service</small></div>
+              <div><span>02</span><strong>ai-workspace</strong><small>disposable folder</small></div>
+              <div><span>03</span><strong>VS Code</strong><small>editor + terminal</small></div>
+              <div><span>04</span><strong>Python 3</strong><small>local runtime</small></div>
+            </div>
+          </div>
+          <figcaption>The core path uses one browser, one folder, one editor and Python.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Before you begin</p>
+          <h2>Prepare the minimum setup</h2>
+          <p class="definition">Use the laptop you will work on later. Keep confidential and irreplaceable files outside <code>ai-workspace</code>.</p>
+          <div class="requirement-list">
+            <div><h3>Core path</h3><p>A current browser, <a href="https://code.visualstudio.com/">Visual Studio Code</a>, a supported <a href="https://www.python.org/downloads/">Python 3</a> and an empty <code>ai-workspace</code> folder.</p></div>
+            <div><h3>Model access</h3><p>A service such as <a href="https://claude.ai/">Claude</a>, <a href="https://chatgpt.com/">ChatGPT</a>, <a href="https://gemini.google.com/">Gemini</a> or <a href="https://chat.mistral.ai/">Le Chat</a>.</p></div>
+            <div><h3>Only when selected</h3><p><a href="https://nodejs.org/en/download">Node.js LTS</a> for Pi, <a href="https://git-scm.com/downloads">Git</a> for version history and <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a> for automatic reload.</p></div>
+          </div>
+          <ol class="steps"><li>Open one model service in a new conversation and ask it to reply only with <code>browser ready</code>.</li><li>Upload a non-sensitive text file and ask the model to name the file without changing its content.</li></ol>
+          <section class="setup-assistant" id="assistant"><h3>Setup assistant</h3><p>The prompt requests one observable step at a time and never asks for credentials.</p><div class="download-line"><a href="downloads/preparation/setup-assistant-prompt.en.md" download>English prompt</a><a href="downloads/preparation/setup-assistant-prompt.de.md" download>German prompt</a></div></section>
+          <p class="checkpoint"><strong>Check:</strong> a new model conversation returns <code>browser ready</code> and accepts a non-sensitive text file.</p>
+        </div>
+      </section>
 
-  <section class="block" id="paths" aria-labelledby="paths-h">
-    <h2 id="paths-h">Choose your setup path</h2>
-    <p class="prose">The paths build on one another. Complete only the highest path your work requires.</p>
-    <ol class="module-list levels" role="list">
-      <li><span class="key"><span class="dot"></span>L1</span><div><h3>Browser workspace</h3><p class="sub">A model account and a current browser. No local installation.</p></div></li>
-      <li><span class="key"><span class="dot"></span>L2</span><div><h3>Local working environment</h3><p class="sub">Level 1 plus Visual Studio Code, a terminal, Python and a local web server.</p></div></li>
-      <li><span class="key"><span class="dot"></span>L3</span><div><h3>AI harness</h3><p class="sub">Level 2 plus Claude Code or another harness that can operate on a controlled working folder.</p></div></li>
-    </ol>
-  </section>
+      <span class="anchor-alias" id="local-workspace" aria-hidden="true"></span>
+      <section class="tutorial-panel" id="vscode">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true">
+            <div class="mock-window">
+              <div class="mock-window__bar"><span class="mock-window__controls"></span><span class="mock-window__title">ai-workspace</span></div>
+              <div class="mock-workspace"><div class="mock-files"><strong>EXPLORER</strong><span>⌄ ai-workspace</span><span class="mock-file">readme.md</span></div><div class="mock-editor"><span>readme.md</span><p>This folder is ready.</p></div><div class="mock-terminal"><span>PS …\ai-workspace&gt;</span></div></div>
+            </div>
+          </div>
+          <figcaption>Schematic representation. The Explorer and terminal both refer to <code>ai-workspace</code>.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Step 1</p>
+          <h2>Create the working folder</h2>
+          <p class="definition">Visual Studio Code is an editor that keeps files, an integrated terminal and later the AI harness in one workspace.</p>
+          <ol class="steps"><li>Install Visual Studio Code from its <a href="https://code.visualstudio.com/">official page</a>.</li><li>Create and open an empty folder named <code>ai-workspace</code>.</li><li>Create <code>readme.md</code>, write one sentence and save it.</li></ol>
+          <p class="checkpoint"><strong>Check:</strong> the Explorer shows <code>ai-workspace</code> and the saved file.</p>
+        </div>
+      </section>
 
-  <section class="block" id="accounts" aria-labelledby="accounts-h">
-    <p class="stamp">Level 1</p>
-    <h2 id="accounts-h">Set up model access</h2>
-    <p class="prose">
-      Open the language-model service you intend to use and sign in. A browser-based account is
-      sufficient for Level 1. An AI harness may require a compatible paid plan, API key or
-      organisation account; check the access conditions of the selected harness before installing it.
-    </p>
-    <ol class="steps">
-      <li>Open the service in the browser and complete sign-in, including any required multi-factor authentication.</li>
-      <li>Start a new conversation and ask the model to return the exact text <code>browser ready</code>.</li>
-      <li>Confirm that you know where downloaded files are stored and how to attach a local file.</li>
-    </ol>
-    <p class="prose">The path is complete when the model answers in a new conversation and you can attach a non-sensitive test file.</p>
-  </section>
+      <section class="tutorial-panel" id="terminal">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="mock-window mock-window--terminal"><div class="mock-window__bar"><span class="mock-window__controls"></span><span class="mock-window__title">Terminal</span></div><pre><code>PS C:\…\ai-workspace&gt; Get-Location
+C:\…\ai-workspace
 
-  <section class="block" id="vscode" aria-labelledby="vscode-h">
-    <p class="stamp">Level 2</p>
-    <h2 id="vscode-h">Install the editor and open a terminal</h2>
-    <p class="prose">Visual Studio Code provides one surface for files, code and the terminal. The terminal runs commands in the currently opened folder and shows the output needed for diagnosis.</p>
-    <ol class="steps">
-      <li>Download Visual Studio Code from <a href="https://code.visualstudio.com">code.visualstudio.com</a> and install it.</li>
-      <li>Create a folder named <code>ai-workspace</code> in a location you can find again.</li>
-      <li>Open that folder with File, then Open Folder.</li>
-      <li>Open Terminal, then New Terminal. Its prompt should point to <code>ai-workspace</code>.</li>
-      <li>Create <code>readme.md</code>, write one sentence, save it and confirm that the file appears in the Explorer.</li>
-    </ol>
-    <p class="prose">The editor is ready when the integrated terminal and the saved file refer to the same folder.</p>
-  </section>
+PS C:\…\ai-workspace&gt; Get-ChildItem
+readme.md</code></pre></div></div>
+          <figcaption>Schematic representation. The prompt states the current folder; the command output confirms it.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Step 2</p>
+          <h2>Orient yourself in the terminal</h2>
+          <p class="definition">A terminal runs typed commands. The shell interprets them. The working directory is the folder in which a command operates.</p>
+          <ol class="steps"><li>Choose Terminal, then New Terminal.</li><li>Print the current folder and list its files.<dl class="cmds"><div><dt>Windows PowerShell</dt><dd><pre class="prompt cmd"><code>Get-Location
+Get-ChildItem</code></pre></dd></div><div><dt>macOS or Linux</dt><dd><pre class="prompt cmd"><code>pwd
+ls</code></pre></dd></div></dl></li><li>Use <code>cd folder-name</code> to enter a folder and <code>cd ..</code> to return.</li></ol>
+          <p class="checkpoint"><strong>Check:</strong> the path ends in <code>ai-workspace</code>, and the list contains <code>readme.md</code>.</p>
+        </div>
+      </section>
 
-  <section class="block" id="python" aria-labelledby="python-h">
-    <p class="stamp">Level 2</p>
-    <h2 id="python-h">Install and verify Python</h2>
-    <p class="prose">Python runs scripts and provides the local web server used in the next section.</p>
-    <ol class="steps">
-      <li>Install Python from <a href="https://www.python.org/downloads/">python.org/downloads</a>. On Windows, enable <q>Add Python to PATH</q> if the installer offers it.</li>
-      <li>Install the Microsoft <q>Python</q> extension in the Visual Studio Code Extensions view.</li>
-      <li>Run the version check. On macOS or Linux, use <code>python3</code> if <code>python</code> is unavailable.<pre class="prompt cmd"><code>python --version</code></pre></li>
-      <li>Create <code>check.py</code> with the following line and run it.<pre class="prompt cmd"><code>print("python ready")</code></pre><pre class="prompt cmd"><code>python check.py</code></pre></li>
-    </ol>
-    <p class="prose">Python is ready when the terminal prints a version number and then <code>python ready</code>.</p>
-  </section>
+      <section class="tutorial-panel" id="python">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="mock-window mock-window--terminal"><div class="mock-window__bar"><span class="mock-window__controls"></span><span class="mock-window__title">check.py</span></div><pre><code>print("python ready")
 
-  <section class="block" id="server" aria-labelledby="server-h">
-    <p class="stamp">Level 2</p>
-    <h2 id="server-h">Start a local web server</h2>
-    <p class="prose">Browsers restrict pages opened directly from the file system. A local server gives a prototype a normal web address and allows it to load local data files.</p>
-    <ol class="steps">
-      <li>Create <code>index.html</code> in <code>ai-workspace</code> and add <code>&lt;h1&gt;Local server ready&lt;/h1&gt;</code>.</li>
-      <li>Run the server from the integrated terminal.<pre class="prompt cmd"><code>python -m http.server 8000</code></pre></li>
-      <li>Open <a href="http://localhost:8000">http://localhost:8000</a> in the browser.</li>
-      <li>Confirm that the heading appears, then return to the terminal and stop the server with <code>Ctrl+C</code>.</li>
-    </ol>
-    <p class="prose">The local environment is ready when the browser displays the file through <code>localhost</code>.</p>
-  </section>
+PS …\ai-workspace&gt; py check.py
+python ready</code></pre></div></div>
+          <figcaption>Schematic representation. A saved Python file produces an observable terminal result.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Step 3</p>
+          <h2>Run one Python file</h2>
+          <p class="definition">Python is the runtime that executes the practice scripts. The editor extension helps Visual Studio Code find and explain the interpreter.</p>
+          <ol class="steps"><li>Install a supported Python 3 from <a href="https://www.python.org/downloads/">python.org</a>.</li><li>Install the Microsoft <q>Python</q> extension in Visual Studio Code.</li><li>Check the interpreter with <code>py --version</code> on Windows or <code>python3 --version</code> on macOS and Linux.</li><li>Create <code>check.py</code> with <code>print("python ready")</code>. Run <code>py check.py</code> or <code>python3 check.py</code>.</li></ol>
+          <p class="checkpoint"><strong>Check:</strong> the terminal prints a Python version and <code>python ready</code>.</p>
+        </div>
+      </section>
 
-  <section class="block" id="claude-code" aria-labelledby="claude-code-h">
-    <p class="stamp">Level 3</p>
-    <h2 id="claude-code-h">Install and constrain an AI harness</h2>
-    <p class="prose">
-      An AI harness connects a language model with local files, tools and executable commands.
-      This tutorial uses Claude Code as the concrete implementation. The same safety boundary applies
-      to comparable harnesses: start them only inside a folder whose contents they may inspect and change.
-    </p>
-    <ol class="steps">
-      <li>Confirm that your Claude account or API access includes Claude Code.</li>
-      <li>Open the terminal in <code>ai-workspace</code> and run one official installation command.
-        <dl class="cmds">
-          <div><dt>macOS, Linux or Windows Subsystem for Linux</dt><dd><pre class="prompt cmd"><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre></dd></div>
-          <div><dt>Windows PowerShell</dt><dd><pre class="prompt cmd"><code>irm https://claude.ai/install.ps1 | iex</code></pre></dd></div>
-          <div><dt>macOS with Homebrew</dt><dd><pre class="prompt cmd"><code>brew install --cask claude-code</code></pre></dd></div>
-          <div><dt>Windows with WinGet</dt><dd><pre class="prompt cmd"><code>winget install Anthropic.ClaudeCode</code></pre></dd></div>
-        </dl>
-      </li>
-      <li>Verify the installation and run the read-only diagnostic.<pre class="prompt cmd"><code>claude --version</code></pre><pre class="prompt cmd"><code>claude doctor</code></pre></li>
-      <li>Start <code>claude</code>, complete authentication in the browser and return to the terminal.</li>
-      <li>Ask the harness to list the files in the current folder without changing them. The answer should name <code>readme.md</code>, <code>check.py</code> and <code>index.html</code>.</li>
-      <li>Exit the session. Do not test first-run file changes in a folder containing personal, organisational or research data.</li>
-    </ol>
-    <p class="prose">Use the <a href="https://code.claude.com/docs/en/setup">official Claude Code setup documentation</a> when installation commands or account conditions change.</p>
-  </section>
+      <section class="tutorial-panel" id="server">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="mock-window mock-window--browser"><div class="mock-window__bar"><span class="mock-window__controls"></span><span class="mock-window__title">Browser</span></div><div class="mock-address">http://localhost:8000/</div><div class="mock-site"><small>LOCAL PRACTICE</small><strong>Your generated site works</strong><span>Count: 1</span></div></div></div>
+          <figcaption>Schematic representation. The generated page is served from the practice folder through <code>localhost</code>.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Step 4</p>
+          <h2>Generate and serve a static website</h2>
+          <p class="definition">HTML carries content, CSS controls presentation and JavaScript adds browser behaviour. A local server gives these files an HTTP address on your computer.</p>
+          <ol class="steps"><li><a href="downloads/preparation/create_website.py" download>Download <code>create_website.py</code></a> into <code>ai-workspace</code>.</li><li>Run <code>py create_website.py</code> on Windows or <code>python3 create_website.py</code> on macOS and Linux.</li><li>Start the server.<dl class="cmds"><div><dt>Windows</dt><dd><pre class="prompt cmd"><code>py -m http.server 8000 --directory site</code></pre></dd></div><div><dt>macOS or Linux</dt><dd><pre class="prompt cmd"><code>python3 -m http.server 8000 --directory site</code></pre></dd></div></dl></li><li>Open <a href="http://localhost:8000/">http://localhost:8000/</a>, click the counter button and stop the server with <code>Ctrl+C</code>.</li></ol>
+          <p class="source-note">The Python server supports local development. Live Server offers automatic reload as an optional extension.</p>
+          <p class="checkpoint"><strong>Check:</strong> <code>http://localhost:8000/</code> loads the generated page, one click changes the displayed count, and <code>Ctrl+C</code> returns the terminal to its prompt.</p>
+        </div>
+      </section>
 
-  <section class="block" id="check" aria-labelledby="check-h">
-    <h2 id="check-h">Run the complete system check</h2>
-    <ol class="steps">
-      <li>The browser account opens a new conversation and accepts a test attachment.</li>
-      <li>Visual Studio Code opens <code>ai-workspace</code> and its terminal points to that folder.</li>
-      <li><code>python --version</code> returns a version and <code>python check.py</code> prints the expected text.</li>
-      <li><code>http://localhost:8000</code> displays <code>index.html</code> while the local server is running.</li>
-      <li>For Level 3, <code>claude --version</code> and <code>claude doctor</code> complete, and the harness can read the practice folder.</li>
-    </ol>
-  </section>
+      <section class="tutorial-panel tutorial-panel--milestone" id="local-check">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--dark" aria-hidden="true"><div class="system-map"><span>Editor</span><span>Terminal</span><span>Python</span><span>localhost</span></div></div>
+          <figcaption>The local chain now works without an AI harness.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Milestone</p>
+          <h2>The local setup works</h2>
+          <p class="definition">The same folder now connects the files you edit, the commands you run and the page you inspect in the browser.</p>
+          <ul class="result-list"><li>Explorer and terminal point to <code>ai-workspace</code>.</li><li><code>check.py</code> prints <code>python ready</code>.</li><li>The script creates <code>site/index.html</code>, <code>site/style.css</code> and <code>site/app.js</code>.</li><li>The browser loads the site through <code>localhost</code>, and the button works.</li></ul>
+        </div>
+      </section>
 
-  <section class="block" id="trouble" aria-labelledby="trouble-h">
-    <h2 id="trouble-h">Troubleshoot from evidence</h2>
-    <ol class="steps">
-      <li>Copy the complete command and error message as text.</li>
-      <li>Record the operating system, terminal and current folder.</li>
-      <li>Check the official installation page of the failing tool.</li>
-      <li>Ask a language model to explain the error and propose one reversible diagnostic command.</li>
-      <li>Change one condition at a time and rerun the same check.</li>
-    </ol>
-  </section>
-</div>
-</main>
+      <section class="tutorial-panel" id="harnesses">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="harness-map"><div class="harness-map__model">Model</div><div class="harness-map__core">AI harness</div><div class="harness-map__targets"><span>folder</span><span>tools</span><span>commands</span><span>approval</span></div></div></div>
+          <figcaption>The harness controls the model's context, tools and permission boundary.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Step 5</p>
+          <h2>Choose one AI harness</h2>
+          <p class="definition">A chatbot receives submitted messages and files. An AI harness also connects a model to a working folder, tools and commands, with defined approval points.</p>
+          <div class="harness-grid">
+            <article><p class="harness-kind">Anthropic &middot; proprietary</p><h3>Claude Code</h3><p>VS Code extension and terminal interface.</p><p class="harness-access">Claude account, API credit or supported organisational provider.</p><a href="#claude-code">Tutorial</a></article>
+            <article><p class="harness-kind">OpenAI &middot; open CLI</p><h3>Codex</h3><p>VS Code extension and open-source terminal harness.</p><p class="harness-access">Supported ChatGPT plan or OpenAI API key.</p><a href="#codex">Tutorial</a></article>
+            <article><p class="harness-kind">Earendil Works &middot; MIT</p><h3>Pi</h3><p>Minimal multi-provider terminal harness.</p><p class="harness-access">Node.js plus a supported subscription or provider key.</p><a href="#pi">Tutorial</a></article>
+            <article><p class="harness-kind">Anomaly &middot; MIT</p><h3>OpenCode</h3><p>Multi-provider terminal, desktop and editor interfaces.</p><p class="harness-access">Access depends on the connected provider.</p><a href="https://opencode.ai/docs/">Documentation</a></article>
+          </div>
+          <p class="source-note">Older material may name Gemini CLI. Google moved the general individual-account route to Antigravity CLI in June 2026. Consult the <a href="https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/">current Google notice</a> before planning that setup.</p>
+        </div>
+      </section>
 
-<footer class="site-foot">
-  <div class="wrap">
-    <div class="foot-brand">
-      <img src="assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
-      <div class="imprint">
-        <p class="name">Christopher Pollin</p><p>Digital Humanities Craft</p>
-        <p><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
-      </div>
-    </div>
-    <div class="colophon">
-      <p>Implemented by <a href="https://dhcraft.org">Digital Humanities Craft</a> with the AI harnesses Claude Code (Fable 5 and Opus 5) and Codex (GPT-5.6 Sol), using <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a>.</p>
-      <p class="foot-links"><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub repository</a><span class="sep">&middot;</span><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping repository</a><span class="sep">&middot;</span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+      <span class="anchor-alias" id="tutorials" aria-hidden="true"></span>
+      <section class="tutorial-panel" id="claude-code">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="mock-window mock-window--agent"><div class="mock-window__bar"><span class="mock-window__controls"></span><span class="mock-window__title">Claude Code</span></div><div class="mock-agent"><p>List the files in this folder. Make no changes.</p><div><strong>Read-only result</strong><span>readme.md</span><span>check.py</span><span>site/</span></div></div></div></div>
+          <figcaption>Schematic representation. The first request inspects the practice folder without changing it.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Option A</p>
+          <h2>Start Claude Code in Visual Studio Code</h2>
+          <ol class="steps"><li>Open Extensions, search for <q>Claude Code</q>, verify Anthropic as publisher and install it.</li><li>Open its Spark icon, choose Sign in and complete authorization in the browser.</li><li>Select Manual or Plan as the permission mode for the first conversation.</li><li>Ask: <q>List the files in this folder. Do not create, edit, move or delete anything, and do not run commands.</q></li><li>Read how <a href="https://code.claude.com/docs/en/memory"><code>CLAUDE.md</code> files</a> provide persistent project instructions.</li><li>For the terminal interface, install the <a href="https://code.claude.com/docs/en/installation">standalone CLI</a>, reopen the terminal and run <code>claude --version</code> and <code>claude doctor</code>.</li></ol>
+          <p class="checkpoint"><strong>Check:</strong> Claude Code names the practice files without changing them.</p>
+          <p class="source-note"><a href="#check">Continue to final check</a> &middot; <a href="tutorials/claude-code.html">Full Claude Code introduction</a> &middot; <a href="https://youtu.be/0kILa02vKuI">Video: Installing Claude Code</a> &middot; <a href="https://academy.claude.com/products/code">Claude Academy</a> &middot; <a href="https://code.claude.com/docs/en/quickstart">Terminal quickstart</a> &middot; <a href="https://code.claude.com/docs/en/ide-integrations">VS Code tutorial</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="codex">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="mock-window mock-window--agent"><div class="mock-window__bar"><span class="mock-window__controls"></span><span class="mock-window__title">Codex</span></div><div class="mock-agent"><p>List the files in this folder. Make no changes.</p><div><strong>Workspace inspected</strong><span>readme.md</span><span>check.py</span><span>site/</span></div></div></div></div>
+          <figcaption>Schematic representation. The Codex sidebar is attached to the folder and reports a read-only result.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Option B</p>
+          <h2>Start Codex in Visual Studio Code</h2>
+          <ol class="steps"><li>Install <q>Codex</q> from OpenAI in Extensions.</li><li>Open its icon or run <q>Codex: Open Codex Sidebar</q> from the Command Palette.</li><li>Choose Sign in with ChatGPT and complete browser sign-in.</li><li>Start a local chat and send the same read-only file-list request.</li><li>For terminal automation, follow the operating-system tab on the <a href="https://developers.openai.com/codex/cli/">official CLI page</a>.</li></ol>
+          <p class="checkpoint"><strong>Check:</strong> the sidebar reports the files in <code>ai-workspace</code> without a change.</p>
+          <p class="source-note"><a href="#check">Continue to final check</a> &middot; <a href="https://developers.openai.com/codex/ide/">Official IDE tutorial</a> &middot; <a href="https://academy.openai.com/public/videos/codex-bootcamp-101-agentic-coding-2026-07-31">OpenAI Academy &middot; Codex Bootcamp 101</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="pi">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="mock-window mock-window--terminal"><div class="mock-window__bar"><span class="mock-window__controls"></span><span class="mock-window__title">Pi</span></div><pre><code>PS …\ai-workspace&gt; pi
+provider: connected
+folder: ai-workspace
+
+readme.md  check.py  site/</code></pre></div></div>
+          <figcaption>Schematic representation. Pi runs in the terminal and exposes its provider and working folder.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Option C</p>
+          <h2>Start Pi in the integrated terminal</h2>
+          <ol class="steps"><li>Install <a href="https://nodejs.org/en/download">Node.js LTS</a> and restart Visual Studio Code.</li><li>Run <code>node --version</code> and <code>npm --version</code>.</li><li>Install Pi.<pre class="prompt cmd"><code>npm install -g --ignore-scripts @earendil-works/pi-coding-agent</code></pre></li><li>Run <code>pi</code>, enter <code>/login</code> and select a supported provider.</li><li>Send the read-only file-list request. Stay inside the disposable folder while file and shell tools are available.</li></ol>
+          <p class="checkpoint"><strong>Check:</strong> Pi shows its provider and folder and lists the practice files without changing them.</p>
+          <p class="source-note"><a href="#check">Continue to final check</a> &middot; <a href="https://github.com/earendil-works/pi/tree/main/packages/coding-agent">Official Pi documentation</a> &middot; <a href="https://www.youtube.com/watch?v=DogTO1jjFtI">Video: What I Use Instead</a> &middot; <a href="https://www.youtube.com/playlist?list=PLXY4kw40KBaY">Further videos in the teaching playlist</a></p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="git">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="history-visual"><div><span></span><strong>Working folder</strong><small>current files</small></div><div><span></span><strong>Commit</strong><small>local version</small></div><div><span></span><strong>GitHub</strong><small>optional publication</small></div></div></div>
+          <figcaption>Git records local versions; GitHub is needed only for online publication or collaboration.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Optional</p>
+          <h2>Add Git and GitHub</h2>
+          <p class="definition">Git records versions inside the local folder. GitHub stores a repository online when you choose to publish or collaborate.</p>
+          <ol class="steps"><li>Install <a href="https://git-scm.com/downloads">Git</a> and restart Visual Studio Code.</li><li>Run <code>git --version</code>, <code>git init</code> and <code>git status</code> in <code>ai-workspace</code>.</li><li>Create a GitHub account when you want to publish or collaborate. Follow the <a href="https://docs.github.com/en/get-started/git-basics/set-up-git">official setup guide</a>.</li></ol>
+          <p class="checkpoint"><strong>Check:</strong> <code>git status</code> reports the current branch and practice files without a <q>not a git repository</q> error.</p>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="check">
+        <figure class="tutorial-visual">
+          <div class="visual-frame visual-frame--dark" aria-hidden="true"><div class="status-visual"><span>Browser service <strong>ready</strong></span><span>Local workspace <strong>ready</strong></span><span>Python and localhost <strong>ready</strong></span><span>Selected harness <strong>ready</strong></span></div></div>
+          <figcaption>Every completed path ends with visible evidence on the same laptop.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">Final check</p>
+          <h2>Verify the complete setup</h2>
+          <ol class="steps"><li>The browser service answers and accepts a non-sensitive file.</li><li>Editor, terminal and files point to <code>ai-workspace</code>.</li><li>Python runs both scripts and generates the site.</li><li><code>localhost:8000</code> loads the styled, interactive page.</li><li>The selected harness passes the read-only file-list test.</li></ol>
+        </div>
+      </section>
+
+      <section class="tutorial-panel" id="trouble">
+        <figure class="tutorial-visual">
+          <div class="visual-frame" aria-hidden="true"><div class="diagnostic-visual"><div><span>1</span><strong>Complete error</strong></div><div><span>2</span><strong>Last successful check</strong></div><div><span>3</span><strong>One diagnostic command</strong></div><div><span>4</span><strong>Repeat the check</strong></div></div></div>
+          <figcaption>A useful diagnosis preserves the complete command, context and output.</figcaption>
+        </figure>
+        <div class="tutorial-copy">
+          <p class="step-number">If a step fails</p>
+          <h2>Diagnose one condition at a time</h2>
+          <ol class="steps"><li>Copy the complete command and error as text.</li><li>Record the operating system, shell and working directory.</li><li>Return to the preceding successful check and consult the official tool documentation.</li><li>Ask a model for one reversible diagnostic command, change one condition and repeat the check.</li></ol>
+        </div>
+      </section>
     </div>
   </div>
-</footer>
+</div></main>
+<footer class="site-foot"><div class="wrap"><div class="foot-publisher"><img src="assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"><div class="imprint"><p class="name">Christopher Pollin</p><p>Digital Humanities Craft</p><p class="contact"><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p></div></div><p class="foot-provenance">Developed and maintained by <a href="https://dhcraft.org">Digital Humanities Craft</a> using <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a> and <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a>.</p><nav class="foot-nav" aria-label="Footer"><p class="foot-nav-label">Further links</p><ul><li><a href="about.html">About &amp; Imprint</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Teaching material</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping</a></li><li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a></li><li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li><li><a href="https://dhcraft.org/imprint">Legal notice on dhcraft.org</a></li></ul></nav></div></footer>
 </body>
 </html>

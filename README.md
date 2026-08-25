@@ -4,7 +4,7 @@ This repository is the home of a teaching line on working with large language mo
 
 ## Derivation by profile
 
-The material is maintained once. Two holdings carry it, the **Full Slide Deck** and the **Full Lecture Notes**, and both are cut into five modules.
+The material is maintained through three holdings, each with its own function. The **Full Slide Deck** is the complete overview of the teaching material in slide form. It serves as a reference work and as the source from which workshop-specific decks are assembled, and it is not presented as one teaching session. The **Full Lecture Notes** are the written-out counterpart of the slides and carry the explanations and context needed for reading and later reference. The **Video Playlist** combines DHCraft videos with selected contributions by others; its deliberate sequence runs from the foundations to more complex topics and forms a structured learning path that is curated, maintained and extended as suitable material appears. All three holdings share the same five modules, and the playlist assigns every entry one primary module.
 
 | Module | Title |
 | --- | --- |
@@ -26,8 +26,10 @@ Only upcoming instances live in this repository. Once an instance has been taugh
 | `script/full-lecture-notes-en.md`, `script/full-lecture-notes-de.md` | The Full Lecture Notes |
 | `script/modules/` | The five-module cut of the lecture notes, with its coverage report in `script/COVERAGE.md` |
 | `slides/full-slide-deck.md` | The Full Slide Deck as text with speaker notes; the visual deck lives in Google Slides and is linked |
+| `docs/data/videos.json` | The Video Playlist inventory, including order, primary module, any related modules and duration |
 | `workshops/<id>/` | One folder per upcoming instance, holding `profile.md`, `slide-deck.md`, `lecture-notes.md` and `data/` |
 | `docs/` | The platform (static site, GitHub Pages), including the register `docs/data/workshops.json` and the covers in `docs/assets/covers/` |
+| `communication/` | The Research Mission Control transport for current briefs, results and recipient state |
 
 Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the register, the workshop folder, the cover file, the subpage and the git tag.
 
@@ -37,9 +39,13 @@ The platform is a static site served by GitHub Pages from `docs/`. The landing p
 
 https://digitalhumanitiescraft.github.io/knowledge-context-agentic-engineering/
 
-## Method, language, license
+## Development method and orchestration
 
-The repository is developed with [Promptotyping](https://dhcraft.org/Promptotyping/), an iterative, document-based method for building research artifacts with LLM-based agents. Its `knowledge/` folder holds the distilled project knowledge, the project description, requirements, terms, design, governance and provenance that agents and humans work from.
+[Promptotyping](https://dhcraft.org/Promptotyping/) is the artefact-development method. Maintained documents in `knowledge/` guide iterative production, inspection and correction of teaching material, interface code and workshop packages.
+
+[Research Mission Control](https://github.com/DigitalHumanitiesCraft/research-mission-control) is the orchestration contract for accountable research and implementation lanes. The Research Director retains substantive authority. The Research Orchestrator frames research and issues bounded implementation briefs. The Operational Orchestrator coordinates authorized implementation, verification, integration and release. The Context Stream in `communication/` transports current briefs, results and recipient state; durable project knowledge remains in `knowledge/`.
+
+## Language and licence
 
 Repository files are English. The teaching material is bilingual, and language is handled per module and per instance, so each holding carries the language it was authored or taught in.
 

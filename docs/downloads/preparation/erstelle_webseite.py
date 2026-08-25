@@ -1,0 +1,109 @@
+# /// script
+# requires-python = ">=3.10"
+# dependencies = []
+# ///
+"""Create a small static practice site for the preparation tutorial.
+
+Run with ``py erstelle_webseite.py`` on Windows or
+``python3 erstelle_webseite.py`` on macOS and Linux. The script writes a
+three-file website to ``site/`` using only the Python standard library.
+"""
+
+import sys
+from pathlib import Path
+
+
+OUTPUT_DIR = Path("site")
+
+HTML = """<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meine Übungsseite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <p class="label">Lokale Übungsseite</p>
+    <h1>Editor, Python und Browser sind verbunden.</h1>
+    <p>Diese Seite wurde von einem Python-Skript erzeugt und wird von deinem Computer bereitgestellt.</p>
+    <button id="counter" type="button">Prüfungen: 0</button>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+"""
+
+CSS = """body {
+  margin: 0;
+  background: #f6f5f1;
+  color: #20211f;
+  font-family: system-ui, sans-serif;
+}
+
+main {
+  max-width: 42rem;
+  margin: 10vh auto;
+  padding: 2rem;
+}
+
+.label {
+  color: #0a7e7c;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.05;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: #0a7e7c;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+"""
+
+JAVASCRIPT = """const button = document.querySelector(\"#counter\");
+let checks = 0;
+
+button.addEventListener(\"click\", () => {
+  checks += 1;
+  button.textContent = `Prüfungen: ${checks}`;
+});
+"""
+
+
+def _configure_console() -> None:
+    """Keep tutorial output readable in the Windows terminal."""
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
+
+def _write_file(name: str, content: str) -> None:
+    target = OUTPUT_DIR / name
+    target.write_text(content, encoding="utf-8")
+    print(f"OK: {target}")
+
+
+def main() -> None:
+    """Write the website and report the next observable check."""
+    _configure_console()
+    OUTPUT_DIR.mkdir(exist_ok=True)
+    _write_file("index.html", HTML)
+    _write_file("style.css", CSS)
+    _write_file("app.js", JAVASCRIPT)
+    print("OK: Die Übungswebsite wurde erstellt.")
+    print("Nächster Schritt: Starte den lokalen Webserver für den Ordner site.")
+
+
+if __name__ == "__main__":
+    main()

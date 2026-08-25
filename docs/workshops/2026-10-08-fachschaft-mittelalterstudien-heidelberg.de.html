@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20260825-2">
+<link rel="stylesheet" href="../assets/site.css?v=20260825-18">
 <link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
@@ -19,15 +19,15 @@
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="../index.de.html">
-      <img src="../assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
-      <span>Digital Humanities Craft</span>
-    </a>
+    <div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Website von Digital Humanities Craft"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="../index.de.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div>
     <div class="head-tools">
       <nav class="site-nav" aria-label="Seite">
         <ul>
+          <li><a href="../preparation.de.html">Vorbereitung</a></li>
+          <li><a href="../about.de.html">Über &amp; Impressum</a></li>
           <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
         </ul>
       </nav>
@@ -39,7 +39,7 @@
   </div>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1">
   <div class="wrap">
     <header class="page-head">
       <p class="stamp">8. Oktober 2026</p>
@@ -50,6 +50,41 @@
         <span><b>Sprache</b> Deutsch</span>
         <span><b>Lizenz</b> <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
       </p>
+      <div class="module-series">
+        <p class="module-series__label" id="modules-2026-10-08-fachschaft-mittelalterstudien-heidelberg-label">Module</p>
+        <ol class="module-series__list" aria-labelledby="modules-2026-10-08-fachschaft-mittelalterstudien-heidelberg-label" role="list">
+          <li class="module-series__item m1">
+            <a class="module-series__link" href="../index.de.html#module-01" aria-label="Modul 01: Large Language Models &bdquo;verstehen&ldquo;" data-tooltip="Modul 01: Large Language Models &bdquo;verstehen&ldquo;">
+              <span class="module-series__icon module-icon" aria-hidden="true"></span>
+              <span class="module-series__number" aria-hidden="true">01</span>
+            </a>
+          </li>
+          <li class="module-series__item m2">
+            <a class="module-series__link" href="../index.de.html#module-02" aria-label="Modul 02: Prompt Engineering" data-tooltip="Modul 02: Prompt Engineering">
+              <span class="module-series__icon module-icon" aria-hidden="true"></span>
+              <span class="module-series__number" aria-hidden="true">02</span>
+            </a>
+          </li>
+          <li class="module-series__item m3">
+            <a class="module-series__link" href="../index.de.html#module-03" aria-label="Modul 03: Wissens- und Kontext-Engineering" data-tooltip="Modul 03: Wissens- und Kontext-Engineering">
+              <span class="module-series__icon module-icon" aria-hidden="true"></span>
+              <span class="module-series__number" aria-hidden="true">03</span>
+            </a>
+          </li>
+          <li class="module-series__item m4">
+            <a class="module-series__link" href="../index.de.html#module-04" aria-label="Modul 04: Agentic Engineering" data-tooltip="Modul 04: Agentic Engineering">
+              <span class="module-series__icon module-icon" aria-hidden="true"></span>
+              <span class="module-series__number" aria-hidden="true">04</span>
+            </a>
+          </li>
+          <li class="module-series__item m5">
+            <a class="module-series__link" href="../index.de.html#module-05" aria-label="Modul 05: Kritische Perspektiven und Governance" data-tooltip="Modul 05: Kritische Perspektiven und Governance">
+              <span class="module-series__icon module-icon" aria-hidden="true"></span>
+              <span class="module-series__number" aria-hidden="true">05</span>
+            </a>
+          </li>
+        </ol>
+      </div>
     </header>
 
     <section class="overview-grid" id="overview" aria-label="Workshopüberblick">
@@ -58,30 +93,30 @@
         <p>Der Workshop verfolgt eine kleine Gruppe mittelalterlicher Urkunden durch Handschriftenerkennung, TEI-Kodierung, Entitätenregister und die Publikation als statische Edition. Die Teilnehmenden arbeiten in einem AI Harness, bauen strukturiertes Projektwissen auf und vergleichen erzeugte Transkriptionen mit Faksimiles und vorbereiteten TEI-Daten. Die Übung integriert Verifikation und Quellenbezug direkt in den Implementierungsworkflow.</p>
       </article>
       <article>
-        <h2>Outline</h2>
-        <ol><li><time>Grundlagen</time>Large Language Models, AI Agents und Arbeitsumgebung</li>
-            <li><time>Projektwissen</time>Instruktionsebene und Wissensdokumente</li>
-            <li><time>Quellen</time>Handschriftenerkennung mit Prüfung am Faksimile</li>
-            <li><time>Daten</time>TEI-Kodierung sowie Personen- und Organisationsregister</li>
-            <li><time>Artefakt</time>Eine kleine statische wissenschaftliche Edition</li></ol>
-      </article>
-      <article>
         <h2>Lernziele</h2>
         <ul><li>Ein kleines Repository mit explizitem Projektwissen aufbauen.</li>
             <li>Modellgenerierte Handschriftenerkennung anhand der Quellen prüfen.</li>
             <li>Geprüften Text und Entitäten in TEI XML repräsentieren.</li>
             <li>Die entstandenen Daten in einer kleinen statischen Edition publizieren.</li></ul>
       </article>
-    </section>
+    <article>
+        <h2>Ablauf</h2>
+        <ol><li><time>Grundlagen</time>Large Language Models, AI Agents und Arbeitsumgebung</li>
+            <li><time>Projektwissen</time>Instruktionsebene und Wissensdokumente</li>
+            <li><time>Quellen</time>Handschriftenerkennung mit Prüfung am Faksimile</li>
+            <li><time>Daten</time>TEI-Kodierung sowie Personen- und Organisationsregister</li>
+            <li><time>Artefakt</time>Eine kleine statische wissenschaftliche Edition</li></ol>
+      </article>
+      </section>
 
     <section class="block" id="slides" aria-labelledby="slides-heading">
-      <div class="section-head"><h2 id="slides-heading">Folien</h2></div>
-      <div class="media-pending" role="status"><p>Der Foliensatz wird für diesen Workshop vorbereitet.</p></div>
+      <div class="section-head"><h2 id="slides-heading">Slide Deck</h2></div>
+      <div class="media-pending" role="status"><p>Das Slide Deck wird für diesen Workshop vorbereitet.</p></div>
     </section>
 
     <section class="block" id="reader" aria-labelledby="reader-heading">
-      <div class="section-head"><h2 id="reader-heading">Skriptum</h2></div>
-      <div class="media-pending" role="status"><p>Das Skriptum wird für diesen Workshop vorbereitet.</p></div>
+      <div class="section-head"><h2 id="reader-heading">Lecture Notes</h2></div>
+      <div class="media-pending" role="status"><p>Die Lecture Notes werden für diesen Workshop vorbereitet.</p></div>
     </section>
 
     <section class="block" id="references">
@@ -99,18 +134,25 @@
 
 <footer class="site-foot">
   <div class="wrap">
-    <div class="foot-brand">
-      <img src="../assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+    <div class="foot-publisher">
+      <img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367">
       <div class="imprint">
         <p class="name">Christopher Pollin</p>
         <p>Digital Humanities Craft</p>
-        <p><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">·</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
+        <p class="contact"><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
       </div>
     </div>
-    <div class="colophon">
-  <p>Umgesetzt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit den AI-Harnesses Claude Code (Fable 5 und Opus 5) und Codex (GPT-5.6 Sol), unter Anwendung von <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a>.</p>
-  <p class="foot-links"><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub-Repository</a><span class="sep">&middot;</span><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping-Repository</a><span class="sep">&middot;</span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
-</div>
+    <p class="foot-provenance">Entwickelt und gepflegt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a> und <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a>.</p>
+    <nav class="foot-nav" aria-label="Fußzeile"><p class="foot-nav-label">Weiterführende Links</p>
+      <ul>
+        <li><a href="../about.de.html">Über &amp; Impressum</a></li>
+        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Lehrmaterial</a></li>
+        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping</a></li>
+        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Forschungsleitstelle</a></li>
+        <li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li>
+        <li><a href="https://dhcraft.org/imprint">Rechtstext auf dhcraft.org</a></li>
+      </ul>
+    </nav>
   </div>
 </footer>
 </body>

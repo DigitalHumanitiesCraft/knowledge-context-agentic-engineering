@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=20260825-2">
+<link rel="stylesheet" href="../assets/site.css?v=20260825-18">
 <link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
@@ -19,15 +19,15 @@
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-head">
   <div class="wrap">
-    <a class="brand" href="../index.html">
-      <img src="../assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
-      <span>Digital Humanities Craft</span>
-    </a>
+    <div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Digital Humanities Craft website"><img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="../index.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div>
     <div class="head-tools">
       <nav class="site-nav" aria-label="Site">
         <ul>
+          <li><a href="../preparation.html">Preparation</a></li>
+          <li><a href="../about.html">About &amp; Imprint</a></li>
           <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
         </ul>
       </nav>
@@ -39,7 +39,7 @@
   </div>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1">
   <div class="wrap">
     <header class="page-head">
       <p class="stamp">16 and 17 September 2026</p>
@@ -50,6 +50,41 @@
         <span><b>Language</b> English</span>
         <span><b>Licence</b> <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
       </p>
+      <div class="module-series">
+        <p class="module-series__label" id="modules-2026-09-16-kug-m3gim-label">Modules</p>
+        <ol class="module-series__list" aria-labelledby="modules-2026-09-16-kug-m3gim-label" role="list">
+          <li class="module-series__item m1">
+            <a class="module-series__link" href="../index.html#module-01" aria-label="Module 01: &ldquo;Understanding&rdquo; Large Language Models" data-tooltip="Module 01: &ldquo;Understanding&rdquo; Large Language Models">
+              <span class="module-series__icon module-icon" aria-hidden="true"></span>
+              <span class="module-series__number" aria-hidden="true">01</span>
+            </a>
+          </li>
+          <li class="module-series__item m2">
+            <a class="module-series__link" href="../index.html#module-02" aria-label="Module 02: Prompt Engineering" data-tooltip="Module 02: Prompt Engineering">
+              <span class="module-series__icon module-icon" aria-hidden="true"></span>
+              <span class="module-series__number" aria-hidden="true">02</span>
+            </a>
+          </li>
+          <li class="module-series__item m3">
+            <a class="module-series__link" href="../index.html#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering">
+              <span class="module-series__icon module-icon" aria-hidden="true"></span>
+              <span class="module-series__number" aria-hidden="true">03</span>
+            </a>
+          </li>
+          <li class="module-series__item m4">
+            <a class="module-series__link" href="../index.html#module-04" aria-label="Module 04: Agentic Engineering" data-tooltip="Module 04: Agentic Engineering">
+              <span class="module-series__icon module-icon" aria-hidden="true"></span>
+              <span class="module-series__number" aria-hidden="true">04</span>
+            </a>
+          </li>
+          <li class="module-series__item m5">
+            <a class="module-series__link" href="../index.html#module-05" aria-label="Module 05: Critical Perspectives and Governance" data-tooltip="Module 05: Critical Perspectives and Governance">
+              <span class="module-series__icon module-icon" aria-hidden="true"></span>
+              <span class="module-series__number" aria-hidden="true">05</span>
+            </a>
+          </li>
+        </ol>
+      </div>
     </header>
 
     <section class="overview-grid" id="overview" aria-label="Workshop overview">
@@ -58,44 +93,210 @@
         <p>Across four connected sessions, the workshop follows estate material from digitisation to a usable digital research artefact. The Wednesday session uses Stefan Zweig Digital to explain metadata, TEI XML, data modelling, authority data, repository ingest and publication. On Thursday, participants work with M³GIM objects, examine the role of large language models, extract and validate structured data, and develop a small browser-based application through Promptotyping.</p>
       </article>
       <article>
-        <h2>Outline</h2>
-        <ol><li><time>Wednesday, 17:00–19:00</time>The Stefan Zweig Digital workflow from archival object to research platform</li>
-            <li><time>Thursday, 11:30–13:00</time>Large language models in research data workflows</li>
-            <li><time>Thursday, 15:00–16:30</time>OCR and schema-based information extraction with M³GIM objects</li>
-            <li><time>Thursday, 17:00–18:30</time>Promptotyping a digital research application</li></ol>
-      </article>
-      <article>
         <h2>Learning objectives</h2>
         <ul><li>Explain the transformations between a digitised source and a published research resource.</li>
             <li>Identify suitable roles for large language models and define the required checks.</li>
             <li>Create structured data while recording source relations, provenance and uncertainty.</li>
             <li>Translate a reduced research question and checked data into application requirements.</li></ul>
       </article>
+      <article>
+        <h2>Outline</h2>
+        <ol><li><time>Wednesday, 17:00–19:00</time>The Stefan Zweig Digital workflow from archival object to research platform</li>
+            <li><time>Thursday, 11:30–13:00</time>Large language models in research data workflows</li>
+            <li><time>Thursday, 15:00–16:30</time>OCR and schema-based information extraction with M³GIM objects</li>
+            <li><time>Thursday, 17:00–18:30</time>Promptotyping a digital research application</li></ol>
+      </article>
+    </section>
+
+    <section class="web-module block" id="web-module" aria-labelledby="web-module-heading">
+      <div class="web-module__head">
+        <h2 id="web-module-heading">Web Module</h2>
+        <p>This browser-native sequence follows one estate object through five accountable transformations. Use the unit links to move directly to a topic; each unit ends with a result that can be inspected.</p>
+      </div>
+      <div class="web-module__sequence">
+        <nav class="web-module__nav" aria-label="Web Module units">
+          <p>Units</p>
+          <ol>
+            <li><a href="#web-module-object-platform"><span>01</span>Object to platform</a></li>
+            <li><a href="#web-module-model-assistance"><span>02</span>Model assistance</a></li>
+            <li><a href="#web-module-checked-data"><span>03</span>Checked data</a></li>
+            <li><a href="#web-module-browser-application"><span>04</span>Browser application</a></li>
+            <li><a href="#web-module-responsible-acceptance"><span>05</span>Responsible acceptance</a></li>
+          </ol>
+        </nav>
+        <div class="web-module__units">
+          <section class="web-module__unit" id="web-module-object-platform" aria-labelledby="web-module-object-platform-heading">
+            <header class="web-module__unit-head">
+              <div>
+                <p class="web-module__number">Unit 01</p>
+                <h3 id="web-module-object-platform-heading">From estate object to research platform</h3>
+              </div>
+              <div class="module-series" aria-label="Related modules">
+                <ol class="module-series__list" role="list">
+                  <li class="module-series__item m3"><a class="module-series__link" href="../index.html#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">03</span></a></li>
+                  <li class="module-series__item m5"><a class="module-series__link" href="../index.html#module-05" aria-label="Module 05: Critical Perspectives and Governance" data-tooltip="Module 05: Critical Perspectives and Governance"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">05</span></a></li>
+                </ol>
+              </div>
+            </header>
+            <div class="web-module__visual" aria-label="Six distinct representations connect an estate object with a research platform">
+              <div class="web-module__flow web-module__flow--six">
+                <span class="web-module__step">Estate object<small>archival identity</small></span>
+                <span class="web-module__step">Digital image<small>source relation</small></span>
+                <span class="web-module__step">Description<small>metadata</small></span>
+                <span class="web-module__step">Structured text<small>TEI and entities</small></span>
+                <span class="web-module__step">Repository<small>ingest package</small></span>
+                <span class="web-module__step">Platform<small>search and views</small></span>
+              </div>
+            </div>
+            <div class="web-module__copy">
+              <p>A digitised image remains one representation of an archival object. Description, transcription, entity modelling, repository ingest and publication create further representations with distinct functions. Stable identifiers and provenance connect them while preserving their differences.</p>
+              <p>The workflow becomes accountable when every transition names its input, transformation, output and check. This also reveals which questions an interface can answer: a map requires identified places and explicit relations, while a timeline additionally requires normalised dates and visible uncertainty.</p>
+              <p class="web-module__check"><strong>Observable check:</strong> Select one platform statement and trace it back through the repository record to the identified source object.</p>
+            </div>
+          </section>
+
+          <section class="web-module__unit" id="web-module-model-assistance" aria-labelledby="web-module-model-assistance-heading">
+            <header class="web-module__unit-head">
+              <div>
+                <p class="web-module__number">Unit 02</p>
+                <h3 id="web-module-model-assistance-heading">Where language models can assist</h3>
+              </div>
+              <div class="module-series" aria-label="Related modules">
+                <ol class="module-series__list" role="list">
+                  <li class="module-series__item m1"><a class="module-series__link" href="../index.html#module-01" aria-label="Module 01: &ldquo;Understanding&rdquo; Large Language Models" data-tooltip="Module 01: &ldquo;Understanding&rdquo; Large Language Models"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">01</span></a></li>
+                  <li class="module-series__item m2"><a class="module-series__link" href="../index.html#module-02" aria-label="Module 02: Prompt Engineering" data-tooltip="Module 02: Prompt Engineering"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">02</span></a></li>
+                  <li class="module-series__item m5"><a class="module-series__link" href="../index.html#module-05" aria-label="Module 05: Critical Perspectives and Governance" data-tooltip="Module 05: Critical Perspectives and Governance"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">05</span></a></li>
+                </ol>
+              </div>
+            </header>
+            <div class="web-module__visual" aria-label="Model-supported tasks paired with required checks">
+              <div class="web-module__matrix">
+                <div><b>Task</b><b>Candidate output</b><b>Required evidence</b></div>
+                <div><span>Transcribe</span><span>Text with uncertainty</span><span>Source image</span></div>
+                <div><span>Extract</span><span>Schema values</span><span>Quoted passage</span></div>
+                <div><span>Reconcile</span><span>Identifier candidate</span><span>Authority record</span></div>
+              </div>
+            </div>
+            <div class="web-module__copy">
+              <p>A language model can propose transcriptions, structured values, authority matches or format conversions. Its fluency supplies no evidence that a passage is complete, a relation is supported or an identifier denotes the intended entity. Model output therefore remains a candidate transformation.</p>
+              <p>AI readiness belongs to the workflow. A usable task needs permitted and legible input, an explicit output contract, representative examples and a verification route. Rights, confidentiality, prompt records, model settings and corrections remain part of the documented process.</p>
+              <p class="web-module__check"><strong>Observable check:</strong> For each proposed model task, name the source or rule against which its output will be checked.</p>
+            </div>
+          </section>
+
+          <section class="web-module__unit" id="web-module-checked-data" aria-labelledby="web-module-checked-data-heading">
+            <header class="web-module__unit-head">
+              <div>
+                <p class="web-module__number">Unit 03</p>
+                <h3 id="web-module-checked-data-heading">From source to checked structured data</h3>
+              </div>
+              <div class="module-series" aria-label="Related modules">
+                <ol class="module-series__list" role="list">
+                  <li class="module-series__item m2"><a class="module-series__link" href="../index.html#module-02" aria-label="Module 02: Prompt Engineering" data-tooltip="Module 02: Prompt Engineering"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">02</span></a></li>
+                  <li class="module-series__item m3"><a class="module-series__link" href="../index.html#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">03</span></a></li>
+                  <li class="module-series__item m5"><a class="module-series__link" href="../index.html#module-05" aria-label="Module 05: Critical Perspectives and Governance" data-tooltip="Module 05: Critical Perspectives and Governance"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">05</span></a></li>
+                </ol>
+              </div>
+            </header>
+            <div class="web-module__visual" aria-label="Synthetic source, transcription and structured statement remain connected">
+              <div class="web-module__evidence">
+                <div><span>source_014</span><strong>Digital image</strong><small>permitted teaching object</small></div>
+                <div><span>line 08</span><strong>“arrived in Gr[az?]”</strong><small>uncertainty retained</small></div>
+                <pre><code>{
+  "place": "Graz",
+  "evidence": "line 08",
+  "status": "uncertain"
+}</code></pre>
+              </div>
+            </div>
+            <div class="web-module__copy">
+              <p>Transcription and information extraction are separate transitions. A diplomatic transcription first records what is visible, including line structure and uncertain readings. Structured extraction then selects entities, properties and relations according to a documented schema.</p>
+              <p>The data record keeps the object identifier, the supporting passage and its review status. Missing values remain empty, and interpretations occupy a separate labelled field. Candidate authority matches are compared with project data and the consulted authority record before an identifier is accepted.</p>
+              <p class="web-module__check"><strong>Observable check:</strong> Every populated value in the synthetic record points to a source passage and carries a review status.</p>
+            </div>
+          </section>
+
+          <section class="web-module__unit" id="web-module-browser-application" aria-labelledby="web-module-browser-application-heading">
+            <header class="web-module__unit-head">
+              <div>
+                <p class="web-module__number">Unit 04</p>
+                <h3 id="web-module-browser-application-heading">From research question to browser application</h3>
+              </div>
+              <div class="module-series" aria-label="Related modules">
+                <ol class="module-series__list" role="list">
+                  <li class="module-series__item m3"><a class="module-series__link" href="../index.html#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">03</span></a></li>
+                  <li class="module-series__item m4"><a class="module-series__link" href="../index.html#module-04" aria-label="Module 04: Agentic Engineering" data-tooltip="Module 04: Agentic Engineering"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">04</span></a></li>
+                </ol>
+              </div>
+            </header>
+            <div class="web-module__visual" aria-label="Documented research context becomes requirements, tests and browser views">
+              <div class="web-module__build">
+                <div><strong>Research context</strong><span>question · data model · rights · uncertainty</span></div>
+                <div class="web-module__build-output"><span>Requirements</span><span>Checks</span><span>Views</span></div>
+                <div><strong>Small browser artefact</strong><span>filters · evidence links · visible limits</span></div>
+              </div>
+            </div>
+            <div class="web-module__copy">
+              <p>Promptotyping begins with a bounded research question and a compact knowledge base. The knowledge base defines the available data, entity relations, rights, uncertainty rules, intended users and acceptance criteria. These maintained statements guide implementation more reliably than a single long prompt.</p>
+              <p>The first browser artefact uses the smallest dataset and feature set that can test the research operation. A movement view, for example, needs identified places, typed relations and temporal information. The interface must retain links to source evidence and avoid precision that the data cannot support.</p>
+              <p class="web-module__check"><strong>Observable check:</strong> Each view and filter names the data fields it uses, and each displayed claim can be traced to an object record.</p>
+            </div>
+          </section>
+
+          <section class="web-module__unit" id="web-module-responsible-acceptance" aria-labelledby="web-module-responsible-acceptance-heading">
+            <header class="web-module__unit-head">
+              <div>
+                <p class="web-module__number">Unit 05</p>
+                <h3 id="web-module-responsible-acceptance-heading">Verification and responsible acceptance</h3>
+              </div>
+              <div class="module-series" aria-label="Related modules">
+                <ol class="module-series__list" role="list">
+                  <li class="module-series__item m3"><a class="module-series__link" href="../index.html#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">03</span></a></li>
+                  <li class="module-series__item m4"><a class="module-series__link" href="../index.html#module-04" aria-label="Module 04: Agentic Engineering" data-tooltip="Module 04: Agentic Engineering"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">04</span></a></li>
+                  <li class="module-series__item m5"><a class="module-series__link" href="../index.html#module-05" aria-label="Module 05: Critical Perspectives and Governance" data-tooltip="Module 05: Critical Perspectives and Governance"><span class="module-series__icon module-icon" aria-hidden="true"></span><span class="module-series__number" aria-hidden="true">05</span></a></li>
+                </ol>
+              </div>
+            </header>
+            <div class="web-module__visual" aria-label="Three separate gates for validation, verification and acceptance">
+              <ol class="web-module__gates">
+                <li><span>1</span><div><strong>Validation</strong><small>Does the file conform to its syntax and schema?</small></div></li>
+                <li><span>2</span><div><strong>Verification</strong><small>Does the representation agree with source and domain evidence?</small></div></li>
+                <li><span>3</span><div><strong>Acceptance</strong><small>Who assigns its status and responsibility for use?</small></div></li>
+              </ol>
+            </div>
+            <div class="web-module__copy">
+              <p>Validation, verification and acceptance answer different questions. Automated checks can confirm syntax, schema conformance, identifiers and package structure. Scholarly verification compares a representation with its source, evaluates interpretation and records uncertainty.</p>
+              <p>A responsible person then decides whether the result is adequate for the defined research purpose and assigns its status. A technically valid file may fail source-based review, while a verified statement may remain restricted by rights or repository policy.</p>
+              <p class="web-module__check"><strong>Observable check:</strong> The validation record identifies the performed tests, the reviewed evidence, unresolved limits and the role responsible for acceptance.</p>
+            </div>
+          </section>
+        </div>
+      </div>
     </section>
 
     <section class="block" id="slides" aria-labelledby="slides-heading">
       <div class="section-head">
-        <h2 id="slides-heading">Slides</h2>
-        <a class="action" href="https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/edit">Open in Google Slides</a>
+        <h2 id="slides-heading">Slide Deck</h2>
+        <a class="action" href="https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/edit">Open Slide Deck in Google Slides</a>
       </div>
       <div class="media-frame slides">
         <iframe
           src="https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/embed?start=false&amp;loop=false&amp;delayms=3000"
-          title="Slides: Making Estate Materials Digitally Accessible"
+          title="Slide Deck: Making Estate Materials Digitally Accessible"
           allowfullscreen></iframe>
       </div>
-      <p class="media-download"><a class="action" href="https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/export/pdf">Download slides as PDF</a></p>
+      <p class="media-download"><a class="action" href="https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/export/pdf">Download Slide Deck as PDF</a></p>
     </section>
 
     <section class="block" id="reader" aria-labelledby="reader-heading">
       <div class="section-head">
-        <h2 id="reader-heading">Course reader</h2>
-        <a class="action" href="https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/edit">Open in Google Docs</a>
+        <h2 id="reader-heading">Lecture Notes</h2>
+        <a class="action" href="https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/edit">Open Lecture Notes in Google Docs</a>
       </div>
       <div class="media-frame reader">
         <iframe
           src="https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/preview"
-          title="Course reader: Making Estate Materials Digitally Accessible"
+          title="Lecture Notes: Making Estate Materials Digitally Accessible"
           loading="lazy"></iframe>
       </div>
 
@@ -117,18 +318,26 @@
 
 <footer class="site-foot">
   <div class="wrap">
-    <div class="foot-brand">
-      <img src="../assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+    <div class="foot-publisher">
+      <img src="../assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367">
       <div class="imprint">
         <p class="name">Christopher Pollin</p>
         <p>Digital Humanities Craft</p>
-        <p><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">·</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
+        <p class="contact"><a href="https://dhcraft.org">dhcraft.org</a><span class="sep">&middot;</span><a href="mailto:office@dhcraft.org">office@dhcraft.org</a></p>
       </div>
     </div>
-    <div class="colophon">
-  <p>Implemented by <a href="https://dhcraft.org">Digital Humanities Craft</a> with the AI harnesses Claude Code (Fable 5 and Opus 5) and Codex (GPT-5.6 Sol), using <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a>.</p>
-  <p class="foot-links"><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub repository</a><span class="sep">&middot;</span><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping repository</a><span class="sep">&middot;</span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
-</div>
+    <p class="foot-provenance">Developed and maintained by <a href="https://dhcraft.org">Digital Humanities Craft</a> using <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a> and <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a>.</p>
+    <nav class="foot-nav" aria-label="Footer">
+      <p class="foot-nav-label">Further links</p>
+      <ul>
+        <li><a href="../about.html">About &amp; Imprint</a></li>
+        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Teaching material</a></li>
+        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping</a></li>
+        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a></li>
+        <li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li>
+        <li><a href="https://dhcraft.org/imprint">Legal notice on dhcraft.org</a></li>
+      </ul>
+    </nav>
   </div>
 </footer>
 </body>

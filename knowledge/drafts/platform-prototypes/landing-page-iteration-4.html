@@ -7,15 +7,18 @@
 <meta name="robots" content="noindex">
 
 <!--
-  DESIGN DRAFT, iteration 3. Not the production start page.
+  DESIGN DRAFT, iteration 4. Not the production start page.
 
-  Changes against design-draft-2.html
-  1. No horizontal hairlines between sections. Order comes from whitespace and headings
-     alone; the only remaining hairlines outline objects (cards, cover slots) or belong
-     to the motif drawing.
-  2. Five top-level modules instead of the nineteen-item map, each with one quiet line
-     of subtopics. The cut below the five is still draft, hence one hint.
-  3. Real footer with the watercolor mark, imprint, colophon and licence.
+  Changes against design-draft-3.html
+  1. The watercolor logo's four colour families enter as identity tokens. They have
+     exactly one home, the five module marks, where they sit alongside turquoise.
+     Everything else stays monochrome plus turquoise, the motif included.
+  2. Stylesheet refactored into one documented token block plus grouped sections.
+     Type sizes and spacing come from scales, the two overlapping neutral line
+     tokens are merged into --rule and --rule-mid.
+  3. Contrast pass. --ink-3 was darkened because it missed AA for small text,
+     on the placeholder tint in particular, and the motif connectors moved from
+     the near-invisible hairline tone to --rule-mid.
 
   Deliberate prototype shortcuts, each with its upgrade path:
   - Single self-contained file with inline CSS. Production splits into html/css.
@@ -32,27 +35,31 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- Tokens: single source of truth, no raw hex below this block ---------- */
+/* ==========================================================================
+   TOKENS
+   The only place where literal values live. Everything below consumes var().
+   Contrast ratios are against --paper unless noted.
+   ========================================================================== */
 :root {
   color-scheme: light;
 
+  /* --- Typefaces ------------------------------------------------------- */
   --font-ui: "Space Grotesk", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
 
-  /* One ground for the whole page, header and footer included. */
-  --paper: #FDFDFB;
-  --tint: #F3F3EF;        /* neutral fill for placeholder slots */
-  --ink: #141413;
-  --ink-2: #4A4A46;
-  --ink-3: #7C7C76;
-  --rule: #E4E4DE;
-  --rule-strong: #C9C9C2;
+  /* --- Type scale ------------------------------------------------------ */
+  --text-xs: 0.75rem;        /* file paths, uppercase micro labels */
+  --text-sm: 0.8125rem;      /* module keys */
+  --text-md: 0.875rem;       /* secondary lines, colophon */
+  --text-lg: 0.9375rem;      /* card meta, status labels, imprint */
+  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-title: 1.0625rem;   /* module heading */
+  --text-card: 1.125rem;     /* card heading */
+  --text-lede: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  --text-section: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --text-hero: clamp(2rem, 1.3rem + 3.2vw, 3.5rem);
 
-  /* One turquoise. The value clears 4.5:1 against the ground, so the same colour
-     carries interactive text and hairline graphics without a second variant. */
-  --accent: #0A7E7C;
-
-  /* 8px spacing scale */
+  /* --- Spacing scale, 8px based ---------------------------------------- */
   --s1: 0.5rem;
   --s2: 1rem;
   --s3: 1.5rem;
@@ -60,17 +67,42 @@
   --s5: 3rem;
   --s6: 4.5rem;
   --s7: 7rem;
-
   /* Sections are separated by this gap alone, no rules. It has to stay clearly
      larger than any gap inside a section for the order to read. */
   --gap-section: clamp(var(--s6), 9vw, var(--s7));
 
-  --measure: 60ch;
+  /* --- Ground and ink --------------------------------------------------- */
+  --paper: #FDFDFB;          /* one ground for the whole page */
+  --tint: #F3F3EF;           /* neutral fill for placeholder slots */
+  --ink: #141413;            /* 18.1:1 */
+  --ink-2: #4A4A46;          /* 8.7:1  */
+  --ink-3: #6C6C65;          /* 5.2:1 on paper, 4.8:1 on tint */
+  --rule: #E4E4DE;           /* quiet object outline, decorative */
+  --rule-mid: #90908A;       /* 3.2:1, visible lines: motif flow, underlines */
+
+  /* --- Accent ----------------------------------------------------------- */
+  /* One turquoise, clears AA, so the same value carries interactive text and
+     the motif highlights without a second variant. */
+  --accent: #0A7E7C;         /* 4.8:1 */
+
+  /* --- Identity palette, derived from the watercolor logo ---------------- */
+  /* Four families measured in the mark itself. Used only as module marks, never
+     for text, so each is tuned for presence as a small filled shape (>=3:1).
+     The blue stays watercolor-light on purpose, the violet stays deep. */
+  --c-orange: #C87000;       /* 3.6:1 */
+  --c-blue:   #5B8FC4;       /* 3.3:1 */
+  --c-green:  #7C9200;       /* 3.5:1 */
+  --c-violet: #8140B8;       /* 6.1:1 */
+
+  /* --- Layout ----------------------------------------------------------- */
+  --measure: 60ch;           /* reading width for prose */
   --page: 1160px;
   --radius: 3px;
 }
 
-/* ---------- Base ---------- */
+/* ==========================================================================
+   BASE
+   ========================================================================== */
 *, *::before, *::after { box-sizing: border-box; }
 
 html { -webkit-text-size-adjust: 100%; }
@@ -80,27 +112,27 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-ui);
-  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  font-size: var(--text-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3 {
+  margin: 0;
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.015em;
-  margin: 0;
   text-wrap: balance;
 }
 
-p, ul { margin: 0; }
+p, ul, ol { margin: 0; }
 
 a {
   color: var(--accent);
   text-decoration: underline;
-  text-underline-offset: 0.18em;
+  text-decoration-color: var(--rule-mid);
   text-decoration-thickness: 1px;
-  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 0.18em;
 }
 a:hover { text-decoration-color: var(--accent); }
 
@@ -112,53 +144,82 @@ a:hover { text-decoration-color: var(--accent); }
 
 img { max-width: 100%; height: auto; }
 
+/* ==========================================================================
+   LAYOUT PRIMITIVES
+   ========================================================================== */
 .wrap {
   width: min(100% - 2 * var(--s3), var(--page));
   margin-inline: auto;
 }
 
-.section-title { font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem); }
+.section { padding-top: var(--gap-section); }
 
-/* Quiet status label, the one component for what does not exist yet. */
+.section-title { font-size: var(--text-section); }
+
+/* Horizontal escape hatch for content that cannot compress further. */
+.scroll-x {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+/* The one component for artefacts that do not exist yet. Micro gaps stay
+   em-relative so they track the type size. */
 .pending {
   display: inline-flex;
   align-items: center;
   gap: 0.55em;
   color: var(--ink-3);
-  font-size: 0.9375rem;
+  font-size: var(--text-lg);
 }
 .pending::before {
   content: "";
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  border: 1px solid var(--rule-strong);
   flex: none;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--rule-mid);
+  border-radius: 50%;
 }
 
-/* ---------- Header ---------- */
-.site-head > .wrap { padding-top: var(--s3); font-weight: 600; letter-spacing: 0.02em; }
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.site-head > .wrap {
+  padding-top: var(--s3);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
 
-/* ---------- Hero: title, one sentence, one link ---------- */
+/* ==========================================================================
+   HERO
+   Three elements: title, one sentence, one link.
+   ========================================================================== */
 .hero { padding-block: clamp(var(--s5), 7vw, var(--s7)) var(--s5); }
+
 .hero h1 {
-  font-size: clamp(2rem, 1.3rem + 3.2vw, 3.5rem);
   max-width: 20ch;
+  font-size: var(--text-hero);
 }
+
 .hero p {
-  margin-top: var(--s3);
   max-width: var(--measure);
-  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  margin-top: var(--s3);
   color: var(--ink-2);
+  font-size: var(--text-lede);
   line-height: 1.55;
 }
-.hero .repo { margin-top: var(--s4); font-size: 1rem; }
 
-/* ---------- Motif ---------- */
-.motif {
-  padding-block: var(--s3);
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
+.hero .repo {
+  margin-top: var(--s4);
+  font-size: var(--text-body);
 }
+
+/* ==========================================================================
+   MOTIF
+   Turquoise only. Two stroke weights for structure and detail, a third,
+   lighter tone for the flow between stations.
+   ========================================================================== */
+.motif { padding-block: var(--s3); }
+
 .motif svg {
   display: block;
   width: 100%;
@@ -166,45 +227,66 @@ img { max-width: 100%; height: auto; }
   height: auto;
 }
 
-/* SVG line-art vocabulary: one weight for structure, a thinner one for detail. */
-.m-line   { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
-.m-line.m-paper { fill: var(--paper); }
-.m-thin   { fill: none; stroke: var(--ink-2); stroke-width: 1.1; stroke-linecap: round; }
-.m-flow   { fill: none; stroke: var(--rule-strong); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
-.m-accent { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.m-return { fill: none; stroke: var(--rule-strong); stroke-width: 1.1; stroke-dasharray: 3 5; stroke-linecap: round; }
-.m-return-tip { fill: none; stroke: var(--rule-strong); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
-.m-seal   { fill: var(--accent); }
-.m-check  { fill: none; stroke: var(--paper); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.m-label  { font-family: var(--font-ui); font-size: 13px; fill: var(--ink); text-anchor: middle; }
-.m-note   { font-family: var(--font-ui); font-size: 11.5px; fill: var(--ink-3); text-anchor: middle; letter-spacing: 0.06em; }
+.m-line        { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.m-line.m-fill { fill: var(--paper); }
+.m-thin        { fill: none; stroke: var(--ink-2); stroke-width: 1.1; stroke-linecap: round; }
+.m-flow        { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+.m-accent      { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.m-return      { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-dasharray: 3 5; stroke-linecap: round; }
+.m-return-tip  { fill: none; stroke: var(--rule-mid); stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+.m-seal        { fill: var(--accent); }
+.m-check       { fill: none; stroke: var(--paper); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.m-label       { font-family: var(--font-ui); font-size: 13px; fill: var(--ink); text-anchor: middle; }
+.m-note        { font-family: var(--font-ui); font-size: 11.5px; fill: var(--ink-3); text-anchor: middle; letter-spacing: 0.06em; }
 
-/* ---------- Modules ---------- */
-.modules { padding-top: var(--gap-section); }
-
+/* ==========================================================================
+   MODULES
+   The single home of the identity palette. Each module carries one small mark,
+   turquoise plus the four logo colours, assigned by position.
+   ========================================================================== */
 .module-list {
-  list-style: none;
-  padding: 0;
-  margin-top: var(--s4);
-  max-width: 78ch;
   display: grid;
   gap: var(--s3);
+  max-width: 78ch;
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
 }
+
 .module-list li {
   display: grid;
-  grid-template-columns: 2.4em 1fr;
+  grid-template-columns: 3.2em 1fr;
   align-items: baseline;
 }
-.module-list .num {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
+
+.module-list .key {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
   color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
 }
-.module-list h3 { font-size: 1.0625rem; }
+
+.module-list .dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.module-list li:nth-child(1) .dot { background: var(--c-violet); }
+.module-list li:nth-child(2) .dot { background: var(--c-orange); }
+.module-list li:nth-child(3) .dot { background: var(--accent); }
+.module-list li:nth-child(4) .dot { background: var(--c-blue); }
+.module-list li:nth-child(5) .dot { background: var(--c-green); }
+
+.module-list h3 { font-size: var(--text-title); }
+
 .module-list .sub {
   margin-top: 0.25em;
-  font-size: 0.875rem;
   color: var(--ink-3);
+  font-size: var(--text-md);
   line-height: 1.5;
 }
 
@@ -215,16 +297,16 @@ img { max-width: 100%; height: auto; }
   margin-top: var(--s4);
 }
 
-/* ---------- Workshops ---------- */
-.workshops { padding-top: var(--gap-section); }
-
+/* ==========================================================================
+   WORKSHOPS
+   ========================================================================== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
   gap: var(--s3);
   margin-top: var(--s4);
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 
 .card {
@@ -235,32 +317,60 @@ img { max-width: 100%; height: auto; }
   overflow: hidden;
   transition: border-color 120ms ease;
 }
-.card:hover { border-color: var(--rule-strong); }
+.card:hover { border-color: var(--rule-mid); }
 .card:focus-within { border-color: var(--accent); }
 
 .cover {
-  aspect-ratio: 16 / 9;
   display: grid;
   place-content: center;
   gap: 0.4em;
-  text-align: center;
+  aspect-ratio: 16 / 9;
   padding: var(--s2);
   background: var(--tint);
   color: var(--ink-3);
+  text-align: center;
 }
-.cover span { font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.cover code { font-family: var(--font-mono); font-size: 0.75rem; word-break: break-all; }
+.cover span {
+  font-size: var(--text-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.cover code {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  word-break: break-all;
+}
 
-.card-body { padding: var(--s3); display: flex; flex-direction: column; gap: var(--s2); flex: 1; }
-.card .date { font-size: 0.875rem; color: var(--ink-3); letter-spacing: 0.02em; }
-.card h3 { font-size: 1.125rem; }
-.card .event { font-size: 0.9375rem; color: var(--ink-2); }
-.card .facts { font-size: 0.875rem; color: var(--ink-3); line-height: 1.5; }
+.card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--s2);
+  padding: var(--s3);
+}
+
+.card .date { color: var(--ink-3); font-size: var(--text-md); letter-spacing: 0.02em; }
+.card h3 { font-size: var(--text-card); }
+.card .event { color: var(--ink-2); font-size: var(--text-lg); }
+.card .facts { color: var(--ink-3); font-size: var(--text-md); line-height: 1.5; }
 .card .facts span { display: block; }
-.card-links { margin-top: auto; padding-top: var(--s1); display: flex; flex-wrap: wrap; gap: var(--s1) var(--s2); font-size: 0.9375rem; }
 
-/* ---------- Footer: same ground, separated by space alone ---------- */
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s2);
+  margin-top: auto;
+  padding-top: var(--s1);
+  font-size: var(--text-lg);
+}
+
+/* ==========================================================================
+   FOOTER
+   Same ground as the page, separated by space alone. The logo sits here as
+   the source of the identity palette.
+   ========================================================================== */
 .site-foot { padding-block: var(--gap-section) var(--s5); }
+
 .site-foot > .wrap {
   display: flex;
   flex-wrap: wrap;
@@ -269,20 +379,31 @@ img { max-width: 100%; height: auto; }
   gap: var(--s4) var(--s5);
 }
 
-.brand { display: flex; align-items: center; gap: var(--s3); }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
 .brand img { width: clamp(112px, 13vw, 140px); }
 
-.imprint { font-size: 0.9375rem; color: var(--ink-3); line-height: 1.7; }
+.imprint {
+  color: var(--ink-3);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+}
 .imprint .name { color: var(--ink); font-weight: 500; }
-.imprint .sep { padding-inline: 0.4em; color: var(--rule-strong); }
+.imprint .sep { padding-inline: 0.4em; color: var(--rule-mid); }
 
 .colophon {
-  font-size: 0.875rem;
   color: var(--ink-3);
+  font-size: var(--text-md);
   line-height: 1.9;
   text-align: right;
 }
 
+/* ==========================================================================
+   PREFERENCES AND NARROW VIEWPORTS
+   ========================================================================== */
 @media (max-width: 640px) {
   .colophon { text-align: left; }
   .brand { gap: var(--s2); }
@@ -302,7 +423,7 @@ img { max-width: 100%; height: auto; }
 
 <main>
 
-  <!-- ============ Hero: title, one sentence, one link ============ -->
+  <!-- ============ Hero ============ -->
   <section class="hero">
     <div class="wrap">
       <h1>Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
@@ -318,7 +439,7 @@ img { max-width: 100%; height: auto; }
 
   <!-- ============ Motif: source to verified artifact ============ -->
   <div class="wrap">
-    <div class="motif">
+    <div class="motif scroll-x">
       <svg viewBox="0 0 1200 226" role="img" aria-labelledby="motif-t motif-d">
         <title id="motif-t">From source to verified artifact</title>
         <desc id="motif-d">A horizontal flow in six stages: source material, knowledge documents,
@@ -342,8 +463,8 @@ img { max-width: 100%; height: auto; }
         <!-- 1 source: a stack of raw material -->
         <g transform="translate(90,132)">
           <rect class="m-line" x="-30" y="-24" width="44" height="32" rx="2"/>
-          <rect class="m-line m-paper" x="-24" y="-16" width="44" height="32" rx="2"/>
-          <rect class="m-line m-paper" x="-18" y="-8" width="44" height="32" rx="2"/>
+          <rect class="m-line m-fill" x="-24" y="-16" width="44" height="32" rx="2"/>
+          <rect class="m-line m-fill" x="-18" y="-8" width="44" height="32" rx="2"/>
           <path class="m-thin" d="M -10,2 H 14 M -10,10 H 6"/>
         </g>
 
@@ -397,42 +518,42 @@ img { max-width: 100%; height: auto; }
     </div>
   </div>
 
-  <!-- ============ Modules: five top-level units ============ -->
-  <section class="modules">
+  <!-- ============ Modules ============ -->
+  <section class="section">
     <div class="wrap">
       <h2 class="section-title">Modules</h2>
 
-      <ol class="module-list">
+      <ol class="module-list" role="list">
         <li>
-          <span class="num">01</span>
+          <span class="key"><span class="dot"></span>01</span>
           <div>
             <h3>Understanding Large Language Models</h3>
             <p class="sub">Capability landscape, asymmetric amplification, latent program space</p>
           </div>
         </li>
         <li>
-          <span class="num">02</span>
+          <span class="key"><span class="dot"></span>02</span>
           <div>
             <h3>Prompt Engineering</h3>
             <p class="sub">Instruction design, prompt structure, program keys</p>
           </div>
         </li>
         <li>
-          <span class="num">03</span>
+          <span class="key"><span class="dot"></span>03</span>
           <div>
             <h3>Knowledge and Context Engineering</h3>
             <p class="sub">Knowledge documents, working context, research data and provenance</p>
           </div>
         </li>
         <li>
-          <span class="num">04</span>
+          <span class="key"><span class="dot"></span>04</span>
           <div>
             <h3>Agentic Engineering</h3>
             <p class="sub">Agentic loop, harness, Promptotyping, verification, hands-on case studies</p>
           </div>
         </li>
         <li>
-          <span class="num">05</span>
+          <span class="key"><span class="dot"></span>05</span>
           <div>
             <h3>Critical Perspectives and Governance</h3>
             <p class="sub">Governance, mission control, societal implications</p>
@@ -448,12 +569,12 @@ img { max-width: 100%; height: auto; }
   </section>
 
   <!-- ============ Workshops ============ -->
-  <section class="workshops">
+  <section class="section">
     <div class="wrap">
       <h2 class="section-title">Workshops</h2>
 
       <!-- Chronological. Mirrors docs/data/workshops.json; production renders from that file. -->
-      <ul class="cards">
+      <ul class="cards" role="list">
 
         <li class="card">
           <div class="cover">
@@ -519,7 +640,7 @@ img { max-width: 100%; height: auto; }
   <div class="wrap">
     <div class="brand">
       <!-- Draft path. As docs/index.html this becomes assets/dhcraft-logo-watercolor.png -->
-      <img src="../assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
+      <img src="../../../docs/assets/dhcraft-logo-watercolor.png" alt="Digital Humanities Craft" width="320" height="367">
       <div class="imprint">
         <p class="name">Christopher Pollin</p>
         <p>Digital Humanities Craft</p>
