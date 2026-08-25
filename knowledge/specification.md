@@ -105,11 +105,11 @@ Requirements for the public platform (`docs/`, GitHub Pages) and the carrying re
 - Exactly ten subject-hub files exist under `docs/modules/`, with no Module 00 alias. Each has one H1, the six required H2 ids in order, five to eight learning panels, no more than five listed primary videos and no more than three representative workshops. Every module navigation lists 00 through 05 in order and marks exactly one current page. Module 00 appears in neither workshop arrays nor video classification.
 - Module 04 contains eight matching Curated Skills entries per language at `#curated-skills`; Module 03 contains a language-matched link and no copied skills list. Every entry exposes all required fields and retains the external reference status.
 
-## v0.3 validated pre-release state
+## v0.3 released state
 
 The active working tree contains 36 HTML files in eighteen reciprocal pairs and references stylesheet version `20260825-19` throughout. Module 00, ten subject hubs, language-matched module-marker links, the five grouped learning routes, the three bilingual Harness introductions, the shared eight-step component, the embedded Module 04 Curated Skills area and the seven-video Module 05 state are installed. The site remains static and no core content requires JavaScript.
 
-The v0.3 contract and accessibility checks pass, and representative component families have been observed at desktop, 1020, 860, 780, 640, 390 and 320 pixels without page overflow, broken images or browser-console errors. Commit, tag, push, deployment and Research Director acceptance are separate later states. RD-021, RD-022 and RD-023 remain waiting. Research Data and Knowledge Work and the static Prompt Engineering migration remain preparation states without public destination links.
+The v0.3 contract and accessibility checks pass, and representative component families were observed at desktop, 1020, 860, 780, 640, 390 and 320 pixels without page overflow, broken images or browser-console errors. Commit `aa4193378413a9723a2144d155b186b933229435`, annotated tag `v0.3`, remote refs and the successful GitHub Pages deployment evidence the release. RD-021, RD-022 and RD-023 remain open for substantive Research Director acceptance. Research Data and Knowledge Work and the static Prompt Engineering migration remain preparation states without public destination links.
 
 ## Decisions
 

@@ -36,7 +36,7 @@ Navigation of the knowledge base. Reading order for a new agent is `project.md`,
 
 `drafts/` holds decision-preparation material written by agents, including module and slide maps, term references, specialisation analysis, product evidence notes, the module-hub architecture, Harness route research and the Curated Skills source assessment. Drafts are proposals; nothing in them is canonical.
 
-The active v0.3 working tree contains 36 public HTML files in eighteen language pairs on stylesheet version `20260825-19`. Module 00, the ten subject-hub files, the five landing-page learning routes, the three bilingual Harness introductions and the embedded Module 04 Curated Skills area are installed. Formal validation and browser observation are complete; `handoff.md` carries the remaining pre-release boundary because commit, tag, push, deployment and Research Director acceptance remain open.
+Release v0.3 contains 36 public HTML files in eighteen language pairs on stylesheet version `20260825-19`. Module 00, the ten subject-hub files, the five landing-page learning routes, the three bilingual Harness introductions and the embedded Module 04 Curated Skills area are installed, formally validated, browser-observed, committed, tagged, pushed and deployed. `handoff.md` carries the released state and the remaining substantive acceptance boundary for RD-021, RD-022 and RD-023.
 
 ## Research Mission Control exchange
 

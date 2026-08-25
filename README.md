@@ -43,9 +43,9 @@ The platform is a no-build static site in `docs/`; its content and navigation re
 
 The landing pages organise five learning routes into Foundation, AI Harness introductions and Research workflow. AI Coding Literacy is the external German foundation. Claude Code, Codex and Pi are local bilingual Module 04 routes. Research Data and Knowledge Work remains visibly in preparation. The three Harness introductions use a comparable eight-step sequence from purpose and prerequisites to a first reversible check. Module 04 also carries an embedded Curated Skills area with externally maintained examples and explicit review status.
 
-This v0.3 working tree is actively installed, formally validated and browser-observed at the seven required widths. Commit, tag, push, deployment and Research Director acceptance remain separate states.
+Release v0.3 is committed at `aa4193378413a9723a2144d155b186b933229435`, tagged `v0.3`, pushed and deployed through GitHub Pages. Its formal contract and accessibility checks pass, and representative component families were browser-observed at the seven required widths. RD-021, RD-022 and RD-023 remain open for substantive Research Director acceptance.
 
-https://digitalhumanitiescraft.github.io/knowledge-context-agentic-engineering/
+https://dhcraft.org/knowledge-context-agentic-engineering/
 
 ## Development method and orchestration
 

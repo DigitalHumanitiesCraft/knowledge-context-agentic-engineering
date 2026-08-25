@@ -10,4 +10,4 @@ Owned by Operations. Update the cursor only after the referenced Research messag
 
 - `kce-research-operations-sync`
 
-The v0.3 Module 00, Module Hub, Curated Skills and Harness-introduction briefs are processed. The thirty-six-page tree is actively installed, formally validated and browser-observed. Research reports 70 of 70 final browser observations without a release blocker and authorises the v0.3 commit, annotated tag, push and deployment. RD-021, RD-022 and RD-023 remain Research-owned substantive acceptance points and are not accepted by this authorisation.
+The v0.3 Module 00, Module Hub, Curated Skills and Harness-introduction briefs are processed. The thirty-six-page state is formally validated, browser-observed, committed at `aa4193378413a9723a2144d155b186b933229435`, tagged `v0.3`, pushed and deployed through GitHub Pages. RD-021, RD-022 and RD-023 remain Research-owned substantive acceptance points and are not accepted by the release authorisation or technical deployment.
