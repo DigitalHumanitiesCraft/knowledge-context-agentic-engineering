@@ -8,7 +8,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Projekt-Wissensdokument
-  version: 0.2
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/project
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-project
 status: draft
@@ -16,11 +16,14 @@ created: 2026-08-20
 updated: 2026-08-25
 language: en
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Fable 5)
+generated-with: Claude Code and Codex
 knowledge-sources:
-  - https://dhcraft.org/Promptotyping/
-  - https://github.com/chpollin/zbz-ocr-tei
-  - https://github.com/DigitalHumanitiesCraft/brand-assets
+  methods:
+    Promptotyping: https://dhcraft.org/Promptotyping/
+    Research Mission Control: https://github.com/DigitalHumanitiesCraft/research-mission-control
+  repositories:
+    CLARIAH hands-on package: https://github.com/chpollin/zbz-ocr-tei
+    DHCraft brand assets: https://github.com/DigitalHumanitiesCraft/brand-assets
 related: [specification.md, governance.md, plan.md]
 ---
 
@@ -32,11 +35,13 @@ This repo is the canonical home of the material for the teaching line *Knowledge
 
 Two complementary methods carry the work. Promptotyping is the artefact-development method; the maintained documents in this folder guide iterative production, inspection and correction of teaching material, interface code and workshop packages. Research Mission Control is the orchestration contract; the Research Director holds substantive authority, the Research Orchestrator frames research and issues bounded implementation briefs, and the Operational Orchestrator coordinates authorised implementation, verification, integration and release. Bounded subagent lanes work under those orchestrators and inherit only the authority and write boundary stated for their lane. The Context Stream in `communication/` transports the current briefs, results and recipient state, while durable project knowledge stays here. Role detail lives in `governance.md`, the transport contract in `communication/PROTOCOL.md`.
 
+The concepts, source selection and editorial decisions originate with Christopher Pollin. Almost all prose, interface copy, diagrams and implementation artefacts are drafted with AI harnesses and revised through Promptotyping and Research Mission Control. `README.md` carries the public authorship statement, `journal.md` condenses the substantive transitions, and Git preserves the complete revision history.
+
 ## Material and derivation by profile
 
 The material is maintained through three holdings, the Full Slide Deck, the Full Lecture Notes and the Video Playlist, and covers the whole subject for a general audience of people who do computer-based, data-driven knowledge work. Each holding is described by its intended use rather than by a count of modules. The Full Slide Deck is the complete overview of the teaching material in slide form; it serves as a reference work and as the source from which workshop-specific decks are assembled, and it is not presented as one teaching session. The Full Lecture Notes are the written-out counterpart of the slides and carry the explanations and context needed for reading and later reference. The Video Playlist combines DHCraft videos with selected contributions by others; its deliberate sequence runs from the foundations to more complex topics and forms a structured learning path, and it is curated, maintained and extended as suitable material appears.
 
-The slide deck and the lecture notes deliberately express the same maintained concepts at different levels of expansion, so the text does not live in one single place. Responsibility is divided by layer. The Full Slide Deck maintains the reference structure and the selection surface from which workshop decks are assembled. The Full Lecture Notes maintain the expanded explanation. A conceptual change that touches both is reconciled across the two before any specialised export is regenerated. All three holdings share the same five modules, Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, Critical Perspectives and Governance. The playlist assigns every entry one primary module and may record further related modules without duplicating the entry. Its current 41-entry distribution is `5/1/6/22/7`; Module 05 closes the route with seven accepted videos ordered from broad accounts of ideology, power and control towards specialised AGI debates. The cut is drafted in `drafts/module-map.md` and in `script/modules/`, and it becomes canonical on operator confirmation.
+The slide deck and the lecture notes deliberately express the same maintained concepts at different levels of expansion, so the text does not live in one single place. Responsibility is divided by layer. The Full Slide Deck maintains the reference structure and the selection surface from which workshop decks are assembled. The Full Lecture Notes maintain the expanded explanation. A conceptual change that touches both is reconciled across the two before any specialised export is regenerated. All three holdings share the same five modules, Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, Critical Perspectives and Governance. The playlist assigns every entry one primary module and may record further related modules without duplicating the entry. Its current sequence and distribution live in `docs/data/videos.json`. The fine cut remains provisional in `drafts/module-map.md` and `script/modules/` until Research Director acceptance.
 
 A workshop is a documented specialization of the material. Its profile selects modules, sets depth, case studies and language, and adds only what belongs to that single instance, such as schedule, hands-on instructions and venue specifics. Published workshop artefacts may repeat selected explanatory slides so that each event remains usable on its own. Their shared source remains the Full Slide Deck, and a change to common material is reconciled there before the specialised exports are regenerated. Case studies are exchangeable modules of their own (currently Hersch and Zweig for research data and digital editions), so the core of the material stays domain-neutral.
 
@@ -48,7 +53,7 @@ The platform adds a neutral prerequisite to the five subject modules. Module 00 
 
 Every visible module title and compact marker routes to the language-matched hub. A separate module navigation connects 00 through 05 on Module 00 and every subject hub. Module 03 keeps Knowledge Engineering and Context Engineering in one umbrella structure by connecting maintained knowledge and current task state with selected working context. Module 04 owns the Curated Skills subsection. Its eight external examples remain labelled references whose instruction and permission review is outstanding; Module 03 links to the relevant area without duplicating the list.
 
-The landing-page learning routes separate Foundation, AI Harness introductions and Research workflow. The local Harness routes cover Claude Code, Codex and Pi in English and German through a shared eight-step sequence, `goal`, `prerequisites`, `install`, `workspace`, `instructions`, `permissions`, `extensions` and `first-check`. The Pi route keeps harness source, provider configuration and inference location as separate facts. Research Data and Knowledge Work remains a prepared route without a public destination. Release v0.3 contains 36 HTML files in eighteen language pairs on stylesheet version `20260825-19`; formal validation, browser observation, commit, tag, push and deployment are evidenced, while RD-021, RD-022 and RD-023 remain open for substantive acceptance.
+The landing-page learning routes separate Foundation, AI Harness introductions and Research workflow. The local Harness routes cover Claude Code, Codex and Pi in English and German through a shared eight-step sequence, `goal`, `prerequisites`, `install`, `workspace`, `instructions`, `permissions`, `extensions` and `first-check`. The Pi route keeps harness source, provider configuration and inference location as separate facts. Research Data and Knowledge Work remains a prepared route without a public destination. Release evidence lives in `journal.md` and Git; the Research Director Log carries the current substantive acceptance boundary.
 
 The canonical names of the three holdings are Full Slide Deck, Full Lecture Notes and Video Playlist. The earlier working name of the document holdings is retired and is not used anywhere in the repo (operator decisions 2026-08-20 and 2026-08-25, rule text in `CLAUDE.md`).
 

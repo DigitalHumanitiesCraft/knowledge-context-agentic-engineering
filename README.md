@@ -53,6 +53,12 @@ https://dhcraft.org/knowledge-context-agentic-engineering/
 
 [Research Mission Control](https://github.com/DigitalHumanitiesCraft/research-mission-control) is the orchestration contract for accountable research and implementation lanes. The Research Director retains substantive authority. The Research Orchestrator frames research and issues bounded implementation briefs. The Operational Orchestrator coordinates authorized implementation, verification, integration and release. The Context Stream in `communication/` transports current briefs, results and recipient state; durable project knowledge remains in `knowledge/`.
 
+### AI-assisted authorship and provenance
+
+The concepts, arguments and editorial decisions in this repository originate with Christopher Pollin. Almost all prose, interface copy, diagrams and implementation artefacts were drafted with AI harnesses and revised through repeated Promptotyping and Research Mission Control cycles. Human authorship here means responsibility for the ideas, source selection, decisions, evaluation and publication; it does not imply manual production of every sentence or file. Third-party sources and teaching materials retain their own stated authorship and rights.
+
+The condensed decision record is maintained in [`knowledge/journal.md`](knowledge/journal.md). The complete sequence of revisions, including superseded formulations and technical iterations, remains inspectable in the Git history.
+
 ## Language and licence
 
 Repository files are English. The teaching material is bilingual, and language is handled per module and per instance, so each holding carries the language it was authored or taught in.

@@ -16,7 +16,7 @@ created: 2026-08-20
 updated: 2026-08-25
 language: en
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Fable 5)
+generated-with: Claude Code and Codex
 related: [specification.md]
 ---
 

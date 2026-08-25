@@ -8,7 +8,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Domänenwissen
-  version: 0.2
+  version: 0.3
   url: https://dhcraft.org/Promptotyping/promptotyping-document/domain-knowledge
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-domain-knowledge
 status: draft
@@ -16,7 +16,7 @@ created: 2026-08-20
 updated: 2026-08-20
 language: en
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Opus 5)
+generated-with: Claude Code and Codex
 knowledge-sources:
   - script/full-lecture-notes-de.md
   - script/full-lecture-notes-en.md

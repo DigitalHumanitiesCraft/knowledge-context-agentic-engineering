@@ -15,10 +15,10 @@ This register locates the active Research and Operations exchange for this repos
 
 ## Active threads
 
-| Thread | State | Objective | Expected message |
-| --- | --- | --- | --- |
-| `kce-research-operations-sync` | v0.3 released | Preserve release evidence and obtain substantive Research Director acceptance for Module 00, the five module hubs and the three Harness routes | RD-021, RD-022 and RD-023 contributions |
+No active Research and Operations thread. Substantive Research Director contributions remain in `research/director-log.md` and open a new bounded exchange only when supplied.
 
 ## Completed capsules
 
-No completed capsules.
+| Thread | Capsule | Result |
+| --- | --- | --- |
+| `kce-research-operations-sync` | `capsules/kce-research-operations-sync.md` | v0.2 and v0.3 released; technical Operations exchange closed; substantive acceptance remains in the Director Log |

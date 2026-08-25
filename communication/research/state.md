@@ -8,4 +8,4 @@ Owned by Research. Update the cursor only after the referenced Operations messag
 
 ## Current threads
 
-- `kce-research-operations-sync`
+No active threads.

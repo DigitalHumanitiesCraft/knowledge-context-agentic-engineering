@@ -8,7 +8,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Index
-  version: 0.2
+  version: 0.4
   url: https://dhcraft.org/Promptotyping/promptotyping-document/index
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
 status: draft
@@ -16,32 +16,52 @@ created: 2026-08-20
 updated: 2026-08-25
 language: en
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Fable 5)
+generated-with: Claude Code and Codex
+related: [project.md, specification.md, terms.md, design.md, governance.md, journal.md, plan.md, handoff.md]
 ---
 
 # INDEX
 
-Navigation of the knowledge base. Reading order for a new agent is `project.md`, then `governance.md`, then the document that carries the current task. For platform work read `design.md` and `specification.md`; for terminology work read `terms.md`; for history read `journal.md`.
+This knowledge base documents the teaching-material contract, public platform, terminology, design, governance, provenance and accepted future work of *Knowledge, Context and Agentic Engineering for Knowledge Work*. It addresses the returning Research Director, reviewers and agents working under the repository action layer. Implementation artefacts stay at their repository paths, and current Research and Operations transport stays in `communication/`.
 
-| Document | Function | Content |
-| --- | --- | --- |
-| `project.md` | Charter, Material | What the project is, the material, public learning architecture and derivation by profile |
-| `specification.md` | Specification | Requirements for platform, module hubs, Harness routes, repo structure and acceptance criteria |
-| `terms.md` | Domain knowledge | Term matrix EN/DE with canonical wording and literature anchors |
-| `design.md` | Design | Information hierarchy, module and Harness components, responsive system and installation status |
-| `governance.md` | Governance | Decision authority, source status, write-back, versioning, rights |
-| `journal.md` | Provenance | Chronicle of decisions, milestones and workshop deliveries |
-| `plan.md` | Planning | Plan of the repo as work packages with their state |
-| `handoff.md` | Process inbox | Open received deltas awaiting verification and integration |
+## Documents
 
-`drafts/` holds decision-preparation material written by agents, including module and slide maps, term references, specialisation analysis, product evidence notes, the module-hub architecture, Harness route research and the Curated Skills source assessment. Drafts are proposals; nothing in them is canonical.
+| Path | Function | Routing question | Update trigger |
+| --- | --- | --- | --- |
+| `project.md` | Charter and material | What is the project, what does it maintain and where are its boundaries? | identity, scope, holdings or source boundary changes |
+| `specification.md` | Specification | What must the platform and repository do, and why? | requirement, acceptance criterion or binding decision changes |
+| `terms.md` | Domain knowledge | Which English and German terms and source anchors are canonical? | accepted terminology or evidence changes |
+| `design.md` | Design | Which hierarchy, interaction patterns and visual values guide the interface? | accepted UI or accessibility contract changes |
+| `governance.md` | Governance | Who may decide, write, verify, release and accept? | authority, provenance, rights or versioning changes |
+| `journal.md` | Provenance | Which substantive transition moved from which source into which target? | integrated, rejected, corrected or condensed transitions |
+| `plan.md` | Plan | Which accepted future work is next and what proves its completion? | milestone entry, exit or dependency changes |
+| `handoff.md` | Process Inbox | Which received deltas still require verification or integration? | receipt or disposition of a handoff point |
 
-Release v0.3 contains 36 public HTML files in eighteen language pairs on stylesheet version `20260825-19`. Module 00, the ten subject-hub files, the five landing-page learning routes, the three bilingual Harness introductions and the embedded Module 04 Curated Skills area are installed, formally validated, browser-observed, committed, tagged, pushed and deployed. `handoff.md` carries the released state and the remaining substantive acceptance boundary for RD-021, RD-022 and RD-023.
+## Storage zones
+
+- `knowledge/` contains canonical Promptotyping documents.
+- `knowledge/drafts/` contains decision preparation and source assessments. A draft has no canonical force until its result is written to the responsible document.
+- `script/`, `slides/` and `workshops/` contain maintained teaching material and workshop specialisations.
+- `docs/` contains the static public platform and its machine-readable registers.
+- `communication/` transports Research Mission Control briefs, results, recipient state and completed thread capsules; it does not replace project knowledge.
+- Git preserves prior wording, released states and taught workshop states.
+
+## Reading paths
+
+- **New task:** `project.md` → `governance.md` → the document named by the task → `handoff.md`.
+- **Platform or accessibility review:** `project.md` → `design.md` → `specification.md` → current code and registers.
+- **Teaching-content revision:** `project.md` → `terms.md` → the relevant Full material and workshop profile.
+- **Release or acceptance:** `governance.md` → `specification.md` → `plan.md` → the Research Director Log and current Operations evidence.
+- **Historical reconstruction:** `journal.md` → the referenced canonical target → Git at the cited revision.
 
 ## Research Mission Control exchange
 
-An agent taking part in an active Research and Operations exchange reads `communication/PROTOCOL.md` and the message that carries its task before acting, and it takes every required Research Director contribution from `communication/research/director-log.md` by its `RD-###` identifier. The documents listed above remain the canonical project memory; `communication/` transports current briefs, results and recipient state and holds no durable knowledge.
+An active Research or Operations assignment starts with `communication/PROTOCOL.md`, the applicable message and the recipient state. Required Research Director contributions are read from `communication/research/director-log.md` by stable `RD-###` identifier. Completed exchanges are condensed in `communication/capsules/` while immutable messages remain available as evidence.
+
+## Convention
+
+This knowledge base follows the [Promptotyping document convention](https://dhcraft.org/Promptotyping/). Each canonical document declares the current published template version where a function-specific template exists. `governance.md` follows the common Promptotyping frontmatter and routing convention because no published Governance template is currently available.
 
 ## Constitutive terms
 
-The four levels prompt engineering, context engineering, knowledge engineering and agentic engineering, together with Promptotyping, AI harness, AI agent, knowledge document and knowledge work. Canonical wording and sources in `terms.md`.
+The project distinguishes Prompt Engineering, Context Engineering, Knowledge Engineering and Agentic Engineering. Promptotyping names the artefact-development method; Research Mission Control names the orchestration contract; AI Harness names the environment that connects models, instructions, context, tools and execution. The complete bilingual terminology and its sources live in `terms.md`.

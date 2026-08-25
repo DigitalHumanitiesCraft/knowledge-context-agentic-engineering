@@ -172,14 +172,13 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 - **Effect**: Preserves the taught state and allows the delivered instance to leave tree and register.
 - **Write-back**: git history and the workshop history record.
 
-## RD-017 v0.2 interface release
+## RD-017 shared interface baseline
 
 - **Type**: Acceptance
 - **Status**: open
-- **Trigger**: Operations has installed the complete brief set, returned formal and browser evidence, pushed the milestone and confirmed the deployed state.
-- **Required contribution**: Inspect the guided acceptance route and accept the v0.2 interface or name concrete corrections.
-- **Recommendation**: Review one representative page per component family instead of rereading all 22 pages; automated parity checks cover the repeated structure.
-- **Basis**: the v0.2 briefs in `communication/research/outbox/`, the Operations result and the deployed public pages.
+- **Required contribution**: Inspect the guided acceptance route and accept the shared interface baseline as continued in v0.3, or name concrete corrections.
+- **Recommendation**: Review one representative page per component family; automated parity checks cover the repeated structure across the 36-page release.
+- **Basis**: the v0.2 and v0.3 release results, the deployed public pages and the acceptance sheets for RD-021 through RD-023.
 - **Effect**: Establishes the accepted interface baseline for later content and Web Module work.
 - **Write-back**: `knowledge/design.md`, `knowledge/specification.md` and `knowledge/journal.md`.
 
@@ -187,7 +186,6 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 
 - **Type**: Acceptance
 - **Status**: open
-- **Trigger**: Both language versions of the five-unit KUG Web Module are implemented and technically verified.
 - **Required contribution**: Accept or correct the learning sequence, the relation of visuals to explanations and the boundary between Web Module, Slide Deck and Lecture Notes.
 - **Recommendation**: Accept the component architecture independently of the later M3GIM exercise-data release; the rights-safe conceptual sequence can be reviewed first.
 - **Basis**: `communication/research/outbox/research-2026-08-25-web-module-pilot-and-licence-copy.md`, the KUG profile and Lecture Notes.
@@ -219,10 +217,9 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 
 - **Type**: Acceptance
 - **Status**: open
-- **Trigger**: The existing Preparation page has been refactored into the bilingual Module 00 learning surface and technically verified.
 - **Required contribution**: Accept or correct the relation between workshop setup and the AI Coding Literacy foundation.
 - **Recommendation**: Keep the practical preparation path and the literacy path distinct inside one page, and use a neutral visual identity outside the five subject-module colours.
-- **Basis**: the Preparation page pair, the AI Coding Literacy source assessment and the accepted Module 00 decision of 2026-08-25.
+- **Basis**: the Preparation page pair, the AI Coding Literacy source assessment, `communication/operations/outbox/operations-2026-08-25-rd-021-module-00-acceptance-sheet.md` and `communication/operations/outbox/operations-2026-08-25-v0-3-release-result.md`.
 - **Effect**: Establishes the prerequisite module and its relation to modules 01 through 05.
 - **Write-back**: the Preparation page pair, `knowledge/project.md`, `knowledge/design.md`, `knowledge/specification.md` and `knowledge/journal.md`.
 
@@ -230,10 +227,9 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 
 - **Type**: Acceptance
 - **Status**: open
-- **Trigger**: All five bilingual module hubs, their inbound links and their first source-grounded learning routes are implemented and technically verified.
 - **Required contribution**: Accept the common module-hub structure and the substantive cut of each hub, including the two-track structure inside Knowledge and Context Engineering.
 - **Recommendation**: Review the shared component once and then assess each hub's learning question, concept map and deep-dive structure; automated checks cover repeated navigation and accessibility.
-- **Basis**: the Full Slide Deck, Full Lecture Notes, module files, `knowledge/drafts/web-native-teaching-and-deep-dive-architecture.md` and the accepted module-hub decision of 2026-08-25.
+- **Basis**: the Full Slide Deck, Full Lecture Notes, module files, `knowledge/drafts/web-native-teaching-and-deep-dive-architecture.md`, `communication/operations/outbox/operations-2026-08-25-rd-022-module-hubs-acceptance-sheet.md` and `communication/operations/outbox/operations-2026-08-25-v0-3-release-result.md`.
 - **Effect**: Makes the five modules navigable public knowledge structures and releases later deep-dive migration.
 - **Write-back**: the module page pairs, module sources, `knowledge/project.md`, `knowledge/design.md`, `knowledge/specification.md` and `knowledge/journal.md`.
 
@@ -241,10 +237,9 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 
 - **Type**: Acceptance
 - **Status**: open
-- **Trigger**: The Claude Code, Codex and Pi tutorial pairs, their shared icon system and the Pi local-model check are implemented and technically verified.
 - **Required contribution**: Accept or correct the shared tutorial sequence, the distinction between AI Coding Literacy and product instruction, and the accuracy of the Pi harness, provider and inference-location boundary.
 - **Recommendation**: Review the common component once, then inspect the first reversible check and source note on each product page. Give the Pi boundary a separate substantive check because a locally running harness can still call a remote model.
-- **Basis**: `knowledge/drafts/harness-introduction-routes.md`, `communication/research/outbox/research-2026-08-25-harness-introduction-routes.md` and the returned primary-source matrix.
+- **Basis**: `knowledge/drafts/harness-introduction-routes.md`, `communication/research/outbox/research-2026-08-25-harness-introduction-routes.md`, `communication/operations/outbox/operations-2026-08-25-rd-023-harness-introductions-acceptance-sheet.md` and `communication/operations/outbox/operations-2026-08-25-v0-3-release-result.md`.
 - **Effect**: Establishes Claude Code, Codex and Pi as comparable Module 04 routes and releases their reuse in workshop Web Modules.
 - **Write-back**: the tutorial page pairs, `knowledge/project.md`, `knowledge/design.md`, `knowledge/specification.md` and `knowledge/journal.md`.
 

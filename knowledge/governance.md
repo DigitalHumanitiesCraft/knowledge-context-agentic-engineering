@@ -11,7 +11,7 @@ created: 2026-08-20
 updated: 2026-08-25
 language: en
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Fable 5)
+generated-with: Claude Code and Codex
 related: [project.md, plan.md]
 ---
 
@@ -26,9 +26,9 @@ The role model comes from Research Mission Control and binds humans and agents a
 - The **Research Director** holds substantive decision and acceptance authority. It covers canonical term wording, design approvals (motif, font, page structure), publication steps (Pages activation, licence application, announcements, git tags), rights questions, deletion or relocation of canonical holdings, and every drift resolution against the vault canon. The earlier label *Critical Expert (operator)* names the acceptance function of the same person and carries no separate authority.
 - The **Research Orchestrator** owns research framing, evidence synthesis and bounded implementation briefs. It maintains the Research Director Log, carries Research communication and raises every Research Director Point.
 - The **Operational Orchestrator** owns implementation coordination, terminal verification, integration and release. It returns evidence-backed Operations results that map to the criteria of the accepted brief. It writes repository artefacts only under an accepted brief or a direct Research Director instruction, and terminal integration stays with it.
-- **Bounded subagents** execute structure, migration, translation, platform building, register upkeep and verification. They inherit only the authority, write boundary, exclusions and verification criteria stated for their lane, prepare decisions with a recommendation and keep `journal.md` current.
+- **Bounded subagents** execute structure, migration, translation, platform building, register upkeep and verification. They inherit only the authority, write boundary, exclusions and verification criteria stated for their lane and return evidence plus a recommendation. The authorised integrator performs canonical write-back; a lane writes `journal.md` only when its explicit boundary includes that path.
 - The repo is single-author. Write access stays with the Research Director; co-teachers contribute material through that route. There is no contributor process.
-- **Research support lanes** are read-only by construction. The Research Director authorised three of them on 2026-08-25, a contract audit reconciling every Research brief against the action layer, the design and specification documents and the public tree, a browser acceptance pass observing representative English and German pages at desktop, 640, 390 and 320 pixels, and a VetMedAI source intake whose only write target is `drafts/vetmed-teaching-material-intake.md`. A lane forwards only a finding that changes an implementation or release decision, and none of them authorises public teaching material, canonical knowledge or terminal integration.
+- **Research support lanes** are read-only by construction unless a brief names one bounded output path. A lane forwards only findings that change an implementation or release decision; it never authorises public teaching material, canonical knowledge or terminal integration.
 
 ## Control surface and provenance
 
