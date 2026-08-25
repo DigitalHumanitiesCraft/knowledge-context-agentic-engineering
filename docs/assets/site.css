@@ -260,26 +260,37 @@ img { max-width: 100%; height: auto; }
 
 /* ==========================================================================
    HERO
-   Three elements: title, one sentence, one link.
+   The title and abstract form the reading column; the five module titles form
+   the compact index beside it.
    ========================================================================== */
-.hero { padding-block: clamp(var(--s5), 7vw, var(--s7)) var(--s5); }
+.hero { padding-block: clamp(var(--s4), 4vw, var(--s5)) var(--s4); }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(18rem, 0.8fr);
+  align-items: start;
+  gap: var(--s4) var(--s6);
+}
 
 .hero h1 {
   max-width: 20ch;
   font-size: var(--text-hero);
 }
 
-.hero p {
+.hero-copy p {
   max-width: var(--measure);
   margin-top: var(--s3);
   color: var(--ink-2);
-  font-size: var(--text-lede);
-  line-height: 1.55;
+  font-size: var(--text-body);
+  line-height: 1.65;
 }
 
-.hero .repo {
-  margin-top: var(--s4);
-  font-size: var(--text-body);
+.hero-modules {
+  scroll-margin-top: var(--s4);
+}
+
+.hero-modules h2 {
+  font-size: var(--text-section);
 }
 
 /* ==========================================================================
@@ -289,9 +300,8 @@ img { max-width: 100%; height: auto; }
    ========================================================================== */
 .module-list {
   display: grid;
-  gap: var(--s3);
-  max-width: 78ch;
-  margin-top: var(--s4);
+  gap: var(--s2);
+  margin-top: var(--s3);
   padding: 0;
   list-style: none;
 }
@@ -327,20 +337,6 @@ img { max-width: 100%; height: auto; }
 .module-list li.m5 .dot { background: var(--m5); }
 
 .module-list h3 { font-size: var(--text-title); }
-
-.module-list .sub {
-  margin-top: 0.25em;
-  color: var(--ink-3);
-  font-size: var(--text-md);
-  line-height: 1.5;
-}
-
-.notes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s1) var(--s4);
-  margin-top: var(--s4);
-}
 
 /* ==========================================================================
    MODULE BADGE ROW
@@ -413,9 +409,7 @@ img { max-width: 100%; height: auto; }
 
 /* ==========================================================================
    MEDIA PLATE
-   Either the real title slide or a generated line-art plate in the motif
-   vocabulary, always in the same 16:9 proportion. Each plate highlights the
-   station that the workshop puts its weight on.
+   The real title slide, always in the same 16:9 proportion.
    ========================================================================== */
 .plate {
   display: block;
@@ -424,15 +418,6 @@ img { max-width: 100%; height: auto; }
   object-fit: cover;
   background: var(--tint);
 }
-
-.pl-line { fill: none; stroke: var(--rule-mid); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.pl-flow { fill: none; stroke: var(--rule-mid); stroke-width: 1; stroke-linecap: round; }
-.pl-arc  { fill: none; stroke: var(--rule-mid); stroke-width: 1; stroke-dasharray: 3 6; stroke-linecap: round; }
-.pl-fill { fill: var(--rule-mid); }
-.pl-occ  { fill: var(--tint); }   /* occludes the shape behind it, so a stack reads as a stack */
-.pl-hi .pl-line { stroke: var(--accent); stroke-width: 2.1; }
-.pl-hi .pl-fill { fill: var(--accent); }
-.pl-mark { fill: var(--accent); }
 
 /* ==========================================================================
    WORKSHOP CARDS
@@ -572,6 +557,7 @@ img { max-width: 100%; height: auto; }
   margin-top: var(--s3);
   color: var(--ink-2);
 }
+.media-download { margin-top: var(--s2); }
 
 .section-head {
   display: flex;
@@ -660,34 +646,6 @@ img { max-width: 100%; height: auto; }
   font-size: var(--text-md);
 }
 
-/* Taught sequence. The script fixes no timings, so the list carries order
-   without any clock. */
-.seq {
-  margin-top: var(--s4);
-  padding: 0;
-  list-style: none;
-  counter-reset: seq;
-  columns: 2;
-  column-gap: var(--s5);
-}
-.seq li {
-  display: grid;
-  grid-template-columns: 2.6em 1fr;
-  align-items: baseline;
-  padding-block: 0.35em;
-  break-inside: avoid;
-  font-size: var(--text-lg);
-  line-height: 1.4;
-}
-.seq li::before {
-  counter-increment: seq;
-  content: counter(seq, decimal-leading-zero);
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-}
-.seq .is-handson { color: var(--accent); font-weight: 500; }
-
 /* Link rows with an explicit state, so a missing artefact never becomes a
    dead link. */
 .linklist {
@@ -731,23 +689,6 @@ img { max-width: 100%; height: auto; }
   gap: var(--s1) var(--s2);
 }
 .bundle .sep { color: var(--rule-mid); }
-
-/* Verbatim passages from the workshop script. */
-.excerpt {
-  max-width: var(--measure);
-  margin: var(--s3) 0 0;
-  padding-left: var(--s3);
-  border-left: 2px solid var(--accent);
-  color: var(--ink-2);
-}
-.excerpt p + p { margin-top: var(--s2); }
-.excerpt cite {
-  display: block;
-  margin-top: var(--s2);
-  color: var(--ink-3);
-  font-size: var(--text-md);
-  font-style: normal;
-}
 
 .prompt {
   max-width: var(--measure);
@@ -854,6 +795,14 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 .material p { max-width: var(--measure); color: var(--ink-2); }
 .material .linklist { margin-top: var(--s3); }
 
+.teaching-materials { padding-top: var(--s4); }
+
+.compact-section p {
+  max-width: var(--measure);
+  margin-top: var(--s2);
+  color: var(--ink-2);
+}
+
 /* ==========================================================================
    FOOTER
    Same ground as the page, separated by space alone. The logo sits here as
@@ -885,19 +834,41 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 .imprint .sep { padding-inline: 0.4em; color: var(--rule-mid); }
 
 .colophon {
+  max-width: 56ch;
   color: var(--ink-3);
   font-size: var(--text-md);
   line-height: 1.9;
   text-align: right;
 }
 
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.2em 0.6em;
+}
+.foot-links .sep { color: var(--rule-mid); }
+
+.repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+.repo-link::before {
+  width: 1em;
+  height: 1em;
+  background: url("github-mark.svg") center / contain no-repeat;
+  content: "";
+}
+
 /* ==========================================================================
    NARROW VIEWPORTS AND PREFERENCES
    ========================================================================== */
 @media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; gap: var(--s4); }
   .overview-grid { grid-template-columns: 1fr 1fr; }
   .overview-grid article:first-child { grid-column: 1 / -1; }
-  .seq { columns: 1; }
   /* The cover moves above the panel, keeping its proportion. */
   .card { grid-template-columns: 1fr; }
   .material { grid-template-columns: 1fr; gap: var(--s4); }
@@ -913,7 +884,12 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
   .overview-grid article:first-child { grid-column: auto; }
   .media-frame.reader { min-height: 460px; }
   .colophon { text-align: left; }
-  .foot-brand { gap: var(--s2); }
+  .foot-links { justify-content: flex-start; }
+  .foot-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s2);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

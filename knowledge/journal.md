@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
 status: active
 created: 2026-08-20
-updated: 2026-08-24
+updated: 2026-08-25
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -112,3 +112,27 @@ The selected PNG files remain publication assets even where the generator introd
 **Course.** The operator found that the workshop structure, session sequence and module coverage repeated the same information. Design iteration 5 replaces these blocks with one overview containing the abstract, ordered outline and learning objectives. The live slide deck now occupies the first content position in an embedded Google Slides viewer, and an available course reader appears in an embedded Google Docs viewer below the overview. Missing artefacts keep the same position as a visible preparation state. Selected literature and references close the public content. Cover images, required project inputs, module coverage and provenance were removed from detail pages. The source-to-artifact motif was also removed from the landing page. Each of the seven registered instances now has a static English and German page pair connected through the header language control. Teaching language and material language remain explicit metadata and do not change with the interface language.
 
 **Outcome.** Fourteen workshop pages follow one responsive and accessible template. The landing page and preparation guide also have English and German variants. The KUG and CLARIAH pages embed their registered slide decks and course readers. The remaining instances present stable placeholders until their artefacts exist. Local structural checks passed without findings. GitHub Pages published commit `c88d093` from `main/docs`; the English and German landing pages and both KUG variants returned HTTP 200, and the published KUG page contains its language control, slide viewer and course-reader viewer. Operator visual acceptance remains open.
+
+### 2026-08-25 — Compact landing page and reduced navigation
+
+**Goal.** Make the landing page a compact overview of the teaching line and let the teaching materials begin within the first screen.
+
+**Course.** The operator approved a two-column hero with the title and a substantive abstract on the left and the five module titles on the right. Module subtitles, the separate module section and the hero repository link were removed. Teaching Materials now follows the hero directly, followed by Workshops and a compact Preparation entry linked to the full guide. The anchors for modules, material, workshops and preparation remain stable. Across the two landing pages, two preparation pages and fourteen workshop pages, GitHub is now the only content link in the top navigation. Language controls, language-matched brand links and existing backlinks preserve navigation between pages.
+
+**Outcome.** Design iteration 6 defines the bilingual landing-page hierarchy and common chrome. The public files implement the compact responsive layout without JavaScript or decorative rules. Local structural, link and browser verification covers both languages, wide and narrow viewports; publication remains an operator action.
+
+### 2026-08-25 — Workshop information order and downloadable slides
+
+**Goal.** Present the workshop scope before the teaching artefacts and reduce metadata and licence wording.
+
+**Course.** The operator placed abstract, outline and learning objectives directly after the workshop header. Slides now follow this overview. KUG and CLARIAH-AT expose their existing Google Slides PDF exports below the embedded viewer; both export addresses return PDF files. The browser-access warning was removed because the public embed is available in current Firefox and Edge installations as well as Chromium-based browsers. Workshop metadata now contains event, language and licence. The footer names Claude Code with Fable 5 and Opus 5, Codex with GPT-5.6 Sol, and Promptotyping as the context-engineering method. Licence text is the linked identifier `CC BY 4.0`.
+
+**Outcome.** Fourteen workshop pages share the revised information order and metadata contract. The two available decks have direct PDF downloads, and all eighteen public pages carry the same production attribution and concise licence line.
+
+### 2026-08-25 — Shared footer and stylesheet refinement
+
+**Goal.** Make implementation provenance and repository access consistent without adding another navigation layer.
+
+**Course.** The footer on all eighteen public pages now identifies Digital Humanities Craft, names the documented AI harnesses and Promptotyping, and links both the project repository and the Promptotyping repository with a restrained GitHub mark. The two-family type system remains unchanged. Unused motif, sequence and excerpt selectors were removed from the shared stylesheet, and the responsive footer layout was reduced to its active elements.
+
+**Outcome.** Every public page carries the same compact provenance and repository contract. The change adds no script or external runtime dependency.

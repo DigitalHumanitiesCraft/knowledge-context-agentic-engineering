@@ -48,9 +48,6 @@
     <div class="head-tools">
       <nav class="site-nav" aria-label="Site">
         <ul>
-          <li><a href="index.html#workshops">Workshops</a></li>
-          <li><a href="index.html#modules">Modules</a></li>
-          <li><a href="preparation.html">Preparation</a></li>
           <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
         </ul>
       </nav>
@@ -66,73 +63,37 @@
 
   <!-- ============ Hero ============ -->
   <section class="hero">
-    <div class="wrap">
-      <h1>Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
-      <p>
-        A teaching line on working with frontier language models inside AI harnesses,
-        for everyone doing computer-based, data-driven knowledge work. The material is
-        maintained once in five modules, and every workshop below is a documented
-        specialisation of it.
-      </p>
-      <p class="repo">
-        <a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Repository</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ============ Modules ============ -->
-  <section class="section" id="modules">
-    <div class="wrap">
-      <h2 class="section-title">Modules</h2>
-
-      <ol class="module-list" role="list">
-        <li class="m1">
-          <span class="key"><span class="dot"></span>01</span>
-          <div>
-            <h3>Understanding Large Language Models</h3>
-            <p class="sub">Capability landscape, jagged capability, latent program space, the assistant character</p>
-          </div>
-        </li>
-        <li class="m2">
-          <span class="key"><span class="dot"></span>02</span>
-          <div>
-            <h3>Prompt Engineering</h3>
-            <p class="sub">The four-part prompt structure, the prompt as a bounded specification, practical principles</p>
-          </div>
-        </li>
-        <li class="m3">
-          <span class="key"><span class="dot"></span>03</span>
-          <div>
-            <h3>Knowledge and Context Engineering</h3>
-            <p class="sub">Knowledge documents, the working context, research data and provenance</p>
-          </div>
-        </li>
-        <li class="m4">
-          <span class="key"><span class="dot"></span>04</span>
-          <div>
-            <h3>Agentic Engineering</h3>
-            <p class="sub">Harness and agentic loop, Promptotyping, verification, hands-on case studies</p>
-          </div>
-        </li>
-        <li class="m5">
-          <span class="key"><span class="dot"></span>05</span>
-          <div>
-            <h3>Critical Perspectives and Governance</h3>
-            <p class="sub">Governance and decision rights, Research Mission Control, openness, societal implications</p>
-          </div>
-        </li>
-      </ol>
-
-      <div class="notes">
-        <p class="pending">Unit-level structure beneath the five modules in preparation</p>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
+        <p>
+          This teaching line examines the use of large language models inside AI harnesses for
+          computer-based, data-driven knowledge work. It addresses researchers, students and
+          professionals who create, transform, evaluate or communicate knowledge with digital
+          systems. Its common methodological basis is one body of teaching material maintained
+          in five modules. The modules connect model understanding and prompt design with
+          knowledge and context engineering, agentic workflows, verification and governance.
+          Each workshop is a documented specialisation that selects from this material and
+          adapts its depth, examples, exercises and teaching language to a defined audience.
+        </p>
       </div>
-    </div>
+      <aside class="hero-modules" id="modules" aria-labelledby="modules-title">
+        <h2 id="modules-title">Modules</h2>
+        <ol class="module-list" role="list">
+          <li class="m1"><span class="key"><span class="dot"></span>01</span><h3>Understanding Large Language Models</h3></li>
+          <li class="m2"><span class="key"><span class="dot"></span>02</span><h3>Prompt Engineering</h3></li>
+          <li class="m3"><span class="key"><span class="dot"></span>03</span><h3>Knowledge and Context Engineering</h3></li>
+          <li class="m4"><span class="key"><span class="dot"></span>04</span><h3>Agentic Engineering</h3></li>
+          <li class="m5"><span class="key"><span class="dot"></span>05</span><h3>Critical Perspectives and Governance</h3></li>
+        </ol>
+      </aside>
+      </div>
   </section>
 
   <!-- ============ The material ============ -->
-  <section class="section" id="material">
+  <section class="section teaching-materials" id="material">
     <div class="wrap">
-      <h2 class="section-title">Full Slide Deck and Full Lecture Notes</h2>
+      <h2 class="section-title">Teaching Materials</h2>
 
       <div class="material">
         <div>
@@ -140,11 +101,9 @@
         </div>
         <div>
           <p>
-            The material exists once, as the Full Slide Deck and the Full Lecture Notes, cut
-            into the five modules above and maintained in one place. A workshop is a profile
-            over that material, meaning a documented selection of modules with its own depth,
-            case material, teaching language and hands-on work. What a given instance selects
-            is recorded in its profile and shown on its card as a module badge row.
+            The Full Slide Deck presents all five modules. The Full Lecture Notes document the
+            same material in English and German. Both holdings are maintained centrally and
+            supply the module selections, case studies and exercises used by workshop profiles.
           </p>
           <ul class="linklist" role="list">
             <li>
@@ -410,6 +369,17 @@
     </div>
   </section>
 
+  <section class="section" id="preparation">
+    <div class="wrap compact-section">
+      <h2 class="section-title">Preparation</h2>
+      <p>
+        The preparation guide covers accounts, local tools and the final system check. Each
+        workshop identifies which preparation level applies to its participants.
+      </p>
+      <p><a href="preparation.html">Open the preparation guide</a></p>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-foot">
@@ -427,9 +397,9 @@
       </div>
     </div>
     <div class="colophon">
-      <p>Built with <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a></p>
-      <p>Text content licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
-    </div>
+  <p>Implemented by <a href="https://dhcraft.org">Digital Humanities Craft</a> with the AI harnesses Claude Code (Fable 5 and Opus 5) and Codex (GPT-5.6 Sol), using <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a>.</p>
+  <p class="foot-links"><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub repository</a><span class="sep">&middot;</span><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping repository</a><span class="sep">&middot;</span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+</div>
   </div>
 </footer>
 

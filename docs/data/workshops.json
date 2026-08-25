@@ -17,6 +17,7 @@
       "language": "en",
       "status": "planned",
       "slides": "https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/edit",
+      "slides_pdf": "https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/export/pdf",
       "script": "https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/edit",
       "cover": "assets/covers/2026-09-16-kug-m3gim.png"
     },
@@ -30,6 +31,7 @@
       "language": "en",
       "status": "planned",
       "slides": "https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit",
+      "slides_pdf": "https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/export/pdf",
       "script": "https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit",
       "cover": "assets/covers/2026-09-25-clariah-at.png"
     },
@@ -43,6 +45,7 @@
       "language": "de",
       "status": "planned",
       "slides": null,
+      "slides_pdf": null,
       "script": null,
       "cover": "assets/covers/2026-10-05-hedit-heidelberg.png"
     },
@@ -56,6 +59,7 @@
       "language": "de",
       "status": "planned",
       "slides": null,
+      "slides_pdf": null,
       "script": null,
       "cover": "assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png"
     },
@@ -69,6 +73,7 @@
       "language": "de",
       "status": "planned",
       "slides": null,
+      "slides_pdf": null,
       "script": null,
       "cover": "assets/covers/2026-10-15-gda-goettingen.png"
     },
@@ -82,6 +87,7 @@
       "language": "de",
       "status": "planned",
       "slides": null,
+      "slides_pdf": null,
       "script": null,
       "cover": "assets/covers/2026-11-09-ufl.png"
     },
@@ -95,6 +101,7 @@
       "language": "de",
       "status": "planned",
       "slides": null,
+      "slides_pdf": null,
       "script": null,
       "cover": "assets/covers/2026-11-30-vetmed-winter-school.png"
     }

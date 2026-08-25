@@ -28,9 +28,6 @@
     <div class="head-tools">
       <nav class="site-nav" aria-label="Seite">
         <ul>
-          <li><a href="index.de.html#workshops">Workshops</a></li>
-          <li><a href="index.de.html#modules">Module</a></li>
-          <li><a href="preparation.de.html">Vorbereitung</a></li>
           <li><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a></li>
         </ul>
       </nav>
@@ -44,40 +41,45 @@
 
 <main>
   <section class="hero">
-    <div class="wrap">
-      <h1>Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
-      <p>
-        Eine Lehrreihe zur Arbeit mit aktuellen Sprachmodellen in AI Harnesses für
-        computergestützte und datenbasierte Wissensarbeit. Das Lehrmaterial wird in fünf
-        Modulen gepflegt und für jeden Workshop als dokumentierte Spezialisierung zusammengestellt.
-      </p>
-      <p class="repo"><a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Repository</a></p>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
+        <p>
+          Diese Lehrreihe untersucht den Einsatz großer Sprachmodelle in AI Harnesses für
+          computergestützte und datenbasierte Wissensarbeit. Sie richtet sich an Forschende,
+          Studierende und Fachkräfte, die Wissen mit digitalen Systemen erzeugen, transformieren,
+          prüfen oder vermitteln. Die gemeinsame methodische Grundlage ist ein in fünf Modulen
+          gepflegtes Lehrmaterial. Die Module verbinden Modellverständnis und Promptgestaltung
+          mit Knowledge und Context Engineering, agentischen Arbeitsabläufen, Verifikation und
+          Governance. Jeder Workshop ist eine dokumentierte Spezialisierung, die Teile dieses
+          Materials auswählt und Tiefe, Beispiele, Übungen sowie Lehrsprache an eine bestimmte
+          Zielgruppe anpasst.
+        </p>
+      </div>
+      <aside class="hero-modules" id="modules" aria-labelledby="modules-title">
+        <h2 id="modules-title">Module</h2>
+        <ol class="module-list" role="list">
+          <li class="m1"><span class="key"><span class="dot"></span>01</span><h3>Understanding Large Language Models</h3></li>
+          <li class="m2"><span class="key"><span class="dot"></span>02</span><h3>Prompt Engineering</h3></li>
+          <li class="m3"><span class="key"><span class="dot"></span>03</span><h3>Knowledge and Context Engineering</h3></li>
+          <li class="m4"><span class="key"><span class="dot"></span>04</span><h3>Agentic Engineering</h3></li>
+          <li class="m5"><span class="key"><span class="dot"></span>05</span><h3>Critical Perspectives and Governance</h3></li>
+        </ol>
+      </aside>
     </div>
   </section>
 
-  <section class="section" id="modules">
+  <section class="section teaching-materials" id="material">
     <div class="wrap">
-      <h2 class="section-title">Module</h2>
-      <ol class="module-list" role="list">
-        <li class="m1"><span class="key"><span class="dot"></span>01</span><div><h3>Understanding Large Language Models</h3><p class="sub">Modelllandschaft, Funktionsweise, Fähigkeiten und Grenzen</p></div></li>
-        <li class="m2"><span class="key"><span class="dot"></span>02</span><div><h3>Prompt Engineering</h3><p class="sub">Aufgabe, Kontext, Abnahmekriterien und Bedingungen</p></div></li>
-        <li class="m3"><span class="key"><span class="dot"></span>03</span><div><h3>Knowledge and Context Engineering</h3><p class="sub">Wissensdokumente, Arbeitskontext, Forschungsdaten und Provenienz</p></div></li>
-        <li class="m4"><span class="key"><span class="dot"></span>04</span><div><h3>Agentic Engineering</h3><p class="sub">AI Harness, Agentic Loop, Promptotyping und Verifikation</p></div></li>
-        <li class="m5"><span class="key"><span class="dot"></span>05</span><div><h3>Critical Perspectives and Governance</h3><p class="sub">Entscheidungsrechte, Offenheit und gesellschaftliche Auswirkungen</p></div></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section" id="material">
-    <div class="wrap">
-      <h2 class="section-title">Full Slide Deck und Full Lecture Notes</h2>
+      <h2 class="section-title">Unterrichtsmaterialien</h2>
       <div class="material">
         <div><img class="plate" src="assets/covers/full.png" alt="" width="960" height="540" loading="lazy" decoding="async"></div>
         <div>
           <p>
-            Das gemeinsame Material liegt als Full Slide Deck und Full Lecture Notes vor. Ein
-            Workshop wählt daraus die passenden Module, Schwerpunkte, Fallstudien und praktischen
-            Übungen aus.
+            Das Full Slide Deck stellt alle fünf Module bereit. Die Full Lecture Notes
+            dokumentieren dasselbe Material auf Deutsch und Englisch. Beide Bestände werden
+            zentral gepflegt und liefern die Modulauswahl, Fallstudien und Übungen für die
+            Workshopprofile.
           </p>
           <ul class="linklist" role="list">
             <li><a href="https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit">Full Slide Deck</a><span class="what">Google Slides mit allen fünf Modulen</span></li>
@@ -194,6 +196,16 @@
       </ul>
     </div>
   </section>
+  <section class="section" id="preparation">
+    <div class="wrap compact-section">
+      <h2 class="section-title">Vorbereitung</h2>
+      <p>
+        Der Vorbereitungsleitfaden behandelt Konten, lokale Werkzeuge und den abschließenden
+        Systemcheck. Jeder Workshop weist die für seine Teilnehmenden geltende Vorbereitungsstufe aus.
+      </p>
+      <p><a href="preparation.de.html">Vorbereitungsleitfaden öffnen</a></p>
+    </div>
+  </section>
 </main>
 
 <footer class="site-foot">
@@ -207,11 +219,10 @@
       </div>
     </div>
     <div class="colophon">
-      <p>Erstellt mit <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a></p>
-      <p>Seitentext unter <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
-    </div>
+  <p>Umgesetzt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit den AI-Harnesses Claude Code (Fable 5 und Opus 5) und Codex (GPT-5.6 Sol), unter Anwendung von <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a>.</p>
+  <p class="foot-links"><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub-Repository</a><span class="sep">&middot;</span><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping-Repository</a><span class="sep">&middot;</span><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+</div>
   </div>
 </footer>
 </body>
 </html>
-
