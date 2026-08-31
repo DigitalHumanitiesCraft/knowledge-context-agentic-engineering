@@ -2,7 +2,7 @@
 title: "Making Estate Materials Digitally Accessible"
 workshop: 2026-09-16-kug-m3gim
 created: 2026-08-20
-updated: 2026-08-24
+updated: 2026-08-31
 language: en
 authors: [Christopher Pollin]
 status: ready for review
@@ -180,13 +180,15 @@ A practical validation protocol asks participants to mark every uncertain readin
 
 ## **3.1 Materials and research question**
 
-The exercise uses a small set of M³GIM objects. Ideally, each object is represented by a scan or image and by the descriptive data already created in the project. Nicole K. Strohmann’s Mobility Studies keynote may provide a research question or a clearly delimited aspect that can be simplified for this dataset. The reduced question should remain recognisably connected to the keynote while being answerable within the available material.
+The exercise uses seven M³GIM objects concerning the Bayreuth Festival in 1953. Sources 3, 7, 8, 9, 10, and 11 are performance programme booklets. Source 11 also contains the season-level list *Wer singt was?* Source 12 is a larger festival booklet with schedules, staff and ensemble lists, cast matrices, and biographies. The packet links page images, M³GIM object identifiers, existing project data, and a facilitator reference workbook.
 
-A suitable reduced question might ask which persons move between which places, how a performance or work is connected to a journey, or which routes and temporal sequences are visible in the selected objects. The exact schema follows from the final question and the evidence present in the scans.
+The exercise answers one delimited question: *How do daily programmes, season lists, and biographies represent who was announced to do what at the Bayreuth Festival in 1953?* This wording matches the evidence available in the packet. A daily programme documents an announced cast for a dated performance. A season list documents assignments across the festival season. A biography documents a statement made in that biographical text. These evidence types can support related claims while retaining different scopes.
+
+The packet contains several cases that make modelling decisions observable. Source 3 exposes errors in the existing record. Sources 7 and 8 provide regular cast structures. Source 10 assigns two stage roles to one person in the same programme. Source 11 connects a daily cast with a season-level list. Source 12 enables comparison with cast matrices and biographies. The same workflow therefore covers routine extraction, a multiple-role case, and cross-source disagreement.
 
 ## **3.2 Phase A: transcription**
 
-Participants upload or provide the permitted image to Gemini and request a diplomatic transcription. The prompt specifies language, line breaks, unclear passages, deletions or additions where relevant, and the required treatment of uncertainty. The first output is preserved before correction.
+Participants upload one permitted page image to Gemini and request a source-faithful working transcription. The prompt supplies `source_id`, `page_id`, and `document_type`. It requires original spelling, punctuation, abbreviations, line breaks, and column order. Unreadable text is marked as `[unclear]`. The model may not translate, summarise, normalise, or supplement the page from general knowledge. The first output is preserved before correction.
 
 Validation proceeds directly against the image:
 
@@ -196,29 +198,32 @@ Validation proceeds directly against the image:
 * Separate source spelling from later normalisation.
 * Record each manual correction and its reason.
 
-The result is a verified working transcription linked to the object identifier and the source image. It is not automatically an edition.
+The result is a checked working transcription linked to the source object and its page. It supports the exercise dataset. It does not acquire the editorial status of a scholarly edition through this workflow.
 
 ## **3.3 Phase B: information extraction**
 
-The verified transcription becomes the input for structured extraction. The prompt contains a compact schema that defines fields, allowed value types, evidence requirements, and the treatment of missing information. A JSON object is preferable when the relations between entities matter; a table can be sufficient for a flat list.
+The checked transcription becomes the input for structured extraction. The schema represents the dated work or programme as an `occurrence`. A person's contribution becomes a `participation`. This relation separates the person from the work and contains the contribution documented by a particular source.
 
-A minimal mobility-oriented schema may contain:
+The exercise schema contains:
 
-* object\_id: the stable identifier of the source object.
-* person: the name as written, a normalised label, and an authority identifier when verified.
-* place: the name as written, a normalised label, coordinates or an external identifier when verified.
-* event\_or\_movement: a typed relation connecting person, place, date, work, or performance.
-* date: the source expression, a normalised value, and uncertainty.
-* evidence: a quotation or line reference that supports each extracted statement.
-* status: verified, uncertain, or rejected after review.
+* `source_id`, `page_id`, and `evidence_type` for documentary provenance;
+* `occurrence_id`, date, work, place, and documentary status for the announced or documented event;
+* `participation_id` and the person name as written in the source;
+* `functions` for musical and production work such as conducting or stage direction;
+* `stage_roles` for performed characters;
+* an exact quotation, certainty value, and unresolved issues for every participation.
 
-The model may populate only information supported by the supplied source. Missing values remain empty. Inferences must be placed in a separate field and labelled. This separation enables participants to inspect the difference between extraction and interpretation.
+The distinction between function and stage role prevents different kinds of contribution from collapsing into one label. Arrays permit several functions or characters within one participation. Source 10 tests this requirement because one person is listed for two characters in the same announced occurrence.
+
+The model may populate information supported by the supplied page. Missing values remain `null` or empty arrays. Normalised labels and identifiers require supplied evidence or later reconciliation. The status `announced` records the documentary claim made by a programme. It does not turn that claim into independent evidence of a realised performance.
 
 ## **3.4 Phase C: reconciliation and validation**
 
-Extracted names and places can be compared with the project’s existing records and selected authority services. Candidate matches are reviewed through labels, dates, locations, occupations, and other distinguishing information. A match is stored with the consulted identifier and review status; uncertain candidates are retained as such.
+Validation has two levels. Page-level validation compares every extracted name, date, function, character, and quotation with the image. Cross-source validation then compares assertions from daily programmes, season lists, biographies, and object metadata. Spelling differences are recorded separately from substantive differences. Conflicting source statements remain distinct until a documented decision justifies reconciliation.
 
-The final exercise dataset contains the source identifier, verified transcription, structured statements, provenance, and validation status. This bundle supports the next unit because it connects each application feature to inspectable source evidence.
+The facilitator workbook provides reference rows for cast members, functions, stage roles, participation proposals, source coverage, and data issues. It includes known errors in existing records and marks unresolved normalisation cases. Participant output is checked against this reference without treating the workbook as a substitute for the page image.
+
+The final exercise dataset contains source and page identifiers, checked transcriptions, occurrences, participations, evidence quotations, certainty, and validation notes. A stable human-validated JSON subset is prepared for the next unit. This hand-off ensures that application work can proceed even when group extractions differ.
 
 # 4\. Promptotyping Research Data
 
@@ -226,19 +231,19 @@ The final exercise dataset contains the source identifier, verified transcriptio
 
 Promptotyping is an iterative method for developing small digital research applications through natural-language specifications, a maintained knowledge base, structured data, executable prototypes, and repeated expert review. [^9] The prompt is one component of the method. The durable research context lies in the documented question, data model, source material, decisions, and validation criteria.
 
-A promptotype is useful when it makes a research operation inspectable. Examples include an interface for filtering objects by person and place, a map of movements with links back to evidence, a timeline that exposes uncertain dates, or a detail view that places the scan, transcription, metadata, and extracted statements side by side.
+The Bayreuth promptotype makes one research operation inspectable. It compares documented cast assignments across performances and evidence types. A map would contribute little to the selected question because the performance occurrences share the same festival location. The application therefore centres on a performance list, a cast matrix or filterable person list, and an evidence detail view.
 
 ## **4.2 The knowledge base**
 
 Before implementation, the group prepares a compact knowledge base containing:
 
-* the reduced research question and its scope;
-* the available M³GIM data and the meaning of each field;
-* the entity and relation model;
+* the Bayreuth 1953 research question and its documentary scope;
+* the human-validated JSON and the meaning of each field;
+* the occurrence and participation model;
 * source and rights information;
-* uncertainty and validation rules;
+* evidence types, uncertainty, and validation rules;
 * the intended users and tasks;
-* a small set of representative records, including difficult cases;
+* representative records, including the multiple-role and cross-source cases;
 * the required views and interactions;
 * criteria for evaluating the prototype.
 
@@ -246,15 +251,16 @@ This knowledge base allows an AI-assisted coding environment to work with the sa
 
 ## **4.3 Building the digital research application**
 
-The group translates the question into observable application behaviour. If the question concerns movement between places, the application needs place identifiers or coordinates, a relation linking a person or event to each place, temporal information, and a view that makes the sequence inspectable. If the evidence is uncertain, the interface must display that status.
+The group translates the question into observable application behaviour. The performance list shows date, work, and evidence type. The cast view exposes persons, functions, and stage roles. The evidence detail shows the source and page identifiers, exact quotation, certainty, and validation note. Filters may reduce the visible records while leaving the underlying data unchanged. Conflicting source statements remain side by side.
 
-The first implementation should use the smallest dataset and feature set that can test the research operation. Participants then compare the application with the knowledge base and inspect whether:
+The first implementation uses the human-validated subset and the smallest feature set that can test the research operation. Participants then compare the application with the knowledge base and inspect whether:
 
-* every visualised statement can be traced to a source object;
-* filters and labels use the intended fields and relation types;
+* every displayed assignment can be traced to a source object and page;
+* filters and labels use occurrences, participations, functions, and stage roles correctly;
+* the multiple-role case displays both characters within one participation;
+* daily programmes, season lists, biographies, and object metadata remain distinguishable;
 * uncertainty and missing values remain visible;
-* maps or timelines do not imply precision absent from the data;
-* the interface distinguishes source, transcription, extracted statement, and interpretation;
+* evidence quotations and validation notes remain accessible;
 * the prototype can be revised by changing documented requirements rather than hidden assumptions.
 
 The result is a small digital research artefact and a documented account of the data transformations it depends on. The exercise evaluates the artefact through the research question and source evidence.
@@ -266,16 +272,18 @@ The result is a small digital research artefact and a documented account of the 
 * Wednesday slides combining the relevant content from the three existing Stefan Zweig Digital teaching decks.
 * Thursday slides in English covering LLM foundations, AI readiness, the M³GIM workflow, validation, and Promptotyping.
 * This course reader with definitions, workflow descriptions, exercise instructions, and bibliography.
-* A small M³GIM dataset with images or scans of already catalogued objects, matching descriptive data, stable identifiers, and permitted teaching use.
-* Prompt templates for transcription, extraction, reconciliation, and prototype development.
-* A compact schema and example records aligned with the reduced Mobility Studies question.
+* Selected page images from the seven Bayreuth Festival 1953 source objects, their source and page identifiers, and rights information.
+* Prompt templates for page transcription, evidence-linked extraction, cross-source validation, and prototype development.
+* A facilitator reference workbook and a human-validated JSON subset.
+* A compact occurrence and participation schema aligned with the Bayreuth research question.
 
 ## **Participant outputs**
 
-* A corrected transcription with documented uncertainty.
-* A validated structured dataset linked to the source objects.
-* A small digital research application developed from the structured data.
-* A short validation record documenting findings, limitations, and revisions.
+* A checked page transcription with documented uncertainty.
+* A source-specific JSON object containing occurrences, participations, and page evidence.
+* A cross-source validation table that retains documentary differences.
+* A small cast explorer built from the facilitator-validated dataset.
+* A validation record covering the multiple-role case, source filtering, evidence links, missing values, and narrow-screen layout.
 
 # 6\. Key takeaways
 
@@ -285,9 +293,17 @@ Research data become reusable when their model, provenance, identifiers, rights,
 
 Large language models can propose transformations across images, text, data, and code. Their outputs require source-based validation and an explicit output contract.
 
-Promptotyping connects a research question, documented data, and an executable application. Its value lies in making the relation between evidence, model, and interface inspectable.
+Promptotyping connects a research question, documented data, and an executable application. In the Bayreuth exercise, the cast explorer is accepted only when assignments retain their source type, page evidence, uncertainty, and participation structure.
 
 # 7\. Bibliography
+
+## **Workshop source packet**
+
+M³GIM. 1953\. Bayreuth Festival programme objects `UAKUG/NIM/005/137/3`, `UAKUG/NIM/005/137/7`, `UAKUG/NIM/005/137/8`, `UAKUG/NIM/005/137/9`, `UAKUG/NIM/005/137/10`, `UAKUG/NIM/005/137/11`, and `UAKUG/NIM/005/137/12`. Partner source material in controlled local storage.
+
+M³GIM. 2026\. *Bayreuth 1953 Source Analysis* and *M3GIM-Bayreuth-1953-Integrationsvorlage*. Internal facilitator reference material, 31 August 2026\.
+
+## **Method and infrastructure references**
 
 Bender, Emily M., Timnit Gebru, Angelina McMillan-Major, and Shmargaret Shmitchell. 2021\. “[On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?](https://doi.org/10.1145/3442188.3445922)” In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, 610–623.
 

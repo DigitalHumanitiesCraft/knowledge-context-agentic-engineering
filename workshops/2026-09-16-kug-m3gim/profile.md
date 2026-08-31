@@ -8,9 +8,9 @@ workshop:
   audience: "KUG Summer School participants"
   language: en
   status: planned
-status: ready for review
+status: ready for rehearsal
 created: 2026-08-20
-updated: 2026-08-24
+updated: 2026-08-31
 language: en
 authors: [Christopher Pollin]
 related: [../../knowledge/project.md, ../../slides/full-slide-deck.md, ../../script/full-lecture-notes-en.md]
@@ -30,14 +30,16 @@ All slides, lecture notes, prompts, task descriptions, and participant materials
 | --- | --- | --- | --- |
 | Wednesday, 16 September, 17:00–19:00 | *Making Estate Materials Digitally Accessible: The Stefan Zweig Digital Workflow* | Trace an archival object through digitisation, metadata, TEI XML, data modelling, authority data, Semantic Web and Linked Open Data, repository ingest, and platform publication. | Participants can locate individual modelling and infrastructure decisions within a complete source-to-platform workflow. |
 | Thursday, 17 September, 11:30–13:00 | *Large Language Models in Research Data Workflows* | Explain language and multimodal models, AI readiness, context, evidence, and suitable roles for generative AI in research data work. | Participants can identify tasks that a model can support and define the checks required for research use. |
-| Thursday, 17 September, 15:00–16:30 | *Sources into Data: OCR and Information Extraction with Gemini* | Use digitised M³GIM objects to create text, extract selected information, structure the results, and document provenance and uncertainty. | Participants produce a checked data extract linked to its source object. |
-| Thursday, 17 September, 17:00–18:30 | *Promptotyping Research Data: Building a Digital Research Application* | Translate the structured data and a reduced research question into requirements, views, and a small browser-based research artefact. | Participants evaluate how the prototype represents the question, the available evidence, and the limits of the data. |
+| Thursday, 17 September, 15:00–16:30 | *Sources into Data: OCR and Information Extraction with Gemini* | Transcribe selected pages from the Bayreuth Festival 1953 source packet, extract occurrences and participations, and compare claims from daily programmes, season lists, and biographies. | Participants produce a checked source-specific data extract with page evidence, functions, stage roles, and uncertainty. |
+| Thursday, 17 September, 17:00–18:30 | *Promptotyping Research Data: Building a Digital Research Application* | Translate a human-validated Bayreuth dataset into requirements, views, and a small cast explorer. | Participants evaluate whether the application preserves source type, evidence, uncertainty, and multiple roles within one participation. |
 
 ## Cases and continuity
 
-Stefan Zweig Digital is the explanatory case on Wednesday. It provides an existing infrastructure and a traceable route from estate material to a published research platform. M³GIM is the working dataset on Thursday. The hands-on units use digitised objects that already have descriptive records whenever the project can provide them. This keeps source image, catalogue data, extracted data, and prototype views connected to the same objects.
+Stefan Zweig Digital is the explanatory case on Wednesday. It provides an existing infrastructure and a traceable route from estate material to a published research platform. M³GIM is the working dataset on Thursday. The hands-on units use seven Bayreuth Festival 1953 source objects. Six are performance programme booklets. One documents the season across schedules, cast matrices, staff lists, and biographies.
 
-A reduced question or clearly delimited aspect from the Mobility Studies keynote can guide the Thursday exercises. The keynote contribution must be supplied before the workshop so that the question can be simplified and matched to the available M³GIM data.
+The source packet supports one delimited question: *How do daily programmes, season lists, and biographies represent who was announced to do what at the Bayreuth Festival in 1953?* The question is answerable from the supplied pages and exposes a substantive modelling problem. A daily programme, a season list, and a biography describe related assignments at different documentary levels. They require separate evidence types and must not be merged silently.
+
+The participant exercise uses a controlled subset. One page from source 3 demonstrates transcription and known record errors. Sources 7 and 8 provide regular cast structures. Source 10 contains a participation with two stage roles in one occurrence. Source 11 adds the season-level list *Wer singt was?* Selected pages from source 12 support cross-source comparison. Sources 9 and the remaining pages of source 12 remain extension material.
 
 The placement of the digital edition and TEI XML session before this workshop is pedagogically useful. Participants can recognise TEI XML as one component of the larger research data workflow instead of encountering it only as an isolated format.
 
@@ -59,19 +61,20 @@ The Stefan Zweig workflow and the M³GIM exercise chain are instance-specific. R
 
 | Artefact | Location | State |
 | --- | --- | --- |
-| English course reader | [Google Doc](https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/edit) and [repository text](lecture-notes.md) | ready for review |
-| English KUG slide deck | [Google Slides](https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/edit) and [deck record](slide-deck.md) | ready for review; 63 recycled slides, local and native Google Slides rendering verified |
-| Exercise files | access-controlled workshop Drive; public repository holds documentation only | working set present |
-| M³GIM digitisates and matching records | supplied by the project team after rights confirmation | required input |
-| Reduced Mobility Studies question | supplied before the workshop | required input |
-| Public workshop page | generated from the workshop register | synchronised locally; publication remains outside this change |
+| English course reader | [Google Doc](https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/edit) and [repository text](lecture-notes.md) | repository text updated for the Bayreuth case; Google Doc still reflects the earlier generic exercise |
+| Canonical English KUG slide content | [repository Markdown](slide-deck.md) | content complete; functional rehearsal and user acceptance remain open |
+| Earlier native presentation | [Google Slides](https://docs.google.com/presentation/d/1m9c6RAUKz_4QTaICfMf11CPmjOY3H-SnFA26UEWkXkU/edit) | retained unchanged as a visual reference; Bayreuth revisions are not synchronised into it |
+| Exercise prompts | [Google Drive](https://drive.google.com/file/d/1HGzaJ4XtU2APn40_2YQH6Kj8IaGTJ8_Y/view) | updated and reloaded successfully on 2026-08-31; the exact Gemini run remains to be rehearsed |
+| M³GIM source packet | seven Bayreuth Festival 1953 PDFs in controlled local storage | all 40 scan pages inspected through OCR and targeted visual checks; reuse permission remains to be confirmed |
+| Reference integration workbook | M³GIM project output with cast, function, participation, and validation sheets | structurally and visually validated; serves as facilitator reference data |
+| Public workshop page | generated from the workshop register | still reflects the earlier generic exercise; web synchronisation remains outside this change |
 
 ## Required inputs
 
-- Images or scans of M³GIM objects that already have descriptive or structured records.
-- Confirmation that these digitisates may be used in the Summer School.
-- The matching records and, where available, a reference transcription for validation.
-- One research question or delimited aspect from the Mobility Studies keynote that can be reduced for the hands-on exercises.
+- Confirmation that the seven supplied Bayreuth digitisates may be shown and processed in the Summer School.
+- A facilitator-prepared, human-validated JSON subset derived from the integration workbook.
+- A page mapping that connects each participant image to its M³GIM object identifier and scan page or folio identifier.
+- One full rehearsal of the exact Gemini prompts on the selected participant images.
 - Confirmation of the spoken teaching language.
 
 ## Delivery notes

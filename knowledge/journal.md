@@ -103,3 +103,23 @@ This journal is the curated retrospective provenance index of the project. Curre
 - **Source:** the 50-entry journal and completed release handoff preserved at commit `370d25938e740c7324a79d34668ac8b5e27f4dc0`, plus Promptotyping Journal 0.4, Index 0.4, Project 0.3, Plan 0.3, Handoff 0.1 and Domain Knowledge 0.3.
 - **Target:** `README.md`, the canonical documents in `knowledge/` and the completed Research Mission Control capsule.
 - **Result:** the public AI-assisted authorship statement now distinguishes ideas, editorial responsibility, AI-generated drafts and third-party sources. This journal was reduced to substantive transitions, the Handoff returned to its empty Process Inbox state, template provenance was updated, and the completed v0.3 Research and Operations exchange was closed without altering immutable messages.
+
+### 2026-08-26 decided and installed · Simplified public learning architecture
+
+- **Source:** direct Research Director review of the module hubs, Preparation hierarchy and landing-page Learning Routes.
+- **Target:** the active `docs/` tree, `CLAUDE.md`, `project.md`, `design.md`, `specification.md`, `plan.md`, `script/COVERAGE.md` and the Research Director Log.
+- **Result:** the ten bilingual subject hubs and the Module 00 framing were removed from the active public tree. The five numbered modules remain the Full Slide Deck, workshop and video classification structure. Preparation became an independent main page with a clear H1, technical learning objectives and four visibly pending slide-derived introductions. Promptotyping and Scholar-Centred Design moved to Knowledge and Context Engineering; prompt-effect evaluation was excluded as a teaching unit; Critical Perspectives and Governance stayed in the Full Slide Deck. Preparation and four compact Learning Routes now share one section after Workshops, while Research Data and Knowledge Work returns to the maintained slides instead of appearing as a separate public route. The v0.3 topology remains recoverable at tag `v0.3`; the simplified state still requires browser verification and release.
+
+### 2026-08-26 corrected and verified · Compact public preparation surface
+
+- **Source:** subsequent Research Director review of the landing-page module index, Preparation density, public process language and subject terminology.
+- **Target:** the landing-page pair, Preparation pair, shared stylesheet, German workshop terminology and the current architecture contract.
+- **Result:** the Full Slide Deck index became a non-interactive five-item overview; the explanatory architecture note and duplicate divider treatment left the public surface. Preparation now exposes six navigation destinations and four compact introduction cards without review labels or generated teaching copy. Promptotyping and Scholar-Centred Design remain assigned to Knowledge and Context Engineering, while Critical Perspectives and Governance remains exclusive to the Full Slide Deck.
+- **Verification:** all 26 HTML pages form thirteen reciprocal language pairs on stylesheet version `20260826-2`; local structural checks report no duplicate IDs, broken internal destinations or fragment failures. Desktop, 640, 390 and 320 pixel browser observations report no page-level overflow or console errors. Research Director content acceptance and release remain open.
+
+### 2026-08-31 integrated · KUG Bayreuth source exercise and Markdown deck
+
+- **Source:** seven M³GIM Bayreuth Festival 1953 programme objects, the object-level source analysis, the checked integration workbook and the earlier 63-slide KUG presentation.
+- **Target:** `workshops/2026-09-16-kug-m3gim/`, the controlled Drive prompt file and this provenance index.
+- **Result:** the generic mobility exercise was replaced by a source-critical cast workflow based on daily programmes, season lists, biographies and object metadata. The exercise now models occurrences and participations, separates functions from stage roles, preserves multiple roles in one participation and keeps source-type differences visible. The repository contains the complete 63-slide English Markdown deck. The earlier Google Slides presentation remains unchanged as a visual reference.
+- **Verification:** the Drive prompt file was reloaded after replacement; the deck contains 63 slide-level headings and 64 Marp separators including the metadata boundary. The supplied PDFs and reference workbook were previously inspected. The exact Gemini prompt chain, validated JSON export, full teaching rehearsal, source-reuse permission and user acceptance remain open.

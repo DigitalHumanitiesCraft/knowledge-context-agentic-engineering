@@ -4,13 +4,13 @@ Register of every contribution still required from the Research Director, coveri
 
 The log is current coordination state. Durable project knowledge stays in `knowledge/`, and `knowledge/journal.md` receives the provenance of a contribution once it has been written back and verified. `communication/PROTOCOL.md` defines the lifecycle, and every `What I need from you` section is derived from the entries below.
 
-Identifiers are stable and are never reused. An `open` entry can be answered now. A `waiting` entry names the trigger that has to occur first. Twenty-three entries are current, sixteen of them open and seven waiting.
+Identifiers are stable and are never reused. An `open` entry can be answered now. A `waiting` entry names the trigger that has to occur first. Twenty-three entries are current, sixteen of them open and seven waiting. RD-022 left the active log after the subject-hub topology was withdrawn by Research Director decision on 26 August 2026.
 
 ## RD-001 Fine module cut
 
 - **Type**: Acceptance
 - **Status**: open
-- **Required contribution**: Confirm or correct the proposed fine cut of the five modules.
+- **Required contribution**: Confirm or correct the remaining fine cut of the five Full Slide Deck modules. Promptotyping and Scholar-Centred Design are already assigned to Knowledge and Context Engineering; prompt-effect evaluation is excluded as a teaching unit.
 - **Recommendation**: Accept only after the gaps and overlaps recorded in the coverage report have been reviewed.
 - **Basis**: `script/COVERAGE.md`, `script/modules/`, work package 2 in `knowledge/plan.md`.
 - **Effect**: Makes the module cut canonical and ends the provisional status of the module files.
@@ -177,7 +177,7 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 - **Type**: Acceptance
 - **Status**: open
 - **Required contribution**: Inspect the guided acceptance route and accept the shared interface baseline as continued in v0.3, or name concrete corrections.
-- **Recommendation**: Review one representative page per component family; automated parity checks cover the repeated structure across the 36-page release.
+- **Recommendation**: Review one representative page per component family after the reduced 26-page tree has passed its own parity and browser checks.
 - **Basis**: the v0.2 and v0.3 release results, the deployed public pages and the acceptance sheets for RD-021 through RD-023.
 - **Effect**: Establishes the accepted interface baseline for later content and Web Module work.
 - **Write-back**: `knowledge/design.md`, `knowledge/specification.md` and `knowledge/journal.md`.
@@ -213,25 +213,15 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 - **Effect**: Establishes the cross-repository learning-path contract for subsequent migrations.
 - **Write-back**: `knowledge/project.md`, `knowledge/design.md`, `knowledge/specification.md` and `knowledge/journal.md`.
 
-## RD-021 Module 00
+## RD-021 Preparation
 
 - **Type**: Acceptance
 - **Status**: open
-- **Required contribution**: Accept or correct the relation between workshop setup and the AI Coding Literacy foundation.
-- **Recommendation**: Keep the practical preparation path and the literacy path distinct inside one page, and use a neutral visual identity outside the five subject-module colours.
+- **Required contribution**: Accept or correct the relation between the technical setup, the external AI Coding Literacy curriculum and the four compact subject introductions.
+- **Recommendation**: Keep technical setup and AI Coding Literacy distinct, retain one clear Preparation H1 and the compact six-link index, and accept the four introductions together only after they have been reconstructed from the existing slides. Until then, their public cards expose only accepted titles, topic assignments and video routes.
 - **Basis**: the Preparation page pair, the AI Coding Literacy source assessment, `communication/operations/outbox/operations-2026-08-25-rd-021-module-00-acceptance-sheet.md` and `communication/operations/outbox/operations-2026-08-25-v0-3-release-result.md`.
-- **Effect**: Establishes the prerequisite module and its relation to modules 01 through 05.
+- **Effect**: Establishes Preparation as an independent main page and fixes the boundary between setup, external curriculum and slide-derived introductions.
 - **Write-back**: the Preparation page pair, `knowledge/project.md`, `knowledge/design.md`, `knowledge/specification.md` and `knowledge/journal.md`.
-
-## RD-022 Module hubs 01 through 05
-
-- **Type**: Acceptance
-- **Status**: open
-- **Required contribution**: Accept the common module-hub structure and the substantive cut of each hub, including the two-track structure inside Knowledge and Context Engineering.
-- **Recommendation**: Review the shared component once and then assess each hub's learning question, concept map and deep-dive structure; automated checks cover repeated navigation and accessibility.
-- **Basis**: the Full Slide Deck, Full Lecture Notes, module files, `knowledge/drafts/web-native-teaching-and-deep-dive-architecture.md`, `communication/operations/outbox/operations-2026-08-25-rd-022-module-hubs-acceptance-sheet.md` and `communication/operations/outbox/operations-2026-08-25-v0-3-release-result.md`.
-- **Effect**: Makes the five modules navigable public knowledge structures and releases later deep-dive migration.
-- **Write-back**: the module page pairs, module sources, `knowledge/project.md`, `knowledge/design.md`, `knowledge/specification.md` and `knowledge/journal.md`.
 
 ## RD-023 AI Harness introduction routes
 
@@ -240,8 +230,18 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 - **Required contribution**: Accept or correct the shared tutorial sequence, the distinction between AI Coding Literacy and product instruction, and the accuracy of the Pi harness, provider and inference-location boundary.
 - **Recommendation**: Review the common component once, then inspect the first reversible check and source note on each product page. Give the Pi boundary a separate substantive check because a locally running harness can still call a remote model.
 - **Basis**: `knowledge/drafts/harness-introduction-routes.md`, `communication/research/outbox/research-2026-08-25-harness-introduction-routes.md`, `communication/operations/outbox/operations-2026-08-25-rd-023-harness-introductions-acceptance-sheet.md` and `communication/operations/outbox/operations-2026-08-25-v0-3-release-result.md`.
-- **Effect**: Establishes Claude Code, Codex and Pi as comparable Module 04 routes and releases their reuse in workshop Web Modules.
+- **Effect**: Establishes Claude Code, Codex and Pi as comparable routes from the Agentic Engineering introduction in Preparation and releases their reuse in workshop Web Modules.
 - **Write-back**: the tutorial page pairs, `knowledge/project.md`, `knowledge/design.md`, `knowledge/specification.md` and `knowledge/journal.md`.
+
+## RD-024 Full Slide Deck Google Slides permission
+
+- **Type**: Action
+- **Status**: open
+- **Required contribution**: Change the public Full Slide Deck Google Slides permission from edit access to read access and confirm the resulting anonymous view link.
+- **Recommendation**: Preserve the existing document id and reduce only the public permission, so that repository and page links remain stable.
+- **Basis**: the verified Drive source audit of 2026-08-26 and the Full Slide Deck material record in `docs/data/workshops.json`.
+- **Effect**: Removes unintended public write access from the canonical teaching deck.
+- **Write-back**: the Google Slides permission state and `knowledge/journal.md`.
 
 ## Deliberately absent
 

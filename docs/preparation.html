@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Set up your working environment &middot; Knowledge, Context and Agentic Engineering</title>
-<meta name="description" content="A project-agnostic tutorial for setting up Visual Studio Code, the terminal, Python, a local website and an AI harness.">
+<title>Preparation &middot; Knowledge, Context and Agentic Engineering</title>
+<meta name="description" content="Technical preparation and four compact introductions to Large Language Models, Prompt Engineering, Knowledge and Context Engineering, and Agentic Engineering.">
 <link rel="alternate" hreflang="en" href="preparation.html">
 <link rel="alternate" hreflang="de" href="preparation.de.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20260825-19">
+<link rel="stylesheet" href="assets/site.css?v=20260826-2">
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
 <link rel="manifest" href="assets/favicon/site.webmanifest">
 </head>
-<body class="preparation-page">
+<body class="preparation-page preparation-overview-page">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-head"><div class="wrap">
   <div class="site-identity"><a class="site-identity-logo" href="https://dhcraft.org" aria-label="Digital Humanities Craft website"><img src="assets/dhcraft-logo-watercolor.png" alt="" width="320" height="367"></a><a class="site-identity-title" href="index.html">Knowledge, Context and Agentic Engineering for Knowledge Work</a></div>
@@ -25,24 +25,19 @@
 </div></header>
 <main id="main-content" tabindex="-1"><div class="wrap">
   <a class="backlink" href="index.html">&larr; Knowledge, Context and Agentic Engineering</a>
-  <nav class="module-nav" aria-label="Modules"><ol><li><a href="preparation.html" aria-current="page"><span>00</span>Preparation</a></li><li class="m1"><a href="modules/01-understanding-large-language-models.html"><span>01</span>LLMs</a></li><li class="m2"><a href="modules/02-prompt-engineering.html"><span>02</span>Prompts</a></li><li class="m3"><a href="modules/03-knowledge-context-engineering.html"><span>03</span>Knowledge &amp; context</a></li><li class="m4"><a href="modules/04-agentic-engineering.html"><span>04</span>Agents</a></li><li class="m5"><a href="modules/05-critical-perspectives-governance.html"><span>05</span>Governance</a></li></ol></nav>
-  <header class="page-head preparation-head"><div><p class="module-kicker"><img src="assets/modules/00-workspace.svg" alt="" width="48" height="48">Neutral prerequisite module</p><h1>Module 00 &middot; Preparation and AI Coding Literacy</h1><p class="event">Module 00 establishes the observable technical and methodological readiness required before work is delegated to an AI harness. This tutorial connects an editor, a terminal, Python, a local website and one bounded harness task in a disposable practice folder.</p><p class="module-question"><strong>Learning question:</strong> What must I be able to observe, describe, execute and verify before I delegate a task?</p></div><div><p class="stamp">Last verified 25 August 2026</p><p class="facts"><span>Work on the laptop you will use later.</span><span>Keep confidential and irreplaceable files outside the practice folder.</span></p></div></header>
+  <header class="page-head preparation-head"><h1>Preparation</h1><div><p class="event">This page connects an editor, a terminal, Python, a local website and one bounded AI Harness task in a disposable practice folder. It also provides four compact introductions to the subject areas of the teaching line.</p></div><div><p class="stamp">Last verified 25 August 2026</p><p class="facts"><span>Work on the laptop you will use later.</span><span>Keep confidential and irreplaceable files outside the practice folder.</span></p></div></header>
   <div class="tutorial-shell learning-shell">
     <aside class="tutorial-sidebar learning-nav">
-      <nav class="tutorial-nav" aria-label="Tutorial sections">
-        <p class="tutorial-nav__title">Setup tutorial</p>
-        <p class="tutorial-nav__group">Orientation</p>
-        <ol><li><a href="#goals"><span>00</span>Purpose</a></li></ol>
-        <p class="tutorial-nav__group">Requirements</p>
-        <ol><li><a href="#requirements"><span>01</span>Requirements</a></li></ol>
-        <p class="tutorial-nav__group">Workspace</p>
-        <ol><li><a href="#vscode"><span>02</span>Workspace</a></li><li><a href="#terminal"><span>03</span>Terminal</a></li><li><a href="#python"><span>04</span>Python</a></li><li><a href="#server"><span>05</span>Localhost</a></li><li><a href="#local-check"><span>06</span>Milestone</a></li></ol>
-        <p class="tutorial-nav__group">Harness</p>
-        <ol><li><a href="#harnesses"><span>07</span>Choose</a></li><li><a href="#claude-code"><span>A</span>Claude Code</a></li><li><a href="#codex"><span>B</span>Codex</a></li><li><a href="#pi"><span>C</span>Pi</a></li></ol>
-        <p class="tutorial-nav__group">Verification</p>
-        <ol><li><a href="#git"><span>08</span>Git</a></li><li><a href="#check"><span>09</span>Final check</a></li></ol>
-        <p class="tutorial-nav__group">Diagnosis</p>
-        <ol><li><a href="#trouble"><span>10</span>Diagnose</a></li></ol>
+      <nav class="tutorial-nav" aria-label="On this page">
+        <p class="tutorial-nav__title">On this page</p>
+        <ol>
+          <li><a href="#goals"><span>01</span>Learning objectives</a></li>
+          <li><a href="#requirements"><span>02</span>Requirements</a></li>
+          <li><a href="#vscode"><span>03</span>Workspace</a></li>
+          <li><a href="#harnesses"><span>04</span>AI harness</a></li>
+          <li><a href="#check"><span>05</span>Final check</a></li>
+          <li><a href="#introductions"><span>06</span>Introductions</a></li>
+        </ol>
       </nav>
     </aside>
 
@@ -57,9 +52,9 @@
           <figcaption>Each path includes the checks from the preceding path.</figcaption>
         </figure>
         <div class="tutorial-copy">
-          <p class="step-number">Orientation</p>
-          <h2>Choose the result you need</h2>
-          <p class="definition">The tutorial has three cumulative paths. Begin with browser access and stop after the last path your work requires.</p>
+          <p class="step-number">Learning objectives</p>
+          <h2>What you will be able to do</h2>
+          <p class="definition">The technical setup has three cumulative paths. Begin with browser access and stop after the last path your work requires.</p>
           <span class="anchor-alias" id="paths" aria-hidden="true"></span>
           <ol class="goal-list">
             <li>Use a language model in a browser and exchange a non-sensitive test file.</li>
@@ -284,6 +279,19 @@ readme.md  check.py  site/</code></pre></div></div>
           <p class="step-number">If a step fails</p>
           <h2>Diagnose one condition at a time</h2>
           <ol class="steps"><li>Copy the complete command and error as text.</li><li>Record the operating system, shell and working directory.</li><li>Return to the preceding successful check and consult the official tool documentation.</li><li>Ask a model for one reversible diagnostic command, change one condition and repeat the check.</li></ol>
+        </div>
+      </section>
+
+      <section class="preparation-introductions" id="introductions" aria-labelledby="introductions-title">
+        <div class="preparation-introductions__head">
+          <p class="step-number">Subject introductions</p>
+          <h2 id="introductions-title">Four compact introductions</h2>
+        </div>
+        <div class="preparation-introductions__grid">
+          <section class="introduction-card" id="large-language-models" aria-labelledby="large-language-models-title"><img class="route-icon" src="assets/modules/01-understanding-llms.svg" alt="" width="48" height="48"><div><h3 id="large-language-models-title">Introduction to Large Language Models</h3><p><a href="index.html#video-module-01">Videos for this subject</a></p></div></section>
+          <section class="introduction-card" id="prompt-engineering" aria-labelledby="prompt-engineering-title"><img class="route-icon" src="assets/modules/02-prompt-engineering.svg" alt="" width="48" height="48"><div><h3 id="prompt-engineering-title">Introduction to Prompt Engineering</h3><p><a href="index.html#video-module-02">Videos for this subject</a></p></div></section>
+          <section class="introduction-card" id="knowledge-context-engineering" aria-labelledby="knowledge-context-engineering-title"><img class="route-icon" src="assets/modules/03-knowledge-context-engineering.svg" alt="" width="48" height="48"><div><h3 id="knowledge-context-engineering-title">Introduction to Knowledge and Context Engineering</h3><p class="introduction-card__topics">Promptotyping &middot; Scholar-Centred Design</p><p><a href="index.html#video-module-03">Videos for this subject</a></p></div></section>
+          <section class="introduction-card" id="agentic-engineering" aria-labelledby="agentic-engineering-title"><img class="route-icon" src="assets/modules/04-agentic-engineering.svg" alt="" width="48" height="48"><div><h3 id="agentic-engineering-title">Introduction to Agentic Engineering</h3><p><a href="index.html#video-module-04">Videos for this subject</a></p></div></section>
         </div>
       </section>
     </div>

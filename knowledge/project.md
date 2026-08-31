@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-project
 status: draft
 created: 2026-08-20
-updated: 2026-08-25
+updated: 2026-08-26
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -49,17 +49,17 @@ A workshop instance presents that specialization through three surfaces with dis
 
 ## Public learning architecture
 
-The platform adds a neutral prerequisite to the five subject modules. Module 00 retains the bilingual Preparation routes and combines observable setup with the external German AI Coding Literacy foundation. Modules 01 through 05 have ten stable bilingual hub files under `docs/modules/`. Each hub connects a definition and learning question with a semantic concept map, a source-grounded starter sequence, learning routes, the maintained teaching holdings, primary videos and representative workshop uses. Module 00 remains outside workshop module arrays, subject colours and video classification.
+The public learning architecture has two general page types: the bilingual landing pages and the bilingual Preparation pages. The landing page presents the five numbered modules as a non-interactive contents index for the Full Slide Deck and as the classification used by workshops and videos. Preparation combines the observable technical setup, the external German AI Coding Literacy foundation and four compact subject introductions: Large Language Models, Prompt Engineering, Knowledge and Context Engineering, and Agentic Engineering. Their public cards carry only accepted titles, icons, topic assignments and route links until their learning objectives and content have been transferred from the existing slides and jointly accepted.
 
-Every visible module title and compact marker routes to the language-matched hub. A separate module navigation connects 00 through 05 on Module 00 and every subject hub. Module 03 keeps Knowledge Engineering and Context Engineering in one umbrella structure by connecting maintained knowledge and current task state with selected working context. Module 04 owns the Curated Skills subsection. Its eight external examples remain labelled references whose instruction and permission review is outstanding; Module 03 links to the relevant area without duplicating the list.
+Compact workshop markers route to stable landing-page fragments. Video Library groups 01 through 04 route to the matching Preparation introduction, while group 05 routes to the Full Slide Deck material. Promptotyping and Scholar-Centred Design belong to Knowledge and Context Engineering. Prompt-effect evaluation is not a teaching unit. The Curated Skills source remains a draft without public placement until the Agentic Engineering introduction is accepted.
 
-The landing-page learning routes separate Foundation, AI Harness introductions and Research workflow. The local Harness routes cover Claude Code, Codex and Pi in English and German through a shared eight-step sequence, `goal`, `prerequisites`, `install`, `workspace`, `instructions`, `permissions`, `extensions` and `first-check`. The Pi route keeps harness source, provider configuration and inference location as separate facts. Research Data and Knowledge Work remains a prepared route without a public destination. Release evidence lives in `journal.md` and Git; the Research Director Log carries the current substantive acceptance boundary.
+The landing page places Preparation beside four compact learning routes after the Workshops section. AI Coding Literacy is the available external German curriculum; Claude Code, Codex and Pi are available bilingual Harness introductions using the shared eight-step sequence `goal`, `prerequisites`, `install`, `workspace`, `instructions`, `permissions`, `extensions` and `first-check`. The Pi route keeps harness source, provider configuration and inference location as separate facts. Research Data and Knowledge Work belongs inside the maintained slides and no longer appears as a separate route. Release evidence lives in `journal.md` and Git; the Research Director Log carries the current substantive acceptance boundary.
 
 The canonical names of the three holdings are Full Slide Deck, Full Lecture Notes and Video Playlist. The earlier working name of the document holdings is retired and is not used anywhere in the repo (operator decisions 2026-08-20 and 2026-08-25, rule text in `CLAUDE.md`).
 
 ## Languages
 
-Each module carries the source language it was authored in; the other language version is produced by agent translation and counts as canonical only after operator review (operator decision 2026-08-20). The landing page, Module 00, five subject hubs, three focused Harness tutorials, About page and every workshop instance are presented through paired English and German static pages. The active installation therefore contains eighteen pairs. Interface language is independent of teaching language, while the register field `language` continues to record the language of the course material (operator decision 2026-08-24, replacing the single-language workshop pages fixed on 2026-08-20).
+Each module carries the source language it was authored in; the other language version is produced by agent translation and counts as canonical only after operator review (operator decision 2026-08-20). The landing page, Preparation, three focused Harness tutorials, About page and every workshop instance are presented through paired English and German static pages. The active installation contains thirteen pairs. Interface language is independent of teaching language, while the register field `language` continues to record the language of the course material (operator decision 2026-08-24, replacing the single-language workshop pages fixed on 2026-08-20).
 
 ## Holdings map
 
@@ -73,10 +73,9 @@ Each module carries the source language it was authored in; the other language v
 | Video inventory, playlist order, primary module, related modules and duration | `docs/data/videos.json` |
 | Workshop instance, one folder per instance | `workshops/<id>/` with `profile.md`, `slide-deck.md`, `lecture-notes.md`, `data/` |
 | Workshop Web Module, the browser-native learning sequence | inside the paired workshop pages `docs/workshops/<id>.html` and `docs/workshops/<id>.de.html` |
-| Module 00, Preparation and AI Coding Literacy | `docs/preparation.html`, `docs/preparation.de.html` |
-| Subject-module hubs 01 through 05 | ten paired files under `docs/modules/` |
+| Preparation, technical setup and four compact introductions | `docs/preparation.html`, `docs/preparation.de.html` |
 | AI Harness introductions | paired Claude Code, Codex and Pi routes under `docs/tutorials/` |
-| Curated Skills area | `#curated-skills` inside the Module 04 hub pair |
+| Curated Skills source pending public placement | `knowledge/drafts/curated-agent-skills-library.md` |
 | Slide exports (PPTX per taught state) | `workshops/<id>/` |
 | Cover images (PNG, 16:9) | `docs/assets/covers/<id>.png` |
 | Workshop register, material release state and module subset | `docs/data/workshops.json` |
@@ -90,11 +89,11 @@ Only upcoming instances live in the working tree. A delivered instance is remove
 
 Two neighbouring DHCraft teaching projects overlap with this line and remain separate sources. Their material can reach the platform through a documented migration, while their ownership, rights and runtime stay where they are (Research Director decision 2026-08-25).
 
-`DigitalHumanitiesCraft/ai-coding-literacy` is an independent published German-language curriculum for researchers without prior programming experience, organised around seven competencies for AI-supported coding. It keeps its own repository contract, its own deployment and its own dataset rights boundary. The installed Foundation learning route identifies it as an external German-language curriculum and links `https://digitalhumanitiescraft.github.io/ai-coding-literacy/de/`. Its competency model may be mapped onto modules 02 through 05, and a reusable definition enters the Full Slide Deck or the Full Lecture Notes only after reconciliation with `terms.md`. The curriculum contributes to Module 00 and never replaces the five subject modules.
+`DigitalHumanitiesCraft/ai-coding-literacy` is an independent published German-language curriculum for researchers without prior programming experience, organised around seven competencies for AI-supported coding. It keeps its own repository contract, its own deployment and its own dataset rights boundary. The compact learning route identifies it as an available external German-language curriculum and links `https://digitalhumanitiescraft.github.io/ai-coding-literacy/de/`. Its competency model may be mapped onto the teaching line, and a reusable definition enters the Full Slide Deck or the Full Lecture Notes only after reconciliation with `terms.md`. Its KCE integration remains a route and source relation; it does not become a numbered KCE module.
 
 The local folder `DHCraft/ai-literacies` is an unversioned Astro prototype without its own repository, action layer or maintained knowledge directory, so it carries no publication status. It stays read-only input for the migration into Web Modules, and its content and design patterns are re-authored in this design system. Astro, npm dependencies, TypeScript, `node_modules`, its source CSS tokens, its build configuration and its root-relative route system stay outside this repo, because the platform holds its no-build static publication contract. Its `IntersectionObserver` reading pattern may at most inform a progressive enhancement, and the complete learning text stays readable without JavaScript.
 
-The migration is ordered. The Prompt Engineering unit is the first candidate and remains in preparation because no static KCE lesson exists; installation of the Module 02 preparation row supplies no migrated teaching content. Research Data and Knowledge Work also remains a visible preparation state. RD-018, RD-020, RD-021, RD-022 and RD-023 acceptance remain outstanding. The Tools, Multimodal, Administration Data Analysis and Research Data Analysis units additionally wait for the verified VetMedAI intake, because their product facts, model claims, data-protection statements and rights boundaries need re-verification. A migrated unit carries its module mapping, audience, source reference, verification date and editorial status, and no dataset, screenshot, external slide image or video thumbnail is copied.
+The migration is ordered. The Prompt Engineering unit is the first candidate and remains in preparation because no static KCE lesson exists. Research Data and Knowledge Work is reconciled into the maintained slides instead of receiving a public route. RD-018, RD-020, RD-021 and RD-023 acceptance remain outstanding. The Tools, Multimodal, Administration Data Analysis and Research Data Analysis units additionally wait for the verified VetMedAI intake, because their product facts, model claims, data-protection statements and rights boundaries need re-verification. A migrated unit carries its module mapping, audience, source reference, verification date and editorial status, and no dataset, screenshot, external slide image or video thumbnail is copied.
 
 ## Audiences
 

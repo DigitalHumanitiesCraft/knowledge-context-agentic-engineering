@@ -1,13 +1,15 @@
 ---
 title: Module Hub Architecture
-status: draft
+status: superseded
 created: 2026-08-25
-updated: 2026-08-25
+updated: 2026-08-26
 language: en
 related: [../project.md, ../design.md, ../specification.md, web-native-teaching-and-deep-dive-architecture.md, adjacent-teaching-platform-integration.md]
 ---
 
 # Module Hub Architecture
+
+> Superseded by the Research Director decision of 26 August 2026. The active public architecture has no subject hubs and no Module 00 framing; the maintained contract is in `../project.md`, `../design.md` and `../specification.md`.
 
 Public information architecture for one prerequisite module and five subject-module hubs. The hubs make the shared module notation navigable and provide stable homes for web-native learning sequences, deep dives, tools, cases, videos and workshop relationships.
 
@@ -149,4 +151,3 @@ The source status of every item remains visible. Capability demonstrations suppo
 ## Acceptance boundary
 
 The Research Director first accepts the common hub component, Module 00 and the substantive structure of each subject hub. Individual deep dives receive separate acceptance when they add new claims, source rights or volatile product instructions.
-
