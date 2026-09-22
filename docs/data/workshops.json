@@ -178,9 +178,9 @@
       "cover": "assets/covers/2026-11-09-ufl.png"
     },
     {
-      "id": "2026-11-30-vetmed-winter-school",
-      "dates": "2026-11-30/2026-12-04",
-      "title": "VetMed Winter School",
+      "id": "2026-11-23-vetmed-ai-academy",
+      "dates": "2026-11-23/27",
+      "title": "AI Academy",
       "event": "Veterinärmedizinische Universität Wien",
       "audience": "administration and research staff",
       "focus": "five-day derivation covering all five modules in full breadth",
@@ -198,7 +198,7 @@
       },
       "slide_deck": { "google": null, "markdown": null, "pdf": null },
       "lecture_notes": { "google": null, "markdown": null, "pdf": null },
-      "cover": "assets/covers/2026-11-30-vetmed-winter-school.png"
+      "cover": "assets/covers/2026-11-23-vetmed-ai-academy.png"
     }
   ]
 }

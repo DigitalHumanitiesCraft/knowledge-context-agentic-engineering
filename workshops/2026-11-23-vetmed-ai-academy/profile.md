@@ -1,27 +1,27 @@
 ---
-title: "Workshop Profile VetMed Winter School 2026"
+title: "Workshop Profile AI Academy 2026"
 workshop:
-  id: 2026-11-30-vetmed-winter-school
-  dates: 2026-11-30/2026-12-04
-  title: VetMed Winter School
+  id: 2026-11-23-vetmed-ai-academy
+  dates: 2026-11-23/27
+  title: AI Academy
   event: Veterinärmedizinische Universität Wien
   audience: administration and research staff
   language: de
   status: planned
 status: in preparation
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-09-22
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 related: [../../knowledge/project.md, ../../knowledge/drafts/module-map.md]
 ---
 
-# Workshop Profile VetMed Winter School 2026
+# Workshop Profile AI Academy 2026
 
 ## Profile
 
-This instance is the five-day block week registered for 2026-11-30 to 2026-12-04 at the Veterinärmedizinische Universität Wien, taught in German for administration and research staff. The register describes it as a five-day extended derivation of the complete material and as a follow-up format to the VetMedAI programme, whose first workshop was held in German at the same institution as staff AI-competence building. It is therefore the fullest derivation of the complete material among the registered instances, the one profile with room for every module and for hands-on work in each of them. The display title *VetMed Winter School* is provisional and stands until the operator supplies the final one, as recorded in `knowledge/journal.md`. The register in `docs/data/workshops.json` holds the entry with its cover and currently carries no deck or script surface. This profile states the planned shape of the instance; a settled content state will exist once the slides and notes for the week are written.
+This instance is the five-day block week registered for 2026-11-23 to 2026-11-27 at the Veterinärmedizinische Universität Wien, taught in German for administration and research staff. The register describes it as a five-day extended derivation of the complete material and as a follow-up format to the VetMedAI programme, whose first workshop was held in German at the same institution as staff AI-competence building. It is therefore the fullest derivation of the complete material among the registered instances, the one profile with room for every module and for hands-on work in each of them. The operator set the display title *AI Academy* on 2026-09-11, replacing the provisional *VetMed Winter School*, and moved the instance from 2026-11-30 to 2026-11-23. The register in `docs/data/workshops.json` holds the entry with its cover and currently carries no deck or script surface. This profile states the planned shape of the instance; a settled content state will exist once the slides and notes for the week are written.
 
 ## Planned module selection
 
@@ -44,7 +44,7 @@ The predecessor instance of the VetMedAI series is the workshop *Grundlagen Gene
 | Live deck | to be linked from `docs/data/workshops.json`, register field currently null | in preparation |
 | Workshop script | this folder | in preparation |
 | PPTX export per taught state | this folder | in preparation |
-| Cover | `docs/assets/covers/2026-11-30-vetmed-winter-school.png` | present |
+| Cover | `docs/assets/covers/2026-11-23-vetmed-ai-academy.png` | present |
 
 ## Delivery notes
 

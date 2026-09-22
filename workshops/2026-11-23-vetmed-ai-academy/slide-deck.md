@@ -1,8 +1,8 @@
 ---
-title: "Slide Deck (VetMed Winter School 2026)"
-workshop: 2026-11-30-vetmed-winter-school
+title: "Slide Deck (AI Academy 2026)"
+workshop: 2026-11-23-vetmed-ai-academy
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-09-22
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -10,7 +10,7 @@ status: stub
 related: [profile.md, ../../slides/full-slide-deck.md]
 ---
 
-# Slide Deck (VetMed Winter School 2026)
+# Slide Deck (AI Academy 2026)
 
 This instance is taught from the Full Slide Deck of the teaching line, cut to the module selection documented in [`profile.md`](profile.md). No slide texts exist for this instance. The concept document derives from a generic block-week format and the derivation from the Full Slide Deck is an open task.
 

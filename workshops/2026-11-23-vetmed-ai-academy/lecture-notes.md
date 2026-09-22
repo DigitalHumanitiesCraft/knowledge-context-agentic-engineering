@@ -1,8 +1,8 @@
 ---
-title: "Lecture Notes (VetMed Winter School 2026)"
-workshop: 2026-11-30-vetmed-winter-school
+title: "Lecture Notes (AI Academy 2026)"
+workshop: 2026-11-23-vetmed-ai-academy
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-09-22
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -10,7 +10,7 @@ status: stub
 related: [profile.md, ../../script/full-lecture-notes-de.md]
 ---
 
-# Lecture Notes (VetMed Winter School 2026)
+# Lecture Notes (AI Academy 2026)
 
 No lecture notes of its own exist for this instance yet. Its text state is the Full Lecture Notes of the teaching line, read through the module selection documented in [`profile.md`](profile.md).
 
