@@ -4,7 +4,7 @@ Register of every contribution still required from the Research Director, coveri
 
 The log is current coordination state. Durable project knowledge stays in `knowledge/`, and `knowledge/journal.md` receives the provenance of a contribution once it has been written back and verified. `communication/PROTOCOL.md` defines the lifecycle, and every `What I need from you` section is derived from the entries below.
 
-Identifiers are stable and are never reused. An `open` entry can be answered now. A `waiting` entry names the trigger that has to occur first. Twenty-three entries are current, sixteen of them open and seven waiting. RD-022 left the active log after the subject-hub topology was withdrawn by Research Director decision on 26 August 2026.
+Identifiers are stable and are never reused. An `open` entry can be answered now. A `waiting` entry names the trigger that has to occur first. Twenty-two entries are current, fifteen of them open, one received and six waiting. RD-022 left the active log after the subject-hub topology was withdrawn by Research Director decision on 26 August 2026. RD-013 left it as obsolete once the KUG workshop had taken place on 16 September 2026.
 
 ## RD-001 Fine module cut
 
@@ -90,12 +90,12 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 ## RD-009 VetMed Winter School title
 
 - **Type**: Decision
-- **Status**: open
+- **Status**: received
 - **Required contribution**: Set the final public title of the VetMed Winter School.
 - **Recommendation**: Pending evidence.
-- **Basis**: `docs/data/workshops.json`, both VetMed page languages.
+- **Basis**: `docs/data/workshops.json`, both VetMed page languages. The operator decision recorded in the vault on 2026-09-11 sets the title AI Academy for 23 to 27 November 2026, with two teaching days followed by three hackathon days.
 - **Effect**: Replaces the provisional display title in register, profile and public pages.
-- **Write-back**: the register, the profile and both page languages.
+- **Write-back**: the register, the profile and both page languages. Title, dates and instance id `2026-11-23-vetmed-ai-academy` are written back in commit `8342d11`. The page copy still describes a five-day teaching block and awaits a content revision for the two-plus-three format. The entry leaves the log once that revision and the journal entry are done.
 
 ## RD-010 Preparation screenshots
 
@@ -129,16 +129,6 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 - **Effect**: Turns the reserved Markdown and PDF positions from preparation states into resolving downloads.
 - **Write-back**: `docs/downloads/`, the register and both landing pages.
 
-## RD-013 KUG source package
-
-- **Type**: Input
-- **Status**: open
-- **Required contribution**: Supply the KUG source package, meaning suitable M3GIM digitisates with matching records, confirmation of their Summer School use, the reduced Mobility Studies research question and the spoken teaching language.
-- **Recommendation**: Pending evidence.
-- **Basis**: the KUG profile and data package in `workshops/`, `knowledge/plan.md`.
-- **Effect**: Releases the KUG hands-on sequence and completes its data package.
-- **Write-back**: the KUG profile, its data package and the teaching material.
-
 ## RD-014 Public material release for KUG and CLARIAH
 
 - **Type**: Authorization
@@ -164,9 +154,9 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 ## RD-016 Tags of taught workshop states
 
 - **Type**: Action
-- **Status**: waiting
-- **Trigger**: A workshop has been delivered and its taught state verified.
-- **Required contribution**: Tag each taught workshop state with its registered identifier.
+- **Status**: open
+- **Trigger**: A workshop has been delivered and its taught state verified. The delivery occurred for the KUG instance `2026-09-16-kug-m3gim` on 16 September 2026.
+- **Required contribution**: Tag each taught workshop state with its registered identifier, now starting with the KUG instance.
 - **Recommendation**: Set the tag before the folder leaves the working tree, because the register entry drops out in the same step and the tag is afterwards the only route back to the taught state.
 - **Basis**: the versioning section of `knowledge/governance.md`, `docs/data/workshops.json`.
 - **Effect**: Preserves the taught state and allows the delivered instance to leave tree and register.
