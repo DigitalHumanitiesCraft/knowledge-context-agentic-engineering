@@ -201,44 +201,92 @@ Typische menschliche Interventionspunkte sind:
 
 Agents können Evidenz sammeln. Sie übernehmen dadurch nicht automatisch die Autorität, ein Ergebnis fachlich zu validieren oder für einen Zweck zu akzeptieren.
 
-## 6.7 Hands-on: TEI erzeugen, validieren und ein Frontend implementieren
+## 6.7 Hands-on: Research Starter Workflow und Agentic Edition Pipeline
 
-### Teil A: TEI erzeugen
+Die Übung verbindet die vorhandenen Aufgaben zu Forschungsdaten, Prompting, Wissensdokumenten und agentischer Implementierung am selben Material. Der Research Starter Workflow bestimmt Forschungsfrage, Quellenbasis und den ersten prüfbaren Arbeitsschritt. Die Agentic Edition Pipeline führt diesen Auftrag durch Transkription, Quellenprüfung im Viewer und TEI-Kodierung weiter. Eine vorinstallierte Pipeline oder ein Repository-Klon ist keine Voraussetzung.
 
-Der Agent erhält:
+### Forschungsauftrag und Material
 
-- Seitenbild,  
-- Rohtranskription,  
-- Wissensdokumente,  
-- Schema,  
-- zwei geprüfte Beispiele.
+Wähle ein Quellenobjekt und formuliere eine Forschungsfrage, zu deren Bearbeitung seine digitale Erschließung beiträgt. Beschreibe das gewünschte Ergebnis und eine Beobachtung, an der seine Eignung geprüft werden kann. Inventarisiere Bilder, vorhandene Transkriptionen und TEI einschließlich Herkunft, Nutzungsbedingungen und Seitenzuordnung. Ein vorhandener Text kann als Ausgangsmaterial dienen. Ein unabhängiger OCR/HTR-Vergleich erhält ausschließlich das Bild und die vereinbarten Transkriptionsregeln.
 
-Auftrag:
+Arbeite im vorhandenen Projektordner. Bewahre Originale und lokale Änderungen. Ergänze nach Bedarf `data/`, `output/`, `scripts/`, `viewer/` und `knowledge/`. Die Wissensdokumente beschreiben Daten, Forschungsfrage und Anforderungen. Verwende bestehende Dokumente weiter. Halte nur bestätigte Entscheidungen fest und kennzeichne fehlende Angaben.
 
-1. TEI erzeugen,  
-2. Schema validieren,  
-3. technische Fehler korrigieren,  
-4. fachliche Unsicherheiten separat dokumentieren.
+Einstiegsauftrag an den Agenten:
 
-### Teil B: Frontend implementieren
+```text
+Lies die Projektinstruktionen und vorhandenen Wissensdokumente.
+Inventarisiere das bereitgestellte Material, ohne Quellen zu verändern.
+Formuliere mit mir eine Forschungsfrage und ein prüfbares erstes Ergebnis.
+Dokumentiere Herkunft, Bild-Text-Zuordnung und vorhandene Editionen.
+Schlage für genau ein Quellenobjekt Arbeitsschritte und Abnahmekriterien vor.
+Trenne vorhandene Funktionen von Funktionen, die erst implementiert werden müssen.
+Stoppe nach Inventar und Vorschlag. Verarbeite noch keine Quellen.
+```
 
-Das lokale Frontend soll zeigen:
+### Meilensteine und Übergaben
 
-- Faksimile,  
-- diplomatische Transkription,  
-- normalisierte Ansicht,  
-- Unsicherheiten,  
-- Annotationen.
+| Schritt | Eingang | Ergebnis und Prüfung |
+| --- | --- | --- |
+| 1. Transkriptionspilot | identifizierte Bildseite, vereinbarte Regeln, gewähltes Verarbeitungsmodell | getrennt gespeicherte Transkription, Laufmetadaten und Quellenprüfung |
+| 2. Prüfviewer | freigegebene Transkription und zugehörige Bilder | lokale Bild-Text-Ansicht mit geprüfter Zuordnung und Navigation |
+| 3. TEI-Edition | geprüfter Text, Kodierungsregeln und Schema | valide TEI mit nachvollziehbarem Quellenbezug und fachlich geprüften Auszeichnungen |
+| 4. Forschungsbezogene Auswertung | akzeptierte Editionsdaten und Forschungsfrage | optionale Annotation oder Visualisierung mit überprüfbaren Belegen |
 
-### Teil C: Rückkopplung prüfen
+Jeder Schritt endet mit Ergebnisvorlage und Prüfung. Der nächste beginnt nach ausdrücklicher Freigabe. Die nächsten Aufträge referenzieren die tatsächlich erzeugten Dateien. Ein vorhandenes, geprüftes Ergebnis kann einen Schritt ersetzen, seine Herkunft und Eignung werden dabei dokumentiert.
 
-Fragen:
+### Transkriptionspilot
 
-- Sind Seiten- und Zeilenwechsel sichtbar?  
-- Werden Unsicherheiten als Unsicherheiten dargestellt?  
-- Erzeugt die Oberfläche falsche Eindeutigkeit?  
-- Welche Modellierungsprobleme werden erst im Interface sichtbar?  
-- Welche Wissensdokumente müssen revidiert werden?
+```text
+Lies die vereinbarten Anforderungen. Implementiere die Transkription genau
+ einer ausgewählten Seite über die gewählte API anhand ihrer aktuellen
+ offiziellen Dokumentation. Halte Harness-Modell und Verarbeitungsmodell getrennt.
+Lade Zugangsdaten lokal, ohne sie auszugeben oder im Frontend bereitzustellen.
+Falls Modellwahl oder Zugang fehlen, stoppe und benenne die fehlende Angabe.
+Verwende für den Bildversuch keine vorhandene TEI oder Referenztranskription.
+Speichere UTF-8-Text und Laufmetadaten unter output/transcriptions/ getrennt
+ von Originalen und früheren Ergebnissen. Dokumentiere Bild, Prompt,
+ Modellkennung, Einstellungen und verfügbare Nutzungsdaten.
+Zeige die erste Transkription und bitte um Feedback zum Quellenvergleich.
+Verarbeite weitere Seiten erst nach ausdrücklicher Freigabe.
+```
+
+Schreibweise, Zeilenfolge, Auslassungen und Unsicherheitsmarkierungen werden am Faksimile geprüft. Der API-Aufruf allein belegt keine Transkriptionsqualität. Ein Modellvergleich verwendet dieselbe Bildquelle, denselben Regelstand und dieselben Prüfkriterien, seine Läufe bleiben getrennt.
+
+### Prüfviewer
+
+```text
+Baue aus den freigegebenen Dateien einen lokalen statischen Viewer.
+Zeige links das Faksimile mit lokal bereitgestelltem OpenSeadragon und
+ rechts die zugehörige Transkription. Ergänze Brief- und Seitennavigation.
+Erhalte die Transkriptionsnotation. Melde fehlende Zuordnungen sichtbar.
+Verwende HTML, CSS und JavaScript ohne Backend oder externe Verarbeitungsdienste.
+Starte einen lokalen Server mit einem öffentlichen Verzeichnis, das keine
+ Zugangsdaten enthält. Prüfe Bild-Text-Zuordnung, Zoom, Navigation und
+ Tastaturbedienung im Browser. Zeige die lokale Adresse und die Prüfergebnisse.
+Stoppe zur Abnahme. Veröffentliche nichts.
+```
+
+### TEI und fachliche Prüfung
+
+```text
+Verwende die geprüfte Transkription und die vereinbarten Kodierungsregeln.
+Erzeuge zunächst TEI für ein Quellenobjekt. Bewahre die Transkription.
+Verknüpfe Seiten und Faksimiles, dokumentiere Herkunft und Bearbeitung.
+Validiere gegen das vereinbarte Schema. Korrigiere technische Fehler und
+ lege fachliche Unsicherheiten gesondert zur Entscheidung vor.
+Erweitere den Viewer um die vereinbarten TEI-Ansichten. Eine normalisierte
+ Ansicht darf nur aus dokumentierten editorischen Entscheidungen entstehen.
+Prüfe Zeilenwechsel, Unsicherheiten und Annotationen gegen Quelle und Regeln.
+Stoppe nach Vorlage der Validierung und der fachlichen Prüfpunkte.
+```
+
+Bei fehlendem Schema oder ungeklärter editorischer Regel wird die betreffende Entscheidung vor der Umsetzung eingeholt. Schema-Gültigkeit belegt keine angemessene Interpretation. Die optionale Themenauswertung verknüpft jede Annotation mit Textbeleg und Seite. Ein kleiner Übungsbestand begründet keine statistische Aussage über eine größere Sammlung.
+
+### Feedback, Refactoring und Write-back
+
+Beschreibe einen beobachteten Fehler mit Dateibezug, erwartetem Verhalten und reproduzierbarem Beispiel. Kläre, ob die Ursache im Code, in den Daten oder in einer unklaren Anforderung liegt. Sichere einen behobenen Softwarefehler mit einem geeigneten Regressionstest. Prüfe Quellenkorrekturen am Original und bewahre den ursprünglichen LLM-Output. Überarbeite anschließend die betroffenen Wissensdokumente und verweise auf das überprüfte Ergebnis.
+
+Die Anschlussübung in Abschnitt 7.11 dokumentiert Write-back und Acceptance am selben Projekt. Der Viewer bildet eine eigenständig abnehmbare Zwischenstufe. TEI ist im HEDIT-Profil ein Kernschritt, bei einem kompakten Einstieg können TEI und Auswertung als Vertiefung anschließen.
 
 *Source: `full-lecture-notes-en.md`, "AI Harness Architecture" and "AI Agent Concepts".*
 

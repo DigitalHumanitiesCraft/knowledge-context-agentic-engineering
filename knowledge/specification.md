@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-specification
 status: draft
 created: 2026-08-20
-updated: 2026-08-26
+updated: 2026-09-23
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -151,3 +151,7 @@ The v0.3 contract and accessibility checks passed, and representative component 
 - The 2026-08-25 Module 00 and bilingual subject-hub topology was superseded on 2026-08-26. Preparation is now an independent main page with four compact subject introductions, while modules 01 through 05 remain the Full Slide Deck and classification structure. Internal review status stays in the Director Log and project knowledge rather than the public cards (Research Director decision 2026-08-26).
 - The landing learning routes separate the external AI Coding Literacy foundation, the three local product-specific Harness introductions and the prepared Research Data workflow. Claude Code, Codex and Pi share one eight-step comparison contract that ends in a reversible first check (Research Director decision 2026-08-25).
 - The embedded Curated Skills placement from v0.3 was removed with the subject hubs. Its maintained draft remains pending instruction and permission review and receives no new public placement before the Agentic Engineering introduction is accepted (Research Director decision 2026-08-26).
+
+## Cumulative edition exercise
+
+The Research Starter Workflow connects an agreed research question and source inventory to the Agentic Edition Pipeline in section 6.7 of the German Full Lecture Notes. The English notes carry its translated explanation, the Full Slide Deck its teaching sequence and Module 04 its entry link. The sequence is a teaching integration, with a one-page pilot, local source-checking viewer, TEI and optional analysis. Each stage requires explicit acceptance before continuation. HEDIT makes TEI a core outcome. Existing reviewed inputs may satisfy a stage after provenance checks. No repository clone, particular provider or installed pipeline capability is assumed. Workshop execution, scholarly acceptance and publication remain separate from editorial verification.

@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
 status: active
 created: 2026-08-20
-updated: 2026-08-25
+updated: 2026-09-23
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -25,6 +25,11 @@ related: [project.md, specification.md, handoff.md]
 This journal is the curated retrospective provenance index of the project. Current facts and rules remain in the responsible Declarative and Action Documents, accepted future work in `plan.md`, open received deltas in `handoff.md`, and detailed revisions in Git.
 
 ## Entries
+
+### 2026-09-23 integrated · Cumulative edition exercise and HEDIT adaptation
+
+The operator requested a connection between the research starter and the Agentic Edition Pipeline using the CLARIAH and musicology teaching material. Section 6.7 of the German Full Lecture Notes now supplies the maintained task prompts, with the English explanation, Full Slide Deck and Module 04 aligned. HEDIT's profile and former material stubs apply the sequence to participant data and make TEI a core outcome. The register and paired page copy reflect the sequence without releasing material actions. Prepared pipeline repositories and teiCrafter remain optional demonstrations requiring capability checks. This records an editorial integration, not a taught or executed pipeline.
+
 
 ### 2026-08-20 integrated · Project foundation and teaching-material contract
 

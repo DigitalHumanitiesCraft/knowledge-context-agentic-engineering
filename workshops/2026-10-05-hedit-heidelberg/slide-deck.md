@@ -2,28 +2,40 @@
 title: "Slide Deck (HEDIT Heidelberg 2026)"
 workshop: 2026-10-05-hedit-heidelberg
 created: 2026-08-20
-updated: 2026-08-20
-language: en
+updated: 2026-09-23
+language: de
 authors: [Christopher Pollin]
-generated-with: Claude Code (Claude Fable 5)
-status: stub
-related: [profile.md, ../../slides/full-slide-deck.md]
+status: draft
+related: [profile.md, ../../script/full-lecture-notes-de.md]
 ---
 
 # Slide Deck (HEDIT Heidelberg 2026)
 
-This instance is taught from the Full Slide Deck of the teaching line, cut to the module selection documented in [`profile.md`](profile.md). No slide texts exist for this instance in any source. The deck is still to be derived from the Full Slide Deck.
+## Hands-on: Forschungsauftrag festlegen
 
-The Full Slide Deck lives at [`../../slides/full-slide-deck.md`](../../slides/full-slide-deck.md).
+- Eigenes Material inventarisieren und eine Forschungsfrage formulieren.
+- Vorhandene Texte und TEI zuordnen und weiterverwenden.
+- Ein überprüfbares erstes Ergebnis vereinbaren.
 
-Modules drawn on.
+## Hands-on: Transkription und Prüfviewer
 
-- [`Understanding Large Language Models`](../../script/modules/module-01-understanding-llms.md), day 1 block 1, models and the frontier landscape at teaching time
-- [`Prompt Engineering`](../../script/modules/module-02-prompt-engineering.md), day 1 block 1 continued, vibe coding against informed vibe coding
-- [`Knowledge and Context Engineering`](../../script/modules/module-03-knowledge-context-engineering.md), day 1 block 2, applied to TEI-XML modelling and TEI generation
-- [`Agentic Engineering`](../../script/modules/module-04-agentic-engineering.md), emphasis, day 1 block 3 and the whole of day 2
-- [`Critical Perspectives and Governance`](../../script/modules/module-05-critical-perspectives-governance.md), not programmed for this instance, see the documented absence in `profile.md`
+- Eine Seite transkribieren oder vorhandenen Text prüfen.
+- Faksimile links, Transkription rechts im lokalen Viewer anzeigen.
+- Zuordnung, Navigation und Unsicherheiten prüfen.
+- Feedback einarbeiten und den Pilotstand abnehmen.
 
-What this instance localises. Taught in German. The domain layer is TEI-XML and digital scholarly editions, the demonstration objects are the teiCrafter tool and the agentic edition pipeline, and day 2 runs on participants' own material.
+## Hands-on: TEI-Edition
 
-This file is replaced by the slide text of the instance once that text is cut and accepted.
+- Schema und editorische Regeln vereinbaren.
+- TEI erzeugen oder vorhandene Kodierung überarbeiten.
+- Formale Gültigkeit und Quellenangemessenheit getrennt prüfen.
+- TEI-Ansichten im Viewer gegen die Quelle kontrollieren.
+
+## Hands-on: Ergebnis und Projektwissen überarbeiten
+
+- Fehlerursache bestimmen und Korrektur prüfen.
+- Geeignete Regressionstests ergänzen.
+- Datenbeschreibung und Spezifikation aktualisieren.
+- Den freigegebenen Stand und offene fachliche Fragen vorstellen.
+
+Die [Lecture Notes](lecture-notes.md) und die [gemeinsamen Prompts](../../script/full-lecture-notes-de.md#67-hands-on-research-starter-workflow-und-agentic-edition-pipeline) führen durch dieselbe Aufgabe. Die einführenden Folien werden aus dem Full Slide Deck ausgewählt. Ein natives HEDIT-Deck ist damit noch nicht erzeugt.

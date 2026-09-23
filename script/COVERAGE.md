@@ -97,3 +97,7 @@ These passages were not carried into any module. Beyond them and the parallel ve
 9. Module 5 carries two bibliographies and two template sets. Decide whether they merge into one apparatus or stay separated by source language.
 10. The escaped Markdown and the empty anchors in the German Full Lecture Notes are an export artefact. Decide whether a cleanup pass runs on the modules after confirmation or on the Full Lecture Notes before the cut is confirmed.
 11. The German table of contents and list of figures were not carried. Confirm the omission, or specify where a navigation apparatus across the five modules should live.
+
+## Maintained source reconciliation
+
+On 23 September 2026, DE section 6.7 and its verbatim Module 04 passage were updated together to connect the Research Starter Workflow with the cumulative Agentic Edition Pipeline. The English Full Lecture Notes carry the corresponding explanation. The existing module-cut acceptance boundary remains unchanged.

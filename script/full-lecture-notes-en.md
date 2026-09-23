@@ -694,6 +694,31 @@ the tokenised information currently available to the model
 
 The knowledge base preserves what is available to be known. Context Engineering constructs from that environment what the model or agent needs for the current task.
 
+## Hands-on: Research Starter Workflow and Agentic Edition Pipeline
+
+This cumulative exercise connects the existing research-data, prompting, project-knowledge and agentic-implementation tasks on the same source material. The Research Starter Workflow establishes a research question, an inventory and an observable acceptance criterion. The Agentic Edition Pipeline then develops a transcription, a source-checking viewer and a TEI edition. No repository clone or preinstalled pipeline is required.
+
+Inspect the current folder and preserve sources and local changes. Reuse existing project knowledge. Record source provenance, image-text relationships, existing editions and unknowns. Use `data/`, `output/`, `scripts/`, `viewer/` and `knowledge/` where needed. The starter ends with an agreed question, a selected source object and criteria for its first result, before any processing begins.
+
+| Milestone | Input | Output and check |
+| --- | --- | --- |
+| Transcription pilot | one identified image and agreed rules | UTF-8 transcription and run metadata, checked against the image |
+| Local viewer | approved transcription and matching images | image on the left, text on the right, verified page navigation and zoom |
+| TEI edition | reviewed text, encoding rules and schema | validated TEI, source links and scholarly review of encoding choices |
+| Optional analysis | accepted edition data and a research question | annotations or a visualisation with exact evidence and page links |
+
+Present each result and wait for explicit approval before the next milestone. Existing reviewed transcriptions or TEI may satisfy a stage when their provenance and suitability are documented. Exclude them from an independent image-only OCR/HTR comparison. Keep the harness model separate from the processing model. Confirm missing model choices or credentials before calling an API and consult its current official documentation. Keep credentials out of logs and browser code. Preserve original outputs and store new runs separately under `output/transcriptions/`, with source, prompt, model identifier, settings and available usage metadata.
+
+The first API run processes one page. Ask for feedback on spelling, reading order, omissions and uncertainty before extending the run. Compare processing models only on the same input and rule set with separate outputs and the same assessment criteria.
+
+Build the viewer with static HTML, CSS and JavaScript and a local OpenSeadragon library. Its server must expose only the intended public assets. Verify image-text pairing, missing-file handling, zoom and keyboard navigation in a local browser. Show the working local URL and stop for acceptance. Publication is a separate action.
+
+Generate TEI for one source object using agreed rules and a named schema. Preserve the transcription, link page images and document editorial responsibility. Report unresolved encoding decisions. Validate the XML and inspect uncertainty, annotations and line breaks against the source. A normalised reading requires documented editorial choices. Schema validity does not establish scholarly adequacy.
+
+Feedback identifies an observed problem, its expected behaviour and a reproducible case. Determine whether its cause lies in implementation, source data or requirements. Add an appropriate regression check for a software correction, review textual corrections against the source and update the responsible knowledge documents. Retain the uncorrected model output. The optional thematic analysis links claims to exact quotations and pages and makes no statistical prevalence claims from the small exercise selection.
+
+The complete German task prompts are maintained in [section 6.7 of the German Full Lecture Notes](full-lecture-notes-de.md#67-hands-on-research-starter-workflow-und-agentic-edition-pipeline). HEDIT makes TEI a core outcome. Shorter workshop profiles can accept the viewer first and retain TEI and analysis as extensions.
+
 ## **Evaluation, Verification, Validation and Acceptance**
 
 AI supported workflows require several forms of assessment that should remain conceptually distinct. **Evaluation** is the broader measurement or assessment of outputs, models or workflows against explicit criteria. It may be quantitative or qualitative and can include benchmark scores, error rates, task completion measures or structured expert review.[^53]

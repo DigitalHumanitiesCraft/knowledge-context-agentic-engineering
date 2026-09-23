@@ -1,6 +1,6 @@
 # Full Slide Deck
 
-Slide-text export of the Google deck of the teaching line, state of 2026-08-20. Everything below this header is the export as produced and carries no editorial changes.
+Slide-text export of the Google deck of the teaching line, state of 2026-08-20. The original export is preserved below. The editorial hands-on sequence at the end links the existing topics into a cumulative exercise.
 
 Knowledge, Context and Agentic Engineering for Knowledge Work
 
@@ -733,3 +733,41 @@ Ein AI Agent ist ein modulares, von einem Sprachmodell angetriebenes System für
 Agentic AI ist die nächste Stufe, aber nicht durch mehr Autonomie, sondern durch eine andere Architektur. Sie ist kein einzelner Agent, sondern ein orchestrierter Verbund mehrerer Agenten, gekennzeichnet durch Zusammenarbeit, dynamische Aufgabenzerlegung, persistentes Gedächtnis und koordinierte Autonomie.
 
 Claude Code zeigt beide Stufen am selben Werkzeug. Im einfachen Lauf ist es ein AI Agent. Sobald es über Subagenten Teilaufgaben an mehrere koordinierte Instanzen delegiert, die parallel arbeiten, bewegt es sich zur Agentic AI. Die Unterscheidung ist also keine Schublade, sondern beschreibt zwei Betriebsarten.
+
+
+## Hands-on: Forschungsauftrag und Quellenmaterial
+
+- Formuliere eine Forschungsfrage und ein prüfbares Ergebnis.
+- Inventarisiere Quellen, vorhandene Texte und ihre Zuordnung.
+- Halte Anforderungen und offene Angaben im Projektwissen fest.
+- Vereinbare einen ersten Pilotauftrag vor der Verarbeitung.
+
+## Hands-on: Eine Seite transkribieren
+
+- Verwende ein identifiziertes Bild und vereinbarte Transkriptionsregeln.
+- Trenne Harness und Verarbeitungsmodell.
+- Bewahre Originale und dokumentiere den Lauf.
+- Prüfe die Transkription am Bild und gib Feedback vor weiteren Seiten.
+
+## Hands-on: Einen Prüfviewer bauen
+
+- Faksimile links, zugehörige Transkription rechts.
+- Lokaler statischer Viewer mit OpenSeadragon.
+- Prüfe Zoom, Seitennavigation und Bild-Text-Zuordnung.
+- Formuliere Fehler mit beobachtetem und erwartetem Verhalten.
+
+## Hands-on: TEI erzeugen und prüfen
+
+- Verwende geprüften Text, Kodierungsregeln und Schema.
+- Erhalte Unsicherheiten und Quellenbezüge.
+- Prüfe XML-Gültigkeit und editorische Entscheidungen getrennt.
+- Übernimm die freigegebene Kodierung in den Viewer.
+
+## Hands-on: Feedback in Projektwissen zurückführen
+
+- Bestimme die Ursache eines Fehlers in Code, Daten oder Anforderung.
+- Prüfe die Korrektur und ergänze geeignete Regressionstests.
+- Aktualisiere die betroffenen Wissensdokumente.
+- Dokumentiere Ergebnis und Abnahme vor dem nächsten Meilenstein.
+
+Die [vollständigen Arbeitsaufträge](../script/full-lecture-notes-de.md#67-hands-on-research-starter-workflow-und-agentic-edition-pipeline) verwenden dasselbe Material über die gesamte Folge. Quellengebundene Themenannotation ist eine optionale Vertiefung.
