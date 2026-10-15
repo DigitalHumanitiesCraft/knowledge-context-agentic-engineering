@@ -8,7 +8,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: draft
 created: 2026-08-20
-updated: 2026-08-25
+updated: 2026-10-15
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -38,6 +38,8 @@ Tool and model provenance follows the same split. The public interface names onl
 
 ## Source status
 
+Preparation uses the existing Google Slides deck registered under `preparation` in `docs/data/workshops.json`. This specific source decision does not resolve the separate source-of-truth question for the Full Slide Deck and Lecture Notes.
+
 | Holding | Canonical place |
 | --- | --- |
 | Full Lecture Notes, Full Slide Deck | this repo (`script/`, `slides/`) |
@@ -47,7 +49,7 @@ Tool and model provenance follows the same split. The public interface names onl
 | Delivered instances | git history, reachable through the tag of the taught state |
 | Live decks and documents | Google Workspace, as derived surfaces; divergent wording is examined as a delta |
 | CLARIAH hands-on (prompts, schema, runs) | `chpollin/zbz-ocr-tei/workshops/clariah-at-2026/` |
-| Workshop Web Module | the paired workshop pages in `docs/workshops/`; its availability per instance in the `web_module` field of `docs/data/workshops.json` |
+| Former Workshop Web Module | Historical HTML in Git; the material register retains provenance without public event pages |
 | AI Coding Literacy curriculum | the independent repo `DigitalHumanitiesCraft/ai-coding-literacy`, linked as an external deep dive and never copied here |
 | AI Literacies prototype | the local unversioned folder `DHCraft/ai-literacies`, read-only migration input without publication status |
 | Project coordination | the author's vault |
@@ -60,7 +62,7 @@ Changes to canonical text happen here and are committed; Google artifacts are up
 
 Fine-grained history lives in git. The state actually taught in a workshop receives a git tag named after the registry id (for example `2026-09-25-clariah-at`), set by the Research Director; the register and the workshop page link to the tagged state. Workshop folder names equal registry ids; a single id scheme holds across register, folders, covers and tags. PPTX exports are stored per taught state in the workshop folder.
 
-The working tree carries only upcoming instances (operator decision 2026-08-20). Once an instance has been taught and its state tagged, its folder is removed and its register entry drops out, so the public platform shows what people can still attend. Nothing is lost, because git history holds the material and the tag names the taught state. A document that cites a removed file names it as preserved in git history at the short SHA of the last commit that held it.
+The working tree carries only upcoming instances (operator decision 2026-08-20). Once an instance has been taught and its state tagged, its folder is removed and its register entry drops out, while the public platform presents the common material without event listings. Nothing is lost, because git history holds the material and the tag names the taught state. A document that cites a removed file names it as preserved in git history at the short SHA of the last commit that held it.
 
 ## Rights and licensing
 

@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
 status: active
 created: 2026-08-20
-updated: 2026-09-23
+updated: 2026-10-15
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -25,6 +25,10 @@ related: [project.md, specification.md, handoff.md]
 This journal is the curated retrospective provenance index of the project. Current facts and rules remain in the responsible Declarative and Action Documents, accepted future work in `plan.md`, open received deltas in `handoff.md`, and detailed revisions in Git.
 
 ## Entries
+
+### 2026-10-15 integrated · Shared material site and existing Preparation deck
+
+On direct author instruction, the individual workshop listings and Learning Routes were removed from both landing pages and their event and Harness tutorial HTML pages were removed from the public tree. Workshop sources and material provenance remain available. Preparation now presents the existing Google Slides deck `19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8`, identified through Drive search and checked against its technical-setup content. The paired pages identify the deck's English language. The design, specification, project, plan, governance and action layer record the reduced public scope. Local HTML parsing verified tag balance, unique identifiers, local links and fragment targets across the remaining public pages; the data registers parse as JSON. Browser inspection confirmed the embedded Preparation deck and the reduced landing page in wide and narrow views. Teaching source folders were unchanged. This is a local implementation; publication and author acceptance remain separate.
 
 ### 2026-09-23 integrated · Cumulative edition exercise and HEDIT adaptation
 

@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-specification
 status: draft
 created: 2026-08-20
-updated: 2026-09-23
+updated: 2026-10-15
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -24,14 +24,34 @@ related: [project.md, design.md]
 
 Requirements for the public platform (`docs/`, GitHub Pages) and the carrying repo structure.
 
-## Usage scenarios
+## Current public contract
+
+The public site contains paired landing, Preparation and About pages. The landing page presents the teaching-line introduction, the Full Slide Deck module index, the three maintained teaching resources, Preparation and the Video Library, in that order. Event listings and Learning Routes have been removed by the Research Director on 15 October 2026. Their workshop and product-specific tutorial HTML pages are outside the current public tree; teaching sources under `workshops/`, `slides/` and `script/` remain available.
+
+Preparation links to and embeds the existing English Google Slides deck [Preparation · Slides · Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit). Its URL and language are registered in `docs/data/workshops.json` under `preparation`. The paired page labels identify the English teaching language. A visible direct link remains usable if the embedded viewer cannot load. No separate HTML setup curriculum or subject-introduction sequence is maintained on that page.
+
+The workshop records in `docs/data/workshops.json` retain material provenance and do not generate public event pages or navigation. Full-material and video links retain their existing ownership and rights boundaries. External Google files and sharing permissions are unchanged.
+
+## Current acceptance criteria
+
+- Both language versions expose the same material, Preparation and Video Library structure, without workshop listings, dates, Learning Routes or links to retired pages.
+- Preparation's registered Google Slides target agrees with the direct link and embedded viewer on both pages. The visible English-language note does not claim a translation.
+- All local links, assets, language counterparts and fragment targets resolve. Pages retain one H1, one main landmark, keyboard bypass links, visible focus, responsive media and the existing shared navigation and footer.
+- The existing resource descriptions, module semantics, video order, external-preview disclosure and About/licensing information remain intact. The page remains usable without JavaScript.
+- Wide and narrow browser checks cover the material-to-Preparation transition and the Preparation page. Structural checks and observed rendering are distinct from author acceptance and publication.
+
+## Historical August platform contract
+
+The following requirements describe the August installation. Event pages, Learning Routes and HTML Preparation lessons were superseded by the current public contract on 15 October 2026. Unchanged visual and accessibility rules are maintained in `design.md`.
+
+### Previous usage scenarios
 
 1. A participant opens the workshop page during the course, follows the embedded Slide Deck, uses the Lecture Notes and returns later to the same page for literature and reference links.
 2. An organizer or program committee checks the abstract, learning objectives and outline in one view and opens the real slide deck in its embedded viewer.
 3. A professional from a company or another discipline evaluates the instance aimed beyond academia and finds audience, prerequisites and scope without reading the material as a whole.
 4. An agent working on the material reads the registry and the knowledge base to know which artifacts exist and where they live.
 
-## Requirements
+### Previous requirements
 
 1. Paired English and German landing pages begin with a compact hero. The main column contains the title and a substantive abstract covering the five concept families, the common teaching material and the derivation of workshop profiles. A separate short paragraph states the participant purpose of the setup tutorial, namely preparing for taking part in a workshop, and links to the language-matched page. It names no browser, local tool or AI harness. The five module titles occupy a separate right column without subtitles. Each title carries one portable subject-specific line icon beside its number. Text remains the accessible name, while icon and module colour provide independent visual cues. Each row uses one consistent icon-and-number column and one flexible title column; every title aligns with the first text line of its number, wraps with a line height around 1.2 and retains regular vertical separation. On wide viewports the index is vertically centred against the complete hero copy and offset slightly toward the right edge. It moves below the abstract without this offset on narrow viewports. The German page localises the descriptive module titles. Key terms carry reusable, language-matched inline definitions. Each trigger retains normal text weight and uses a fine underline in the associated module colour; a cross-module term may split the underline between two colours. The definition appears on pointer hover, keyboard focus or touch in a white tooltip with near-black text and a narrow accent in the associated module colour. The module column remains a non-interactive Full Slide Deck contents index.
    The landing ids `module-01` through `module-05` remain stable fragment targets for compact module markers elsewhere on the platform.
@@ -63,7 +83,7 @@ Requirements for the public platform (`docs/`, GitHub Pages) and the carrying re
 
 22. Promptotyping and Scholar-Centred Design belong to Knowledge and Context Engineering. Prompt-effect evaluation is not a teaching unit. Curated Skills remains a maintained draft without public placement until the Agentic Engineering introduction is accepted; no entry is presented as installed or recommended before instruction and permission review.
 
-## Acceptance criteria
+### Previous acceptance criteria
 
 - Every non-null artefact format named in the registry resolves; every `null` format appears as an "in preparation" label.
 - The pages and the registry never contradict each other. After any registry change the maintaining agent updates the affected pages in the same work step and verifies the match before committing.
@@ -105,7 +125,7 @@ Requirements for the public platform (`docs/`, GitHub Pages) and the carrying re
 - No public subject-hub file exists under `docs/modules/`. The numbered module structure remains present through the landing-page index, workshop markers, Video Library groups and the Full Slide Deck.
 - Both Preparation pages carry the same four compact subject introductions and no Critical Perspectives and Governance introduction. The cards expose no internal review status. Curated Skills has no public interface placement.
 
-## Active simplified state
+### Previous installation
 
 The active working tree contains 26 HTML files in thirteen reciprocal pairs and references stylesheet version `20260826-2` throughout. The landing page, Preparation, three bilingual Harness introductions, seven workshop pairs and the Video Library remain static and usable without JavaScript. The ten former subject hubs are preserved in Git at tag `v0.3` and removed from the public tree. Local formal validation covers every page and reciprocal pair; representative desktop, 640, 390 and 320 pixel browser observations show no page-level overflow or console errors. Research Director acceptance and release remain open.
 

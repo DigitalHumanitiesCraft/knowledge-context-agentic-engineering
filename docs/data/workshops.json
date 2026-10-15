@@ -1,7 +1,7 @@
 {
   "full": {
     "title": "Knowledge, Context and Agentic Engineering for Knowledge Work",
-    "description": "The complete material of the teaching line, maintained as the Full Slide Deck, the bilingual Full Lecture Notes and an ordered Video Playlist. Every workshop below is a documented specialisation of it.",
+    "description": "The complete material of the teaching line, maintained as the Full Slide Deck, the bilingual Full Lecture Notes and an ordered Video Playlist. Workshop profiles document specialisations of this material.",
     "slide_deck": {
       "google": "https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit",
       "markdown": null,
@@ -200,5 +200,10 @@
       "lecture_notes": { "google": null, "markdown": null, "pdf": null },
       "cover": "assets/covers/2026-11-23-vetmed-ai-academy.png"
     }
-  ]
+  ],
+  "preparation": {
+    "title": "Preparation · Slides · Technical Setup",
+    "language": "en",
+    "google": "https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit"
+  }
 }

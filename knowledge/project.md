@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-project
 status: draft
 created: 2026-08-20
-updated: 2026-08-26
+updated: 2026-10-15
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -45,21 +45,19 @@ The slide deck and the lecture notes deliberately express the same maintained co
 
 A workshop is a documented specialization of the material. Its profile selects modules, sets depth, case studies and language, and adds only what belongs to that single instance, such as schedule, hands-on instructions and venue specifics. Published workshop artefacts may repeat selected explanatory slides so that each event remains usable on its own. Their shared source remains the Full Slide Deck, and a change to common material is reconciled there before the specialised exports are regenerated. Case studies are exchangeable modules of their own (currently Hersch and Zweig for research data and digital editions), so the core of the material stays domain-neutral.
 
-A workshop instance presents that specialization through three surfaces with distinct functions. The Web Module is the primary browser-native learning sequence and lives inside the workshop URL itself; it carries internal navigation, explanatory panels, original diagrams and observable checks, and it precedes the other two surfaces on the page. The Slide Deck remains the editable presentation surface used in delivery. The Lecture Notes remain the expanded reading form for reference and later review. Google artifacts stay linked and embedded where they have been verified. The workshop profile in `workshops/<id>/` and the corresponding vault record supply research context and editorial provenance and are never exposed as a fourth public material type. The register field `web_module` states the availability of the first surface per instance and stays separate from `materials_status`, which governs the release of material actions. The KUG pair carries the installed five-unit pilot and `available`; the remaining six entries carry `in_preparation` until their sources and sequence have been accepted (Research Director decision 2026-08-25; installation formally validated 2026-08-25).
+Workshop profiles and their material remain research and teaching sources in `workshops/`. The public site presents the shared holdings and Preparation without individual event pages.
 
 ## Public learning architecture
 
-The public learning architecture has two general page types: the bilingual landing pages and the bilingual Preparation pages. The landing page presents the five numbered modules as a non-interactive contents index for the Full Slide Deck and as the classification used by workshops and videos. Preparation combines the observable technical setup, the external German AI Coding Literacy foundation and four compact subject introductions: Large Language Models, Prompt Engineering, Knowledge and Context Engineering, and Agentic Engineering. Their public cards carry only accepted titles, icons, topic assignments and route links until their learning objectives and content have been transferred from the existing slides and jointly accepted.
+The public site contains paired landing, Preparation and About pages. The landing page presents the teaching-line introduction, the Full Slide Deck module index, the three maintained teaching resources, Preparation and the Video Library, in that order. Event listings and Learning Routes have been removed by the Research Director on 15 October 2026. Their workshop and product-specific tutorial HTML pages are outside the current public tree; teaching sources under `workshops/`, `slides/` and `script/` remain available.
 
-Compact workshop markers route to stable landing-page fragments. Video Library groups 01 through 04 route to the matching Preparation introduction, while group 05 routes to the Full Slide Deck material. Promptotyping and Scholar-Centred Design belong to Knowledge and Context Engineering. Prompt-effect evaluation is not a teaching unit. The Curated Skills source remains a draft without public placement until the Agentic Engineering introduction is accepted.
+Preparation links to and embeds the existing English Google Slides deck [Preparation · Slides · Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit). Its URL and language are registered in `docs/data/workshops.json` under `preparation`. The paired page labels identify the English teaching language. A visible direct link remains usable if the embedded viewer cannot load. No separate HTML setup curriculum or subject-introduction sequence is maintained on that page.
 
-The landing page places Preparation beside four compact learning routes after the Workshops section. AI Coding Literacy is the available external German curriculum; Claude Code, Codex and Pi are available bilingual Harness introductions using the shared eight-step sequence `goal`, `prerequisites`, `install`, `workspace`, `instructions`, `permissions`, `extensions` and `first-check`. The Pi route keeps harness source, provider configuration and inference location as separate facts. Research Data and Knowledge Work belongs inside the maintained slides and no longer appears as a separate route. Release evidence lives in `journal.md` and Git; the Research Director Log carries the current substantive acceptance boundary.
-
-The canonical names of the three holdings are Full Slide Deck, Full Lecture Notes and Video Playlist. The earlier working name of the document holdings is retired and is not used anywhere in the repo (operator decisions 2026-08-20 and 2026-08-25, rule text in `CLAUDE.md`).
+The workshop records in `docs/data/workshops.json` retain material provenance and do not generate public event pages or navigation. Full-material and video links retain their existing ownership and rights boundaries. External Google files and sharing permissions are unchanged.
 
 ## Languages
 
-Each module carries the source language it was authored in; the other language version is produced by agent translation and counts as canonical only after operator review (operator decision 2026-08-20). The landing page, Preparation, three focused Harness tutorials, About page and every workshop instance are presented through paired English and German static pages. The active installation contains thirteen pairs. Interface language is independent of teaching language, while the register field `language` continues to record the language of the course material (operator decision 2026-08-24, replacing the single-language workshop pages fixed on 2026-08-20).
+The teaching material retains its source language and translations require author review. Landing, Preparation and About have paired English and German interfaces. Both Preparation pages point to the same English Technical Setup deck; interface language does not imply a translated deck.
 
 ## Holdings map
 
@@ -72,9 +70,7 @@ Each module carries the source language it was authored in; the other language v
 | Video Playlist | `https://www.youtube.com/playlist?list=PLXY4kw40KBaY` |
 | Video inventory, playlist order, primary module, related modules and duration | `docs/data/videos.json` |
 | Workshop instance, one folder per instance | `workshops/<id>/` with `profile.md`, `slide-deck.md`, `lecture-notes.md`, `data/` |
-| Workshop Web Module, the browser-native learning sequence | inside the paired workshop pages `docs/workshops/<id>.html` and `docs/workshops/<id>.de.html` |
-| Preparation, technical setup and four compact introductions | `docs/preparation.html`, `docs/preparation.de.html` |
-| AI Harness introductions | paired Claude Code, Codex and Pi routes under `docs/tutorials/` |
+| Preparation, existing Google Slides deck | `docs/preparation.html`, `docs/preparation.de.html` |
 | Curated Skills source pending public placement | `knowledge/drafts/curated-agent-skills-library.md` |
 | Slide exports (PPTX per taught state) | `workshops/<id>/` |
 | Cover images (PNG, 16:9) | `docs/assets/covers/<id>.png` |
@@ -89,7 +85,7 @@ Only upcoming instances live in the working tree. A delivered instance is remove
 
 Two neighbouring DHCraft teaching projects overlap with this line and remain separate sources. Their material can reach the platform through a documented migration, while their ownership, rights and runtime stay where they are (Research Director decision 2026-08-25).
 
-`DigitalHumanitiesCraft/ai-coding-literacy` is an independent published German-language curriculum for researchers without prior programming experience, organised around seven competencies for AI-supported coding. It keeps its own repository contract, its own deployment and its own dataset rights boundary. The compact learning route identifies it as an available external German-language curriculum and links `https://digitalhumanitiescraft.github.io/ai-coding-literacy/de/`. Its competency model may be mapped onto the teaching line, and a reusable definition enters the Full Slide Deck or the Full Lecture Notes only after reconciliation with `terms.md`. Its KCE integration remains a route and source relation; it does not become a numbered KCE module.
+`DigitalHumanitiesCraft/ai-coding-literacy` is an independent published German-language curriculum for researchers without prior programming experience, organised around seven competencies for AI-supported coding. It keeps its own repository contract, its own deployment and its own dataset rights boundary. The independent curriculum remains available at `https://digitalhumanitiescraft.github.io/ai-coding-literacy/de/`. Its competency model may be mapped onto the teaching line, and a reusable definition enters the Full Slide Deck or the Full Lecture Notes only after reconciliation with `terms.md`. Its KCE relation remains a source relation; it does not become a numbered KCE module.
 
 The local folder `DHCraft/ai-literacies` is an unversioned Astro prototype without its own repository, action layer or maintained knowledge directory, so it carries no publication status. It stays read-only input for the migration into Web Modules, and its content and design patterns are re-authored in this design system. Astro, npm dependencies, TypeScript, `node_modules`, its source CSS tokens, its build configuration and its root-relative route system stay outside this repo, because the platform holds its no-build static publication contract. Its `IntersectionObserver` reading pattern may at most inform a progressive enhancement, and the complete learning text stays readable without JavaScript.
 

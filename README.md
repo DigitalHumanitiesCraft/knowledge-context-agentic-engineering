@@ -6,7 +6,7 @@ This repository is the home of a teaching line on working with large language mo
 
 The material is maintained through three holdings, each with its own function. The **Full Slide Deck** is the complete overview of the teaching material in slide form. It serves as a reference work and as the source from which workshop-specific decks are assembled, and it is not presented as one teaching session. The **Full Lecture Notes** are the written-out counterpart of the slides and carry the explanations and context needed for reading and later reference. The **Video Playlist** combines DHCraft videos with selected contributions by others; its deliberate sequence runs from the foundations to more complex topics and forms a structured learning path that is curated, maintained and extended as suitable material appears. All three holdings share the same five modules, and the playlist assigns every entry one primary module.
 
-The public learning architecture keeps two general entry points: the landing page and **Preparation**. Preparation combines a verifiable technical setup with four compact introductions. The five numbered modules remain the structure of the Full Slide Deck and the classification used for workshops and videos; they no longer create five additional overview pages.
+The public platform presents the shared teaching resources and Preparation. Its current scope is described below.
 
 | Module | Title |
 | --- | --- |
@@ -18,7 +18,7 @@ The public learning architecture keeps two general entry points: the landing pag
 
 Every workshop taught from this material is a documented specialization. Its profile selects modules, sets depth, case studies and language, and adds what belongs to that one instance, the schedule, the hands-on instructions and the venue specifics. An improvement to a module therefore reaches every workshop that uses the module, and the core of the material stays domain-neutral because the case studies are exchangeable modules of their own.
 
-Only upcoming instances live in this repository. Once an instance has been taught, its state is tagged and its folder leaves the working tree, so the platform shows what people can still attend. The material stays retrievable in git history under its tag.
+Only upcoming instances live in this repository. Once an instance has been taught, its state is tagged and its folder leaves the working tree, while the public platform presents shared material without individual events. The material stays retrievable in git history under its tag.
 
 ## How the repository is organized
 
@@ -31,19 +31,20 @@ Only upcoming instances live in this repository. Once an instance has been taugh
 | `docs/data/videos.json` | The Video Playlist inventory, including order, primary module, any related modules and duration |
 | `workshops/<id>/` | One folder per upcoming instance, holding `profile.md`, `slide-deck.md`, `lecture-notes.md` and `data/` |
 | `docs/` | The platform (static site, GitHub Pages), including the register `docs/data/workshops.json` and the covers in `docs/assets/covers/` |
-| `docs/preparation.html`, `docs/preparation.de.html` | Technical setup and four compact subject introductions |
-| `docs/tutorials/` | Bilingual AI Harness introductions for Claude Code, Codex and Pi |
+| `docs/preparation.html`, `docs/preparation.de.html` | Existing English Technical Setup deck in Google Slides |
 | `communication/` | The Research Mission Control transport for current briefs, results and recipient state |
 
-Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the register, the workshop folder, the cover file, the subpage and the git tag.
+Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the register, the workshop folder, the cover file, the historical subpage and the git tag.
 
 ## The platform
 
-The platform is a no-build static site in `docs/`; its content and navigation require no JavaScript. The active tree contains 26 HTML files in thirteen English/German pairs. The landing page presents the five Full Slide Deck modules as a non-interactive contents index. Compact workshop markers lead to the stable landing-page module anchors. Preparation carries four compact subject introductions whose public cards contain only accepted labels and routes until their slide-derived teaching content has been reviewed.
+The public site contains paired landing, Preparation and About pages. The landing page presents the teaching-line introduction, the Full Slide Deck module index, the three maintained teaching resources, Preparation and the Video Library, in that order. Event listings and Learning Routes have been removed by the Research Director on 15 October 2026. Their workshop and product-specific tutorial HTML pages are outside the current public tree; teaching sources under `workshops/`, `slides/` and `script/` remain available.
 
-After Workshops, the landing pages place Preparation beside four compact learning routes. AI Coding Literacy is the available external German curriculum. Claude Code, Codex and Pi are local bilingual routes from the Agentic Engineering introduction. Research Data and Knowledge Work belongs to the maintained slides and is not a separate route. The three Harness introductions use a comparable eight-step sequence from purpose and prerequisites to a first reversible check.
+Preparation links to and embeds the existing English Google Slides deck [Preparation · Slides · Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit). Its URL and language are registered in `docs/data/workshops.json` under `preparation`. The paired page labels identify the English teaching language. A visible direct link remains usable if the embedded viewer cannot load. No separate HTML setup curriculum or subject-introduction sequence is maintained on that page.
 
-Release v0.3 is preserved at commit `aa4193378413a9723a2144d155b186b933229435` and tag `v0.3`. The active working tree supersedes its module-hub topology through the Research Director decision of 26 August 2026. The simplified state has passed local formal and browser verification; Research Director acceptance and release remain open.
+The workshop records in `docs/data/workshops.json` retain material provenance and do not generate public event pages or navigation. Full-material and video links retain their existing ownership and rights boundaries. External Google files and sharing permissions are unchanged.
+
+The site remains no-build HTML and CSS. Local changes require author acceptance and a separate publication step.
 
 https://dhcraft.org/knowledge-context-agentic-engineering/
 

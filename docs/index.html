@@ -8,21 +8,6 @@
 <link rel="alternate" hreflang="en" href="index.html">
 <link rel="alternate" hreflang="de" href="index.de.html">
 
-<!--
-  Start page of the platform. Static, no build step, no JavaScript, self-contained
-  except for the Google Fonts stylesheet.
-
-  The workshop section mirrors docs/data/workshops.json by hand, per the decision
-  in knowledge/specification.md that pages stay in sync with the register through
-  the maintaining agent rather than through client-side rendering. After any
-  register change the cards here are updated in the same work step.
-
-  Covers live in assets/covers/<id>.png. All eight exist in the tree; every
-  cover sits in a slot that carries the 16:9 proportion and the tint ground on its
-  own, so a missing file would leave a quiet plate instead of a broken image.
-
--->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -71,7 +56,7 @@
           <span class="term term--m4"><button class="term-trigger" type="button" aria-describedby="term-agentic-definition">Agentic Engineering</button><span class="term-tooltip" id="term-agentic-definition" role="tooltip">Organising extended work across tool use, intermediate results, permissions, feedback and human review.</span></span>, and
           <span class="term term--m5"><button class="term-trigger" type="button" aria-describedby="term-governance-definition">Critical Perspectives and Governance</button><span class="term-tooltip" id="term-governance-definition" role="tooltip">Examining technical limits and social consequences, and defining responsibility and rules for use.</span></span>. The shared Full Slide Deck, two Full Lecture Notes language versions and an ordered Video Playlist carry the material; each workshop selects from these sources and adapts them to a defined field, task and teaching language.
         </p>
-        <p class="hero-preparation">The <a href="preparation.html">preparation tutorial</a> shows you how to set up everything you need to take part in a workshop.</p>
+        <p class="hero-preparation">The <a href="preparation.html">preparation slides</a> show you how to set up everything you need to take part in a workshop.</p>
       </div>
       <aside class="hero-modules" id="modules" aria-labelledby="modules-title">
         <h2 id="modules-title">Full Slide Deck</h2>
@@ -152,461 +137,13 @@
     </div>
   </section>
 
-  <!-- ============ Workshops ============ -->
-  <section class="section" id="workshops">
+<section class="section" id="preparation">
     <div class="wrap">
-      <h2 class="section-title">Workshops</h2>
-      <p class="section-lede">
-        Each workshop is a domain-specific derivation of the Full Slide Deck. It selects and
-        rearranges shared modules, then adds the cases, exercises and sequence required for its
-        event. Some explanations recur deliberately so that every workshop remains usable on its own.
-      </p>
-
-      <!-- Chronological. Mirrors docs/data/workshops.json. -->
-      <ol class="workshop-timeline">
-
-        <!-- 2026-09-16-kug-m3gim -->
-        <li class="timeline-item timeline-item--in-preparation">
-          <div class="timeline-date"><time datetime="2026-09-16"><span class="timeline-date-day">16&ndash;17</span><span class="timeline-date-month">September 2026</span></time></div>
-          <article class="card card--in-preparation">
-          <div class="card-cover">
-            <img src="assets/covers/2026-09-16-kug-m3gim.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <h3><a href="workshops/2026-09-16-kug-m3gim.html">Making Estate Materials Digitally Accessible</a></h3>
-            <dl class="card-meta">
-              <div><dt>Event</dt><dd>KUG Summer School 2026, University of Music and Performing Arts Graz</dd></div>
-              <div><dt>Language</dt><dd>English</dd></div>
-              <div><dt>Licence</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div>
-            </dl>
-            <div class="module-series">
-              <p class="module-series__label" id="modules-2026-09-16-kug-m3gim-label">Modules</p>
-              <ol class="module-series__list" aria-labelledby="modules-2026-09-16-kug-m3gim-label" role="list">
-                <li class="module-series__item m1">
-                  <a class="module-series__link" href="#module-01" aria-label="Module 01: &ldquo;Understanding&rdquo; Large Language Models" data-tooltip="Module 01: &ldquo;Understanding&rdquo; Large Language Models">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">01</span>
-                  </a>
-                </li>
-                <li class="module-series__item m2">
-                  <a class="module-series__link" href="#module-02" aria-label="Module 02: Prompt Engineering" data-tooltip="Module 02: Prompt Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">02</span>
-                  </a>
-                </li>
-                <li class="module-series__item m3">
-                  <a class="module-series__link" href="#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">03</span>
-                  </a>
-                </li>
-                <li class="module-series__item m4">
-                  <a class="module-series__link" href="#module-04" aria-label="Module 04: Agentic Engineering" data-tooltip="Module 04: Agentic Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">04</span>
-                  </a>
-                </li>
-                <li class="module-series__item m5">
-                  <a class="module-series__link" href="#module-05" aria-label="Module 05: Critical Perspectives and Governance" data-tooltip="Module 05: Critical Perspectives and Governance">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">05</span>
-                  </a>
-                </li>
-              </ol>
-            </div>
-            <p class="spec">
-              Four connected sessions follow a complete research data workflow. Stefan Zweig
-              Digital explains the route from estate material to a research platform. The M³GIM
-              hands-on units use large language models for transcription and structured extraction,
-              then turn the checked data into a small digital research application through
-              Promptotyping.
-            </p>
-            <p class="card-foot"><span class="material-state">Slide Deck and Lecture Notes in preparation</span></p>
-          </div>
-          </article>
-        </li>
-
-        <!-- 2026-09-25-clariah-at -->
-        <li class="timeline-item timeline-item--in-preparation">
-          <div class="timeline-date"><time datetime="2026-09-25"><span class="timeline-date-day">25</span><span class="timeline-date-month">September 2026</span></time></div>
-          <article class="card card--in-preparation">
-          <div class="card-cover">
-            <img src="assets/covers/2026-09-25-clariah-at.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <h3><a href="workshops/2026-09-25-clariah-at.html">Knowledge, Context and Agentic Engineering for Research Data Workflows &amp; Digital Editions</a></h3>
-            <dl class="card-meta">
-              <div><dt>Event</dt><dd>CLARIAH-AT Summer School 2026, Machine Learning for Digital Scholarly Editions</dd></div>
-              <div><dt>Language</dt><dd>English</dd></div>
-              <div><dt>Licence</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div>
-            </dl>
-            <div class="module-series">
-              <p class="module-series__label" id="modules-2026-09-25-clariah-at-label">Modules</p>
-              <ol class="module-series__list" aria-labelledby="modules-2026-09-25-clariah-at-label" role="list">
-                <li class="module-series__item m1">
-                  <a class="module-series__link" href="#module-01" aria-label="Module 01: &ldquo;Understanding&rdquo; Large Language Models" data-tooltip="Module 01: &ldquo;Understanding&rdquo; Large Language Models">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">01</span>
-                  </a>
-                </li>
-                <li class="module-series__item m2">
-                  <a class="module-series__link" href="#module-02" aria-label="Module 02: Prompt Engineering" data-tooltip="Module 02: Prompt Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">02</span>
-                  </a>
-                </li>
-                <li class="module-series__item m3">
-                  <a class="module-series__link" href="#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">03</span>
-                  </a>
-                </li>
-                <li class="module-series__item m4">
-                  <a class="module-series__link" href="#module-04" aria-label="Module 04: Agentic Engineering" data-tooltip="Module 04: Agentic Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">04</span>
-                  </a>
-                </li>
-                <li class="module-series__item m5">
-                  <a class="module-series__link" href="#module-05" aria-label="Module 05: Critical Perspectives and Governance" data-tooltip="Module 05: Critical Perspectives and Governance">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">05</span>
-                  </a>
-                </li>
-              </ol>
-            </div>
-            <p class="spec">
-              The single-day specialisation on research data workflows and digital scholarly
-              editions, with case material from two edition projects at the Zentralbibliothek
-              Z&uuml;rich and the Literaturarchiv Salzburg. Prompt engineering is the one module
-              with a participant exercise of its own, and the two hands-on units run from the
-              transcription of a difficult manuscript page to structured information against an
-              explicit schema.
-            </p>
-            <p class="card-foot"><span class="material-state">Slide Deck and Lecture Notes in preparation</span></p>
-          </div>
-          </article>
-        </li>
-
-        <!-- 2026-10-05-hedit-heidelberg -->
-        <li class="timeline-item timeline-item--in-preparation">
-          <div class="timeline-date"><time datetime="2026-10-05"><span class="timeline-date-day">5&ndash;6</span><span class="timeline-date-month">October 2026</span></time></div>
-          <article class="card card--in-preparation">
-          <div class="card-cover">
-            <img src="assets/covers/2026-10-05-hedit-heidelberg.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <h3><a href="workshops/2026-10-05-hedit-heidelberg.html">HEDIT KI-Workshop 2026</a></h3>
-            <dl class="card-meta">
-              <div><dt>Event</dt><dd>Research Centre HEDIT, Heidelberg University</dd></div>
-              <div><dt>Language</dt><dd>German</dd></div>
-              <div><dt>Licence</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div>
-            </dl>
-            <div class="module-series">
-              <p class="module-series__label" id="modules-2026-10-05-hedit-heidelberg-label">Modules</p>
-              <ol class="module-series__list" aria-labelledby="modules-2026-10-05-hedit-heidelberg-label" role="list">
-                <li class="module-series__item m1">
-                  <a class="module-series__link" href="#module-01" aria-label="Module 01: &ldquo;Understanding&rdquo; Large Language Models" data-tooltip="Module 01: &ldquo;Understanding&rdquo; Large Language Models">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">01</span>
-                  </a>
-                </li>
-                <li class="module-series__item m2">
-                  <a class="module-series__link" href="#module-02" aria-label="Module 02: Prompt Engineering" data-tooltip="Module 02: Prompt Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">02</span>
-                  </a>
-                </li>
-                <li class="module-series__item m3">
-                  <a class="module-series__link" href="#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">03</span>
-                  </a>
-                </li>
-                <li class="module-series__item m4">
-                  <a class="module-series__link" href="#module-04" aria-label="Module 04: Agentic Engineering" data-tooltip="Module 04: Agentic Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">04</span>
-                  </a>
-                </li>
-              </ol>
-            </div>
-            <p class="spec">
-              Two days for an editions research centre, with TEI modelling, Context Engineering
-              and the knowledge base as steering instruments on the first day and agentic coding
-              as the central method. The second day is a two-part Promptotyping workshop on the
-              participants' own material, ending in a plenary presentation of the prototypes.
-            </p>
-            <p class="card-foot"><span class="material-state">Slide Deck and Lecture Notes in preparation</span></p>
-          </div>
-          </article>
-        </li>
-
-        <!-- 2026-10-08-fachschaft-mittelalterstudien-heidelberg -->
-        <li class="timeline-item timeline-item--in-preparation">
-          <div class="timeline-date"><time datetime="2026-10-08"><span class="timeline-date-day">8</span><span class="timeline-date-month">October 2026</span></time></div>
-          <article class="card card--in-preparation">
-          <div class="card-cover">
-            <img src="assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <h3><a href="workshops/2026-10-08-fachschaft-mittelalterstudien-heidelberg.html">Knowledge, Context und Agentic Engineering f&uuml;r die Forschung</a></h3>
-            <dl class="card-meta">
-              <div><dt>Event</dt><dd>Medieval Studies Student Council, Heidelberg University</dd></div>
-              <div><dt>Language</dt><dd>German</dd></div>
-              <div><dt>Licence</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div>
-            </dl>
-            <div class="module-series">
-              <p class="module-series__label" id="modules-2026-10-08-fachschaft-mittelalterstudien-heidelberg-label">Modules</p>
-              <ol class="module-series__list" aria-labelledby="modules-2026-10-08-fachschaft-mittelalterstudien-heidelberg-label" role="list">
-                <li class="module-series__item m1">
-                  <a class="module-series__link" href="#module-01" aria-label="Module 01: &ldquo;Understanding&rdquo; Large Language Models" data-tooltip="Module 01: &ldquo;Understanding&rdquo; Large Language Models">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">01</span>
-                  </a>
-                </li>
-                <li class="module-series__item m2">
-                  <a class="module-series__link" href="#module-02" aria-label="Module 02: Prompt Engineering" data-tooltip="Module 02: Prompt Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">02</span>
-                  </a>
-                </li>
-                <li class="module-series__item m3">
-                  <a class="module-series__link" href="#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">03</span>
-                  </a>
-                </li>
-                <li class="module-series__item m4">
-                  <a class="module-series__link" href="#module-04" aria-label="Module 04: Agentic Engineering" data-tooltip="Module 04: Agentic Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">04</span>
-                  </a>
-                </li>
-                <li class="module-series__item m5">
-                  <a class="module-series__link" href="#module-05" aria-label="Module 05: Critical Perspectives and Governance" data-tooltip="Module 05: Critical Perspectives and Governance">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">05</span>
-                  </a>
-                </li>
-              </ol>
-            </div>
-            <p class="spec">
-              One day worked inside a coding agent throughout, opening on language model and
-              agent fundamentals. Participants build structured project knowledge and then run
-              the arc from handwriting recognition on medieval charters through TEI markup and an
-              index of persons and organisations to a small static edition, checking a prepared
-              model transcription against the facsimile.
-            </p>
-            <p class="card-foot"><span class="material-state">Slide Deck and Lecture Notes in preparation</span></p>
-          </div>
-          </article>
-        </li>
-
-        <!-- 2026-10-15-gda-goettingen -->
-        <li class="timeline-item timeline-item--in-preparation">
-          <div class="timeline-date"><time datetime="2026-10-15"><span class="timeline-date-day">15</span><span class="timeline-date-month">October 2026</span></time><p class="timeline-date-detail">Half day &middot; hybrid</p></div>
-          <article class="card card--in-preparation">
-          <div class="card-cover">
-            <img src="assets/covers/2026-10-15-gda-goettingen.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <h3><a href="workshops/2026-10-15-gda-goettingen.html">Generative KI f&uuml;r Datenaufbereitung, Datenmigration und die Pflege von Interfaces</a></h3>
-            <dl class="card-meta">
-              <div><dt>Event</dt><dd>G&ouml;ttingen Digital Academy, G&ouml;ttingen Academy of Sciences and Humanities</dd></div>
-              <div><dt>Language</dt><dd>German</dd></div>
-              <div><dt>Licence</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div>
-            </dl>
-            <div class="module-series">
-              <p class="module-series__label" id="modules-2026-10-15-gda-goettingen-label">Modules</p>
-              <ol class="module-series__list" aria-labelledby="modules-2026-10-15-gda-goettingen-label" role="list">
-                <li class="module-series__item m1">
-                  <a class="module-series__link" href="#module-01" aria-label="Module 01: &ldquo;Understanding&rdquo; Large Language Models" data-tooltip="Module 01: &ldquo;Understanding&rdquo; Large Language Models">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">01</span>
-                  </a>
-                </li>
-                <li class="module-series__item m2">
-                  <a class="module-series__link" href="#module-02" aria-label="Module 02: Prompt Engineering" data-tooltip="Module 02: Prompt Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">02</span>
-                  </a>
-                </li>
-                <li class="module-series__item m3">
-                  <a class="module-series__link" href="#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">03</span>
-                  </a>
-                </li>
-                <li class="module-series__item m4">
-                  <a class="module-series__link" href="#module-04" aria-label="Module 04: Agentic Engineering" data-tooltip="Module 04: Agentic Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">04</span>
-                  </a>
-                </li>
-                <li class="module-series__item m5">
-                  <a class="module-series__link" href="#module-05" aria-label="Module 05: Critical Perspectives and Governance" data-tooltip="Module 05: Critical Perspectives and Governance">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">05</span>
-                  </a>
-                </li>
-              </ol>
-            </div>
-            <p class="spec">
-              A hybrid half day on agent-supported preparation and migration of research data and
-              on the semi-automated maintenance of interfaces and endpoints. Three existing
-              project pipelines carry the case material, and the hands-on has participants build a
-              small knowledge base for their own data and commission a bounded task from an agent.
-            </p>
-            <p class="card-foot"><span class="material-state">Slide Deck and Lecture Notes in preparation</span></p>
-          </div>
-          </article>
-        </li>
-
-        <!-- 2026-11-09-ufl -->
-        <li class="timeline-item timeline-item--in-preparation">
-          <div class="timeline-date"><time datetime="2026-11-09"><span class="timeline-date-day">9&ndash;10</span><span class="timeline-date-month">November 2026</span></time><p class="timeline-date-detail">3 &times; 2 hours</p></div>
-          <article class="card card--in-preparation">
-          <div class="card-cover">
-            <img src="assets/covers/2026-11-09-ufl.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <h3><a href="workshops/2026-11-09-ufl.html">Agentic-Engineering-Workshop</a></h3>
-            <dl class="card-meta">
-              <div><dt>Event</dt><dd>UNI for LIFE, University of Graz</dd></div>
-              <div><dt>Language</dt><dd>German</dd></div>
-              <div><dt>Licence</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div>
-            </dl>
-            <div class="module-series">
-              <p class="module-series__label" id="modules-2026-11-09-ufl-label">Modules</p>
-              <ol class="module-series__list" aria-labelledby="modules-2026-11-09-ufl-label" role="list">
-                <li class="module-series__item m1">
-                  <a class="module-series__link" href="#module-01" aria-label="Module 01: &ldquo;Understanding&rdquo; Large Language Models" data-tooltip="Module 01: &ldquo;Understanding&rdquo; Large Language Models">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">01</span>
-                  </a>
-                </li>
-                <li class="module-series__item m2">
-                  <a class="module-series__link" href="#module-02" aria-label="Module 02: Prompt Engineering" data-tooltip="Module 02: Prompt Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">02</span>
-                  </a>
-                </li>
-                <li class="module-series__item m3">
-                  <a class="module-series__link" href="#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">03</span>
-                  </a>
-                </li>
-                <li class="module-series__item m4">
-                  <a class="module-series__link" href="#module-04" aria-label="Module 04: Agentic Engineering" data-tooltip="Module 04: Agentic Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">04</span>
-                  </a>
-                </li>
-                <li class="module-series__item m5">
-                  <a class="module-series__link" href="#module-05" aria-label="Module 05: Critical Perspectives and Governance" data-tooltip="Module 05: Critical Perspectives and Governance">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">05</span>
-                  </a>
-                </li>
-              </ol>
-            </div>
-            <p class="spec">
-              Three compact units for knowledge work beyond academia, with the emphasis on
-              steering agentic work. The first unit covers setup, terminal and permissions, the
-              second builds a knowledge base and defines human control points for document and
-              application work, and the third moves into light coding and small prototypes on a
-              synthetic institutional scenario.
-            </p>
-            <p class="card-foot"><span class="material-state">Slide Deck and Lecture Notes in preparation</span></p>
-          </div>
-          </article>
-        </li>
-
-        <!-- 2026-11-23-vetmed-ai-academy -->
-        <li class="timeline-item timeline-item--in-preparation">
-          <div class="timeline-date"><time datetime="2026-11-23"><span class="timeline-date-day">23&ndash;27</span><span class="timeline-date-month">November 2026</span></time></div>
-          <article class="card card--in-preparation">
-          <div class="card-cover">
-            <img src="assets/covers/2026-11-23-vetmed-ai-academy.png" alt="" width="960" height="540" loading="lazy" decoding="async">
-          </div>
-          <div class="card-body">
-            <h3><a href="workshops/2026-11-23-vetmed-ai-academy.html">AI Academy</a></h3>
-            <dl class="card-meta">
-              <div><dt>Event</dt><dd>University of Veterinary Medicine Vienna</dd></div>
-              <div><dt>Language</dt><dd>German</dd></div>
-              <div><dt>Licence</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd></div>
-            </dl>
-            <div class="module-series">
-              <p class="module-series__label" id="modules-2026-11-23-vetmed-ai-academy-label">Modules</p>
-              <ol class="module-series__list" aria-labelledby="modules-2026-11-23-vetmed-ai-academy-label" role="list">
-                <li class="module-series__item m1">
-                  <a class="module-series__link" href="#module-01" aria-label="Module 01: &ldquo;Understanding&rdquo; Large Language Models" data-tooltip="Module 01: &ldquo;Understanding&rdquo; Large Language Models">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">01</span>
-                  </a>
-                </li>
-                <li class="module-series__item m2">
-                  <a class="module-series__link" href="#module-02" aria-label="Module 02: Prompt Engineering" data-tooltip="Module 02: Prompt Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">02</span>
-                  </a>
-                </li>
-                <li class="module-series__item m3">
-                  <a class="module-series__link" href="#module-03" aria-label="Module 03: Knowledge and Context Engineering" data-tooltip="Module 03: Knowledge and Context Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">03</span>
-                  </a>
-                </li>
-                <li class="module-series__item m4">
-                  <a class="module-series__link" href="#module-04" aria-label="Module 04: Agentic Engineering" data-tooltip="Module 04: Agentic Engineering">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">04</span>
-                  </a>
-                </li>
-                <li class="module-series__item m5">
-                  <a class="module-series__link" href="#module-05" aria-label="Module 05: Critical Perspectives and Governance" data-tooltip="Module 05: Critical Perspectives and Governance">
-                    <span class="module-series__icon module-icon" aria-hidden="true"></span>
-                    <span class="module-series__number" aria-hidden="true">05</span>
-                  </a>
-                </li>
-              </ol>
-            </div>
-            <p class="spec">
-              A five-day block week for staff without a coding background, and the fullest
-              derivation of the material among the registered instances. Every module is taught in
-              full, with an exercise each day and one application project from the participants'
-              own working area running through the week, from the chat interface through the
-              terminal to an agent harness with local models.
-            </p>
-            <p class="card-foot"><span class="material-state">Slide Deck and Lecture Notes in preparation</span></p>
-          </div>
-          </article>
-        </li>
-
-      </ol>
-    </div>
-  </section>
-
-  <section class="section preparation-routes" id="preparation">
-    <div class="wrap preparation-routes__grid">
       <article class="preparation-summary">
-        <p class="eyebrow">Before a workshop</p>
         <h2 class="section-title">Preparation</h2>
-        <p>The guide connects browser access, a local workspace and one AI Harness through observable checks. It also holds the four compact subject introductions that we will develop from the existing slides.</p>
+        <p>The preparation slides cover Python, Visual Studio Code and an AI Harness, with a practical setup exercise. The slides are in English.</p>
         <p><a class="preparation-summary__action" href="preparation.html">Open Preparation</a></p>
       </article>
-      <aside class="compact-routes" id="deep-dives" aria-labelledby="learning-routes-title">
-        <p class="eyebrow">Continue learning</p>
-        <h2 class="section-title" id="learning-routes-title">Learning Routes</h2>
-        <ul class="compact-route-list">
-          <li><a class="compact-route-card" href="https://digitalhumanitiescraft.github.io/ai-coding-literacy/de/"><img src="assets/routes/ai-coding-literacy.svg" alt="" width="40" height="40"><span><small>External curriculum · available</small><strong>AI Coding Literacy <span aria-hidden="true">↗</span></strong></span></a></li>
-          <li><a class="compact-route-card" href="tutorials/claude-code.html"><img src="assets/routes/claude-code.svg" alt="" width="40" height="40"><span><small>AI Harness introduction</small><strong>Claude Code</strong></span></a></li>
-          <li><a class="compact-route-card" href="tutorials/codex.html"><img src="assets/routes/codex.svg" alt="" width="40" height="40"><span><small>AI Harness introduction</small><strong>Codex</strong></span></a></li>
-          <li><a class="compact-route-card" href="tutorials/pi.html"><img src="assets/routes/pi-local.svg" alt="" width="40" height="40"><span><small>AI Harness introduction</small><strong>Pi with a local model</strong></span></a></li>
-        </ul>
-      </aside>
     </div>
   </section>
 
@@ -617,7 +154,6 @@
       <div class="video-library">
         <details class="video-module m1" id="video-module-01" open>
           <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">01</span> <span class="video-module__title">Understanding Large Language Models</span> <span class="video-module__count">(5 videos)</span></summary>
-          <p class="video-module__hub-link"><a href="preparation.html#large-language-models">Open compact introduction</a></p>
           <ol class="video-grid" role="list">
             <li class="video-card">
               <a class="video-card__link" href="https://www.youtube.com/watch?v=-0HRzXk8vlk">
@@ -668,7 +204,6 @@
         </details>
         <details class="video-module m2" id="video-module-02">
           <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">02</span> <span class="video-module__title">Prompt Engineering</span> <span class="video-module__count">(1 video)</span></summary>
-          <p class="video-module__hub-link"><a href="preparation.html#prompt-engineering">Open compact introduction</a></p>
           <ol class="video-grid" role="list">
             <li class="video-card">
               <a class="video-card__link" href="https://www.youtube.com/watch?v=Sj3F4oPWB8A">
@@ -683,7 +218,6 @@
         </details>
         <details class="video-module m3" id="video-module-03">
           <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">03</span> <span class="video-module__title">Knowledge and Context Engineering</span> <span class="video-module__count">(6 videos)</span></summary>
-          <p class="video-module__hub-link"><a href="preparation.html#knowledge-context-engineering">Open compact introduction</a></p>
           <ol class="video-grid" role="list">
             <li class="video-card">
               <a class="video-card__link" href="https://www.youtube.com/watch?v=Qx0fCqpkBus">
@@ -743,7 +277,6 @@
         </details>
         <details class="video-module m4" id="video-module-04">
           <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">04</span> <span class="video-module__title">Agentic Engineering</span> <span class="video-module__count">(22 videos)</span></summary>
-          <p class="video-module__hub-link"><a href="preparation.html#agentic-engineering">Open compact introduction</a></p>
           <ol class="video-grid" role="list">
             <li class="video-card">
               <a class="video-card__link" href="https://www.youtube.com/watch?v=k5jYwyhDMxA">
