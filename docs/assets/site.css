@@ -77,6 +77,7 @@
   /* --- Layout ----------------------------------------------------------- */
   --measure: 60ch;           /* reading width for prose */
   --page: 1160px;
+  --page-content: 52rem;
   --radius: 3px;
   --tap: 2.75rem;
   --tap-compact: 2.5rem;
@@ -162,6 +163,8 @@ img { max-width: 100%; height: auto; }
   padding-top: var(--gap-section);
   scroll-margin-top: var(--s4);
 }
+
+main .wrap { max-width: var(--page-content); }
 
 .section-title { font-size: var(--text-section); }
 
@@ -309,18 +312,14 @@ img { max-width: 100%; height: auto; }
   color: var(--ink);
 }
 
-/* ==========================================================================
-   HERO
-   The title and abstract form the reading column; the five module titles form
-   the compact index beside it.
-   ========================================================================== */
+/* The introduction and module index share one reading direction. */
 .hero { padding-block: clamp(var(--s4), 4vw, var(--s5)) var(--s4); }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(18rem, 0.8fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
-  gap: var(--s4) var(--s6);
+  gap: var(--s4);
 }
 
 .hero h1 {
@@ -415,13 +414,6 @@ img { max-width: 100%; height: auto; }
 
 .hero-modules {
   scroll-margin-top: var(--s4);
-}
-
-@media (min-width: 861px) {
-  .hero-modules {
-    align-self: center;
-    padding-inline-start: var(--s3);
-  }
 }
 
 .hero-modules h2 {
@@ -1374,13 +1366,10 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 }
 .table .lvl { color: var(--ink); font-family: var(--font-mono); font-size: var(--text-md); white-space: nowrap; }
 
-/* ===========================================================================
-   START PAGE RESOURCES
-   The three maintained teaching holdings use separate marks and equal cards.
-   ========================================================================== */
+/* Material entries follow the same reading order at every width. */
 .resource-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   align-items: stretch;
   gap: var(--s3);
   margin-top: var(--s4);
@@ -1420,14 +1409,6 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
   min-width: 0;
 }
 
-.resource-kind {
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .resource-card h3 {
   margin-top: var(--s1);
   font-size: var(--text-card);
@@ -1446,7 +1427,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 .resource-card h3 a:hover,
 .resource-card h3 a:focus-visible { color: var(--accent); }
 
-.resource-copy > p:not(.resource-kind, .resource-links) {
+.resource-copy > p:not(.resource-links) {
   margin-top: var(--s2);
   color: var(--ink-2);
   font-size: var(--text-lg);
@@ -1469,8 +1450,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 }
 
 .resource-card > .resource-actions {
-  margin-top: auto;
-  padding-top: var(--s2);
+  margin-top: var(--s2);
 }
 
 .resource-editions {
@@ -1584,7 +1564,7 @@ a.resource-action:focus-visible {
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--s2);
   min-width: 0;
   margin: 0;
@@ -2704,10 +2684,6 @@ a.resource-action:focus-visible {
 /* ==========================================================================
    NARROW VIEWPORTS AND PREFERENCES
    ========================================================================== */
-@media (max-width: 1180px) {
-  .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
 @media (max-width: 1020px) {
   .site-head > .wrap { align-items: flex-start; }
   .site-identity { flex-basis: 100%; max-width: 38rem; }
@@ -2774,8 +2750,6 @@ a.resource-action:focus-visible {
 }
 
 @media (max-width: 860px) {
-  .hero-grid { grid-template-columns: 1fr; gap: var(--s4); }
-  .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   /* The cover moves above the panel, keeping its proportion. */
   .card { grid-template-columns: 1fr; }
   .card-cover {
@@ -2800,7 +2774,6 @@ a.resource-action:focus-visible {
 }
 
 @media (max-width: 780px) {
-  .resource-grid { grid-template-columns: minmax(0, 1fr); }
   .web-module__unit { grid-template-columns: minmax(0, 1fr); }
   .web-module__unit-head { grid-column: auto; }
   .preparation-page .tutorial-panel {
@@ -2852,7 +2825,8 @@ a.resource-action:focus-visible {
   .foot-nav ul { grid-template-columns: minmax(0, 1fr); }
   .media-frame.reader { min-height: 460px; }
   .resource-card { padding: var(--s2); }
-  .resource-summary { grid-template-columns: 4.5rem minmax(0, 1fr); }
+  .resource-summary { grid-template-columns: minmax(0, 1fr); }
+  .resource-mark { display: none; }
   .resource-action { padding-inline: 0.5em; }
   .module-series__label { flex-basis: 100%; }
   .video-module__summary { padding-inline: var(--s2); }

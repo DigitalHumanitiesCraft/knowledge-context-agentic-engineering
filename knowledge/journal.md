@@ -26,6 +26,12 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-10-15 integrated · Vertical reading flow
+
+The author requested less horizontal layout before further interface and content work. The introduction, module index and material entries now follow one column on both language pages. Main content has a bounded width, material actions follow their descriptions, and video groups use at most two columns. Narrow material entries hide decorative marks to preserve reading width. The redundant Complete material labels are removed; this does not establish substantive acceptance of the linked material. The design contract records the change.
+
+Verification checked balanced markup, unique identifiers, local links and fragments, JSON parsing and Git whitespace. Browser observation showed stacked content and no page overflow at measured viewport widths of 1533, 552 and 369 CSS pixels. The material anchor was activated with Enter; the English page and the return to the German preview were observed. The narrow decorative-mark rule was confirmed in computed styles and the final German screenshot. Existing focus, coarse-pointer and reduced-motion rules remain in the stylesheet and were inspected in source. A complete keyboard traversal, 200-percent zoom and renewed contrast measurements were not performed. This is a local interface revision; content acceptance and publication remain separate.
+
 ### 2026-10-15 integrated · Single-page material site
 
 The author rejected generic arrow-back navigation and requested compact About information at the beginning of the main page. The English and German pages now integrate publisher, funding and maintenance information into the introduction. Preparation embeds its existing deck in the main page. Section navigation replaces page navigation, the separate About and Preparation HTML files are retired, and the footer retains the external legal notice and licence scope. This implements a static single-page site without a JavaScript router. HTML checks passed for both pages, including balanced elements, unique identifiers, local assets and fragment targets. Browser inspection covered the wide English entry, German language switching, Enter activation of the Preparation anchor and narrow layout without horizontal overflow. The existing viewer loaded inside the page. Browser zoom at 200 percent and a renewed contrast measurement were not performed; styles were unchanged. Content acceptance and publication remain separate.
