@@ -26,11 +26,11 @@ This plan carries accepted future work and its entry and exit conditions. The Re
 
 ## Current milestone
 
-Review the simplified material site requested on 15 October 2026. The current public contract lives in `specification.md`; Preparation uses the existing Google Slides deck. Publication remains a separate author decision.
+Review the simplified material site requested on 15 October 2026. The current public contract lives in `specification.md`; Preparation embeds the existing Google Slides deck in the main page, and About is integrated into the opening paragraph. Publication remains a separate author decision.
 
 ## Active sequence
 
-- Verify the paired landing and Preparation pages and collect the author's visual feedback.
+- Verify the paired single pages and collect the author's visual feedback.
 - Continue the separate terminology and teaching-content review of the Full Slide Deck and Full Lecture Notes.
 - Maintain workshop source material for actual teaching assignments without recreating individual event pages or Learning Routes.
 - Reconcile the Director Log against the reduced public scope before presenting another acceptance list. Former event-page, cover and tutorial gates do not block this surface.

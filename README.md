@@ -31,16 +31,16 @@ Only upcoming instances live in this repository. Once an instance has been taugh
 | `docs/data/videos.json` | The Video Playlist inventory, including order, primary module, any related modules and duration |
 | `workshops/<id>/` | One folder per upcoming instance, holding `profile.md`, `slide-deck.md`, `lecture-notes.md` and `data/` |
 | `docs/` | The platform (static site, GitHub Pages), including the register `docs/data/workshops.json` and the covers in `docs/assets/covers/` |
-| `docs/preparation.html`, `docs/preparation.de.html` | Existing English Technical Setup deck in Google Slides |
+| `docs/index.html#preparation`, `docs/index.de.html#preparation` | Existing English Technical Setup deck in Google Slides |
 | `communication/` | The Research Mission Control transport for current briefs, results and recipient state |
 
 Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the register, the workshop folder, the cover file, the historical subpage and the git tag.
 
 ## The platform
 
-The public site contains paired landing, Preparation and About pages. The landing page presents the teaching-line introduction, the Full Slide Deck module index, the three maintained teaching resources, Preparation and the Video Library, in that order. Event listings and Learning Routes have been removed by the Research Director on 15 October 2026. Their workshop and product-specific tutorial HTML pages are outside the current public tree; teaching sources under `workshops/`, `slides/` and `script/` remain available.
+The public site is one static page per language, `index.html` and `index.de.html`. A compact paragraph in the opening section explains DHCraft, workshop funding and public maintenance. The page then presents the shared teaching materials, the embedded Preparation deck and the Video Library. Header links target these sections. There are no separate About or Preparation pages and no generic arrow-back links. The canonical legal notice remains linked in the footer, together with the licence scope. Event listings and Learning Routes remain retired; teaching sources are unchanged.
 
-Preparation links to and embeds the existing English Google Slides deck [Preparation · Slides · Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit). Its URL and language are registered in `docs/data/workshops.json` under `preparation`. The paired page labels identify the English teaching language. A visible direct link remains usable if the embedded viewer cannot load. No separate HTML setup curriculum or subject-introduction sequence is maintained on that page.
+Preparation links to and embeds the existing English Google Slides deck [Preparation · Slides · Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit). Its URL and language are registered in `docs/data/workshops.json` under `preparation`. Both language versions identify the English teaching language. A visible direct link remains usable if the embedded viewer cannot load. No separate HTML setup curriculum or subject-introduction sequence is maintained in that section.
 
 The workshop records in `docs/data/workshops.json` retain material provenance and do not generate public event pages or navigation. Full-material and video links retain their existing ownership and rights boundaries. External Google files and sharing permissions are unchanged.
 

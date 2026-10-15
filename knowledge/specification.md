@@ -26,9 +26,9 @@ Requirements for the public platform (`docs/`, GitHub Pages) and the carrying re
 
 ## Current public contract
 
-The public site contains paired landing, Preparation and About pages. The landing page presents the teaching-line introduction, the Full Slide Deck module index, the three maintained teaching resources, Preparation and the Video Library, in that order. Event listings and Learning Routes have been removed by the Research Director on 15 October 2026. Their workshop and product-specific tutorial HTML pages are outside the current public tree; teaching sources under `workshops/`, `slides/` and `script/` remain available.
+The public site is one static page per language, `index.html` and `index.de.html`. A compact paragraph in the opening section explains DHCraft, workshop funding and public maintenance. The page then presents the shared teaching materials, the embedded Preparation deck and the Video Library. Header links target these sections. There are no separate About or Preparation pages and no generic arrow-back links. The canonical legal notice remains linked in the footer, together with the licence scope. Event listings and Learning Routes remain retired; teaching sources are unchanged.
 
-Preparation links to and embeds the existing English Google Slides deck [Preparation · Slides · Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit). Its URL and language are registered in `docs/data/workshops.json` under `preparation`. The paired page labels identify the English teaching language. A visible direct link remains usable if the embedded viewer cannot load. No separate HTML setup curriculum or subject-introduction sequence is maintained on that page.
+Preparation links to and embeds the existing English Google Slides deck [Preparation · Slides · Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit). Its URL and language are registered in `docs/data/workshops.json` under `preparation`. Both language versions identify the English teaching language. A visible direct link remains usable if the embedded viewer cannot load. No separate HTML setup curriculum or subject-introduction sequence is maintained in that section.
 
 The workshop records in `docs/data/workshops.json` retain material provenance and do not generate public event pages or navigation. Full-material and video links retain their existing ownership and rights boundaries. External Google files and sharing permissions are unchanged.
 
@@ -36,9 +36,9 @@ The workshop records in `docs/data/workshops.json` retain material provenance an
 
 - Both language versions expose the same material, Preparation and Video Library structure, without workshop listings, dates, Learning Routes or links to retired pages.
 - Preparation's registered Google Slides target agrees with the direct link and embedded viewer on both pages. The visible English-language note does not claim a translation.
-- All local links, assets, language counterparts and fragment targets resolve. Pages retain one H1, one main landmark, keyboard bypass links, visible focus, responsive media and the existing shared navigation and footer.
-- The existing resource descriptions, module semantics, video order, external-preview disclosure and About/licensing information remain intact. The page remains usable without JavaScript.
-- Wide and narrow browser checks cover the material-to-Preparation transition and the Preparation page. Structural checks and observed rendering are distinct from author acceptance and publication.
+- All local links, assets, language counterparts and fragment targets resolve. Pages retain one H1, one main landmark, keyboard bypass links, visible focus, responsive media and the section navigation and footer.
+- The existing resource descriptions, module semantics, video order, external-preview disclosure and compact About information and the licence scope remain available. The page remains usable without JavaScript.
+- Wide and narrow browser checks cover the material-to-Preparation transition and the embedded viewer. Structural checks and observed rendering are distinct from author acceptance and publication.
 
 ## Historical August platform contract
 

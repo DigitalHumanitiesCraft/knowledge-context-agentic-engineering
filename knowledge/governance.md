@@ -66,7 +66,7 @@ The working tree carries only upcoming instances (operator decision 2026-08-20).
 
 ## Rights and licensing
 
-No facsimiles in this repo; image rights of the Hersch and Zweig material remain with the source projects, which are linked. No third-party personal data; workshop participant data is never stored here. The public pages and original text are licensed CC BY 4.0 (operator decision 2026-08-20). The register records this scope as `page-and-original-text`, and this document and the rights explanation of the About pages carry the same wording. A public card shows the linked identifier `CC BY 4.0` alone, because the card is a compact metadata surface and the exact scope belongs where it can be read in full (Research Director decision 2026-08-25). Each Slide Deck is checked individually for embedded third-party image rights before the licence is extended to the complete material artefact.
+No facsimiles in this repo; image rights of the Hersch and Zweig material remain with the source projects, which are linked. No third-party personal data; workshop participant data is never stored here. The public pages and original text are licensed CC BY 4.0 (operator decision 2026-08-20). The register records this scope as `page-and-original-text`, and this document and the licence explanation in the footer carry the same wording. A public card shows the linked identifier `CC BY 4.0` alone, because the card is a compact metadata surface and the exact scope belongs where it can be read in full (Research Director decision 2026-08-25). Each Slide Deck is checked individually for embedded third-party image rights before the licence is extended to the complete material artefact.
 
 ## Journal and privacy
 
