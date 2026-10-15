@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
 status: draft
 created: 2026-08-20
-updated: 2026-08-25
+updated: 2026-10-15
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -36,6 +36,10 @@ This knowledge base documents the teaching-material contract, public platform, t
 | `journal.md` | Provenance | Which substantive transition moved from which source into which target? | integrated, rejected, corrected or condensed transitions |
 | `plan.md` | Plan | Which accepted future work is next and what proves its completion? | milestone entry, exit or dependency changes |
 | `handoff.md` | Process Inbox | Which received deltas still require verification or integration? | receipt or disposition of a handoff point |
+
+## Teaching proposals
+
+- [Verification, Validation und Acceptance](../script/drafts/verification-validation-acceptance-de.md) proposes a German teaching section, slide sequence and edition exercise, grounded in the existing Full Lecture Notes and checked against the current Google sources. Author acceptance is pending.
 
 ## Storage zones
 

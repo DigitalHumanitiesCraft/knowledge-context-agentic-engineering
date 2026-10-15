@@ -153,3 +153,13 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 ## Deliberately absent
 
 The current interface release, the About integration, the Research Mission Control documentation and the commit and push of that change set carry no entry, because the Research Director has already authorised them. The earlier question about publishing `docs/drafts/` is obsolete, since the superseded prototypes now live under `knowledge/drafts/platform-prototypes/` outside the published tree.
+
+## RD-025 Verification, Validation and Acceptance teaching section
+
+- **Type**: Acceptance
+- **Status**: open
+- **Required contribution**: Accept or correct the German lecture text, slide sequence and edition exercise in `script/drafts/verification-validation-acceptance-de.md`.
+- **Recommendation**: Retain the Full Lecture Notes terminology and name schema validation explicitly as a formal check. Preserve the distinction between technical evidence, domain judgement and purpose-bound acceptance.
+- **Basis**: The proposal records the local and current Google source comparison, including the inconsistent figure caption and the older CLARIAH mapping.
+- **Effect**: Authorises integration of this bounded section after the identified corrections. Other term decisions, material sections, native slide design and publication remain separate.
+- **Write-back**: The German Full Lecture Notes, the corresponding slide text, `knowledge/terms.md` where the decision affects its wording, and `knowledge/journal.md`.

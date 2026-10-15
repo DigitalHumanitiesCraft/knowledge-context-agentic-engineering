@@ -26,6 +26,10 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-10-15 integrated · Bounded teaching-section proposal
+
+The author commissioned preparation of one concrete KCE section alongside ACTIVE-WORK triage. The existing checking vocabulary was compared across German and English Full Lecture Notes, terms.md, the older CLARIAH profile and the native Full Slide Deck. Read-only Google retrieval confirmed that the German figure caption still uses Deterministic Validation beside the glossary's Technical Verification. The prepared German proposal under script/drafts connects a lecture text, slide sequence and explicit teaching scenario. INDEX.md routes to it and plan.md names the bounded acceptance. The proposal establishes no accepted terminology, cloud edit, executed edition test or publication state.
+
 ### 2026-10-15 corrected · Acceptance register after scope reduction
 
 On the author's instruction to reconcile project knowledge, the Director Log was checked against the single-page implementation and the decisions recorded earlier today. RD-003, RD-007, RD-010, RD-014, RD-018, RD-020, RD-021 and RD-023 leave the active register because they request removed event pages, cover motifs, HTML Preparation assets or retired learning routes. Their closure records withdrawal of that scope, not substantive acceptance of their content. Existing source material and historical drafts remain available in the repository and Git.
