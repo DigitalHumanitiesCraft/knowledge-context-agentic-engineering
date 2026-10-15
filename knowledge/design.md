@@ -84,7 +84,7 @@ The series uses one domain-bearing object per cover. Shared concepts are encoded
 - A green registration detail carries verification or governance where the subject requires it.
 - The workshop domain determines the main object, including opera archive, scholarly codex, edition workstation, medieval charter, research-software workbench, professional document instrument and veterinary tissue specimen.
 
-The current PNG files remain visible placeholders while the motif briefs are reviewed. Their generator defaults include pseudo-lettering, chart furniture, character-like agent forms and domain objects that require correction. `knowledge/drafts/cover-image-prompts.md` records the revised motif contract for later regeneration. The medieval-studies cover preserves its small Claude Code agent figure as an identity reference. The VetMed motif requires confirmation of the equine hoof-lamellae case before generation because the workshop profile does not yet establish that example.
+The PNG files remain unused historical assets after the removal of event cards on 15 October 2026. The former motif review is closed as superseded by that scope decision. Their generator defaults include pseudo-lettering, chart furniture, character-like agent forms and domain objects that require correction. `knowledge/drafts/cover-image-prompts.md` records the revised motif contract for later regeneration. The medieval-studies cover preserves its small Claude Code agent figure as an identity reference. The VetMed motif requires confirmation of the equine hoof-lamellae case before generation because the workshop profile does not yet establish that example.
 
 ## Historical v0.3 release status
 

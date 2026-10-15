@@ -33,7 +33,9 @@ Review the simplified material site requested on 15 October 2026. The current pu
 - Verify the paired single pages and collect the author's visual feedback.
 - Continue the separate terminology and teaching-content review of the Full Slide Deck and Full Lecture Notes.
 - Maintain workshop source material for actual teaching assignments without recreating individual event pages or Learning Routes.
-- Reconcile the Director Log against the reduced public scope before presenting another acceptance list. Former event-page, cover and tutorial gates do not block this surface.
+- Prepare individual teaching sections for source checking and author acceptance, reconciling their slides and expanded lecture notes.
+- Recheck the actual Google sharing state before presenting the retained permissions requests.
+- Complete the documented VetMed title write-back in the source profile and register, including the distinction between teaching and hackathon days. The retired public pages require no update.
 
 ## Completed milestones
 

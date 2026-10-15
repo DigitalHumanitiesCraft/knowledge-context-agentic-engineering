@@ -38,7 +38,7 @@ Tool and model provenance follows the same split. The public interface names onl
 
 ## Source status
 
-Preparation uses the existing Google Slides deck registered under `preparation` in `docs/data/workshops.json`. This specific source decision does not resolve the separate source-of-truth question for the Full Slide Deck and Lecture Notes.
+Preparation uses the existing Google Slides deck registered under `preparation` in `docs/data/workshops.json`. The documented source contract for the Full Slide Deck and Lecture Notes remains the repository ownership stated below. Before substantive revision, compare those files with their linked Google versions and bring any conflicting changes to the author as a concrete delta.
 
 | Holding | Canonical place |
 | --- | --- |
@@ -60,7 +60,7 @@ Changes to canonical text happen here and are committed; Google artifacts are up
 
 ## Versioning
 
-Fine-grained history lives in git. The state actually taught in a workshop receives a git tag named after the registry id (for example `2026-09-25-clariah-at`), set by the Research Director; the register and the workshop page link to the tagged state. Workshop folder names equal registry ids; a single id scheme holds across register, folders, covers and tags. PPTX exports are stored per taught state in the workshop folder.
+Fine-grained history lives in git. The state actually taught in a workshop receives a git tag named after the registry id (for example `2026-09-25-clariah-at`), set by the Research Director; the material register and source profile refer to the tagged state. Workshop folder names equal registry ids; a single id scheme holds across register, folders, covers and tags. PPTX exports are stored per taught state in the workshop folder.
 
 The working tree carries only upcoming instances (operator decision 2026-08-20). Once an instance has been taught and its state tagged, its folder is removed and its register entry drops out, while the public platform presents the common material without event listings. Nothing is lost, because git history holds the material and the tag names the taught state. A document that cites a removed file names it as preserved in git history at the short SHA of the last commit that held it.
 

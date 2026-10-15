@@ -29,7 +29,7 @@ related: [specification.md, governance.md, plan.md]
 
 # Project
 
-This repo is the canonical home of the material for the teaching line *Knowledge, Context and Agentic Engineering for Knowledge Work*, and it carries the platform that presents the material and its workshop derivations. The project covers the teaching material itself, the Full Lecture Notes, the Full Slide Deck, the workshop profiles and the platform. The research strand around the material (how new knowledge integrates into an existing knowledge structure) lives in the author's research vault.
+This repo is the canonical home of the material for the teaching line *Knowledge, Context and Agentic Engineering for Knowledge Work*, and it carries the platform that presents the shared material. Workshop derivations remain maintained source material for their teaching context. The project covers the teaching material itself, the Full Lecture Notes, the Full Slide Deck, the workshop profiles and the platform. The research strand around the material (how new knowledge integrates into an existing knowledge structure) lives in the author's research vault.
 
 ## Development method and orchestration
 

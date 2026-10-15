@@ -26,6 +26,12 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-10-15 corrected · Acceptance register after scope reduction
+
+On the author's instruction to reconcile project knowledge, the Director Log was checked against the single-page implementation and the decisions recorded earlier today. RD-003, RD-007, RD-010, RD-014, RD-018, RD-020, RD-021 and RD-023 leave the active register because they request removed event pages, cover motifs, HTML Preparation assets or retired learning routes. Their closure records withdrawal of that scope, not substantive acceptance of their content. Existing source material and historical drafts remain available in the repository and Git.
+
+RD-017 now identifies the current paired single-page interface. RD-008 retains the teaching-case question without the cover dependency. The plan records preparation of individual teaching sections, current permission checks and the remaining VetMed source correction. The existing repository ownership of Full material is retained, with comparison against Google versions required before conflicting content is reconciled. The action layer and design contract no longer describe unused covers as visible placeholders. No cloud permissions, publication state or teaching-content acceptance changed.
+
 ### 2026-10-15 integrated · Vertical reading flow
 
 The author requested less horizontal layout before further interface and content work. The introduction, module index and material entries now follow one column on both language pages. Main content has a bounded width, material actions follow their descriptions, and video groups use at most two columns. Narrow material entries hide decorative marks to preserve reading width. The redundant Complete material labels are removed; this does not establish substantive acceptance of the linked material. The design contract records the change.
