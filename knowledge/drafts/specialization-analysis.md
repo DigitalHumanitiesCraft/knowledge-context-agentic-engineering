@@ -255,9 +255,7 @@ The operator's feedback to the host adds verification of agent results against o
 
 ### Case material and datasets
 
-Deliberately general and not digital-humanities-specific, because the audience is mixed by discipline. The scenario fixed on 2026-08-05 is "KI-Strategie für Ihre Institution" at a fictitious institute abbreviated IBW. Participants draw Office files from the shared folder, meaning Word, Excel and PowerPoint documents with built-in data traps, plus a sample vault. Participants' own data is welcome alongside.
-
-Inference on rights: a fictitious scenario with synthetic Office files carries no third-party rights, which makes this the only instance of the seven whose participant data could in principle live in a public repo. The vault states no licence for it.
+Deliberately general and not digital-humanities-specific, because the audience is mixed by discipline. The synthetic scenario recorded at the time of this analysis was dropped on 2026-11-03 in favour of real material; the current case is described in `workshops/2026-11-09-ufl/profile.md`.
 
 ### Material available for intake
 
@@ -267,7 +265,7 @@ The three-unit structure in the host's own wording, the recurring-course schedul
 
 Audience, participant count and prior-knowledge level; the honorarium frame; the derivation of the cut from the Full Slide Deck onto the three units; the time of day for the first run.
 
-A vault-internal drift is worth flagging for any sync pass. The `ACTIVE-WORK` entry asks for the example-data state to be carried into the workshop document, on the ground that the document still lists the Office example data as open. The workshop document was updated on 2026-08-19 and now carries the IBW scenario, so the `ACTIVE-WORK` task is stale rather than the document.
+A vault-internal drift is worth flagging for any sync pass. The `ACTIVE-WORK` entry asks for the example-data state to be carried into the workshop document, on the ground that the document still lists the Office example data as open. The workshop document was updated on 2026-08-19 and then carried the example scenario, so the `ACTIVE-WORK` task was stale rather than the document.
 
 ### Deltas against register and profile
 

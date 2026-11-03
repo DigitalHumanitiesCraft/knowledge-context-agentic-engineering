@@ -10,7 +10,7 @@ workshop:
   status: planned
 status: in preparation
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-11-03
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -53,9 +53,9 @@ The selection below is derived from the three-unit structure held in the operato
 
 ## Case material
 
-Deliberately general and not specific to the digital humanities, because the audience is mixed by discipline. The scenario fixed on 2026-08-05 is an AI strategy for one's own institution, set at a fictitious institute abbreviated IBW. Participants draw Office files from the shared folder, meaning Word, Excel and PowerPoint documents with built-in data traps, plus a sample vault. Participants' own data is welcome alongside.
+Deliberately general and not specific to the digital humanities, because the audience is mixed by discipline. Since 2026-11-03 the case uses real material that the operator knows well and that outsiders understand. Participants plan an agentic-engineering training and in doing so build up knowledge and governance for the use of AI agents and language models in an organisation. The progressive hands-on ends in a small vault in which the harness works. Participants may substitute a project of their own. The concrete starting material is not specified yet.
 
-Rights state. A fictitious scenario with synthetic Office files carries no third-party rights, which makes this the one instance of the seven whose participant data could in principle live in a public repository. Inference from the file provenance; no source states a licence for the material.
+The synthetic scenario drafted on 2026-08-05 was dropped on 2026-11-03 because it did not use real data. Its rights state is therefore irrelevant; the rights of the new starting material are assessed once it is fixed.
 
 ## Materials
 
@@ -64,7 +64,7 @@ Rights state. A fictitious scenario with synthetic Office files carries no third
 | Live deck | to be linked from `docs/data/workshops.json`, register field currently null | in preparation |
 | Lecture Notes (Uni for Life 2026) | this folder | in preparation |
 | PPTX export per taught state | this folder | in preparation |
-| Example data (IBW scenario) | operator's Drive | fixed 2026-08-05, not held in this repo |
+| Starting material for the hands-on | not fixed | open |
 | Cover | `docs/assets/covers/2026-11-09-ufl.png` | present |
 
 ## Open points
