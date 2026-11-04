@@ -4,23 +4,43 @@
   "modules": {
     "01": {
       "en": "“Understanding” Large Language Models",
-      "de": "Large Language Models „verstehen“"
+      "de": "Large Language Models „verstehen“",
+      "definition": {
+        "en": "Models trained on extensive text corpora to process instructions and generate context-dependent language.",
+        "de": "Sprachmodelle, die auf umfangreichen Textkorpora trainiert sind, Anweisungen verarbeiten und kontextabhängige Sprache erzeugen."
+      }
     },
     "02": {
       "en": "Prompt Engineering",
-      "de": "Prompt Engineering"
+      "de": "Prompt Engineering",
+      "definition": {
+        "en": "The deliberate formulation of instructions for a specific LLM, task and intended output.",
+        "de": "Die gezielte Formulierung von Anweisungen für ein bestimmtes LLM, eine Aufgabe und die gewünschte Ausgabe."
+      }
     },
     "03": {
       "en": "Knowledge and Context Engineering",
-      "de": "Knowledge und Context Engineering"
+      "de": "Knowledge und Context Engineering",
+      "definition": {
+        "en": "Maintaining explicit project knowledge and assembling the information an LLM needs for the current task.",
+        "de": "Explizites Projektwissen pflegen und die Informationen zusammenstellen, die ein LLM für die aktuelle Aufgabe benötigt."
+      }
     },
     "04": {
       "en": "Agentic Engineering",
-      "de": "Agentic Engineering"
+      "de": "Agentic Engineering",
+      "definition": {
+        "en": "Organising extended work across tool use, intermediate results, permissions, feedback and human review.",
+        "de": "Längere Arbeitsprozesse über Werkzeugnutzung, Zwischenergebnisse, Berechtigungen, Rückmeldungen und menschliche Prüfung hinweg organisieren."
+      }
     },
     "05": {
       "en": "Critical Perspectives and Governance",
-      "de": "Kritische Perspektiven und Governance"
+      "de": "Kritische Perspektiven und Governance",
+      "definition": {
+        "en": "Examining technical limits and social consequences, and defining responsibility and rules for use.",
+        "de": "Technische Grenzen und gesellschaftliche Auswirkungen untersuchen sowie Verantwortung und Regeln für den Einsatz festlegen."
+      }
     }
   },
   "videos": [

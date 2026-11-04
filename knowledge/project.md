@@ -49,9 +49,9 @@ Workshop profiles and their material remain research and teaching sources in `wo
 
 ## Public learning architecture
 
-The public site is one static page per language, `index.html` and `index.de.html`. A compact paragraph in the opening section explains DHCraft, workshop funding and public maintenance. The page then presents the shared teaching materials, the embedded Preparation deck and the Video Library. Header links target these sections. There are no separate About or Preparation pages and no generic arrow-back links. The canonical legal notice remains linked in the footer, together with the licence scope. Event listings and Learning Routes remain retired; teaching sources are unchanged.
+The public site is one static page per language, `index.html` and `index.de.html`. A compact paragraph in the opening section explains DHCraft, workshop funding and public maintenance. The page then presents the shared teaching materials, Preparation with a linked title-slide image and the Video Library. Header links target these sections. There are no separate About or Preparation pages and no generic arrow-back links. The canonical legal notice remains linked in the footer, together with the licence scope. Event listings and Learning Routes remain retired; teaching sources are unchanged.
 
-Preparation links to and embeds the existing English Google Slides deck [Preparation · Slides · Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit). Its URL and language are registered in `data/workshops.json` under `preparation`. Both language versions identify the English teaching language. A visible direct link remains usable if the embedded viewer cannot load. No separate HTML setup curriculum or subject-introduction sequence is maintained in that section.
+Preparation links the existing English Google Slides deck [Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit) and shows its title slide as a local image. Its URL and language are registered in `data/workshops.json` under `preparation`. Both language versions identify the English teaching language. No separate HTML setup curriculum or subject-introduction sequence is maintained in that section.
 
 The workshop records in `data/workshops.json` retain material provenance and do not generate public event pages or navigation. Full-material and video links retain their existing ownership and rights boundaries. External Google files and sharing permissions are unchanged.
 
@@ -73,7 +73,7 @@ The teaching material retains its source language and translations require autho
 | Preparation, existing Google Slides deck | `docs/index.html#preparation`, `docs/index.de.html#preparation` |
 | Curated Skills source pending public placement | `knowledge/drafts/curated-agent-skills-library.md` |
 | Slide exports (PPTX per taught state) | `workshops/<id>/` |
-| Cover images (PNG, 16:9) | `docs/assets/covers/<id>.png` |
+| Historical cover images | git history at `e66901b`, `docs/assets/covers/` |
 | Workshop register, material release state and module subset | `data/workshops.json` |
 | Live decks and documents | Google Workspace, linked from the register |
 | Executable CLARIAH hands-on package | external repo `chpollin/zbz-ocr-tei`, `workshops/clariah-at-2026/` |

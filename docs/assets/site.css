@@ -286,16 +286,13 @@ img { max-width: 100%; height: auto; }
 }
 
 .language-nav a:hover,
-.language-nav a:focus-visible {
-  background: var(--white);
-  color: var(--ink);
-}
+.language-nav a:focus-visible { color: var(--accent); }
 
 /* The introduction names the five modules inline, each with its icon and number. */
 .hero { padding-block: clamp(var(--s4), 4vw, var(--s5)) var(--s4); }
 
 .hero h1 {
-  max-width: 20ch;
+  max-width: 32ch;
   font-size: var(--text-hero);
 }
 
@@ -380,7 +377,7 @@ img { max-width: 100%; height: auto; }
 .term:active .term-tooltip,
 .term.term--open .term-tooltip { display: block; }
 
-/* Set by terms.js when Escape dismisses a definition. */
+/* Set by site.js when Escape dismisses a definition. */
 .term.term--dismissed .term-tooltip { display: none; }
 
 /* Module terms link to their video group and carry icon and number inside
@@ -494,13 +491,12 @@ img { max-width: 100%; height: auto; }
    Google Slides iframe, so the page makes no request to Google until clicked. */
 .slide-preview {
   display: block;
-  max-width: 32rem;
+  max-width: 24rem;
   margin-top: var(--s3);
   overflow: hidden;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   background: var(--white);
-  box-shadow: 0 14px 38px color-mix(in srgb, var(--ink) 8%, transparent);
 }
 
 .slide-preview:hover { border-color: var(--accent); }
@@ -514,11 +510,12 @@ img { max-width: 100%; height: auto; }
 /* Teaching materials */
 .teaching-materials { padding-top: var(--s4); }
 
-/* The three holdings sit side by side and stack below 860px (see media query). */
+/* The three holdings sit side by side and stack below 860px (see media query).
+   Each card keeps its own height, so short cards carry no empty interior. */
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: stretch;
+  align-items: start;
   gap: var(--s3);
   margin-top: var(--s4);
 }
@@ -533,9 +530,6 @@ img { max-width: 100%; height: auto; }
   border-radius: var(--radius);
   background: var(--white);
 }
-
-.resource-card:hover,
-.resource-card:focus-within { border-color: var(--accent); }
 
 .resource-summary {
   display: grid;
@@ -556,27 +550,10 @@ img { max-width: 100%; height: auto; }
   min-width: 0;
 }
 
-/* Every card title reserves the linked title's tap height, so titles align. */
 .resource-card h3 {
-  display: flex;
-  align-items: center;
-  min-height: var(--tap-compact);
-  margin-top: var(--s1);
+  margin-top: var(--s2);
   font-size: var(--text-card);
 }
-
-.resource-card h3 a {
-  display: inline-flex;
-  align-items: center;
-  min-height: var(--tap-compact);
-  color: var(--ink);
-  text-decoration-color: var(--accent);
-  text-decoration-thickness: 0.1em;
-  text-underline-offset: 0.16em;
-}
-
-.resource-card h3 a:hover,
-.resource-card h3 a:focus-visible { color: var(--accent); }
 
 .resource-copy > p {
   margin-top: var(--s2);
@@ -593,12 +570,8 @@ img { max-width: 100%; height: auto; }
   list-style: none;
 }
 
-/* Actions sit at the card's foot, so the three cards align at the bottom. */
 .resource-card > .resource-actions,
-.resource-editions {
-  margin-top: auto;
-  padding-top: var(--s2);
-}
+.resource-editions { padding-top: var(--s2); }
 
 .resource-editions {
   display: grid;
@@ -680,7 +653,21 @@ a.resource-action:focus-visible {
 
 .video-module__summary::marker { color: var(--module-color, var(--accent)); }
 
-.video-module__count { white-space: nowrap; }
+.video-module__count {
+  color: var(--ink-3);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* The module definition repeats the hero tooltip as visible text, because a
+   module term is a link and shows no tooltip on touch. */
+.video-module__definition {
+  max-width: var(--measure);
+  margin: 0;
+  padding: var(--s2) var(--s3) 0;
+  color: var(--ink-2);
+  font-size: var(--text-lg);
+}
 
 .video-module__summary:hover { background: var(--tint); }
 
@@ -922,6 +909,8 @@ a.resource-action:focus-visible {
   .foot-nav ul { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; }
   .hero h1 { max-width: none; }
   .preparation-summary__action { border-radius: var(--radius); }
+  .foot-nav li > a:not(.repo-link) { padding-inline-start: 1.4em; }
+  .video-module__definition { padding-inline: var(--s2); }
   .resource-card { padding: var(--s2); }
   .resource-mark { display: none; }
   .resource-action { padding-inline: 0.5em; }
@@ -939,7 +928,6 @@ a.resource-action:focus-visible {
   .language-nav a,
   .foot-nav a,
   .imprint .contact a,
-  .resource-card h3 a,
   .resource-action {
     min-height: var(--tap);
   }

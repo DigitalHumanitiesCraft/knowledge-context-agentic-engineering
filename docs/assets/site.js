@@ -58,3 +58,32 @@ for (const group of document.querySelectorAll('.video-module')) {
     }
   });
 }
+
+// A module link in the introduction targets its video group. Opening the group
+// on arrival saves the second click; the toggle handler above then loads the
+// previews, which follows the reader's own click on that link.
+const openTarget = () => {
+  const target = location.hash && document.getElementById(location.hash.slice(1));
+  if (target instanceof HTMLDetailsElement && !target.open) {
+    target.open = true;
+    target.scrollIntoView({ block: 'start' });
+  }
+};
+window.addEventListener('hashchange', openTarget);
+openTarget();
+// A repeated click on the same link fires no hashchange, so links open their
+// group directly as well.
+for (const link of document.querySelectorAll('a[href^="#video-module-"]')) {
+  link.addEventListener('click', () => {
+    const group = document.getElementById(link.hash.slice(1));
+    if (group instanceof HTMLDetailsElement) group.open = true;
+  });
+}
+
+// On touch screens a pinned definition is a sheet at the bottom of the screen;
+// a tap anywhere outside its term closes it.
+document.addEventListener('pointerdown', (event) => {
+  for (const term of terms) {
+    if (term.classList.contains('term--open') && !term.contains(event.target)) close(term);
+  }
+});
