@@ -49,7 +49,7 @@ Session 1: Prompt und Context Engineering
 : Montag, 9.11.2026, 14:00–16:00. Die Teilnehmenden erklären, wie LLM, AI Agent und AI Harness zusammenwirken, und steuern den Agenten über Prompts, CLAUDE.md und Skills. Die Konzepte sind Tool Use, Subagents, Context Window, Memory, Skills und MCP. Dazu gehören Hands-on 1 und 2 mit Wissensdashboard, Pitch und Skill.
 
 Session 2: Knowledge Engineering
-: Dienstag, 10.11.2026, 10:00–12:00. Die Teilnehmenden bauen Projektwissen so auf und pflegen es, dass ein AI Agent damit verlässlich arbeitet. Die Konzepte sind Zugriff, Governance, Promptotyping Documents, Wissensdokument, Tags, Maps of Content und Vault-Governance. Dazu gehört Hands-on 3, in dem die Wissensbasis zu einem Obsidian-Vault wird.
+: Dienstag, 10.11.2026, 10:00–12:00. Die Teilnehmenden bauen Projektwissen so auf und pflegen es, dass ein AI Agent damit verlässlich arbeitet. Die Konzepte sind Governance, Permission Modes, Promptotyping Documents, Wissensdokument, Tags, Maps of Content und Vault-Governance. Dazu gehört Hands-on 3, in dem die Wissensbasis zu einem Obsidian-Vault wird.
 
 Session 3: Agentic Engineering
 : Dienstag, 10.11.2026, 14:00–16:00. Die Teilnehmenden planen agentische Arbeitsabläufe, prüfen ihre Ergebnisse und übertragen sie auf eigene Vorhaben. Die Konzepte sind Promptotyping, Loop Engineering, Determinismus und Qualitätssicherung. Dazu gehört Hands-on 4, ein Analysewerkzeug aus Excel-Daten.
