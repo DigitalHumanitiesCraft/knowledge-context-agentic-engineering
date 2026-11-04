@@ -20,7 +20,7 @@ Teaching material and workshop platform for the teaching line *Knowledge, Contex
 - A workshop folder holds `profile.md`, `slide-deck.md`, `lecture-notes.md` and `data/`.
 - Only upcoming instances live in the working tree. A delivered instance is tagged, then removed from tree and register; git history keeps it. When a document has to cite removed material, verify the last commit that held it with `git log --oneline --follow -- <path>` and cite it as preserved in git history at that short SHA.
 
-## Video library
+## Modules and videos
 
 - `data/videos.json` is the source of truth for the module groups on the page. It records the maintained playlist order, stable YouTube video id, display title, the required primary `module`, duration, an optional `lang` and, per module, the title and definition in both languages. An optional `related_modules` array records a documented cross-module relation. The paired pages list the same entries by primary module and retain playlist order inside each group.
 - A video renders exactly once, under its primary module. A related module never produces a second card; it may appear as quiet metadata where the existing component carries it without materially increasing card height, and otherwise stays in the data and in the knowledge record.
