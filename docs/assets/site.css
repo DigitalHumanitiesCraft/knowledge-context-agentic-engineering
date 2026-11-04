@@ -1,10 +1,6 @@
 /* Stylesheet for the two landing pages, index.html and index.de.html. No build step. */
 
-/* ==========================================================================
-   TOKENS
-   The only place where literal values live. Everything below consumes var().
-   Contrast ratios are against --paper unless noted.
-   ========================================================================== */
+/* Tokens. The only place where literal values live. Everything below consumes var(). Contrast ratios are against --paper unless noted. */
 :root {
   color-scheme: light;
 
@@ -48,7 +44,8 @@
   /* --- Accent ----------------------------------------------------------- */
   /* One turquoise, clears AA, so the same value carries interactive text and
      the motif highlights without a second variant. */
-  --accent: #0A7E7C;         /* 4.8:1 */
+  --accent: #0A7E7C;         /* 4.8:1, 4.4:1 on tint */
+  --accent-on-tint: #097472; /* 5.0:1 on tint, footer links */
 
   /* --- Identity palette, derived from the watercolor logo ---------------- */
   /* Four families measured in the mark itself. Used only as module marks, never
@@ -73,12 +70,10 @@
   --radius: 3px;
   --tap: 2.75rem;
   --tap-compact: 2.5rem;
-  --z-sticky: 10;
+  --z-overlay: 10;
 }
 
-/* ==========================================================================
-   BASE
-   ========================================================================== */
+/* Base */
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
@@ -124,7 +119,7 @@ a:hover { text-decoration-color: var(--accent); }
 
 .skip-link {
   position: fixed;
-  z-index: calc(var(--z-sticky) + 1);
+  z-index: calc(var(--z-overlay) + 1);
   inset: var(--s1) auto auto var(--s1);
   width: max-content;
   max-width: calc(100vw - 2 * var(--s1));
@@ -132,7 +127,6 @@ a:hover { text-decoration-color: var(--accent); }
   border: 2px solid var(--accent);
   border-radius: var(--radius);
   background: var(--paper);
-  box-shadow: var(--shadow-float);
   color: var(--ink);
   font-size: var(--text-md);
   text-decoration: none;
@@ -140,13 +134,11 @@ a:hover { text-decoration-color: var(--accent); }
 }
 
 .skip-link:focus,
-.skip-link:focus-visible { transform: translateY(0); }
+.skip-link:focus-visible { transform: translateY(0); box-shadow: var(--shadow-float); }
 
 img { max-width: 100%; height: auto; }
 
-/* ==========================================================================
-   LAYOUT PRIMITIVES
-   ========================================================================== */
+/* Layout primitives */
 .wrap {
   width: min(100% - 2 * var(--s3), var(--page));
   margin-inline: auto;
@@ -166,9 +158,7 @@ img { max-width: 100%; height: auto; }
   color: var(--ink-2);
 }
 
-/* ==========================================================================
-   HEADER AND NAVIGATION
-   ========================================================================== */
+/* Header and navigation */
 .site-head > .wrap {
   display: flex;
   flex-wrap: wrap;
@@ -287,32 +277,28 @@ img { max-width: 100%; height: auto; }
   max-width: var(--measure);
   margin-top: var(--s3);
   color: var(--ink-2);
-  font-size: var(--text-body);
   line-height: 1.65;
 }
 
 .term {
-  --term-color-a: var(--m1);
-  --term-color-b: var(--term-color-a);
+  --term-color: var(--m1);
   position: relative;
   display: inline-block;
 }
 
-.term--m1 { --term-color-a: var(--m1); }
+.term--m2 { --term-color: var(--m2); }
 
-.term--m2 { --term-color-a: var(--m2); }
+.term--m3 { --term-color: var(--m3); }
 
-.term--m3 { --term-color-a: var(--m3); }
+.term--m4 { --term-color: var(--m4); }
 
-.term--m4 { --term-color-a: var(--m4); }
-
-.term--m5 { --term-color-a: var(--m5); }
+.term--m5 { --term-color: var(--m5); }
 
 .term-trigger {
   padding: 0 0.02em 0.06em;
   border: 0;
   background-color: transparent;
-  background-image: linear-gradient(90deg, var(--term-color-a) 0 50%, var(--term-color-b) 50% 100%);
+  background-image: linear-gradient(var(--term-color), var(--term-color));
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 100% 0.075em;
@@ -335,7 +321,7 @@ img { max-width: 100%; height: auto; }
 
 .term-tooltip {
   position: absolute;
-  z-index: 10;
+  z-index: var(--z-overlay);
   inset-block-start: calc(100% + 0.45rem);
   inset-inline-start: 0;
   width: min(21rem, calc(100vw - 2rem));
@@ -343,7 +329,7 @@ img { max-width: 100%; height: auto; }
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   background:
-    linear-gradient(90deg, var(--term-color-a) 0 50%, var(--term-color-b) 50% 100%) top / 100% 3px no-repeat,
+    linear-gradient(var(--term-color), var(--term-color)) top / 100% 3px no-repeat,
     var(--white);
   box-shadow: var(--shadow-float);
   color: var(--ink);
@@ -363,7 +349,10 @@ img { max-width: 100%; height: auto; }
 /* Module terms link to their video group and carry icon and number inside
    the link, so the key never separates from its title. As inline links they
    wrap like running text, which a button cannot. */
-.term[id] { display: inline; }
+.term[id] {
+  display: inline;
+  scroll-margin-top: var(--s4);
+}
 
 .term[id] .term-trigger {
   background-image: none;
@@ -371,11 +360,9 @@ img { max-width: 100%; height: auto; }
   cursor: pointer;
 }
 
-.term-key { white-space: nowrap; }
-
 .term-label {
   padding-bottom: 0.06em;
-  background-image: linear-gradient(90deg, var(--term-color-a) 0 50%, var(--term-color-b) 50% 100%);
+  background-image: linear-gradient(var(--term-color), var(--term-color));
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 100% 0.075em;
@@ -388,18 +375,14 @@ img { max-width: 100%; height: auto; }
 
 .term-key {
   margin-inline-end: 0.3em;
+  white-space: nowrap;
   color: var(--ink-3);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
 }
 
-.term[id] { scroll-margin-top: var(--s4); }
 
-/* ==========================================================================
-   MODULES
-   The single home of the identity palette. Each module carries one small mark,
-   turquoise plus the four logo colours, assigned by position.
-   ========================================================================== */
+/* Modules. The single home of the identity palette. Each module carries one small mark, turquoise plus the four logo colours, assigned by position. */
 .term-key .module-icon,
 .video-module__summary .module-icon {
   display: inline-block;
@@ -436,9 +419,7 @@ img { max-width: 100%; height: auto; }
 .term--m5[id],
 .video-module.m5 { --module-color: var(--m5); --module-icon: url("modules/05-critical-perspectives-governance.svg"); }
 
-/* ==========================================================================
-   PREPARATION
-   ========================================================================== */
+/* Preparation */
 .preparation-summary {
   min-width: 0;
 }
@@ -492,9 +473,7 @@ img { max-width: 100%; height: auto; }
   aspect-ratio: 16 / 9;
 }
 
-/* ==========================================================================
-   TEACHING MATERIALS
-   ========================================================================== */
+/* Teaching materials */
 .teaching-materials { padding-top: var(--s4); }
 
 /* The three holdings sit side by side and stack below 860px (see media query). */
@@ -631,12 +610,7 @@ a.resource-action:focus-visible {
   color: var(--ink-3);
 }
 
-/* ===========================================================================
-   VIDEO LIBRARY
-   Native details elements preserve disclosure semantics and keyboard support.
-   Every module group carries the same icon and colour relation as the module
-   list; video cards use YouTube's 16:9 preview without changing the image.
-   ========================================================================== */
+/* Video library. Native details elements preserve disclosure semantics and keyboard support. Every module group carries the same icon and colour relation as the module list; video cards use YouTube's 16:9 preview without changing the image. */
 .video-library {
   display: grid;
   gap: var(--s2);
@@ -666,6 +640,8 @@ a.resource-action:focus-visible {
 
 .video-module__summary::marker { color: var(--module-color, var(--accent)); }
 
+.video-module__count { white-space: nowrap; }
+
 .video-module__summary:hover { background: var(--tint); }
 
 .video-module__summary:focus-visible {
@@ -674,8 +650,6 @@ a.resource-action:focus-visible {
 }
 
 .video-module__summary .module-icon {
-  width: 1.5rem;
-  height: 1.5rem;
   margin-inline: 0.4em 0.35em;
   vertical-align: -0.4em;
 }
@@ -711,7 +685,6 @@ a.resource-action:focus-visible {
 .video-card:hover,
 .video-card:focus-within { border-color: var(--module-color, var(--accent)); }
 
-.video-card > a,
 .video-card__link {
   display: flex;
   flex: 1;
@@ -721,12 +694,9 @@ a.resource-action:focus-visible {
   text-decoration: none;
 }
 
-.video-card > a:hover,
-.video-card > a:focus-visible,
 .video-card__link:hover,
 .video-card__link:focus-visible { color: var(--accent); }
 
-.video-card > a:focus-visible,
 .video-card__link:focus-visible { outline-offset: -3px; }
 
 .video-card__media {
@@ -735,10 +705,7 @@ a.resource-action:focus-visible {
   background: var(--tint);
 }
 
-.video-card__media img,
-.video-card > a > img,
-.video-card__thumbnail,
-.video-card > img {
+.video-card__thumbnail {
   display: block;
   width: 100%;
   height: 100%;
@@ -756,20 +723,11 @@ a.resource-action:focus-visible {
   padding: var(--s2);
 }
 
-.video-card h3,
 .video-card__title {
   font-size: var(--text-title);
   overflow-wrap: anywhere;
 }
 
-.video-card > a > h3,
-.video-card__link > .video-card__title,
-.video-card > h3 { padding: var(--s2) var(--s2) 0; }
-
-.video-card__body > h3,
-.video-card__body > .video-card__title { padding: 0; }
-
-.video-card time,
 .video-card__duration {
   display: block;
   margin-top: auto;
@@ -779,21 +737,9 @@ a.resource-action:focus-visible {
   font-variant-numeric: tabular-nums;
 }
 
-.video-card > a > time,
-.video-card__link > .video-card__duration,
-.video-card > time,
-.video-card > .video-card__duration { padding: 0 var(--s2) var(--s2); }
-
-.video-card__body > time,
-.video-card__body > .video-card__duration { padding: 0; }
-
 .video-module__hub-link { margin: 0; padding: 0 var(--s3) var(--s2) calc(var(--s3) + 2rem); font-size: var(--text-sm); }
 
-/* ==========================================================================
-   FOOTER
-   Three top-aligned groups: publisher identity, the one-sentence method
-   provenance and a compact navigation on a quiet, bounded surface.
-   ========================================================================== */
+/* Footer. Three top-aligned groups: publisher identity, the one-sentence method provenance and a compact navigation on a quiet, bounded surface. */
 .site-foot {
   margin-top: var(--s5);
   padding-block: var(--s4);
@@ -845,6 +791,8 @@ a.resource-action:focus-visible {
   line-height: 1.5;
 }
 
+.site-foot a { color: var(--accent-on-tint); }
+
 .foot-nav { min-width: 0; }
 
 .foot-nav-label {
@@ -890,9 +838,7 @@ a.resource-action:focus-visible {
   content: "";
 }
 
-/* ==========================================================================
-   NARROW VIEWPORTS AND PREFERENCES
-   ========================================================================== */
+/* Narrow viewports and preferences */
 @media (max-width: 1020px) {
   .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-head > .wrap { align-items: flex-start; }
@@ -900,10 +846,6 @@ a.resource-action:focus-visible {
   .head-tools { width: 100%; justify-content: space-between; }
   .site-foot > .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .foot-nav { grid-column: 1 / -1; }
-}
-
-@media (max-width: 860px) {
-  .resource-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 860px), (hover: none) {
@@ -920,6 +862,7 @@ a.resource-action:focus-visible {
 }
 
 @media (max-width: 860px) {
+  .resource-grid { grid-template-columns: minmax(0, 1fr); }
   .site-foot > .wrap {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--s3);
@@ -928,9 +871,8 @@ a.resource-action:focus-visible {
 }
 
 @media (max-width: 640px) {
-  .site-head > .wrap,
-.head-tools { align-items: flex-start; }
-  .head-tools { width: 100%; justify-content: space-between; }
+  .site-head > .wrap { align-items: flex-start; }
+  .head-tools { gap: var(--s2); }
   .site-nav ul { gap: var(--s2); }
   .foot-nav ul { grid-template-columns: minmax(0, 1fr); }
   .resource-card { padding: var(--s2); }
@@ -945,13 +887,14 @@ a.resource-action:focus-visible {
 
 @media (pointer: coarse) {
   .site-identity-logo,
-.site-identity-title,
-.site-nav a,
-.language-nav a,
-.foot-nav a,
-.imprint .contact a,
-.resource-card h3 a,
-.resource-action {
+  .site-identity-title,
+  .site-nav a,
+  .language-nav a,
+  .foot-nav a,
+  .imprint .contact a,
+  .resource-card h3 a,
+  .resource-action,
+  .video-module__hub-link a {
     min-height: var(--tap);
   }
 }

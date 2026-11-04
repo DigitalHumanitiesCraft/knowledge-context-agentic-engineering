@@ -36,14 +36,14 @@ Preparation follows Teaching Materials with its short description and the direct
 
 ## Single-page navigation and Preparation
 
-The public site is one static page per language, `index.html` and `index.de.html`. A compact paragraph in the opening section explains DHCraft, workshop funding and public maintenance. The page then presents the shared teaching materials, the embedded Preparation deck and the Video Library. Header links target these sections. There are no separate About or Preparation pages and no generic arrow-back links. The canonical legal notice remains linked in the footer, together with the licence scope. Event listings and Learning Routes remain retired; teaching sources are unchanged.
+The public site is one static page per language, `index.html` and `index.de.html`. A compact paragraph in the opening section explains DHCraft, workshop funding and public maintenance. The page then presents the shared teaching materials as three cards, Preparation with a linked title-slide image and the Video Library. Header links target these sections. There are no separate About or Preparation pages and no generic arrow-back links. The canonical legal notice remains linked in the footer, together with the licence scope. Event listings and Learning Routes remain retired; teaching sources are unchanged.
 
-Preparation shows a local 16:9 image of the deck's title slide, linked to the deck, beside a direct link and an English-language note. No Google Slides iframe is embedded, so the page requests nothing from Google until a reader follows the link. No new JavaScript, routing layer or build step is introduced.
+Preparation shows a local 16:9 image of the deck's title slide, linked to the deck, beside a direct link and an English-language note. No Google Slides iframe is embedded, so the page loads nothing from Google Slides until a reader follows the link. The typefaces still load from Google Fonts. No new JavaScript, routing layer or build step is introduced.
 
 ## System values
 
 - **Ground**: paper white as one consistent page ground, near-black typography, generous whitespace; light theme only (operator decision 2026-08-20).
-- **Accent**: turquoise `#0A7E7C` as the primary accent for links, active states and motif highlights; the motif line art stays turquoise-only.
+- **Accent**: turquoise `#0A7E7C` as the primary accent for links, active states and motif highlights. On the tinted footer ground it reaches only 4.4:1, so footer links use the darker `--accent-on-tint` `#097472` at 5.0:1; the motif line art stays turquoise-only.
 - **Identity palette**: four accents derived from the watercolor logo, orange `#C87000`, blue `#5B8FC4`, green `#7C9200`, violet `#8140B8`. The interface applies them to the five module marks (turquoise 01, orange 02, blue 03, violet 04, green 05, as implemented in `docs/assets/site.css`). Text-carrying colors must pass WCAG AA, pure marks at least 3:1.
 - **Brand**: DHCraft watercolor logo (standard variant from `DigitalHumanitiesCraft/brand-assets`), set sparingly.
 - **Typography**: Space Grotesk throughout with system fallback (operator decision 2026-08-20); IBM Plex Mono for prompts and code.
