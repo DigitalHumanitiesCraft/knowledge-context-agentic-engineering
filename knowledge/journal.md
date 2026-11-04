@@ -26,6 +26,10 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-11-04 integrated · Methods grouped by module, audience named, stylesheet tidied
+
+The author found the method list visually unsettled, with the same icon three times, four accent links and four play symbols. The methods are now grouped by module, each group headed once by icon, number and title in quiet ink, with plain ink links and fainter play symbols; the hidden module text is no longer needed and the card loses its description sentence, which keeps the four cards balanced. The Preparation card gains a turquoise top rule, visible on grey screens, and the introduction names researchers and professionals as the audience. Two unused tokens and stale stylesheet comments were removed. Checked at six widths in both languages: no overflow and no external request; at 1280 by 800 pixels the first screen shows the title, the introduction and all four cards.
+
 ### 2026-11-04 integrated · Methods carry their module icon and a video link
 
 The author wanted fitting icons for the methods without arbitrary imagery. The methods are assigned to the modules they apply, Promptotyping, Grounded Vault and Second Brain Vault to 03 Knowledge and Context Engineering and Research Mission Control to 04 Agentic Engineering, and each method row reuses that module's icon, with the module named in hidden text for screen readers. A neutral play symbol at the row end links each method's introductory video, deliberately not the YouTube mark. The playlist link beside the modules heading carries the same symbol. The list becomes one column, which ends the broken line breaks of the two-column layout. Checked at four widths in both languages: no overflow and no external request.
