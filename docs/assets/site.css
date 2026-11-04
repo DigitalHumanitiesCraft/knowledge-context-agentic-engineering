@@ -567,7 +567,16 @@ a.resource-action:focus-visible {
   line-height: 1.35;
   list-style: none;
   cursor: pointer;
+  /* Hover and keyboard focus let a wash in the module colour flow out of the
+     left rule: the row is the control, so the whole row answers. */
+  background-image: linear-gradient(90deg, color-mix(in srgb, var(--module-color) 14%, transparent), color-mix(in srgb, var(--module-color) 3%, transparent) 70%, transparent);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 260ms ease;
 }
+
+.video-module__summary:hover,
+.video-module__summary:focus-visible { background-size: 100% 100%; }
 
 .video-module__summary::-webkit-details-marker { display: none; }
 
@@ -582,8 +591,17 @@ a.resource-action:focus-visible {
   content: "";
   margin-top: -0.25rem;
   transform: rotate(45deg);
-  transition: transform 140ms ease;
+  transition: transform 200ms ease, border-color 200ms ease;
 }
+
+.video-module__summary:hover::after,
+.video-module__summary:focus-visible::after {
+  border-color: var(--module-color);
+  transform: translateY(0.15rem) rotate(45deg);
+}
+
+.video-module[open] > .video-module__summary:hover::after,
+.video-module[open] > .video-module__summary:focus-visible::after { transform: translateY(-0.15rem) rotate(-135deg); }
 
 .video-module[open] > .video-module__summary::after { margin-top: 0.25rem; transform: rotate(-135deg); }
 
@@ -595,7 +613,11 @@ a.resource-action:focus-visible {
 .video-module__summary .module-icon {
   margin-inline-end: 0.45em;
   vertical-align: -0.4em;
+  transition: transform 260ms ease;
 }
+
+.video-module__summary:hover .module-icon,
+.video-module__summary:focus-visible .module-icon { transform: translateY(-0.1rem) scale(1.12); }
 
 .video-module__number { margin-inline-end: 0.35em; }
 
@@ -632,9 +654,16 @@ a.resource-action:focus-visible {
   display: flex;
   justify-content: space-between;
   gap: var(--s2);
-  padding-block: 0.35rem;
+  margin-inline: -0.6rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius);
   font-size: var(--text-lg);
+  transition: background-color 160ms ease;
 }
+
+/* The video row under the pointer or with focus takes a faint wash of its module colour. */
+.video-list li:hover,
+.video-list li:focus-within { background-color: color-mix(in srgb, var(--module-color) 8%, transparent); }
 
 .video-list a {
   color: var(--ink);
@@ -814,4 +843,6 @@ a.resource-action:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition-duration: 0.01ms !important; }
+  .video-module__summary:hover .module-icon,
+  .video-module__summary:focus-visible .module-icon { transform: none; }
 }

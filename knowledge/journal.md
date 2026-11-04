@@ -26,6 +26,10 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-11-04 integrated · Hover and focus feedback on module and video rows
+
+The author asked for an integrated hover effect. It is placed where the whole element is the control: a module row answers pointer hover and keyboard focus alike with a wash in its module colour that flows out of the left rule, a slight lift of the icon and a chevron in the module colour, and video rows take a faint module-coloured wash. The material cards stay without hover, since only their actions are links. The effect is pure CSS and becomes immediate under reduced motion. Focus was checked in headless Edge; no page overflow at three widths in both languages.
+
 ### 2026-11-04 integrated · UFL 2026 lecture notes on the three-session cut
 
 The Uni for Life instance of 2026-11-09 was rebuilt around three sessions, each tied to one area and one learning goal: Prompt and Context Engineering in session 1 with the knowledge dashboard from a web search, Knowledge Engineering in session 2 with the layers of agentic engineering, permission modes, a write-blocking hook and governance on the levels of data and agent, and Agentic Engineering in session 3 with the research-tool workflow, loop engineering, determinism and quality assurance on the Northwind material. The lecture notes now follow the live deck including session 3, the permission-mode section explains when each mode fits, governance comes before the permission modes, and the session overview names both (`0fb462f`, `e2290b6`, `a3cd893`, `0a1aa70`). Several deck slides still carry the draft marker, and whether the synthetic customer e-mail returns to session 3 is open; both stay in the profile.
