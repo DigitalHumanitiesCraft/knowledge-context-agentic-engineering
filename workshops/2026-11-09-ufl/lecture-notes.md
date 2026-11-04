@@ -54,6 +54,22 @@ Session 2: Knowledge Engineering
 Session 3: Agentic Engineering
 : Dienstag, 10.11.2026, 14:00–16:00. Die Teilnehmenden planen agentische Arbeitsabläufe, prüfen ihre Ergebnisse und übertragen sie auf eigene Vorhaben. Die Konzepte sind Promptotyping, Loop Engineering, Determinismus und Qualitätssicherung. Dazu gehört Hands-on 4, ein Analysewerkzeug aus Excel-Daten.
 
+### Begriffe im Workshop
+
+Die Begriffe des Workshops ordnen sich in vier Bereiche. Das LLM ist die Grundlage aller Bereiche, Governance zieht sich quer durch alle.
+
+Prompt Engineering
+: Rückfragen, Beispiele und Meilensteine im Prompt.
+
+Context Engineering
+: Context Window, CLAUDE.md und AGENTS.md, Memory, Skill und MCP, also alles, was dem Agenten mitgeteilt wird.
+
+Knowledge Engineering
+: Wissensdokument, Promptotyping Documents, Docling, der Obsidian-Vault mit Frontmatter, Wikilinks, Tag-Taxonomie und Maps of Content sowie das Kuratieren, also das Wissen, das Menschen erarbeiten und ordnen.
+
+Agentic Engineering
+: AI Agent, AI Harness, Tool Use, Subagents und Workflows, Permission Modes, Hook, Rule of Two, Promptotyping, Fancy Research Tools, Loop Engineering, LLM-as-a-Judge, deterministisch und probabilistisch sowie Qualität sichern.
+
 ### Aufbauendes Beispiel und Ablauf
 
 Über alle drei Sessions entsteht Schritt für Schritt eine Wissensbasis zu Agentic Engineering und Governance, mit einer Oberfläche im Browser. Jeder Schritt vertieft einen Aspekt des Agentic Engineering. Die Teilnehmenden kopieren die Prompts von den Folien in ihren AI Harness und arbeiten parallel mit. Während die Agents arbeiten, bespricht die Gruppe weitere Konzepte, deshalb lohnt es sich, den eigenen Harness dabei im Blick zu behalten.
@@ -606,6 +622,21 @@ oder gibt zurück              Excel-Summen
 
 Ein Auslöser, etwa eine neue Datei, ein Zeitpunkt oder ein Ereignis, startet den Agenten. Ein fest verdrahtetes Prüfskript läuft danach, und der Agent kann es nicht überspringen. Findet es eine Abweichung, beginnt eine innere Schleife mit einem neuen Versuch. Erst das geprüfte Ergebnis geht zur Freigabe an einen Menschen. Jeder Auslöser vervielfacht Anfragen und Tokens, deshalb gehören Abbruchbedingungen und Grenzen zur Gestaltung. Den Begriff erläutert das Video von IBM Technology aus Session 2.
 
+### Subagents und Workflows
+
+Ein Agent kann Teilaufgaben an weitere Agents abgeben. Anthropic unterscheidet dabei Workflows, die LLMs und Werkzeuge über vorab festgelegte Codepfade orchestrieren, von Agents, die Ablauf und Werkzeugnutzung selbst bestimmen (Anthropic, 2024). Drei Formen kommen in der Praxis vor.
+
+Subagent
+: Ein Agent mit eigenem Context Window erledigt eine abgegrenzte Aufgabe und liefert nur das Ergebnis zurück. Claude Code bringt Explore und Plan mit, eigene Agents liegen in `.claude/agents/`. Codex kennt die Rollen `explorer` und `worker`, eigene Agents liegen in `.codex/agents/` (OpenAI, 2026).
+
+Dynamic Workflow
+: Claude schreibt ein Orchestrierungsskript, verteilt Teilaufgaben auf viele parallele Subagents und lässt die Befunde von anderen Agents gegenprüfen, bis die Ergebnisse übereinstimmen. Ausgelöst wird ein Workflow durch die ausdrückliche Bitte darum oder durch die Einstellung ultracode, die Claude selbst entscheiden lässt, wann sich ein Workflow lohnt (Anthropic, 2026).
+
+Parallele Sessions
+: Eigenständige Sessions mit eigenem Ordner schicken einander Nachrichten und melden sich zurück, wenn sie fertig sind. Auf diese Weise ist die Vorbereitung dieses Workshops entstanden.
+
+Mehr Agents kosten mehr. In Anthropics Multi-Agent-Research-System verbrauchten Agents etwa viermal, Multi-Agent-Systeme etwa fünfzehnmal so viele Tokens wie ein Chat, dafür lag das System auf einer internen Recherche-Evaluation deutlich über einem einzelnen Agenten (Anthropic, 2025). Ungeeignet ist der Ansatz, wenn alle Agents denselben Kontext brauchen oder die Aufgabe kaum parallelisierbar ist. OpenAI empfiehlt parallele Agents vor allem für lesende Aufgaben, weil gleichzeitig schreibende Agents leicht kollidieren.
+
 ### Determinismus so weit wie möglich ausreizen
 
 Manche Aufgaben haben genau eine richtige Antwort, andere verlangen ein Urteil. Die Unterscheidung entscheidet, ob ein LLM die Aufgabe selbst lösen sollte.
@@ -702,6 +733,9 @@ Ein Wasserzeichen ist ein Hinweis und kein Beweis. Fehlt es, folgt daraus nicht,
 ## Literatur
 
 - Allen, B. P., Stork, L., & Groth, P. (2023). Knowledge Engineering Using Large Language Models.
+- Anthropic (2024). Building effective agents. https://www.anthropic.com/engineering/building-effective-agents
+- Anthropic (2025). How we built our multi-agent research system. https://www.anthropic.com/engineering/multi-agent-research-system
+- Anthropic (2026). Introducing dynamic workflows in Claude Code. https://claude.com/blog/introducing-dynamic-workflows-in-claude-code
 - Auer, C., et al. (2024). Docling Technical Report. arXiv:2408.09869. https://arxiv.org/abs/2408.09869
 - Bui, T., et al. (2023). TrustMark: Universal Watermarking for Arbitrary Resolution Images. arXiv:2311.18297. https://arxiv.org/abs/2311.18297
 - Dathathri, S., et al. (2024). Scalable watermarking for identifying large language model outputs. *Nature*. https://doi.org/10.1038/s41586-024-08025-4
@@ -715,6 +749,7 @@ Ein Wasserzeichen ist ein Hinweis und kein Beweis. Fehlt es, folgt daraus nicht,
 - Liu (2026). Engineering and Governing the Agent Harness. UNU Macau Technology Report 1. https://unu.edu/publication/engineering-and-governing-agent-harness-technology-and-policy-framework-runtime-layer
 - Mei, L., Yao, J., Ge, Y., et al. (2025). A Survey of Context Engineering for Large Language Models. arXiv:2507.13334. https://doi.org/10.48550/arXiv.2507.13334
 - Meta AI (2025). Agents Rule of Two: A Practical Approach to AI Agent Security. https://ai.meta.com/blog/practical-ai-agent-security/
+- OpenAI (2026). Subagents. https://learn.chatgpt.com/docs/agent-configuration/subagents
 - Pollin, C. (2026). Promptotyping. Translating Research Data into Research Artefacts with Context and Agentic Engineering. https://docs.google.com/document/d/1_Q6kLFxvnvLMRizN2F_uTkpwsaJ-Cp0uBw4REKfhDlM/edit
 - Russell, S., & Norvig, P. (2020). *Artificial Intelligence: A Modern Approach* (4. Aufl.). Pearson. https://aima.cs.berkeley.edu
 - Sapkota, R., Roumeliotis, K. I., & Karkee, M. (2025). AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges. *Information Fusion*, 126, 103599. https://doi.org/10.1016/j.inffus.2025.103599
