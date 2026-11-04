@@ -38,9 +38,9 @@ Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the regi
 
 ## The platform
 
-The public site is one static page per language, `docs/index.html` and `docs/index.de.html`. The page is one workspace: the five modules with their definitions open into their video lists, and five cards lead to Preparation, the slides, the lecture notes, the Video Playlist and four DHCraft methods. A compact paragraph explains DHCraft, workshop funding and public maintenance. The footer links the canonical legal notice and states the licence scope.
+The public site is one static page per language, `docs/index.html` and `docs/index.de.html`. The page leads from a short introduction to four material cards, Preparation, the slides, the lecture notes and four DHCraft methods, and then to the five modules with their definitions and video lists. The footer links the canonical legal notice and states the licence scope.
 
-Preparation links the English Google Slides deck [Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit) from the first of the five material cards. Its URL and language are registered in `data/workshops.json` under `preparation`. The Video Library is rendered from `data/videos.json`.
+Preparation links the English Google Slides deck [Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit) from the first of the four material cards. Its URL and language are registered in `data/workshops.json` under `preparation`. The Video Library is rendered from `data/videos.json`.
 
 The workshop records retain material provenance and generate no public event pages. The site is no-build HTML and CSS whose content needs no JavaScript, with self-hosted fonts, and its requirements are maintained in [`knowledge/specification.md`](knowledge/specification.md). Local changes require author acceptance and a separate publication step.
 
