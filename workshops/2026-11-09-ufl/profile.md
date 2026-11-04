@@ -39,11 +39,13 @@ Two further runs are fixed for April and November 2027, which makes the format a
 
 One project grows across the three sessions. Each hands-on slide puts a copyable prompt at its centre and introduces one concept. Participants paste the prompt into their own harness and work in parallel, and the group discusses concepts while the agents run.
 
-1. Session 1 builds a knowledge dashboard on agentic engineering and governance from a short web search restricted to sources from 2026. The project receives a `knowledge/` folder for distilled knowledge and a `sources/` folder for the found sources, and the agent works in milestones after three context questions. Around this hands-on the session explains the interplay of LLM, agent and harness, the shift from prompt form to Context Engineering and harness engineering, a reviewer subagent used as LLM-as-a-judge, and the removal of generic interface elements from generated output.
-2. Session 2 manages the context window with `/context`, `/compact` and `/init`, introduces `AGENTS.md` and `CLAUDE.md` at global and project level, and separates them from memory. The hands-on transfers the collected knowledge to the participant's own organisation through a short interview with three guiding questions, turns it into a pitch of at most five slides, and saves the procedure as a skill. The session closes with access control, covering the permission modes including auto mode and a hook that blocks file writes outside the project folder.
-3. Session 3 handles a synthetic customer request with the knowledge base built in sessions 1 and 2. The request asks for a workshop, slides, a small reference website and draft rules for AI use, and it deliberately carries personal data so that participants practise passing only the necessary parts to an LLM.
+Each session belongs to one area of agentic engineering and redeems one learning goal.
 
-The learning goals on the deck are that participants can explain how LLM, AI agent and AI harness work together, build and maintain project knowledge and context so that an agent works reliably with it, and plan agentic workflows, check their results and transfer them to their own projects.
+1. Session 1, Prompt and Context Engineering, builds a knowledge dashboard on agentic engineering and governance from a short web search restricted to sources from 2026. The project receives a `knowledge/` folder for distilled knowledge and a `sources/` folder for the found sources, and the agent works in milestones after three context questions. Around this hands-on the session explains the interplay of LLM, agent and harness, tool use, a reviewer subagent used as LLM-as-a-judge and the removal of generic interface elements. It then manages the context window, introduces `AGENTS.md`, `CLAUDE.md` and memory, and in the second hands-on turns the collected knowledge into a pitch for the participant's organisation and saves the procedure as a skill. A slide on Context Engineering closes the session by mapping the methods used onto the categories of the context engineering survey by Mei et al. (2025).
+2. Session 2, Knowledge Engineering, opens with an overview of the five layers of agentic engineering, then covers permission modes, a hook that blocks file writes outside the project folder, and governance on the levels of data and agent with the Rule of Two. It introduces knowledge engineering, the three types of Promptotyping Documents and Obsidian. In the third hands-on the knowledge base becomes an Obsidian vault with frontmatter, a tag taxonomy, maps of content and `HOME.md`, followed by structural and content curation and vault governance, where `CLAUDE.md` carries the topography of the vault.
+3. Session 3, Agentic Engineering, presents the five-step workflow behind fancy research tools, loop engineering as a triggered cycle with a fixed check, the rule that whatever a script can compute a script computes, and quality assurance through independent review and human acceptance. In the fourth hands-on participants build an analysis tool from four Northwind Excel files whose figures a script computes and a separate check verifies. An outlook points to four templates from ongoing work.
+
+The learning goals on the deck are stated per session: explain how LLM, AI agent and AI harness work together and steer the agent through prompts, `CLAUDE.md` and skills; build and maintain project knowledge so that an agent works reliably with it; plan agentic workflows, check their results and transfer them to their own projects.
 
 The organiser's website text announces terminal and installation for session 1. Installation is dropped because participants come prepared. A vocabulary split stays stable, with *Wissensnetz* on the course website and *Wissensbasis* and *Wissenssystem* inside the workshop.
 
@@ -53,9 +55,9 @@ The organiser's website text announces terminal and installation for session 1. 
 | --- | --- |
 | 1 Understanding Large Language Models | Session 1, at the depth the interplay of LLM, agent and harness and the context window require. |
 | 2 Prompt Engineering | Entry layer in session 1, framed as the step from prompt form to context. No block of its own. |
-| 3 Knowledge and Context Engineering | Emphasis. The `knowledge/` folder, context-window management, `AGENTS.md`, `CLAUDE.md` and memory in sessions 1 and 2. |
-| 4 Agentic Engineering | Emphasis. Milestones, subagents, skills, permission modes and hooks across all three sessions. |
-| 5 Critical Perspectives and Governance | Governance is the subject of the knowledge base itself. Data protection and the EU AI Act appear on the opening slides, and data minimisation is the explicit concept of session 3. |
+| 3 Knowledge and Context Engineering | Emphasis. Context Engineering closes session 1; knowledge engineering, Promptotyping Documents and the Obsidian vault form session 2. |
+| 4 Agentic Engineering | Emphasis. Milestones, subagents and skills in session 1, permission modes and hooks in session 2, loop engineering, determinism and quality assurance in session 3. |
+| 5 Critical Perspectives and Governance | Governance is the subject of the knowledge base itself. Data protection and the EU AI Act appear on the opening slides, and governance on the levels of data and agent is a slide of session 2. AI watermarking sits in the appendix. |
 
 The fine module cut in `knowledge/drafts/module-map.md` remains a draft and predates this teaching design.
 
@@ -63,7 +65,7 @@ The fine module cut in `knowledge/drafts/module-map.md` remains a draft and pred
 
 The case is deliberately general and uses real material that outsiders understand. Sessions 1 and 2 work on live web sources from 2026, which each participant gathers anew. Participants may substitute a project of their own.
 
-Session 3 uses the material in [`data/`](data/README.md), a synthetic German customer e-mail with four Excel files converted from Microsoft's Northwind sample database under the MIT License. All persons and companies in it are fictional. The folder also holds the project-folder hook shown in session 2.
+Session 3 uses the material in [`data/`](data/README.md), four Excel files converted from Microsoft's Northwind sample database under the MIT License, together with a synthetic German customer e-mail that the current hands-on does not use. All persons and companies in it are fictional. The folder also holds the project-folder hook shown in session 2.
 
 The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03 because it did not use real data. It is preserved in git history.
 
@@ -72,7 +74,7 @@ The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03
 | Artefact | Location | State |
 | --- | --- | --- |
 | Live deck | one Google Slides deck for all three sessions, operator's Drive, kept private by operator decision of 2026-11-04 and not registered in `data/workshops.json` | in preparation |
-| Lecture Notes (Uni for Life 2026) | [`lecture-notes.md`](lecture-notes.md), German, following the live deck slide by slide | draft, session 3 open |
+| Lecture Notes (Uni for Life 2026) | [`lecture-notes.md`](lecture-notes.md), German, following the live deck slide by slide | draft, follows the deck including session 3 |
 | PPTX export per taught state | this folder | open |
 | Session 3 material and hook | [`data/`](data/README.md) | present |
 | Participant data folder | operator's Drive | still holds files of the dropped scenario |
@@ -80,7 +82,8 @@ The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03
 ## Open points
 
 - The participant data folder on Drive still carries the dropped scenario and needs the session 3 files.
-- Session 3 has no slides yet. They go into the same deck as sessions 1 and 2.
+- Several slides in the deck still carry the draft marker and await the operator's acceptance; the lecture notes follow their current text.
+- Whether the synthetic customer e-mail with its personal data returns to session 3 is undecided.
 - The operational counterpart of this profile, with prompts, logistics and correspondence, is the workshop document in the operator's research vault. Its slide sequence predates the current deck.
 
 ## Delivery notes

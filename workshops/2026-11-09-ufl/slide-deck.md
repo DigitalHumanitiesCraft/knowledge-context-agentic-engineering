@@ -24,6 +24,6 @@ Modules drawn on, with their role per session in [`profile.md`](profile.md#modul
 - [`Agentic Engineering`](../../script/modules/module-04-agentic-engineering.md)
 - [`Critical Perspectives and Governance`](../../script/modules/module-05-critical-perspectives-governance.md)
 
-The instance is taught in German to professionals from companies and institutions across disciplines. Sessions 1 and 2 work on live web sources from 2026 and session 3 on the synthetic Northwind customer request in [`data/`](data/README.md), and participants operate their own AI harness throughout.
+The instance is taught in German to professionals from companies and institutions across disciplines. Sessions 1 and 2 work on live web sources from 2026 and session 3 on four Northwind Excel files in [`data/`](data/README.md), and participants operate their own AI harness throughout.
 
 This file is replaced by the slide text of the instance once that text is cut and accepted.

@@ -43,19 +43,16 @@ Von Digital Humanities Craft kommen der YouTube-Kanal (https://www.youtube.com/@
 
 ### Lernziele und Ablauf
 
-Nach dem Workshop können die Teilnehmenden
+Der Workshop umfasst drei Sessions zu je zwei Stunden, online über Zoom. Jede Session gehört zu einem Bereich des Agentic Engineering und löst ein Lernziel ein.
 
-1. erklären, wie LLM, AI Agent und AI Harness zusammenwirken,
-2. Projektwissen und Kontext so aufbauen und pflegen, dass ein AI Agent damit verlässlich arbeitet (Knowledge und Context Engineering),
-3. agentische Arbeitsabläufe planen, ihre Ergebnisse prüfen und auf eigene Vorhaben übertragen (Agentic Engineering).
+Session 1: Prompt und Context Engineering
+: Montag, 9.11.2026, 14:00–16:00. Die Teilnehmenden erklären, wie LLM, AI Agent und AI Harness zusammenwirken, und steuern den Agenten über Prompts, CLAUDE.md und Skills. Die Konzepte sind Tool Use, Subagents, Context Window, Memory, Skills und MCP. Dazu gehören Hands-on 1 und 2 mit Wissensdashboard, Pitch und Skill.
 
-Der Workshop umfasst drei Sessions zu je zwei Stunden, online über Zoom.
+Session 2: Knowledge Engineering
+: Dienstag, 10.11.2026, 10:00–12:00. Die Teilnehmenden bauen Projektwissen so auf und pflegen es, dass ein AI Agent damit verlässlich arbeitet. Die Konzepte sind Zugriff, Governance, Promptotyping Documents, Wissensdokument, Tags, Maps of Content und Vault-Governance. Dazu gehört Hands-on 3, in dem die Wissensbasis zu einem Obsidian-Vault wird.
 
-| Session | Termin |
-| --- | --- |
-| 1 | Montag, 9.11.2026, 14:00–16:00 |
-| 2 | Dienstag, 10.11.2026, 10:00–12:00 |
-| 3 | Dienstag, 10.11.2026, 14:00–16:00 |
+Session 3: Agentic Engineering
+: Dienstag, 10.11.2026, 14:00–16:00. Die Teilnehmenden planen agentische Arbeitsabläufe, prüfen ihre Ergebnisse und übertragen sie auf eigene Vorhaben. Die Konzepte sind Promptotyping, Loop Engineering, Determinismus und Qualitätssicherung. Dazu gehört Hands-on 4, ein Analysewerkzeug aus Excel-Daten.
 
 ### Aufbauendes Beispiel und Ablauf
 
@@ -63,7 +60,7 @@ Der Workshop umfasst drei Sessions zu je zwei Stunden, online über Zoom.
 
 Zwei Vorgaben gelten für den ganzen Workshop. Die teuersten Modelle (GPT-6 Astra, Claude Fable) verbrauchen das Nutzungskontingent rasch und sind für die Übungen nicht nötig. Opus reicht für den Hauptagenten, Subagents laufen auf Sonnet 5.5 oder GPT-6.1 Terra. Beim Datenschutz ist Vorsicht geboten, sobald personenbezogene oder sensible Daten im Spiel sind, die unter die Datenschutz-Grundverordnung (DSGVO) fallen, oder Anwendungen, die der EU AI Act regelt, etwa Entscheidungen über Personal.
 
-## Session 1: LLMs, AI Agents und das erste Projekt
+## Session 1: Prompt und Context Engineering
 
 ### „Few-shotted for Breakfast“
 
@@ -234,8 +231,6 @@ Weil bei jeder Änderung etwas schiefgehen kann, gehört eine Versionierung mit 
 
 > Lass uns für jeden Task und Meilenstein saubere Commits in unserem GitHub-Repository anlegen.
 
-## Session 2: Kontext, Wissen und Steuerung
-
 ### Context Window managen
 
 Ein Context Window bezeichnet den Textausschnitt, den ein LLM bei der Verarbeitung oder Erzeugung von Sprache auf einmal berücksichtigen kann. Eingabe und Ausgabe teilen sich diesen Raum. Bei einem Context Window von 8000 Tokens passen 6000 Tokens Eingabe und 1500 Tokens Ausgabe hinein. Bei 10000 Tokens Eingabe ist das Fenster überschritten, und ältere Teile fallen heraus oder müssen gekürzt werden.
@@ -329,6 +324,49 @@ description: Pitch mit max. 5 Folien.
 
 Der Agent leitet den Skill aus dem freigegebenen Pitch ab. Er ist damit ein Agentenprodukt und wird wie jede CLAUDE.md geprüft, bevor man sich auf ihn verlässt. Die Dokumentation steht unter https://code.claude.com/docs/en/skills.
 
+### MCP, RAG und Memory
+
+Ein Video stellt die vier Wege nebeneinander, auf denen ein Agent über sein Modell hinaus Wissen und Fähigkeiten erhält, nämlich Skills, das Model Context Protocol (MCP) für die Anbindung externer Dienste, Retrieval-Augmented Generation (RAG) und Memory (*Skills vs MCP vs RAG vs Memory: What AI Agents Need to Know*, https://youtu.be/X4FVEEegCbk).
+
+### Context Engineering
+
+Context Engineering gestaltet, was im Context Window steht. Dazu gehören Instruktionen, Wissen, Tools, Memory und die Anfrage selbst, ausgewählt und verdichtet, damit das LLM mit begrenztem Platz zuverlässig arbeitet. Die Ordnung folgt der Übersicht von Mei et al. (2025), der Inhalt den Methoden, die in Session 1 bereits angewandt wurden.
+
+Beschaffen
+: Prompt Engineering mit Rückfragen, Beispielen und Meilensteinen aus Hands-on 1 und 2. Retrieval, bei dem der Agent Dateien selbst sucht und liest. Claude Code verwendet dafür keine Vektordatenbank, sondern Suchwerkzeuge und Lesezugriffe.
+
+Verarbeiten
+: Strukturierte Information in Markdown, Frontmatter und Relationen von Wissensdokumenten. Destillieren, also Quellen zu Wissensdokumenten verdichten, wie in Hands-on 1.
+
+Verwalten
+: Memory in CLAUDE.md und in Notizen, die der Agent selbst schreibt. Context Compression mit `/compact`, das den Verlauf durch eine Zusammenfassung ersetzt.
+
+Anwenden
+: Tool Use über MCP-Server und Skills, die erst bei Bedarf geladen werden. Multi-Agent-Arbeit mit Subagents, die je ein eigenes Context Window haben.
+
+## Session 2: Knowledge Engineering
+
+### Agentic Engineering im Überblick
+
+Die Folie eröffnet Session 2 und wiederholt die Begriffe, die der Workshop verwendet. Sie folgt einem Video von IBM Technology (*Agentic Engineering: 5 Terms Every AI Developer Should Know*, 2026, https://youtu.be/SIZsFGvtClM), das fünf Ebenen unterscheidet.
+
+Prompt
+: Prompting-Strategien kennen, anwenden und iterativ verbessern.
+
+Knowledge und Context
+: Fach- und Projektwissen erschließen und strukturieren, für den jeweiligen LLM-Aufruf auswählen und aufbereiten.
+
+Harness
+: Die Arbeitsumgebung mit Werkzeugen, Wissen, Berechtigungen und Steuerung gestalten und prüfen.
+
+Loop
+: Aufgaben in Handlungs- und Prüfzyklen bearbeiten, mit klaren Zielen, Abbruchbedingungen und menschlicher Kontrolle.
+
+Factory
+: Abläufe weitgehend automatisieren, mit festen Prüfpunkten.
+
+Session 1 hat Prompt und Context behandelt, Session 2 vertieft Knowledge und Harness, Session 3 führt zu Loop.
+
 ### Zugriff und Auto-Modus
 
 Claude Code arbeitet mit den Rechten der Person, die es startet. Der Permission Mode legt fest, was ohne Rückfrage geschieht. Die fünf Modi reichen von wenig zu viel Autonomie.
@@ -338,7 +376,7 @@ Claude Code arbeitet mit den Rechten der Person, die es startet. Der Permission 
 | Plan | erkundet und plant, ändert nichts |
 | Manual | fragt bei allem außer Lesen |
 | Accept edits | bearbeitet Dateien ohne Rückfrage |
-| Auto | ein Klassifikator prüft jede Aktion im Hintergrund |
+| Auto | Lesen und Bearbeiten im Projekt frei, alles andere prüft ein Klassifikator |
 | Bypass | alles ohne Prüfung, nur in isolierten Umgebungen |
 
 Im Auto-Modus beurteilt ein Klassifikator, ob eine Aktion riskant ist. Durchgesetzt wird eine Grenze dagegen durch eine deny-Regel oder einen Hook. Bestimmte Pfade ändert Claude Code nie automatisch, darunter `.git`, `.claude`, `.bashrc` und weitere geschützte Pfade. Die Dokumentation steht unter https://code.claude.com/docs/en/permission-modes.
@@ -361,9 +399,262 @@ Der Hook wird in `.claude/settings.json` eingetragen.
 
 `schutz.py` liest den Zielpfad. Liegt er außerhalb des Projektordners, endet das Skript mit Exit-Code 2. Das Skript liegt in diesem Repository unter [`data/hooks/schutz.py`](data/hooks/schutz.py). Der Hook hat Grenzen. Shell-Befehle umgehen ihn, weil er nur die Datei-Werkzeuge prüft, und vollständigen Schutz bietet erst eine Sandbox. Die Dokumentation steht unter https://code.claude.com/docs/en/hooks.
 
-## Session 3: Eine Kundenanfrage abwickeln
+### KI-Governance auf zwei Ebenen
 
-Für Session 3 gibt es noch keine Folien. Das Material liegt in [`data/`](data/README.md), eine synthetische Kundenanfrage per Mail mit vier Excel-Dateien aus der Northwind-Beispieldatenbank. Die Anfrage verlangt einen Workshop, Folien, eine kleine Referenz-Website und Entwürfe für Regeln zur KI-Nutzung und enthält bewusst personenbezogene Daten. Dieser Teil des Skriptums wird geschrieben, sobald die Folien stehen.
+Governance für KI-Agenten hat zwei Gegenstände, die Daten und den Agenten selbst. Fünf Fragen gelten für beide Ebenen.
+
+Sichtbarkeit
+: Wo liegen sensible Daten, und wohin fließen sie? Welche Tools, Konnektoren und Modelle nutzt der Agent?
+
+Klassifikation
+: Wie sensibel sind die Daten? Welche Inhalte und Erweiterungen sind vertrauenswürdig, welche fremd?
+
+Rechtsraum
+: Wo werden Daten gespeichert und verarbeitet, und welches Recht gilt? Wo läuft das Modell, und lässt sich der Anbieter wechseln?
+
+Zugriff
+: Wer darf auf welche Daten zugreifen? Was darf der Agent ohne Freigabe tun, was nur mit?
+
+Nachweis
+: Sind die Datenflüsse lückenlos protokolliert? Werden Tool-Calls, Freigaben und Abbrüche aufbewahrt?
+
+Die Kernregel ist die Rule of Two (Meta AI, 2025). Ein Agent hat pro Session höchstens zwei von drei Eigenschaften, nämlich fremde Inhalte verarbeiten, auf eigene Daten zugreifen und Zustand ändern oder nach außen kommunizieren. Braucht eine Aufgabe alle drei, entscheidet ein Mensch. Die Datenebene vertieft ein Video von IBM Technology (*Can Your AI Use Sensitive Data Safely? 5 Capabilities You Need*, 2026, https://www.youtube.com/watch?v=jnP9AgtX0qo), die Agentenebene ein Technologiebericht der United Nations University (Liu, 2026).
+
+### Knowledge Engineering
+
+Knowledge Engineering umfasst den Aufbau und die Pflege expliziten, revidierbaren Projektwissens. Dieses Wissen hält die aktuelle Auffassung eines Projekts von seinen Daten, seinem Zweck und den für die Umsetzung relevanten Entscheidungen fest. Ein Frontier-LLM setzt nur so genau um, wie die Spezifikation es vorgibt. Wer eine Domäne versteht und ihre Begriffe, Regeln und Entscheidungen festhält, kann sie dem Agenten als genaue Anforderungen übergeben.
+
+Drei etablierte Felder tragen dazu bei.
+
+Personal Information Management
+: Der Umgang mit eigener Information über Formate und Orte hinweg, im Dienst von Zielen und Rollen. Das Kernproblem ist Fragmentierung, das Kernkonzept die Personal Information Collection. Die Tätigkeiten reichen vom Erwerben und Erstellen über Speichern, Organisieren, Pflegen und Wiederfinden bis zum Nutzen und Verteilen (Jones et al., 2017).
+
+Projektmanagement
+: Die systematische Planung, Steuerung und Kontrolle von Vorhaben innerhalb definierter Rahmenbedingungen, in den Phasen Initiierung, Planung, Durchführung, Überwachung und Steuerung sowie Abschluss (Kuster et al., 2022).
+
+Wissensmodellierung
+: Die Konstruktion einer Wissensbasis, in der die Konzepte einer Domäne identifiziert, formal repräsentiert und abfragbar gemacht werden. Der Weg führt von den Fragen über Wissenserwerb, Vokabular, Kodierung und Instanzen bis zu Abfragen, Inferenz und Evaluation (Russell & Norvig, 2020).
+
+### Promptotyping Documents
+
+Promptotyping Documents sind Wissensdokumente, unterschieden nach der Art des Wissens, das sie tragen (Pollin, 2026). Allen drei Typen sind die Teilnehmenden in Session 1 schon begegnet.
+
+Declarative Documents
+: Sie halten Wissen über den Gegenstand fest, also über Daten, Domäne und Anforderungen, und erweitern, was das LLM über das Projekt weiß. Beispiele sind `project.md`, `data.md`, `specification.md` und `design.md`. In Hands-on 1 waren das `project.md` und `sources/`.
+
+Process Documents
+: Sie halten Wissen über den Arbeitsverlauf fest, also was geschehen ist, was offen ist und was als Nächstes kommt. Zusammen mit Git bilden `journal.md`, `handoff.md` und `plan.md` das Gedächtnis des Projekts. In Hands-on 1 übernahmen Commits und Meilensteine diese Rolle.
+
+Action Documents
+: Sie halten Wissen über das Handeln fest, also was Agents im Projekt tun dürfen und wie, und steuern damit das Verhalten des Agenten. Beispiele sind CLAUDE.md und AGENTS.md, `governance.md`, `rules.md` und Skills wie der Pitch-Skill aus Hands-on 2.
+
+### Obsidian
+
+Obsidian ist ein Wissensmanagementsystem, das Notizen als Markdown-Dateien in einem lokalen Ordner speichert. Dieser Ordner heißt Vault. Die Daten bleiben auf dem eigenen Computer, das Dateiformat ist offen, und ein Cloud-Konto ist nicht nötig (https://obsidian.md).
+
+Ein Vault kann auf drei Ebenen arbeiten. Auf der ersten dient er der persönlichen Information, also Ablage und Wiederfinden im Sinne des Personal Information Management. Auf der zweiten trägt er Projekt und Arbeit, etwa laufende Vorhaben, Workshop- und Publikationsplanung. Auf der dritten bildet er Wissensstruktur ab, von informeller Strukturierung mit Links, Tags und Maps of Content bis zu formaler Modellierung mit Dokumenttypen, Relationen und Schemata.
+
+### How Steph Ango uses Obsidian
+
+Steph Ango ist CEO von Obsidian und beschreibt sein eigenes System als einen möglichen Stil (https://stephango.com/vault). Er arbeitet mit einem einzigen Vault, kaum Ordnern, durchgehend Markdown, Kategorien und Tags im Plural, Datumsangaben im Format JJJJ-MM-TT und vielen internen Links. Er rät, eigene Regeln zu wählen, aufzuschreiben und bei Bedarf zu ändern, weil ein konsistenter Stil viele kleine Entscheidungen erspart. Die Prinzipien sind Ausgangspunkte für eigene Entscheidungen und kein Standard.
+
+### Das Wissensdokument im Vault
+
+In Session 1 war ein Wissensdokument eine Markdown-Datei mit Überschriften. Im Vault kommen ein Kopf und Relationen dazu.
+
+```markdown
+---
+type: knowledge
+created: 2026-11-10
+status: draft
+tags: [policies, agents]
+---
+# Agent Governance
+## Summary
+Die [[Rule of Two]] begrenzt …
+## Kernpunkte
+## Synthese
+## Sources
+## Related
+- [[Permission Modes]]
+- [[Hooks]]
+```
+
+Kopf
+: Der Frontmatter in YAML, einem Format aus Schlüssel und Wert. Typ, Datum, Status und Tags machen den Vault abfragbar.
+
+Körper
+: Ein Konzept pro Datei, in sich verständlich, mit Summary, Kernpunkten, Synthese und Sources.
+
+Relationen
+: Wikilinks im Text und unter Related. Obsidian zeigt auch, welche Dokumente auf ein Dokument verweisen.
+
+### Tags und Tag-Taxonomie
+
+Tags sind Attribute quer zu Ordnern und lassen sich kombinieren. Links verbinden einzelne Konzepte, Tags benennen breite Kategorien. Eine Tag-Taxonomie ist ein kontrolliertes Vokabular mit Kategorien, die sich nicht überlappen, und neue Tags entstehen nur innerhalb dieser Kategorien. Ohne Taxonomie entstehen Synonyme, Tippfehler und uneinheitliche Granularität.
+
+Das Beispiel auf der Folie arbeitet mit drei Kategorien. Das Thema sagt, worum es geht (`agents`, `policies`, `risks`), die Funktion, welche Art Dokument vorliegt (`concepts`, `mocs`, `workflows`), und die Quelle, woher das Wissen stammt (`papers`, `websites`, `originals`). Ein Dokument trägt dann etwa `tags: [agents, concepts, papers]`. Der Reifegrad steht im Feld `status` und gehört nicht in die Tags.
+
+### Maps of Content
+
+Eine Map of Content (MOC) ist ein kuratierter Einstiegspunkt in einen Themenbereich. Sie versammelt Links auf verwandte Dokumente mit je einer Zeile Erläuterung. MOCs können verschachtelt sein, eine `HOME.md` im Root verweist auf Themen-MOCs, diese auf Unter-MOCs oder Wissensdokumente.
+
+```
+HOME.md
+├── Governance MOC
+│   ├── [[Rule of Two]]
+│   ├── [[Permission Modes]]
+│   └── [[Hooks]]
+├── Agents MOC
+│   ├── [[Subagents]]
+│   └── [[Skills]]
+└── Quellen MOC
+```
+
+Für Agents sind MOCs Navigationsinfrastruktur. Das Context Window fasst einen größeren Vault nicht vollständig, deshalb startet der Agent an einem Einstiegspunkt und folgt den Links.
+
+### Hands-on 3: Die Wissensbasis wird ein Obsidian-Vault
+
+Zuerst wird Obsidian installiert (https://obsidian.md/download) und der Ordner `wissensbasis` über Manage Vaults und Open folder as vault als Vault geöffnet. Ein erster Blick gilt den Dateien, der Graph-Ansicht und den Eigenschaften. Dann folgen drei Prompts im AI Harness, und jedes Ergebnis wird geprüft, bevor der nächste Prompt folgt.
+
+Bestand analysieren:
+
+> Wir machen aus diesem Projektordner einen Obsidian-Vault. Analysiere knowledge/ und sources/: Welche Dokumenttypen gibt es, welche Konzepte kommen mehrfach vor, wo fehlen Verbindungen? Schlage ein Frontmatter-Schema, eine kleine Tag-Taxonomie und Wikilinks vor. Ändere noch nichts.
+
+Vault anlegen:
+
+> Setze den Vorschlag mit meinen Anmerkungen um: Frontmatter in jedem Dokument, darunter Summary, Kernpunkte, Synthese, Sources und Related, Wikilinks im Text und unter Related, eine TAG-TAXONOMY.md und eine HOME.md als Einstieg. Halte die neuen Regeln in CLAUDE.md fest. Lege für jeden Schritt einen Commit an.
+
+Vault prüfen:
+
+> Prüfe den Vault auf tote Wikilinks, Dokumente ohne Verbindung und Tags außerhalb der Taxonomie. Liste und begründe die Befunde und schlage Korrekturen vor. Ändere noch nichts.
+
+Zum Schluss wird der Vault erneut in Obsidian angesehen, mit der Leitfrage, was die Graph-Ansicht jetzt zeigt.
+
+### Kuratieren: Struktur und Inhalt
+
+Kuratieren ist die laufende Pflege des Vaults, also verdichten, präzisieren, verknüpfen, bereinigen und archivieren. Ohne Kuration wächst der Vault und verliert an Nutzbarkeit. Zwei Arten unterscheiden sich darin, wie sicher sich prüfen und rückgängig machen lässt, was der Agent ändert.
+
+Strukturelle Kuration
+: Sie ändert Frontmatter, Tags, Links und MOCs. Die Prüfungen sind eindeutig, Änderungen leicht rückgängig zu machen.
+
+> Aktiviere den Plan-Modus. Analysiere den Vault auf verwaiste Dokumente, tote Wikilinks, Dubletten, Tags außerhalb von TAG-TAXONOMY.md, unpassende Status-Felder und fehlende MOC-Einträge. Gib einen Plan nach Wirkung sortiert aus. Führe erst nach Bestätigung aus. Nie löschen, immer archivieren.
+
+Inhaltliche Kuration
+: Sie ändert Text, also Formulierungen, Dubletten, Widersprüche und veraltete Aussagen. Die Prüfungen sind Urteile, Änderungen schwer rückgängig zu machen.
+
+> Analysiere die Wissensdokumente auf inhaltliche Redundanzen. Schlage pro Fund Zusammenführen, Trennen, Kürzen oder Belassen vor und begründe. Führe nichts aus. Regel: Keine Information geht verloren, im Zweifel belassen.
+
+Beide Prompts sind Beispiele, die für den eigenen Vault angepasst werden.
+
+### Vault-Governance
+
+Vault-Governance macht die Regeln des Vaults explizit, in Dateien, die Mensch und Agent gleichermaßen lesen. Harness Governance regelt, was der Agent tun darf, Vault-Governance, wie das Wissen geordnet ist, mit dem er arbeitet. Vier Systemdokumente im Root tragen diese Regeln.
+
+```
+vault/
+├── HOME.md          Einstieg, verlinkt alle Bereiche
+├── TAG-TAXONOMY.md  kontrolliertes Vokabular
+├── CLAUDE.md        Topografie und Regeln
+└── ACTIVE-WORK.md   laufende Vorhaben, Status, nächster Schritt
+```
+
+CLAUDE.md enthält die Topografie des Vaults, also welcher Ordner welchem Zweck dient. Diese Struktur denkt der Mensch, ausgehend davon, wie er arbeitet und was er braucht, etwa Projekte, Fachwissen, Anträge, Verwaltung und Aufgaben. Weil der Harness CLAUDE.md bei jedem Sitzungsbeginn lädt, kennt der Agent den Vault vom ersten Satz an. Details stehen in Konventionen und MOCs, die er bei Bedarf nachlädt. Im Wissensdashboard aus Hands-on 1 bilden `knowledge/` und `sources/` die einfachste Form einer solchen Topografie.
+
+Dasselbe Muster beschreibt Karpathy (2026) für eine vom LLM gepflegte Wissensbasis. Unveränderliche Quellen, ein vom LLM geschriebenes Wiki und ein Schema-Dokument wie CLAUDE.md oder AGENTS.md, das Struktur, Konventionen und Arbeitsabläufe festlegt und von Mensch und LLM gemeinsam weiterentwickelt wird. ACTIVE-WORK.md bündelt die laufenden Vorhaben mit Status und nächstem Schritt, sodass eine neue Session dort beginnt und weiß, woran gerade gearbeitet wird.
+
+## Session 3: Agentic Engineering
+
+### Fancy Research Tools
+
+Fancy (research) tools sind kleine Forschungswerkzeuge, die Coding Agents aus einer gepflegten Wissensbasis bauen, meist als statische Anwendungen, die ohne Server im Browser laufen (https://dhcraft.org/fancy-research-tools/). Der Weg dorthin hat fünf Schritte, und bei jedem ist geklärt, wer ihn trägt.
+
+1. Frage und Daten klären, also was das Werkzeug leisten soll und mit welchem Material. Das entscheidet der Mensch.
+2. Wissen ordnen, also Projekt, Daten und Anforderungen in `knowledge/` festhalten. Das leisten Mensch und Agent gemeinsam.
+3. In Meilensteinen bauen. Der Agent setzt um, der Mensch gibt frei.
+4. Am Material prüfen, mit Tests, Review-Agent und fachlicher Sichtung durch den Menschen.
+5. Nutzen und pflegen. Das Werkzeug läuft im Browser, und die Wissensbasis wächst mit.
+
+Ein Befund aus der Prüfung ändert zuerst die Wissensbasis und erst danach den Code. Professionell wird ein solches Werkzeug durch Prüfung, Pflege und Weitergabe, was sich im Team lernen oder als Dienstleistung beauftragen lässt.
+
+### Loop Engineering
+
+Loop Engineering gestaltet das System, das den Agenten anstößt und prüft, statt ihn jedes Mal von Hand zu prompten. Das Beispiel ist das Analysewerkzeug aus Hands-on 4 als wiederkehrender Ablauf.
+
+```
+Auslöser                      Agent
+neue Excel-Datei     ──────▶  liest knowledge/,
+liegt im Ordner               aktualisiert den Bericht
+     ▲                              │      ▲
+     │                              ▼      ┆ Abweichung,
+Freigabe                      Prüfskript   ┆ neuer Versuch
+Mensch nimmt ab      ◀──────  Kennzahlen gegen
+oder gibt zurück              Excel-Summen
+```
+
+Ein Auslöser, etwa eine neue Datei, ein Zeitpunkt oder ein Ereignis, startet den Agenten. Ein fest verdrahtetes Prüfskript läuft danach, und der Agent kann es nicht überspringen. Findet es eine Abweichung, beginnt eine innere Schleife mit einem neuen Versuch. Erst das geprüfte Ergebnis geht zur Freigabe an einen Menschen. Jeder Auslöser vervielfacht Anfragen und Tokens, deshalb gehören Abbruchbedingungen und Grenzen zur Gestaltung. Den Begriff erläutert das Video von IBM Technology aus Session 2.
+
+### Determinismus so weit wie möglich ausreizen
+
+Manche Aufgaben haben genau eine richtige Antwort, andere verlangen ein Urteil. Die Unterscheidung entscheidet, ob ein LLM die Aufgabe selbst lösen sollte.
+
+Deterministisch
+: Code, Formeln und Skripte liefern bei gleicher Eingabe die gleiche Ausgabe. Dazu gehören Summen, Budgets, Datumsangaben und Zählungen, Prüfungen wie die, ob jedes Feld ausgefüllt ist und die Summe stimmt, sowie das Umwandeln von Formaten.
+
+Probabilistisch
+: Das Urteil eines LLM oder eines Menschen kann bei gleicher Eingabe unterschiedlich ausfallen. Dazu gehören Zusammenfassen, Formulieren und Tonalität, Klassifizieren, Abwägen und Entscheiden sowie die Frage, ob ein Ergebnis plausibel ist.
+
+Was ein Skript erledigen kann, soll ein Skript erledigen. Das LLM schreibt das Skript und rechnet nicht selbst.
+
+### Qualität sichern
+
+Qualität entsteht durch passende Prüfungen, unabhängiges Review und menschliche Abnahme. Vier Mechanismen tragen dazu bei.
+
+Unabhängiges Review
+: Ein zweiter Agent prüft mit frischem Kontext, als LLM-as-a-Judge nach festgelegten Kriterien. Seine Befunde werden am Material geprüft.
+
+Mensch im Prozess
+: Automatische Tests erfassen nicht alles. In einem Projekt waren alle Tests bestanden, doch Markierungen erschienen grau statt olivgrün, und erst die visuelle Prüfung fand den Fehler.
+
+Fehler in Mechanismen überführen
+: Ein gefundener Fehler wird zu einer dauerhaften Prüfung. Als in der Handy-Ansicht der Text unter dem ersten Bildschirm begann, kam ein Test dazu, der seitdem seine Position prüft.
+
+Rechte und Freigaben
+: Push, Versand und Veröffentlichung bleiben beim Menschen.
+
+### Hands-on 4: Ein Analysewerkzeug aus Excel-Daten
+
+Das Material liegt in [`data/`](data/README.md), vier Excel-Dateien aus der Northwind-Beispieldatenbank mit Bestellungen, Produkten, Kunden und Mitarbeitenden. In einem neuen Ordner `analyse` werden die Excel-Dateien abgelegt, dann startet eine neue Session im AI Harness mit Zugriff auf diesen Ordner. Die drei Prompts werden nacheinander ausgeführt, und jedes Ergebnis wird geprüft, bevor der nächste Prompt folgt.
+
+Daten verstehen:
+
+> Analysiere die Excel-Dateien in diesem Ordner: Welche Tabellen, Spalten und Beziehungen gibt es, welche Fragen lassen sich damit beantworten? Halte das in knowledge/data.md fest. Stell mir drei Fragen zu meinem Ziel. Ändere sonst noch nichts.
+
+Werkzeug bauen:
+
+> Baue ein Analysewerkzeug als Single-Page-Application im Browser. Alle Kennzahlen berechnet ein Skript aus den Excel-Dateien, nicht du selbst. Halte die Anforderungen in knowledge/requirements.md fest und arbeite in Meilensteinen.
+
+Ergebnisse prüfen:
+
+> Prüfe jede Kennzahl im Werkzeug gegen eine Referenz, die du direkt aus den Excel-Dateien berechnest. Liste und begründe Abweichungen. Ändere noch nichts.
+
+Zum Schluss werden die Kennzahlen im Werkzeug mit eigenen Summen in Excel verglichen. Der zweite Prompt setzt die Regel aus der Determinismus-Folie um, der dritte die unabhängige Prüfung.
+
+### Ausblick: Vorlagen für die eigene Arbeit
+
+Vier Vorlagen aus laufender Arbeit zeigen, wie die Konzepte des Workshops in größeren Systemen aussehen. Es sind Research Previews, und ob sie für den produktiven Einsatz taugen, ist im eigenen Projekt zu prüfen.
+
+Second Brain Vault
+: Vorlage eines persönlichen Arbeitssystems mit synthetischen Beispielen (https://github.com/chpollin/second-brain-vault).
+
+Grounded Vault
+: Belegpflichtige Wissensbasis mit prüfbaren Quellenankern (https://github.com/DigitalHumanitiesCraft/grounded-vault).
+
+Research Mission Control
+: Rollen und Übergaben für mehrere Agenten und Arbeitsstränge (https://github.com/DigitalHumanitiesCraft/research-mission-control).
+
+Promptotyping
+: Methode, Skills und Vorlagen für Wissensdokumente (https://github.com/DigitalHumanitiesCraft/Promptotyping).
 
 ## Anhang
 
@@ -386,13 +677,33 @@ Forschungsresultate und Sicherheitsvorfälle zeigen Fähigkeiten und Kontrollpro
 
 Recursive Self-Improvement bedeutet, dass KI hilft, leistungsfähigere KI zu entwickeln, die wiederum die weitere Entwicklung vorantreibt. Die Folie hält das für sehr wahrscheinlich und stellt dazu Positionen gegenüber, von Naam (2026) über AI 2027 bis zu den AGI-Zeitleisten von 80,000 Hours, ergänzt um Interviews und Videos zu KI-Fortschritt und Risiken. Weitere Videos enthält die kuratierte Playlist der Lehrlinie.
 
+### AI Watermarking
+
+Ein Wasserzeichen soll erkennbar machen, ob ein Text oder ein Bild von einer KI stammt. Bei Text und Bild funktioniert das grundverschieden.
+
+Beim Text-Watermarking wirkt das Wasserzeichen schon beim Schreiben. Ein LLM berechnet für jedes mögliche nächste Token eine Wahrscheinlichkeit und zieht daraus eines. Beim Watermarking erzeugt ein geheimer Schlüssel zusammen mit dem vorangehenden Text bei jedem Schritt einen Zufallswert, der die Auswahl leicht in eine bestimmte Richtung lenkt. Der Text bleibt gut lesbar, trägt aber ein statistisches Muster in der Wortwahl. Wer den Schlüssel hat, berechnet für einen Text einen Wert und vergleicht ihn mit einer Schwelle. Je länger der Text, desto verlässlicher das Ergebnis, und Umschreiben oder Übersetzen schwächt das Muster (Dathathri et al., 2024, Fig. 1, CC BY 4.0).
+
+Beim Bild-Watermarking wird das fertige Bild markiert. Ein Encoder legt eine kurze Bitfolge unsichtbar ins Pixelmuster, ein Decoder liest sie wieder aus, schon bei einem einzelnen Bild. JPEG-Kompression und Zuschnitt übersteht das Wasserzeichen, gezielte Angriffe können es entfernen (Bui et al., 2023). Signierte Metadaten nach dem Standard C2PA sind ein zweiter Weg, die jeder prüfen kann, solange sie nicht entfernt wurden. Das Video *How Image Watermarking Works* von Computerphile (2026, https://youtu.be/h6j_ixGnpiY) erklärt den Bildteil.
+
+Ein Wasserzeichen ist ein Hinweis und kein Beweis. Fehlt es, folgt daraus nicht, dass ein Mensch den Inhalt erstellt hat. Seit 2. August 2026 verlangt Art. 50 des AI Act von Anbietern, synthetische Inhalte maschinenlesbar zu kennzeichnen, und Watermarks sind dafür ein Baustein.
+
 ## Literatur
 
 - Allen, B. P., Stork, L., & Groth, P. (2023). Knowledge Engineering Using Large Language Models.
+- Bui, T., et al. (2023). TrustMark: Universal Watermarking for Arbitrary Resolution Images. arXiv:2311.18297. https://arxiv.org/abs/2311.18297
+- Dathathri, S., et al. (2024). Scalable watermarking for identifying large language model outputs. *Nature*. https://doi.org/10.1038/s41586-024-08025-4
 - Dell’Acqua, F., et al. (2026). Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of Artificial Intelligence on Knowledge Worker Productivity and Quality. *Organization Science*, 37(2), 403–423. https://doi.org/10.1287/orsc.2025.21838
 - Gans, J. (2026). A Model of Artificial Jagged Intelligence. arXiv:2601.07573. https://doi.org/10.48550/arXiv.2601.07573
+- Jones, W., et al. (2017). Personal Information Management. In *Encyclopedia of Library and Information Sciences* (4. Aufl.). https://doi.org/10.1081/E-ELIS4-120053695
 - Karpathy, A. (2025). Vibe Coding. Beitrag auf X, 2. Februar 2025.
+- Karpathy, A. (2026). LLM Wiki. GitHub Gist, 4. April 2026. https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+- Kuster, J., et al. (2022). *Handbuch Projektmanagement* (5. Aufl.). https://doi.org/10.1007/978-3-662-65473-6
 - Lindsey, J., et al. (2025). On the Biology of a Large Language Model. *Transformer Circuits*. https://transformer-circuits.pub/2025/attribution-graphs/biology.html
+- Liu (2026). Engineering and Governing the Agent Harness. UNU Macau Technology Report 1. https://unu.edu/publication/engineering-and-governing-agent-harness-technology-and-policy-framework-runtime-layer
+- Mei, L., Yao, J., Ge, Y., et al. (2025). A Survey of Context Engineering for Large Language Models. arXiv:2507.13334. https://doi.org/10.48550/arXiv.2507.13334
+- Meta AI (2025). Agents Rule of Two: A Practical Approach to AI Agent Security. https://ai.meta.com/blog/practical-ai-agent-security/
+- Pollin, C. (2026). Promptotyping. Translating Research Data into Research Artefacts with Context and Agentic Engineering. https://docs.google.com/document/d/1_Q6kLFxvnvLMRizN2F_uTkpwsaJ-Cp0uBw4REKfhDlM/edit
+- Russell, S., & Norvig, P. (2020). *Artificial Intelligence: A Modern Approach* (4. Aufl.). Pearson. https://aima.cs.berkeley.edu
 - Sapkota, R., Roumeliotis, K. I., & Karkee, M. (2025). AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges. *Information Fusion*, 126, 103599. https://doi.org/10.1016/j.inffus.2025.103599
 - Summerfield, C. (2025). *These Strange New Minds: How AI Learned to Talk and What It Means*. Viking.
 - Willison, S. (2026). What is agentic engineering?
