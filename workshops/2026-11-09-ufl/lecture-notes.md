@@ -20,17 +20,26 @@ Dieses Skriptum folgt dem Foliensatz des Workshops Folie für Folie. Jeder Absch
 
 ## Einstieg
 
-### Materialien und Kanäle
-
-Begleitend zum Workshop gibt es Videos auf dem YouTube-Kanal von Digital Humanities Craft (https://www.youtube.com/@DigitalHumanitiesCraft), Folien zu früheren Veranstaltungen (https://chpollin.github.io/GM-DH), den Blog (https://dhcraft.org/excellence/blog) und eine öffentliche Zotero-Gruppenbibliothek mit der zitierten Literatur (https://www.zotero.org/groups/5319178/agki-dh). Alle Materialien dieser Lehrlinie, die laufend gepflegt und erweitert werden, liegen unter https://dhcraft.org/knowledge-context-agentic-engineering.
-
 ### Vorstellungsrunde
 
 Die Runde klärt, mit welchen Voraussetzungen die Gruppe arbeitet. Gefragt wird nach dem Arbeitsbereich, nach den bisher genutzten KI-Modellen und Werkzeugen, nach Programmiervorkenntnissen etwa in Python oder JavaScript und danach, ob die Begriffe Context Window und Reasoning-Modell vertraut sind. Die letzte Frage ist praktisch. Für die Hands-ons braucht jede Person Zugang zu einem Frontier-LLM, etwa über ein Pro- oder Max-Abo, über Mistral oder lokal, und dazu einen laufenden AI Harness wie Claude Desktop, Codex oder Antigravity.
 
-### Technische Vorbereitung
+### Materialien
 
-Claude Desktop lässt sich unter https://claude.com/de/download installieren. Die Einrichtung im Detail beschreibt der englischsprachige Foliensatz *Technical Preparation for Context, Knowledge and Agentic Engineering* (https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit).
+Die Materialfolie sammelt alle Links in drei Gruppen.
+
+Zur Vorbereitung gehören Claude Desktop (https://claude.com/de/download) und der englischsprachige Foliensatz *Technical Preparation for Context, Knowledge and Agentic Engineering* (https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit), der die Einrichtung im Detail beschreibt.
+
+Die Lehrlinie *Knowledge, Context and Agentic Engineering* wird laufend gepflegt und erweitert.
+
+- Website mit allen Materialien: https://dhcraft.org/knowledge-context-agentic-engineering
+- Full Slide Deck: https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit
+- Skriptum Deutsch: https://docs.google.com/document/d/1rJRraAfBfnkrb_3ik4savYuboLPhZ-zAFvlj4CmmMcE/edit
+- Skriptum Englisch: https://docs.google.com/document/d/1eaGx86RFr4Xywnxmf4Krdy4GKMYMcnW8pAYPXVH-Lr8/edit
+- Video-Playlist: https://www.youtube.com/playlist?list=PLXY4kw40KBaY
+- Repository: https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering
+
+Von Digital Humanities Craft kommen der YouTube-Kanal (https://www.youtube.com/@DigitalHumanitiesCraft), Folien früherer Veranstaltungen (https://chpollin.github.io/GM-DH), der Blog (https://dhcraft.org/excellence/blog), die öffentliche Zotero-Gruppenbibliothek mit der zitierten Literatur (https://www.zotero.org/groups/5319178/agki-dh) und Patreon (https://www.patreon.com/c/DigitalHumanitiesCraft).
 
 ### Lernziele und Ablauf
 
