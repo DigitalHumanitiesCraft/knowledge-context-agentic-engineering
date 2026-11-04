@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
 status: draft
 created: 2026-08-20
-updated: 2026-10-15
+updated: 2026-11-04
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -46,7 +46,8 @@ This knowledge base documents the teaching-material contract, public platform, t
 - `knowledge/` contains canonical Promptotyping documents.
 - `knowledge/drafts/` contains decision preparation and source assessments. A draft has no canonical force until its result is written to the responsible document.
 - `script/`, `slides/` and `workshops/` contain maintained teaching material and workshop specialisations.
-- `docs/` contains the static public platform and its machine-readable registers.
+- `docs/` contains the static public platform, the only published tree.
+- `data/` contains the machine-readable registers `workshops.json` and `videos.json`, which the pages mirror and which are not published.
 - `communication/` transports Research Mission Control briefs, results, recipient state and completed thread capsules; it does not replace project knowledge.
 - Git preserves prior wording, released states and taught workshop states.
 

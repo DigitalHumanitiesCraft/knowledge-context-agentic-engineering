@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-plan
 status: active
 created: 2026-08-20
-updated: 2026-10-15
+updated: 2026-11-04
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -26,11 +26,11 @@ This plan carries accepted future work and its entry and exit conditions. The Re
 
 ## Current milestone
 
-Review the simplified material site requested on 15 October 2026. The current public contract lives in `specification.md`; Preparation embeds the existing Google Slides deck in the main page, and About is integrated into the opening paragraph. Publication remains a separate author decision.
+Publish the redesigned single page of 4 November 2026 and check the live state. The current public contract lives in `specification.md`: an introduction, four material cards and the modules with their videos, with no external resource. Publication and acceptance remain author decisions.
 
 ## Active sequence
 
-- Verify the paired single pages and collect the author's visual feedback.
+- After the author's push, check the live pages for the new stylesheet version, the absence of external requests and 404 responses for the removed covers, downloads and title-slide image.
 - Continue the separate terminology and teaching-content review of the Full Slide Deck and Full Lecture Notes.
 - Maintain workshop source material for actual teaching assignments without recreating individual event pages or Learning Routes.
 - Obtain bounded author feedback on the prepared Verification, Validation and Acceptance section linked from INDEX.md. After acceptance, integrate the identified wording into the German notes and prepare the corresponding native slides. Other sections continue through their own source checks and acceptance.

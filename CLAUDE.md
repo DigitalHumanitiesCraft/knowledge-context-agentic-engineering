@@ -42,7 +42,7 @@ Never publish a URL carrying tracking or sharing parameters, among them `ouid=`,
 - No third-party personal names in documents produced here. Use role and institution. Names inside slide-text exports, lecture notes, transcripts and other teaching material are research data and stay untouched.
 - No monetary amounts anywhere in this repo, including offers, rates and budgets.
 - No facsimiles. Image rights for the Hersch and Zweig material remain with the source projects; link, do not copy.
-- CC BY 4.0 covers the public page and original text. A Slide Deck receives the same material licence only after its embedded third-party image rights have been checked. A public card shows the linked label `CC BY 4.0` alone; the exact scope `page-and-original-text` stays recorded in `data/workshops.json`, in `knowledge/governance.md` and in the licence explanation in the footer.
+- CC BY 4.0 covers the public page and original text. A Slide Deck receives the same material licence only after its embedded third-party image rights have been checked. The footer licence link names the scope as `CC BY 4.0 for the original text` or `CC BY 4.0 für die eigenen Texte`; the exact scope `page-and-original-text` stays recorded in `data/workshops.json` and in `knowledge/governance.md`.
 - Grokipedia is never a source.
 
 ## Platform
