@@ -837,8 +837,6 @@ a.resource-action:focus-visible {
   align-items: center;
 }
 
-.imprint .sep { padding-inline: 0.4em; color: var(--rule-mid); }
-
 .foot-provenance {
   max-width: 40ch;
   min-width: 0;

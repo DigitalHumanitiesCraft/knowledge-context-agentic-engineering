@@ -26,6 +26,10 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-11-04 integrated · Design history trimmed and footer separator removed
+
+`design.md` drops its historical cover-series and v0.2 and v0.3 release sections in favour of a pointer to commit `391fc9d`, tag `v0.3` and commit `836b663`, and no longer mentions covers or a slide viewer. `CLAUDE.md` drops the historical subpage from the instance id and the iteration-16 baseline. The footer contact lists the website and the mail address on separate lines instead of a middle-dot separator. Headless browser checks of the German footer at 1280 and 390 pixels showed both lines and no horizontal overflow.
+
 ### 2026-11-04 integrated · Specification and README rewritten for the single page
 
 The specification still carried the August contract with workshop pages, Learning Routes, HTML Preparation lessons and About pages, and both it and the README described the embedded Preparation viewer. `specification.md` now states the current single-page contract section by section, its acceptance criteria and the decisions that still bind. The superseded requirements, criteria and decisions are reduced to a pointer to commit `8f14d0b`, which holds the previous text, to commit `836b663` for the August installation and to tag `v0.3`. The README platform section and repository table follow the same state and no longer name covers or the embedded viewer. Every referenced path and commit was checked against the working tree and Git. Author acceptance remains separate.
