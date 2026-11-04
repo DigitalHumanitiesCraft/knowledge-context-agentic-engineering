@@ -26,6 +26,10 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-11-04 integrated · RD-015 retired, AI Academy profile aligned, measure confirmed
+
+The author released all well-founded remaining items. RD-015, the acceptance of a CLARIAH web-slide pilot, leaves the Director Log because the CLARIAH unit was taught on 2026-09-25 without the pilot and the HTML teaching surfaces were retired; its basis draft on web-native teaching is removed and stays in git history. The Director Log now points to git history for the prototypes and to `data/workshops.json` for the register. The AI Academy profile, register focus and plan follow the vault teaching concept revised on 2026-10-26, two teaching days and three hackathon days on the participants' own cases, with no separate EU AI Act block; the retired cover is marked as such. The stale Module 04 placement in the Curated Skills draft is replaced by the current state. The author confirmed the 80-character measure.
+
 ### 2026-11-04 integrated · Hover and focus feedback on module and video rows
 
 The author asked for an integrated hover effect. It is placed where the whole element is the control: a module row answers pointer hover and keyboard focus alike with a wash in its module colour that flows out of the left rule, a slight lift of the icon and a chevron in the module colour, and video rows take a faint module-coloured wash. The material cards stay without hover, since only their actions are links. The effect is pure CSS and becomes immediate under reduced motion. Focus was checked in headless Edge; no page overflow at three widths in both languages.

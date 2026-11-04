@@ -98,17 +98,6 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 - **Effect**: Turns the reserved Markdown and PDF positions from preparation states into resolving downloads.
 - **Write-back**: `docs/downloads/`, the register and both landing pages.
 
-## RD-015 CLARIAH web-slide pilot
-
-- **Type**: Acceptance
-- **Status**: waiting
-- **Trigger**: The bounded rights-safe pilot is implemented and verified.
-- **Required contribution**: Accept the slide cut, browser presentation and export behaviour of the CLARIAH web-slide pilot.
-- **Recommendation**: Pending evidence.
-- **Basis**: `knowledge/drafts/web-native-teaching-and-deep-dive-architecture.md`, the separate pilot proposal.
-- **Effect**: Decides whether the browser-first deck enters the platform contract beside the Google Slides surface.
-- **Write-back**: the pilot and, after acceptance, `knowledge/specification.md` and `knowledge/design.md`.
-
 ## RD-016 Tags of taught workshop states
 
 - **Type**: Action
@@ -146,13 +135,13 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 - **Status**: open
 - **Required contribution**: Change the public Full Slide Deck Google Slides permission from edit access to read access and confirm the resulting anonymous view link.
 - **Recommendation**: Preserve the existing document id and reduce only the public permission, so that repository and page links remain stable.
-- **Basis**: the verified Drive source audit of 2026-08-26 and the Full Slide Deck material record in `docs/data/workshops.json`.
+- **Basis**: the verified Drive source audit of 2026-08-26 and the Full Slide Deck material record in `data/workshops.json`.
 - **Effect**: Removes unintended public write access from the canonical teaching deck.
 - **Write-back**: the Google Slides permission state and `knowledge/journal.md`.
 
 ## Deliberately absent
 
-The current interface release, the About integration, the Research Mission Control documentation and the commit and push of that change set carry no entry, because the Research Director has already authorised them. The earlier question about publishing `docs/drafts/` is obsolete, since the superseded prototypes now live under `knowledge/drafts/platform-prototypes/` outside the published tree.
+The current interface release, the About integration, the Research Mission Control documentation and the commit and push of that change set carry no entry, because the Research Director has already authorised them. The earlier question about publishing `docs/drafts/` is obsolete; the superseded prototypes are preserved in git history at `a3cd893` under `knowledge/drafts/platform-prototypes/` and never enter the published tree.
 
 ## RD-025 Verification, Validation and Acceptance teaching section
 
