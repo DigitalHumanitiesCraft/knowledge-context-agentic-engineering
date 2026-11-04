@@ -28,7 +28,7 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ### 2026-11-04 integrated · Methods carry their module icon and a video link
 
-The author wanted fitting icons for the methods without arbitrary imagery. The methods are assigned to the modules they apply, Promptotyping, Grounded Vault and Second Brain Vault to 03 Knowledge and Context Engineering and Research Mission Control to 04 Agentic Engineering, and each method row reuses that module's icon, with the module named in hidden text for screen readers. A neutral play symbol at the row end links each method's introductory video, deliberately not the YouTube mark. The list becomes one column, which ends the broken line breaks of the two-column layout. Checked at four widths in both languages: no overflow and no external request.
+The author wanted fitting icons for the methods without arbitrary imagery. The methods are assigned to the modules they apply, Promptotyping, Grounded Vault and Second Brain Vault to 03 Knowledge and Context Engineering and Research Mission Control to 04 Agentic Engineering, and each method row reuses that module's icon, with the module named in hidden text for screen readers. A neutral play symbol at the row end links each method's introductory video, deliberately not the YouTube mark. The playlist link beside the modules heading carries the same symbol. The list becomes one column, which ends the broken line breaks of the two-column layout. Checked at four widths in both languages: no overflow and no external request.
 
 ### 2026-11-04 integrated · Material cards without label and pending note
 

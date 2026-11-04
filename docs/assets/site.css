@@ -295,7 +295,14 @@ img { max-width: 100%; height: auto; }
 
 .block-head .block-label { margin-bottom: 0; }
 
-.block-link { font-size: var(--text-md); }
+.block-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: var(--text-md);
+}
+
+.block-link img { width: 1.25rem; height: 1.25rem; opacity: 0.7; }
 
 /* An inline term with a definition, used for AI Harnesses. */
 .term {
