@@ -31,7 +31,7 @@
       "focus": "a complete research data workflow from digitised estate materials to structured data and a small research application, using Stefan Zweig Digital and M³GIM",
       "modules": ["01", "02", "03", "04", "05"],
       "language": "en",
-      "status": "planned",
+      "status": "delivered",
       "materials_status": "in_preparation",
       "web_module": {
         "status": "available"
@@ -61,7 +61,7 @@
       "focus": "research data workflows, digital scholarly editions, Zweig hands-on",
       "modules": ["01", "02", "03", "04", "05"],
       "language": "en",
-      "status": "planned",
+      "status": "delivered",
       "materials_status": "in_preparation",
       "web_module": {
         "status": "in_preparation"
@@ -91,7 +91,7 @@
       "focus": "research starter, one-page transcription, local source-checking viewer and TEI edition on participant material, with staged acceptance and knowledge write-back",
       "modules": ["01", "02", "03", "04"],
       "language": "de",
-      "status": "planned",
+      "status": "delivered",
       "materials_status": "in_preparation",
       "web_module": {
         "status": "in_preparation"
@@ -113,7 +113,7 @@
       "focus": "one-day Claude Code workshop, from LLM and agent fundamentals to a medieval charter mini-edition, handwriting recognition through TEI to a small static edition",
       "modules": ["01", "02", "03", "04", "05"],
       "language": "de",
-      "status": "planned",
+      "status": "delivered",
       "materials_status": "in_preparation",
       "web_module": {
         "status": "in_preparation"
@@ -135,7 +135,7 @@
       "focus": "hybrid half-day on agent-supported research data preparation and migration and on semi-automated maintenance of interfaces and endpoints, with three project case studies and a hands-on on participant material",
       "modules": ["01", "02", "03", "04", "05"],
       "language": "de",
-      "status": "planned",
+      "status": "delivered",
       "materials_status": "in_preparation",
       "web_module": {
         "status": "in_preparation"
