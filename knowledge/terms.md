@@ -23,8 +23,6 @@ knowledge-sources:
   - slides/full-slide-deck.md
   - workshops/2026-09-25-clariah-at/lecture-notes.md
   - "workshops/2026-04-22-vetmedai-workshop-1/workshop-script.txt (delivered instance, removed from the working tree, preserved in git history at 8d50211)"
-  - drafts/term-references.md
-  - drafts/terms-additions.md
 related: [project.md, INDEX.md, journal.md]
 ---
 
@@ -32,7 +30,7 @@ related: [project.md, INDEX.md, journal.md]
 
 The canonical glossary of the teaching line *Knowledge, Context and Agentic Engineering for Knowledge Work*. It fixes the wording of the terms that the material uses as load-bearing concepts, so that lecture notes, slide texts and workshop profiles are written and revised against one vocabulary. Entries are ordered by the five modules of the material, preceded by the terms that hold across all of them. Each entry gives the English canonical term, the German equivalent, a definition grounded in the material rather than in general usage, the place in the material where the term does its work, and a literature anchor where a citable source exists.
 
-Source labels are abbreviated. CLARIAH means the CLARIAH-AT lecture notes (`workshops/2026-09-25-clariah-at/lecture-notes.md`), Notes EN the English Full Lecture Notes (`script/full-lecture-notes-en.md`), Skriptum DE the German Full Lecture Notes (`script/full-lecture-notes-de.md`), Deck the Full Slide Deck (`slides/full-slide-deck.md`), VetMedAI the workshop script of the delivered Vetmeduni instance of 2026-04-22. That instance is a past one, so its folder no longer lives in the working tree; the file is preserved in git history at `8d50211` as `workshops/2026-04-22-vetmedai-workshop-1/workshop-script.txt`, and the entries grounded in it stay valid. A German rendering counts as attested where a German source carries it and is marked as a proposal where none does. Literature is cited in short form; the full references live in `drafts/term-references.md` and `drafts/terms-additions.md`, which also hold the working material this glossary condenses.
+Source labels are abbreviated. CLARIAH means the CLARIAH-AT lecture notes (`workshops/2026-09-25-clariah-at/lecture-notes.md`), Notes EN the English Full Lecture Notes (`script/full-lecture-notes-en.md`), Skriptum DE the German Full Lecture Notes (`script/full-lecture-notes-de.md`), Deck the Full Slide Deck (`slides/full-slide-deck.md`), VetMedAI the workshop script of the delivered Vetmeduni instance of 2026-04-22. That instance is a past one, so its folder no longer lives in the working tree; the file is preserved in git history at `8d50211` as `workshops/2026-04-22-vetmedai-workshop-1/workshop-script.txt`, and the entries grounded in it stay valid. A German rendering counts as attested where a German source carries it and is marked as a proposal where none does. Literature is cited in short form; the full records are listed under References at the end of this document.
 
 Where the material contradicts itself, the glossary states one wording as canonical and records the variant. Six such cuts are marked in place as *Editorial decision 2026-08-20*, and each of them is reversible by the operator.
 
@@ -222,3 +220,112 @@ The governance vocabulary of the teaching line lives in the VetMedAI workshop sc
 - **High-Risk System.** German Hochrisiko-System. The classification triggering the most demanding compliance regime, reached through two pathways, a safety component of a product covered by the harmonisation legislation of Annex I and requiring third-party conformity assessment, or a standalone system used in one of the eight sensitive domains of Annex III. A research system reaches it only when it leaves pure research for a regulated application area, for instance by qualifying as a medical device or in vitro diagnostic, or by being used in an Annex III context such as recruitment. *Source.* VetMedAI, "Der EU AI Act in Kurzform" and the high-risk section of the worked knowledge document.
 - **Research Exemption (Art. 2(6)).** German Forschungsausnahme. The exemption for AI systems developed and used for the sole purpose of scientific research and development prior to market placement. The critical trigger is the transition from research to deployment rather than the subject matter of the research. *Source.* VetMedAI, scope section of the worked knowledge document and the virology example.
 - **General-Purpose AI Model (GPAI).** German GPAI-Modell. The separate regulatory category of Chapter V, whose providers owe technical documentation, information to downstream providers, a copyright compliance policy and a sufficiently detailed summary of training data content, with additional obligations where systemic risk is presumed, which the Act ties to cumulative training computation above 10²⁵ floating-point operations or to Commission designation. *Source.* VetMedAI, GPAI sections of the worked knowledge document.
+
+## References
+
+This section holds the full records behind the short citations in the *Literature.* notes and the EU AI Act anchor above, sorted by first author or issuing organisation, with an access date wherever one was recorded.
+
+- AGENT 2026 (2026-04-14). International Workshop on Agentic Engineering, co-located with ICSE 2026. https://conf.researchr.org/home/icse-2026/agent-2026. Accessed 2026-08-20.
+- Agent Skills (n.d.). Agent Skills specification. https://agentskills.io/specification.
+- Agent2Agent Protocol (n.d.). https://a2a-protocol.org/latest/topics/a2a-and-mcp/.
+- AGENTS.md (n.d.). https://agents.md/. Accessed 2026-08-20.
+- AI Security Institute (n.d.). *Frontier AI Trends Report*. https://www.aisi.gov.uk/frontier-ai-trends-report.
+- Allen et al. (2023). Knowledge Engineering Using Large Language Models. DOI 10.4230/TGDK.1.1.3.
+- Anderljung et al. (2023). Frontier AI Regulation. Managing Emerging Risks to Public Safety. arXiv:2307.03718.
+- Anthropic (n.d.). Agent Skills overview. Claude Platform Docs. https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview. Accessed 2026-08-20.
+- Anthropic (n.d.). Claude's Character. https://www.anthropic.com/research/claude-character.
+- Anthropic (n.d.). How Claude Remembers Your Project. https://code.claude.com/docs/en/memory.
+- Anthropic (n.d.). Prompt engineering overview. Claude Platform Docs. https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview. Accessed 2026-08-20.
+- Anthropic (n.d.). Prompting best practices. https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices. Accessed 2026-08-20.
+- Anthropic (n.d.). System Prompts. https://platform.claude.com/docs/en/release-notes/system-prompts.
+- Anthropic (2024-12-19). Building effective agents. Anthropic Engineering Blog. https://www.anthropic.com/engineering/building-effective-agents. Accessed 2026-08-20.
+- Anthropic (2025-09-29). Effective context engineering for AI agents. Anthropic Engineering Blog. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents. Accessed 2026-08-20.
+- Anthropic (2025-11-26). Effective harnesses for long-running agents. Anthropic Engineering Blog. https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents. Accessed 2026-08-20.
+- Anthropic (2026). Claude's Constitution. https://www.anthropic.com/constitution.
+- Anthropic (2026). Claude's New Constitution. https://www.anthropic.com/research/claude-new-constitution.
+- Artificial Analysis (n.d.). LLM Leaderboard. https://artificialanalysis.ai/leaderboards/models.
+- Basil et al. (2025). Playing Pretend. Expert Personas Don't Improve Factual Accuracy. arXiv:2512.05858.
+- Battle; Gollapudi (2024). The Unreasonable Effectiveness of Eccentric Automatic Prompts. arXiv:2402.10949. DOI 10.48550/arXiv.2402.10949.
+- Bonnet, Clement; Macfarlane, Matthew V. (2024). Searching Latent Program Spaces. arXiv:2411.08706. DOI 10.48550/arXiv.2411.08706.
+- Brown, Tom B. et al. (2020). Language Models are Few-Shot Learners. *Advances in Neural Information Processing Systems* 33, 1877–1901. arXiv:2005.14165. DOI 10.48550/arXiv.2005.14165.
+- Chollet, François (2019). On the Measure of Intelligence. arXiv:1911.01547. DOI 10.48550/arXiv.1911.01547.
+- Chollet, François (2023). How I Think About LLM Prompt Engineering. https://fchollet.substack.com/p/how-i-think-about-llm-prompt-engineering.
+- Davenport, Thomas H. (2005). *Thinking for a Living. How to Get Better Performance and Results from Knowledge Workers*. Boston, Harvard Business School Press. ISBN 978-1-59139-423-5.
+- Dell'Acqua et al. (2026). Navigating the Jagged Technological Frontier. *Organization Science* 37(2). DOI 10.1287/orsc.2025.21838.
+- Digital Humanities Craft OG (n.d.). Promptotyping. Specification of the Method. https://dhcraft.org/Promptotyping/. Accessed 2026-08-20.
+- Drucker, J. (2011). Humanities Approaches to Graphical Display. *Digital Humanities Quarterly* 5(1).
+- Drucker, Peter F. (1959). *Landmarks of Tomorrow. A Report on the New "Post-Modern" World*. New York, Harper & Brothers.
+- Drucker, Peter F. (1999). Knowledge-Worker Productivity. The Biggest Challenge. *California Management Review* 41(2), 79–94. DOI 10.2307/41165987.
+- Edwards et al. (2007). Understanding Infrastructure. Dynamics, Tensions, and Design.
+- European Open Source AI Index (n.d.). https://osai-index.eu/.
+- Gans (2026). A Model of Artificial Jagged Intelligence. arXiv:2601.07573.
+- Geiger (2024). Daten / Forschungsdaten. DOI 10.17175/wp_2023_003_v2.
+- Gemini Team (2023). Gemini. A Family of Highly Capable Multimodal Models. arXiv:2312.11805.
+- Global Indigenous Data Alliance (n.d.). CARE Principles. https://www.gida-global.org/careprinciples.
+- Google (n.d.). Prompt Design Strategies. https://ai.google.dev/gemini-api/docs/prompting-strategies.
+- Hassan, Ahmed E.; Li, Hao; Lin, Dayi; Adams, Bram; Chen, Tse-Hsun; Kashiwa, Yutaro; Qiu, Dong (2025). Agentic Software Engineering. Foundational Pillars and a Research Roadmap. arXiv:2509.06216. DOI 10.48550/arXiv.2509.06216.
+- Hong; Troynikov; Huber (2025). *Context Rot. How Increasing Input Tokens Impacts LLM Performance*. Chroma. https://research.trychroma.com/context-rot.
+- Hu; Collier (2024). Quantifying the Persona Effect in LLM Simulations. arXiv:2402.10811. DOI 10.48550/arXiv.2402.10811.
+- Ji et al. (2023). Survey of Hallucination in Natural Language Generation. DOI 10.1145/3571730.
+- Jones; Dinneen; Capra; Diekema; Pérez-Quiñones (2017). Personal Information Management. DOI 10.1081/E-ELIS4-120053695.
+- Karpathy, Andrej (2025-06-25). Post on X. https://x.com/karpathy/status/1937902205765607626. Accessed 2026-08-20.
+- Karpathy, Andrej (2026-04-30). Sequoia Ascent 2026 summary. https://karpathy.bearblog.dev/sequoia-ascent-2026/. Accessed 2026-08-20.
+- Kinniment et al. (2025). Measuring AI Ability to Complete Long Tasks. arXiv:2503.14499.
+- LangChain (2025-07-02). Context Engineering. LangChain Blog. https://www.langchain.com/blog/context-engineering-for-agents. Accessed 2026-08-20.
+- Li et al. (2023). Large Language Models Understand and Can Be Enhanced by Emotional Stimuli. arXiv:2307.11760. DOI 10.48550/arXiv.2307.11760.
+- Li; Wichers; Price; Marks; Kutasov (2026). Model Spec Midtraining. Improving How Alignment Training Generalizes. arXiv:2605.02087.
+- Liesenfeld; Dingemanse (2024). Rethinking Open Source Generative AI. Open-Washing and the EU AI Act. *FAccT '24*. DOI 10.1145/3630106.3659005.
+- Lindsey et al. (2025). On the Biology of a Large Language Model. Transformer Circuits.
+- Liu, Pengfei; Yuan, Weizhe; Fu, Jinlan; Jiang, Zhengbao; Hayashi, Hiroaki; Neubig, Graham (2023). Pre-train, Prompt, and Predict. A Systematic Survey of Prompting Methods in Natural Language Processing. *ACM Computing Surveys* 55(9), Article 195. DOI 10.1145/3560815.
+- Majithia et al. (2026). An Actionable Framework for AI-Ready Data. DOI 10.1002/aaai.70054.
+- Markdown Guide (n.d.). https://www.markdownguide.org.
+- Martin, Lance (2026-04-02). Agent Harness Design. 3 Patterns for Harnessing Claude's Intelligence. Claude by Anthropic. https://claude.com/blog/harnessing-claudes-intelligence. Accessed 2026-08-20.
+- METR (n.d.). Evaluation report. https://evaluations.metr.org/gpt-4o-report/. Accessed 2026-08-20.
+- METR (n.d.). Task-Completion Time Horizons of Frontier AI Models. https://metr.org/time-horizons.
+- METR (2024-03-15). Guidelines for capability elicitation. https://metr.org/blog/2024-03-15-guidelines-for-capability-elicitation/. Accessed 2026-08-20.
+- MLCommons (n.d.). Croissant. https://mlcommons.org/working-groups/data/croissant/.
+- Model Context Protocol (n.d.). Specification. https://modelcontextprotocol.io/specification/2025-11-25.
+- Newell, Allen (1982). The Knowledge Level. *Artificial Intelligence* 18(1), 87–127. DOI 10.1016/0004-3702(82)90012-1.
+- Nonaka, Ikujiro (1994). A Dynamic Theory of Organizational Knowledge Creation. *Organization Science* 5(1), 14–37. DOI 10.1287/orsc.5.1.14.
+- Open Source Initiative (n.d.). The Open Source AI Definition 1.0. https://opensource.org/ai/open-source-ai-definition.
+- OpenAI (2026). Responding to the Next Frontier of Critical Cyber Capabilities. https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/.
+- Ouyang et al. (2022). Training Language Models to Follow Instructions with Human Feedback. arXiv:2203.02155.
+- Petroni et al. (2019). Language Models as Knowledge Bases? arXiv:1909.01066.
+- Pollin, Christopher (2025). *Modelling, Operationalising and Exploring Historical Information*. Dissertation, Graz. https://resolver.obvsg.at/urn:nbn:at:at-ubg:1-220602.
+- Pollin, Christopher (2025-04-24). Promptotyping. Von der Idee zur Anwendung. Digital Humanities Craft. https://dhcraft.org/excellence/blog/Promptotyping/. Accessed 2026-08-20.
+- Pollin, Christopher (2025-05-27). Promptotyping mit Claude Sonnet 4. Vibe-Coding erfordert den Critical-Expert-in-the-Loop. Digital Humanities Craft. https://dhcraft.org/excellence/blog/Critical-Vibing-Claude-4/. Accessed 2026-08-20.
+- Pollin, Christopher (2026). Asymmetric Amplification. Why AI Does Not Automate Research, But Disruptively Amplifies Computer-Based Research Work. Digital Humanities Craft. https://dhcraft.org/excellence/blog/Asymmetric-Amplification/.
+- Pollin, Christopher (2026). *Promptotyping. Translating Research Data into Research Artefacts through Context Engineering and Agentic Engineering*. Monograph, review draft 0.9.
+- Pollin, Christopher (2026-01-17). Promptotyping. Zwischen Vibe Coding, Vibe Research und Context Engineering. L.I.S.A. Wissenschaftsportal der Gerda Henkel Stiftung. https://lisa.gerda-henkel-stiftung.de/digitale_geschichte_pollin. Accessed 2026-08-20.
+- Pollin, Christopher; Steyer, Timo; Scholger, Martina; Schiller-Stoff, Sebastian David (2025). Fortgeschrittenes Prompt und AI Agent Engineering für wissenschaftliche Textproduktion. DHd 2025, Under Construction. DOI 10.5281/zenodo.14943178.
+- Rajeev et al. (2025). Cats Confuse Reasoning LLM. arXiv:2503.01781. DOI 10.48550/arXiv.2503.01781.
+- Regulation (EU) 2024/1689 (2024). OJ L, 2024/1689. https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689.
+- Reynolds, Laria; McDonell, Kyle (2021). Prompt Programming for Large Language Models. Beyond the Few-Shot Paradigm. *CHI '21 Extended Abstracts*, Article 314. DOI 10.1145/3411763.3451760.
+- Russell; Norvig (2020). *Artificial Intelligence. A Modern Approach*. 4th ed. Pearson.
+- Saltzer; Schroeder (1975). The Protection of Information in Computer Systems. *Proceedings of the IEEE* 63(9). DOI 10.1109/PROC.1975.9939.
+- Sapkota, Ranjan; Roumeliotis, Konstantinos I.; Karkee, Manoj (2025). AI Agents vs. Agentic AI. A Conceptual Taxonomy, Applications and Challenges. arXiv:2505.10468. DOI 10.48550/arXiv.2505.10468. DOI 10.1016/j.inffus.2025.103599.
+- Schaeffer; Miranda; Koyejo (2023). Are Emergent Abilities of Large Language Models a Mirage? arXiv:2304.15004.
+- Schöch (2013). Big? Smart? Clean? Messy? Data in the Humanities. *Journal of Digital Humanities* 2(3).
+- Schreiber, Guus; Akkermans, Hans; Anjewierden, Anjo; de Hoog, Robert; Shadbolt, Nigel; Van de Velde, Walter; Wielinga, Bob (2000). *Knowledge Engineering and Management. The CommonKADS Methodology*. Cambridge MA, MIT Press. ISBN 978-0-262-19300-9.
+- Schulhoff et al. (2024). The Prompt Report. A Systematic Survey of Prompting Techniques. arXiv:2406.06608. DOI 10.48550/arXiv.2406.06608.
+- Sennrich; Haddow; Birch (2016). Neural Machine Translation of Rare Words with Subword Units. arXiv:1508.07909.
+- Sharma et al. (2023). Towards Understanding Sycophancy in Language Models. arXiv:2310.13548.
+- Snell et al. (2024). Scaling LLM Test-Time Compute Optimally Can Be More Effective Than Scaling Model Parameters. arXiv:2408.03314.
+- Sofroniew et al. (2026). Emotion Concepts and Their Function in a Large Language Model. Transformer Circuits.
+- Studer, Rudi; Benjamins, V. Richard; Fensel, Dieter (1998). Knowledge Engineering. Principles and Methods. *Data & Knowledge Engineering* 25(1–2), 161–197. DOI 10.1016/S0169-023X(97)00056-6.
+- Summerfield (2025). *These Strange New Minds*. Viking.
+- Vaswani et al. (2017). Attention Is All You Need. arXiv:1706.03762.
+- Wei, Jason (2025-07). Asymmetry of verification and verifier's law. https://www.jasonwei.net/blog/asymmetry-of-verification-and-verifiers-law. Accessed 2026-08-20.
+- Wei et al. (2022). Emergent Abilities of Large Language Models. arXiv:2206.07682.
+- Wiener (1948). *Cybernetics or Control and Communication in the Animal and the Machine*.
+- Wilkinson et al. (2016). The FAIR Guiding Principles. DOI 10.1038/sdata.2016.18.
+- Wooldridge, Michael; Jennings, Nicholas R. (1995). Intelligent Agents. Theory and Practice. *The Knowledge Engineering Review* 10(2), 115–152. DOI 10.1017/S0269888900008122.
+- Xie, Sang Michael; Raghunathan, Aditi; Liang, Percy; Ma, Tengyu (2022). An Explanation of In-context Learning as Implicit Bayesian Inference. ICLR 2022. arXiv:2111.02080. DOI 10.48550/arXiv.2111.02080.
+- Yin et al. (2024). Should We Respect LLMs? arXiv:2402.14531. DOI 10.48550/arXiv.2402.14531.
+- Zheng, Lianmin; Chiang, Wei-Lin; Sheng, Ying; Zhuang, Siyuan; Wu, Zhanghao; Zhuang, Yonghao; Lin, Zi; Li, Zhuohan; Li, Dacheng; Xing, Eric P.; Zhang, Hao; Gonzalez, Joseph E.; Stoica, Ion (2023). Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. *Advances in Neural Information Processing Systems* 36. arXiv:2306.05685. DOI 10.48550/arXiv.2306.05685.
+- Zhong; Zhu (2026). AI Harness Engineering. A Runtime Substrate for Foundation-Model Software Agents. arXiv:2605.13357. DOI 10.48550/arXiv.2605.13357.
+
+### Short citations without a full record
+
+- Mei et al. (2025).
+- OpenAI. Preparedness Framework.

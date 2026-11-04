@@ -26,6 +26,10 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-11-04 integrated · Glossary references consolidated
+
+The full records behind the glossary's short citations now stand in a References section at the end of `terms.md`, deduplicated and sorted, taken only from what the two literature drafts and the glossary state; nothing was completed from outside. Two short citations have no full record yet, Mei et al. 2025 and the OpenAI Preparedness Framework, and are listed as such. The drafts `term-references.md` and `terms-additions.md` are retired. Their annotations held some explanatory content that the condensed entries do not carry, among them the transfer and modelling approaches of knowledge engineering, the LangChain categories of context engineering and the three-level progressive disclosure of agent skills; adding any of it would change canonical term wording, which lies with the author, so it stays retrievable in git history at `846b8ec`.
+
 ### 2026-11-04 integrated · RD-015 retired, AI Academy profile aligned, measure confirmed
 
 The author released all well-founded remaining items. RD-015, the acceptance of a CLARIAH web-slide pilot, leaves the Director Log because the CLARIAH unit was taught on 2026-09-25 without the pilot and the HTML teaching surfaces were retired; its basis draft on web-native teaching is removed and stays in git history. The Director Log now points to git history for the prototypes and to `data/workshops.json` for the register. The AI Academy profile, register focus and plan follow the vault teaching concept revised on 2026-10-26, two teaching days and three hackathon days on the participants' own cases, with no separate EU AI Act block; the retired cover is marked as such. The stale Module 04 placement in the Curated Skills draft is replaced by the current state. The author confirmed the 80-character measure.
