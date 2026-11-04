@@ -350,17 +350,15 @@ img { max-width: 100%; height: auto; }
   font-size: var(--text-sm);
   line-height: 1.45;
   text-align: start;
-  opacity: 0;
-  visibility: hidden;
+  /* display, not visibility: a hidden tooltip near the right edge would
+     otherwise widen the page; aria-describedby still reads hidden text. */
+  display: none;
   pointer-events: none;
 }
 
 .term:hover .term-tooltip,
 .term:focus-within .term-tooltip,
-.term:active .term-tooltip {
-  opacity: 1;
-  visibility: visible;
-}
+.term:active .term-tooltip { display: block; }
 
 /* Module terms link to their video group and carry icon and number inside
    the link, so the key never separates from its title. As inline links they
@@ -463,8 +461,9 @@ img { max-width: 100%; height: auto; }
 
 .preparation-summary__action {
   display: inline-flex;
-  flex: none;
+  flex: 0 1 auto;
   align-items: center;
+  max-width: 100%;
   min-height: var(--tap);
   padding: var(--s1) var(--s2);
   border: 1px solid var(--rule-mid);
