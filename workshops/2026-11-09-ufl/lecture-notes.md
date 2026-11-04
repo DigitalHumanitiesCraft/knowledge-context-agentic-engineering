@@ -435,6 +435,18 @@ Projektmanagement
 Wissensmodellierung
 : Die Konstruktion einer Wissensbasis, in der die Konzepte einer Domäne identifiziert, formal repräsentiert und abfragbar gemacht werden. Der Weg führt von den Fragen über Wissenserwerb, Vokabular, Kodierung und Instanzen bis zu Abfragen, Inferenz und Evaluation (Russell & Norvig, 2020).
 
+### Docling: Vom PDF zum Wissensdokument
+
+Docling ist ein Open-Source-Werkzeug, das Dokumente auf dem eigenen Rechner in strukturiertes Markdown oder JSON umwandelt. Es entstand bei IBM Research Zürich und gehört heute zur LF AI & Data Foundation (Auer et al., 2024, https://docling-project.github.io/docling/). Der Prozess zeigt konkret den Schritt „Wissen erwerben“ aus der Wissensmodellierung.
+
+1. Ein Mensch wählt die Quelle aus, etwa ein PDF, eine Word- oder PowerPoint-Datei, eine Webseite oder einen Scan.
+2. Docling analysiert Layout, Lesereihenfolge und Tabellen und erkennt bei Scans den Text per OCR.
+3. Das Ergebnis ist ein DoclingDocument, eine einheitliche Struktur aus Überschriften, Absätzen, Tabellen und Bildern.
+4. Daraus exportiert Docling Markdown oder verlustfreies JSON.
+5. Der Agent liest das Markdown in `sources/` und destilliert daraus Wissensdokumente in `knowledge/`, die ein Mensch prüft.
+
+Markdown erhält Überschriften, Lesereihenfolge und Tabellen, die bei einfacher Textextraktion verloren gehen. Weil Docling lokal läuft, verlassen sensible Dokumente den Rechner nicht. Über einen MCP-Server lässt sich Docling auch direkt an einen Agenten anbinden. Im Workshop ist Docling kein Hands-on, weil die lokale Installation über Python in einer Zoom-Sitzung zu viel Einrichtung verlangt.
+
 ### Promptotyping Documents
 
 Promptotyping Documents sind Wissensdokumente, unterschieden nach der Art des Wissens, das sie tragen (Pollin, 2026). Allen drei Typen sind die Teilnehmenden in Session 1 schon begegnet.
@@ -690,6 +702,7 @@ Ein Wasserzeichen ist ein Hinweis und kein Beweis. Fehlt es, folgt daraus nicht,
 ## Literatur
 
 - Allen, B. P., Stork, L., & Groth, P. (2023). Knowledge Engineering Using Large Language Models.
+- Auer, C., et al. (2024). Docling Technical Report. arXiv:2408.09869. https://arxiv.org/abs/2408.09869
 - Bui, T., et al. (2023). TrustMark: Universal Watermarking for Arbitrary Resolution Images. arXiv:2311.18297. https://arxiv.org/abs/2311.18297
 - Dathathri, S., et al. (2024). Scalable watermarking for identifying large language model outputs. *Nature*. https://doi.org/10.1038/s41586-024-08025-4
 - Dell’Acqua, F., et al. (2026). Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of Artificial Intelligence on Knowledge Worker Productivity and Quality. *Organization Science*, 37(2), 403–423. https://doi.org/10.1287/orsc.2025.21838
