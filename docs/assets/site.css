@@ -453,70 +453,17 @@ img { max-width: 100%; height: auto; }
 .term--m5[id],
 .video-module.m5 { --module-color: var(--m5); --module-icon: url("modules/05-critical-perspectives-governance.svg"); }
 
-/* Preparation */
-.preparation-summary {
-  min-width: 0;
-}
-
-/* Description and direct link share one row; the link wraps below when narrow. */
-.preparation-summary__row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s2) var(--s4);
-  max-width: 64rem;
-  margin-top: var(--s2);
-}
-
-.preparation-summary__row > p {
-  flex: 1 1 24rem;
-  max-width: var(--measure);
-  color: var(--ink-2);
-}
-
-.preparation-summary__action {
-  display: inline-flex;
-  flex: 0 1 auto;
-  align-items: center;
-  max-width: 100%;
-  min-height: var(--tap);
-  padding: var(--s1) var(--s2);
-  border: 1px solid var(--rule-mid);
-  border-radius: 999px;
-  text-decoration: none;
-}
-
-/* A local image of a deck's title slide, linked to the deck. It replaces the
-   Google Slides iframe, so the page makes no request to Google until clicked. */
-.slide-preview {
-  display: block;
-  max-width: 24rem;
-  margin-top: var(--s3);
-  overflow: hidden;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--white);
-}
-
-.slide-preview:hover { border-color: var(--accent); }
-
-.slide-preview img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-}
-
 /* Teaching materials */
 .teaching-materials { padding-top: var(--s4); }
 
-/* The three holdings sit side by side and stack below 860px (see media query).
-   Each card keeps its own height, so short cards carry no empty interior. */
+/* Preparation and the three holdings share one row of four cards, two per
+   row below 1100px and one below 640px. Their contents are parallel, so the
+   cards share one height and their actions align at the foot. */
 .resource-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start;
-  gap: var(--s3);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: var(--s2);
   margin-top: var(--s4);
 }
 
@@ -529,7 +476,16 @@ img { max-width: 100%; height: auto; }
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   background: var(--white);
+  scroll-margin-top: var(--s4);
 }
+
+/* Preparation is the step before the workshop, set apart by the tinted ground. */
+.resource-card--prep {
+  border-color: var(--tint);
+  background: var(--tint);
+}
+
+.resource-card--prep .resource-mark { mix-blend-mode: multiply; }
 
 .resource-summary {
   display: grid;
@@ -550,8 +506,18 @@ img { max-width: 100%; height: auto; }
   min-width: 0;
 }
 
-.resource-card h3 {
+/* One verb per card names how the holding is used: prepare, browse, read, watch. */
+.resource-copy > .resource-kicker {
   margin-top: var(--s2);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.resource-card h3 {
+  margin-top: 0.15rem;
   font-size: var(--text-card);
 }
 
@@ -570,23 +536,10 @@ img { max-width: 100%; height: auto; }
   list-style: none;
 }
 
-.resource-card > .resource-actions,
-.resource-editions { padding-top: var(--s2); }
-
-.resource-editions {
-  display: grid;
-  gap: var(--s2);
+.resource-card > .resource-actions {
+  margin-top: auto;
+  padding-top: var(--s2);
 }
-
-.resource-edition-label {
-  color: var(--ink-2);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.resource-edition .resource-actions { margin-top: var(--s1); }
 
 .resource-action {
   display: inline-flex;
@@ -893,8 +846,11 @@ a.resource-action:focus-visible {
   }
 }
 
+@media (max-width: 1100px) {
+  .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 @media (max-width: 860px) {
-  .resource-grid { grid-template-columns: minmax(0, 1fr); }
   .site-foot > .wrap {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--s3);
@@ -908,7 +864,7 @@ a.resource-action:focus-visible {
   .site-nav ul { gap: var(--s2); }
   .foot-nav ul { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; }
   .hero h1 { max-width: none; }
-  .preparation-summary__action { border-radius: var(--radius); }
+  .resource-grid { grid-template-columns: minmax(0, 1fr); }
   .foot-nav li > a:not(.repo-link) { padding-inline-start: 1.4em; }
   .video-module__definition { padding-inline: var(--s2); }
   .resource-card { padding: var(--s2); }

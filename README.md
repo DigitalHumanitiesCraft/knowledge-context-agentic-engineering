@@ -38,9 +38,9 @@ Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the regi
 
 ## The platform
 
-The public site is one static page per language, `docs/index.html` and `docs/index.de.html`. The opening section names the five modules inline, each linked to its group in the Video Library, and a compact paragraph explains DHCraft, workshop funding and public maintenance. The page then presents the three teaching holdings as cards, Preparation and the Video Library, and the header navigation targets these sections. The footer links the canonical legal notice and states the licence scope.
+The public site is one static page per language, `docs/index.html` and `docs/index.de.html`. The opening section names the five modules inline, each linked to its group in the Video Library, and a compact paragraph explains DHCraft, workshop funding and public maintenance. The page then presents Preparation and the three teaching holdings as four cards, followed by the Video Library, and the header navigation targets these sections. The footer links the canonical legal notice and states the licence scope.
 
-Preparation links the English Google Slides deck [Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit) and shows its title slide as a locally stored image. Its URL and language are registered in `data/workshops.json` under `preparation`. The Video Library is rendered from `data/videos.json`.
+Preparation links the English Google Slides deck [Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit) from the first of the four cards. Its URL and language are registered in `data/workshops.json` under `preparation`. The Video Library is rendered from `data/videos.json`.
 
 The workshop records retain material provenance and generate no public event pages. The site is no-build HTML and CSS whose content needs no JavaScript, with self-hosted fonts, and its requirements are maintained in [`knowledge/specification.md`](knowledge/specification.md). Local changes require author acceptance and a separate publication step.
 

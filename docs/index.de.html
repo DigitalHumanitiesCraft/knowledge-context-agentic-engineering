@@ -16,7 +16,7 @@
 <meta property="og:locale" content="de_DE">
 <meta property="og:locale:alternate" content="en_GB">
 <link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/site.css?v=20261104-14">
+<link rel="stylesheet" href="assets/site.css?v=20261104-15">
 <script src="assets/site.js?v=20261104-2" defer></script>
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -68,13 +68,28 @@
   <section class="section teaching-materials" id="material">
     <div class="wrap">
       <h2 class="section-title">Lehrmaterialien</h2>
+
       <div class="resource-grid">
+        <article class="resource-card resource-card--prep" id="preparation">
+          <div class="resource-summary">
+            <img class="resource-mark" src="assets/materials/preparation.svg?v=20261104-1" alt="" width="280" height="200" loading="lazy" decoding="async">
+            <div class="resource-copy">
+              <p class="resource-kicker">Vorbereiten</p>
+              <h3>Vorbereitung</h3>
+              <p>Folien zum Einrichten von Python, Visual Studio Code und einem AI Harness, mit einer praktischen Übung. Auf Englisch.</p>
+            </div>
+          </div>
+          <ul class="resource-actions">
+            <li><a class="resource-action" href="https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit" aria-label="Vorbereitungsfolien in Google Slides öffnen"><img src="assets/materials/slides-icon.svg" alt="" width="16" height="16">Google Slides</a></li>
+          </ul>
+        </article>
         <article class="resource-card">
           <div class="resource-summary">
             <img class="resource-mark" src="assets/materials/slides.svg?v=20261104-1" alt="" width="280" height="200" loading="lazy" decoding="async">
             <div class="resource-copy">
+              <p class="resource-kicker">Überblicken</p>
               <h3>Full Slide Deck</h3>
-              <p>Ein vollständiger Überblick über das Lehrmaterial in einem Foliensatz. Er dient als Nachschlagewerk und als Quelle für workshopspezifische Foliensätze.</p>
+              <p>Ein vollständiger Überblick über das Lehrmaterial und die Quelle für workshopspezifische Foliensätze.</p>
             </div>
           </div>
           <ul class="resource-actions">
@@ -86,31 +101,22 @@
           <div class="resource-summary">
             <img class="resource-mark" src="assets/materials/notes.svg?v=20261104-1" alt="" width="280" height="200" loading="lazy" decoding="async">
             <div class="resource-copy">
+              <p class="resource-kicker">Nachlesen</p>
               <h3>Full Lecture Notes</h3>
               <p>Die ausformulierte Fassung der Folien mit Erklärungen und Kontext zum Lesen und Nachschlagen.</p>
             </div>
           </div>
-          <div class="resource-editions">
-            <div class="resource-edition">
-              <p class="resource-edition-label">Deutsch</p>
-              <ul class="resource-actions">
-                <li><a class="resource-action" href="https://docs.google.com/document/d/1rJRraAfBfnkrb_3ik4savYuboLPhZ-zAFvlj4CmmMcE/edit" aria-label="Deutsche Full Lecture Notes in Google Docs öffnen"><img src="assets/materials/notes-icon.svg" alt="" width="16" height="16">Google Docs</a></li>
-                <li><span class="resource-action resource-action--pending">Markdown und PDF folgen</span></li>
-              </ul>
-            </div>
-            <div class="resource-edition">
-              <p class="resource-edition-label">English</p>
-              <ul class="resource-actions">
-                <li><a class="resource-action" href="https://docs.google.com/document/d/1eaGx86RFr4Xywnxmf4Krdy4GKMYMcnW8pAYPXVH-Lr8/edit" aria-label="Englische Full Lecture Notes in Google Docs öffnen"><img src="assets/materials/notes-icon.svg" alt="" width="16" height="16">Google Docs</a></li>
-                <li><span class="resource-action resource-action--pending">Markdown und PDF folgen</span></li>
-              </ul>
-            </div>
-          </div>
+          <ul class="resource-actions">
+            <li><a class="resource-action" href="https://docs.google.com/document/d/1rJRraAfBfnkrb_3ik4savYuboLPhZ-zAFvlj4CmmMcE/edit" aria-label="Deutsche Full Lecture Notes in Google Docs öffnen"><img src="assets/materials/notes-icon.svg" alt="" width="16" height="16">Deutsch</a></li>
+            <li><a class="resource-action" href="https://docs.google.com/document/d/1eaGx86RFr4Xywnxmf4Krdy4GKMYMcnW8pAYPXVH-Lr8/edit" aria-label="Englische Full Lecture Notes in Google Docs öffnen" lang="en"><img src="assets/materials/notes-icon.svg" alt="" width="16" height="16">English</a></li>
+            <li><span class="resource-action resource-action--pending">Markdown und PDF folgen</span></li>
+          </ul>
         </article>
         <article class="resource-card">
           <div class="resource-summary">
             <img class="resource-mark" src="assets/materials/videos.svg?v=20261104-1" alt="" width="280" height="200" loading="lazy" decoding="async">
             <div class="resource-copy">
+              <p class="resource-kicker">Ansehen</p>
               <h3>Video-Playlist</h3>
               <p>Eine geordnete Videoreihe von den Grundlagen zu vertiefenden Themen, die laufend gepflegt und erweitert wird.</p>
             </div>
@@ -123,18 +129,6 @@
     </div>
   </section>
 
-  <section class="section" id="preparation">
-    <div class="wrap">
-      <article class="preparation-summary">
-        <h2 class="section-title">Vorbereitung</h2>
-        <div class="preparation-summary__row">
-          <p>Die Vorbereitungsfolien behandeln Python, Visual Studio Code und ein AI Harness mit einer praktischen Übung zum Einrichten der Arbeitsumgebung. Die Folien sind auf Englisch.</p>
-          <a class="preparation-summary__action" href="https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit">Vorbereitungsfolien in Google Slides öffnen</a>
-        </div>
-      </article>
-      <a class="slide-preview" tabindex="-1" aria-hidden="true" href="https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit"><img src="assets/materials/preparation-title.png" alt="" width="960" height="540" loading="lazy" decoding="async"></a>
-    </div>
-  </section>
   <section class="section" id="videos" aria-labelledby="video-library-title">
     <div class="wrap">
       <h2 class="section-title" id="video-library-title">Videothek</h2>
