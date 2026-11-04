@@ -26,6 +26,10 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-11-04 integrated · Material cards without label and pending note
+
+On the author's instruction the note on Markdown and PDF versions in preparation and the visible `Materials` label above the cards are removed. The card titles become the h2 headings of the section, which keeps the heading order H1 to H2, and the section keeps `Materials` or `Material` as its accessible name. Formats without a target stay recorded as `null` in the register. Checked at four widths in both languages: no overflow, no external request and the heading order H1 followed by H2.
+
 ### 2026-11-04 integrated · Materials first, modules as appendix, no duplicated chrome
 
 The author judged the videos to be a supplement rather than the main route and pointed to duplications. The four material cards, Preparation, Slides, Lecture Notes and Methods, now follow the introduction in one row, and the modules with their videos form a quieter appendix below: rows without boxes, a left rule in the module colour, a neutral chevron for the open state and the definition aligned with the title. The header drops the site name and the section navigation, because the H1 names the page and the two sections fit within the first screens. The Video Playlist card gives way to a playlist link beside the modules heading, which already leads to every video. The formats in preparation are named in one note below the cards, the instruction lines are removed because the controls show how they work, the workshop sentence moves into the introduction, and the publisher paragraph is replaced by two short footer sentences with the licence scope in the licence link. Checked at six widths from 1440 to 320 pixels in both languages: no page or tooltip overflow, no external request, keyboard order materials before modules, module fragments open their group, every register entry listed once, and every stylesheet class in use. At 1280 by 800 pixels the first screen shows the title, the introduction and all four cards.

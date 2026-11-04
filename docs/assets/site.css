@@ -252,7 +252,7 @@ img { max-width: 100%; height: auto; }
 .materials,
 .modules { scroll-margin-top: var(--s4); }
 
-.materials { padding-top: var(--s4); }
+.materials { padding-top: var(--s5); }
 
 .modules { padding-top: var(--s6); }
 
@@ -272,13 +272,6 @@ img { max-width: 100%; height: auto; }
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: stretch;
   gap: var(--s2);
-}
-
-.materials-note {
-  max-width: var(--measure);
-  margin-top: var(--s2);
-  color: var(--ink-3);
-  font-size: var(--text-md);
 }
 
 /* Section label with one related link on the same line. */
@@ -423,7 +416,7 @@ img { max-width: 100%; height: auto; }
 
 .resource-card--prep .resource-card__mark { mix-blend-mode: multiply; }
 
-.resource-card h3 {
+.resource-card h2 {
   margin: 0;
   font-size: var(--text-card);
 }
