@@ -71,7 +71,7 @@ The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03
 
 | Artefact | Location | State |
 | --- | --- | --- |
-| Live deck | Google Slides, operator's Drive, not yet registered in `docs/data/workshops.json` | in preparation |
+| Live deck | Google Slides, operator's Drive, kept private by operator decision of 2026-11-04 and not registered in `docs/data/workshops.json` | in preparation |
 | Lecture Notes (Uni for Life 2026) | this folder | stub |
 | PPTX export per taught state | this folder | open |
 | Session 3 material and hook | [`data/`](data/README.md) | present |
@@ -79,7 +79,6 @@ The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03
 
 ## Open points
 
-- Whether the live deck is linked publicly from the register is an operator decision.
 - The participant data folder on Drive still carries the dropped scenario and needs the session 3 files.
 - Session 3 has no slides yet.
 - The operational counterpart of this profile, with prompts, logistics and correspondence, is the workshop document in the operator's research vault. Its slide sequence predates the current deck.

@@ -12,7 +12,7 @@ related: [profile.md, ../../slides/full-slide-deck.md]
 
 # Slide Deck (Uni for Life 2026)
 
-The live deck of this instance is written for its teaching design in [`profile.md`](profile.md) and draws on the Full Slide Deck where the modules overlap. The live deck is a Google Slides file in the operator's Drive and is not yet registered in `docs/data/workshops.json`. Its slide text is not yet exported into this repository.
+The live deck of this instance is written for its teaching design in [`profile.md`](profile.md) and draws on the Full Slide Deck where the modules overlap. The live deck is a Google Slides file in the operator's Drive and stays private by operator decision of 2026-11-04, so `docs/data/workshops.json` carries no link to it. Its slide text is not yet exported into this repository.
 
 The Full Slide Deck lives at [`../../slides/full-slide-deck.md`](../../slides/full-slide-deck.md).
 
