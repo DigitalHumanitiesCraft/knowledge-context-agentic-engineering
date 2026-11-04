@@ -65,7 +65,7 @@ The fine module cut in `knowledge/drafts/module-map.md` remains a draft and pred
 
 The case is deliberately general and uses real material that outsiders understand. Sessions 1 and 2 work on live web sources from 2026, which each participant gathers anew. Participants may substitute a project of their own.
 
-Session 3 uses the material in [`data/`](data/README.md), four Excel files converted from Microsoft's Northwind sample database under the MIT License, together with a synthetic German customer e-mail that the current hands-on does not use. All persons and companies in it are fictional. The folder also holds the project-folder hook shown in session 2.
+Session 3 uses the material in [`data/`](data/README.md), four Excel files converted from Microsoft's Northwind sample database under the MIT License, together with a synthetic German customer e-mail. The e-mail stays out of session 3, because the hands-on is already full with the Excel analysis; it remains in `data/` for later instances. All persons and companies in it are fictional. The folder also holds the project-folder hook shown in session 2.
 
 The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03 because it did not use real data. It is preserved in git history.
 
@@ -83,7 +83,6 @@ The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03
 
 - The participant data folder on Drive still carries the dropped scenario and needs the session 3 files.
 - Several slides in the deck still carry the draft marker and await the operator's acceptance; the lecture notes follow their current text.
-- Whether the synthetic customer e-mail with its personal data returns to session 3 is undecided.
 - The operational counterpart of this profile, with prompts, logistics and correspondence, is the workshop document in the operator's research vault. Its slide sequence predates the current deck.
 
 ## Delivery notes
