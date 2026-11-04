@@ -16,7 +16,7 @@ language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
 status: in preparation
-related: [lecture-notes.md, ../../knowledge/project.md, ../../knowledge/drafts/module-map.md, ../../knowledge/drafts/specialization-analysis.md]
+related: [lecture-notes.md, ../../knowledge/project.md, ../../knowledge/drafts/module-map.md]
 ---
 
 # Workshop Profile CLARIAH-AT 2026

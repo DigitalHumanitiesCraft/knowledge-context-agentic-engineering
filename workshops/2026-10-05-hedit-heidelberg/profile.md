@@ -14,7 +14,7 @@ updated: 2026-09-23
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
-related: [../../knowledge/project.md, ../../knowledge/drafts/module-map.md, ../../knowledge/drafts/specialization-analysis.md, ../../knowledge/drafts/additional-past-instances.md]
+related: [../../knowledge/project.md, ../../knowledge/drafts/module-map.md]
 ---
 
 # Workshop Profile HEDIT Heidelberg 2026

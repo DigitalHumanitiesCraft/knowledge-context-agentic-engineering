@@ -14,7 +14,7 @@ updated: 2026-11-04
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5.5)
-related: [../../knowledge/project.md, ../../knowledge/drafts/module-map.md, ../../knowledge/drafts/specialization-analysis.md]
+related: [../../knowledge/project.md, ../../knowledge/drafts/module-map.md]
 ---
 
 # Workshop Profile Uni for Life 2026
