@@ -30,21 +30,18 @@ Only upcoming instances live in this repository. Once an instance has been taugh
 | `slides/full-slide-deck.md` | The Full Slide Deck as text with speaker notes; the visual deck lives in Google Slides and is linked |
 | `docs/data/videos.json` | The Video Playlist inventory, including order, primary module, any related modules and duration |
 | `workshops/<id>/` | One folder per upcoming instance, holding `profile.md`, `slide-deck.md`, `lecture-notes.md` and `data/` |
-| `docs/` | The platform (static site, GitHub Pages), including the register `docs/data/workshops.json` and the covers in `docs/assets/covers/` |
-| `docs/index.html#preparation`, `docs/index.de.html#preparation` | Existing English Technical Setup deck in Google Slides |
+| `docs/` | The platform (static site, GitHub Pages), including the register `docs/data/workshops.json` |
 | `communication/` | The Research Mission Control transport for current briefs, results and recipient state |
 
-Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the register, the workshop folder, the cover file, the historical subpage and the git tag.
+Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the register, the workshop folder and the git tag.
 
 ## The platform
 
-The public site is one static page per language, `index.html` and `index.de.html`. A compact paragraph in the opening section explains DHCraft, workshop funding and public maintenance. The page then presents the shared teaching materials, the embedded Preparation deck and the Video Library. Header links target these sections. There are no separate About or Preparation pages and no generic arrow-back links. The canonical legal notice remains linked in the footer, together with the licence scope. Event listings and Learning Routes remain retired; teaching sources are unchanged.
+The public site is one static page per language, `docs/index.html` and `docs/index.de.html`. The opening section names the five modules inline, each linked to its group in the Video Library, and a compact paragraph explains DHCraft, workshop funding and public maintenance. The page then presents the three teaching holdings as cards, Preparation and the Video Library, and the header navigation targets these sections. The footer links the canonical legal notice and states the licence scope.
 
-Preparation links to and embeds the existing English Google Slides deck [Preparation · Slides · Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit). Its URL and language are registered in `docs/data/workshops.json` under `preparation`. Both language versions identify the English teaching language. A visible direct link remains usable if the embedded viewer cannot load. No separate HTML setup curriculum or subject-introduction sequence is maintained in that section.
+Preparation links the English Google Slides deck [Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit) and shows its title slide as a locally stored image. Its URL and language are registered in `docs/data/workshops.json` under `preparation`. The Video Library is rendered from `docs/data/videos.json`.
 
-The workshop records in `docs/data/workshops.json` retain material provenance and do not generate public event pages or navigation. Full-material and video links retain their existing ownership and rights boundaries. External Google files and sharing permissions are unchanged.
-
-The site remains no-build HTML and CSS. Local changes require author acceptance and a separate publication step.
+The workshop records retain material provenance and generate no public event pages. The site is no-build HTML and CSS without JavaScript, and its requirements are maintained in [`knowledge/specification.md`](knowledge/specification.md). Local changes require author acceptance and a separate publication step.
 
 https://dhcraft.org/knowledge-context-agentic-engineering/
 

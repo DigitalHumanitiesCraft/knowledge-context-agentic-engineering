@@ -26,6 +26,10 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-11-04 integrated · Specification and README rewritten for the single page
+
+The specification still carried the August contract with workshop pages, Learning Routes, HTML Preparation lessons and About pages, and both it and the README described the embedded Preparation viewer. `specification.md` now states the current single-page contract section by section, its acceptance criteria and the decisions that still bind. The superseded requirements, criteria and decisions are reduced to a pointer to commit `8f14d0b`, which holds the previous text, to commit `836b663` for the August installation and to tag `v0.3`. The README platform section and repository table follow the same state and no longer name covers or the embedded viewer. Every referenced path and commit was checked against the working tree and Git. Author acceptance remains separate.
+
 ### 2026-11-04 integrated · Stylesheet and published-tree cleanup
 
 The stylesheet lost every rule that only addressed classes of the retired subpages, tutorials, workshop cards, timeline, Web Module and About page, along with four unused tokens. A computed-style comparison of both pages at 1280, 900 and 390 pixels showed no difference in any element's style or box. The unlinked workshop covers, route icons, module-00 icon and Preparation download files left `docs/`; they are preserved in git history at `e66901b`.
