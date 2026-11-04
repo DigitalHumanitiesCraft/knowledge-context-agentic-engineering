@@ -96,6 +96,15 @@
 }
 
 /* Base */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
@@ -360,7 +369,8 @@ img { max-width: 100%; height: auto; }
 
 /* Modules. The single home of the identity palette. Each module carries one
    small mark, turquoise plus the four logo colours, assigned by position. */
-.video-module__summary .module-icon {
+.video-module__summary .module-icon,
+.methods-list .module-icon {
   display: inline-block;
   flex: none;
   width: 1.5rem;
@@ -377,8 +387,10 @@ img { max-width: 100%; height: auto; }
 
 .video-module.m2 { --module-color: var(--m2); --module-icon: url("modules/02-prompt-engineering.svg"); }
 
+.methods-list .m3,
 .video-module.m3 { --module-color: var(--m3); --module-icon: url("modules/03-knowledge-context-engineering.svg"); }
 
+.methods-list .m4,
 .video-module.m4 { --module-color: var(--m4); --module-icon: url("modules/04-agentic-engineering.svg"); }
 
 .video-module.m5 { --module-color: var(--m5); --module-icon: url("modules/05-critical-perspectives-governance.svg"); }
@@ -441,14 +453,43 @@ img { max-width: 100%; height: auto; }
   list-style: none;
 }
 
+/* Each method carries the icon of the module it belongs to, the same mark as
+   the module rows below, so the assignment needs no new imagery. */
 .methods-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.35rem var(--s2);
+  gap: 0.3rem;
   padding: 0;
   font-size: var(--text-md);
   list-style: none;
 }
+
+.methods-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.methods-list .module-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* A quiet link to the method's introductory video, pushed to the row end. */
+.methods-video {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.75rem;
+  min-height: 1.75rem;
+  margin-left: auto;
+  border-radius: var(--radius);
+  opacity: 0.55;
+}
+
+.methods-video:hover,
+.methods-video:focus-visible { opacity: 1; }
+
+.methods-video img { width: 1.25rem; height: 1.25rem; }
 
 .resource-action {
   display: inline-flex;
@@ -739,9 +780,12 @@ a.resource-action:focus-visible {
   .language-nav a,
   .foot-nav a,
   .imprint .contact a,
-  .resource-action {
+  .resource-action,
+  .methods-video {
     min-height: var(--tap);
   }
+
+  .methods-video { min-width: var(--tap); }
 }
 
 @media (prefers-reduced-motion: reduce) {
