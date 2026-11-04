@@ -35,7 +35,6 @@ Publish the redesigned single page of 4 November 2026 and check the live state. 
 - Maintain workshop source material for actual teaching assignments without recreating individual event pages or Learning Routes.
 - Obtain bounded author feedback on the prepared Verification, Validation and Acceptance section linked from INDEX.md. After acceptance, integrate the identified wording into the German notes and prepare the corresponding native slides. Other sections continue through their own source checks and acceptance.
 - Recheck the actual Google sharing state before presenting the retained permissions requests.
-- Complete the documented VetMed title write-back in the source profile and register, including the distinction between teaching and hackathon days. The retired public pages require no update.
 
 ## Completed milestones
 

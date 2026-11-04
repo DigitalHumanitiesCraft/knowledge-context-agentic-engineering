@@ -2,7 +2,7 @@
 title: Curated Agent Skills Library
 status: draft
 created: 2026-08-25
-updated: 2026-08-25
+updated: 2026-11-04
 language: en
 related: [module-hub-architecture.md, claude-code-agentic-engineering-subchapter.md, ../terms.md]
 ---
@@ -53,11 +53,9 @@ Every public entry carries:
 
 The interface must distinguish source description from project evaluation. A `recommended` label records a completed KCE review of the inspected version. Popularity or inclusion in an external collection supplies no quality judgement.
 
-## Module 04 integration
+## Public placement
 
-The first v0.3 release adds a dedicated `Curated Skills` subsection to the Module 04 `routes` section. It uses a compact semantic list with filters expressed as ordinary links or controls only when the feature remains usable without JavaScript. Each row exposes task boundary, invocation type, compatibility, status and source.
-
-The initial release may show five to eight reviewed entries. A separate library page becomes justified when the maintained register grows beyond what the hub can present without displacing its learning sequence. That later route should read from a shared register and preserve a static HTML fallback.
+The v0.3 placement in the Module 04 routes section was removed with the module hubs and is preserved in git history at tag `v0.3`. The current single page has no place for a skills list; a later placement needs a separate author decision and the instruction and permission review named above. The row fields task boundary, invocation type, compatibility, status and source remain the contract for any such list, and the page must stay usable without JavaScript.
 
 ## Evaluation questions
 
