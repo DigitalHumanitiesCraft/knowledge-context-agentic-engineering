@@ -39,47 +39,6 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-// Video previews are hosted by YouTube, so they are requested only once a
-// reader opens a module group. Without this script the cards show title and
-// duration on a neutral plate and no request reaches YouTube.
-for (const group of document.querySelectorAll('.video-module')) {
-  group.addEventListener('toggle', () => {
-    if (!group.open) return;
-    for (const media of group.querySelectorAll('.video-card__media[data-thumb]')) {
-      const img = document.createElement('img');
-      img.className = 'video-card__thumbnail';
-      img.src = media.dataset.thumb;
-      img.alt = '';
-      img.width = 320;
-      img.height = 180;
-      img.decoding = 'async';
-      media.append(img);
-      media.removeAttribute('data-thumb');
-    }
-  });
-}
-
-// A module link in the introduction targets its video group. Opening the group
-// on arrival saves the second click; the toggle handler above then loads the
-// previews, which follows the reader's own click on that link.
-const openTarget = () => {
-  const target = location.hash && document.getElementById(location.hash.slice(1));
-  if (target instanceof HTMLDetailsElement && !target.open) {
-    target.open = true;
-    target.scrollIntoView({ block: 'start' });
-  }
-};
-window.addEventListener('hashchange', openTarget);
-openTarget();
-// A repeated click on the same link fires no hashchange, so links open their
-// group directly as well.
-for (const link of document.querySelectorAll('a[href^="#video-module-"]')) {
-  link.addEventListener('click', () => {
-    const group = document.getElementById(link.hash.slice(1));
-    if (group instanceof HTMLDetailsElement) group.open = true;
-  });
-}
-
 // On touch screens a pinned definition is a sheet at the bottom of the screen;
 // a tap anywhere outside its term closes it.
 document.addEventListener('pointerdown', (event) => {
@@ -87,3 +46,16 @@ document.addEventListener('pointerdown', (event) => {
     if (term.classList.contains('term--open') && !term.contains(event.target)) close(term);
   }
 });
+
+// A link to a module, `#module-0N` or `#video-module-0N`, opens that module's
+// group on arrival, so the reader lands on its videos instead of a closed row.
+const openTarget = () => {
+  const target = location.hash && document.getElementById(location.hash.slice(1));
+  const group = target?.closest('details');
+  if (group && !group.open) {
+    group.open = true;
+    group.scrollIntoView({ block: 'start' });
+  }
+};
+window.addEventListener('hashchange', openTarget);
+openTarget();

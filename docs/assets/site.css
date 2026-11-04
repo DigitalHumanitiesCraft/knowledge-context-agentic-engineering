@@ -41,8 +41,7 @@
   --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
   --text-title: 1.0625rem;   /* module heading */
   --text-card: 1.125rem;     /* card heading */
-  --text-section: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
-  --text-hero: clamp(2rem, 1.3rem + 3.2vw, 3.5rem);
+  --text-hero: clamp(1.9rem, 1.1rem + 1.7vw, 2.4rem);
 
   /* --- Spacing scale, 8px based ---------------------------------------- */
   --s1: 0.5rem;
@@ -175,15 +174,6 @@ img { max-width: 100%; height: auto; }
   scroll-margin-top: var(--s4);
 }
 
-.section-title { font-size: var(--text-section); }
-
-/* One line under a section title, where the section needs a reading key. */
-.section-lede {
-  max-width: var(--measure);
-  margin-top: var(--s2);
-  color: var(--ink-2);
-}
-
 /* Header and navigation */
 .site-head > .wrap {
   display: flex;
@@ -288,19 +278,71 @@ img { max-width: 100%; height: auto; }
 .language-nav a:hover,
 .language-nav a:focus-visible { color: var(--accent); }
 
-/* The introduction leads into the five modules as a list. */
-.hero { padding-block: clamp(var(--s4), 4vw, var(--s5)) var(--s4); }
+/* The landing view is one workspace. The DOM order is introduction, materials,
+   modules: on narrow screens the materials come first, on wide screens they
+   form the right column beside the modules. */
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "intro side" "main side";
+  align-items: start;
+  column-gap: var(--s5);
+  padding-top: var(--s3);
+}
 
-.hero h1 {
-  max-width: 32ch;
+.workspace__intro { grid-area: intro; }
+
+.workspace__side {
+  display: grid;
+  grid-area: side;
+  gap: var(--s1);
+  padding-top: var(--s2);
+  scroll-margin-top: var(--s4);
+}
+
+.workspace__main {
+  grid-area: main;
+  scroll-margin-top: var(--s4);
+}
+
+.workspace h1 {
+  max-width: 30ch;
   font-size: var(--text-hero);
 }
 
-.hero-copy p {
+.workspace .intro {
   max-width: var(--measure);
-  margin-top: var(--s3);
+  margin-top: var(--s2);
   color: var(--ink-2);
   line-height: 1.65;
+}
+
+/* Quiet mono label above the two columns, in place of a section title. */
+.workspace__label {
+  margin: var(--s3) 0 var(--s2);
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.workspace__side .workspace__label { margin-top: 0; }
+
+.workspace__hint {
+  margin-top: var(--s2);
+  color: var(--ink-3);
+  font-size: var(--text-md);
+}
+
+.about-strip { padding-top: var(--s5); }
+
+.about-strip p {
+  max-width: var(--measure);
+  color: var(--ink-3);
+  font-size: var(--text-lg);
 }
 
 /* An inline term with a definition, used for AI Harnesses. */
@@ -373,64 +415,8 @@ img { max-width: 100%; height: auto; }
 /* Set by site.js when Escape dismisses a definition. */
 .term.term--dismissed .term-tooltip { display: none; }
 
-/* The five modules as a list. Each row joins icon, number and the title that
-   links to its video group with the visible definition. Rows are separated by
-   whitespace alone; the module-coloured underline is the only line. */
-.module-list {
-  display: grid;
-  gap: var(--s2);
-  max-width: 66rem;
-  margin: var(--s4) 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.module-item {
-  display: grid;
-  grid-template-columns: minmax(0, 26rem) minmax(0, 1fr);
-  align-items: baseline;
-  gap: 0.15rem var(--s4);
-  scroll-margin-top: var(--s4);
-}
-
-.module-link {
-  color: var(--ink);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.module-number {
-  margin-inline-end: 0.4em;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: 400;
-}
-
-.module-title {
-  padding-bottom: 0.06em;
-  background-image: linear-gradient(var(--module-color), var(--module-color));
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: 100% 0.075em;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
-.module-link:hover .module-title,
-.module-link:focus-visible .module-title { background-size: 100% 0.12em; }
-
-.hero-copy .module-definition {
-  max-width: none;
-  margin: 0;
-  color: var(--ink-2);
-  font-size: var(--text-lg);
-  line-height: 1.5;
-}
-
 /* Modules. The single home of the identity palette. Each module carries one
    small mark, turquoise plus the four logo colours, assigned by position. */
-.module-link .module-icon,
 .video-module__summary .module-icon {
   display: inline-block;
   flex: none;
@@ -442,50 +428,23 @@ img { max-width: 100%; height: auto; }
   color: var(--module-color);
 }
 
-.module-link .module-icon {
-  width: 1.4em;
-  height: 1.4em;
-  margin-inline-end: 0.35em;
-  vertical-align: -0.35em;
-}
-
 /* Each portable icon carries one specific conceptual relation. Colour remains
    an additional module cue; the adjacent number and title carry the meaning. */
-.module-item.m1,
 .video-module.m1 { --module-color: var(--m1); --module-icon: url("modules/01-understanding-llms.svg"); }
 
-.module-item.m2,
 .video-module.m2 { --module-color: var(--m2); --module-icon: url("modules/02-prompt-engineering.svg"); }
 
-.module-item.m3,
 .video-module.m3 { --module-color: var(--m3); --module-icon: url("modules/03-knowledge-context-engineering.svg"); }
 
-.module-item.m4,
 .video-module.m4 { --module-color: var(--m4); --module-icon: url("modules/04-agentic-engineering.svg"); }
 
-.module-item.m5,
 .video-module.m5 { --module-color: var(--m5); --module-icon: url("modules/05-critical-perspectives-governance.svg"); }
 
-/* Teaching materials */
-.teaching-materials { padding-top: var(--s4); }
-
-/* Preparation and the three holdings share one row of four cards, two per
-   row below 1100px and one below 640px. The methods card spans the row below. Their contents are parallel, so the
-   cards share one height and their actions align at the foot. */
-.resource-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: stretch;
-  gap: var(--s2);
-  margin-top: var(--s4);
-}
-
+/* Materials: five compact cards. A small line mark beside each title names the
+   kind of entry, one sentence states its use and the actions follow. */
 .resource-card {
-  display: flex;
-  flex-direction: column;
   min-width: 0;
-  overflow: hidden;
-  padding: var(--s3) var(--s2);
+  padding: var(--s2);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   background: var(--white);
@@ -498,97 +457,49 @@ img { max-width: 100%; height: auto; }
   background: var(--tint);
 }
 
-.resource-card--prep .resource-mark { mix-blend-mode: multiply; }
-
-.resource-summary {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--s1);
-  min-width: 0;
+.resource-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.resource-mark {
-  display: block;
-  width: 5rem;
+.resource-card__mark {
+  flex: none;
+  width: 2.75rem;
   height: auto;
-  object-fit: contain;
-  background: var(--white);
 }
 
-.resource-copy {
-  min-width: 0;
-}
+.resource-card--prep .resource-card__mark { mix-blend-mode: multiply; }
 
 .resource-card h3 {
-  margin-top: var(--s2);
+  margin: 0;
   font-size: var(--text-card);
 }
 
-.resource-copy > p {
-  margin-top: var(--s2);
+.resource-card__text {
+  margin-top: 0.4rem;
   color: var(--ink-2);
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
+  line-height: 1.5;
 }
 
 .resource-actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s1);
-  margin-top: var(--s2);
+  margin-top: var(--s1);
   padding: 0;
   list-style: none;
-}
-
-.resource-card > .resource-actions {
-  margin-top: auto;
-  padding-top: var(--s2);
-}
-
-/* Methods for continued work span the whole row below the four cards. */
-.methods-card { grid-column: 1 / -1; }
-
-.methods-card > h3 { margin-top: 0; }
-
-.methods-lede {
-  max-width: var(--measure);
-  margin-top: var(--s1);
-  color: var(--ink-2);
-  font-size: var(--text-lg);
 }
 
 .methods-list {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--s2) var(--s3);
-  margin-top: var(--s3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem var(--s2);
+  margin: var(--s1) 0 0;
   padding: 0;
+  font-size: var(--text-md);
   list-style: none;
-}
-
-.methods-item {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s1);
-  min-width: 0;
-}
-
-.methods-name {
-  color: var(--ink);
-  font-weight: 600;
-  text-decoration-color: var(--accent);
-}
-
-.methods-name:hover,
-.methods-name:focus-visible { color: var(--accent); }
-
-.methods-item > p {
-  color: var(--ink-2);
-  font-size: var(--text-lg);
-}
-
-.methods-video {
-  margin-top: auto;
-  font-size: var(--text-sm);
 }
 
 .resource-action {
@@ -626,12 +537,13 @@ a.resource-action:focus-visible {
   color: var(--ink-3);
 }
 
-/* Video library. Native details elements preserve disclosure semantics and keyboard support. Every module group carries the same icon and colour relation as the module list; video cards use YouTube's 16:9 preview without changing the image. */
+/* Modules and videos. Each module is one native disclosure: its summary carries
+   icon, number, title, count and the definition, and opening it shows the videos
+   as a text list. No preview image is loaded. */
 .video-library {
   display: grid;
-  gap: var(--s2);
+  gap: var(--s1);
   min-width: 0;
-  margin-top: var(--s4);
 }
 
 .video-module {
@@ -646,7 +558,7 @@ a.resource-action:focus-visible {
 .video-module__summary {
   min-width: 0;
   min-height: var(--tap);
-  padding: var(--s2) var(--s3);
+  padding: 0.55rem var(--s3);
   color: var(--ink);
   font-weight: 600;
   line-height: 1.35;
@@ -679,84 +591,43 @@ a.resource-action:focus-visible {
   background: var(--tint);
 }
 
-.video-grid {
+.video-module__definition {
+  display: block;
+  margin: 0.2rem 0 0 calc(1.5rem + 1.4em);
+  color: var(--ink-2);
+  font-size: var(--text-md);
+  font-weight: 400;
+}
+
+.video-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--s2);
-  min-width: 0;
   margin: 0;
-  padding: var(--s3);
+  padding: var(--s2) var(--s3) var(--s3);
   list-style: none;
 }
 
-.video-grid > * { min-width: 0; }
-
-.video-card {
+.video-list li {
   display: flex;
-  flex-direction: column;
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--white);
-  transition: border-color 140ms ease;
+  justify-content: space-between;
+  gap: var(--s2);
+  padding-block: 0.35rem;
+  font-size: var(--text-lg);
 }
 
-.video-card:hover,
-.video-card:focus-within { border-color: var(--module-color, var(--accent)); }
-
-.video-card__link {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-width: 0;
+.video-list a {
   color: var(--ink);
-  text-decoration: none;
+  text-decoration-color: var(--rule-mid);
 }
 
-.video-card__link:hover,
-.video-card__link:focus-visible { color: var(--accent); }
+.video-list a:hover,
+.video-list a:focus-visible { color: var(--accent); }
 
-.video-card__link:focus-visible { outline-offset: -3px; }
-
-.video-card__media {
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  background: var(--tint);
-}
-
-.video-card__thumbnail {
-  display: block;
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  background: var(--tint);
-}
-
-.video-card__body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: var(--s1);
-  min-width: 0;
-  padding: var(--s2);
-}
-
-.video-card__title {
-  font-size: var(--text-title);
-  overflow-wrap: anywhere;
-}
-
-.video-card__duration {
-  display: block;
-  margin-top: auto;
+.video-list time {
+  flex: none;
   color: var(--ink-3);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  font-variant-numeric: tabular-nums;
 }
-
 
 /* Footer. Three top-aligned groups: publisher identity, the one-sentence method provenance and a compact navigation on a quiet, bounded surface. */
 .site-foot {
@@ -862,11 +733,17 @@ a.resource-action:focus-visible {
 
 /* Narrow viewports and preferences */
 @media (max-width: 1020px) {
-  .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-head > .wrap { align-items: flex-start; }
   .head-tools { width: 100%; justify-content: space-between; }
   .site-foot > .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .foot-nav { grid-column: 1 / -1; }
+  .workspace {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    grid-template-areas: "intro" "side" "main";
+  }
+  .workspace__side { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-top: 0; }
+  .workspace__side .workspace__label { grid-column: 1 / -1; margin-top: var(--s3); }
 }
 
 /* Below 1180px a tooltip anchored to a term near the line end can pass the
@@ -884,15 +761,6 @@ a.resource-action:focus-visible {
   }
 }
 
-@media (max-width: 1100px) {
-  .resource-grid,
-  .methods-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 760px) {
-  .module-item { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
-}
-
 @media (max-width: 860px) {
   .site-foot > .wrap {
     grid-template-columns: minmax(0, 1fr);
@@ -905,17 +773,13 @@ a.resource-action:focus-visible {
   .site-head > .wrap { align-items: flex-start; }
   .head-tools { gap: var(--s2); }
   .site-nav ul { gap: var(--s2); }
-  .hero h1 { max-width: none; }
-  .resource-grid,
-  .methods-list { grid-template-columns: minmax(0, 1fr); }
-  .resource-card { padding: var(--s2); }
-  .resource-mark { display: none; }
+  .workspace h1 { max-width: none; }
+  .workspace__side { grid-template-columns: minmax(0, 1fr); }
+  .resource-card__mark { width: 2.25rem; }
   .resource-action { padding-inline: 0.5em; }
   .video-module__summary { padding-inline: var(--s2); }
-  .video-grid {
-    grid-template-columns: minmax(0, 1fr);
-    padding: var(--s2);
-  }
+  .video-module__definition { margin-left: 0; }
+  .video-list { padding-inline: var(--s2); }
 }
 
 @media (pointer: coarse) {

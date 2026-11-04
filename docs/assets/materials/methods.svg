@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 320" role="img" aria-labelledby="title desc">
+  <title id="title">Methods</title>
+  <desc id="desc">Four connected working methods built on one foundation.</desc>
+  <rect width="448" height="320" fill="#fff"/>
+  <rect x="64" y="236" width="320" height="40" rx="8" fill="#fff" stroke="#141413" stroke-width="8"/>
+  <path d="M112 236v-46M184 236v-46M264 236v-46M336 236v-46" stroke="#6c6c65" stroke-width="6"/>
+  <rect x="82" y="120" width="60" height="70" rx="8" fill="#fff" stroke="#141413" stroke-width="8"/>
+  <rect x="154" y="120" width="60" height="70" rx="8" fill="#fff" stroke="#141413" stroke-width="8"/>
+  <rect x="234" y="120" width="60" height="70" rx="8" fill="#fff" stroke="#141413" stroke-width="8"/>
+  <rect x="306" y="120" width="60" height="70" rx="8" fill="#fff" stroke="#141413" stroke-width="8"/>
+  <circle cx="336" cy="82" r="22" fill="#0a7e7c"/>
+  <path d="m326 82 7 7 13-14" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
