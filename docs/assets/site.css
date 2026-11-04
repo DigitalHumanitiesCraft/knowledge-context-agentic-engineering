@@ -288,7 +288,7 @@ img { max-width: 100%; height: auto; }
 .language-nav a:hover,
 .language-nav a:focus-visible { color: var(--accent); }
 
-/* The introduction names the five modules inline, each with its icon and number. */
+/* The introduction leads into the five modules as a list. */
 .hero { padding-block: clamp(var(--s4), 4vw, var(--s5)) var(--s4); }
 
 .hero h1 {
@@ -303,19 +303,12 @@ img { max-width: 100%; height: auto; }
   line-height: 1.65;
 }
 
+/* An inline term with a definition, used for AI Harnesses. */
 .term {
-  --term-color: var(--m1);
+  --term-color: var(--m4);
   position: relative;
   display: inline-block;
 }
-
-.term--m2 { --term-color: var(--m2); }
-
-.term--m3 { --term-color: var(--m3); }
-
-.term--m4 { --term-color: var(--m4); }
-
-.term--m5 { --term-color: var(--m5); }
 
 .term-trigger {
   padding: 0 0.02em 0.06em;
@@ -380,23 +373,43 @@ img { max-width: 100%; height: auto; }
 /* Set by site.js when Escape dismisses a definition. */
 .term.term--dismissed .term-tooltip { display: none; }
 
-/* Module terms link to their video group and carry icon and number inside
-   the link, so the key never separates from its title. As inline links they
-   wrap like running text, which a button cannot. */
-.term[id] {
-  display: inline;
+/* The five modules as a list. Each row joins icon, number and the title that
+   links to its video group with the visible definition. Rows are separated by
+   whitespace alone; the module-coloured underline is the only line. */
+.module-list {
+  display: grid;
+  gap: var(--s2);
+  max-width: 66rem;
+  margin: var(--s4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.module-item {
+  display: grid;
+  grid-template-columns: minmax(0, 26rem) minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.15rem var(--s4);
   scroll-margin-top: var(--s4);
 }
 
-.term[id] .term-trigger {
-  background-image: none;
+.module-link {
+  color: var(--ink);
+  font-weight: 600;
   text-decoration: none;
-  cursor: pointer;
 }
 
-.term-label {
+.module-number {
+  margin-inline-end: 0.4em;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 400;
+}
+
+.module-title {
   padding-bottom: 0.06em;
-  background-image: linear-gradient(var(--term-color), var(--term-color));
+  background-image: linear-gradient(var(--module-color), var(--module-color));
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 100% 0.075em;
@@ -404,20 +417,20 @@ img { max-width: 100%; height: auto; }
   box-decoration-break: clone;
 }
 
-.term-trigger:hover .term-label,
-.term-trigger:focus-visible .term-label { background-size: 100% 0.1em; }
+.module-link:hover .module-title,
+.module-link:focus-visible .module-title { background-size: 100% 0.12em; }
 
-.term-key {
-  margin-inline-end: 0.3em;
-  white-space: nowrap;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
+.hero-copy .module-definition {
+  max-width: none;
+  margin: 0;
+  color: var(--ink-2);
+  font-size: var(--text-lg);
+  line-height: 1.5;
 }
 
-
-/* Modules. The single home of the identity palette. Each module carries one small mark, turquoise plus the four logo colours, assigned by position. */
-.term-key .module-icon,
+/* Modules. The single home of the identity palette. Each module carries one
+   small mark, turquoise plus the four logo colours, assigned by position. */
+.module-link .module-icon,
 .video-module__summary .module-icon {
   display: inline-block;
   flex: none;
@@ -429,35 +442,35 @@ img { max-width: 100%; height: auto; }
   color: var(--module-color);
 }
 
-.term-key .module-icon {
-  width: 1.5em;
-  height: 1.5em;
-  margin-inline-end: 0.2em;
-  vertical-align: -0.4em;
+.module-link .module-icon {
+  width: 1.4em;
+  height: 1.4em;
+  margin-inline-end: 0.35em;
+  vertical-align: -0.35em;
 }
 
 /* Each portable icon carries one specific conceptual relation. Colour remains
    an additional module cue; the adjacent number and title carry the meaning. */
-.term--m1[id],
+.module-item.m1,
 .video-module.m1 { --module-color: var(--m1); --module-icon: url("modules/01-understanding-llms.svg"); }
 
-.term--m2[id],
+.module-item.m2,
 .video-module.m2 { --module-color: var(--m2); --module-icon: url("modules/02-prompt-engineering.svg"); }
 
-.term--m3[id],
+.module-item.m3,
 .video-module.m3 { --module-color: var(--m3); --module-icon: url("modules/03-knowledge-context-engineering.svg"); }
 
-.term--m4[id],
+.module-item.m4,
 .video-module.m4 { --module-color: var(--m4); --module-icon: url("modules/04-agentic-engineering.svg"); }
 
-.term--m5[id],
+.module-item.m5,
 .video-module.m5 { --module-color: var(--m5); --module-icon: url("modules/05-critical-perspectives-governance.svg"); }
 
 /* Teaching materials */
 .teaching-materials { padding-top: var(--s4); }
 
 /* Preparation and the three holdings share one row of four cards, two per
-   row below 1100px and one below 640px. Their contents are parallel, so the
+   row below 1100px and one below 640px. The methods card spans the row below. Their contents are parallel, so the
    cards share one height and their actions align at the foot. */
 .resource-grid {
   display: grid;
@@ -506,18 +519,8 @@ img { max-width: 100%; height: auto; }
   min-width: 0;
 }
 
-/* One verb per card names how the holding is used: prepare, browse, read, watch. */
-.resource-copy > .resource-kicker {
-  margin-top: var(--s2);
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 .resource-card h3 {
-  margin-top: 0.15rem;
+  margin-top: var(--s2);
   font-size: var(--text-card);
 }
 
@@ -539,6 +542,53 @@ img { max-width: 100%; height: auto; }
 .resource-card > .resource-actions {
   margin-top: auto;
   padding-top: var(--s2);
+}
+
+/* Methods for continued work span the whole row below the four cards. */
+.methods-card { grid-column: 1 / -1; }
+
+.methods-card > h3 { margin-top: 0; }
+
+.methods-lede {
+  max-width: var(--measure);
+  margin-top: var(--s1);
+  color: var(--ink-2);
+  font-size: var(--text-lg);
+}
+
+.methods-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s2) var(--s3);
+  margin-top: var(--s3);
+  padding: 0;
+  list-style: none;
+}
+
+.methods-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  min-width: 0;
+}
+
+.methods-name {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration-color: var(--accent);
+}
+
+.methods-name:hover,
+.methods-name:focus-visible { color: var(--accent); }
+
+.methods-item > p {
+  color: var(--ink-2);
+  font-size: var(--text-lg);
+}
+
+.methods-video {
+  margin-top: auto;
+  font-size: var(--text-sm);
 }
 
 .resource-action {
@@ -610,16 +660,6 @@ a.resource-action:focus-visible {
   color: var(--ink-3);
   font-weight: 400;
   white-space: nowrap;
-}
-
-/* The module definition repeats the hero tooltip as visible text, because a
-   module term is a link and shows no tooltip on touch. */
-.video-module__definition {
-  max-width: var(--measure);
-  margin: 0;
-  padding: var(--s2) var(--s3) 0;
-  color: var(--ink-2);
-  font-size: var(--text-lg);
 }
 
 .video-module__summary:hover { background: var(--tint); }
@@ -788,10 +828,8 @@ a.resource-action:focus-visible {
 
 .foot-nav ul {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(3, auto);
-  grid-auto-flow: column;
-  gap: 0.1rem var(--s2);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.1rem;
   margin: 0;
   padding: 0;
   min-width: 0;
@@ -847,7 +885,12 @@ a.resource-action:focus-visible {
 }
 
 @media (max-width: 1100px) {
-  .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resource-grid,
+  .methods-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .module-item { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
 }
 
 @media (max-width: 860px) {
@@ -862,11 +905,9 @@ a.resource-action:focus-visible {
   .site-head > .wrap { align-items: flex-start; }
   .head-tools { gap: var(--s2); }
   .site-nav ul { gap: var(--s2); }
-  .foot-nav ul { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; }
   .hero h1 { max-width: none; }
-  .resource-grid { grid-template-columns: minmax(0, 1fr); }
-  .foot-nav li > a:not(.repo-link) { padding-inline-start: 1.4em; }
-  .video-module__definition { padding-inline: var(--s2); }
+  .resource-grid,
+  .methods-list { grid-template-columns: minmax(0, 1fr); }
   .resource-card { padding: var(--s2); }
   .resource-mark { display: none; }
   .resource-action { padding-inline: 0.5em; }

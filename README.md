@@ -38,7 +38,7 @@ Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the regi
 
 ## The platform
 
-The public site is one static page per language, `docs/index.html` and `docs/index.de.html`. The opening section names the five modules inline, each linked to its group in the Video Library, and a compact paragraph explains DHCraft, workshop funding and public maintenance. The page then presents Preparation and the three teaching holdings as four cards, followed by the Video Library, and the header navigation targets these sections. The footer links the canonical legal notice and states the licence scope.
+The public site is one static page per language, `docs/index.html` and `docs/index.de.html`. The opening section lists the five modules with their definitions, each linked to its group in the Video Library, and a compact paragraph explains DHCraft, workshop funding and public maintenance. The page then presents Preparation and the three teaching holdings as four cards, a card with four methods for continued work and the Video Library, and the header navigation targets these sections. The footer links the canonical legal notice and states the licence scope.
 
 Preparation links the English Google Slides deck [Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit) from the first of the four cards. Its URL and language are registered in `data/workshops.json` under `preparation`. The Video Library is rendered from `data/videos.json`.
 

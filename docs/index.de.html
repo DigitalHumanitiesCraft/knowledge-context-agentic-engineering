@@ -16,7 +16,7 @@
 <meta property="og:locale" content="de_DE">
 <meta property="og:locale:alternate" content="en_GB">
 <link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/site.css?v=20261104-15">
+<link rel="stylesheet" href="assets/site.css?v=20261104-17">
 <script src="assets/site.js?v=20261104-2" defer></script>
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -53,14 +53,31 @@
         <h1 lang="en">Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
         <p>
           Diese Lehrreihe untersucht, wie Large Language Models (LLMs) in
-          <span class="term term--m4"><button class="term-trigger" type="button" aria-describedby="term-harness-definition">AI Harnesses</button><span class="term-tooltip" id="term-harness-definition" role="tooltip">Arbeitsumgebungen, die ein LLM mit Projektkontext, Dateien, Werkzeugen und kontrollierten Handlungsmöglichkeiten verbinden.</span></span> für computer- und datenbasierte Wissensarbeit eingesetzt werden. Die fünf Module des Full Slide Decks reichen von
-          <span class="term term--m1" id="module-01"><a class="term-trigger" href="#video-module-01" aria-describedby="term-llm-definition"><span class="term-key" aria-hidden="true"><span class="module-icon"></span>01</span><span class="term-label">Large Language Models &bdquo;verstehen&ldquo;</span></a><span class="term-tooltip" id="term-llm-definition" role="tooltip">Sprachmodelle, die auf umfangreichen Textkorpora trainiert sind, Anweisungen verarbeiten und kontextabhängige Sprache erzeugen.</span></span> über
-          <span class="term term--m2" id="module-02"><a class="term-trigger" href="#video-module-02" aria-describedby="term-prompt-definition"><span class="term-key" aria-hidden="true"><span class="module-icon"></span>02</span><span class="term-label">Prompt Engineering</span></a><span class="term-tooltip" id="term-prompt-definition" role="tooltip">Die gezielte Formulierung von Anweisungen für ein bestimmtes LLM, eine Aufgabe und die gewünschte Ausgabe.</span>,</span>
-          <span class="term term--m3" id="module-03"><a class="term-trigger" href="#video-module-03" aria-describedby="term-context-definition"><span class="term-key" aria-hidden="true"><span class="module-icon"></span>03</span><span class="term-label">Knowledge und Context Engineering</span></a><span class="term-tooltip" id="term-context-definition" role="tooltip">Explizites Projektwissen pflegen und die Informationen zusammenstellen, die ein LLM für die aktuelle Aufgabe benötigt.</span></span> und
-          <span class="term term--m4" id="module-04"><a class="term-trigger" href="#video-module-04" aria-describedby="term-agentic-definition"><span class="term-key" aria-hidden="true"><span class="module-icon"></span>04</span><span class="term-label">Agentic Engineering</span></a><span class="term-tooltip" id="term-agentic-definition" role="tooltip">Längere Arbeitsprozesse über Werkzeugnutzung, Zwischenergebnisse, Berechtigungen, Rückmeldungen und menschliche Prüfung hinweg organisieren.</span></span> bis
-          <span class="term term--m5" id="module-05"><a class="term-trigger" href="#video-module-05" aria-describedby="term-governance-definition"><span class="term-key" aria-hidden="true"><span class="module-icon"></span>05</span><span class="term-label">Kritische Perspektiven und Governance</span></a><span class="term-tooltip" id="term-governance-definition" role="tooltip">Technische Grenzen und gesellschaftliche Auswirkungen untersuchen sowie Verantwortung und Regeln für den Einsatz festlegen.</span>.</span> Jeder Workshop wählt aus diesem Material aus und passt es an ein definiertes Fachgebiet, eine Aufgabe und eine Lehrsprache an.
+          <span class="term term--m4"><button class="term-trigger" type="button" aria-describedby="term-harness-definition">AI Harnesses</button><span class="term-tooltip" id="term-harness-definition" role="tooltip">Arbeitsumgebungen, die ein LLM mit Projektkontext, Dateien, Werkzeugen und kontrollierten Handlungsmöglichkeiten verbinden.</span></span> für computer- und datenbasierte Wissensarbeit eingesetzt werden. Die Folien gliedern sich in fünf Module.
         </p>
-        <p id="about">Digital Humanities Craft entwickelt und pflegt diese öffentlich zugänglichen Lehrmaterialien. Beauftragte Workshops finanzieren die laufende Überarbeitung, allgemein nutzbare Ergebnisse fließen in das gemeinsame Material zurück. Quellen und Versionsverlauf stehen auf <a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a>.</p>
+        <ol class="module-list" aria-label="Module der Folien">
+          <li class="module-item m1" id="module-01">
+            <a class="module-link" href="#video-module-01"><span class="module-icon" aria-hidden="true"></span><span class="module-number" aria-hidden="true">01</span><span class="module-title">Large Language Models „verstehen“</span></a>
+            <p class="module-definition">Sprachmodelle, die auf umfangreichen Textkorpora trainiert sind, Anweisungen verarbeiten und kontextabhängige Sprache erzeugen.</p>
+          </li>
+          <li class="module-item m2" id="module-02">
+            <a class="module-link" href="#video-module-02"><span class="module-icon" aria-hidden="true"></span><span class="module-number" aria-hidden="true">02</span><span class="module-title">Prompt Engineering</span></a>
+            <p class="module-definition">Die gezielte Formulierung von Anweisungen für ein bestimmtes LLM, eine Aufgabe und die gewünschte Ausgabe.</p>
+          </li>
+          <li class="module-item m3" id="module-03">
+            <a class="module-link" href="#video-module-03"><span class="module-icon" aria-hidden="true"></span><span class="module-number" aria-hidden="true">03</span><span class="module-title">Knowledge und Context Engineering</span></a>
+            <p class="module-definition">Explizites Projektwissen pflegen und die Informationen zusammenstellen, die ein LLM für die aktuelle Aufgabe benötigt.</p>
+          </li>
+          <li class="module-item m4" id="module-04">
+            <a class="module-link" href="#video-module-04"><span class="module-icon" aria-hidden="true"></span><span class="module-number" aria-hidden="true">04</span><span class="module-title">Agentic Engineering</span></a>
+            <p class="module-definition">Längere Arbeitsprozesse über Werkzeugnutzung, Zwischenergebnisse, Berechtigungen, Rückmeldungen und menschliche Prüfung hinweg organisieren.</p>
+          </li>
+          <li class="module-item m5" id="module-05">
+            <a class="module-link" href="#video-module-05"><span class="module-icon" aria-hidden="true"></span><span class="module-number" aria-hidden="true">05</span><span class="module-title">Kritische Perspektiven und Governance</span></a>
+            <p class="module-definition">Technische Grenzen und gesellschaftliche Auswirkungen untersuchen sowie Verantwortung und Regeln für den Einsatz festlegen.</p>
+          </li>
+        </ol>
+        <p id="about">Jeder Workshop wählt aus diesem Material aus und passt es an ein definiertes Fachgebiet, eine Aufgabe und eine Lehrsprache an. Digital Humanities Craft entwickelt und pflegt diese öffentlich zugänglichen Lehrmaterialien. Beauftragte Workshops finanzieren die laufende Überarbeitung, allgemein nutzbare Ergebnisse fließen in das gemeinsame Material zurück. Quellen und Versionsverlauf stehen auf <a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a>.</p>
       </div>
     </div>
   </section>
@@ -74,7 +91,6 @@
           <div class="resource-summary">
             <img class="resource-mark" src="assets/materials/preparation.svg?v=20261104-1" alt="" width="280" height="200" loading="lazy" decoding="async">
             <div class="resource-copy">
-              <p class="resource-kicker">Vorbereiten</p>
               <h3>Vorbereitung</h3>
               <p>Folien zum Einrichten von Python, Visual Studio Code und einem AI Harness, mit einer praktischen Übung. Auf Englisch.</p>
             </div>
@@ -87,13 +103,12 @@
           <div class="resource-summary">
             <img class="resource-mark" src="assets/materials/slides.svg?v=20261104-1" alt="" width="280" height="200" loading="lazy" decoding="async">
             <div class="resource-copy">
-              <p class="resource-kicker">Überblicken</p>
-              <h3>Full Slide Deck</h3>
+              <h3>Folien</h3>
               <p>Ein vollständiger Überblick über das Lehrmaterial und die Quelle für workshopspezifische Foliensätze.</p>
             </div>
           </div>
           <ul class="resource-actions">
-            <li><a class="resource-action" href="https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit" aria-label="Full Slide Deck in Google Slides öffnen"><img src="assets/materials/slides-icon.svg" alt="" width="16" height="16">Google Slides</a></li>
+            <li><a class="resource-action" href="https://docs.google.com/presentation/d/1FtJpBn8l49I6B-r6b8bdIsbTngLQ9-LdP5BeylXD3M4/edit" aria-label="Folien in Google Slides öffnen"><img src="assets/materials/slides-icon.svg" alt="" width="16" height="16">Google Slides</a></li>
             <li><span class="resource-action resource-action--pending">Markdown und PDF folgen</span></li>
           </ul>
         </article>
@@ -101,14 +116,13 @@
           <div class="resource-summary">
             <img class="resource-mark" src="assets/materials/notes.svg?v=20261104-1" alt="" width="280" height="200" loading="lazy" decoding="async">
             <div class="resource-copy">
-              <p class="resource-kicker">Nachlesen</p>
-              <h3>Full Lecture Notes</h3>
-              <p>Die ausformulierte Fassung der Folien mit Erklärungen und Kontext zum Lesen und Nachschlagen.</p>
+              <h3>Skriptum</h3>
+              <p>Die Folien als ausformulierter Text, mit dem, was der Vortrag zu jeder Folie ergänzt, zum begleitenden Lesen und Nachlesen.</p>
             </div>
           </div>
           <ul class="resource-actions">
-            <li><a class="resource-action" href="https://docs.google.com/document/d/1rJRraAfBfnkrb_3ik4savYuboLPhZ-zAFvlj4CmmMcE/edit" aria-label="Deutsche Full Lecture Notes in Google Docs öffnen"><img src="assets/materials/notes-icon.svg" alt="" width="16" height="16">Deutsch</a></li>
-            <li><a class="resource-action" href="https://docs.google.com/document/d/1eaGx86RFr4Xywnxmf4Krdy4GKMYMcnW8pAYPXVH-Lr8/edit" aria-label="Englische Full Lecture Notes in Google Docs öffnen" lang="en"><img src="assets/materials/notes-icon.svg" alt="" width="16" height="16">English</a></li>
+            <li><a class="resource-action" href="https://docs.google.com/document/d/1rJRraAfBfnkrb_3ik4savYuboLPhZ-zAFvlj4CmmMcE/edit" aria-label="Deutsches Skriptum in Google Docs öffnen"><img src="assets/materials/notes-icon.svg" alt="" width="16" height="16">Deutsch</a></li>
+            <li><a class="resource-action" href="https://docs.google.com/document/d/1eaGx86RFr4Xywnxmf4Krdy4GKMYMcnW8pAYPXVH-Lr8/edit" aria-label="Englisches Skriptum in Google Docs öffnen" lang="en"><img src="assets/materials/notes-icon.svg" alt="" width="16" height="16">English</a></li>
             <li><span class="resource-action resource-action--pending">Markdown und PDF folgen</span></li>
           </ul>
         </article>
@@ -116,13 +130,38 @@
           <div class="resource-summary">
             <img class="resource-mark" src="assets/materials/videos.svg?v=20261104-1" alt="" width="280" height="200" loading="lazy" decoding="async">
             <div class="resource-copy">
-              <p class="resource-kicker">Ansehen</p>
               <h3>Video-Playlist</h3>
               <p>Eine geordnete Videoreihe von den Grundlagen zu vertiefenden Themen, die laufend gepflegt und erweitert wird.</p>
             </div>
           </div>
           <ul class="resource-actions">
             <li><a class="resource-action" href="https://www.youtube.com/playlist?list=PLXY4kw40KBaY">Playlist öffnen</a></li>
+          </ul>
+        </article>
+        <article class="resource-card methods-card" id="methods">
+          <h3>Methoden für die Weiterarbeit</h3>
+          <p class="methods-lede">Vier offene Methoden, mit denen DHCraft diese Grundlagen in eigenen Projekten anwendet.</p>
+          <ul class="methods-list">
+            <li class="methods-item">
+              <a class="methods-name" href="https://dhcraft.org/Promptotyping/">Promptotyping</a>
+              <p>Eine iterative Arbeitspraxis, in der ein Projekt seine Forschungsartefakte aus eigenen Daten und gepflegtem Wissen baut.</p>
+              <a class="methods-video" href="https://www.youtube.com/watch?v=8sUe4Jkh3uQ">Video</a>
+            </li>
+            <li class="methods-item">
+              <a class="methods-name" href="https://github.com/DigitalHumanitiesCraft/grounded-vault">Grounded Vault</a>
+              <p>Eine Wissensbasis-Architektur, in der jede Aussage mit der Quellenstelle verbunden bleibt, die sie belegt.</p>
+              <a class="methods-video" href="https://www.youtube.com/watch?v=K1sZBOUSZ_0">Video</a>
+            </li>
+            <li class="methods-item">
+              <a class="methods-name" href="https://github.com/chpollin/second-brain-vault">Second Brain Vault</a>
+              <p>Eine Obsidian-Vorlage, die persönliche Forschungsnotizen mit Projekt-Repositories und Agenten-Abläufen verbindet.</p>
+              <a class="methods-video" href="https://www.youtube.com/watch?v=31Y6uRLnkQA">Video</a>
+            </li>
+            <li class="methods-item">
+              <a class="methods-name" href="https://dhcraft.org/research-mission-control/">Research Mission Control</a>
+              <p>Eine Methode, um Forschungsarbeit an mehrere KI-Agenten zu vergeben, ihre Ergebnisse zu prüfen und begründete Änderungen festzuhalten.</p>
+              <a class="methods-video" href="https://www.youtube.com/watch?v=B7TCJjcVA2k">Video</a>
+            </li>
           </ul>
         </article>
       </div>
@@ -136,7 +175,6 @@
       <div class="video-library">
         <details class="video-module m1" id="video-module-01">
           <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">01</span> <span class="video-module__title">Large Language Models „verstehen“</span> <span class="video-module__count">(5 Videos)</span></summary>
-          <p class="video-module__definition">Sprachmodelle, die auf umfangreichen Textkorpora trainiert sind, Anweisungen verarbeiten und kontextabhängige Sprache erzeugen.</p>
           <ol class="video-grid" role="list">
             <li class="video-card">
               <a class="video-card__link" href="https://www.youtube.com/watch?v=-0HRzXk8vlk">
@@ -187,7 +225,6 @@
         </details>
         <details class="video-module m2" id="video-module-02">
           <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">02</span> <span class="video-module__title">Prompt Engineering</span> <span class="video-module__count">(1 Video)</span></summary>
-          <p class="video-module__definition">Die gezielte Formulierung von Anweisungen für ein bestimmtes LLM, eine Aufgabe und die gewünschte Ausgabe.</p>
           <ol class="video-grid" role="list">
             <li class="video-card">
               <a class="video-card__link" href="https://www.youtube.com/watch?v=Sj3F4oPWB8A">
@@ -202,7 +239,6 @@
         </details>
         <details class="video-module m3" id="video-module-03">
           <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">03</span> <span class="video-module__title">Knowledge und Context Engineering</span> <span class="video-module__count">(7 Videos)</span></summary>
-          <p class="video-module__definition">Explizites Projektwissen pflegen und die Informationen zusammenstellen, die ein LLM für die aktuelle Aufgabe benötigt.</p>
           <ol class="video-grid" role="list">
             <li class="video-card">
               <a class="video-card__link" href="https://www.youtube.com/watch?v=Qx0fCqpkBus">
@@ -271,7 +307,6 @@
         </details>
         <details class="video-module m4" id="video-module-04">
           <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">04</span> <span class="video-module__title">Agentic Engineering</span> <span class="video-module__count">(30 Videos)</span></summary>
-          <p class="video-module__definition">Längere Arbeitsprozesse über Werkzeugnutzung, Zwischenergebnisse, Berechtigungen, Rückmeldungen und menschliche Prüfung hinweg organisieren.</p>
           <ol class="video-grid" role="list">
             <li class="video-card">
               <a class="video-card__link" href="https://www.youtube.com/watch?v=k5jYwyhDMxA">
@@ -547,7 +582,6 @@
         </details>
         <details class="video-module m5" id="video-module-05">
           <summary class="video-module__summary"><span class="module-icon" aria-hidden="true"></span><span class="video-module__number">05</span> <span class="video-module__title">Kritische Perspektiven und Governance</span> <span class="video-module__count">(7 Videos)</span></summary>
-          <p class="video-module__definition">Technische Grenzen und gesellschaftliche Auswirkungen untersuchen sowie Verantwortung und Regeln für den Einsatz festlegen.</p>
           <ol class="video-grid" role="list">
             <li class="video-card">
               <a class="video-card__link" href="https://www.youtube.com/watch?v=64xK-SEl3nA">
@@ -633,9 +667,7 @@
     <p class="foot-provenance">Entwickelt und gepflegt von <a href="https://dhcraft.org">Digital Humanities Craft</a> mit <a href="https://dhcraft.org/Promptotyping/">Promptotyping</a> und <a href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a>. Die Lizenz CC&nbsp;BY&nbsp;4.0 gilt für die eigenen Texte dieser Website, Fremdmaterial in Folien und Lecture Notes behält seine jeweiligen Nutzungsbedingungen.</p>
     <nav class="foot-nav" aria-label="Fußzeile"><p class="foot-nav-label">Weiterführende Links</p>
       <ul>
-        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Lehrmaterial</a></li>
-        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/Promptotyping">Promptotyping</a></li>
-        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/research-mission-control">Research Mission Control</a></li>
+        <li><a class="repo-link" href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">Lehrmaterial auf GitHub</a></li>
         <li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li>
         <li><a href="https://dhcraft.org/imprint">Impressum</a></li>
       </ul>
