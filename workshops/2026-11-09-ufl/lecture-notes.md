@@ -367,9 +367,30 @@ Factory
 
 Session 1 hat Prompt und Context behandelt, Session 2 vertieft Knowledge und Harness, Session 3 führt zu Loop.
 
+### KI-Governance auf zwei Ebenen
+
+Governance für KI-Agenten hat zwei Gegenstände, die Daten und den Agenten selbst. Fünf Fragen gelten für beide Ebenen.
+
+Sichtbarkeit
+: Wo liegen sensible Daten, und wohin fließen sie? Welche Tools, Konnektoren und Modelle nutzt der Agent?
+
+Klassifikation
+: Wie sensibel sind die Daten? Welche Inhalte und Erweiterungen sind vertrauenswürdig, welche fremd?
+
+Rechtsraum
+: Wo werden Daten gespeichert und verarbeitet, und welches Recht gilt? Wo läuft das Modell, und lässt sich der Anbieter wechseln?
+
+Zugriff
+: Wer darf auf welche Daten zugreifen? Was darf der Agent ohne Freigabe tun, was nur mit?
+
+Nachweis
+: Sind die Datenflüsse lückenlos protokolliert? Werden Tool-Calls, Freigaben und Abbrüche aufbewahrt?
+
+Die Kernregel ist die Rule of Two (Meta AI, 2025). Ein Agent hat pro Session höchstens zwei von drei Eigenschaften, nämlich fremde Inhalte verarbeiten, auf eigene Daten zugreifen und Zustand ändern oder nach außen kommunizieren. Braucht eine Aufgabe alle drei, entscheidet ein Mensch. Die Datenebene vertieft ein Video von IBM Technology (*Can Your AI Use Sensitive Data Safely? 5 Capabilities You Need*, 2026, https://www.youtube.com/watch?v=jnP9AgtX0qo), die Agentenebene ein Technologiebericht der United Nations University (Liu, 2026).
+
 ### Permission Modes und Autonomie
 
-Claude Code arbeitet mit den Rechten der Person, die es startet. Der Permission Mode legt fest, was ohne Rückfrage geschieht. Entscheidend ist, wie viel Autonomie man dem Agenten geben will. Die fünf Modi reichen von wenig zu viel Autonomie.
+Claude Code arbeitet mit den Rechten der Person, die es startet. Der Permission Mode legt fest, was ohne Rückfrage geschieht. Die Modi beantworten die Governance-Frage aus dem vorigen Abschnitt, was der Agent ohne Freigabe tun darf. Entscheidend ist, wie viel Autonomie man ihm geben will. Die fünf Modi reichen von wenig zu viel Autonomie.
 
 | Mode | Verhalten | Wann |
 | --- | --- | --- |
@@ -398,27 +419,6 @@ Der Hook wird in `.claude/settings.json` eingetragen.
 ```
 
 `schutz.py` liest den Zielpfad. Liegt er außerhalb des Projektordners, endet das Skript mit Exit-Code 2. Das Skript liegt in diesem Repository unter [`data/hooks/schutz.py`](data/hooks/schutz.py). Der Hook hat Grenzen. Shell-Befehle umgehen ihn, weil er nur die Datei-Werkzeuge prüft, und vollständigen Schutz bietet erst eine Sandbox. Die Dokumentation steht unter https://code.claude.com/docs/en/hooks.
-
-### KI-Governance auf zwei Ebenen
-
-Governance für KI-Agenten hat zwei Gegenstände, die Daten und den Agenten selbst. Fünf Fragen gelten für beide Ebenen.
-
-Sichtbarkeit
-: Wo liegen sensible Daten, und wohin fließen sie? Welche Tools, Konnektoren und Modelle nutzt der Agent?
-
-Klassifikation
-: Wie sensibel sind die Daten? Welche Inhalte und Erweiterungen sind vertrauenswürdig, welche fremd?
-
-Rechtsraum
-: Wo werden Daten gespeichert und verarbeitet, und welches Recht gilt? Wo läuft das Modell, und lässt sich der Anbieter wechseln?
-
-Zugriff
-: Wer darf auf welche Daten zugreifen? Was darf der Agent ohne Freigabe tun, was nur mit?
-
-Nachweis
-: Sind die Datenflüsse lückenlos protokolliert? Werden Tool-Calls, Freigaben und Abbrüche aufbewahrt?
-
-Die Kernregel ist die Rule of Two (Meta AI, 2025). Ein Agent hat pro Session höchstens zwei von drei Eigenschaften, nämlich fremde Inhalte verarbeiten, auf eigene Daten zugreifen und Zustand ändern oder nach außen kommunizieren. Braucht eine Aufgabe alle drei, entscheidet ein Mensch. Die Datenebene vertieft ein Video von IBM Technology (*Can Your AI Use Sensitive Data Safely? 5 Capabilities You Need*, 2026, https://www.youtube.com/watch?v=jnP9AgtX0qo), die Agentenebene ein Technologiebericht der United Nations University (Liu, 2026).
 
 ### Knowledge Engineering
 
