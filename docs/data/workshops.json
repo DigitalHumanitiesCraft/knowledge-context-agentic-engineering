@@ -19,8 +19,7 @@
         "pdf": null
       }
     },
-    "playlist": "https://www.youtube.com/playlist?list=PLXY4kw40KBaY",
-    "cover": "assets/covers/full.png"
+    "playlist": "https://www.youtube.com/playlist?list=PLXY4kw40KBaY"
   },
   "workshops": [
     {
@@ -51,8 +50,7 @@
         "google": "https://docs.google.com/document/d/1DU6UbE4xURFZ3fkPn7MD2loZ2naPysFYX1ypeI0D_Kg/edit",
         "markdown": null,
         "pdf": null
-      },
-      "cover": "assets/covers/2026-09-16-kug-m3gim.png"
+      }
     },
     {
       "id": "2026-09-25-clariah-at",
@@ -82,8 +80,7 @@
         "google": "https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit",
         "markdown": null,
         "pdf": null
-      },
-      "cover": "assets/covers/2026-09-25-clariah-at.png"
+      }
     },
     {
       "id": "2026-10-05-hedit-heidelberg",
@@ -105,8 +102,7 @@
         "scope": "page-and-original-text"
       },
       "slide_deck": { "google": null, "markdown": null, "pdf": null },
-      "lecture_notes": { "google": null, "markdown": null, "pdf": null },
-      "cover": "assets/covers/2026-10-05-hedit-heidelberg.png"
+      "lecture_notes": { "google": null, "markdown": null, "pdf": null }
     },
     {
       "id": "2026-10-08-fachschaft-mittelalterstudien-heidelberg",
@@ -128,8 +124,7 @@
         "scope": "page-and-original-text"
       },
       "slide_deck": { "google": null, "markdown": null, "pdf": null },
-      "lecture_notes": { "google": null, "markdown": null, "pdf": null },
-      "cover": "assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png"
+      "lecture_notes": { "google": null, "markdown": null, "pdf": null }
     },
     {
       "id": "2026-10-15-gda-goettingen",
@@ -151,8 +146,7 @@
         "scope": "page-and-original-text"
       },
       "slide_deck": { "google": null, "markdown": null, "pdf": null },
-      "lecture_notes": { "google": null, "markdown": null, "pdf": null },
-      "cover": "assets/covers/2026-10-15-gda-goettingen.png"
+      "lecture_notes": { "google": null, "markdown": null, "pdf": null }
     },
     {
       "id": "2026-11-09-ufl",
@@ -174,8 +168,7 @@
         "scope": "page-and-original-text"
       },
       "slide_deck": { "google": null, "markdown": null, "pdf": null },
-      "lecture_notes": { "google": null, "markdown": null, "pdf": null },
-      "cover": "assets/covers/2026-11-09-ufl.png"
+      "lecture_notes": { "google": null, "markdown": null, "pdf": null }
     },
     {
       "id": "2026-11-23-vetmed-ai-academy",
@@ -197,8 +190,7 @@
         "scope": "page-and-original-text"
       },
       "slide_deck": { "google": null, "markdown": null, "pdf": null },
-      "lecture_notes": { "google": null, "markdown": null, "pdf": null },
-      "cover": "assets/covers/2026-11-23-vetmed-ai-academy.png"
+      "lecture_notes": { "google": null, "markdown": null, "pdf": null }
     }
   ],
   "preparation": {

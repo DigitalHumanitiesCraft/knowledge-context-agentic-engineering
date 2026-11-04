@@ -1,7 +1,4 @@
-/* ==========================================================================
-   Knowledge, Context and Agentic Engineering — platform stylesheet
-   Shared by the start page and every workshop subpage. No build step.
-   ========================================================================== */
+/* Stylesheet for the two landing pages, index.html and index.de.html. No build step. */
 
 /* ==========================================================================
    TOKENS
@@ -16,16 +13,13 @@
   --font-mono: "IBM Plex Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
 
   /* --- Type scale ------------------------------------------------------ */
-  --text-xs: 0.75rem;        /* uppercase micro labels */
   --text-sm: 0.8125rem;      /* module keys, datestamps, sequence numbers */
   --text-md: 0.875rem;       /* secondary lines, colophon */
   --text-lg: 0.9375rem;      /* card meta, status labels, imprint, nav */
   --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
   --text-title: 1.0625rem;   /* module heading */
   --text-card: 1.125rem;     /* card heading */
-  --text-lede: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
   --text-section: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
-  --text-page: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);   /* subpage title */
   --text-hero: clamp(2rem, 1.3rem + 3.2vw, 3.5rem);
 
   /* --- Spacing scale, 8px based ---------------------------------------- */
@@ -39,7 +33,6 @@
   /* Sections are separated by these gaps alone, no rules. Each has to stay
      clearly larger than any gap inside a section for the order to read. */
   --gap-section: clamp(var(--s6), 9vw, var(--s7));
-  --gap-block: clamp(var(--s5), 6vw, var(--s6));
 
   /* --- Ground and ink --------------------------------------------------- */
   --white: #FFFFFF;          /* raised information surfaces */
@@ -120,6 +113,7 @@ a {
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
 }
+
 a:hover { text-decoration-color: var(--accent); }
 
 :focus-visible {
@@ -163,7 +157,6 @@ img { max-width: 100%; height: auto; }
   scroll-margin-top: var(--s4);
 }
 
-
 .section-title { font-size: var(--text-section); }
 
 /* One line under a section title, where the section needs a reading key. */
@@ -171,39 +164,6 @@ img { max-width: 100%; height: auto; }
   max-width: var(--measure);
   margin-top: var(--s2);
   color: var(--ink-2);
-}
-
-/* Horizontal escape hatch for content that cannot compress further. */
-.scroll-x {
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-}
-
-/* The one component for artefacts that do not exist yet. Micro gaps stay
-   em-relative so they track the type size. */
-.pending {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55em;
-  color: var(--ink-3);
-  font-size: var(--text-lg);
-}
-.pending::before {
-  content: "";
-  flex: none;
-  width: 7px;
-  height: 7px;
-  border: 1px solid var(--rule-mid);
-  border-radius: 50%;
-}
-
-/* Datestamp, the one place where the mono face carries editorial weight. */
-.stamp {
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 /* ==========================================================================
@@ -257,6 +217,7 @@ img { max-width: 100%; height: auto; }
   text-wrap: balance;
   text-decoration: none;
 }
+
 .site-identity-title:hover { text-decoration: underline; text-decoration-color: var(--rule-mid); }
 
 .site-nav ul {
@@ -267,12 +228,14 @@ img { max-width: 100%; height: auto; }
   list-style: none;
   font-size: var(--text-lg);
 }
+
 .site-nav a {
   display: inline-flex;
   align-items: center;
   color: var(--ink-2);
   text-decoration: none;
 }
+
 .site-nav a:hover,
 .site-nav a:focus-visible { color: var(--accent); }
 
@@ -283,6 +246,7 @@ img { max-width: 100%; height: auto; }
   border-radius: 999px;
   background: var(--tint);
 }
+
 .language-nav a {
   display: inline-flex;
   align-items: center;
@@ -298,6 +262,7 @@ img { max-width: 100%; height: auto; }
   text-align: center;
   text-decoration: none;
 }
+
 .language-nav a[aria-current="page"] {
   background: var(--paper);
   color: var(--ink);
@@ -326,11 +291,6 @@ img { max-width: 100%; height: auto; }
   line-height: 1.65;
 }
 
-.hero-copy .hero-preparation {
-  margin-top: var(--s2);
-  font-size: var(--text-lg);
-}
-
 .term {
   --term-color-a: var(--m1);
   --term-color-b: var(--term-color-a);
@@ -339,15 +299,14 @@ img { max-width: 100%; height: auto; }
 }
 
 .term--m1 { --term-color-a: var(--m1); }
-.term--m2 { --term-color-a: var(--m2); }
-.term--m3 { --term-color-a: var(--m3); }
-.term--m4 { --term-color-a: var(--m4); }
-.term--m5 { --term-color-a: var(--m5); }
 
-.term--m1-m4 {
-  --term-color-a: var(--m1);
-  --term-color-b: var(--m4);
-}
+.term--m2 { --term-color-a: var(--m2); }
+
+.term--m3 { --term-color-a: var(--m3); }
+
+.term--m4 { --term-color-a: var(--m4); }
+
+.term--m5 { --term-color-a: var(--m5); }
 
 .term-trigger {
   padding: 0 0.02em 0.06em;
@@ -407,11 +366,13 @@ img { max-width: 100%; height: auto; }
    the link, so the key never separates from its title. As inline links they
    wrap like running text, which a button cannot. */
 .term[id] { display: inline; }
+
 .term[id] .term-trigger {
   background-image: none;
   text-decoration: none;
   cursor: pointer;
 }
+
 .term-key { white-space: nowrap; }
 
 .term-label {
@@ -442,9 +403,7 @@ img { max-width: 100%; height: auto; }
    turquoise plus the four logo colours, assigned by position.
    ========================================================================== */
 .term-key .module-icon,
-.module-series__icon,
-.video-module__summary .module-icon,
-.video-module__summary-icon {
+.video-module__summary .module-icon {
   display: inline-block;
   flex: none;
   width: 1.5rem;
@@ -465,472 +424,53 @@ img { max-width: 100%; height: auto; }
 /* Each portable icon carries one specific conceptual relation. Colour remains
    an additional module cue; the adjacent number and title carry the meaning. */
 .term--m1[id],
-.module-series__item.m1,
 .video-module.m1 { --module-color: var(--m1); --module-icon: url("modules/01-understanding-llms.svg"); }
+
 .term--m2[id],
-.module-series__item.m2,
 .video-module.m2 { --module-color: var(--m2); --module-icon: url("modules/02-prompt-engineering.svg"); }
+
 .term--m3[id],
-.module-series__item.m3,
 .video-module.m3 { --module-color: var(--m3); --module-icon: url("modules/03-knowledge-context-engineering.svg"); }
+
 .term--m4[id],
-.module-series__item.m4,
 .video-module.m4 { --module-color: var(--m4); --module-icon: url("modules/04-agentic-engineering.svg"); }
+
 .term--m5[id],
-.module-series__item.m5,
 .video-module.m5 { --module-color: var(--m5); --module-icon: url("modules/05-critical-perspectives-governance.svg"); }
 
-/* Compact module coverage for workshop cards. The number remains readable
-   without colour; the complete module name remains available to assistive
-   technology through the visually hidden name. */
-.module-series {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--s1) var(--s2);
-  min-width: 0;
-}
-
-.module-series__label {
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.module-series__list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--s1);
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.module-series__item {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25em;
-  min-width: 0;
-}
-
-.module-series__link {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25em;
-  min-width: var(--tap-compact);
-  min-height: var(--tap-compact);
-  padding-inline: 0.4rem;
-  border-radius: var(--radius);
-  color: inherit;
-  text-decoration: none;
-}
-
-.module-series__link:hover,
-.module-series__link:focus-visible {
-  background: var(--tint);
-  color: var(--ink);
-}
-
-/* The tooltip supplements the link's visible number and accessible name. It is
-   absent from layout until requested, so hidden tips cannot create overflow. */
-.module-series__link[data-tooltip]::after {
-  position: absolute;
-  z-index: calc(var(--z-sticky) + 1);
-  bottom: calc(100% + 0.4rem);
-  left: 50%;
-  display: none;
-  width: max-content;
-  max-width: min(18rem, calc(100vw - 2 * var(--s2)));
-  padding: 0.45rem 0.65rem;
-  border-radius: var(--radius);
-  background: var(--ink);
-  box-shadow: var(--shadow-float);
-  color: var(--paper);
-  content: attr(data-tooltip);
-  font-family: var(--font-ui);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  line-height: 1.35;
-  text-align: left;
-  white-space: normal;
-  overflow-wrap: anywhere;
-  pointer-events: none;
-  transform: translateX(-50%);
-}
-
-.module-series__link[data-tooltip]:hover::after,
-.module-series__link[data-tooltip]:focus-visible::after { display: block; }
-
-.module-series__item:first-child .module-series__link[data-tooltip]::after,
-.module-series__item:nth-child(2) .module-series__link[data-tooltip]::after {
-  left: 0;
-  transform: none;
-}
-
-.module-series__item:last-child .module-series__link[data-tooltip]::after,
-.module-series__item:nth-last-child(2) .module-series__link[data-tooltip]::after {
-  right: 0;
-  left: auto;
-  transform: none;
-}
-
-.module-series__icon {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-.module-series__number {
-  color: var(--ink-2);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-}
-
-.visually-hidden,
-.module-series__name {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0 0 0 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-.card--in-preparation .module-series__icon {
-  filter: saturate(0.55);
-  opacity: 0.62;
-}
-
-.card--in-preparation .module-series__link:hover,
-.card--in-preparation .module-series__link:focus-visible { background: var(--paper); }
-
-.card--in-preparation .module-series__number { color: var(--ink-3); }
-
-/* ===========================================================================
-   MEDIA PLATE
-   The real title slide, always in the same 16:9 proportion.
-   ========================================================================== */
-.plate {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background: var(--tint);
-}
-
 /* ==========================================================================
-   WORKSHOP TIMELINE AND CARDS
-   The ordered list retains chronology without CSS. The line and nodes expose
-   editorial material status visually; every state also has a text label.
+   PREPARATION
    ========================================================================== */
-.workshop-timeline {
-  --timeline-axis: 11.75rem;
-  --timeline-date-width: 10rem;
-  --timeline-column-gap: 3.5rem;
-  position: relative;
-  display: grid;
-  gap: var(--s3);
-  margin-top: var(--s4);
-  padding: 0;
-  list-style: none;
-}
-
-.workshop-timeline::before {
-  position: absolute;
-  top: 0.7rem;
-  bottom: 0.7rem;
-  left: var(--timeline-axis);
-  width: 1px;
-  background: var(--rule-mid);
-  content: "";
-}
-
-.timeline-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: var(--timeline-date-width) minmax(0, 1fr);
-  column-gap: var(--timeline-column-gap);
+.preparation-summary {
   min-width: 0;
 }
 
-.timeline-item::before {
-  position: absolute;
-  z-index: 1;
-  top: 0.7rem;
-  left: var(--timeline-axis);
-  width: 0.75rem;
-  height: 0.75rem;
-  border: 2px solid var(--rule-mid);
-  border-radius: 50%;
-  background: var(--paper);
-  content: "";
-  transform: translate(-50%, -50%);
-}
-
-.timeline-item--released::before {
-  border-color: var(--accent);
-  background: var(--accent);
-}
-
-.timeline-date {
-  align-self: start;
-  min-width: 0;
-  color: var(--ink);
-  text-align: right;
-}
-
-.timeline-date time {
+/* Description and direct link share one row; the link wraps below when narrow. */
+.preparation-summary__row {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2) var(--s4);
+  margin-top: var(--s2);
 }
 
-.timeline-date-day,
-.timeline-date-month,
-.timeline-date-detail {
-  font-family: var(--font-mono);
-  text-transform: uppercase;
+.preparation-summary__row > p {
+  flex: 1 1 24rem;
+  max-width: var(--measure);
+  color: var(--ink-2);
 }
 
-.timeline-date-day {
-  font-size: var(--text-md);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  line-height: 1.25;
-}
-
-.timeline-date-month,
-.timeline-date-detail {
-  color: var(--ink-3);
-  font-size: var(--text-sm);
-  letter-spacing: 0.06em;
-  line-height: 1.35;
-}
-
-.timeline-date-detail { margin-top: 0.4em; }
-
-.card {
-  display: grid;
-  grid-template-columns: minmax(0, 310px) minmax(0, 1fr);
-  height: 100%;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--white);
-  transition: border-color 140ms ease;
-}
-.card:hover { border-color: var(--accent); }
-.card:focus-within { border-color: var(--accent); }
-
-.card--in-preparation {
-  border-color: var(--rule);
-  background: var(--tint);
-}
-
-.card--in-preparation:hover { border-color: var(--rule-mid); }
-
-.card--in-preparation .card-cover img {
-  filter: grayscale(1);
-  opacity: 0.36;
-}
-
-/* The cover slot holds proportion and ground on its own, so an id whose PNG
-   has not been produced yet leaves a quiet plate instead of a broken image. */
-.card-cover {
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  border-radius: calc(var(--radius) - 1px) 0 0 calc(var(--radius) - 1px);
-  background: var(--tint);
-}
-.card-cover img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s2);
-  min-width: 0;
-  padding: var(--s3);
-}
-
-.card h3 { font-size: var(--text-card); }
-/* The title is the link to the subpage. The arrow carries the affordance, so
-   the underline stays off until hover and a two-line title reads as a title. */
-.card h3 a {
+.preparation-summary__action {
   display: inline-flex;
+  flex: none;
   align-items: center;
   min-height: var(--tap);
-  color: inherit;
-  text-decoration: none;
-  overflow-wrap: anywhere;
-}
-.card h3 a:hover,
-.card h3 a:focus-visible {
-  color: var(--accent);
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-}
-.card h3 a::after {
-  content: "\2192";
-  display: inline-block;
-  margin-left: 0.3em;
-  color: var(--accent);
-  transition: transform 140ms ease;
-}
-.card:hover h3 a::after { transform: translateX(3px); }
-
-.card-meta {
-  display: grid;
-  gap: 0.45em;
-  margin: 0;
-  color: var(--ink-2);
-  font-size: var(--text-md);
-  line-height: 1.45;
-}
-
-.card-meta > div {
-  display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr);
-  gap: var(--s2);
-}
-
-.card-meta dt {
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.card-meta dd { margin: 0; }
-
-.card .spec {
-  max-width: 66ch;
-  color: var(--ink-2);
-  font-size: var(--text-lg);
-  line-height: 1.55;
-}
-.card-foot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--s1) var(--s2);
-  margin-top: auto;
-  padding-top: var(--s2);
-  font-size: var(--text-lg);
-}
-.card-foot .links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s1) var(--s2);
-}
-
-.material-state {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55em;
-  color: var(--ink-3);
-}
-
-.material-state::before {
-  width: 0.5rem;
-  height: 0.5rem;
+  padding: var(--s1) var(--s2);
   border: 1px solid var(--rule-mid);
-  border-radius: 50%;
-  background: transparent;
-  content: "";
+  border-radius: 999px;
+  text-decoration: none;
 }
-
-.material-state--released { color: var(--ink-2); }
-.material-state--released::before {
-  border-color: var(--accent);
-  background: var(--accent);
-}
-
-.material-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-}
-
-.material-link img {
-  width: 1.4rem;
-  height: 1.4rem;
-}
-
-/* ==========================================================================
-   WORKSHOP SUBPAGE
-   ========================================================================== */
-.backlink {
-  display: inline-block;
-  margin-top: var(--s4);
-  color: var(--ink-3);
-  font-size: var(--text-lg);
-  text-decoration-color: var(--rule);
-}
-.backlink:hover { color: var(--accent); }
-
-.page-head {
-  max-width: 920px;
-  padding-block: var(--s5) 0;
-}
-.page-head h1 {
-  margin-top: var(--s2);
-  font-size: var(--text-page);
-}
-.page-head .event {
-  margin-top: var(--s3);
-  max-width: 62ch;
-  color: var(--ink-2);
-  font-size: var(--text-lede);
-  line-height: 1.5;
-}
-.page-head .facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s1) var(--s3);
-  margin-top: var(--s3);
-  color: var(--ink-3);
-  font-size: var(--text-md);
-  line-height: 1.6;
-}
-.page-head .facts span { display: inline-flex; align-items: baseline; gap: 0.35em; }
-.page-head .facts b { color: var(--ink-2); font-weight: 500; }
-.page-head > .module-series { margin-top: var(--s3); }
-
-.block { padding-top: var(--gap-block); }
-.block h2 { font-size: var(--text-section); }
-.block > p,
-.block > .prose {
-  max-width: var(--measure);
-  margin-top: var(--s3);
-  color: var(--ink-2);
-}
-.media-download { margin-top: var(--s2); }
-
-.section-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--s1) var(--s3);
-}
-.section-head .action { font-size: var(--text-lg); }
 
 /* A local image of a deck's title slide, linked to the deck. It replaces the
    Google Slides iframe, so the page makes no request to Google until clicked. */
@@ -944,418 +484,19 @@ img { max-width: 100%; height: auto; }
   background: var(--white);
   box-shadow: 0 14px 38px color-mix(in srgb, var(--ink) 8%, transparent);
 }
+
 .slide-preview:hover { border-color: var(--accent); }
+
 .slide-preview img {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
 }
-.media-pending {
-  display: grid;
-  min-height: 18rem;
-  place-items: center;
-  padding: var(--s4);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--tint);
-  color: var(--ink-3);
-  text-align: center;
-}
-.media-pending p { max-width: 42ch; }
-
-.overview-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s4) var(--s5);
-  margin-top: var(--s5);
-  padding-top: var(--s4);
-  border-top: 1px solid var(--rule);
-}
-.overview-grid article { min-width: 0; }
-.overview-grid article:first-child { grid-column: 1 / -1; }
-.overview-grid article:not(:first-child) {
-  padding-top: var(--s3);
-  border-top: 1px solid var(--rule);
-}
-.overview-grid h2 { font-size: var(--text-section); }
-.overview-grid p,
-.overview-grid ol,
-.overview-grid ul {
-  margin-top: var(--s2);
-  color: var(--ink-2);
-}
-.overview-grid article:first-child p { max-width: var(--measure); }
-.overview-grid ol,
-.overview-grid ul {
-  padding-left: 1.2em;
-}
-.overview-grid li + li { margin-top: var(--s2); }
-.overview-grid time {
-  display: block;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-}
-
-.references {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 0;
-  max-width: 68ch;
-  margin-top: var(--s3);
-  padding: 0;
-  list-style: none;
-}
-.references li {
-  padding-top: var(--s2);
-  border-top: 1px solid var(--rule);
-  color: var(--ink-2);
-  font-size: var(--text-lg);
-}
-.references .what {
-  display: block;
-  margin-top: 0.25em;
-  color: var(--ink-3);
-  font-size: var(--text-md);
-}
-
-#references {
-  margin-top: var(--s5);
-  padding-top: var(--s4);
-  border-top: 1px solid var(--rule);
-}
-
-/* Browser-native workshop sequence. It uses ordinary document scrolling and
-   content height; the sticky index only provides direct anchor access. */
-.web-module__head > p {
-  max-width: var(--measure);
-  margin-top: var(--s2);
-  color: var(--ink-2);
-}
-
-.web-module__sequence {
-  display: grid;
-  grid-template-columns: minmax(11rem, 0.24fr) minmax(0, 1fr);
-  align-items: start;
-  gap: var(--s5);
-  margin-top: var(--s4);
-}
-
-.web-module__nav {
-  position: sticky;
-  top: var(--s3);
-  padding-left: var(--s2);
-  border-left: 1px solid var(--rule);
-}
-
-.web-module__nav > p,
-.web-module__number {
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.web-module__nav ol {
-  display: grid;
-  gap: 0.25rem;
-  margin-top: var(--s1);
-  padding: 0;
-  list-style: none;
-}
-
-.web-module__nav a {
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  align-items: center;
-  min-height: var(--tap-compact);
-  padding: 0.35rem var(--s1);
-  color: var(--ink-2);
-  font-size: var(--text-lg);
-  line-height: 1.2;
-  text-decoration: none;
-}
-
-.web-module__nav a:hover,
-.web-module__nav a:focus-visible { background: var(--tint); color: var(--accent); }
-.web-module__nav a > span { color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-sm); }
-
-.web-module__units { min-width: 0; }
-
-.web-module__unit {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: var(--s4) var(--s5);
-  min-width: 0;
-  padding-top: var(--s4);
-  border-top: 1px solid var(--rule);
-  scroll-margin-top: var(--s4);
-}
-
-.web-module__unit + .web-module__unit { margin-top: var(--s5); }
-
-.web-module__unit-head {
-  display: flex;
-  grid-column: 1 / -1;
-  flex-wrap: wrap;
-  align-items: end;
-  justify-content: space-between;
-  gap: var(--s2);
-}
-
-.web-module__unit-head h3 {
-  margin-top: 0.25rem;
-  font-size: var(--text-section);
-}
-
-.web-module__visual {
-  min-width: 0;
-  padding: var(--s3);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--tint);
-  color: var(--ink-2);
-}
-
-.web-module__copy {
-  min-width: 0;
-  max-width: var(--measure);
-  color: var(--ink-2);
-}
-
-.web-module__copy p + p { margin-top: var(--s2); }
-.web-module__check { padding-left: var(--s2); border-left: 2px solid var(--accent); color: var(--ink); }
-
-.web-module__flow {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s1);
-}
-
-.web-module__step {
-  display: grid;
-  align-content: center;
-  min-width: 0;
-  min-height: 4.5rem;
-  padding: var(--s1);
-  border-left: 3px solid var(--accent);
-  background: var(--white);
-  font-weight: 500;
-}
-
-.web-module__step small,
-.web-module__evidence small,
-.web-module__gates small {
-  display: block;
-  margin-top: 0.2rem;
-  color: var(--ink-3);
-  font-size: var(--text-sm);
-  font-weight: 400;
-  line-height: 1.35;
-}
-
-.web-module__matrix { display: grid; border-bottom: 1px solid var(--rule); font-size: var(--text-sm); }
-.web-module__matrix > div {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--s1);
-  padding-block: var(--s1);
-  border-top: 1px solid var(--rule);
-}
-.web-module__matrix > div:first-child { color: var(--ink); }
-.web-module__matrix span,
-.web-module__matrix b { min-width: 0; overflow-wrap: anywhere; }
-
-.web-module__evidence { display: grid; gap: var(--s1); }
-.web-module__evidence > div,
-.web-module__evidence pre {
-  margin: 0;
-  padding: var(--s2);
-  border-left: 3px solid var(--m3);
-  background: var(--white);
-}
-.web-module__evidence > div { display: grid; }
-.web-module__evidence > div > span { color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-sm); }
-.web-module__evidence pre {
-  border-left-color: var(--m5);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  line-height: 1.45;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.web-module__build { display: grid; gap: var(--s2); text-align: center; }
-.web-module__build > div {
-  display: grid;
-  gap: 0.25rem;
-  padding: var(--s2);
-  border: 1px solid var(--rule);
-  background: var(--white);
-}
-.web-module__build > div > span { color: var(--ink-3); font-size: var(--text-sm); }
-.web-module__build .web-module__build-output {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-color: var(--m4);
-  background: transparent;
-}
-.web-module__build-output span { color: var(--ink-2); overflow-wrap: anywhere; }
-
-.web-module__gates { display: grid; gap: var(--s1); margin: 0; padding: 0; list-style: none; }
-.web-module__gates li {
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  gap: var(--s1);
-  align-items: start;
-  padding: var(--s1);
-  background: var(--white);
-}
-.web-module__gates li > span {
-  display: grid;
-  width: 2rem;
-  height: 2rem;
-  place-items: center;
-  border: 1px solid var(--m5);
-  border-radius: 50%;
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-}
-
-/* Link rows with an explicit state, so a missing artefact never becomes a
-   dead link. */
-.linklist {
-  display: grid;
-  gap: var(--s2);
-  max-width: var(--measure);
-  margin-top: var(--s3);
-  padding: 0;
-  list-style: none;
-}
-.linklist li { font-size: var(--text-lg); }
-.linklist .what { display: block; color: var(--ink-3); font-size: var(--text-md); }
-
-/* Material bundle. The same strip repeats in every block of a workshop page, so
-   an instructor finds the right link at a glance while teaching. Artefacts that
-   do not exist yet appear here as a state, never as a dead link. */
-.bundle {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--s1) var(--s3);
-  margin-top: var(--s3);
-  padding: var(--s2) var(--s3);
-  border-radius: var(--radius);
-  background: var(--tint);
-  font-size: var(--text-lg);
-}
-.bundle .label {
-  flex: none;
-  min-width: 7em;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.bundle .items {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--s1) var(--s2);
-}
-.bundle .sep { color: var(--rule-mid); }
-
-.prompt {
-  max-width: var(--measure);
-  margin: var(--s3) 0 0;
-  padding: var(--s3);
-  border: 1px solid var(--rule);
-  border-left: 2px solid var(--accent);
-  border-radius: var(--radius);
-  background: var(--tint);
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: var(--text-md);
-  line-height: 1.7;
-  white-space: pre-wrap;
-  overflow-x: auto;
-}
 
 /* ==========================================================================
-   PREPARATION PAGE
+   TEACHING MATERIALS
    ========================================================================== */
-.block { scroll-margin-top: var(--s4); }
-
-.site-nav a[aria-current="page"] {
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-underline-offset: 0.3em;
-}
-
-.block > .stamp { margin-top: 0; color: var(--ink-3); }
-.block > .stamp + h2 { margin-top: var(--s1); }
-.block h3 { margin-top: var(--s4); font-size: var(--text-title); }
-
-code { font-family: var(--font-mono); font-size: 0.9em; }
-.cmd { margin-top: var(--s2); white-space: pre; }
-.cmd code { font-size: 1em; }
-
-.cmds { max-width: var(--measure); margin-top: var(--s3); }
-.cmds > div + div { margin-top: var(--s3); }
-.cmds dt { color: var(--ink-3); font-size: var(--text-md); }
-.cmds dd { margin: 0; }
-.cmds .cmd { margin-top: var(--s1); }
-
-.steps {
-  max-width: var(--measure);
-  margin-top: var(--s3);
-  padding-left: 1.7em;
-  color: var(--ink-2);
-}
-.steps > li + li { margin-top: var(--s2); }
-.steps li::marker { color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-sm); }
-.steps .cmd,
-.steps .cmds { max-width: none; }
-
-.levels .dot { border: 1px solid var(--rule-mid); }
-.levels li:nth-child(2) .dot { border-color: var(--accent); }
-.levels li:nth-child(3) .dot { border-color: var(--accent); background: var(--accent); }
-
-.table {
-  min-width: 46rem;
-  width: 100%;
-  margin-top: var(--s3);
-  border-collapse: collapse;
-  font-size: var(--text-lg);
-}
-.table th,
-.table td {
-  padding: var(--s2) var(--s3) var(--s2) 0;
-  border-bottom: 1px solid var(--rule);
-  text-align: left;
-  vertical-align: top;
-}
-.table th {
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.table td { color: var(--ink-2); }
-.table tbody th {
-  color: var(--ink);
-  font-family: var(--font-ui);
-  font-size: var(--text-lg);
-  font-weight: 500;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.table .lvl { color: var(--ink); font-family: var(--font-mono); font-size: var(--text-md); white-space: nowrap; }
+.teaching-materials { padding-top: var(--s4); }
 
 /* The three holdings sit side by side and stack below 860px (see media query). */
 .resource-grid {
@@ -1421,17 +562,10 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 .resource-card h3 a:hover,
 .resource-card h3 a:focus-visible { color: var(--accent); }
 
-.resource-copy > p:not(.resource-links) {
+.resource-copy > p {
   margin-top: var(--s2);
   color: var(--ink-2);
   font-size: var(--text-lg);
-}
-
-.resource-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s2);
-  margin-top: var(--s3);
 }
 
 .resource-actions {
@@ -1540,8 +674,7 @@ a.resource-action:focus-visible {
   background: var(--tint);
 }
 
-.video-module__summary .module-icon,
-.video-module__summary-icon {
+.video-module__summary .module-icon {
   width: 1.5rem;
   height: 1.5rem;
   margin-inline: 0.4em 0.35em;
@@ -1655,810 +788,7 @@ a.resource-action:focus-visible {
 .video-card__body > time,
 .video-card__body > .video-card__duration { padding: 0; }
 
-.teaching-materials { padding-top: var(--s4); }
-
-.compact-section p {
-  max-width: var(--measure);
-  margin-top: var(--s2);
-  color: var(--ink-2);
-}
-
-/* ===========================================================================
-   PREPARATION TUTORIAL
-   A persistent chapter rail and a sequence of visual learning panels turn the
-   reference material into a navigable tutorial without a JavaScript runtime.
-   ========================================================================== */
-.preparation-page .preparation-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(15rem, 0.65fr);
-  gap: var(--s5);
-  max-width: none;
-}
-
-.preparation-page .preparation-head > h1 {
-  grid-column: 1 / -1;
-  max-width: none;
-}
-
-.preparation-page .preparation-head .event { max-width: var(--measure); }
-.preparation-page .preparation-head .facts { margin-top: var(--s2); }
-
-.preparation-page .tutorial-shell {
-  display: grid;
-  grid-template-columns: minmax(11rem, 13rem) minmax(0, 1fr);
-  align-items: start;
-  gap: var(--s5);
-  margin-top: var(--s5);
-}
-
-.preparation-page .tutorial-sidebar {
-  position: sticky;
-  top: var(--s3);
-  max-height: calc(100vh - var(--s6));
-  padding-right: var(--s2);
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--rule-mid) transparent;
-}
-
-.preparation-overview-page .tutorial-sidebar {
-  max-height: none;
-  overflow-y: visible;
-}
-
-.preparation-page .tutorial-nav__title {
-  font-size: var(--text-title);
-  font-weight: 600;
-}
-
-.preparation-page .tutorial-nav__group {
-  margin-top: var(--s3);
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.preparation-page .tutorial-nav ol {
-  margin-top: var(--s1);
-  padding: 0;
-  list-style: none;
-}
-
-.preparation-page .tutorial-nav li + li { margin-top: 0.15rem; }
-
-.preparation-page .tutorial-nav a {
-  --tutorial-link-label: var(--ink-3);
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  gap: var(--s1);
-  padding: 0.3rem var(--s1);
-  border-radius: var(--radius);
-  color: var(--ink-2);
-  font-size: var(--text-md);
-  line-height: 1.35;
-  text-decoration: none;
-}
-
-.preparation-page .tutorial-nav a span {
-  color: var(--tutorial-link-label);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-}
-
-.preparation-page .tutorial-nav a:hover,
-.preparation-page .tutorial-nav a:focus-visible {
-  background: var(--tint);
-  color: var(--ink);
-}
-
-/* :target keeps the active chapter visible without introducing runtime state. */
-.preparation-page:has(#goals:target) .tutorial-nav a[href="#goals"],
-.preparation-page:has(#paths:target) .tutorial-nav a[href="#goals"],
-.preparation-page:has(#requirements:target) .tutorial-nav a[href="#requirements"],
-.preparation-page:has(#assistant:target) .tutorial-nav a[href="#requirements"],
-.preparation-page:has(#local-workspace:target) .tutorial-nav a[href="#vscode"],
-.preparation-page:has(#vscode:target) .tutorial-nav a[href="#vscode"],
-.preparation-page:has(#terminal:target) .tutorial-nav a[href="#terminal"],
-.preparation-page:has(#python:target) .tutorial-nav a[href="#python"],
-.preparation-page:has(#server:target) .tutorial-nav a[href="#server"],
-.preparation-page:has(#local-check:target) .tutorial-nav a[href="#local-check"],
-.preparation-page:has(#harnesses:target) .tutorial-nav a[href="#harnesses"],
-.preparation-page:has(#tutorials:target) .tutorial-nav a[href="#claude-code"],
-.preparation-page:has(#claude-code:target) .tutorial-nav a[href="#claude-code"],
-.preparation-page:has(#codex:target) .tutorial-nav a[href="#codex"],
-.preparation-page:has(#pi:target) .tutorial-nav a[href="#pi"],
-.preparation-page:has(#git:target) .tutorial-nav a[href="#git"],
-.preparation-page:has(#check:target) .tutorial-nav a[href="#check"],
-.preparation-page:has(#trouble:target) .tutorial-nav a[href="#trouble"],
-.preparation-page:has(#large-language-models:target) .tutorial-nav a[href="#large-language-models"],
-.preparation-page:has(#prompt-engineering:target) .tutorial-nav a[href="#prompt-engineering"],
-.preparation-page:has(#knowledge-context-engineering:target) .tutorial-nav a[href="#knowledge-context-engineering"],
-.preparation-page:has(#agentic-engineering:target) .tutorial-nav a[href="#agentic-engineering"],
-.preparation-overview-page:has(#terminal:target) .tutorial-nav a[href="#vscode"],
-.preparation-overview-page:has(#python:target) .tutorial-nav a[href="#vscode"],
-.preparation-overview-page:has(#server:target) .tutorial-nav a[href="#vscode"],
-.preparation-overview-page:has(#local-check:target) .tutorial-nav a[href="#vscode"],
-.preparation-overview-page:has(#claude-code:target) .tutorial-nav a[href="#harnesses"],
-.preparation-overview-page:has(#codex:target) .tutorial-nav a[href="#harnesses"],
-.preparation-overview-page:has(#pi:target) .tutorial-nav a[href="#harnesses"],
-.preparation-overview-page:has(#git:target) .tutorial-nav a[href="#check"],
-.preparation-overview-page:has(#trouble:target) .tutorial-nav a[href="#check"],
-.preparation-overview-page:has(#introductions:target) .tutorial-nav a[href="#introductions"],
-.preparation-overview-page:has(#large-language-models:target) .tutorial-nav a[href="#introductions"],
-.preparation-overview-page:has(#prompt-engineering:target) .tutorial-nav a[href="#introductions"],
-.preparation-overview-page:has(#knowledge-context-engineering:target) .tutorial-nav a[href="#introductions"],
-.preparation-overview-page:has(#agentic-engineering:target) .tutorial-nav a[href="#introductions"],
-.preparation-page:has(#goal:target) .tutorial-nav a[href="#goal"],
-.preparation-page:has(#prerequisites:target) .tutorial-nav a[href="#prerequisites"],
-.preparation-page:has(#workspace:target) .tutorial-nav a[href="#workspace"],
-.preparation-page:has(#permissions:target) .tutorial-nav a[href="#permissions"],
-.preparation-page:has(#first-check:target) .tutorial-nav a[href="#first-check"],
-.preparation-page:has(#system:target) .tutorial-nav a[href="#system"],
-.preparation-page:has(#install:target) .tutorial-nav a[href="#install"],
-.preparation-page:has(#first-task:target) .tutorial-nav a[href="#first-task"],
-.preparation-page:has(#modes:target) .tutorial-nav a[href="#modes"],
-.preparation-page:has(#instructions:target) .tutorial-nav a[href="#instructions"],
-.preparation-page:has(#context:target) .tutorial-nav a[href="#context"],
-.preparation-page:has(#screenshots:target) .tutorial-nav a[href="#screenshots"],
-.preparation-page:has(#extensions:target) .tutorial-nav a[href="#extensions"],
-.preparation-page:has(#mcp:target) .tutorial-nav a[href="#mcp"],
-.preparation-page:has(#skills:target) .tutorial-nav a[href="#skills"],
-.preparation-page:has(#plugins:target) .tutorial-nav a[href="#plugins"],
-.preparation-page:has(#subagents:target) .tutorial-nav a[href="#subagents"],
-.preparation-page:has(#parallel-sessions:target) .tutorial-nav a[href="#parallel-sessions"],
-.preparation-page:has(#remote-control:target) .tutorial-nav a[href="#remote-control"],
-.preparation-page:has(#deepen:target) .tutorial-nav a[href="#deepen"] {
-  --tutorial-link-label: var(--accent);
-  background: var(--tint);
-  box-shadow: inset 0.2rem 0 0 var(--accent);
-  color: var(--ink);
-}
-
-.preparation-page .tutorial-sequence {
-  min-width: 0;
-  border-top: 1px solid var(--rule);
-}
-
-.preparation-page .anchor-alias {
-  display: block;
-  width: 0;
-  height: 0;
-  scroll-margin-top: var(--s4);
-}
-
-.preparation-page .tutorial-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  align-items: start;
-  gap: var(--s4);
-  min-height: clamp(34rem, 62vh, 40rem);
-  padding-block: var(--s5);
-  border-bottom: 1px solid var(--rule);
-  scroll-margin-top: var(--s3);
-}
-
-.preparation-page .tutorial-panel:target { border-bottom-color: var(--accent); }
-
-.preparation-page .preparation-introductions {
-  padding-block: var(--s5);
-  scroll-margin-top: var(--s3);
-}
-
-.preparation-page .preparation-introductions__head {
-  max-width: var(--measure);
-}
-
-.preparation-page .preparation-introductions__head h2 {
-  margin-top: var(--s1);
-  font-size: var(--text-section);
-}
-
-.preparation-page .preparation-introductions__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s3);
-  margin-top: var(--s4);
-}
-
-.preparation-page .introduction-card {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-content: start;
-  gap: var(--s2);
-  min-width: 0;
-  padding: var(--s3);
-  border: 1px solid var(--rule);
-  background: var(--paper);
-  scroll-margin-top: var(--s3);
-}
-
-.preparation-page .introduction-card h3 {
-  font-size: var(--text-card);
-  line-height: 1.25;
-}
-
-.preparation-page .introduction-card p {
-  margin-top: var(--s2);
-  color: var(--ink-2);
-}
-
-.preparation-page .introduction-card .introduction-card__topics {
-  margin-top: var(--s1);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.04em;
-}
-
-.preparation-page .tutorial-copy { min-width: 0; }
-
-.preparation-page .tutorial-copy h2 {
-  margin-top: var(--s1);
-  font-size: var(--text-section);
-}
-
-.preparation-page .tutorial-copy h3 {
-  margin-top: 0;
-  font-size: var(--text-title);
-}
-
-.preparation-page .definition {
-  max-width: var(--measure);
-  margin-top: var(--s2);
-  color: var(--ink-2);
-  font-size: var(--text-lede);
-  line-height: 1.5;
-}
-
-.preparation-page .goal-list,
-.preparation-page .result-list {
-  margin-top: var(--s3);
-  padding-left: 1.5em;
-  color: var(--ink-2);
-}
-
-.preparation-page .goal-list li + li,
-.preparation-page .result-list li + li { margin-top: var(--s2); }
-
-.preparation-page .goal-list li::marker,
-.preparation-page .result-list li::marker {
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-}
-
-.preparation-page .step-number,
-.preparation-page .harness-kind {
-  margin: 0;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-md);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.preparation-page .steps {
-  max-width: none;
-  margin-top: var(--s3);
-}
-
-.preparation-page .source-note,
-.preparation-page .harness-access {
-  color: var(--ink-3);
-  font-size: var(--text-md);
-}
-
-.preparation-page .source-note {
-  max-width: var(--measure);
-  margin-top: var(--s3);
-}
-
-.preparation-page .checkpoint {
-  max-width: var(--measure);
-  margin-top: var(--s3);
-  padding: var(--s2) var(--s3);
-  border-left: 3px solid var(--accent);
-  background: var(--tint);
-  color: var(--ink-2);
-}
-
-.preparation-page .checkpoint strong { color: var(--ink); }
-
-.preparation-page .requirement-list {
-  display: grid;
-  gap: var(--s2);
-  margin-top: var(--s3);
-}
-
-.preparation-page .requirement-list > div {
-  padding-top: var(--s2);
-  border-top: 1px solid var(--rule);
-}
-
-.preparation-page .requirement-list p,
-.preparation-page .setup-assistant > p {
-  margin-top: var(--s1);
-  color: var(--ink-2);
-}
-
-.preparation-page .setup-assistant {
-  margin-top: var(--s3);
-  padding: var(--s3);
-  border-radius: var(--radius);
-  background: var(--tint);
-}
-
-.preparation-page .download-line {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s1);
-  margin-top: var(--s2);
-}
-
-.preparation-page .download-line a {
-  display: inline-flex;
-  align-items: center;
-  min-height: var(--tap);
-  padding: 0.45em 0.85em;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: var(--text-lg);
-  text-decoration: none;
-}
-
-.preparation-page .download-line a:hover,
-.preparation-page .download-line a:focus-visible { background: var(--accent); }
-
-.preparation-page .harness-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s2);
-  margin-top: var(--s3);
-}
-
-.preparation-page .harness-grid article {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: var(--s2);
-  border-radius: var(--radius);
-  background: var(--tint);
-}
-
-.preparation-page .harness-grid h3 { margin-top: var(--s1); }
-
-.preparation-page .harness-grid article > p:not(.harness-kind, .harness-access) {
-  margin-top: var(--s1);
-  color: var(--ink-2);
-  font-size: var(--text-lg);
-}
-
-.preparation-page .harness-access { margin-top: var(--s2); }
-
-.preparation-page .harness-grid article > a {
-  align-self: flex-start;
-  margin-top: auto;
-  padding-top: var(--s2);
-}
-
-.preparation-page .tutorial-visual {
-  display: grid;
-  gap: var(--s2);
-  min-width: 0;
-  margin: 0;
-}
-
-.preparation-page .tutorial-visual figcaption {
-  color: var(--ink-3);
-  font-size: var(--text-md);
-  line-height: 1.5;
-}
-
-.preparation-page .visual-frame {
-  display: grid;
-  align-items: center;
-  min-height: 22rem;
-  padding: var(--s4);
-  overflow: hidden;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--tint);
-}
-
-.preparation-page .visual-frame--dark {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.preparation-page .visual-frame--path { align-items: stretch; }
-
-.preparation-page .path-node {
-  position: relative;
-  display: grid;
-  grid-template-columns: 2.5rem minmax(0, 1fr);
-  grid-template-rows: auto auto;
-  align-content: center;
-  gap: 0 var(--s2);
-  min-height: 5.25rem;
-  padding: var(--s2) var(--s3);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--white);
-}
-
-.preparation-page .path-node + .path-node { margin-top: var(--s3); }
-
-.preparation-page .path-node + .path-node::before {
-  position: absolute;
-  bottom: 100%;
-  left: calc(var(--s3) + 1.2rem);
-  width: 1px;
-  height: var(--s3);
-  background: var(--accent);
-  content: "";
-}
-
-.preparation-page .path-node > span {
-  grid-row: 1 / -1;
-  align-self: center;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: var(--text-md);
-}
-
-.preparation-page .path-node small,
-.preparation-page .tool-stack small,
-.preparation-page .history-visual small {
-  color: var(--ink-3);
-  font-size: var(--text-md);
-}
-
-.preparation-page .tool-stack {
-  display: grid;
-  gap: var(--s2);
-  width: 100%;
-}
-
-.preparation-page .tool-stack > div {
-  display: grid;
-  grid-template-columns: 2.25rem minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: var(--s2);
-  padding: var(--s2) var(--s3);
-  border-left: 3px solid var(--accent);
-  background: var(--white);
-}
-
-.preparation-page .tool-stack span {
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-}
-
-.preparation-page .mock-window {
-  width: 100%;
-  overflow: hidden;
-  border: 1px solid var(--rule-mid);
-  border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: var(--shadow-float);
-}
-
-.preparation-page .mock-window__bar {
-  display: grid;
-  grid-template-columns: 2.5rem minmax(0, 1fr);
-  align-items: center;
-  min-height: 2.25rem;
-  padding-inline: var(--s2);
-  border-bottom: 1px solid var(--rule);
-  background: var(--tint);
-}
-
-.preparation-page .mock-window__controls {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--rule-mid);
-  box-shadow: 0.9rem 0 var(--rule-mid), 1.8rem 0 var(--rule-mid);
-}
-
-.preparation-page .mock-window__title {
-  justify-self: end;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-}
-
-.preparation-page .mock-workspace {
-  display: grid;
-  grid-template-columns: minmax(7.5rem, 0.36fr) minmax(0, 0.64fr);
-  grid-template-rows: minmax(10rem, 1fr) auto;
-  min-height: 18rem;
-}
-
-.preparation-page .mock-files {
-  grid-row: 1 / -1;
-  display: grid;
-  align-content: start;
-  gap: var(--s1);
-  padding: var(--s2);
-  border-right: 1px solid var(--rule);
-  background: var(--tint);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-}
-
-.preparation-page .mock-file { padding-left: var(--s2); color: var(--accent); }
-
-.preparation-page .mock-editor {
-  padding: var(--s2) var(--s3);
-  font-family: var(--font-mono);
-  font-size: var(--text-md);
-}
-
-.preparation-page .mock-editor > span { color: var(--ink-3); font-size: var(--text-xs); }
-.preparation-page .mock-editor p { margin-top: var(--s3); }
-
-.preparation-page .mock-terminal {
-  min-width: 0;
-  padding: var(--s2);
-  background: var(--ink);
-  color: var(--paper);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  overflow-wrap: anywhere;
-}
-
-.preparation-page .mock-window--terminal { background: var(--ink); }
-
-.preparation-page .mock-window--terminal pre {
-  min-height: 16rem;
-  margin: 0;
-  padding: var(--s3);
-  color: var(--paper);
-  font-family: var(--font-mono);
-  font-size: var(--text-md);
-  line-height: 1.8;
-  white-space: pre-wrap;
-}
-
-.preparation-page .mock-address {
-  margin: var(--s2);
-  padding: var(--s1) var(--s2);
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-}
-
-.preparation-page .mock-site {
-  display: grid;
-  place-items: center;
-  align-content: center;
-  gap: var(--s2);
-  min-height: 14rem;
-  padding: var(--s3);
-  text-align: center;
-}
-
-.preparation-page .mock-site small {
-  color: var(--accent);
-  font-family: var(--font-mono);
-  letter-spacing: 0.08em;
-}
-
-.preparation-page .mock-site strong { font-size: var(--text-lede); }
-
-.preparation-page .mock-site span {
-  padding: 0.45em 0.9em;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: var(--text-md);
-}
-
-.preparation-page .system-map {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s2);
-}
-
-.preparation-page .system-map span {
-  padding: var(--s3) var(--s2);
-  border: 1px solid var(--ink-3);
-  border-radius: var(--radius);
-  text-align: center;
-}
-
-.preparation-page .harness-map {
-  display: grid;
-  justify-items: center;
-  gap: var(--s3);
-  width: 100%;
-}
-
-.preparation-page .harness-map__model,
-.preparation-page .harness-map__core {
-  width: min(100%, 15rem);
-  padding: var(--s2);
-  border: 1px solid var(--rule-mid);
-  border-radius: var(--radius);
-  background: var(--white);
-  text-align: center;
-}
-
-.preparation-page .harness-map__core {
-  border-color: var(--accent);
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.preparation-page .harness-map__targets {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s1);
-  width: 100%;
-}
-
-.preparation-page .harness-map__targets span {
-  padding: var(--s2);
-  border: 1px solid var(--rule);
-  background: var(--white);
-  color: var(--ink-2);
-  text-align: center;
-}
-
-.preparation-page .mock-agent {
-  display: grid;
-  gap: var(--s3);
-  min-height: 17rem;
-  padding: var(--s3);
-}
-
-.preparation-page .mock-agent > p {
-  justify-self: end;
-  max-width: 80%;
-  padding: var(--s2);
-  border-radius: var(--radius);
-  background: var(--tint);
-  color: var(--ink-2);
-}
-
-.preparation-page .mock-agent > div {
-  display: grid;
-  align-content: start;
-  gap: var(--s1);
-  padding: var(--s2);
-  border-left: 3px solid var(--accent);
-}
-
-.preparation-page .mock-agent > div span {
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-md);
-}
-
-.preparation-page .history-visual,
-.preparation-page .diagnostic-visual,
-.preparation-page .status-visual {
-  display: grid;
-  gap: var(--s2);
-  width: 100%;
-}
-
-.preparation-page .history-visual > div {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.5rem minmax(0, 1fr);
-  grid-template-rows: auto auto;
-  gap: 0 var(--s2);
-  padding: var(--s2);
-}
-
-.preparation-page .history-visual > div > span {
-  grid-row: 1 / -1;
-  align-self: center;
-  width: 0.75rem;
-  height: 0.75rem;
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-  background: var(--white);
-}
-
-.preparation-page .history-visual > div + div::before {
-  position: absolute;
-  bottom: 100%;
-  left: calc(var(--s2) + 0.35rem);
-  width: 2px;
-  height: var(--s2);
-  background: var(--accent);
-  content: "";
-}
-
-.preparation-page .status-visual span {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--s2);
-  padding: var(--s2) 0;
-  border-bottom: 1px solid var(--ink-3);
-}
-
-.preparation-page .status-visual strong { color: var(--paper); }
-
-.preparation-page .diagnostic-visual > div {
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  align-items: center;
-  gap: var(--s2);
-  padding: var(--s2);
-  border: 1px solid var(--rule);
-  background: var(--white);
-}
-
-.preparation-page .diagnostic-visual span {
-  color: var(--accent);
-  font-family: var(--font-mono);
-}
-
-/* ==========================================================================
-   ABOUT PAGE
-   A single reading column keeps the project account calm and scannable. The
-   metadata remains part of the article flow rather than becoming a card.
-   ========================================================================== */
-.about-article {
-  width: min(100% - 2 * var(--s3), var(--measure));
-  padding-block: var(--s5) 0;
-}
-
-.about-article > h1 { font-size: var(--text-page); }
-
-.about-article > .lead,
-.about-article > .lede,
-.about-article > .about-lead {
-  margin-top: var(--s3);
-  color: var(--ink-2);
-  font-size: var(--text-lede);
-  line-height: 1.55;
-}
-
-.about-article > section { margin-top: var(--s5); }
-.about-article > section h2 { font-size: var(--text-section); }
-
-.about-article > section p,
-.about-article > section ul,
-.about-article > section ol { margin-top: var(--s2); }
-
-.about-article > section p,
-.about-article > section li { color: var(--ink-2); }
-
-.about-article > section ul,
-.about-article > section ol { padding-left: 1.25em; }
-
-.about-article .about-meta {
-  display: grid;
-  grid-template-columns: minmax(7rem, 0.32fr) minmax(0, 1fr);
-  gap: var(--s1) var(--s3);
-  margin: var(--s4) 0 0;
-  padding-top: var(--s3);
-  border-top: 1px solid var(--rule);
-}
-
-.about-article .about-meta dt {
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  letter-spacing: 0.04em;
-}
-
-.about-article .about-meta dd {
-  min-width: 0;
-  margin: 0;
-  color: var(--ink-2);
-  overflow-wrap: anywhere;
-}
+.video-module__hub-link { margin: 0; padding: 0 var(--s3) var(--s2) calc(var(--s3) + 2rem); font-size: var(--text-sm); }
 
 /* ==========================================================================
    FOOTER
@@ -2485,6 +815,7 @@ a.resource-action:focus-visible {
   gap: var(--s3);
   min-width: 0;
 }
+
 .foot-publisher img {
   flex: none;
   width: clamp(72px, 7vw, 80px);
@@ -2498,12 +829,15 @@ a.resource-action:focus-visible {
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
+
 .imprint .name { color: var(--ink); font-weight: 500; }
+
 .imprint .contact {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
+
 .imprint .sep { padding-inline: 0.4em; color: var(--rule-mid); }
 
 .foot-provenance {
@@ -2515,6 +849,7 @@ a.resource-action:focus-visible {
 }
 
 .foot-nav { min-width: 0; }
+
 .foot-nav-label {
   margin-bottom: var(--s1);
   color: var(--ink-2);
@@ -2524,6 +859,7 @@ a.resource-action:focus-visible {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+
 .foot-nav ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2535,7 +871,9 @@ a.resource-action:focus-visible {
   line-height: 1.4;
   list-style: none;
 }
+
 .foot-nav li { min-width: 0; }
+
 .foot-nav a {
   display: inline-flex;
   align-items: center;
@@ -2546,6 +884,7 @@ a.resource-action:focus-visible {
   align-items: center;
   gap: 0.4em;
 }
+
 .repo-link::before {
   flex: none;
   width: 1em;
@@ -2553,141 +892,6 @@ a.resource-action:focus-visible {
   background: url("github-mark.svg") center / contain no-repeat;
   content: "";
 }
-
-/* Compact routes retained by the Preparation and harness tutorials. */
-.parent-module-link.m4 {
-  --module-color: var(--m4);
-  --module-icon: url("modules/04-agentic-engineering.svg");
-}
-
-.parent-module-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--s1);
-  min-height: var(--tap);
-  margin-top: var(--s2);
-  color: var(--ink-2);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-}
-.parent-module-link .module-icon { width: 1.5rem; height: 1.5rem; background: var(--module-color); -webkit-mask: var(--module-icon) center / contain no-repeat; mask: var(--module-icon) center / contain no-repeat; }
-
-.module00-routes { max-width: var(--measure); margin-top: var(--s3); padding: var(--s3); border: 1px solid var(--rule); background: var(--tint); }
-.module00-routes h3 { font-size: var(--text-card); }
-.module00-routes ul { margin-top: var(--s2); padding-left: 1.25em; }
-.module00-routes li + li { margin-top: var(--s1); }
-
-.route-icon { width: 2.5rem; height: 2.5rem; }
-
-/* Preparation and optional routes share one light-weight landing section. */
-.preparation-routes__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s5);
-  align-items: start;
-}
-
-.preparation-summary,
-.compact-routes {
-  min-width: 0;
-}
-
-.preparation-summary > p:not(.eyebrow),
-.compact-routes > p:not(.eyebrow) {
-  max-width: var(--measure);
-  margin-top: var(--s2);
-  color: var(--ink-2);
-}
-
-/* Description and direct link share one row; the link wraps below when narrow. */
-.preparation-summary__row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s2) var(--s4);
-  margin-top: var(--s2);
-}
-
-.preparation-summary__row > p {
-  flex: 1 1 24rem;
-  max-width: var(--measure);
-  color: var(--ink-2);
-}
-
-.preparation-summary__action {
-  display: inline-flex;
-  flex: none;
-  align-items: center;
-  min-height: var(--tap);
-  padding: var(--s1) var(--s2);
-  border: 1px solid var(--rule-mid);
-  border-radius: 999px;
-  text-decoration: none;
-}
-
-.compact-routes {
-  scroll-margin-top: var(--s4);
-}
-
-.compact-route-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s2);
-  margin-top: var(--s3);
-  padding: 0;
-  list-style: none;
-}
-
-.compact-route-card {
-  display: grid;
-  grid-template-columns: 2.5rem minmax(0, 1fr);
-  align-items: center;
-  gap: var(--s2);
-  min-height: 4.75rem;
-  padding: var(--s2);
-  border: 1px solid var(--rule);
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.compact-route-card:hover,
-.compact-route-card:focus-visible {
-  border-color: var(--rule-mid);
-  background: var(--tint);
-}
-
-.compact-route-card img {
-  width: 2rem;
-  height: 2rem;
-}
-
-.compact-route-card span {
-  min-width: 0;
-}
-
-.compact-route-card small {
-  display: block;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.05em;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-
-.compact-route-card strong {
-  display: block;
-  margin-top: 0.25rem;
-  font-size: var(--text-body);
-  line-height: 1.25;
-}
-
-.video-module__hub-link { margin: 0; padding: 0 var(--s3) var(--s2) calc(var(--s3) + 2rem); font-size: var(--text-sm); }
-
-/* Tutorial panels remain compact and content-driven at every viewport. */
-.preparation-page .tutorial-panel { min-height: 0; }
-
 
 /* ==========================================================================
    NARROW VIEWPORTS AND PREFERENCES
@@ -2699,101 +903,10 @@ a.resource-action:focus-visible {
   .head-tools { width: 100%; justify-content: space-between; }
   .site-foot > .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .foot-nav { grid-column: 1 / -1; }
-  .web-module__sequence { display: block; }
-  .web-module__nav {
-    z-index: var(--z-sticky);
-    top: 0;
-    padding: var(--s1) 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    border-left: 0;
-    border-bottom: 1px solid var(--rule);
-    background: var(--paper);
-  }
-  .web-module__nav > p { display: none; }
-  .web-module__nav ol {
-    display: flex;
-    width: max-content;
-    margin: 0;
-  }
-  .web-module__nav a {
-    grid-template-columns: auto auto;
-    padding-inline: var(--s2);
-    white-space: nowrap;
-  }
-  .web-module__units { margin-top: var(--s4); }
-  .web-module__unit { scroll-margin-top: var(--s6); }
-  .preparation-page .tutorial-shell {
-    display: block;
-    margin-top: var(--s4);
-  }
-  .preparation-page .tutorial-sidebar {
-    z-index: var(--z-sticky);
-    top: 0;
-    max-height: none;
-    padding-block: var(--s1);
-    padding-right: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    border-bottom: 1px solid var(--rule);
-    background: var(--paper);
-  }
-  .preparation-page .tutorial-nav {
-    display: flex;
-    width: max-content;
-  }
-  .preparation-page .tutorial-nav__title,
-  .preparation-page .tutorial-nav__group { display: none; }
-  .preparation-page .tutorial-nav ol {
-    display: flex;
-    margin: 0;
-  }
-  .preparation-page .tutorial-nav li + li { margin-top: 0; }
-  .preparation-page .tutorial-nav a {
-    grid-template-columns: auto auto;
-    padding: var(--s1) var(--s2);
-    white-space: nowrap;
-  }
-  .preparation-page .tutorial-panel,
-  .preparation-page .anchor-alias { scroll-margin-top: var(--s6); }
 }
 
 @media (max-width: 860px) {
   .resource-grid { grid-template-columns: minmax(0, 1fr); }
-  /* The cover moves above the panel, keeping its proportion. */
-  .card { grid-template-columns: 1fr; }
-  .card-cover {
-    border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0;
-  }
-  .workshop-timeline {
-    --timeline-axis: 0.5rem;
-    padding-left: 2rem;
-  }
-  .timeline-item { grid-template-columns: 1fr; row-gap: var(--s1); }
-  .timeline-item::before { left: -1.5rem; }
-  .timeline-date { text-align: left; }
-  .timeline-date time {
-    flex-flow: row wrap;
-    align-items: baseline;
-    justify-content: flex-start;
-    gap: 0.45em;
-  }
-  .timeline-date-detail { margin-top: 0.15em; }
-  .preparation-page .preparation-head { grid-template-columns: 1fr; gap: var(--s3); }
-  .preparation-routes__grid { grid-template-columns: minmax(0, 1fr); gap: var(--s4); }
-}
-
-@media (max-width: 780px) {
-  .web-module__unit { grid-template-columns: minmax(0, 1fr); }
-  .web-module__unit-head { grid-column: auto; }
-  .preparation-page .tutorial-panel {
-    grid-template-columns: 1fr;
-    gap: var(--s4);
-    min-height: 0;
-    padding-block: var(--s5);
-  }
-  .preparation-page .preparation-introductions__grid { grid-template-columns: minmax(0, 1fr); }
-  .preparation-page .visual-frame { min-height: 18rem; }
 }
 
 @media (max-width: 860px), (hover: none) {
@@ -2807,13 +920,6 @@ a.resource-action:focus-visible {
     overflow-y: auto;
     overflow-wrap: anywhere;
   }
-  .module-series .module-series__item .module-series__link[data-tooltip]::after {
-    position: fixed;
-    inset: auto var(--s2) var(--s2);
-    width: auto;
-    max-width: none;
-    transform: none;
-  }
 }
 
 @media (max-width: 860px) {
@@ -2826,52 +932,29 @@ a.resource-action:focus-visible {
 
 @media (max-width: 640px) {
   .site-head > .wrap,
-  .head-tools { align-items: flex-start; }
+.head-tools { align-items: flex-start; }
   .head-tools { width: 100%; justify-content: space-between; }
   .site-nav ul { gap: var(--s2); }
-  .overview-grid,
-  .references { grid-template-columns: 1fr; }
-  .overview-grid article:first-child { grid-column: auto; }
   .foot-nav ul { grid-template-columns: minmax(0, 1fr); }
   .resource-card { padding: var(--s2); }
   .resource-mark { display: none; }
   .resource-action { padding-inline: 0.5em; }
-  .module-series__label { flex-basis: 100%; }
   .video-module__summary { padding-inline: var(--s2); }
   .video-grid {
     grid-template-columns: minmax(0, 1fr);
     padding: var(--s2);
   }
-  .card-meta > div { grid-template-columns: 1fr; gap: 0.15em; }
-  .preparation-page .harness-grid { grid-template-columns: 1fr; }
-  .preparation-page .visual-frame { padding: var(--s2); }
-  .preparation-page .tool-stack > div {
-    grid-template-columns: 2rem minmax(0, 1fr);
-    gap: 0 var(--s1);
-  }
-  .preparation-page .tool-stack small { grid-column: 2; }
-  .preparation-page .mock-workspace {
-    grid-template-columns: minmax(6rem, 0.34fr) minmax(0, 0.66fr);
-  }
-  .preparation-page .mock-window--terminal pre { font-size: var(--text-sm); }
-  .compact-route-list { grid-template-columns: minmax(0, 1fr); }
-  .about-article .about-meta { grid-template-columns: minmax(0, 1fr); }
-  .about-article .about-meta dd + dt { margin-top: var(--s1); }
 }
 
 @media (pointer: coarse) {
   .site-identity-logo,
-  .site-identity-title,
-  .site-nav a,
-  .language-nav a,
-  .foot-nav a,
-  .imprint .contact a,
-  .resource-card h3 a,
-  .resource-action,
-  .module-series__link,
-  .parent-module-link,
-  .preparation-page .tutorial-nav a,
-  .preparation-page .download-line a {
+.site-identity-title,
+.site-nav a,
+.language-nav a,
+.foot-nav a,
+.imprint .contact a,
+.resource-card h3 a,
+.resource-action {
     min-height: var(--tap);
   }
 }

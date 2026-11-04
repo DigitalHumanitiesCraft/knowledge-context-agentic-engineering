@@ -16,7 +16,7 @@ Teaching material and workshop platform for the teaching line *Knowledge, Contex
 - The register uses `slide_deck` and `lecture_notes` for material artefacts. Each artefact exposes `google`, `markdown` and `pdf`; `null` means that format remains in preparation. `materials_status` controls material actions and visual release state and must not be inferred from the event field `status`. These fields retain material provenance; they no longer imply a public event page.
 - Existing `web_module` records retain historical implementation metadata. They do not indicate a current public page or generate navigation; material provenance remains separate.
 - Each workshop entry carries an ordered `modules` array containing the visible module numbers `01` to `05`. The subset remains metadata for the workshop material. Presence records inclusion in the teaching sequence; the interface carries no separate full, touched or absent states.
-- An instance id has the form `YYYY-MM-DD-slug`. The same string names the register entry, the folder `workshops/<id>/`, the cover `docs/assets/covers/<id>.png`, the historical subpage and the git tag of the taught state.
+- An instance id has the form `YYYY-MM-DD-slug`. The same string names the register entry, the folder `workshops/<id>/`, the historical subpage and the git tag of the taught state.
 - A workshop folder holds `profile.md`, `slide-deck.md`, `lecture-notes.md` and `data/`.
 - Only upcoming instances live in the working tree. A delivered instance is tagged, then removed from tree and register; git history keeps it. When a document has to cite removed material, verify the last commit that held it with `git log --oneline --follow -- <path>` and cite it as preserved in git history at that short SHA.
 
@@ -31,7 +31,7 @@ Teaching material and workshop platform for the teaching line *Knowledge, Contex
 
 ## Covers
 
-Historical covers remain under `docs/assets/covers/` with their provenance. The current single-page site does not display them. Cover regeneration has no active assignment after the removal of event cards on 2026-10-15. Any later reuse requires a concrete author decision.
+The historical workshop covers left the published tree on 2026-11-04 together with the register's `cover` fields, because the single-page site does not display them. They are preserved in git history at `e66901b` under `docs/assets/covers/`. Any later reuse requires a concrete author decision.
 
 ## Link hygiene
 

@@ -26,6 +26,10 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-11-04 integrated · Stylesheet and published-tree cleanup
+
+The stylesheet lost every rule that only addressed classes of the retired subpages, tutorials, workshop cards, timeline, Web Module and About page, along with four unused tokens. A computed-style comparison of both pages at 1280, 900 and 390 pixels showed no difference in any element's style or box. The unlinked workshop covers, route icons, module-00 icon and Preparation download files left `docs/`; they are preserved in git history at `e66901b`.
+
 ### 2026-11-04 integrated · Inline module index and wider column
 
 At the author's request the separate Full Slide Deck module list left the landing page. The abstract now names the five modules in order, each with its icon and number, and links each to its video group; module 01 keeps its quoted title. The anchors `module-01` to `module-05` moved onto these terms. The content column now uses the full page width with an 80-character prose measure, and the video grid uses three columns on wide screens. Desktop, 1020, 390 and 320 pixel views were checked in English and German.
