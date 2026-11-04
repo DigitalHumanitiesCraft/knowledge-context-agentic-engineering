@@ -941,23 +941,22 @@ main .wrap { max-width: var(--page-content); }
 }
 .section-head .action { font-size: var(--text-lg); }
 
-.media-frame {
-  position: relative;
-  width: 100%;
+/* A local image of a deck's title slide, linked to the deck. It replaces the
+   Google Slides iframe, so the page makes no request to Google until clicked. */
+.slide-preview {
+  display: block;
   margin-top: var(--s3);
   overflow: hidden;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
-  background: var(--tint);
+  background: var(--white);
   box-shadow: 0 14px 38px color-mix(in srgb, var(--ink) 8%, transparent);
 }
-.media-frame.slides { aspect-ratio: 16 / 9; }
-.media-frame.reader { height: min(76vh, 900px); min-height: 560px; }
-.media-frame iframe {
+.slide-preview:hover { border-color: var(--accent); }
+.slide-preview img {
   display: block;
   width: 100%;
-  height: 100%;
-  border: 0;
+  aspect-ratio: 16 / 9;
 }
 .media-pending {
   display: grid;
@@ -1366,10 +1365,10 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 }
 .table .lvl { color: var(--ink); font-family: var(--font-mono); font-size: var(--text-md); white-space: nowrap; }
 
-/* Material entries follow the same reading order at every width. */
+/* The three holdings sit side by side and stack below 860px (see media query). */
 .resource-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
   gap: var(--s3);
   margin-top: var(--s4);
@@ -1380,7 +1379,7 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
   flex-direction: column;
   min-width: 0;
   overflow: hidden;
-  padding: var(--s3);
+  padding: var(--s3) var(--s2);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   background: var(--white);
@@ -1391,15 +1390,14 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
 
 .resource-summary {
   display: grid;
-  grid-template-columns: 6rem minmax(0, 1fr);
-  align-items: center;
-  gap: var(--s2);
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s1);
   min-width: 0;
 }
 
 .resource-mark {
   display: block;
-  width: 100%;
+  width: 5rem;
   height: auto;
   object-fit: contain;
   background: var(--white);
@@ -1409,7 +1407,11 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
   min-width: 0;
 }
 
+/* Every card title reserves the linked title's tap height, so titles align. */
 .resource-card h3 {
+  display: flex;
+  align-items: center;
+  min-height: var(--tap-compact);
   margin-top: var(--s1);
   font-size: var(--text-card);
 }
@@ -1449,19 +1451,16 @@ code { font-family: var(--font-mono); font-size: 0.9em; }
   list-style: none;
 }
 
-.resource-card > .resource-actions {
-  margin-top: var(--s2);
+/* Actions sit at the card's foot, so the three cards align at the bottom. */
+.resource-card > .resource-actions,
+.resource-editions {
+  margin-top: auto;
+  padding-top: var(--s2);
 }
 
 .resource-editions {
   display: grid;
-  gap: var(--s1);
-  margin-top: var(--s2);
-}
-
-.resource-edition {
-  padding-top: var(--s1);
-  border-top: 1px solid var(--rule);
+  gap: var(--s2);
 }
 
 .resource-edition-label {
@@ -2608,8 +2607,25 @@ a.resource-action:focus-visible {
   color: var(--ink-2);
 }
 
+/* Description and direct link share one row; the link wraps below when narrow. */
+.preparation-summary__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2) var(--s4);
+  margin-top: var(--s2);
+}
+
+.preparation-summary__row > p {
+  flex: 1 1 24rem;
+  max-width: var(--measure);
+  color: var(--ink-2);
+}
+
 .preparation-summary__action {
   display: inline-flex;
+  flex: none;
   align-items: center;
   min-height: var(--tap);
   padding: var(--s1) var(--s2);
@@ -2750,6 +2766,7 @@ a.resource-action:focus-visible {
 }
 
 @media (max-width: 860px) {
+  .resource-grid { grid-template-columns: minmax(0, 1fr); }
   /* The cover moves above the panel, keeping its proportion. */
   .card { grid-template-columns: 1fr; }
   .card-cover {
@@ -2823,9 +2840,7 @@ a.resource-action:focus-visible {
   .references { grid-template-columns: 1fr; }
   .overview-grid article:first-child { grid-column: auto; }
   .foot-nav ul { grid-template-columns: minmax(0, 1fr); }
-  .media-frame.reader { min-height: 460px; }
   .resource-card { padding: var(--s2); }
-  .resource-summary { grid-template-columns: minmax(0, 1fr); }
   .resource-mark { display: none; }
   .resource-action { padding-inline: 0.5em; }
   .module-series__label { flex-basis: 100%; }

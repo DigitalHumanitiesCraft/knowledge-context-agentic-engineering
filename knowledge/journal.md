@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
 status: active
 created: 2026-08-20
-updated: 2026-10-15
+updated: 2026-11-04
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -25,6 +25,10 @@ related: [project.md, specification.md, handoff.md]
 This journal is the curated retrospective provenance index of the project. Current facts and rules remain in the responsible Declarative and Action Documents, accepted future work in `plan.md`, open received deltas in `handoff.md`, and detailed revisions in Git.
 
 ## Entries
+
+### 2026-11-04 integrated · Playlist sync and flatter material layout
+
+The video register was compared with the public playlist. Seven new playlist entries were added under module 04 in playlist order, giving 48 entries; no register entry was missing from the playlist. Existing display titles and classifications were kept. Teaching Materials now shows its three holdings as side-by-side cards that stack on narrow viewports, without rules between the language editions. Preparation places its direct link beside the description and replaces the Google Slides iframe with a linked local image of the title slide. Desktop and narrow views were checked in a local browser; push and deployment remain with the operator.
 
 ### 2026-10-15 integrated · Bounded teaching-section proposal
 
