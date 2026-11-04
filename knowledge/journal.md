@@ -26,6 +26,10 @@ This journal is the curated retrospective provenance index of the project. Curre
 
 ## Entries
 
+### 2026-11-04 integrated · Inline module index and wider column
+
+At the author's request the separate Full Slide Deck module list left the landing page. The abstract now names the five modules in order, each with its icon and number, and links each to its video group; module 01 keeps its quoted title. The anchors `module-01` to `module-05` moved onto these terms. The content column now uses the full page width with an 80-character prose measure, and the video grid uses three columns on wide screens. Desktop, 1020, 390 and 320 pixel views were checked in English and German.
+
 ### 2026-11-04 integrated · Playlist sync and flatter material layout
 
 The video register was compared with the public playlist. Seven new playlist entries were added under module 04 in playlist order, giving 48 entries; no register entry was missing from the playlist. Existing display titles and classifications were kept. Teaching Materials now shows its three holdings as side-by-side cards that stack on narrow viewports, without rules between the language editions. Preparation places its direct link beside the description and replaces the Google Slides iframe with a linked local image of the title slide. Desktop and narrow views were checked in a local browser; push and deployment remain with the operator.

@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20261104-1">
+<link rel="stylesheet" href="assets/site.css?v=20261104-4">
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
@@ -43,32 +43,22 @@
 
 <main id="main-content" tabindex="-1">
 
-  <!-- ============ Hero ============ -->
   <section class="hero">
-    <div class="wrap hero-grid">
+    <div class="wrap">
       <div class="hero-copy">
         <h1>Knowledge, Context and Agentic Engineering for Knowledge Work</h1>
         <p>
-          This teaching line examines how <span class="term term--m1"><button class="term-trigger" type="button" aria-describedby="term-llm-definition">Large Language Models (LLMs)</button><span class="term-tooltip" id="term-llm-definition" role="tooltip">Models trained on extensive text corpora to process instructions and generate context-dependent language.</span></span> operate inside
-          <span class="term term--m4"><button class="term-trigger" type="button" aria-describedby="term-harness-definition">AI Harnesses</button><span class="term-tooltip" id="term-harness-definition" role="tooltip">Working environments that connect a language model with project context, files, tools and controlled actions.</span></span> for computer-based, data-driven knowledge work. Its five modules connect model foundations with
-          <span class="term term--m2"><button class="term-trigger" type="button" aria-describedby="term-prompt-definition">Prompt Engineering</button><span class="term-tooltip" id="term-prompt-definition" role="tooltip">The deliberate formulation of instructions for a specific model, task and intended output.</span></span>,
-          <span class="term term--m3"><button class="term-trigger" type="button" aria-describedby="term-context-definition">Knowledge and Context Engineering</button><span class="term-tooltip" id="term-context-definition" role="tooltip">Maintaining explicit project knowledge and assembling the information a model needs for the current task.</span></span>,
-          <span class="term term--m4"><button class="term-trigger" type="button" aria-describedby="term-agentic-definition">Agentic Engineering</button><span class="term-tooltip" id="term-agentic-definition" role="tooltip">Organising extended work across tool use, intermediate results, permissions, feedback and human review.</span></span>, and
-          <span class="term term--m5"><button class="term-trigger" type="button" aria-describedby="term-governance-definition">Critical Perspectives and Governance</button><span class="term-tooltip" id="term-governance-definition" role="tooltip">Examining technical limits and social consequences, and defining responsibility and rules for use.</span></span>. The shared Full Slide Deck, two Full Lecture Notes language versions and an ordered Video Playlist carry the material; each workshop selects from these sources and adapts them to a defined field, task and teaching language.
+          This teaching line examines how Large Language Models (LLMs) operate inside
+          <span class="term term--m4"><button class="term-trigger" type="button" aria-describedby="term-harness-definition">AI Harnesses</button><span class="term-tooltip" id="term-harness-definition" role="tooltip">Working environments that connect a language model with project context, files, tools and controlled actions.</span></span> for computer-based, data-driven knowledge work. The five modules of the Full Slide Deck lead from
+          <span class="term term--m1" id="module-01"><a class="term-trigger" href="#video-module-01" aria-describedby="term-llm-definition"><span class="term-key" aria-hidden="true"><span class="module-icon"></span>01</span><span class="term-label">&ldquo;Understanding&rdquo; Large Language Models</span></a><span class="term-tooltip" id="term-llm-definition" role="tooltip">Models trained on extensive text corpora to process instructions and generate context-dependent language.</span></span> through
+          <span class="term term--m2" id="module-02"><a class="term-trigger" href="#video-module-02" aria-describedby="term-prompt-definition"><span class="term-key" aria-hidden="true"><span class="module-icon"></span>02</span><span class="term-label">Prompt Engineering</span></a><span class="term-tooltip" id="term-prompt-definition" role="tooltip">The deliberate formulation of instructions for a specific model, task and intended output.</span>,</span>
+          <span class="term term--m3" id="module-03"><a class="term-trigger" href="#video-module-03" aria-describedby="term-context-definition"><span class="term-key" aria-hidden="true"><span class="module-icon"></span>03</span><span class="term-label">Knowledge and Context Engineering</span></a><span class="term-tooltip" id="term-context-definition" role="tooltip">Maintaining explicit project knowledge and assembling the information a model needs for the current task.</span></span> and
+          <span class="term term--m4" id="module-04"><a class="term-trigger" href="#video-module-04" aria-describedby="term-agentic-definition"><span class="term-key" aria-hidden="true"><span class="module-icon"></span>04</span><span class="term-label">Agentic Engineering</span></a><span class="term-tooltip" id="term-agentic-definition" role="tooltip">Organising extended work across tool use, intermediate results, permissions, feedback and human review.</span></span> to
+          <span class="term term--m5" id="module-05"><a class="term-trigger" href="#video-module-05" aria-describedby="term-governance-definition"><span class="term-key" aria-hidden="true"><span class="module-icon"></span>05</span><span class="term-label">Critical Perspectives and Governance</span></a><span class="term-tooltip" id="term-governance-definition" role="tooltip">Examining technical limits and social consequences, and defining responsibility and rules for use.</span>.</span> The shared Full Slide Deck, two Full Lecture Notes language versions and an ordered Video Playlist carry the material; each workshop selects from these sources and adapts them to a defined field, task and teaching language.
         </p>
         <p id="about">Digital Humanities Craft develops and maintains these public teaching materials. Commissioned workshops fund their ongoing revision, and reusable results return to the shared material. Sources and revision history are available on <a href="https://github.com/DigitalHumanitiesCraft/knowledge-context-agentic-engineering">GitHub</a>.</p>
       </div>
-      <aside class="hero-modules" id="modules" aria-labelledby="modules-title">
-        <h2 id="modules-title">Full Slide Deck</h2>
-        <ol class="module-list" role="list">
-          <li class="m1" id="module-01"><span class="key"><span class="module-icon" aria-hidden="true"></span>01</span><h3>&ldquo;Understanding&rdquo; Large Language Models</h3></li>
-          <li class="m2" id="module-02"><span class="key"><span class="module-icon" aria-hidden="true"></span>02</span><h3>Prompt Engineering</h3></li>
-          <li class="m3" id="module-03"><span class="key"><span class="module-icon" aria-hidden="true"></span>03</span><h3>Knowledge and Context Engineering</h3></li>
-          <li class="m4" id="module-04"><span class="key"><span class="module-icon" aria-hidden="true"></span>04</span><h3>Agentic Engineering</h3></li>
-          <li class="m5" id="module-05"><span class="key"><span class="module-icon" aria-hidden="true"></span>05</span><h3>Critical Perspectives and Governance</h3></li>
-        </ol>
-      </aside>
-      </div>
+    </div>
   </section>
 
   <!-- ============ The material ============ -->

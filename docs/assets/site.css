@@ -75,9 +75,8 @@
   --m5: var(--c-green);      /* Critical Perspectives and Governance  ink   5.2:1 */
 
   /* --- Layout ----------------------------------------------------------- */
-  --measure: 60ch;           /* reading width for prose */
+  --measure: 80ch;           /* reading width for prose */
   --page: 1160px;
-  --page-content: 52rem;
   --radius: 3px;
   --tap: 2.75rem;
   --tap-compact: 2.5rem;
@@ -164,7 +163,6 @@ img { max-width: 100%; height: auto; }
   scroll-margin-top: var(--s4);
 }
 
-main .wrap { max-width: var(--page-content); }
 
 .section-title { font-size: var(--text-section); }
 
@@ -312,15 +310,8 @@ main .wrap { max-width: var(--page-content); }
   color: var(--ink);
 }
 
-/* The introduction and module index share one reading direction. */
+/* The introduction names the five modules inline, each with its icon and number. */
 .hero { padding-block: clamp(var(--s4), 4vw, var(--s5)) var(--s4); }
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: start;
-  gap: var(--s4);
-}
 
 .hero h1 {
   max-width: 20ch;
@@ -412,45 +403,45 @@ main .wrap { max-width: var(--page-content); }
   visibility: visible;
 }
 
-.hero-modules {
-  scroll-margin-top: var(--s4);
+/* Module terms link to their video group and carry icon and number inside
+   the link, so the key never separates from its title. As inline links they
+   wrap like running text, which a button cannot. */
+.term[id] { display: inline; }
+.term[id] .term-trigger {
+  background-image: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+.term-key { white-space: nowrap; }
+
+.term-label {
+  padding-bottom: 0.06em;
+  background-image: linear-gradient(90deg, var(--term-color-a) 0 50%, var(--term-color-b) 50% 100%);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 0.075em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
-.hero-modules h2 {
-  font-size: var(--text-section);
+.term-trigger:hover .term-label,
+.term-trigger:focus-visible .term-label { background-size: 100% 0.1em; }
+
+.term-key {
+  margin-inline-end: 0.3em;
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
 }
+
+.term[id] { scroll-margin-top: var(--s4); }
 
 /* ==========================================================================
    MODULES
    The single home of the identity palette. Each module carries one small mark,
    turquoise plus the four logo colours, assigned by position.
    ========================================================================== */
-.module-list {
-  display: grid;
-  gap: var(--s1);
-  margin-top: var(--s3);
-  padding: 0;
-  list-style: none;
-}
-
-.module-list li {
-  display: grid;
-  grid-template-columns: 4.35em minmax(0, 1fr);
-  align-items: start;
-  min-width: 0;
-  padding-block: 0.25rem;
-}
-
-.module-list .key {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  color: var(--ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-}
-
-.module-list .module-icon,
+.term-key .module-icon,
 .module-series__icon,
 .video-module__summary .module-icon,
 .video-module__summary-icon {
@@ -464,30 +455,30 @@ main .wrap { max-width: var(--page-content); }
   color: var(--module-color);
 }
 
+.term-key .module-icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin-inline-end: 0.2em;
+  vertical-align: -0.4em;
+}
+
 /* Each portable icon carries one specific conceptual relation. Colour remains
    an additional module cue; the adjacent number and title carry the meaning. */
-.module-list li.m1,
+.term--m1[id],
 .module-series__item.m1,
 .video-module.m1 { --module-color: var(--m1); --module-icon: url("modules/01-understanding-llms.svg"); }
-.module-list li.m2,
+.term--m2[id],
 .module-series__item.m2,
 .video-module.m2 { --module-color: var(--m2); --module-icon: url("modules/02-prompt-engineering.svg"); }
-.module-list li.m3,
+.term--m3[id],
 .module-series__item.m3,
 .video-module.m3 { --module-color: var(--m3); --module-icon: url("modules/03-knowledge-context-engineering.svg"); }
-.module-list li.m4,
+.term--m4[id],
 .module-series__item.m4,
 .video-module.m4 { --module-color: var(--m4); --module-icon: url("modules/04-agentic-engineering.svg"); }
-.module-list li.m5,
+.term--m5[id],
 .module-series__item.m5,
 .video-module.m5 { --module-color: var(--m5); --module-icon: url("modules/05-critical-perspectives-governance.svg"); }
-
-.module-list h3 {
-  min-width: 0;
-  font-size: var(--text-title);
-  line-height: 1.2;
-  text-wrap: balance;
-}
 
 /* Compact module coverage for workshop cards. The number remains readable
    without colour; the complete module name remains available to assistive
@@ -945,6 +936,7 @@ main .wrap { max-width: var(--page-content); }
    Google Slides iframe, so the page makes no request to Google until clicked. */
 .slide-preview {
   display: block;
+  max-width: 48rem;
   margin-top: var(--s3);
   overflow: hidden;
   border: 1px solid var(--rule);
@@ -1563,7 +1555,7 @@ a.resource-action:focus-visible {
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--s2);
   min-width: 0;
   margin: 0;
@@ -2701,6 +2693,7 @@ a.resource-action:focus-visible {
    NARROW VIEWPORTS AND PREFERENCES
    ========================================================================== */
 @media (max-width: 1020px) {
+  .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-head > .wrap { align-items: flex-start; }
   .site-identity { flex-basis: 100%; max-width: 38rem; }
   .head-tools { width: 100%; justify-content: space-between; }
