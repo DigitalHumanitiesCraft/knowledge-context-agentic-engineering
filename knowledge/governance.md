@@ -38,14 +38,14 @@ Tool and model provenance follows the same split. The public interface names onl
 
 ## Source status
 
-Preparation uses the existing Google Slides deck registered under `preparation` in `docs/data/workshops.json`. The documented source contract for the Full Slide Deck and Lecture Notes remains the repository ownership stated below. Before substantive revision, compare those files with their linked Google versions and bring any conflicting changes to the author as a concrete delta.
+Preparation uses the existing Google Slides deck registered under `preparation` in `data/workshops.json`. The documented source contract for the Full Slide Deck and Lecture Notes remains the repository ownership stated below. Before substantive revision, compare those files with their linked Google versions and bring any conflicting changes to the author as a concrete delta.
 
 | Holding | Canonical place |
 | --- | --- |
 | Full Lecture Notes, Full Slide Deck | this repo (`script/`, `slides/`) |
 | Terms | `terms.md` in this repo; it is filled from the material and supersedes the vault atoms, whose wording is now examined against it as a delta |
-| Workshop register, module subsets, material release states and available formats | `docs/data/workshops.json` |
-| Video inventory, playlist order, primary module, related modules and duration | `docs/data/videos.json` |
+| Workshop register, module subsets, material release states and available formats | `data/workshops.json` |
+| Video inventory, playlist order, primary module, related modules and duration | `data/videos.json` |
 | Delivered instances | git history, reachable through the tag of the taught state |
 | Live decks and documents | Google Workspace, as derived surfaces; divergent wording is examined as a delta |
 | CLARIAH hands-on (prompts, schema, runs) | `chpollin/zbz-ocr-tei/workshops/clariah-at-2026/` |

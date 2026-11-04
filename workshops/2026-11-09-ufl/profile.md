@@ -21,7 +21,7 @@ related: [../../knowledge/project.md, ../../knowledge/drafts/module-map.md, ../.
 
 ## Profile
 
-This instance runs on 2026-11-09 and 10 in the Uni for Life programme of the Universität Graz. It is taught in German, online via Zoom, to a small group of professionals from companies and institutions across disciplines. The organiser announces it as *Intermediate Prompting (Agentic Engineering)*, and the live deck carries the title *Intermediate Prompting Agentic Engineering*. The register entry in `docs/data/workshops.json` keeps the title *Agentic-Engineering-Workshop*.
+This instance runs on 2026-11-09 and 10 in the Uni for Life programme of the Universität Graz. It is taught in German, online via Zoom, to a small group of professionals from companies and institutions across disciplines. The organiser announces it as *Intermediate Prompting (Agentic Engineering)*, and the live deck carries the title *Intermediate Prompting Agentic Engineering*. The register entry in `data/workshops.json` keeps the title *Agentic-Engineering-Workshop*.
 
 The format is three sessions of two hours each, held at the following times.
 
@@ -71,7 +71,7 @@ The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03
 
 | Artefact | Location | State |
 | --- | --- | --- |
-| Live deck | one Google Slides deck for all three sessions, operator's Drive, kept private by operator decision of 2026-11-04 and not registered in `docs/data/workshops.json` | in preparation |
+| Live deck | one Google Slides deck for all three sessions, operator's Drive, kept private by operator decision of 2026-11-04 and not registered in `data/workshops.json` | in preparation |
 | Lecture Notes (Uni for Life 2026) | [`lecture-notes.md`](lecture-notes.md), German, following the live deck slide by slide | draft, session 3 open |
 | PPTX export per taught state | this folder | open |
 | Session 3 material and hook | [`data/`](data/README.md) | present |

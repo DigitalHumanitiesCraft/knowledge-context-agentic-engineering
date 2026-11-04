@@ -25,7 +25,7 @@ This instance is the two-day unit registered for 2026-10-05 and 06 at the Forsch
 
 Three changes against the predecessor are declared in the sources. The model landscape moves to the frontier state at teaching time and includes a locally runnable open-weight alternative. Agentic coding with Claude Code moves from a side remark into a central method block. Two operational demonstration objects enter, the teiCrafter tool and the agentic edition pipeline. A standing operator decision makes teiCrafter the convergence point of the edition tooling.
 
-The register in `docs/data/workshops.json` holds the entry and keeps the native deck and script links unset while retaining the existing cover. This profile documents the programme and the prerequisites. The local slide text and hands-on notes now derive the cumulative exercise from the Full material. Native deck production remains separate.
+The register in `data/workshops.json` holds the entry and keeps the native deck and script links unset while retaining the existing cover. This profile documents the programme and the prerequisites. The local slide text and hands-on notes now derive the cumulative exercise from the Full material. Native deck production remains separate.
 
 The register title *HEDIT KI-Workshop 2026* is an inference. The source heading reads *HEDIT KI-Workshop Heidelberg 2026* and no externally announced title is documented anywhere, so the string should be replaced once the host publishes the programme.
 

@@ -41,7 +41,7 @@ The concepts, source selection and editorial decisions originate with Christophe
 
 The material is maintained through three holdings, the Full Slide Deck, the Full Lecture Notes and the Video Playlist, and covers the whole subject for a general audience of people who do computer-based, data-driven knowledge work. Each holding is described by its intended use rather than by a count of modules. The Full Slide Deck is the complete overview of the teaching material in slide form; it serves as a reference work and as the source from which workshop-specific decks are assembled, and it is not presented as one teaching session. The Full Lecture Notes are the written-out counterpart of the slides and carry the explanations and context needed for reading and later reference. The Video Playlist combines DHCraft videos with selected contributions by others; its deliberate sequence runs from the foundations to more complex topics and forms a structured learning path, and it is curated, maintained and extended as suitable material appears.
 
-The slide deck and the lecture notes deliberately express the same maintained concepts at different levels of expansion, so the text does not live in one single place. Responsibility is divided by layer. The Full Slide Deck maintains the reference structure and the selection surface from which workshop decks are assembled. The Full Lecture Notes maintain the expanded explanation. A conceptual change that touches both is reconciled across the two before any specialised export is regenerated. All three holdings share the same five modules, Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, Critical Perspectives and Governance. The playlist assigns every entry one primary module and may record further related modules without duplicating the entry. Its current sequence and distribution live in `docs/data/videos.json`. The fine cut remains provisional in `drafts/module-map.md` and `script/modules/` until Research Director acceptance.
+The slide deck and the lecture notes deliberately express the same maintained concepts at different levels of expansion, so the text does not live in one single place. Responsibility is divided by layer. The Full Slide Deck maintains the reference structure and the selection surface from which workshop decks are assembled. The Full Lecture Notes maintain the expanded explanation. A conceptual change that touches both is reconciled across the two before any specialised export is regenerated. All three holdings share the same five modules, Understanding Large Language Models, Prompt Engineering, Knowledge and Context Engineering, Agentic Engineering, Critical Perspectives and Governance. The playlist assigns every entry one primary module and may record further related modules without duplicating the entry. Its current sequence and distribution live in `data/videos.json`. The fine cut remains provisional in `drafts/module-map.md` and `script/modules/` until Research Director acceptance.
 
 A workshop is a documented specialization of the material. Its profile selects modules, sets depth, case studies and language, and adds only what belongs to that single instance, such as schedule, hands-on instructions and venue specifics. Published workshop artefacts may repeat selected explanatory slides so that each event remains usable on its own. Their shared source remains the Full Slide Deck, and a change to common material is reconciled there before the specialised exports are regenerated. Case studies are exchangeable modules of their own (currently Hersch and Zweig for research data and digital editions), so the core of the material stays domain-neutral.
 
@@ -51,9 +51,9 @@ Workshop profiles and their material remain research and teaching sources in `wo
 
 The public site is one static page per language, `index.html` and `index.de.html`. A compact paragraph in the opening section explains DHCraft, workshop funding and public maintenance. The page then presents the shared teaching materials, the embedded Preparation deck and the Video Library. Header links target these sections. There are no separate About or Preparation pages and no generic arrow-back links. The canonical legal notice remains linked in the footer, together with the licence scope. Event listings and Learning Routes remain retired; teaching sources are unchanged.
 
-Preparation links to and embeds the existing English Google Slides deck [Preparation · Slides · Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit). Its URL and language are registered in `docs/data/workshops.json` under `preparation`. Both language versions identify the English teaching language. A visible direct link remains usable if the embedded viewer cannot load. No separate HTML setup curriculum or subject-introduction sequence is maintained in that section.
+Preparation links to and embeds the existing English Google Slides deck [Preparation · Slides · Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit). Its URL and language are registered in `data/workshops.json` under `preparation`. Both language versions identify the English teaching language. A visible direct link remains usable if the embedded viewer cannot load. No separate HTML setup curriculum or subject-introduction sequence is maintained in that section.
 
-The workshop records in `docs/data/workshops.json` retain material provenance and do not generate public event pages or navigation. Full-material and video links retain their existing ownership and rights boundaries. External Google files and sharing permissions are unchanged.
+The workshop records in `data/workshops.json` retain material provenance and do not generate public event pages or navigation. Full-material and video links retain their existing ownership and rights boundaries. External Google files and sharing permissions are unchanged.
 
 ## Languages
 
@@ -68,18 +68,18 @@ The teaching material retains its source language and translations require autho
 | Module cut of the lecture notes, with its coverage report | `script/modules/`, `script/COVERAGE.md` |
 | Full Slide Deck, text export with speaker notes | `slides/full-slide-deck.md` |
 | Video Playlist | `https://www.youtube.com/playlist?list=PLXY4kw40KBaY` |
-| Video inventory, playlist order, primary module, related modules and duration | `docs/data/videos.json` |
+| Video inventory, playlist order, primary module, related modules and duration | `data/videos.json` |
 | Workshop instance, one folder per instance | `workshops/<id>/` with `profile.md`, `slide-deck.md`, `lecture-notes.md`, `data/` |
 | Preparation, existing Google Slides deck | `docs/index.html#preparation`, `docs/index.de.html#preparation` |
 | Curated Skills source pending public placement | `knowledge/drafts/curated-agent-skills-library.md` |
 | Slide exports (PPTX per taught state) | `workshops/<id>/` |
 | Cover images (PNG, 16:9) | `docs/assets/covers/<id>.png` |
-| Workshop register, material release state and module subset | `docs/data/workshops.json` |
+| Workshop register, material release state and module subset | `data/workshops.json` |
 | Live decks and documents | Google Workspace, linked from the register |
 | Executable CLARIAH hands-on package | external repo `chpollin/zbz-ocr-tei`, `workshops/clariah-at-2026/` |
 | Project coordination and thematic knowledge base | the author's research vault (private) |
 
-Only upcoming instances live in the working tree. A delivered instance is removed after its teaching state has been tagged, and it stays retrievable in git history; the register in `docs/data/workshops.json` is the source of truth for which instances are current (operator decision 2026-08-20).
+Only upcoming instances live in the working tree. A delivered instance is removed after its teaching state has been tagged, and it stays retrievable in git history; the register in `data/workshops.json` is the source of truth for which instances are current (operator decision 2026-08-20).
 
 ## Adjacent teaching sources
 

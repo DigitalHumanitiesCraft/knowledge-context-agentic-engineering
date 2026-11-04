@@ -12,7 +12,7 @@ related: [profile.md, ../../slides/full-slide-deck.md]
 
 # Slide Deck (CLARIAH-AT Summer School 2026)
 
-This instance is taught from the Full Slide Deck of the teaching line, cut to the module selection documented in [`profile.md`](profile.md). A live deck for this instance exists and is linked from the register in `docs/data/workshops.json`. It is the teaching surface and never the canonical text state; the canonical text is [`lecture-notes.md`](lecture-notes.md) in this folder.
+This instance is taught from the Full Slide Deck of the teaching line, cut to the module selection documented in [`profile.md`](profile.md). A live deck for this instance exists and is linked from the register in `data/workshops.json`. It is the teaching surface and never the canonical text state; the canonical text is [`lecture-notes.md`](lecture-notes.md) in this folder.
 
 The Full Slide Deck lives at [`../../slides/full-slide-deck.md`](../../slides/full-slide-deck.md).
 

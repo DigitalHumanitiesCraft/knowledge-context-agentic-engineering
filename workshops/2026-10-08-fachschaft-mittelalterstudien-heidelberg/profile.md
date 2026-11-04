@@ -27,7 +27,7 @@ The day opens on the fundamentals of large language models and AI agents and the
 
 Two further respondents from the Heidelberg environment, both with a focus on local and open-source models, attend the day. Whether they receive a block of their own is undecided.
 
-The register in `docs/data/workshops.json` holds the entry and carries no deck, script or cover. This profile documents the cut and the source state. The teaching text does not exist yet.
+The register in `data/workshops.json` holds the entry and carries no deck, script or cover. This profile documents the cut and the source state. The teaching text does not exist yet.
 
 ## Module selection
 

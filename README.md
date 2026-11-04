@@ -28,9 +28,10 @@ Only upcoming instances live in this repository. Once an instance has been taugh
 | `script/full-lecture-notes-en.md`, `script/full-lecture-notes-de.md` | The Full Lecture Notes |
 | `script/modules/` | The five-module cut of the lecture notes, with its coverage report in `script/COVERAGE.md` |
 | `slides/full-slide-deck.md` | The Full Slide Deck as text with speaker notes; the visual deck lives in Google Slides and is linked |
-| `docs/data/videos.json` | The Video Playlist inventory, including order, primary module, any related modules and duration |
+| `data/videos.json` | The Video Playlist inventory, including order, primary module, any related modules and duration |
 | `workshops/<id>/` | One folder per upcoming instance, holding `profile.md`, `slide-deck.md`, `lecture-notes.md` and `data/` |
-| `docs/` | The platform (static site, GitHub Pages), including the register `docs/data/workshops.json` |
+| `data/` | The registers `workshops.json` and `videos.json`, outside the published tree |
+| `docs/` | The platform (static site, GitHub Pages) |
 | `communication/` | The Research Mission Control transport for current briefs, results and recipient state |
 
 Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the register, the workshop folder and the git tag.
@@ -39,9 +40,9 @@ Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the regi
 
 The public site is one static page per language, `docs/index.html` and `docs/index.de.html`. The opening section names the five modules inline, each linked to its group in the Video Library, and a compact paragraph explains DHCraft, workshop funding and public maintenance. The page then presents the three teaching holdings as cards, Preparation and the Video Library, and the header navigation targets these sections. The footer links the canonical legal notice and states the licence scope.
 
-Preparation links the English Google Slides deck [Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit) and shows its title slide as a locally stored image. Its URL and language are registered in `docs/data/workshops.json` under `preparation`. The Video Library is rendered from `docs/data/videos.json`.
+Preparation links the English Google Slides deck [Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit) and shows its title slide as a locally stored image. Its URL and language are registered in `data/workshops.json` under `preparation`. The Video Library is rendered from `data/videos.json`.
 
-The workshop records retain material provenance and generate no public event pages. The site is no-build HTML and CSS without JavaScript, and its requirements are maintained in [`knowledge/specification.md`](knowledge/specification.md). Local changes require author acceptance and a separate publication step.
+The workshop records retain material provenance and generate no public event pages. The site is no-build HTML and CSS whose content needs no JavaScript, with self-hosted fonts, and its requirements are maintained in [`knowledge/specification.md`](knowledge/specification.md). Local changes require author acceptance and a separate publication step.
 
 https://dhcraft.org/knowledge-context-agentic-engineering/
 

@@ -27,7 +27,7 @@ At 3.5 hours this is the narrowest cut of the seven upcoming instances, and its 
 
 The framing argument ties the instance to its conference. Academy projects produce data, editions and interfaces over decades, and at the end of a funding period migration and maintenance fall due. That work is repetitive, rule-governed and source-bound, which is where coding agents carry it. The stated condition is machine-readable project documentation, because what is documented nowhere can be observed by no agent.
 
-The register in `docs/data/workshops.json` holds the entry and carries no deck, script or cover. Unlike the other instances without a deck, this one has its teaching text written. Full slide texts with speaker notes exist in the operator's research vault, adversarially reviewed on 2026-07-18 with all findings resolved, and awaiting operator acceptance.
+The register in `data/workshops.json` holds the entry and carries no deck, script or cover. Unlike the other instances without a deck, this one has its teaching text written. Full slide texts with speaker notes exist in the operator's research vault, adversarially reviewed on 2026-07-18 with all findings resolved, and awaiting operator acceptance.
 
 ## Module selection
 
