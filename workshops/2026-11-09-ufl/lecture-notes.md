@@ -367,17 +367,17 @@ Factory
 
 Session 1 hat Prompt und Context behandelt, Session 2 vertieft Knowledge und Harness, Session 3 führt zu Loop.
 
-### Zugriff und Auto-Modus
+### Permission Modes und Autonomie
 
-Claude Code arbeitet mit den Rechten der Person, die es startet. Der Permission Mode legt fest, was ohne Rückfrage geschieht. Die fünf Modi reichen von wenig zu viel Autonomie.
+Claude Code arbeitet mit den Rechten der Person, die es startet. Der Permission Mode legt fest, was ohne Rückfrage geschieht. Entscheidend ist, wie viel Autonomie man dem Agenten geben will. Die fünf Modi reichen von wenig zu viel Autonomie.
 
-| Mode | Verhalten |
-| --- | --- |
-| Plan | erkundet und plant, ändert nichts |
-| Manual | fragt bei allem außer Lesen |
-| Accept edits | bearbeitet Dateien ohne Rückfrage |
-| Auto | Lesen und Bearbeiten im Projekt frei, alles andere prüft ein Klassifikator |
-| Bypass | alles ohne Prüfung, nur in isolierten Umgebungen |
+| Mode | Verhalten | Wann |
+| --- | --- | --- |
+| Plan | erkundet und plant, ändert nichts | für mehrere Runden an der Spezifikation, bevor etwas gebaut wird |
+| Manual | fragt bei allem außer Lesen | wenn man jeden Schritt selbst kontrollieren will |
+| Accept edits | bearbeitet Dateien ohne Rückfrage | wenn der Plan steht und Git jede Änderung rückgängig macht |
+| Auto | Lesen und Bearbeiten im Projekt frei, alles andere prüft ein Klassifikator | Empfehlung für die tägliche Arbeit, Probleme sind nach der Erfahrung im Workshop selten |
+| Bypass | alles ohne Prüfung | nur in isolierten Umgebungen wie einer Sandbox |
 
 Im Auto-Modus beurteilt ein Klassifikator, ob eine Aktion riskant ist. Durchgesetzt wird eine Grenze dagegen durch eine deny-Regel oder einen Hook. Bestimmte Pfade ändert Claude Code nie automatisch, darunter `.git`, `.claude`, `.bashrc` und weitere geschützte Pfade. Die Dokumentation steht unter https://code.claude.com/docs/en/permission-modes.
 
