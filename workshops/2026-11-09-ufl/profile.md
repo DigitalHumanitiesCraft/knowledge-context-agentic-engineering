@@ -72,7 +72,7 @@ The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03
 | Artefact | Location | State |
 | --- | --- | --- |
 | Live deck | Google Slides, operator's Drive, kept private by operator decision of 2026-11-04 and not registered in `docs/data/workshops.json` | in preparation |
-| Lecture Notes (Uni for Life 2026) | this folder | stub |
+| Lecture Notes (Uni for Life 2026) | [`lecture-notes.md`](lecture-notes.md), German, following the live deck slide by slide | draft, session 3 open |
 | PPTX export per taught state | this folder | open |
 | Session 3 material and hook | [`data/`](data/README.md) | present |
 | Participant data folder | operator's Drive | still holds files of the dropped scenario |
