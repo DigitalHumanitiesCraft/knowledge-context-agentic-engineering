@@ -280,6 +280,7 @@ This section holds the full records behind the short citations in the *Literatur
 - Majithia et al. (2026). An Actionable Framework for AI-Ready Data. DOI 10.1002/aaai.70054.
 - Markdown Guide (n.d.). https://www.markdownguide.org.
 - Martin, Lance (2026-04-02). Agent Harness Design. 3 Patterns for Harnessing Claude's Intelligence. Claude by Anthropic. https://claude.com/blog/harnessing-claudes-intelligence. Accessed 2026-08-20.
+- Mei, Lingrui et al. (2025). A Survey of Context Engineering for Large Language Models. arXiv:2507.13334, v2 of 2025-07-21. DOI 10.48550/arXiv.2507.13334.
 - METR (n.d.). Evaluation report. https://evaluations.metr.org/gpt-4o-report/. Accessed 2026-08-20.
 - METR (n.d.). Task-Completion Time Horizons of Frontier AI Models. https://metr.org/time-horizons.
 - METR (2024-03-15). Guidelines for capability elicitation. https://metr.org/blog/2024-03-15-guidelines-for-capability-elicitation/. Accessed 2026-08-20.
@@ -288,6 +289,7 @@ This section holds the full records behind the short citations in the *Literatur
 - Newell, Allen (1982). The Knowledge Level. *Artificial Intelligence* 18(1), 87–127. DOI 10.1016/0004-3702(82)90012-1.
 - Nonaka, Ikujiro (1994). A Dynamic Theory of Organizational Knowledge Creation. *Organization Science* 5(1), 14–37. DOI 10.1287/orsc.5.1.14.
 - Open Source Initiative (n.d.). The Open Source AI Definition 1.0. https://opensource.org/ai/open-source-ai-definition.
+- OpenAI (2025-04-15). Preparedness Framework, Version 2. https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf.
 - OpenAI (2026). Responding to the Next Frontier of Critical Cyber Capabilities. https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/.
 - Ouyang et al. (2022). Training Language Models to Follow Instructions with Human Feedback. arXiv:2203.02155.
 - Petroni et al. (2019). Language Models as Knowledge Bases? arXiv:1909.01066.
@@ -324,8 +326,3 @@ This section holds the full records behind the short citations in the *Literatur
 - Yin et al. (2024). Should We Respect LLMs? arXiv:2402.14531. DOI 10.48550/arXiv.2402.14531.
 - Zheng, Lianmin; Chiang, Wei-Lin; Sheng, Ying; Zhuang, Siyuan; Wu, Zhanghao; Zhuang, Yonghao; Lin, Zi; Li, Zhuohan; Li, Dacheng; Xing, Eric P.; Zhang, Hao; Gonzalez, Joseph E.; Stoica, Ion (2023). Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. *Advances in Neural Information Processing Systems* 36. arXiv:2306.05685. DOI 10.48550/arXiv.2306.05685.
 - Zhong; Zhu (2026). AI Harness Engineering. A Runtime Substrate for Foundation-Model Software Agents. arXiv:2605.13357. DOI 10.48550/arXiv.2605.13357.
-
-### Short citations without a full record
-
-- Mei et al. (2025).
-- OpenAI. Preparedness Framework.

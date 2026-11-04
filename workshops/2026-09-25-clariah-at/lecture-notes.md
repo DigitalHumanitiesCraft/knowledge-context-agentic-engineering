@@ -602,7 +602,7 @@ The resulting shift is from individual model outputs towards the design of compl
 
 [^11]: Bradley Allen et al., [Knowledge Engineering Using Large Language Models](https://doi.org/10.4230/TGDK.1.1.3), 2023\.
 
-[^12]: Linyao Mei et al., [A Survey of Context Engineering for Large Language Models](https://doi.org/10.48550/arXiv.2507.13334), 2025\.
+[^12]: Lingrui Mei et al., [A Survey of Context Engineering for Large Language Models](https://doi.org/10.48550/arXiv.2507.13334), 2025\.
 
 [^13]: See Hailin Zhong and Shengxin Zhu, [AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents](https://doi.org/10.48550/arXiv.2605.13357), 2026, and Ranjan Sapkota et al., [AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications, and Challenges](https://doi.org/10.1016/j.inffus.2025.103599), 2026\.
 
