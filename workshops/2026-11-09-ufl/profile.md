@@ -10,7 +10,7 @@ workshop:
   status: planned
 status: in preparation
 created: 2026-08-20
-updated: 2026-11-04
+updated: 2026-11-05
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5.5)
@@ -39,13 +39,11 @@ Two further runs are fixed for April and November 2027, which makes the format a
 
 One project grows across the three sessions. Each hands-on slide puts a copyable prompt at its centre and introduces one concept. Participants paste the prompt into their own harness and work in parallel, and the group discusses concepts while the agents run.
 
-Each session belongs to one area of agentic engineering and redeems one learning goal.
+The deck frames the workshop with five terms after a video by IBM Technology, Agentic, Prompt, Context, Knowledge and Harness Engineering. Topics flow across the sessions, so the deck assigns no term to a single session.
 
-1. Session 1, Prompt and Context Engineering, builds a knowledge dashboard on agentic engineering and governance from a short web search restricted to sources from 2026. The project receives a `knowledge/` folder for distilled knowledge and a `sources/` folder for the found sources, and the agent works in milestones after three context questions. Around this hands-on the session explains the interplay of LLM, agent and harness, tool use, a reviewer subagent used as LLM-as-a-judge and the removal of generic interface elements. It then manages the context window, introduces `AGENTS.md`, `CLAUDE.md` and memory, and in the second hands-on turns the collected knowledge into a pitch for the participant's organisation and saves the procedure as a skill. A slide on Context Engineering closes the session by mapping the methods used onto the categories of the context engineering survey by Mei et al. (2025).
-2. Session 2, Knowledge Engineering, opens with an overview of the five layers of agentic engineering, then covers permission modes, a hook that blocks file writes outside the project folder, and governance on the levels of data and agent with the Rule of Two. It introduces knowledge engineering, the three types of Promptotyping Documents and Obsidian. In the third hands-on the knowledge base becomes an Obsidian vault with frontmatter, a tag taxonomy, maps of content and `HOME.md`, followed by structural and content curation and vault governance, where `CLAUDE.md` carries the topography of the vault.
-3. Session 3, Agentic Engineering, presents the five-step workflow behind fancy research tools, loop engineering as a triggered cycle with a fixed check, the rule that whatever a script can compute a script computes, and quality assurance through independent review and human acceptance. In the fourth hands-on participants build an analysis tool from four Northwind Excel files whose figures a script computes and a separate check verifies. An outlook points to four templates from ongoing work.
-
-The learning goals on the deck are stated per session: explain how LLM, AI agent and AI harness work together and steer the agent through prompts, `CLAUDE.md` and skills; build and maintain project knowledge so that an agent works reliably with it; plan agentic workflows, check their results and transfer them to their own projects.
+1. Session 1 runs three hands-ons. The first builds a knowledge base on agentic engineering and governance from a web search with two subagents, restricted to sources from 2026 whose date is checked at the source. The second distils every source against a guiding question chosen by the participant. The third answers a governance question from the knowledge base only and produces a PDF. Around them the session covers LLM, agent and harness, tool use, subagents, the context window, `AGENTS.md` and `CLAUDE.md`, governance on the levels of data and agent, permission modes, AI slop and a PDF skill, and it closes with an interim summary.
+2. Session 2 adds a knowledge dashboard that opens by double-click without a server, with follow-up prompts for feedback, self-verification, a reviewer subagent, refactoring and curation. It introduces knowledge engineering and Obsidian, and the fifth hands-on turns the knowledge base into a vault with frontmatter, a tag taxonomy, wikilinks under Related only, `HOME.md` and `ACTIVE-WORK.md`.
+3. Session 3 places frontier capabilities and the building blocks around a model, context engineering, MCP, RAG and memory, hooks, Docling, Promptotyping Documents, loop engineering, multi-agent work, determinism and quality assurance. The sixth hands-on handles a customer request with four Northwind Excel files inside the vault, checks it against the governance draft and adds a data view to the dashboard whose figures a script computes and a second prompt verifies. Slides on test-driven development and open models with three local workflows follow the outlook to four templates from ongoing work.
 
 The organiser's website text announces terminal and installation for session 1. Installation is dropped because participants come prepared. A vocabulary split stays stable, with *Wissensnetz* on the course website and *Wissensbasis* and *Wissenssystem* inside the workshop.
 
@@ -65,7 +63,7 @@ The fine module cut in `knowledge/drafts/module-map.md` remains a draft and pred
 
 The case is deliberately general and uses real material that outsiders understand. Sessions 1 and 2 work on live web sources from 2026, which each participant gathers anew. Participants may substitute a project of their own.
 
-Session 3 uses the material in [`data/`](data/README.md), four Excel files converted from Microsoft's Northwind sample database under the MIT License, together with a synthetic German customer e-mail. The e-mail stays out of session 3, because the hands-on is already full with the Excel analysis; it remains in `data/` for later instances. All persons and companies in it are fictional. The folder also holds the project-folder hook shown in session 2.
+Session 3 uses the material in [`data/`](data/README.md), four Excel files converted from Microsoft's Northwind sample database under the MIT License, together with a synthetic German customer e-mail. The hands-on prompt carries a shortened version of the mail without the personal remarks, phone number and address, and asks the group why those were left out. All persons and companies in it are fictional. The folder also holds the project-folder hook shown on the hook slide. Three local workflows prepared for the slide on open models live in [`lokale-workflows/`](lokale-workflows/).
 
 The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03 because it did not use real data. It is preserved in git history.
 

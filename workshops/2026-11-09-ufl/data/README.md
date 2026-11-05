@@ -2,7 +2,7 @@
 title: "Example Data (Uni for Life 2026)"
 workshop: 2026-11-09-ufl
 created: 2026-08-20
-updated: 2026-11-04
+updated: 2026-11-05
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5.5)
@@ -14,7 +14,7 @@ related: [../profile.md]
 
 This folder holds the material for session 3, in which participants handle a customer request with the knowledge base they built in sessions 1 and 2, and the hook shown in session 2.
 
-`kundenanfrage.txt` is a synthetic German e-mail from a fictional sales director of Northwind Traders. It asks for a workshop on agentic engineering and governance, slides, a small reference website and draft rules for AI use, and it carries the four Excel files as attachments. The mail deliberately contains personal data, such as remarks on colleagues' leave and retirement, a home address and a private phone number in the signature, so that participants practise copying only the parts a language model needs.
+`kundenanfrage.txt` is a synthetic German e-mail from a fictional sales director of Northwind Traders. It asks for a workshop on agentic engineering and governance, slides, a small reference website and draft rules for AI use, and it carries the four Excel files as attachments. The mail deliberately contains personal data, such as remarks on colleagues' leave and retirement, a home address and a private phone number in the signature, so that participants practise copying only the parts a language model needs. The hands-on prompt on the slides uses a shortened version without these parts, and the group discusses why they were left out.
 
 The four Excel files are converted from Microsoft's Northwind sample database, a fictional food wholesaler with orders from 1996 to 1998.
 
