@@ -25,12 +25,20 @@ Data flow, three stages:
 Usage:
     python redact_mail.py
     python redact_mail.py --model qwen3.5:9b --model ministral-3:8b --runs 2
+    python redact_mail.py --mail eigene.txt [--xlsx anhang.xlsx] [--checklist liste.json] --out DIR
+
+Without --mail the script runs on the test mail with its spreadsheet and checklist. A variant
+under testmails/ gets the spreadsheet by default and its checklist via --checklist. An own mail
+gets neither by default, so the test fixtures never stand in for its own attachment or list.
 
 Outputs go to ./ausgabe. With several models or runs, the primary outputs come from the first
-run of the first model, and messungen.json records every run.
+run of the first model, and messungen.json records every run. Exit code 0 means that no known
+string leaked, no generic check found anything and no content that must stay was lost.
 
-The release template lists the removed original strings so the reviewer can judge them; it is
-therefore a local file and never goes to the cloud agent together with the cleaned mail.
+Trust boundary: the release template and messungen.json hold the removed original strings and
+the raw model answers, so they stay local and never go to the cloud agent. The console prints
+only the model, run times, counts, a checksum prefix and the output folder, because a cloud
+agent that started the run reads the console.
 """
 
 import argparse
@@ -367,8 +375,8 @@ def stage3_check(
     after1: str,
     final: str,
     checklist: dict,
-    workbook: dict,
-    wb_out: Path,
+    workbook: dict | None,
+    wb_out: Path | None,
     sender: str,
 ) -> dict:
     def status_forbidden(s: str) -> str:
@@ -397,26 +405,27 @@ def stage3_check(
         for m in PHONE.finditer(final)
         if len(re.sub(r"\D", "", m.group(0))) >= 7
     ]
-    # The staff list is a name list the check gets for free; first names count, since mails use them.
-    sender_parts = set(sender.split())
-    names = []
-    for first, last in workbook["namen"]:
-        if f"{first} {last}" == sender:
-            continue
-        for needle in (f"{first} {last}", first, last):
-            if needle not in sender_parts and re.search(
-                rf"\b{re.escape(needle)}\b", final
-            ):
-                names.append(needle)
-    generic["Namen aus der Mitarbeiterliste"] = sorted(set(names))
+    if workbook is not None and wb_out is not None:
+        # The staff list is a name list the check gets for free; first names count, since mails use them.
+        sender_parts = set(sender.split())
+        names = []
+        for first, last in workbook["namen"]:
+            if f"{first} {last}" == sender:
+                continue
+            for needle in (f"{first} {last}", first, last):
+                if needle not in sender_parts and re.search(
+                    rf"\b{re.escape(needle)}\b", final
+                ):
+                    names.append(needle)
+        generic["Namen aus der Mitarbeiterliste"] = sorted(set(names))
 
-    out_values = set()
-    for ws in load_workbook(wb_out, data_only=True).worksheets:
-        for row in ws.iter_rows(values_only=True):
-            out_values |= {str(v) for v in row if v is not None}
-    generic["Entfernte Tabellenwerte in der bereinigten Kopie"] = sorted(
-        workbook["entfernte_werte"] & out_values
-    )
+        out_values = set()
+        for ws in load_workbook(wb_out, data_only=True).worksheets:
+            for row in ws.iter_rows(values_only=True):
+                out_values |= {str(v) for v in row if v is not None}
+        generic["Entfernte Tabellenwerte in der bereinigten Kopie"] = sorted(
+            workbook["entfernte_werte"] & out_values
+        )
 
     leaked = [s for s, st in forbidden.items() if st == "DURCHGELASSEN"] + [
         f"{k}: {v}" for k, vs in generic.items() for v in vs
@@ -449,7 +458,7 @@ def _unprocessed_attachments(text: str, processed: set[str]) -> list[str]:
 def _release_template(
     res: RunResult,
     stage1_log: list[Redaction],
-    wb_report: dict,
+    wb_report: dict | None,
     unprocessed: list[str],
     seconds1: float,
     mail_name: str,
@@ -478,6 +487,10 @@ def _release_template(
     ]
     lines += [f"- {s}: {st}" for s, st in c["verboten"].items()]
     lines += [f"- {s}: {st}" for s, st in c["erhalten"].items()]
+    if not c["verboten"] and not c["erhalten"]:
+        lines.append(
+            "- Keine Prüfliste übergeben, es liefen nur die allgemeinen Prüfungen."
+        )
     lines += ["", "### Allgemeine Prüfungen", ""]
     lines += [
         f"- {k}: {', '.join(v) if v else 'keine Treffer'}"
@@ -492,7 +505,7 @@ def _release_template(
         lines += ["", "## Vorschläge des Modells, nicht übernommen", ""]
         lines += [f"- {r}" for r in res.rejected]
     lines += ["", "## Anhänge", ""]
-    for sheet in wb_report["blaetter"]:
+    for sheet in wb_report["blaetter"] if wb_report else []:
         lines.append(
             f"- {wb_report['datei']}, Blatt {sheet['blatt']} ({sheet['zeilen']} Zeilen): behalten {', '.join(sheet['behalten'])}; entfernt {', '.join(sheet['entfernt'])}"
         )
@@ -514,13 +527,52 @@ def _release_template(
     return "\n".join(lines)
 
 
+def _summary_line(res: RunResult) -> str:
+    """One console line per run, with counts only.
+
+    The console is what a cloud agent sees when it started the run, and the leaked or lost
+    strings are exactly the content that must not reach it. They stay in freigabe.md.
+    """
+    load_s = (res.ollama.get("load_duration") or 0) / 1e9
+    return (
+        f"{res.model} Lauf {res.run}: Stufe 2 {res.seconds_llm:.1f} s (Ladezeit {load_s:.1f} s), "
+        f"durchgelassen {len(res.checks['durchgelassen'])}, verloren {len(res.checks['verloren'])}, "
+        f"sha256 {hashlib.sha256(res.text.encode()).hexdigest()[:12]}"
+    )
+
+
+def _inputs(
+    mail: Path | None, xlsx: Path | None, checklist: Path | None
+) -> tuple[Path, Path | None, Path | None]:
+    """Fill in the test fixtures for the test data only.
+
+    An own mail without --xlsx or --checklist runs without them; otherwise the staff list and
+    the checklist of the test mail would silently stand in for its own and report on them.
+    The variants under testmails/ attach the same staff list, so it stays their default; each
+    has its own checklist, which is passed explicitly.
+    """
+    if mail is None:
+        return (
+            DATA / "kundenanfrage.txt",
+            xlsx or DATA / "mitarbeitende.xlsx",
+            checklist or HERE / "pruefliste.json",
+        )
+    if mail.resolve().is_relative_to(HERE / "testmails"):
+        return mail, xlsx or DATA / "mitarbeitende.xlsx", checklist
+    return mail, xlsx, checklist
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(
         description="Mail und Mitarbeiterliste lokal bereinigen, prüfen und zur Freigabe vorlegen."
     )
-    ap.add_argument("--mail", type=Path, default=DATA / "kundenanfrage.txt")
-    ap.add_argument("--xlsx", type=Path, default=DATA / "mitarbeitende.xlsx")
-    ap.add_argument("--checklist", type=Path, default=HERE / "pruefliste.json")
+    ap.add_argument(
+        "--mail",
+        type=Path,
+        help="eigene Mail (Standard: Testmail mit Tabelle und Prüfliste)",
+    )
+    ap.add_argument("--xlsx", type=Path, help="Excel-Anhang der Mail, optional")
+    ap.add_argument("--checklist", type=Path, help="Prüfliste als JSON, optional")
     ap.add_argument(
         "--model",
         action="append",
@@ -530,24 +582,23 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=HERE / "ausgabe")
     args = ap.parse_args()
     models = args.model or ["qwen3.5:9b"]
-    for p in (args.mail, args.xlsx):
-        if not p.is_file():
+    mail, xlsx, checklist_path = _inputs(args.mail, args.xlsx, args.checklist)
+    for p in (mail, xlsx, checklist_path):
+        if p is not None and not p.is_file():
             raise SystemExit(f"Eingabe fehlt: {p}")
     checklist = (
-        json.loads(args.checklist.read_text(encoding="utf-8"))
-        if args.checklist.is_file()
-        else {}
+        json.loads(checklist_path.read_text(encoding="utf-8")) if checklist_path else {}
     )
     out = args.out
     out.mkdir(parents=True, exist_ok=True)
 
-    original = args.mail.read_text(encoding="utf-8")
+    original = mail.read_text(encoding="utf-8")
     t0 = time.perf_counter()
     after1, sender, log1 = stage1_mail(original)
-    wb_out = out / f"{args.xlsx.stem}_bereinigt.xlsx"
-    wb_report = stage1_workbook(args.xlsx, wb_out)
+    wb_out = out / f"{xlsx.stem}_bereinigt.xlsx" if xlsx else None
+    wb_report = stage1_workbook(xlsx, wb_out) if xlsx and wb_out else None
     seconds1 = time.perf_counter() - t0
-    unprocessed = _unprocessed_attachments(original, {args.xlsx.name})
+    unprocessed = _unprocessed_attachments(original, {xlsx.name} if xlsx else set())
 
     results: list[RunResult] = []
     for model in models:
@@ -557,18 +608,12 @@ def main() -> int:
                 original, after1, res.text, checklist, wb_report, wb_out, sender
             )
             results.append(res)
-            print(
-                f"{model} Lauf {run}: Stufe 2 {res.seconds_llm:.1f} s (Ladezeit {(res.ollama.get('load_duration') or 0) / 1e9:.1f} s), "
-                f"durchgelassen={res.checks['durchgelassen']} verloren={res.checks['verloren']} "
-                f"sha256={hashlib.sha256(res.text.encode()).hexdigest()[:12]}"
-            )
+            print(_summary_line(res))
 
     primary = results[0]
-    (out / f"{args.mail.stem}_bereinigt.txt").write_text(primary.text, encoding="utf-8")
+    (out / f"{mail.stem}_bereinigt.txt").write_text(primary.text, encoding="utf-8")
     (out / "freigabe.md").write_text(
-        _release_template(
-            primary, log1, wb_report, unprocessed, seconds1, args.mail.name
-        ),
+        _release_template(primary, log1, wb_report, unprocessed, seconds1, mail.name),
         encoding="utf-8",
     )
     measurements = {

@@ -50,13 +50,35 @@ PRINCIPLES = [
 ]
 
 H_TABLE = "3 Datenklassen und erlaubte Werkzeuge"
-TABLE_INTRO = "Die folgende Tabelle ordnet jeder Datenklasse die zulässigen Werkzeuge zu."
+TABLE_INTRO = (
+    "Die folgende Tabelle ordnet jeder Datenklasse die zulässigen Werkzeuge zu."
+)
 TABLE = [
     ["Datenklasse", "Beispiele", "Erlaubte Werkzeuge", "Freigabe durch"],
-    ["Öffentlich", "Produktkatalog, Pressemitteilungen", "Alle freigegebenen Chatassistenten", "keine"],
-    ["Intern", "Vertriebshandbuch, Schulungsfolien", "Unternehmensassistent im EU-Rechenzentrum", "Teamleitung"],
-    ["Vertraulich", "Kundenlisten, Rabattstaffeln", "Lokales Modell auf dem Firmenlaptop", "Vertriebsleitung"],
-    ["Streng vertraulich", "Vertragsentwürfe, Gesundheitsdaten", "Kein KI-Werkzeug", "nicht zulässig"],
+    [
+        "Öffentlich",
+        "Produktkatalog, Pressemitteilungen",
+        "Alle freigegebenen Chatassistenten",
+        "keine",
+    ],
+    [
+        "Intern",
+        "Vertriebshandbuch, Schulungsfolien",
+        "Unternehmensassistent im EU-Rechenzentrum",
+        "Teamleitung",
+    ],
+    [
+        "Vertraulich",
+        "Kundenlisten, Rabattstaffeln",
+        "Lokales Modell auf dem Firmenlaptop",
+        "Vertriebsleitung",
+    ],
+    [
+        "Streng vertraulich",
+        "Vertragsentwürfe, Gesundheitsdaten",
+        "Kein KI-Werkzeug",
+        "nicht zulässig",
+    ],
 ]
 TABLE_OUTRO = (
     "Fällt ein Dokument in mehrere Klassen, gilt immer die strengste. Wer unsicher "
@@ -223,7 +245,9 @@ def build_scan_pdf() -> None:
     src = fitz.open(PDF)
     pix = src[SCAN_PAGE].get_pixmap(dpi=SCAN_DPI, colorspace=fitz.csGRAY)
     out = fitz.open()
-    page = out.new_page(width=src[SCAN_PAGE].rect.width, height=src[SCAN_PAGE].rect.height)
+    page = out.new_page(
+        width=src[SCAN_PAGE].rect.width, height=src[SCAN_PAGE].rect.height
+    )
     page.insert_image(page.rect, stream=pix.tobytes("png"))
     out.save(SCAN_PDF)
     if out[0].get_text().strip():

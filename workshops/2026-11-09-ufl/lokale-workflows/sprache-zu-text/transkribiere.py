@@ -2,14 +2,17 @@
 
 Usage: python transkribiere.py besprechung.wav --models small large-v3-turbo --devices cpu cuda
 Writes transkripte/<model>_<device>[_tN].txt and appends one record per run to messwerte.json.
+With --out DIR both go to DIR instead, which keeps an own recording out of the repository:
+messwerte.json carries the full transcript text, and a cloud agent running git diff would see it.
+The console shows only run tags and timings.
 """
 
 import argparse
-import glob
 import json
 import os
 import platform
 import site
+import sys
 import time
 import wave
 from datetime import datetime
@@ -20,10 +23,14 @@ HERE = Path(__file__).resolve().parent
 
 def enable_pip_cuda() -> None:
     # CTranslate2 on Windows needs cuBLAS and cuDNN DLLs; the nvidia-*-cu12 pip
-    # wheels ship them but do not put them on the DLL search path.
-    for d in glob.glob(os.path.join(site.getusersitepackages(), "nvidia", "*", "bin")):
-        os.add_dll_directory(d)
-        os.environ["PATH"] = d + os.pathsep + os.environ["PATH"]
+    # wheels ship them but do not put them on the DLL search path. They land in the
+    # user site with pip --user and in the environment's site-packages in a venv.
+    if sys.platform != "win32":
+        return
+    for base in [*site.getsitepackages(), site.getusersitepackages()]:
+        for d in Path(base).glob("nvidia/*/bin"):
+            os.add_dll_directory(str(d))
+            os.environ["PATH"] = str(d) + os.pathsep + os.environ["PATH"]
 
 
 def audio_seconds(path: Path) -> float:
@@ -36,12 +43,16 @@ def main() -> None:
     ap.add_argument("audio", type=Path)
     ap.add_argument("--models", nargs="+", default=["small", "large-v3-turbo"])
     ap.add_argument("--devices", nargs="+", default=["cpu"], choices=["cpu", "cuda"])
-    ap.add_argument("--cpu-threads", type=int, default=0, help="0 = CTranslate2 default")
+    ap.add_argument(
+        "--cpu-threads", type=int, default=0, help="0 = CTranslate2 default"
+    )
     ap.add_argument(
         "--glossar",
         help="comma-separated names and terms passed as initial_prompt, to bias spelling of proper nouns",
     )
-    ap.add_argument("--runs", type=int, default=1, help="transcribe N times, report the fastest")
+    ap.add_argument(
+        "--runs", type=int, default=1, help="transcribe N times, report the fastest"
+    )
     ap.add_argument(
         "--vad",
         action="store_true",
@@ -52,6 +63,12 @@ def main() -> None:
         action="store_true",
         help="do not feed the previous window's text into the next; the other guard against repetition loops",
     )
+    ap.add_argument(
+        "--out",
+        type=Path,
+        default=HERE,
+        help="folder for transkripte/ and messwerte.json; for own recordings outside the repository",
+    )
     args = ap.parse_args()
 
     if "cuda" in args.devices:
@@ -59,23 +76,30 @@ def main() -> None:
     from faster_whisper import WhisperModel, download_model
 
     duration = audio_seconds(args.audio)
-    out_dir = HERE / "transkripte"
-    out_dir.mkdir(exist_ok=True)
-    log_path = HERE / "messwerte.json"
-    records = json.loads(log_path.read_text(encoding="utf-8")) if log_path.exists() else []
+    out_dir = args.out / "transkripte"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    log_path = args.out / "messwerte.json"
+    records = (
+        json.loads(log_path.read_text(encoding="utf-8")) if log_path.exists() else []
+    )
 
     for model_name in args.models:
         # Download is timed separately so the transcription time reflects only inference.
         t0 = time.perf_counter()
         model_dir = download_model(model_name)
         download_s = time.perf_counter() - t0
-        size_mb = sum(f.stat().st_size for f in Path(model_dir).rglob("*") if f.is_file()) / 1e6
+        size_mb = (
+            sum(f.stat().st_size for f in Path(model_dir).rglob("*") if f.is_file())
+            / 1e6
+        )
 
         for device in args.devices:
             compute_type = "int8" if device == "cpu" else "float16"
             threads = args.cpu_threads if device == "cpu" else 0
             t0 = time.perf_counter()
-            model = WhisperModel(model_dir, device=device, compute_type=compute_type, cpu_threads=threads)
+            model = WhisperModel(
+                model_dir, device=device, compute_type=compute_type, cpu_threads=threads
+            )
             load_s = time.perf_counter() - t0
 
             # The first run on a device includes one-off warm-up (CUDA context,
@@ -83,7 +107,7 @@ def main() -> None:
             run_times = []
             for _ in range(args.runs):
                 t0 = time.perf_counter()
-                segments, info = model.transcribe(
+                segments, _info = model.transcribe(
                     str(args.audio),
                     language="de",
                     beam_size=5,
@@ -97,12 +121,18 @@ def main() -> None:
             transcribe_s = min(run_times)
 
             text = " ".join(s.text.strip() for s in segments)
-            tag = f"{model_name}_{device}" + (f"_t{threads}" if device == "cpu" and threads else "")
+            tag = f"{model_name}_{device}" + (
+                f"_t{threads}" if device == "cpu" and threads else ""
+            )
             tag += "_glossar" if args.glossar else ""
             tag += "_vad" if args.vad else ""
             tag += "_nocontext" if args.no_context else ""
-            lines = [f"[{s.start:6.1f} - {s.end:6.1f}] {s.text.strip()}" for s in segments]
-            (out_dir / f"{tag}.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+            lines = [
+                f"[{s.start:6.1f} - {s.end:6.1f}] {s.text.strip()}" for s in segments
+            ]
+            (out_dir / f"{tag}.txt").write_text(
+                "\n".join(lines) + "\n", encoding="utf-8"
+            )
 
             rec = {
                 "timestamp": datetime.now().isoformat(timespec="seconds"),
@@ -126,8 +156,12 @@ def main() -> None:
                 "text": text,
             }
             records.append(rec)
-            log_path.write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8")
-            print(f"{tag}: load {load_s:.1f} s, transcribe {transcribe_s:.1f} s, RTF {rec['rtf']}")
+            log_path.write_text(
+                json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
+            print(
+                f"{tag}: load {load_s:.1f} s, transcribe {transcribe_s:.1f} s, RTF {rec['rtf']}"
+            )
             del model
 
 

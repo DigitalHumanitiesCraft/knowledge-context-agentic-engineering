@@ -16,16 +16,16 @@ Danach `python pruefe.py` für den Prüfbericht und `python zusammenfassen.py tr
 
 - `referenzskript.txt` enthält das fiktive Gespräch zweier Personen aus dem Vertriebsteam von Northwind Traders, Sprecherin A und Sprecher B. Es ist die Referenz für die Prüfung.
 - `erzeuge_audio.py` synthetisiert das Skript mit piper-tts zu `besprechung.wav` (61,9 s, 16 kHz mono, rund 2 MB).
-- `transkribiere.py` transkribiert mit faster-whisper, misst Laden und Transkription getrennt vom Download, schreibt `transkripte/<lauf>.txt` mit Zeitmarken und hängt jeden Lauf an `messwerte.json` an.
+- `transkribiere.py` transkribiert mit faster-whisper, misst Laden und Transkription getrennt vom Download, schreibt `transkripte/<lauf>.txt` mit Zeitmarken und hängt jeden Lauf samt Transkripttext an `messwerte.json` an. Mit `--out <Ordner>` landen beide in einem anderen Ordner.
 - `pruefe.py` berechnet die Wortfehlerrate (WER, Anteil falscher, fehlender und zusätzlicher Wörter) mit jiwer, prüft Zahl, Produktnamen und Fachbegriff und schreibt `pruefbericht.md` mit allen Abweichungen je Lauf.
-- `zusammenfassen.py` schickt ein Transkript an das lokale Ollama (`http://localhost:11434/api/chat`) und schreibt `zusammenfassung_<lauf>.md`.
+- `zusammenfassen.py` schickt ein Transkript an das lokale Ollama (`http://127.0.0.1:11434/api/chat`), schreibt `zusammenfassung_<lauf>.md` mit Modell und Laufzeit im Kopf und gibt nur deren Pfad aus. `--out <Ordner>` legt sie in einen anderen Ordner.
 
 ## Installation und Modelle
 
 Stand 5.11.2026, Python 3.11 aus dem Microsoft Store, alle Pakete per pip in den User-Site.
 
 - `piper-tts` 1.8.0 und `faster-whisper` 1.2.1, letzteres mit `ctranslate2` 4.8.5 und `av` 18.1.0. `jiwer` 4.0.0 war bereits installiert.
-- Für die GPU zusätzlich `nvidia-cublas-cu12` 12.9.2.10, `nvidia-cudnn-cu12` 9.28.0.42 und `nvidia-cuda-nvrtc-cu12` 12.9.86, zusammen rund 2 GB. CTranslate2 bringt unter Windows kein cuBLAS mit und meldete ohne diese Pakete `cublas64_12.dll is not found`. `transkribiere.py` legt die DLL-Ordner der Pakete vor dem Laden in den Suchpfad. Ein CUDA-Toolkit ist nicht nötig.
+- Für die GPU zusätzlich `nvidia-cublas-cu12` 12.9.2.10, `nvidia-cudnn-cu12` 9.28.0.42 und `nvidia-cuda-nvrtc-cu12` 12.9.86, zusammen rund 2 GB. CTranslate2 bringt unter Windows kein cuBLAS mit und meldete ohne diese Pakete `cublas64_12.dll is not found`. `transkribiere.py` legt die DLL-Ordner der Pakete vor dem Laden in den Suchpfad und sucht sie im User-Site wie in den site-packages einer virtuellen Umgebung. Ein CUDA-Toolkit ist nicht nötig.
 - Whisper-Modelle liegen im Hugging-Face-Cache `%USERPROFILE%\.cache\huggingface\hub`: `Systran/faster-whisper-small` (486 MB, Download 42 s), `Systran/faster-whisper-medium` (1,5 GB, 125 s), `mobiuslabsgmbh/faster-whisper-large-v3-turbo` (1,6 GB, 131 s). Für `large-v3-turbo` verweist faster-whisper auf das Repository von mobiuslabsgmbh, Systran bietet diese Größe nicht an. Ein Funktionstest hat zusätzlich `Systran/faster-whisper-tiny` (75 MB) geladen.
 - Piper-Stimmen aus `rhasspy/piper-voices`: `de_DE-kerstin-low` für A und `de_DE-thorsten-medium` für B, je rund 61 MB, dazu `de_DE-mls-medium` (74 MB) aus einem Stimmvergleich. Python sieht sie unter `%LOCALAPPDATA%\piper-voices`. Weil die Store-Version von Python AppData virtualisiert, liegen sie physisch unter `%LOCALAPPDATA%\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\Local\piper-voices`.
 

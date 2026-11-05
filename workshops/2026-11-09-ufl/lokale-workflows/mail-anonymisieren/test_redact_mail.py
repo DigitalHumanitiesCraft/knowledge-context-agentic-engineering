@@ -39,5 +39,45 @@ class Stage1(unittest.TestCase):
         self.assertEqual(rm.stage1_mail(line)[0], line)
 
 
+class OwnData(unittest.TestCase):
+    """The trust boundary for a person's own mail, checked without Ollama."""
+
+    def test_console_shows_counts_only(self) -> None:
+        res = rm.RunResult("qwen3.5:9b", 1, "[NAME] kommt.")
+        res.checks = {
+            "durchgelassen": ["Steven Buchanan", "E-Mail-Muster: a.b@example.org"],
+            "verloren": ["Auftrag 10248"],
+        }
+        line = rm._summary_line(res)
+        for s in ("Steven Buchanan", "a.b@example.org", "Auftrag 10248"):
+            self.assertNotIn(s, line)
+        self.assertIn("durchgelassen 2, verloren 1", line)
+
+    def test_own_mail_gets_no_test_fixtures(self) -> None:
+        own = rm.HERE / "eigene.txt"
+        self.assertEqual(rm._inputs(own, None, None), (own, None, None))
+        mail, xlsx, checklist = rm._inputs(None, None, None)
+        self.assertEqual(mail.name, "kundenanfrage.txt")
+        self.assertEqual(xlsx.name, "mitarbeitende.xlsx")
+        self.assertEqual(checklist.name, "pruefliste.json")
+
+    def test_test_variant_keeps_staff_list(self) -> None:
+        variant = rm.HERE / "testmails" / "kundenanfrage_variante.txt"
+        self.assertEqual(
+            rm._inputs(variant, None, None),
+            (variant, rm.DATA / "mitarbeitende.xlsx", None),
+        )
+        own_xlsx = rm.HERE / "eigene.xlsx"
+        self.assertEqual(rm._inputs(variant, own_xlsx, None)[1], own_xlsx)
+
+    def test_check_without_workbook(self) -> None:
+        original = (rm.DATA / "kundenanfrage.txt").read_text(encoding="utf-8")
+        after1, sender, _ = rm.stage1_mail(original)
+        checks = rm.stage3_check(original, after1, after1, {}, None, None, sender)
+        self.assertEqual(checks["verboten"], {})
+        self.assertNotIn("Namen aus der Mitarbeiterliste", checks["allgemein"])
+        self.assertEqual(checks["allgemein"]["E-Mail-Muster"], [])
+
+
 if __name__ == "__main__":
     unittest.main()

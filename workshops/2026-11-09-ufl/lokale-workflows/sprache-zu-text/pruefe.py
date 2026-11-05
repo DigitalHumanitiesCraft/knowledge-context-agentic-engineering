@@ -43,8 +43,8 @@ def word_diff(ref: str, hyp: str) -> list[str]:
     for chunk in out.alignments[0]:
         if chunk.type == "equal":
             continue
-        a = " ".join(r[chunk.ref_start_idx:chunk.ref_end_idx]) or "(leer)"
-        b = " ".join(h[chunk.hyp_start_idx:chunk.hyp_end_idx]) or "(leer)"
+        a = " ".join(r[chunk.ref_start_idx : chunk.ref_end_idx]) or "(leer)"
+        b = " ".join(h[chunk.hyp_start_idx : chunk.hyp_end_idx]) or "(leer)"
         diffs.append(f"{a} -> {b}")
     return diffs
 
@@ -63,7 +63,9 @@ def main() -> None:
         rec["wer"] = round(wer, 4)
         rec["checks"] = hits
         marks = " | ".join("ja" if ok else "nein" for ok in hits.values())
-        runs = ", ".join(str(t) for t in rec.get("transcribe_runs_s", [rec["transcribe_s"]]))
+        runs = ", ".join(
+            str(t) for t in rec.get("transcribe_runs_s", [rec["transcribe_s"]])
+        )
         rows.append(
             f"| {rec['tag']} | {rec['transcribe_s']} ({runs}) | {rec['rtf']} | {rec['load_s']} | "
             f"{wer:.1%} | {marks} |"
@@ -91,7 +93,9 @@ def main() -> None:
         *details,
     ]
     (HERE / "pruefbericht.md").write_text("\n".join(report), encoding="utf-8")
-    (HERE / "messwerte.json").write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8")
+    (HERE / "messwerte.json").write_text(
+        json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     print("\n".join(rows))
 
 

@@ -65,12 +65,19 @@ def main() -> None:
         cmd = ["ffmpeg", "-y", "-loglevel", "error"]
         for p in parts:
             cmd += ["-i", str(p)]
-        chains = "".join(f"[{i}:a]aresample={TARGET_RATE}[a{i}];" for i in range(len(parts)))
+        chains = "".join(
+            f"[{i}:a]aresample={TARGET_RATE}[a{i}];" for i in range(len(parts))
+        )
         joins = "".join(f"[a{i}]" for i in range(len(parts)))
         cmd += [
             "-filter_complex",
             f"{chains}{joins}concat=n={len(parts)}:v=0:a=1[out]",
-            "-map", "[out]", "-ac", "1", "-ar", str(TARGET_RATE),
+            "-map",
+            "[out]",
+            "-ac",
+            "1",
+            "-ar",
+            str(TARGET_RATE),
             str(HERE / "besprechung.wav"),
         ]
         subprocess.run(cmd, check=True)

@@ -21,11 +21,21 @@ OUTPUT = HERE / "output"
 NAIVE = OUTPUT / "naive"
 
 # Ground truth per page, used for OCR word recall on the image-only page.
-PAGE1_TEXTS = (
-    [gt.HEADER, gt.TITLE, gt.SUBTITLE, gt.H_SCOPE, gt.SCOPE_TEXT, gt.SCOPE_TEXT_2,
-     gt.H_PRINCIPLES, *gt.PRINCIPLES, gt.H_TABLE, gt.TABLE_INTRO,
-     *[c for row in gt.TABLE for c in row], gt.TABLE_OUTRO, gt.FOOTNOTE]
-)
+PAGE1_TEXTS = [
+    gt.HEADER,
+    gt.TITLE,
+    gt.SUBTITLE,
+    gt.H_SCOPE,
+    gt.SCOPE_TEXT,
+    gt.SCOPE_TEXT_2,
+    gt.H_PRINCIPLES,
+    *gt.PRINCIPLES,
+    gt.H_TABLE,
+    gt.TABLE_INTRO,
+    *[c for row in gt.TABLE for c in row],
+    gt.TABLE_OUTRO,
+    gt.FOOTNOTE,
+]
 
 
 def norm(text: str) -> str:
@@ -47,7 +57,8 @@ def naive_extract(pdf: Path) -> dict[str, str]:
         for label, args in (("pdftotext", []), ("pdftotext-layout", ["-layout"])):
             res = subprocess.run(
                 ["pdftotext", *args, "-enc", "UTF-8", str(pdf), "-"],
-                capture_output=True, check=True,
+                capture_output=True,
+                check=True,
             )
             out[label] = res.stdout.decode("utf-8")
     NAIVE.mkdir(parents=True, exist_ok=True)
@@ -64,12 +75,16 @@ def check_full(name: str, raw: str, is_markdown: bool) -> list[str]:
     def found(s: str) -> bool:
         return norm(s) in text
 
-    heading_lines = [norm(re.sub(r"^#+\s*", "", ln)) for ln in lines if ln.lstrip().startswith("#")]
+    heading_lines = [
+        norm(re.sub(r"^#+\s*", "", ln)) for ln in lines if ln.lstrip().startswith("#")
+    ]
     heads_text = sum(found(h) for h in gt.HEADINGS)
     heads_md = sum(norm(h) in heading_lines for h in gt.HEADINGS)
     report.append(f"Überschriften als Text: {heads_text}/{len(gt.HEADINGS)}")
     if is_markdown:
-        report.append(f"Überschriften als Markdown-Überschrift: {heads_md}/{len(gt.HEADINGS)}")
+        report.append(
+            f"Überschriften als Markdown-Überschrift: {heads_md}/{len(gt.HEADINGS)}"
+        )
         missing = [h for h in gt.HEADINGS if norm(h) not in heading_lines]
         if missing:
             report.append(f"  nicht als Überschrift: {missing}")
@@ -80,20 +95,36 @@ def check_full(name: str, raw: str, is_markdown: bool) -> list[str]:
     items_md = sum(norm(i) in list_lines for i in gt.PRINCIPLES)
     report.append(f"Listenpunkte als Text: {items_text}/{len(gt.PRINCIPLES)}")
     if is_markdown:
-        report.append(f"Listenpunkte als Markdown-Liste: {items_md}/{len(gt.PRINCIPLES)}")
+        report.append(
+            f"Listenpunkte als Markdown-Liste: {items_md}/{len(gt.PRINCIPLES)}"
+        )
 
     cells = [c for row in gt.TABLE for c in row]
     cells_text = sum(found(c) for c in cells)
     report.append(f"Tabellenzellen als Text: {cells_text}/{len(cells)}")
     if is_markdown:
-        table_rows = [[norm(c) for c in ln.strip().strip("|").split("|")]
-                      for ln in lines if ln.strip().startswith("|")]
-        rows_ok = sum(row in table_rows for row in [[norm(c) for c in r] for r in gt.TABLE])
-        report.append(f"Tabellenzeilen exakt als Markdown-Tabellenzeile: {rows_ok}/{len(gt.TABLE)}")
+        table_rows = [
+            [norm(c) for c in ln.strip().strip("|").split("|")]
+            for ln in lines
+            if ln.strip().startswith("|")
+        ]
+        rows_ok = sum(
+            row in table_rows for row in [[norm(c) for c in r] for r in gt.TABLE]
+        )
+        report.append(
+            f"Tabellenzeilen exakt als Markdown-Tabellenzeile: {rows_ok}/{len(gt.TABLE)}"
+        )
 
     report.append(f"Fußnotentext vorhanden: {found(gt.FOOTNOTE)}")
-    paras = [gt.SUBTITLE, gt.SCOPE_TEXT, gt.SCOPE_TEXT_2, gt.TABLE_INTRO, gt.TABLE_OUTRO,
-             *gt.PROCESS, gt.VIOLATIONS_TEXT]
+    paras = [
+        gt.SUBTITLE,
+        gt.SCOPE_TEXT,
+        gt.SCOPE_TEXT_2,
+        gt.TABLE_INTRO,
+        gt.TABLE_OUTRO,
+        *gt.PROCESS,
+        gt.VIOLATIONS_TEXT,
+    ]
     paras_ok = sum(found(p) for p in paras)
     report.append(f"Absätze wortgleich und zusammenhängend: {paras_ok}/{len(paras)}")
     broken = [p[:40] for p in paras if not found(p)]
@@ -102,18 +133,24 @@ def check_full(name: str, raw: str, is_markdown: bool) -> list[str]:
 
     header_hits = text.count(norm(gt.HEADER))
     footer_hits = len(re.findall(rf"{gt.FOOTER_PREFIX} \d+ von \d+", text))
-    report.append(f"Kopfzeile im Text: {header_hits}x, Fußzeile mit Seitenzahl im Text: {footer_hits}x")
+    report.append(
+        f"Kopfzeile im Text: {header_hits}x, Fußzeile mit Seitenzahl im Text: {footer_hits}x"
+    )
 
     leads = [p.split(". ", 1)[0] + "." for p in gt.PROCESS]
     positions = [text.find(norm(lead)) for lead in leads]
     in_order = all(p >= 0 for p in positions) and positions == sorted(positions)
-    report.append(f"Lesereihenfolge zweispaltiger Teil korrekt: {in_order} (Positionen {positions})")
+    report.append(
+        f"Lesereihenfolge zweispaltiger Teil korrekt: {in_order} (Positionen {positions})"
+    )
     # Order within the columns is not enough: the following section must also
     # come after the last column paragraph, otherwise the right column ends up
     # under the wrong heading.
     next_pos = text.find(norm(gt.H_VIOLATIONS))
     after = next_pos > max(positions)
-    report.append(f"Abschnitt 5 steht nach dem zweispaltigen Teil: {after} (Position {next_pos})")
+    report.append(
+        f"Abschnitt 5 steht nach dem zweispaltigen Teil: {after} (Position {next_pos})"
+    )
     return report
 
 
@@ -141,13 +178,29 @@ def main() -> int:
         print("run convert.py first", file=sys.stderr)
         return 1
     report = ["# Prüfbericht PDF zu Markdown", ""]
-    report += check_full(f"Docling: {md.name}", md.read_text(encoding="utf-8"), True) + [""]
+    report += [
+        *check_full(f"Docling: {md.name}", md.read_text(encoding="utf-8"), True),
+        "",
+    ]
     for label, text in naive_extract(gt.PDF).items():
-        report += check_full(f"naiv {label}: {gt.PDF.name}", text, False) + [""]
+        report += [*check_full(f"naiv {label}: {gt.PDF.name}", text, False), ""]
     if md_scan.is_file():
-        report += check_scan(f"Docling: {md_scan.name}", md_scan.read_text(encoding="utf-8")) + [""]
-    for label, text in naive_extract(gt.SCAN_PDF).items():
-        report += check_scan(f"naiv {label}: {gt.SCAN_PDF.name}", text) + [""]
+        report += [
+            *check_scan(
+                f"Docling: {md_scan.name}", md_scan.read_text(encoding="utf-8")
+            ),
+            "",
+        ]
+    # The scan PDF is a versioned fixture; a clone that lacks it still gets the text-PDF checks.
+    if gt.SCAN_PDF.is_file():
+        for label, text in naive_extract(gt.SCAN_PDF).items():
+            report += [*check_scan(f"naiv {label}: {gt.SCAN_PDF.name}", text), ""]
+    else:
+        print(
+            f"{gt.SCAN_PDF.name} not found in input/, naive scan checks skipped; "
+            "make_test_pdf.py regenerates it (needs Word on Windows and PyMuPDF)",
+            file=sys.stderr,
+        )
     out = "\n".join(report)
     (OUTPUT / "check-report.txt").write_text(out, encoding="utf-8")
     print(out)

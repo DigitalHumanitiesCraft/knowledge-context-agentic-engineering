@@ -8,7 +8,7 @@ Ein Agent liest Markdown zuverlässiger als PDF oder docx, weil Überschriften, 
 python convert.py input/northwind-ki-regeln.pdf
 ```
 
-Ohne Argument wandelt `convert.py` alle PDFs in `input/` um und schreibt `output/<name>.md`. `python check_output.py` vergleicht danach Docling mit naiver Textextraktion und schreibt `output/check-report.txt`. `python make_test_pdf.py` erzeugt das Testmaterial neu und braucht dafür Microsoft Word unter Windows.
+Ohne Argument wandelt `convert.py` alle PDFs in `input/` um und schreibt `output/<name>.md`, mit `--out <Ordner>` in einen anderen Ordner. `python check_output.py` vergleicht danach Docling mit naiver Textextraktion und schreibt `output/check-report.txt`. `python make_test_pdf.py` erzeugt das Testmaterial neu und braucht dafür Microsoft Word unter Windows. Alle drei Fassungen des Testdokuments sind versioniert, ein frischer Klon braucht den Generator deshalb nicht.
 
 ## Dateien
 
@@ -39,7 +39,7 @@ Für den Workshop empfiehlt sich, die Modelle vorab in einen Ordner zu laden und
 docling-tools models download layout tableformer rapidocr -o modelle
 ```
 
-Danach läuft `convert.py` mit den Umgebungsvariablen `DOCLING_ARTIFACTS_PATH=<Pfad zu modelle>` und `HF_HUB_OFFLINE=1` ohne Netzverbindung. Das ist die Zeile „offline“ in der Tabelle.
+Danach läuft `convert.py` mit den Umgebungsvariablen `DOCLING_ARTIFACTS_PATH=<Pfad zu modelle>` und `HF_HUB_OFFLINE=1` ohne Netzverbindung. Das ist die Zeile „offline“ in der Tabelle. Liegt der Skriptordner von pip nicht im `PATH`, etwa nach `pip install --user` unter Windows, startet `python -m docling.cli.tools` dasselbe Programm wie `docling-tools`.
 
 Prüfbericht für das Text-PDF:
 

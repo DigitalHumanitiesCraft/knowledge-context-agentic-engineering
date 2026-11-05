@@ -1,12 +1,14 @@
 """Convert PDF (or DOCX) files to Markdown with Docling, entirely on this machine.
 
-Usage: python convert.py [FILE ...]   (default: every PDF in ./input)
+Usage: python convert.py [FILE ...] [--out DIR]   (default: every PDF in ./input, into ./output)
 
-Writes output/<name>.md (output/<name>.docx.md for DOCX) and prints wall-clock timings, split into import,
+Writes <out>/<name>.md (<out>/<name>.docx.md for DOCX) and prints wall-clock timings, split into import,
 pipeline setup and per-file conversion, because the first two dominate a
-live demo and are paid once per process.
+live demo and are paid once per process. The console carries no document text, and --out keeps
+the Markdown of a confidential document outside the repository and its git status.
 """
 
+import argparse
 import logging
 import sys
 import time
@@ -17,14 +19,24 @@ OUTPUT = HERE / "output"
 
 
 def main(argv: list[str]) -> int:
-    files = [Path(a) for a in argv] or sorted((HERE / "input").glob("*.pdf"))
+    ap = argparse.ArgumentParser(
+        description="Convert PDF or DOCX to Markdown with Docling."
+    )
+    ap.add_argument("files", nargs="*", type=Path)
+    ap.add_argument(
+        "--out", type=Path, default=OUTPUT, help="folder for the Markdown files"
+    )
+    args = ap.parse_args(argv)
+    files = args.files or sorted((HERE / "input").glob("*.pdf"))
     missing = [f for f in files if not f.is_file()]
     if missing:
         print(f"not found: {', '.join(map(str, missing))}", file=sys.stderr)
         return 1
 
     # INFO shows which models and OCR engine Docling actually loads.
-    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
+    logging.basicConfig(
+        level=logging.INFO, format="%(levelname)s %(name)s: %(message)s"
+    )
 
     t0 = time.perf_counter()
     from docling.document_converter import DocumentConverter
@@ -39,7 +51,7 @@ def main(argv: list[str]) -> int:
     t2 = time.perf_counter()
     print(f"TIME import_s={t1 - t0:.1f} setup_s={t2 - t1:.1f}")
 
-    OUTPUT.mkdir(exist_ok=True)
+    args.out.mkdir(parents=True, exist_ok=True)
     for path in files:
         start = time.perf_counter()
         result = converter.convert(path)
@@ -48,10 +60,12 @@ def main(argv: list[str]) -> int:
         # Non-PDF sources keep their extension so a DOCX and the PDF made from
         # it do not overwrite each other's Markdown.
         name = f"{path.stem}.md" if path.suffix.lower() == ".pdf" else f"{path.name}.md"
-        target = OUTPUT / name
+        target = args.out / name
         target.write_text(markdown, encoding="utf-8")
         pages = len(result.document.pages)
-        print(f"TIME file={path.name} pages={pages} convert_s={elapsed:.1f} -> {target.name}")
+        print(
+            f"TIME file={path.name} pages={pages} convert_s={elapsed:.1f} -> {target.name}"
+        )
     return 0
 
 
