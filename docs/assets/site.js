@@ -60,10 +60,25 @@ const openTarget = () => {
 window.addEventListener('hashchange', openTarget);
 openTarget();
 
+const tools = document.querySelector('.glossary-tools');
+
+// The language control keeps the fragment, so a linked term stays in view
+// when the reader switches between the paired pages. On the glossary it also
+// keeps search, module and order, because the search field holds both
+// languages and finds the same entries on the other page. The landing pages
+// pass on no query, so no foreign parameter travels with the link.
+const keepLocation = () => {
+  for (const link of document.querySelectorAll('.language-nav a[href]')) {
+    if (tools) link.search = location.search;
+    link.hash = location.hash;
+  }
+};
+window.addEventListener('hashchange', keepLocation);
+keepLocation();
+
 // Glossary: search over the precomputed normalised field, a module filter and
 // a switch between module and alphabetical order. Without this script the
 // form stays hidden and every entry is listed by module with the jump list.
-const tools = document.querySelector('.glossary-tools');
 if (tools) {
   const fold = { ä: 'ae', ö: 'oe', ü: 'ue', ß: 'ss' };
   const normalise = (text) => text.toLowerCase().replace(/[äöüß]/g, (c) => fold[c])
@@ -133,6 +148,15 @@ if (tools) {
     if (order !== 'module') params.set('order', order);
     const query = params.toString();
     history.replaceState(null, '', `${location.pathname}${query ? `?${query}` : ''}${location.hash}`);
+    keepLocation();
+  };
+
+  // The filter acts on every keystroke, the live region speaks only once the
+  // typing pauses, so a screen reader is not interrupted by each interim count.
+  let pending;
+  const say = (text) => {
+    clearTimeout(pending);
+    pending = setTimeout(() => { count.textContent = text; }, 300);
   };
 
   const apply = (announce = true) => {
@@ -152,10 +176,16 @@ if (tools) {
     }
     // Counted from the entries, because in module order the letter sections are empty.
     const live = new Set(entries.filter((entry) => !entry.hidden).map((entry) => entry.dataset.letter));
-    for (const link of letterLinks) link.toggleAttribute('aria-disabled', !live.has(link.dataset.letter));
+    // A letter without entries leaves the tab order while it is disabled.
+    for (const link of letterLinks) {
+      const off = !live.has(link.dataset.letter);
+      link.toggleAttribute('aria-disabled', off);
+      if (off) link.tabIndex = -1;
+      else link.removeAttribute('tabindex');
+    }
     if (!announce) return;
     const { template, one, none } = count.dataset;
-    count.textContent = shown === 0 ? none : shown === 1 ? one : template.replace('{n}', shown);
+    say(shown === 0 ? none : shown === 1 ? one : template.replace('{n}', shown));
   };
 
   // A link to an entry or letter the current view hides clears the filter
@@ -188,8 +218,12 @@ if (tools) {
     });
   }
 
+  // "/" yields only to fields that take text; on a radio chip it still
+  // reaches the search, as the hint on the page promises.
   document.addEventListener('keydown', (event) => {
-    const typing = event.target.closest?.('input, textarea, select, [contenteditable]');
+    const typing = event.target.closest?.(
+      'input:not([type="radio"]):not([type="checkbox"]), textarea, select, [contenteditable]',
+    );
     const shortcut = ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k')
       || (event.key === '/' && !typing);
     if (shortcut) {
@@ -215,14 +249,26 @@ if (tools) {
   // The browser may restore a search or filter on back navigation.
   apply(Boolean(tools.q.value || tools.module.value));
   reveal();
-}
 
-// The language control keeps the fragment, so a linked term stays in view
-// when the reader switches between the paired pages.
-const keepFragment = () => {
-  for (const link of document.querySelectorAll('.language-nav a[href]')) {
-    link.hash = location.hash;
-  }
-};
-window.addEventListener('hashchange', keepFragment);
-keepFragment();
+  // The skip link moves focus without writing its fragment into the address,
+  // which the language control and shared links would otherwise carry on.
+  root.querySelector('.glossary-skip').addEventListener('click', (event) => {
+    event.preventDefault();
+    main.focus({ preventScroll: true });
+    main.scrollIntoView({ block: 'start' });
+  });
+
+  // A printout carries every entry of the current view with its
+  // other-language definition and related terms. CSS cannot open a
+  // native disclosure, so the script opens the closed ones for printing
+  // and closes them again afterwards.
+  let opened = [];
+  window.addEventListener('beforeprint', () => {
+    opened = [...root.querySelectorAll('.glossary-entry__details:not([open])')];
+    for (const details of opened) details.open = true;
+  });
+  window.addEventListener('afterprint', () => {
+    for (const details of opened) details.open = false;
+    opened = [];
+  });
+}

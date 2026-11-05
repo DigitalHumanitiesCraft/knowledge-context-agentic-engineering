@@ -84,6 +84,8 @@ TEXT = {
         "details_related": "German definition and related terms",
         "related": "Related terms",
         "permalink": "Link to this term",
+        "for": "for",
+        "skip": "Skip to the entries",
         "shortcut": "Ctrl+K or / focuses the search",
         "locale": "en_GB",
     },
@@ -113,6 +115,8 @@ TEXT = {
         "details_related": "Englische Definition und verwandte Begriffe",
         "related": "Verwandte Begriffe",
         "permalink": "Link zu diesem Begriff",
+        "for": "zu",
+        "skip": "Zu den Einträgen springen",
         "shortcut": "Strg+K oder / springt in die Suche",
         "locale": "de_DE",
     },
@@ -155,7 +159,9 @@ def _headwords(term: Term) -> list[str]:
     for name in (term.term_en, term.term_de):
         # Greedy, so a nested qualifier such as "(Art. 3(3))" goes as a whole.
         name = re.sub(r"\s*\(.*\)", "", name)
-        pieces = re.split(r"\s+(?:and|und|as|als)\s+", name)
+        # No split on "as" or "als": in "Openness as a Multidimensional
+        # Property" the second half is a description, not a name of its own.
+        pieces = re.split(r"\s+(?:and|und)\s+", name)
         parts.append(name)
         # A single word cut out of a compound name ("Deterministic" from
         # "Deterministic and Probabilistic Tasks") is an ordinary adjective far
@@ -170,17 +176,43 @@ def _headwords(term: Term) -> list[str]:
     return list(dict.fromkeys(p for p in map(normalise, parts) if len(p) >= 4))
 
 
+# An abbreviation in parentheses, two or more capitals with optional digits:
+# MCP, A2A, GPAI, MOC. "(Art. 3(3))" and "(Research)" are qualifiers.
+ABBREVIATION = re.compile(r"\((?=(?:[0-9]*[A-Z]){2})([A-Z0-9]+)\)")
+
+
+def _abbreviations(term: Term) -> list[str]:
+    """Abbreviations the term names in parentheses, in their written case."""
+    found = ABBREVIATION.findall(f"{term.term_en} {term.term_de}")
+    return list(dict.fromkeys(found))
+
+
 RELATED_MAX = 6
 
+# Headword matches that name a homonym rather than the entry, as
+# (entry anchor, related anchor). Each one is checked on every build, so a
+# renamed entry or a rewritten sentence that no longer matches is reported
+# instead of leaving a dead exclusion behind.
+RELATED_EXCLUDE = frozenset(
+    {
+        # "schema validation" is itself a deterministic check, which module 05
+        # sets apart from scholarly or domain validation.
+        ("term-deterministic-check", "term-validation-scholarly-or-domain-validation"),
+        # "their internal memory" means the agents' own state, not notes an
+        # agent writes for later sessions.
+        ("term-agent2agent-protocol-a2a", "term-agent-memory-auto-memory"),
+        # "individual memory" is a person's recollection.
+        ("term-write-back", "term-agent-memory-auto-memory"),
+        # "a provider" and "ein Anbieter" are the vendor in the ordinary
+        # sense, not the role the AI Act defines in Art. 3(3).
+        ("term-assistant-character", "term-provider-art-3-3"),
+        ("term-critical-cyber-capability", "term-provider-art-3-3"),
+    }
+)
 
-def related(terms: list[Term]) -> dict[str, list[Term]]:
-    """Terms whose headword the entry's own public sentences mention.
 
-    Relations are derived only from the public sentences, so the internal
-    definitions in terms.md never shape what the page shows. Reverse links
-    were left out: a passing mention elsewhere ("for knowledge work" in the
-    Docling sentence) made Docling look related to Knowledge Work.
-    """
+def _mentions(terms: list[Term]) -> dict[str, list[Term]]:
+    """Every other term whose headword or abbreviation the entry's sentences name."""
     patterns = {
         t.anchor: [
             re.compile(rf"(?<![a-z0-9]){re.escape(h)}(?:s|es|n|en|e)?(?![a-z0-9])")
@@ -188,17 +220,58 @@ def related(terms: list[Term]) -> dict[str, list[Term]]:
         ]
         for t in terms
     }
-    texts = {t.anchor: normalise(f"{t.short_en} {t.short_de}") for t in terms}
-    mentions = {
+    # Abbreviations are matched in their written case on the raw sentences, so
+    # "MOC" cannot match inside an ordinary word; "MCP's", "MCPs" and
+    # "GPAI-Modell" count, "GPAIX" does not.
+    capitals = {
+        t.anchor: [
+            re.compile(rf"(?<![A-Za-z0-9]){re.escape(a)}s?(?![A-Za-z0-9])")
+            for a in _abbreviations(t)
+        ]
+        for t in terms
+    }
+    folded = {t.anchor: normalise(f"{t.short_en} {t.short_de}") for t in terms}
+    raw = {t.anchor: f"{t.short_en} {t.short_de}" for t in terms}
+    return {
         t.anchor: [
             o
             for o in terms
             if o.anchor != t.anchor
-            and any(p.search(texts[t.anchor]) for p in patterns[o.anchor])
+            and (
+                any(p.search(folded[t.anchor]) for p in patterns[o.anchor])
+                or any(p.search(raw[t.anchor]) for p in capitals[o.anchor])
+            )
         ]
         for t in terms
     }
-    return {anchor: found[:RELATED_MAX] for anchor, found in mentions.items()}
+
+
+def related(
+    terms: list[Term], exclude: frozenset[tuple[str, str]] = RELATED_EXCLUDE
+) -> dict[str, list[Term]]:
+    """Terms whose headword the entry's own public sentences mention.
+
+    Relations are derived only from the public sentences, so the internal
+    definitions in terms.md never shape what the page shows. Reverse links
+    were left out: a passing mention elsewhere ("for knowledge work" in the
+    Docling sentence) made Docling look related to Knowledge Work.
+    """
+    return {
+        anchor: [o for o in found if (anchor, o.anchor) not in exclude][:RELATED_MAX]
+        for anchor, found in _mentions(terms).items()
+    }
+
+
+def stale_exclusions(
+    terms: list[Term], exclude: frozenset[tuple[str, str]] = RELATED_EXCLUDE
+) -> list[str]:
+    """Exclusions that no longer remove a match, because a name or sentence changed."""
+    found = {a: {o.anchor for o in near} for a, near in _mentions(terms).items()}
+    return [
+        f"RELATED_EXCLUDE {source} -> {target} matches nothing; update or remove it"
+        for source, target in sorted(exclude)
+        if target not in found.get(source, set())
+    ]
 
 
 def _field_problems(line: str) -> list[str]:
@@ -377,10 +450,12 @@ def _main(terms: list[Term], lang: str, modules: dict) -> str:
                 if near
                 else ""
             )
+            # Shown only in the alphabetical order, where no group heading
+            # names the module, so it carries its own accessible text.
             tag = (
                 ""
                 if module == "00"
-                else f'<span class="glossary-entry__module" aria-hidden="true">{module}</span>'
+                else f'<span class="glossary-entry__module"><span class="visually-hidden">{t["module"]} </span>{module}</span>'
             )
             rows.append(
                 f'        <div class="glossary-entry{cls}" id="{x.anchor}" data-module="{module}"'
@@ -389,7 +464,9 @@ def _main(terms: list[Term], lang: str, modules: dict) -> str:
                 f"          <dd>\n"
                 f'            <p class="glossary-entry__def">{esc(short)}{more}</p>\n'
                 f'            <details class="glossary-entry__details">\n'
-                f"              <summary>{t['details_related'] if near else t['details']}</summary>\n"
+                # The hidden term tells the disclosures apart in a list of controls.
+                f"              <summary>{t['details_related'] if near else t['details']}"
+                f'<span class="visually-hidden"> {t["for"]} {esc(primary)}</span></summary>\n'
                 f'              <p class="glossary-entry__other" lang="{alt_lang}">{esc(other)}</p>'
                 f"{related_html}\n"
                 f'              <p class="glossary-entry__permalink"><a href="#{x.anchor}">{t["permalink"]}</a></p>\n'
@@ -441,10 +518,11 @@ def _main(terms: list[Term], lang: str, modules: dict) -> str:
           <legend>{t["order"]}</legend>
           <label class="glossary-chip"><input type="radio" name="order" value="module" checked><span class="glossary-chip__label">{t["by_module"]}</span></label><label class="glossary-chip"><input type="radio" name="order" value="letter"><span class="glossary-chip__label">{t["by_letter"]}</span></label>
         </fieldset>
+        <a class="glossary-skip" href="#glossary-entries">{t["skip"]}</a>
         <nav class="glossary-letters" aria-label="{t["letters"]}">{letters}</nav>
       </form>
     </aside>
-    <div class="glossary-main">
+    <div class="glossary-main" id="glossary-entries" tabindex="-1">
 {chr(10).join(groups)}
     </div>
   </div>
@@ -454,6 +532,8 @@ def _main(terms: list[Term], lang: str, modules: dict) -> str:
 
 def build() -> tuple[dict[Path, str], list[str]]:
     terms, errors = _parse(TERMS.read_text(encoding="utf-8").splitlines())
+    if not errors:
+        errors = stale_exclusions(terms)
     if errors:
         return {}, errors
     modules = json.loads(VIDEOS.read_text(encoding="utf-8"))["modules"]
