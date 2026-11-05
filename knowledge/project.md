@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-project
 status: draft
 created: 2026-08-20
-updated: 2026-11-04
+updated: 2026-11-05
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -49,7 +49,7 @@ Workshop profiles and their material remain research and teaching sources in `wo
 
 ## Public learning architecture
 
-The public site is one static page per language, `index.html` and `index.de.html`. The page leads from a short introduction to four material cards, Preparation, the slides, the lecture notes and four DHCraft methods, and then to the five modules with their definitions and video lists. There are no separate About or Preparation pages and no generic arrow-back links. The canonical legal notice remains linked in the footer, together with the licence scope. Event listings and Learning Routes remain retired; teaching sources are unchanged.
+The public site is one static landing page per language, `index.html` and `index.de.html`. The page leads from a short introduction to four material cards, Preparation, the slides, the lecture notes and four DHCraft methods, then to a wide glossary card and the five modules with their definitions and video lists. The glossary pages `glossary.html` and `glossary.de.html` are generated from `terms.md` by `scripts/build_glossary.py` and give each term its one-sentence definition in both languages, searchable and filterable by module. There are no separate About or Preparation pages and no generic arrow-back links. The canonical legal notice remains linked in the footer, together with the licence scope. Event listings and Learning Routes remain retired; teaching sources are unchanged.
 
 Preparation links the existing English Google Slides deck [Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit) from the first material card. Its URL and language are registered in `data/workshops.json` under `preparation`. Both language versions identify the English teaching language. No separate HTML setup curriculum or subject-introduction sequence is maintained in that section.
 
@@ -71,6 +71,7 @@ The teaching material retains its source language and translations require autho
 | Video inventory, playlist order, primary module, related modules and duration | `data/videos.json` |
 | Workshop instance, one folder per instance | `workshops/<id>/` with `profile.md`, `slide-deck.md`, `lecture-notes.md`, `data/` |
 | Preparation, existing Google Slides deck | `docs/index.html#preparation`, `docs/index.de.html#preparation` |
+| Public glossary, generated from `knowledge/terms.md` | `docs/glossary.html`, `docs/glossary.de.html`, generator `scripts/build_glossary.py` |
 | Curated Skills source pending public placement | `knowledge/drafts/curated-agent-skills-library.md` |
 | Slide exports (PPTX per taught state) | `workshops/<id>/` |
 | Historical cover images | git history at `e66901b`, `docs/assets/covers/` |
@@ -87,9 +88,9 @@ Two neighbouring DHCraft teaching projects overlap with this line and remain sep
 
 `DigitalHumanitiesCraft/ai-coding-literacy` is an independent published German-language curriculum for researchers without prior programming experience, organised around seven competencies for AI-supported coding (Computational Thinking, Requirements Engineering, Context Engineering, Prompt Engineering, Code Literacy, Review and Domain Expertise). It keeps its own repository contract, its own deployment and its own dataset rights boundary. The independent curriculum remains available at `https://digitalhumanitiescraft.github.io/ai-coding-literacy/de/`. Its competency model may be mapped onto the teaching line, and a reusable definition enters the Full Slide Deck or the Full Lecture Notes only after reconciliation with `terms.md`. Its KCE relation remains a source relation; it does not become a numbered KCE module.
 
-The local folder `DHCraft/ai-literacies` is an unversioned Astro prototype without its own repository, action layer or maintained knowledge directory, so it carries no publication status. It stays read-only input for the migration into Web Modules, and its content and design patterns are re-authored in this design system. Astro, npm dependencies, TypeScript, `node_modules`, its source CSS tokens, its build configuration and its root-relative route system stay outside this repo, because the platform holds its no-build static publication contract. Its `IntersectionObserver` reading pattern may at most inform a progressive enhancement, and the complete learning text stays readable without JavaScript.
+The local folder `DHCraft/ai-literacies` is an unversioned Astro prototype without its own repository, action layer or maintained knowledge directory, so it carries no publication status. It stays read-only input for the migration into the teaching material, and its content and design patterns are re-authored in this design system. Astro, npm dependencies, TypeScript, `node_modules`, its source CSS tokens, its build configuration and its root-relative route system stay outside this repo, because the platform holds its no-build static publication contract. Its `IntersectionObserver` reading pattern may at most inform a progressive enhancement, and the complete learning text stays readable without JavaScript.
 
-The migration is ordered. The Prompt Engineering unit is the first candidate and remains in preparation because no static KCE lesson exists. Research Data and Knowledge Work is reconciled into the maintained slides instead of receiving a public route. RD-018, RD-020, RD-021 and RD-023 acceptance remain outstanding. The Tools, Multimodal, Administration Data Analysis and Research Data Analysis units additionally wait for the verified VetMedAI intake, because their product facts, model claims, data-protection statements and rights boundaries need re-verification. A migrated unit carries its module mapping, audience, source reference, verification date and editorial status, and no dataset, screenshot, external slide image or video thumbnail is copied.
+The migration is ordered. The Prompt Engineering unit is the first candidate and remains in preparation because no static KCE lesson exists. Research Data and Knowledge Work is reconciled into the maintained slides instead of receiving a public route. The former route acceptance points left the Director Log on 2026-10-15 with the reduced public scope, so any further migration step first reconciles with that scope. The Tools, Multimodal, Administration Data Analysis and Research Data Analysis units additionally wait for the verified VetMedAI intake, because their product facts, model claims, data-protection statements and rights boundaries need re-verification. A migrated unit carries its module mapping, audience, source reference, verification date and editorial status, and no dataset, screenshot, external slide image or video thumbnail is copied.
 
 ## Audiences
 

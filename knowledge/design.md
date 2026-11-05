@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-design
 status: draft
 created: 2026-08-20
-updated: 2026-11-04
+updated: 2026-11-05
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex

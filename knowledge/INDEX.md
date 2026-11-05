@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
 status: draft
 created: 2026-08-20
-updated: 2026-11-04
+updated: 2026-11-05
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -39,14 +39,15 @@ This knowledge base documents the teaching-material contract, public platform, t
 
 ## Teaching proposals
 
-- [Verification, Validation und Acceptance](../script/drafts/verification-validation-acceptance-de.md) proposes a German teaching section, slide sequence and edition exercise, grounded in the existing Full Lecture Notes and checked against the current Google sources. Author acceptance is pending.
+- [Verification, Validation und Acceptance](../script/drafts/verification-validation-acceptance-de.md) proposes a German teaching section, slide sequence and edition exercise, grounded in the existing Full Lecture Notes and checked against the current Google sources. Author acceptance is pending as RD-025.
 
 ## Storage zones
 
 - `knowledge/` contains canonical Promptotyping documents.
 - `knowledge/drafts/` contains decision preparation and source assessments. A draft has no canonical force until its result is written to the responsible document.
 - `script/`, `slides/` and `workshops/` contain maintained teaching material and workshop specialisations.
-- `docs/` contains the static public platform, the only published tree.
+- `docs/` contains the static public platform, the only published tree. Its glossary pages are generated from `terms.md` and never edited by hand.
+- `scripts/` contains the glossary generator `build_glossary.py` with its tests and linter configuration. `python scripts/build_glossary.py --check` reports whether the generated pages match `terms.md`.
 - `data/` contains the machine-readable registers `workshops.json` and `videos.json`, which the pages mirror and which are not published.
 - `communication/` transports Research Mission Control briefs, results, recipient state and completed thread capsules; it does not replace project knowledge.
 - Git preserves prior wording, released states and taught workshop states.

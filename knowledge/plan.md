@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-plan
 status: active
 created: 2026-08-20
-updated: 2026-11-04
+updated: 2026-11-05
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -26,15 +26,17 @@ This plan carries accepted future work and its entry and exit conditions. The Re
 
 ## Current milestone
 
-Publish the redesigned single page of 4 November 2026 and check the live state. The current public contract lives in `specification.md`: an introduction, four material cards and the modules with their videos, with no external resource. Publication and acceptance remain author decisions.
+Publish the redesigned single page of 4 November 2026 together with the generated glossary pages of 5 November and check the live state. The current public contract lives in `specification.md`, an introduction, four material cards, the glossary card and the modules with their videos on each landing page, and two glossary pages, with no external resource. The local commits are not pushed, and on 2026-11-05 the live site still served the stylesheet version `20261015-1` and answered the German glossary URL with 404. Publication and the visual acceptance RD-017 remain author decisions.
 
 ## Active sequence
 
-- After the author's push, check the live pages for the new stylesheet version, the absence of external requests and 404 responses for the removed covers, downloads and title-slide image.
-- Continue the separate terminology and teaching-content review of the Full Slide Deck and Full Lecture Notes.
+- After the author's push, check the live pages for the stylesheet and script version `20261105-2`, the absence of external requests, both glossary pages, the glossary link on the materials slide of the UFL deck, and 404 responses for the removed covers, downloads and title-slide image.
+- Teach the Uni for Life instance on 9 and 10 November 2026, then fill the delivery notes in its profile, have the author set the tag `2026-11-09-ufl` (RD-016) and only then remove the folder and its register entry.
+- Continue the separate terminology and teaching-content review of the Full Slide Deck and Full Lecture Notes. It includes the document-type and checking vocabulary, where `terms.md` and the UFL deck keep Declarative, Process and Action Documents and the UFL lecture notes follow the Promptotyping paper 1.0, and the UFL source anchors in `terms.md`, many of which still name section titles and hands-on numbers from before the lecture notes were realigned on 2026-11-05.
+- Fill the `*Blog.*` fields of `terms.md` once the planned glossary blog post exists, then rebuild the glossary pages.
 - Maintain workshop source material for actual teaching assignments without recreating individual event pages or Learning Routes.
-- Obtain bounded author feedback on the prepared Verification, Validation and Acceptance section linked from INDEX.md. After acceptance, integrate the identified wording into the German notes and prepare the corresponding native slides. Other sections continue through their own source checks and acceptance.
-- Recheck the actual Google sharing state before presenting the retained permissions requests.
+- Obtain bounded author feedback on the prepared Verification, Validation and Acceptance section linked from INDEX.md (RD-025). After acceptance, integrate the identified wording into the German notes and prepare the corresponding native slides. Other sections continue through their own source checks and acceptance.
+- Recheck the actual Google sharing state before presenting the retained permissions requests RD-019 and RD-024.
 
 ## Completed milestones
 

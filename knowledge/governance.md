@@ -8,7 +8,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: draft
 created: 2026-08-20
-updated: 2026-10-15
+updated: 2026-11-05
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -56,17 +56,17 @@ Preparation uses the existing Google Slides deck registered under `preparation` 
 
 ## Write-back
 
-Changes to canonical text happen here and are committed; Google artifacts are updated afterwards. Term decisions flow first into `terms.md` and from there into script, slides and the vault atoms. Findings from delivered workshops go into the workshop profile and `journal.md`. Translations follow the pipeline stated in `project.md`, German source, agent translation, Research Director review.
+Changes to canonical text happen here and are committed; Google artifacts are updated afterwards. Term decisions flow first into `terms.md` and from there into script, slides, the vault atoms and, through `python scripts/build_glossary.py`, the generated glossary pages, whose `--check` must pass before a commit. Findings from delivered workshops go into the workshop profile and `journal.md`. Translations follow the pipeline stated in `project.md`, German source, agent translation, Research Director review.
 
 ## Versioning
 
-Fine-grained history lives in git. The state actually taught in a workshop receives a git tag named after the registry id (for example `2026-09-25-clariah-at`), set by the Research Director; the material register and source profile refer to the tagged state. Workshop folder names equal registry ids; a single id scheme holds across register, folders, covers and tags. PPTX exports are stored per taught state in the workshop folder.
+Fine-grained history lives in git. The state actually taught in a workshop receives a git tag named after the registry id (for example `2026-09-25-clariah-at`), set by the Research Director; the material register and source profile refer to the tagged state. Workshop folder names equal registry ids; a single id scheme holds across register, folders and tags. PPTX exports are stored per taught state in the workshop folder.
 
 The working tree carries only upcoming instances (operator decision 2026-08-20). Once an instance has been taught and its state tagged, its folder is removed and its register entry drops out, while the public platform presents the common material without event listings. Nothing is lost, because git history holds the material and the tag names the taught state. A document that cites a removed file names it as preserved in git history at the short SHA of the last commit that held it.
 
 ## Rights and licensing
 
-No facsimiles in this repo; image rights of the Hersch and Zweig material remain with the source projects, which are linked. No third-party personal data; workshop participant data is never stored here. The public pages and original text are licensed CC BY 4.0 (operator decision 2026-08-20). The register records this scope as `page-and-original-text`, and this document and the licence explanation in the footer carry the same wording. A public card shows the linked identifier `CC BY 4.0` alone, because the card is a compact metadata surface and the exact scope belongs where it can be read in full (Research Director decision 2026-08-25). Each Slide Deck is checked individually for embedded third-party image rights before the licence is extended to the complete material artefact.
+No facsimiles in this repo; image rights of the Hersch and Zweig material remain with the source projects, which are linked. No third-party personal data; workshop participant data is never stored here. The public pages and original text are licensed CC BY 4.0 (operator decision 2026-08-20). The register records this scope as `page-and-original-text`, and this document and the licence explanation in the footer carry the same wording. The footer of every public page states the scope as `CC BY 4.0 for the original text` or `CC BY 4.0 für die eigenen Texte`. The workshop cards that showed the linked identifier alone (Research Director decision 2026-08-25) left the page with the event listings on 2026-10-15. Each Slide Deck is checked individually for embedded third-party image rights before the licence is extended to the complete material artefact.
 
 ## Journal and privacy
 

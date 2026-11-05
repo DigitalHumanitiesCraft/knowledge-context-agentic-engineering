@@ -12,9 +12,9 @@ related: [../profile.md]
 
 # Example Data (Uni for Life 2026)
 
-This folder holds the material for session 3, in which participants handle a customer request with the knowledge base they built in sessions 1 and 2, and the hook shown in session 2.
+This folder holds the material for session 3, in which participants handle a customer request with the knowledge base they built in sessions 1 and 2, and the project-folder hook shown later in the same session.
 
-`kundenanfrage.txt` is a synthetic German e-mail from a fictional sales director of Northwind Traders. It asks for a workshop on agentic engineering and governance, slides, a small reference website and draft rules for AI use, and it carries the four Excel files as attachments. The mail deliberately contains personal data, such as remarks on colleagues' leave and retirement, a home address and a private phone number in the signature, so that participants practise copying only the parts a language model needs. The hands-on prompt on the slides uses a shortened version without these parts, and the group discusses why they were left out.
+`kundenanfrage.txt` is a synthetic German e-mail from a fictional sales director of Northwind Traders. It asks for a workshop on agentic engineering and governance, slides, a small reference website and draft rules for AI use, and it carries the four Excel files as attachments. The mail deliberately contains personal data, such as remarks on colleagues' leave and retirement, a home address and a private phone number in the signature, so that participants practise copying only the parts a language model needs. The hands-on prompt on the slides uses a shortened version without these parts, and the group discusses why they were left out. The full mail and `mitarbeitende.xlsx` are also the test input of the local mail redaction in [`../lokale-workflows/mail-anonymisieren/`](../lokale-workflows/mail-anonymisieren/README.md).
 
 The four Excel files are converted from Microsoft's Northwind sample database, a fictional food wholesaler with orders from 1996 to 1998.
 
