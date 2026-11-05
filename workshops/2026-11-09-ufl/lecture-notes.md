@@ -601,21 +601,21 @@ Prompt 2 bringt die Anfrage. Der Agent prüft sie gegen die eigene Governance un
 > Mit freundlichen Grüßen
 > Andrew Fuller, Vertrieb, Northwind Traders
 > ```
-> Diese Anfrage ist gerade gekommen, die Anhänge liegen in eingang/. Prüf sie gegen unseren Governance-Entwurf, sag mir, welches Wissen im Vault dafür schon da ist, und schlag mir die nächsten Schritte vor. Ändere noch nichts.
+> Diese Anfrage ist gerade gekommen, die Anhänge sollen in eingang/ liegen. Prüf zuerst, ob alle vier da sind, und prüf sie dann gegen unseren Governance-Entwurf, sag mir, welches Wissen im Vault dafür schon da ist, und schlag mir die nächsten Schritte vor. Ändere noch nichts.
 
 Die Mail im Prompt ist gekürzt. Die vollständige Fassung in [`data/kundenanfrage.txt`](data/kundenanfrage.txt) enthält zusätzlich Telefonnummer, Adresse und Bemerkungen zu Pension und Elternzeit im Team. Warum diese Angaben fehlen, ist die Frage an die Gruppe. Sie gehören zu den Daten, die nicht in einen Cloud-Dienst gehen, und dieselbe Frage stellt sich bei `mitarbeitende.xlsx` mit Geburtsdaten und Adressen. Für die Umsatzfrage reichen Bestellungen, Produkte und Kunden.
 
 ### Hands-on 6: Die Daten im Dashboard
 
-Die Prüfung aus Prompt 2 legt fest, welche Dateien der Agent nutzen darf. In derselben Session geht es weiter. Fragt der Agent, ob er ein Python-Paket für Excel installieren darf, wird das bestätigt.
+Die Prüfung aus Prompt 2 legt fest, welche Dateien der Agent nutzen darf. In derselben Session geht es weiter, und die Teilnehmenden schalten den Plan-Modus ein. Fragt der Agent, ob er ein Python-Paket für Excel installieren darf, wird das bestätigt.
 
 Prompt 3 ergänzt eine zweite Ansicht. Der Agent plant und baut eine Datenansicht im Wissensdashboard. Damit beantwortet das Dashboard beide Wünsche der Anfrage, die Übersicht über Begriffe und Regeln und die Frage, was ein Agent mit den Daten anfangen kann.
 
-> Aktiviere den Plan-Modus. Ergänze das Wissensdashboard um eine zweite Ansicht „Daten“: Umsatz nach Produkt, Kategorie, Land und Monat, als Diagramme und Tabelle. Nutze nur die Dateien, die die Prüfung freigegeben hat. Alle Kennzahlen berechnet ein Skript aus den Excel-Dateien, nicht du selbst. Halte Daten und Anforderungen in knowledge/ fest.
+> Ergänze das Wissensdashboard um eine zweite Ansicht „Daten“: Umsatz nach Produkt, Kategorie, Land und Monat, als Diagramme und Tabelle, nur als Summen ohne Personendaten. Nutze nur die Dateien, die die Prüfung freigegeben hat. Alle Kennzahlen berechnet ein Skript aus den Excel-Dateien, nicht du selbst. Halte Daten und Anforderungen in knowledge/ fest.
 
-Prompt 4 prüft. Der Agent rechnet jede Kennzahl gegen die Excel-Dateien nach.
+Prompt 4 prüft. Der Agent rechnet jede Kennzahl mit einem eigenen Skript direkt aus den Excel-Dateien nach.
 
-> Prüfe jede Kennzahl der Ansicht gegen eine Referenz, die du direkt aus den Excel-Dateien berechnest. Liste und begründe Abweichungen. Ändere noch nichts.
+> Rechne jede Kennzahl der Ansicht mit einem eigenen Skript direkt aus den Excel-Dateien nach und vergleiche sie mit der Ansicht. Liste und begründe Abweichungen. Ändere noch nichts.
 
 Zum Schluss rechnet man eine Kennzahl selbst in Excel nach. Der dritte Prompt setzt die Regel aus dem Abschnitt zum Determinismus um, der vierte die unabhängige Prüfung.
 
