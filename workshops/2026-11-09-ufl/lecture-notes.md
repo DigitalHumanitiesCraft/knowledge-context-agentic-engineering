@@ -895,7 +895,7 @@ Beim Text-Watermarking wirkt das Wasserzeichen schon beim Schreiben. Ein LLM ber
 
 Beim Bild-Watermarking wird das fertige Bild markiert. Ein Encoder legt eine kurze Bitfolge unsichtbar ins Pixelmuster, ein Decoder liest sie wieder aus, schon bei einem einzelnen Bild. JPEG-Kompression und Zuschnitt übersteht das Wasserzeichen, gezielte Angriffe können es entfernen (Bui et al., 2023). Signierte Metadaten nach dem Standard C2PA sind ein zweiter Weg, die jeder prüfen kann, solange sie nicht entfernt wurden. Das Video *How Image Watermarking Works* von Computerphile (2026, https://youtu.be/h6j_ixGnpiY) erklärt den Bildteil.
 
-Ein Wasserzeichen ist ein Hinweis und kein Beweis. Fehlt es, folgt daraus nicht, dass ein Mensch den Inhalt erstellt hat. Seit 2. August 2026 verlangt Art. 50 des AI Act von Anbietern, synthetische Inhalte maschinenlesbar zu kennzeichnen, und Watermarks sind dafür ein Baustein.
+Ein Wasserzeichen ist ein Hinweis und kein Beweis. Fehlt es, folgt daraus nicht, dass ein Mensch den Inhalt erstellt hat. Seit 2. August 2026 verlangt Art. 50 des AI Act von Anbietern, synthetische Inhalte maschinenlesbar zu kennzeichnen, und Watermarks sind dafür ein Baustein. Für Systeme, die vor diesem Tag in Verkehr gebracht wurden, gilt nach Art. 111(4) in der Fassung des Digital Omnibus (Verordnung (EU) 2026/1744) der 2. Dezember 2026.
 
 ## Literatur
 
