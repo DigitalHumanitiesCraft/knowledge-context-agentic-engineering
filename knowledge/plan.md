@@ -36,7 +36,7 @@ Publish the redesigned single page of 4 November 2026 together with the generate
 - Fill the `*Blog.*` fields of `terms.md` once the planned glossary blog post exists, then rebuild the glossary pages.
 - Maintain workshop source material for actual teaching assignments without recreating individual event pages or Learning Routes.
 - Obtain bounded author feedback on the prepared Verification, Validation and Acceptance section linked from INDEX.md (RD-025). After acceptance, integrate the identified wording into the German notes and prepare the corresponding native slides. Other sections continue through their own source checks and acceptance.
-- Recheck the actual Google sharing state before presenting the retained permissions requests RD-019 and RD-024.
+- RD-024: the Full Slidedeck still gives anyone with the link edit access (checked 2026-11-05); the author lowers it to reader access.
 
 ## Completed milestones
 

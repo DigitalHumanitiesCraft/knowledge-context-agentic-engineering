@@ -118,7 +118,7 @@ Die Instruktionsdatei hält wiederkehrende Regeln und verweist auf den Wissensbe
 | MCP | Verbindet das Harness mit externen Werkzeugen und Datenquellen. |
 | Plugin | Bündelt Erweiterungen als installierbares Paket. |
 
-> `Skill = Verfahren · MCP = Verbindung · Plugin = Paket`
+> `Skill = Verfahren | MCP = Verbindung | Plugin = Paket`
 
 **Visual**
 

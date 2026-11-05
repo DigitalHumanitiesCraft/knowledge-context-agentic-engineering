@@ -119,16 +119,6 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 - **Effect**: Records visual acceptance of the identified local state. Teaching-content acceptance and publication remain separate.
 - **Write-back**: `knowledge/design.md` and `knowledge/journal.md`.
 
-## RD-019 CLARIAH Google Slides permission
-
-- **Type**: Action
-- **Status**: open
-- **Required contribution**: Change the public CLARIAH Google Slides permission from edit access to read access and confirm the resulting anonymous view link.
-- **Recommendation**: Preserve the existing document id and reduce only the public permission, so that repository and page links remain stable.
-- **Basis**: the verified Drive source audit of 2026-08-25 and the CLARIAH material record in `docs/data/workshops.json`.
-- **Effect**: Removes unintended public write access before the material is released.
-- **Write-back**: the Google Slides permission state and `knowledge/journal.md`.
-
 ## RD-024 Full Slide Deck Google Slides permission
 
 - **Type**: Action

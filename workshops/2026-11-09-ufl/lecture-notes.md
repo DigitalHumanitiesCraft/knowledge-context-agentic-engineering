@@ -28,7 +28,7 @@ Die Runde klärt, mit welchen Voraussetzungen die Gruppe arbeitet. Gefragt wird 
 
 Zur Vorbereitung gehören Claude Desktop (https://claude.com/de/download) und der englischsprachige Foliensatz *Technical Preparation for Context, Knowledge and Agentic Engineering* (https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit), der die Einrichtung im Detail beschreibt.
 
-Die Lehrlinie *Knowledge, Context and Agentic Engineering* wird laufend gepflegt und erweitert.
+Die Lehrlinie *Knowledge, Context and Agentic Engineering* (KCE) wird laufend gepflegt und erweitert.
 
 - Website mit allen Materialien: https://dhcraft.org/knowledge-context-agentic-engineering
 - Skriptum Deutsch: https://docs.google.com/document/d/1rJRraAfBfnkrb_3ik4savYuboLPhZ-zAFvlj4CmmMcE/edit
@@ -425,9 +425,9 @@ Unter https://dhcraft.org/agentic-governance-workspace liegt das Ergebnis eines 
 
 Computational Thinking ist die Fähigkeit, ein Problem und seinen Lösungsweg so zu formulieren, zu abstrahieren und zu zerlegen, dass ein ausführender Agent ihn umsetzen kann, und zu beurteilen, ob das Ergebnis stimmt. Diese Arbeitsdefinition für die Arbeit mit AI Agents geht auf Wing (2006, S. 33) zurück: „Computational thinking involves solving problems, designing systems, and understanding human behavior, by drawing on the concepts fundamental to computer science.“ Wing versteht Computational Thinking als menschliche Denkweise, die über das Programmieren hinausgeht.
 
-Eine ältere Definition von Cuny, Snyder und Wing, die Wing (2011) zitiert, spricht von einem „information-processing agent“, der die Lösung ausführt, ausdrücklich Mensch oder Maschine. Heute ist das wörtlich ein AI Agent. Entscheidend ist der Lösungsweg. Wer nur Befehle erteilt, ohne die Lösung zu entwerfen, denkt nach der Kritik von Tedre und Denning (2016) noch nicht computational.
+Eine spätere Definition von Cuny, Snyder und Wing (2010), die Wing (2011, S. 1) zitiert, spricht von einem „information-processing agent“, der die Lösung ausführt. Wing erläutert dazu, dass ein Mensch, eine Maschine oder beide zusammen diese Lösung ausführen können. Heute lässt sich an diese Stelle ein AI Agent setzen. Entscheidend bleibt der Lösungsweg. Tedre und Denning (2016, S. 126) weisen darauf hin, dass Formulieren in solchen Definitionen zweierlei heißen kann, eine Berechnung entwerfen oder einen Befehl erteilen, der eine Berechnung auslöst. Befehle erteilen und Knöpfe drücken kann man auch ohne Computational Thinking, deshalb schlagen sie vor, Computational Thinking als Entwerfen zu fassen.
 
-Ein LLM füllt Lücken stillschweigend. Die Präzision, die früher der Compiler erzwang, muss man heute selbst herstellen. Das Zerlegen übernehmen Agents zunehmend selbst, das Formulieren und das Prüfen bleiben beim Menschen. Wie viel davon beim Menschen bleibt, hängt von der Arbeitsweise ab, die der nächste Abschnitt unterscheidet.
+In der praktischen Arbeit füllt ein LLM Lücken oft stillschweigend. Die Präzision, die früher der Compiler erzwang, muss man heute selbst herstellen. Das Zerlegen übernehmen Agents zunehmend selbst, das Formulieren und das Prüfen bleiben beim Menschen. Wie viel davon beim Menschen bleibt, hängt von der Arbeitsweise ab, die der nächste Abschnitt unterscheidet.
 
 Der Unterschied zeigt sich an einer Webseite für die eigenen Daten. Ohne Computational Thinking lautet der Auftrag „Mach mir eine Webseite für meine Daten.“ Mit Computational Thinking wird er zu einer Folge prüfbarer Schritte.
 
@@ -448,7 +448,7 @@ Drei Arbeitsweisen üben Computational Thinking unterschiedlich weit aus. Von li
 | --- | --- | --- | --- |
 | Was geschieht | Code im Gespräch mit einem LLM erzeugen und ungelesen übernehmen, bis er meistens läuft | Coding Agents schreiben, testen und überarbeiten Code in einer Schleife, bis das Ziel erreicht ist | Forschungsdaten und ihre Kontexte werden zu Artefakten, die zu den Fragen der Forschenden passen |
 | Der Mensch | formuliert und probiert aus | entscheidet und prüft | prüft an den Quellen und urteilt fachlich |
-| Festgehaltenes Wissen | kaum, der Verlauf im Chat | Anweisungen, Tests, Commits | kuratierte Wissensbasis in knowledge/ |
+| Festgehaltenes Wissen | kaum, der Verlauf im Chat | Anweisungen und Harness, oft auch Tests und Commits | kuratierte Wissensbasis in knowledge/ |
 
 Vibe Coding
 : Karpathy (2025) hat den Begriff für eine Art des Programmierens geprägt, bei der man vergisst, dass der Code überhaupt existiert. Änderungen werden ungelesen übernommen („I ‚Accept All‘ always, I don't read the diffs anymore“), Fehlermeldungen ohne Kommentar an das LLM weitergegeben, bis das Programm meistens funktioniert. Karpathy beschränkt das ausdrücklich auf Wegwerfprojekte am Wochenende. Die erste Fassung des Dashboards in Hands-on 4 durfte so entstehen, solange das Werkzeug klein ist und man das Ergebnis selbst prüfen kann.
@@ -713,7 +713,7 @@ Deterministisch
 Urteil
 : Von KI oder Mensch, nach festen Kriterien. Dazu gehören Zusammenfassen, Formulieren, Klassifizieren, Abwägen und die Frage, ob ein Ergebnis plausibel ist.
 : Review heißt, ein zweiter Agent prüft mit frischem Kontext, und seine Befunde werden am Material nachgeprüft.
-: Abnahme heißt, der Mensch sieht, was Tests übersehen. In einem Projekt waren alle Tests bestanden, doch Markierungen erschienen grau statt olivgrün, und erst die visuelle Prüfung fand den Fehler.
+: Sichtprüfung heißt, der Mensch sieht, was Tests übersehen. In einem Projekt waren alle Tests bestanden, doch Markierungen erschienen grau statt olivgrün, und erst die visuelle Prüfung fand den Fehler.
 : Freigabe heißt, Push, Versand und Veröffentlichung bleiben beim Menschen.
 
 Was ein Skript prüfen kann, prüft ein Skript. Den Rest beurteilen ein zweiter Agent und am Ende ein Mensch.
@@ -786,9 +786,9 @@ Dasselbe Muster beschreibt van Strien (2026) für Bibliotheken. Claude Code trai
 
 ### Promptotyping
 
-Promptotyping ist eine Arbeitspraxis, die Forschungsdaten und ihre Kontexte in Artefakte übersetzt, die zu Fragen und Arbeitsweisen der Forschenden passen (Pollin, 2026a, https://dhcraft.org/Promptotyping, Repository https://github.com/DigitalHumanitiesCraft/Promptotyping).
+Promptotyping ist eine Arbeitspraxis, die Forschungsdaten und ihre Kontexte in Artefakte übersetzt, die zu Fragen und Arbeitsweisen der Forschenden passen (Pollin, 2026a, https://dhcraft.org/Promptotyping, Repository https://github.com/DigitalHumanitiesCraft/Promptotyping). Sie stützt sich auf drei Formen des Engineering, Knowledge Engineering, Context Engineering und Agentic Engineering.
 
-Die Arbeit verläuft in vier Arbeitsformen. Preparation stellt Quellenbasis und Forschungskontext zusammen, Exploration untersucht das Material und klärt, was die Wissensbasis abbilden muss, Distillation übersetzt dieses Verständnis in gepflegte Wissensdokumente, und Implementation baut darauf auf. Ein erster Durchlauf geht sie der Reihe nach durch, danach kehren sie wieder, wenn eine Umsetzung eine Lücke in den Daten zeigt oder eine Validierung eine Annahme in Frage stellt. Distillation speist die Wissensbasis zum Projekt, und jede Iteration ergibt einen Promptotype, den Stand eines Artefakts zusammen mit dem Projektwissen und den Forschungsdaten, aus denen er gebaut wurde (Pollin, 2026a, Fig. 1).
+Die Arbeit verläuft in vier Arbeitsformen. Preparation stellt Quellenbasis und Forschungskontext zusammen, Exploration untersucht das Material und klärt, was die Wissensbasis abbilden muss, Distillation übersetzt dieses Verständnis in gepflegte Wissensdokumente, und Implementation baut darauf auf. Ein erster Durchlauf geht sie der Reihe nach durch, danach kehren sie wieder, wenn eine Umsetzung eine Lücke in den Daten zeigt oder eine Scholarly Validation eine Annahme in Frage stellt. Knowledge Curation läuft durch alle vier Arbeitsformen und trägt in das Projektwissen zurück, was jede von ihnen zeigt. Distillation speist die Wissensbasis zum Projekt, und jede Iteration ergibt einen Promptotype, den Stand eines Artefakts zusammen mit dem Projektwissen und den Forschungsdaten, aus denen er gebaut wurde (Pollin, 2026a, Fig. 1).
 
 Zwei Videos führen in die Praxis ein, *Einführung in Promptotyping (Teil 1)* (YouTube, 24.01.2026, https://youtu.be/8sUe4Jkh3uQ) und *Einführung in Promptotyping (Teil 2, Live Demo mit Claude Code)* (YouTube, 03.05.2026, https://youtu.be/hd_a-NBO_S4). Sie zeigen den Stand ihres Aufnahmedatums, und Modelle und Werkzeuge ändern sich laufend.
 
@@ -803,17 +803,17 @@ Die Hands-ons bilden zusammen einen Durchlauf Promptotyping.
 | Distillation | 1, 2 | Quellen verdichten | Wissensdokumente in `knowledge/` |
 | Implementation | 3, 4, 6 | PDF, Dashboard, Datenansicht | `governance-entwurf.md`, Daten und Anforderungen, Plan mit Meilensteinen, CLAUDE.md |
 
-Quer zu den vier Arbeitsformen liegen drei Arten der Prüfung und die Kuration (Pollin, 2026a). Verification prüft, ob ein Artefakt formalisierte Anforderungen erfüllt, hier das Prüfskript für die Kennzahlen in Hands-on 6. Agentic Review lässt einen Agenten, oft einen Subagenten mit frischem Kontext, ein Artefakt nach benannten Kriterien untersuchen, hier der Subagent in Hands-on 4. Seine Befunde bleiben Hinweise, bis eine Verification oder ein Mensch sie bestätigt. Scholarly Validation prüft, ob das Ergebnis durch die Quellen gedeckt ist und zum Zweck passt, und bleibt bei den Fachleuten, hier beim Nachrechnen einer Kennzahl in Excel und beim Ansehen des PDFs. Knowledge Curation trägt zurück, was Quellen, Prüfungen und die Arbeit mit den Artefakten zeigen, hier beim Kuratieren in Hands-on 4 und 5, beim Bau des Vaults mit `HOME.md`, `TAG-TAXONOMY.md` und `ACTIVE-WORK.md` und beim Ableiten des PDF-Skills.
+Quer zu den vier Arbeitsformen liegen drei Formen der Prüfung und die Knowledge Curation (Pollin, 2026a). Verification prüft, ob ein Artefakt formalisierte Anforderungen erfüllt, hier das Prüfskript für die Kennzahlen in Hands-on 6. Agentic Review lässt einen Agenten, oft einen Subagenten mit frischem Kontext, ein Artefakt nach benannten Kriterien untersuchen, hier der Subagent in Hands-on 4. Seine Befunde bleiben Hinweise, bis eine Verification oder ein Mensch sie bestätigt. Scholarly Validation prüft, ob das Ergebnis durch die Quellen gedeckt ist und zum Zweck passt, und bleibt bei den Fachleuten, hier beim Nachrechnen einer Kennzahl in Excel und beim Ansehen des PDFs. Auf die drei Formen der Prüfung folgt die Acceptance, die Entscheidung, einen geprüften Stand für einen benannten Zweck zu verwenden, und auch sie liegt beim Menschen. Knowledge Curation trägt zurück, was Quellen, Prüfungen und die Arbeit mit den Artefakten zeigen, hier beim Kuratieren in Hands-on 4 und 5, beim Bau des Vaults mit `HOME.md`, `TAG-TAXONOMY.md` und `ACTIVE-WORK.md` und beim Ableiten des PDF-Skills.
 
-Die entstandenen Dokumente gehören drei Typen an, die das Paper nach ihrer Funktion unterscheidet (Pollin, 2026a).
+Die entstandenen Dokumente sind Knowledge Documents, so heißen alle Dokumente der Wissensbasis. Das Paper unterscheidet sie nach der Art des Wissens, das sie tragen, in drei Typen, und die Promptotyping-Website nennt dieselben Typen kurz Declarative, Process und Action Documents (Pollin, 2026a).
 
-Declarative Knowledge Documents
+declarative knowledge documents
 : Sie halten fest, was gilt, also Struktur, Bedeutung, Herkunft, Lücken und Unsicherheiten der Daten (`data.md`), was das Artefakt leisten soll und wie es zu beurteilen ist (`specification.md`), und Zweck, Forschungskontext und Umfang des Projekts (`project.md`). Im Workshop sind das `project.md`, die Wissensdokumente in `knowledge/` und die Daten und Anforderungen aus Hands-on 6.
 
-Process Knowledge Documents
+process knowledge documents
 : Sie halten fest, wie sich das Verständnis entwickelt hat und warum, also Vorgehen, Befunde, Fehlschläge und offene Fragen, etwa in einem `journal.md`, versioniert mit der Umsetzung. Im Workshop übernahmen `journal.md`, der Plan mit Meilensteinen, `ACTIVE-WORK.md` und die Commits diese Rolle.
 
-Agent Instruction Documents
+agent instruction documents
 : Sie halten fest, wie Agents arbeiten sollen, also Einrichtung, Abläufe, Grenzen, nötige Prüfungen und Verweise auf das relevante Wissen, in CLAUDE.md oder AGENTS.md. Im Workshop sind das die CLAUDE.md, die Hands-on 5 erweitert, und der PDF-Skill.
 
 Hands-on 6 beginnt den zweiten Durchlauf mit neuen Daten, und das Wissen aus dem ersten liegt schon im Vault. Dieser Workshop ist auf dieselbe Weise entstanden.
@@ -906,6 +906,7 @@ Ein Wasserzeichen ist ein Hinweis und kein Beweis. Fehlt es, folgt daraus nicht,
 - Anthropic (2026c). Orchestrate teams of Claude Code sessions. https://code.claude.com/docs/en/agent-teams
 - Auer, C., et al. (2024). Docling Technical Report. arXiv:2408.09869. https://arxiv.org/abs/2408.09869
 - Bui, T., et al. (2023). TrustMark: Universal Watermarking for Arbitrary Resolution Images. arXiv:2311.18297. https://arxiv.org/abs/2311.18297
+- Cuny, J., Snyder, L., & Wing, J. M. (2010). Demystifying Computational Thinking for Non-Computer Scientists. Work in progress, zitiert nach Wing (2011).
 - Dathathri, S., et al. (2024). Scalable watermarking for identifying large language model outputs. *Nature*. https://doi.org/10.1038/s41586-024-08025-4
 - Dell’Acqua, F., et al. (2026). Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of Artificial Intelligence on Knowledge Worker Productivity and Quality. *Organization Science*, 37(2), 403–423. https://doi.org/10.1287/orsc.2025.21838. Geprüft an der Zusammenfassung, der Volltext war nicht frei zugänglich.
 - Gans, J. (2026). A Model of Artificial Jagged Intelligence. arXiv:2601.07573. https://doi.org/10.48550/arXiv.2601.07573
@@ -924,13 +925,13 @@ Ein Wasserzeichen ist ein Hinweis und kein Beweis. Fehlt es, folgt daraus nicht,
 - Russell, S., & Norvig, P. (2020). *Artificial Intelligence: A Modern Approach* (4. Aufl.). Pearson. https://aima.cs.berkeley.edu
 - Sapkota, R., Roumeliotis, K. I., & Karkee, M. (2025). AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges. *Information Fusion*, 126, 103599. https://doi.org/10.1016/j.inffus.2025.103599
 - Summerfield, C. (2025). *These Strange New Minds: How AI Learned to Talk and What It Means*. Viking.
-- Tedre, M., & Denning, P. J. (2016). The Long Quest for Computational Thinking. *Proceedings of the 16th Koli Calling International Conference on Computing Education Research*, 120–129. https://doi.org/10.1145/2999541.2999542
+- Tedre, M., & Denning, P. J. (2016). The Long Quest for Computational Thinking. *Proceedings of the 16th Koli Calling International Conference on Computing Education Research*, 120–129. https://doi.org/10.1145/2999541.2999542. Gelesen in der frei zugänglichen Fassung im Repositorium der Naval Postgraduate School, https://hdl.handle.net/10945/61006.
 - van Strien, D. (2026). AI Design Patterns for Information Professionals. https://danielvanstrien.xyz/ai-patterns-for-glam/
 - van Strien, D. (2026). A Tiny Pre-Filter. In *AI Design Patterns for Information Professionals*. https://danielvanstrien.xyz/ai-patterns-for-glam/patterns/index-card-classifier.html
 - Willison, S. (2024). Slop is the new name for unwanted AI-generated content. https://simonwillison.net/2024/May/8/slop/
 - Willison, S. (2026a). What is agentic engineering? Agentic Engineering Patterns. https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/
 - Willison, S. (2026b). Red/green TDD. Agentic Engineering Patterns. https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/
 - Wing, J. M. (2006). Computational Thinking. *Communications of the ACM*, 49(3), 33–35. https://doi.org/10.1145/1118178.1118215
-- Wing, J. M. (2011). Research Notebook: Computational Thinking, What and Why? *The Link*, Carnegie Mellon University. Die zitierte Passage ist hier nicht am Volltext geprüft.
+- Wing, J. M. (2011). Research Notebook: Computational Thinking, What and Why? *The Link*, Carnegie Mellon University. Gelesen in der Manuskriptfassung vom 17. November 2010, https://www.cs.cmu.edu/~CompThink/resources/TheLinkWing.pdf
 - Xu, W., Huang, C., Gao, S., & Shang, S. (2025). LLM-Based Agents for Tool Learning: A Survey. *Data Science and Engineering*, 10, 533–563. https://link.springer.com/article/10.1007/s41019-025-00296-9
 - Zhong, H., & Zhu, S. (2026). AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents. arXiv:2605.13357. https://doi.org/10.48550/arXiv.2605.13357
