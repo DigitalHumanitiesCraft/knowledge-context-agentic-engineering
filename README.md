@@ -32,13 +32,14 @@ Only upcoming instances live in this repository. Once an instance has been taugh
 | `workshops/<id>/` | One folder per upcoming instance, holding `profile.md`, `slide-deck.md`, `lecture-notes.md` and `data/` |
 | `data/` | The registers `workshops.json` and `videos.json`, outside the published tree |
 | `docs/` | The platform (static site, GitHub Pages) |
+| `scripts/build_glossary.py` | Generates the glossary pages from `knowledge/terms.md` |
 | `communication/` | The Research Mission Control transport for current briefs, results and recipient state |
 
 Instance ids have the form `YYYY-MM-DD-slug` and are the same string in the register, the workshop folder and the git tag.
 
 ## The platform
 
-The public site is one static page per language, `docs/index.html` and `docs/index.de.html`. The page leads from a short introduction to four material cards, Preparation, the slides, the lecture notes and four DHCraft methods, and then to the five modules with their definitions and video lists. The footer links the canonical legal notice and states the licence scope.
+The public site is one static page per language, `docs/index.html` and `docs/index.de.html`. The page leads from a short introduction to four material cards, Preparation, the slides, the lecture notes and four DHCraft methods, and then to the five modules with their definitions and video lists. A glossary page per language, generated from `knowledge/terms.md`, gives one-sentence definitions of the terms in English and German. The footer links the canonical legal notice and states the licence scope.
 
 Preparation links the English Google Slides deck [Technical Setup](https://docs.google.com/presentation/d/19zybf1mABP3qM65GXv0xEGVososbhM03P9_INInYPj8/edit) from the first of the four material cards. Its URL and language are registered in `data/workshops.json` under `preparation`. The Video Library is rendered from `data/videos.json`.
 

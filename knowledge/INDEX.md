@@ -30,7 +30,7 @@ This knowledge base documents the teaching-material contract, public platform, t
 | --- | --- | --- | --- |
 | `project.md` | Charter and material | What is the project, what does it maintain and where are its boundaries? | identity, scope, holdings or source boundary changes |
 | `specification.md` | Specification | What must the platform and repository do, and why? | requirement, acceptance criterion or binding decision changes |
-| `terms.md` | Domain knowledge | Which English and German terms and source anchors are canonical? | accepted terminology or evidence changes |
+| `terms.md` | Domain knowledge | Which English and German terms and source anchors are canonical, and which one-sentence definitions the public glossary shows? | accepted terminology or evidence changes, then a rebuild with `scripts/build_glossary.py` |
 | `design.md` | Design | Which hierarchy, interaction patterns and visual values guide the interface? | accepted UI or accessibility contract changes |
 | `governance.md` | Governance | Who may decide, write, verify, release and accept? | authority, provenance, rights or versioning changes |
 | `journal.md` | Provenance | Which substantive transition moved from which source into which target? | integrated, rejected, corrected or condensed transitions |

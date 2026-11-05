@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 320" role="img" aria-labelledby="title desc">
+  <title id="title">Glossary</title>
+  <desc id="desc">A page of term entries with a magnifier over one of them.</desc>
+  <rect width="448" height="320" fill="#fff"/>
+  <rect x="70" y="40" width="250" height="240" rx="10" fill="#fff" stroke="#141413" stroke-width="8"/>
+  <rect x="104" y="82" width="70" height="12" rx="6" fill="#141413"/>
+  <rect x="188" y="84" width="96" height="9" rx="4.5" fill="#6c6c65"/>
+  <rect x="104" y="132" width="56" height="12" rx="6" fill="#141413"/>
+  <rect x="174" y="134" width="110" height="9" rx="4.5" fill="#6c6c65"/>
+  <rect x="104" y="182" width="80" height="12" rx="6" fill="#141413"/>
+  <rect x="198" y="184" width="86" height="9" rx="4.5" fill="#6c6c65"/>
+  <rect x="104" y="232" width="62" height="12" rx="6" fill="#141413"/>
+  <circle cx="318" cy="200" r="44" fill="#fff" stroke="#0a7e7c" stroke-width="8"/>
+  <path d="m350 232 42 42" stroke="#0a7e7c" stroke-width="12" stroke-linecap="round"/>
+</svg>

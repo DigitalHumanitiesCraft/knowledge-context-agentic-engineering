@@ -50,7 +50,7 @@ document.addEventListener('pointerdown', (event) => {
 // A link to a module, `#module-0N` or `#video-module-0N`, opens that module's
 // group on arrival, so the reader lands on its videos instead of a closed row.
 const openTarget = () => {
-  const target = location.hash && document.getElementById(location.hash.slice(1));
+  const target = location.hash ? document.getElementById(location.hash.slice(1)) : null;
   const group = target?.closest('details');
   if (group && !group.open) {
     group.open = true;
@@ -59,3 +59,54 @@ const openTarget = () => {
 };
 window.addEventListener('hashchange', openTarget);
 openTarget();
+
+// Glossary: search over the precomputed normalised field and a module filter.
+// Without this script the form stays hidden and every entry is listed.
+const tools = document.querySelector('.glossary-tools');
+if (tools) {
+  const fold = { ä: 'ae', ö: 'oe', ü: 'ue', ß: 'ss' };
+  const normalise = (text) => text.toLowerCase().replace(/[äöüß]/g, (c) => fold[c])
+    .normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const entries = [...document.querySelectorAll('.glossary-entry')];
+  const groups = [...document.querySelectorAll('.glossary-group')];
+  const count = tools.querySelector('.glossary-tools__count');
+  const apply = (announce = true) => {
+    const words = normalise(tools.q.value).split(/\s+/).filter(Boolean);
+    const module = tools.module.value;
+    let shown = 0;
+    for (const entry of entries) {
+      const visible = (!module || entry.dataset.module === module)
+        && words.every((word) => entry.dataset.search.includes(word));
+      entry.hidden = !visible;
+      if (visible) shown += 1;
+    }
+    for (const group of groups) group.hidden = !group.querySelector('.glossary-entry:not([hidden])');
+    if (!announce) return;
+    const { template, one, none } = count.dataset;
+    count.textContent = shown === 0 ? none : shown === 1 ? one : template.replace('{n}', shown);
+  };
+  // A jump link or term link to an entry the current filter hides clears the filter.
+  const reveal = () => {
+    const target = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+    if (!target?.closest('[hidden]')) return;
+    tools.reset();
+    apply();
+    target.scrollIntoView({ block: 'start' });
+  };
+  tools.hidden = false;
+  tools.addEventListener('input', () => apply());
+  tools.addEventListener('submit', (event) => event.preventDefault());
+  window.addEventListener('hashchange', reveal);
+  // The browser may restore a search or filter on back navigation.
+  apply(Boolean(tools.q.value || tools.module.value));
+}
+
+// The language control keeps the fragment, so a linked term stays in view
+// when the reader switches between the paired pages.
+const keepFragment = () => {
+  for (const link of document.querySelectorAll('.language-nav a[href]')) {
+    link.hash = location.hash;
+  }
+};
+window.addEventListener('hashchange', keepFragment);
+keepFragment();

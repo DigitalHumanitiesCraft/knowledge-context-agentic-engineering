@@ -32,6 +32,10 @@ The fragments `module-01` through `module-05` sit on the module summaries and `v
 
 The material cards are compact. Each carries a small line mark of about 2.75rem beside its title, one sentence and its actions: a laptop with a setup check for Preparation, a slide stack, a written page, a player with a sequence and four connected blocks on a shared base for Methods. Preparation stands first on the tinted ground with a turquoise rule on top, which stays visible on grey screens. Cards have no hover outline, because only their actions are links. Available formats are bordered actions; formats still in preparation are not shown. The Methods card groups its four methods by module. Each group is headed once by the module icon, number and title in quiet ink, the same mark as in the module rows, and lists its methods as plain links with a quiet play symbol at the row end that links the video. The module icons carry the assignment, so the methods need no imagery of their own.
 
+Below the four cards a wide reference card spans the row with the glossary mark, the title, one sentence and one action, because the glossary is a lookup tool beside the holdings and a fifth narrow card would break the row of four. It stacks below 640 pixels.
+
+The glossary page keeps the chrome of the landing page and the hero with H1 and a back link. A jump list names the modules with number and title, the search field and module filter follow, and each module group carries the module icon, number, title and the left rule in its module colour. Entries stand in two columns, one below 1020 pixels, as a description list with the term in weight 600, its counterpart in the other language in quieter ink and the definition below. The general group closes the page without number or icon. A targeted entry takes a faint wash of its module colour.
+
 The modules need no preview images. Text lists keep the page short, can be scanned even in the largest group and load nothing from YouTube. A hint below the modules points to the complete Video Playlist.
 
 ## Single-page navigation and Preparation
@@ -49,7 +53,7 @@ Preparation is a card with its own line mark, a description that names the Engli
 - **Typography**: Space Grotesk throughout with system fallback (operator decision 2026-08-20); IBM Plex Mono for prompts and code. Both are served from `docs/assets/fonts/` as Latin subsets.
 - **Definitions**: the module definitions are visible text in the module summaries. The AI Harnesses definition opens below its term on wide viewports and stays open while the pointer moves onto it. Below 1180 pixels and on touch screens it appears as a sheet fixed to the bottom of the screen, so it never passes the viewport edge. Escape or a tap elsewhere closes it where `site.js` runs.
 - **Hierarchy**: at most two text levels per section, one heading and body. Each material card holds mark, title, one sentence and actions.
-- **Imagery**: the line marks of the four cards and the five module icons are the only images; no third-party image is loaded.
+- **Imagery**: the line marks of the four cards and the glossary card and the five module icons are the only images; no third-party image is loaded.
 - **Cards**: four material cards present Preparation, the holdings and the methods with their available formats. The videos sit as text lists inside the native module disclosure groups.
 - **Chrome**: the shared header contains the logo and the EN/DE control. The footer links the external legal notice and states the licence scope. Both pages retain the keyboard skip link, favicon and visible focus. No generic arrow-back navigation is used.
 - **Current topology**: one English and one German static page contain the complete public interface. Author acceptance and publication remain separate.

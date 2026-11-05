@@ -379,16 +379,21 @@ img { max-width: 100%; height: auto; }
 
 /* Each portable icon carries one specific conceptual relation. Colour remains
    an additional module cue; the adjacent number and title carry the meaning. */
+.glossary-group.m1,
 .video-module.m1 { --module-color: var(--m1); --module-icon: url("modules/01-understanding-llms.svg"); }
 
+.glossary-group.m2,
 .video-module.m2 { --module-color: var(--m2); --module-icon: url("modules/02-prompt-engineering.svg"); }
 
 .methods-group.m3,
+.glossary-group.m3,
 .video-module.m3 { --module-color: var(--m3); --module-icon: url("modules/03-knowledge-context-engineering.svg"); }
 
 .methods-group.m4,
+.glossary-group.m4,
 .video-module.m4 { --module-color: var(--m4); --module-icon: url("modules/04-agentic-engineering.svg"); }
 
+.glossary-group.m5,
 .video-module.m5 { --module-color: var(--m5); --module-icon: url("modules/05-critical-perspectives-governance.svg"); }
 
 /* Materials: four compact cards. A small line mark beside each title names the
@@ -680,6 +685,152 @@ a.resource-action:focus-visible {
   font-size: var(--text-sm);
 }
 
+/* The glossary card spans the row below the material cards: a reference tool
+   rather than a fifth holding, with mark, title, sentence and action in one line. */
+.resource-card--wide {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--s3);
+}
+
+.resource-card--wide .resource-card__text { margin: 0; }
+
+.resource-card--wide > .resource-actions { margin-top: 0; }
+
+/* Glossary page. Entries are grouped by module with the module icon and rule,
+   and the search form appears only where site.js runs. */
+.glossary { padding-top: var(--s4); }
+
+.glossary-jump ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
+  padding: 0;
+  font-size: var(--text-md);
+  list-style: none;
+}
+
+.glossary-jump a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  min-height: var(--tap-compact);
+}
+
+.glossary-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--s2) var(--s3);
+  margin-top: var(--s3);
+}
+
+.glossary-tools[hidden] { display: none; }
+
+.glossary-tools__field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  max-width: 100%;
+  gap: 0.3rem;
+  color: var(--ink-3);
+  font-size: var(--text-sm);
+}
+
+.glossary-tools input,
+.glossary-tools select {
+  min-height: var(--tap);
+  padding: 0 var(--s2);
+  border: 1px solid var(--rule-mid);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--text-body);
+}
+
+.glossary-tools input { width: min(24rem, 80vw); }
+
+/* The longest module title would otherwise widen the select past a phone screen. */
+.glossary-tools select { max-width: 100%; }
+
+.glossary-tools__count {
+  margin-left: auto;
+  color: var(--ink-3);
+  font-size: var(--text-md);
+}
+
+.glossary-group {
+  margin-top: var(--s5);
+  padding-left: var(--s3);
+  border-left: 3px solid var(--module-color, var(--rule-mid));
+  scroll-margin-top: var(--s4);
+}
+
+.glossary-group[hidden] { display: none; }
+
+.glossary-group__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-card);
+}
+
+.glossary-group__title .module-icon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: currentColor;
+  -webkit-mask: var(--module-icon) center / contain no-repeat;
+  mask: var(--module-icon) center / contain no-repeat;
+  color: var(--module-color);
+}
+
+.glossary-group__number {
+  color: var(--ink-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 400;
+}
+
+.glossary-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s2) var(--s5);
+  margin: var(--s2) 0 0;
+}
+
+.glossary-entry {
+  min-width: 0;
+  scroll-margin-top: var(--s4);
+}
+
+.glossary-entry[hidden] { display: none; }
+
+.glossary-entry:target dfn {
+  background: color-mix(in srgb, var(--module-color, var(--accent)) 16%, transparent);
+}
+
+.glossary-entry dt { font-weight: 600; }
+
+.glossary-entry dfn { font-style: normal; }
+
+.glossary-entry__alt {
+  color: var(--ink-3);
+  font-weight: 400;
+}
+
+.glossary-entry dd {
+  margin: 0.15rem 0 0;
+  color: var(--ink-2);
+  font-size: var(--text-body);
+  line-height: 1.5;
+}
+
+.glossary-entry__more { margin-left: 0.35em; }
+
 /* Footer. Three top-aligned groups: publisher identity, two short sentences on
    development and funding, and a compact link list on a quiet, bounded surface. */
 .site-foot {
@@ -786,6 +937,7 @@ a.resource-action:focus-visible {
 /* Narrow viewports and preferences */
 @media (max-width: 1020px) {
   .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .glossary-list { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 1020px) {
@@ -821,6 +973,10 @@ a.resource-action:focus-visible {
   .hero h1 { max-width: none; }
   .card-grid { grid-template-columns: minmax(0, 1fr); }
   .resource-card__mark { width: 2.25rem; }
+  .resource-card--wide { grid-template-columns: auto minmax(0, 1fr); row-gap: var(--s1); }
+  .resource-card--wide .resource-card__text,
+  .resource-card--wide > .resource-actions { grid-column: 1 / -1; }
+  .glossary-tools__count { margin-left: 0; }
   .resource-action { padding-inline: 0.5em; }
   .video-module__summary { padding-left: var(--s2); }
   .video-module__definition { margin-left: 0; }
@@ -833,7 +989,8 @@ a.resource-action:focus-visible {
   .foot-nav a,
   .imprint .contact a,
   .resource-action,
-  .methods-video {
+  .methods-video,
+  .glossary-jump a {
     min-height: var(--tap);
   }
 
