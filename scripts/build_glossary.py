@@ -75,6 +75,16 @@ TEXT = {
         "none": "No term matches this search.",
         "more": "Read more",
         "jump": "Modules",
+        "side": "Glossary navigation",
+        "order": "Order",
+        "by_module": "By module",
+        "by_letter": "Alphabetical",
+        "letters": "Alphabet",
+        "details": "German definition",
+        "details_related": "German definition and related terms",
+        "related": "Related terms",
+        "permalink": "Link to this term",
+        "shortcut": "Ctrl+K or / focuses the search",
         "locale": "en_GB",
     },
     "de": {
@@ -94,6 +104,16 @@ TEXT = {
         "none": "Kein Begriff passt zu dieser Suche.",
         "more": "Mehr lesen",
         "jump": "Module",
+        "side": "Navigation im Glossar",
+        "order": "Ordnung",
+        "by_module": "Nach Modul",
+        "by_letter": "Alphabetisch",
+        "letters": "Alphabet",
+        "details": "Englische Definition",
+        "details_related": "Englische Definition und verwandte Begriffe",
+        "related": "Verwandte Begriffe",
+        "permalink": "Link zu diesem Begriff",
+        "shortcut": "Strg+K oder / springt in die Suche",
         "locale": "de_DE",
     },
 }
@@ -120,6 +140,65 @@ def normalise(text: str, fold: bool = True) -> str:
     """Fold umlauts (or, with fold=False, only strip them), strip diacritics and case."""
     decomposed = unicodedata.normalize("NFD", text.translate(FOLD) if fold else text)
     return "".join(c for c in decomposed if not unicodedata.combining(c)).casefold()
+
+
+def search_field(term: Term) -> str:
+    """Folded words plus the stripped variant of each word that differs, once each."""
+    text = " ".join((term.term_en, term.term_de, term.short_en, term.short_de))
+    words = normalise(text).split() + normalise(text, fold=False).split()
+    return " ".join(dict.fromkeys(words))
+
+
+def _headwords(term: Term) -> list[str]:
+    """Normalised headword parts a sentence can mention, e.g. both halves of "X and Y"."""
+    parts = []
+    for name in (term.term_en, term.term_de):
+        # Greedy, so a nested qualifier such as "(Art. 3(3))" goes as a whole.
+        name = re.sub(r"\s*\(.*\)", "", name)
+        pieces = re.split(r"\s+(?:and|und|as|als)\s+", name)
+        parts.append(name)
+        # A single word cut out of a compound name ("Deterministic" from
+        # "Deterministic and Probabilistic Tasks") is an ordinary adjective far
+        # more often than a mention; it counts only as the stem its partner
+        # extends, as in "Token and Tokenization".
+        if len(pieces) > 1:
+            parts += [p for p in pieces if " " in p]
+            first, second = pieces[0], pieces[1]
+            if " " not in first and second.lower().startswith(first.lower()):
+                parts.append(first)
+    # Very short headwords such as "Tag" match ordinary words in the other language.
+    return list(dict.fromkeys(p for p in map(normalise, parts) if len(p) >= 4))
+
+
+RELATED_MAX = 6
+
+
+def related(terms: list[Term]) -> dict[str, list[Term]]:
+    """Terms whose headword the entry's own public sentences mention.
+
+    Relations are derived only from the public sentences, so the internal
+    definitions in terms.md never shape what the page shows. Reverse links
+    were left out: a passing mention elsewhere ("for knowledge work" in the
+    Docling sentence) made Docling look related to Knowledge Work.
+    """
+    patterns = {
+        t.anchor: [
+            re.compile(rf"(?<![a-z0-9]){re.escape(h)}(?:s|es|n|en|e)?(?![a-z0-9])")
+            for h in _headwords(t)
+        ]
+        for t in terms
+    }
+    texts = {t.anchor: normalise(f"{t.short_en} {t.short_de}") for t in terms}
+    mentions = {
+        t.anchor: [
+            o
+            for o in terms
+            if o.anchor != t.anchor
+            and any(p.search(texts[t.anchor]) for p in patterns[o.anchor])
+        ]
+        for t in terms
+    }
+    return {anchor: found[:RELATED_MAX] for anchor, found in mentions.items()}
 
 
 def _field_problems(line: str) -> list[str]:
@@ -230,37 +309,55 @@ def _head(top: str, lang: str) -> tuple[str, list[str]]:
     return top, errors
 
 
+MODULES = ("01", "02", "03", "04", "05", "00")
+
+
+def _letter(name: str) -> str:
+    first = normalise(name, fold=False)[:1].upper()
+    return first if "A" <= first <= "Z" else "#"
+
+
 def _main(terms: list[Term], lang: str, modules: dict) -> str:
     t = TEXT[lang]
     esc = lambda s: html.escape(s, quote=False)  # noqa: E731
-    groups = []
-    jump = []
-    for module in ("01", "02", "03", "04", "05", "00"):
+    attr = lambda s: html.escape(s, quote=True)  # noqa: E731
+    links = related(terms)
+    name = lambda x: x.term_en if lang == "en" else x.term_de  # noqa: E731
+    title_of = lambda m: t["general"] if m == "00" else modules[m][lang]  # noqa: E731
+    number_of = lambda m: (  # noqa: E731
+        "" if m == "00" else f'<span class="glossary-group__number">{m}</span> '
+    )
+    counts = {m: sum(1 for x in terms if x.module == m) for m in MODULES}
+    groups, jump, chips = [], [], []
+    for module in MODULES:
         members = sorted(
-            (x for x in terms if x.module == module),
-            key=lambda x: normalise(x.term_en if lang == "en" else x.term_de),
+            (x for x in terms if x.module == module), key=lambda x: normalise(name(x))
         )
         if not members:
             continue
-        title = t["general"] if module == "00" else modules[module][lang]
-        number = (
-            ""
-            if module == "00"
-            else f'<span class="glossary-group__number">{module}</span> '
-        )
+        title = title_of(module)
+        number = number_of(module)
         icon = (
             ""
             if module == "00"
             else '<span class="module-icon" aria-hidden="true"></span>'
         )
         cls = "" if module == "00" else f" m{int(module)}"
-        jump.append(f'<li><a href="#glossary-{module}">{number}{esc(title)}</a></li>')
+        jump.append(
+            f'<li><a href="#glossary-{module}">{number}{esc(title)}</a> '
+            f'<span class="glossary-count">{counts[module]}</span></li>'
+        )
+        chips.append(
+            f'<label class="glossary-chip{cls}"><input type="radio" name="module" value="{module}">'
+            f'<span class="glossary-chip__label">{icon}{number}{esc(title)}</span>'
+            f'<span class="glossary-count">{counts[module]}</span></label>'
+        )
         rows = []
         for x in members:
-            primary, alt, alt_lang, short = (
-                (x.term_en, x.term_de, "de", x.short_en)
+            primary, alt, alt_lang, short, other = (
+                (x.term_en, x.term_de, "de", x.short_en, x.short_de)
                 if lang == "en"
-                else (x.term_de, x.term_en, "en", x.short_de)
+                else (x.term_de, x.term_en, "en", x.short_de, x.short_en)
             )
             alt_html = (
                 ""
@@ -268,18 +365,36 @@ def _main(terms: list[Term], lang: str, modules: dict) -> str:
                 else f' <span class="glossary-entry__alt" lang="{alt_lang}">{esc(alt)}</span>'
             )
             more = (
-                f' <a class="glossary-entry__more" href="{html.escape(x.blog)}">{t["more"]}</a>'
+                f' <a class="glossary-entry__more" href="{attr(x.blog)}">{t["more"]}</a>'
                 if x.blog
                 else ""
             )
-            # Both spellings are indexed, so "ueber" and "uber" find "über".
-            text = " ".join((x.term_en, x.term_de, x.short_en, x.short_de))
-            variants = dict.fromkeys((normalise(text), normalise(text, fold=False)))
-            search = html.escape(" ".join(variants))
+            near = links[x.anchor]
+            related_html = (
+                f'\n              <p class="glossary-entry__related"><span>{t["related"]}:</span> '
+                + ", ".join(f'<a href="#{o.anchor}">{esc(name(o))}</a>' for o in near)
+                + "</p>"
+                if near
+                else ""
+            )
+            tag = (
+                ""
+                if module == "00"
+                else f'<span class="glossary-entry__module" aria-hidden="true">{module}</span>'
+            )
             rows.append(
-                f'        <div class="glossary-entry" id="{x.anchor}" data-module="{module}" data-search="{search}">\n'
-                f"          <dt><dfn>{esc(primary)}</dfn>{alt_html}</dt>\n"
-                f"          <dd>{esc(short)}{more}</dd>\n"
+                f'        <div class="glossary-entry{cls}" id="{x.anchor}" data-module="{module}"'
+                f' data-letter="{_letter(primary)}" data-search="{attr(search_field(x))}">\n'
+                f"          <dt>{tag}<dfn>{esc(primary)}</dfn>{alt_html}</dt>\n"
+                f"          <dd>\n"
+                f'            <p class="glossary-entry__def">{esc(short)}{more}</p>\n'
+                f'            <details class="glossary-entry__details">\n'
+                f"              <summary>{t['details_related'] if near else t['details']}</summary>\n"
+                f'              <p class="glossary-entry__other" lang="{alt_lang}">{esc(other)}</p>'
+                f"{related_html}\n"
+                f'              <p class="glossary-entry__permalink"><a href="#{x.anchor}">{t["permalink"]}</a></p>\n'
+                f"            </details>\n"
+                f"          </dd>\n"
                 f"        </div>"
             )
         groups.append(
@@ -289,9 +404,17 @@ def _main(terms: list[Term], lang: str, modules: dict) -> str:
             + "\n".join(rows)
             + "\n      </dl>\n    </section>"
         )
-    options = "".join(
-        f'<option value="{m}">{"" if m == "00" else m + " "}{esc(t["general"] if m == "00" else modules[m][lang])}</option>'
-        for m in ("01", "02", "03", "04", "05", "00")
+    present = {_letter(name(x)) for x in terms}
+    letters = "".join(
+        f'<a href="#letter-{c}" data-letter="{c}">{c}</a>'
+        if c in present
+        else f'<span aria-hidden="true">{c}</span>'
+        for c in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    )
+    all_chip = (
+        f'<label class="glossary-chip"><input type="radio" name="module" value="" checked>'
+        f'<span class="glossary-chip__label">{t["all"]}</span>'
+        f'<span class="glossary-count">{len(terms)}</span></label>'
     )
     return f'''<main id="main-content" tabindex="-1">
 
@@ -303,14 +426,27 @@ def _main(terms: list[Term], lang: str, modules: dict) -> str:
 </section>
 
 <section class="glossary">
-  <div class="wrap">
-    <nav class="glossary-jump" aria-label="{t["jump"]}"><ul>{"".join(jump)}</ul></nav>
-    <form class="glossary-tools" role="search" hidden>
-      <label class="glossary-tools__field"><span>{t["search"]}</span><input type="search" name="q" autocomplete="off"></label>
-      <label class="glossary-tools__field"><span>{t["module"]}</span><select name="module"><option value="">{t["all"]}</option>{options}</select></label>
-      <p class="glossary-tools__count" aria-live="polite" data-template="{t["count"]}" data-one="{t["one"]}" data-none="{t["none"]}"></p>
-    </form>
+  <div class="wrap glossary-layout">
+    <aside class="glossary-side" aria-label="{t["side"]}">
+      <nav class="glossary-jump" aria-label="{t["jump"]}"><ul>{"".join(jump)}</ul></nav>
+      <form class="glossary-tools" role="search" hidden>
+        <label class="glossary-tools__field"><span>{t["search"]}</span><input type="search" name="q" autocomplete="off" aria-keyshortcuts="Control+K /" aria-describedby="glossary-shortcut"></label>
+        <p class="glossary-tools__hint" id="glossary-shortcut">{t["shortcut"]}</p>
+        <p class="glossary-tools__count" aria-live="polite" data-template="{t["count"]}" data-one="{t["one"]}" data-none="{t["none"]}"></p>
+        <fieldset class="glossary-filter">
+          <legend>{t["module"]}</legend>
+          {all_chip}{"".join(chips)}
+        </fieldset>
+        <fieldset class="glossary-filter glossary-filter--order">
+          <legend>{t["order"]}</legend>
+          <label class="glossary-chip"><input type="radio" name="order" value="module" checked><span class="glossary-chip__label">{t["by_module"]}</span></label><label class="glossary-chip"><input type="radio" name="order" value="letter"><span class="glossary-chip__label">{t["by_letter"]}</span></label>
+        </fieldset>
+        <nav class="glossary-letters" aria-label="{t["letters"]}">{letters}</nav>
+      </form>
+    </aside>
+    <div class="glossary-main">
 {chr(10).join(groups)}
+    </div>
   </div>
 </section>
 </main>'''
