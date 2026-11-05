@@ -1,0 +1,10 @@
+A: Guten Morgen. Lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt.
+B: Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben.
+A: Gut. Welche Produkte laufen am stärksten?
+B: Ganz vorne liegt der Chai, danach kommt der Côte de Blaye. Beim Wein ist die Marge deutlich höher, aber die Mengen sind kleiner.
+A: Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering, also wie ein Agent mit solchen Listen arbeiten kann.
+B: Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns.
+A: Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung.
+B: Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir.
+A: Prima. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um neun Uhr noch einmal.
+B: Passt. Bis Montag.

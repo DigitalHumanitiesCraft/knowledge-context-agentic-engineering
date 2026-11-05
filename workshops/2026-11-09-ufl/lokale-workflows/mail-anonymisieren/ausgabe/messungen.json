@@ -1,0 +1,24 @@
+{
+  "datum": "2026-11-05T15:38:38",
+  "prompt_hash": "195ba841c5b6",
+  "stufe1_ms": 16.3,
+  "laeufe": [
+    {
+      "modell": "qwen3.5:9b",
+      "lauf": 1,
+      "stufe2_s": 1.84,
+      "ollama": {
+        "total_duration": 1837307900,
+        "load_duration": 130188200,
+        "prompt_eval_count": 868,
+        "eval_count": 78,
+        "eval_duration": 1483884600
+      },
+      "modellantwort": "{\"personen\": [\"Margaret Peacock\", \"Michael Suyama\"], \"umstaende\": [\"Margaret Peacock geht im Frühjahr in Pension und wird nicht teilnehmen.\", \"Michael Suyama ist bis Jahresende in Elternzeit, möchte aber online dazukommen.\", \"Die Geburtsdaten und Privatadressen stehen in der Liste, falls Sie Teilnahmebestätigungen ausstellen.\"]}",
+      "durchgelassen": [],
+      "verloren": [],
+      "verworfen": [],
+      "sha256": "0d3164102cd4731f758beeb25c5531c35a6f2c688850bb1e283e40327e9c3c30"
+    }
+  ]
+}

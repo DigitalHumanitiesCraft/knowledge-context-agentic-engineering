@@ -1,0 +1,84 @@
+# Prüfbericht PDF zu Markdown
+
+## Docling: northwind-ki-regeln.md
+Überschriften als Text: 6/6
+Überschriften als Markdown-Überschrift: 6/6
+Listenpunkte als Text: 5/5
+Listenpunkte als Markdown-Liste: 5/5
+Tabellenzellen als Text: 20/20
+Tabellenzeilen exakt als Markdown-Tabellenzeile: 5/5
+Fußnotentext vorhanden: True
+Absätze wortgleich und zusammenhängend: 11/12
+  nicht zusammenhängend: ['Diese Richtlinie regelt, wie Mitarbeiten']
+Kopfzeile im Text: 0x, Fußzeile mit Seitenzahl im Text: 0x
+Lesereihenfolge zweispaltiger Teil korrekt: True (Positionen [2065, 2313, 2560, 3031, 3285, 3510])
+Abschnitt 5 steht nach dem zweispaltigen Teil: False (Position 2797)
+
+## naiv pypdf: northwind-ki-regeln.pdf
+Überschriften als Text: 6/6
+Listenpunkte als Text: 5/5
+Tabellenzellen als Text: 20/20
+Fußnotentext vorhanden: True
+Absätze wortgleich und zusammenhängend: 11/12
+  nicht zusammenhängend: ['Diese Richtlinie regelt, wie Mitarbeiten']
+Kopfzeile im Text: 2x, Fußzeile mit Seitenzahl im Text: 2x
+Lesereihenfolge zweispaltiger Teil korrekt: True (Positionen [2044, 2292, 2539, 2773, 3027, 3252])
+Abschnitt 5 steht nach dem zweispaltigen Teil: True (Position 3421)
+
+## naiv pdftotext: northwind-ki-regeln.pdf
+Überschriften als Text: 6/6
+Listenpunkte als Text: 5/5
+Tabellenzellen als Text: 13/20
+Fußnotentext vorhanden: True
+Absätze wortgleich und zusammenhängend: 11/12
+  nicht zusammenhängend: ['Diese Richtlinie regelt, wie Mitarbeiten']
+Kopfzeile im Text: 2x, Fußzeile mit Seitenzahl im Text: 2x
+Lesereihenfolge zweispaltiger Teil korrekt: False (Positionen [2028, 2530, 3002, 2276, 2777, 3236])
+Abschnitt 5 steht nach dem zweispaltigen Teil: True (Position 3405)
+
+## naiv pdftotext-layout: northwind-ki-regeln.pdf
+Überschriften als Text: 6/6
+Listenpunkte als Text: 5/5
+Tabellenzellen als Text: 13/20
+Fußnotentext vorhanden: True
+Absätze wortgleich und zusammenhängend: 5/12
+  nicht zusammenhängend: ['Diese Richtlinie regelt, wie Mitarbeiten', 'Antrag. Ein neues KI-Werkzeug beantragt ', 'Datenflussprüfung. Das Team Datenschutz ', 'Pilotphase. Nach positiver Prüfung teste', 'Bewertung. Die Vertriebsleitung bewertet', 'Freigabe. Wird das Werkzeug freigegeben,', 'Wiedervorlage. Jede Freigabe gilt zwölf ']
+Kopfzeile im Text: 2x, Fußzeile mit Seitenzahl im Text: 2x
+Lesereihenfolge zweispaltiger Teil korrekt: False (Positionen [2108, 2532, 3004, 2030, 2572, 3046])
+Abschnitt 5 steht nach dem zweispaltigen Teil: True (Position 3407)
+
+## Docling: northwind-ki-regeln-scan.md
+Zeichen im Ergebnis: 2027
+Wortrecall gegenüber Seite 1: 161/235 (69%)
+Überschriften wortgleich: 0/4
+Listenpunkte wortgleich: 1/5
+Tabellenzellen wortgleich: 14/20
+Markdown-Tabelle vorhanden: True
+Fußnotentext wortgleich: False
+
+## naiv pypdf: northwind-ki-regeln-scan.pdf
+Zeichen im Ergebnis: 0
+Wortrecall gegenüber Seite 1: 0/235 (0%)
+Überschriften wortgleich: 0/4
+Listenpunkte wortgleich: 0/5
+Tabellenzellen wortgleich: 0/20
+Markdown-Tabelle vorhanden: False
+Fußnotentext wortgleich: False
+
+## naiv pdftotext: northwind-ki-regeln-scan.pdf
+Zeichen im Ergebnis: 0
+Wortrecall gegenüber Seite 1: 0/235 (0%)
+Überschriften wortgleich: 0/4
+Listenpunkte wortgleich: 0/5
+Tabellenzellen wortgleich: 0/20
+Markdown-Tabelle vorhanden: False
+Fußnotentext wortgleich: False
+
+## naiv pdftotext-layout: northwind-ki-regeln-scan.pdf
+Zeichen im Ergebnis: 0
+Wortrecall gegenüber Seite 1: 0/235 (0%)
+Überschriften wortgleich: 0/4
+Listenpunkte wortgleich: 0/5
+Tabellenzellen wortgleich: 0/20
+Markdown-Tabelle vorhanden: False
+Fußnotentext wortgleich: False

@@ -1,0 +1,90 @@
+Northwind Traders | Richtlinie VT-07 | Nur für den internen Gebrauch
+
+Interne Regeln zum Einsatz von KI im
+Vertrieb
+
+Northwind Traders GmbH, Richtlinie VT-07, gültig ab 1. Oktober 2026
+
+1 Zweck und Geltungsbereich
+
+Diese Richtlinie regelt, wie Mitarbeitende im Vertrieb von Northwind Traders generative KI-
+Werkzeuge1 einsetzen dürfen.
+
+Sie gilt für den Innendienst, den Außendienst und das Key-Account-Management an allen
+Standorten. Abweichende Regelungen einzelner Abteilungen sind nur zulässig, wenn sie
+strenger sind als diese Richtlinie. Die Richtlinie wird jährlich überprüft und bei Bedarf früher
+angepasst, etwa wenn neue Werkzeuge freigegeben oder gesetzliche Vorgaben geändert
+werden.
+
+2 Grundsätze
+
+1. Kundendaten werden nur in freigegebene Werkzeuge eingegeben.
+2. Jedes KI-Ergebnis wird vor der Weitergabe von einem Menschen geprüft.
+3. Angebote und Preise entstehen nie ausschließlich durch ein KI-Werkzeug.
+4. Prompts mit vertraulichem Inhalt werden nicht in gemeinsamen Vorlagen gespeichert.
+5. Unklare Fälle werden vor der Nutzung an das Team Datenschutz gemeldet.
+
+3 Datenklassen und erlaubte Werkzeuge
+
+Die folgende Tabelle ordnet jeder Datenklasse die zulässigen Werkzeuge zu.
+
+Datenklasse         Beispiele          Erlaubte Werkzeuge Freigabe durch
+
+Öffentlich          Produktkatalog,    Alle freigegebenen             keine
+
+                    Pressemitteilungen Chatassistenten
+
+Intern              Vertriebshandbuch, Unternehmensassistent Teamleitung
+
+                    Schulungsfolien    im EU-Rechenzentrum
+
+Vertraulich         Kundenlisten,      Lokales Modell auf dem Vertriebsleitung
+
+                    Rabattstaffeln     Firmenlaptop
+
+Streng vertraulich  Vertragsentwürfe,  Kein KI-Werkzeug               nicht zulässig
+
+                    Gesundheitsdaten
+
+Fällt ein Dokument in mehrere Klassen, gilt immer die strengste. Wer unsicher ist, behandelt das
+
+Dokument als vertraulich.
+
+1 Gemeint sind alle Systeme, die auf Basis statistischer Sprachmodelle Texte, Tabellen oder Bilder
+erzeugen, unabhängig davon, ob sie lokal oder als Clouddienst betrieben werden.
+
+Seite 1 von 2
+Northwind Traders | Richtlinie VT-07 | Nur für den internen Gebrauch
+
+4 Freigabeprozess für neue Werkzeuge         Bewertung. Die Vertriebsleitung bewertet
+                                             das Protokoll gemeinsam mit dem Team
+Antrag. Ein neues KI-Werkzeug beantragt die  Datenschutz. Maßgeblich sind die Qualität
+Teamleitung schriftlich. Der Antrag          der Ergebnisse, der Aufwand für die
+beschreibt den Zweck, die betroffenen        menschliche Prüfung und die Frage, ob ein
+Datenklassen, den Anbieter und den Ort, an   bereits freigegebenes Werkzeug denselben
+dem die Daten verarbeitet werden. Ohne       Zweck erfüllt.
+diese Angaben wird der Antrag nicht
+bearbeitet.
+
+Datenflussprüfung. Das Team Datenschutz      Freigabe. Wird das Werkzeug freigegeben,
+prüft, welche Daten das Werkzeug verlässt,   trägt das Team Datenschutz es mit der
+wer sie speichert und wie lange. Werkzeuge,  höchsten zulässigen Datenklasse in die
+die Eingaben zum Training eigener Modelle    Werkzeugliste im Intranet ein. Erst ab
+verwenden, werden für interne und            diesem Eintrag darf das Werkzeug im
+vertrauliche Daten grundsätzlich abgelehnt.  Tagesgeschäft verwendet werden.
+
+Pilotphase. Nach positiver Prüfung testet    Wiedervorlage. Jede Freigabe gilt zwölf
+eine kleine Gruppe das Werkzeug vier         Monate. Danach wird das Werkzeug erneut
+Wochen lang mit öffentlichen Daten. Die      geprüft, weil sich Nutzungsbedingungen und
+Gruppe dokumentiert Fehler, auffällige       Datenverarbeitung der Anbieter häufig
+Ergebnisse und den tatsächlichen Zeitgewinn  ändern.
+in einem gemeinsamen Protokoll.
+
+5 Verstöße und Ansprechpartner
+
+Verstöße gegen diese Richtlinie meldet man der Teamleitung oder direkt dem Team
+Datenschutz. Fragen zur Einordnung einzelner Dokumente beantwortet das Team Datenschutz
+unter der internen Durchwahl 4711.
+
+Seite 2 von 2
+

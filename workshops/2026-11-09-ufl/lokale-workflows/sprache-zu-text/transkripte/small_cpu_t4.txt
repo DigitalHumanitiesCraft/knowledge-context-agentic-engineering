@@ -1,0 +1,13 @@
+[   0.0 -    6.0] Dutte Norwen, lasst uns kurz dem Workshop nächste Woche durchgehen, bevor das Team dazu kommt.
+[   6.0 -   11.0] Gerne, ich habe die Excel-Listen mit den Bestellungen aus dem 3. Krathal zusammengeführt.
+[  11.0 -   15.0] Es sind insgesamt 8 und 20 Kunden, die mehr als einmal bestellt haben.
+[  15.0 -   18.0] Pff, welche Produkte laufen am stärksten?
+[  18.0 -   24.0] Ganz vorne liegt der Tschey danach, kommt der Koteblei beim Wein, ist die Marge deutlich höher, aber die Mengen sind kleine.
+[  24.0 -   32.0] Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann.
+[  32.0 -   37.0] Genau, mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert.
+[  37.0 -   40.0] Die Entscheidung, was wir damit machen, bleibt bei uns.
+[  40.0 -   45.0] Einverstanden. Wichtig ist mir, dass keine Kunden Daten in eine Cloud gehen.
+[  45.0 -   48.0] Wir arbeiten nur mit der anonymisierten Fassung.
+[  48.0 -   53.0] Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir.
+[  53.0 -   60.0] Gerne, ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal.
+[  60.0 -   62.0] Passt bis Montag.

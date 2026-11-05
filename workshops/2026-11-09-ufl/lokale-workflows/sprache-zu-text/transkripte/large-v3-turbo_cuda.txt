@@ -1,0 +1,37 @@
+[   0.0 -    5.8] Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt.
+[   6.8 -   10.8] Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt.
+[  11.3 -   15.0] Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben.
+[  15.7 -   17.9] Für welche Produkte laufen am stärksten?
+[  18.7 -   22.7] Ganz vorne liegt der Schei danach, kommt der Koteblei beim Wein, ist die Marke deutlich höher.
+[  22.9 -   24.1] Aber die Mengen sind kleine.
+[  24.1 -   31.7] Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann.
+[  32.5 -   36.9] Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert.
+[  37.4 -   40.1] Die Entscheidung, was wir damit machen, bleibt bei uns.
+[  40.8 -   48.1] Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung.
+[  49.1 -   52.6] Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir.
+[  52.6 -   59.2] Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal.
+[  60.1 -   61.3] Passt. Bis Montag.
+[  61.3 -   61.8] Passt. Bis Montag.
+[  61.8 -   62.8] Passt. Bis Montag.
+[  62.8 -   63.8] Passt. Bis Montag.
+[  63.8 -   64.8] Passt. Bis Montag.
+[  64.8 -   65.8] Passt. Bis Montag.
+[  65.8 -   66.8] Passt. Bis Montag.
+[  66.8 -   67.8] Passt. Bis Montag.
+[  67.8 -   68.8] Passt. Bis Montag.
+[  68.8 -   69.8] Passt. Bis Montag.
+[  69.8 -   70.8] Passt. Bis Montag.
+[  70.8 -   71.8] Passt. Bis Montag.
+[  71.8 -   72.8] Passt. Bis Montag.
+[  72.8 -   73.8] Passt. Bis Montag.
+[  73.8 -   74.8] Passt. Bis Montag.
+[  74.8 -   75.8] Passt. Bis Montag.
+[  75.8 -   76.8] Passt. Bis Montag.
+[  76.8 -   77.8] Passt. Bis Montag.
+[  77.8 -   78.8] Passt. Bis Montag.
+[  78.8 -   79.8] Passt. Bis Montag.
+[  79.8 -   80.8] Passt. Bis Montag.
+[  80.8 -   81.8] Passt. Bis Montag.
+[  81.8 -   82.8] Passt. Bis Montag.
+[  82.8 -   83.8] Passt. Bis Montag.
+[  83.8 -   84.8] Passt. Bis Montag.

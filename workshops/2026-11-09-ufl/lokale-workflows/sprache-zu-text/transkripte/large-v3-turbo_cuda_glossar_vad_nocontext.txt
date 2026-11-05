@@ -1,0 +1,12 @@
+[   0.0 -    5.8] Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt.
+[   6.8 -   10.8] Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt.
+[  11.3 -   15.1] Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben.
+[  15.7 -   18.0] Für welche Produkte laufen am stärksten?
+[  18.7 -   24.1] Ganz vorne liegt der Chai danach, kommt der Côte de Blaye beim Wein, ist die Marke deutlich höher, aber die Mengen sind kleine.
+[  24.9 -   31.7] Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann.
+[  32.5 -   40.1] Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns.
+[  40.8 -   48.1] Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung.
+[  49.1 -   52.6] Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir.
+[  53.4 -   56.1] Ich kümmere mich um die Einladung und kläre den Raum.
+[  56.4 -   59.2] Dann treffen wir uns am Montag um 9 Uhr noch einmal.
+[  60.1 -   61.3] Passt. Bis Montag.

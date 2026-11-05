@@ -1,0 +1,33 @@
+Von: Andrew Fuller <andrew.fuller@northwind-traders.example>
+An: office@dhcraft.org
+Cc: Steven Buchanan <steven.buchanan@northwind-traders.example>
+Datum: Montag, 9. November 2026, 08:12
+Betreff: Anfrage Workshop Agentic Engineering und Governance für unser Vertriebsteam
+Anhänge: bestellungen.xlsx, produkte.xlsx, kunden.xlsx, mitarbeitende.xlsx
+
+Sehr geehrte Damen und Herren,
+
+ich leite den Vertrieb bei Northwind Traders, einem Großhandel für Feinkost und Getränke mit Standorten in Seattle und London. Ein Kollege hat Ihre Weiterbildung bei Uni for Life besucht und Sie mir empfohlen.
+
+Wir möchten für unser Vertriebsteam einen Workshop zu Agentic Engineering und Governance. Unsere Leute arbeiten fast ausschließlich mit Excel-Listen, und mehrere haben inzwischen auf eigene Faust angefangen, Kundendaten in irgendwelche Chatbots zu kopieren. Ich hätte gerne zweierlei. Erstens sollen die Kolleginnen und Kollegen lernen, wie man mit AI Agents unsere Verkaufsdaten sinnvoll auswertet. Zweitens brauchen wir klare Regeln, was erlaubt ist und was nicht, bevor uns die Rechtsabteilung das Thema ganz verbietet.
+
+Konkret wünschen wir uns:
+
+- einen eintägigen Workshop für unser Team, vor Ort in London oder online
+- Folien, die wir danach intern weitergeben dürfen, gerne in unserem Firmendesign
+- eine kleine Webseite oder Übersicht für die Teilnehmenden, auf der die wichtigsten Begriffe und Regeln nachzulesen sind
+- einen ersten Vorschlag für interne Regeln zum Einsatz von KI im Vertrieb
+
+Damit Sie sehen, womit wir arbeiten, habe ich Ihnen unsere Exporte aus dem alten Warenwirtschaftssystem angehängt: Bestellungen, Produkte, Kunden und die Mitarbeiterliste des Vertriebs. Die Daten reichen von 1996 bis 1998, neuere Exporte schickt Ihnen meine Assistentin nach. Mich würde besonders interessieren, welche Produkte und Länder bei uns am meisten Umsatz bringen und ob Sie an den Daten zeigen können, was ein Agent damit anfangen kann.
+
+Zum Team: Es sind neun Personen. Die einzige Frau im Londoner Team hat die Stelle über ihren Onkel im Vorstand bekommen, was nicht alle gut finden. Unser Kollege in Kirkland, der aus dem Iran stammt, bittet um vegetarisches Essen ohne Alkohol. margret peacok kommt wegen ihrer Chemotherapie nur vormittags. Eine Kollegin wohnt am Moss Bay Blvd. 722 in Kirkland.
+
+Zeitlich wäre uns die zweite Januarhälfte 2027 am liebsten. Können Sie mir bis Ende nächster Woche ein Angebot mit einem groben Ablauf schicken? Für Rückfragen erreichen Sie mich am besten direkt unter (206) 555-9482, Durchwahl 3457.
+
+Mit freundlichen Grüßen
+
+Andrew Fuller
+Vice President, Sales
+Northwind Traders
+908 W. Capital Way
+Tacoma, WA 98401, USA

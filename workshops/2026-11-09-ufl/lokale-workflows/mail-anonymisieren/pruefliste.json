@@ -1,0 +1,29 @@
+{
+  "_zweck": "Prüfliste für die Testmail data/kundenanfrage.txt. Gilt nur für diese Mail; für eine andere Mail neu anlegen oder weglassen, dann laufen nur die allgemeinen Prüfungen.",
+  "darf_nicht_ueberleben": [
+    "555-9482",
+    "3457",
+    "908 W. Capital Way",
+    "Tacoma",
+    "98401",
+    "andrew.fuller@",
+    "steven.buchanan@",
+    "office@dhcraft.org",
+    "Steven Buchanan",
+    "Margaret Peacock",
+    "Michael Suyama",
+    "Pension",
+    "Elternzeit",
+    "Geburtsdaten",
+    "Privatadressen"
+  ],
+  "muss_erhalten_bleiben": [
+    "Northwind Traders",
+    "eintägigen Workshop",
+    "Produkte und Länder",
+    "Umsatz",
+    "1996 bis 1998",
+    "zweite Januarhälfte 2027",
+    "Andrew Fuller"
+  ]
+}

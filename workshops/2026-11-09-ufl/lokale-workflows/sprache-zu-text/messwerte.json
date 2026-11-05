@@ -1,0 +1,654 @@
+[
+  {
+    "timestamp": "2026-11-05T15:32:59",
+    "tag": "small_cpu",
+    "model": "small",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--Systran--faster-whisper-small\\snapshots\\536b0662742c02347bc0e980a01041f333bce120",
+    "model_size_mb": 486.2,
+    "download_or_cache_check_s": 0.64,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 0,
+    "glossar": null,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 1.13,
+    "transcribe_s": 8.06,
+    "transcribe_runs_s": [
+      10.82,
+      8.06
+    ],
+    "rtf": 0.13,
+    "text": "Dutte Norwen, lasst uns kurz dem Workshop nächste Woche durchgehen, bevor das Team dazu kommt. Gerne, ich habe die Excel-Listen mit den Bestellungen aus dem 3. Krathal zusammengeführt. Es sind insgesamt 8 und 20 Kunden, die mehr als einmal bestellt haben. Pff, welche Produkte laufen am stärksten? Ganz vorne liegt der Tschey danach, kommt der Koteblei beim Wein, ist die Marge deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau, mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kunden Daten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Gerne, ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt bis Montag.",
+    "wer": 0.1369,
+    "checks": {
+      "Zahl 28": false,
+      "Produkt Chai": false,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:33:05",
+    "tag": "small_cuda",
+    "model": "small",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--Systran--faster-whisper-small\\snapshots\\536b0662742c02347bc0e980a01041f333bce120",
+    "model_size_mb": 486.2,
+    "download_or_cache_check_s": 0.64,
+    "device": "cuda",
+    "compute_type": "float16",
+    "cpu_threads": 0,
+    "glossar": null,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 0.69,
+    "transcribe_s": 2.23,
+    "transcribe_runs_s": [
+      2.96,
+      2.23
+    ],
+    "rtf": 0.036,
+    "text": "Do the Norwen, lasst uns kurz dem Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne, ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Pff, welche Produkte laufen am stärksten? Ganz vorne liegt der Chai danach, kommt der Koteblei beim Wein, ist die Marge deutlich höher, aber die Mengen sind kleiner. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau, mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Wieder, ich kümmer mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Hast bis Montag.",
+    "wer": 0.0893,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": true,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:33:53",
+    "tag": "medium_cpu",
+    "model": "medium",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--Systran--faster-whisper-medium\\snapshots\\08e178d48790749d25932bbc082711ddcfdfbc4f",
+    "model_size_mb": 1530.6,
+    "download_or_cache_check_s": 0.15,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 0,
+    "glossar": null,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 2.77,
+    "transcribe_s": 22.56,
+    "transcribe_runs_s": [
+      23.0,
+      22.56
+    ],
+    "rtf": 0.365,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazu kommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Pfff, welche Produkte laufen am stärksten? Ganz vorne liegt der Tschei danach, kommt der Coteblei beim Wein, ist die Marge deutlich höher. Aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja, Agentic Engineering Guy sowie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag.",
+    "wer": 0.0833,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": false,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:34:02",
+    "tag": "medium_cuda",
+    "model": "medium",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--Systran--faster-whisper-medium\\snapshots\\08e178d48790749d25932bbc082711ddcfdfbc4f",
+    "model_size_mb": 1530.6,
+    "download_or_cache_check_s": 0.15,
+    "device": "cuda",
+    "compute_type": "float16",
+    "cpu_threads": 0,
+    "glossar": null,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 1.55,
+    "transcribe_s": 3.23,
+    "transcribe_runs_s": [
+      3.23,
+      4.32
+    ],
+    "rtf": 0.052,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazu kommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Für welche Produkte laufen am stärksten? Ganz vorne liegt der Tschei danach, kommt der Koteblei beim Wein, ist die Marge deutlich höher. Aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja, Agentic Engineering Guy sowie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag.",
+    "wer": 0.0833,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": false,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:34:41",
+    "tag": "large-v3-turbo_cpu",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.27,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 0,
+    "glossar": null,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 2.88,
+    "transcribe_s": 17.67,
+    "transcribe_runs_s": [
+      18.08,
+      17.67
+    ],
+    "rtf": 0.286,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Pfiff, welche Produkte laufen am stärksten? Ganz vorne liegt der Tscheider nach, kommt der Koteblei beim Wein, ist die Marke deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag.",
+    "wer": 0.0833,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": false,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:34:55",
+    "tag": "large-v3-turbo_cuda",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.27,
+    "device": "cuda",
+    "compute_type": "float16",
+    "cpu_threads": 0,
+    "glossar": null,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 1.84,
+    "transcribe_s": 5.5,
+    "transcribe_runs_s": [
+      5.5,
+      6.16
+    ],
+    "rtf": 0.089,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Für welche Produkte laufen am stärksten? Ganz vorne liegt der Schei danach, kommt der Koteblei beim Wein, ist die Marke deutlich höher. Aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag.",
+    "wer": 0.506,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": false,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:35:12",
+    "tag": "small_cpu_t4",
+    "model": "small",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--Systran--faster-whisper-small\\snapshots\\536b0662742c02347bc0e980a01041f333bce120",
+    "model_size_mb": 486.2,
+    "download_or_cache_check_s": 0.57,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "glossar": null,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 0.67,
+    "transcribe_s": 7.34,
+    "transcribe_runs_s": [
+      7.34,
+      8.19
+    ],
+    "rtf": 0.119,
+    "text": "Dutte Norwen, lasst uns kurz dem Workshop nächste Woche durchgehen, bevor das Team dazu kommt. Gerne, ich habe die Excel-Listen mit den Bestellungen aus dem 3. Krathal zusammengeführt. Es sind insgesamt 8 und 20 Kunden, die mehr als einmal bestellt haben. Pff, welche Produkte laufen am stärksten? Ganz vorne liegt der Tschey danach, kommt der Koteblei beim Wein, ist die Marge deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau, mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kunden Daten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Gerne, ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt bis Montag.",
+    "wer": 0.1369,
+    "checks": {
+      "Zahl 28": false,
+      "Produkt Chai": false,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:35:52",
+    "tag": "large-v3-turbo_cpu_t4",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.27,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "glossar": null,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 2.53,
+    "transcribe_s": 17.69,
+    "transcribe_runs_s": [
+      17.69,
+      19.39
+    ],
+    "rtf": 0.286,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Pfiff, welche Produkte laufen am stärksten? Ganz vorne liegt der Tscheider nach, kommt der Koteblei beim Wein, ist die Marke deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag.",
+    "wer": 0.0833,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": false,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:36:44",
+    "tag": "large-v3-turbo_cpu_glossar",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.64,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 0,
+    "glossar": "Northwind Traders, Chai, Côte de Blaye, Agentic Engineering, Excel",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 2.06,
+    "transcribe_s": 22.9,
+    "transcribe_runs_s": [
+      25.52,
+      22.9
+    ],
+    "rtf": 0.37,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Für welche Produkte laufen am stärksten? Ganz vorne liegt der Chai danach, kommt der Côte de Blaye beim Wein, ist die Marke deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag.",
+    "wer": 0.0893,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": true,
+      "Produkt Côte de Blaye": true,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:36:48",
+    "tag": "large-v3-turbo_cuda_glossar",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.64,
+    "device": "cuda",
+    "compute_type": "float16",
+    "cpu_threads": 0,
+    "glossar": "Northwind Traders, Chai, Côte de Blaye, Agentic Engineering, Excel",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 1.73,
+    "transcribe_s": 1.22,
+    "transcribe_runs_s": [
+      1.43,
+      1.22
+    ],
+    "rtf": 0.02,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Für welche Produkte laufen am stärksten? Ganz vorne liegt der Chai danach, kommt der Côte de Blaye beim Wein, ist die Marke deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag.",
+    "wer": 0.0536,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": true,
+      "Produkt Côte de Blaye": true,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:37:05",
+    "tag": "small_cpu_glossar",
+    "model": "small",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--Systran--faster-whisper-small\\snapshots\\536b0662742c02347bc0e980a01041f333bce120",
+    "model_size_mb": 486.2,
+    "download_or_cache_check_s": 0.14,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 0,
+    "glossar": "Northwind Traders, Chai, Côte de Blaye, Agentic Engineering, Excel",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 0.79,
+    "transcribe_s": 7.67,
+    "transcribe_runs_s": [
+      7.97,
+      7.67
+    ],
+    "rtf": 0.124,
+    "text": "Lass uns kurz dem Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne, ich habe die Excel-Listen mit den Bestellungen aus dem dritten Krathal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Pff, welche Produkte laufen am stärksten? Ganz vorne liegt der Chai danach, kommt der Côte Blaye beim Wein, ist die Marge deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau, mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kunden Daten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Friedo, ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt bis Montag.",
+    "wer": 0.0774,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": true,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:37:09",
+    "tag": "small_cuda_glossar",
+    "model": "small",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--Systran--faster-whisper-small\\snapshots\\536b0662742c02347bc0e980a01041f333bce120",
+    "model_size_mb": 486.2,
+    "download_or_cache_check_s": 0.14,
+    "device": "cuda",
+    "compute_type": "float16",
+    "cpu_threads": 0,
+    "glossar": "Northwind Traders, Chai, Côte de Blaye, Agentic Engineering, Excel",
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 0.74,
+    "transcribe_s": 1.81,
+    "transcribe_runs_s": [
+      1.83,
+      1.81
+    ],
+    "rtf": 0.029,
+    "text": "Lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne, ich habe die Excel-Listen mit den Bestellungen aus dem 3. Krathal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Pff, welche Produkte laufen am stärksten? Ganz vorne liegt der Chai danach, kommt der Côte Blaye beim Wein, ist die Marge deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau, mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kunden Daten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Wieder, ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt bis Montag.",
+    "wer": 0.0774,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": true,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:38:26",
+    "tag": "large-v3-turbo_cpu_vad",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.63,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 0,
+    "glossar": null,
+    "vad_filter": true,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 2.28,
+    "transcribe_s": 17.72,
+    "transcribe_runs_s": [
+      17.72,
+      17.77
+    ],
+    "rtf": 0.286,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Pfiff, welche Produkte laufen am stärksten? Ganz vorne liegt der Tscheider nach, kommt der Koteblei beim Wein, ist die Marke deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag.",
+    "wer": 0.0833,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": false,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:38:40",
+    "tag": "large-v3-turbo_cuda_vad",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.63,
+    "device": "cuda",
+    "compute_type": "float16",
+    "cpu_threads": 0,
+    "glossar": null,
+    "vad_filter": true,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 1.53,
+    "transcribe_s": 5.3,
+    "transcribe_runs_s": [
+      5.3,
+      6.39
+    ],
+    "rtf": 0.086,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Für welche Produkte laufen am stärksten? Ganz vorne liegt der Schei danach, kommt der Koteblei beim Wein, ist die Marke deutlich höher. Aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag. Passt. Bis Montag.",
+    "wer": 0.0952,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": false,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:39:30",
+    "tag": "large-v3-turbo_cpu_glossar_vad",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.63,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 0,
+    "glossar": "Northwind Traders, Chai, Côte de Blaye, Agentic Engineering, Excel",
+    "vad_filter": true,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 2.37,
+    "transcribe_s": 23.01,
+    "transcribe_runs_s": [
+      23.68,
+      23.01
+    ],
+    "rtf": 0.372,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Für welche Produkte laufen am stärksten? Ganz vorne liegt der Chai danach, kommt der Côte de Blaye beim Wein, ist die Marke deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag. Passt. Bis Montag. Passt. Bis Montag.",
+    "wer": 0.0893,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": true,
+      "Produkt Côte de Blaye": true,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:39:34",
+    "tag": "large-v3-turbo_cuda_glossar_vad",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.63,
+    "device": "cuda",
+    "compute_type": "float16",
+    "cpu_threads": 0,
+    "glossar": "Northwind Traders, Chai, Côte de Blaye, Agentic Engineering, Excel",
+    "vad_filter": true,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 1.65,
+    "transcribe_s": 1.27,
+    "transcribe_runs_s": [
+      1.46,
+      1.27
+    ],
+    "rtf": 0.021,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Für welche Produkte laufen am stärksten? Ganz vorne liegt der Chai danach, kommt der Côte de Blaye beim Wein, ist die Marke deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag.",
+    "wer": 0.0536,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": true,
+      "Produkt Côte de Blaye": true,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:39:51",
+    "tag": "small_cpu_glossar_vad",
+    "model": "small",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--Systran--faster-whisper-small\\snapshots\\536b0662742c02347bc0e980a01041f333bce120",
+    "model_size_mb": 486.2,
+    "download_or_cache_check_s": 0.13,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 0,
+    "glossar": "Northwind Traders, Chai, Côte de Blaye, Agentic Engineering, Excel",
+    "vad_filter": true,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 0.78,
+    "transcribe_s": 7.63,
+    "transcribe_runs_s": [
+      7.63,
+      7.77
+    ],
+    "rtf": 0.123,
+    "text": "Lass uns kurz dem Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne, ich habe die Excel-Listen mit den Bestellungen aus dem dritten Krathal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Pff, welche Produkte laufen am stärksten? Ganz vorne liegt der Chai danach, kommt der Côte Blaye beim Wein, ist die Marge deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau, mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kunden Daten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Friedo, ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt bis Montag.",
+    "wer": 0.0774,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": true,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:39:55",
+    "tag": "small_cuda_glossar_vad",
+    "model": "small",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--Systran--faster-whisper-small\\snapshots\\536b0662742c02347bc0e980a01041f333bce120",
+    "model_size_mb": 486.2,
+    "download_or_cache_check_s": 0.13,
+    "device": "cuda",
+    "compute_type": "float16",
+    "cpu_threads": 0,
+    "glossar": "Northwind Traders, Chai, Côte de Blaye, Agentic Engineering, Excel",
+    "vad_filter": true,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 0.75,
+    "transcribe_s": 1.89,
+    "transcribe_runs_s": [
+      1.96,
+      1.89
+    ],
+    "rtf": 0.031,
+    "text": "Lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne, ich habe die Excel-Listen mit den Bestellungen aus dem 3. Krathal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Pff, welche Produkte laufen am stärksten? Ganz vorne liegt der Chai danach, kommt der Côte Blaye beim Wein, ist die Marge deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau, mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kunden Daten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Wieder, ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt bis Montag.",
+    "wer": 0.0774,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": true,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:41:00",
+    "tag": "large-v3-turbo_cpu_glossar_vad_nocontext",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.68,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 0,
+    "glossar": "Northwind Traders, Chai, Côte de Blaye, Agentic Engineering, Excel",
+    "vad_filter": true,
+    "condition_on_previous_text": false,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 2.11,
+    "transcribe_s": 17.17,
+    "transcribe_runs_s": [
+      17.26,
+      17.17
+    ],
+    "rtf": 0.277,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Für welche Produkte laufen am stärksten? Ganz vorne liegt der Chai danach, kommt der Côte de Blaye beim Wein, ist die Marke deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag.",
+    "wer": 0.0536,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": true,
+      "Produkt Côte de Blaye": true,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:41:04",
+    "tag": "large-v3-turbo_cuda_glossar_vad_nocontext",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.68,
+    "device": "cuda",
+    "compute_type": "float16",
+    "cpu_threads": 0,
+    "glossar": "Northwind Traders, Chai, Côte de Blaye, Agentic Engineering, Excel",
+    "vad_filter": true,
+    "condition_on_previous_text": false,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 1.65,
+    "transcribe_s": 1.21,
+    "transcribe_runs_s": [
+      1.44,
+      1.21
+    ],
+    "rtf": 0.02,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Für welche Produkte laufen am stärksten? Ganz vorne liegt der Chai danach, kommt der Côte de Blaye beim Wein, ist die Marke deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag.",
+    "wer": 0.0536,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": true,
+      "Produkt Côte de Blaye": true,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:41:42",
+    "tag": "large-v3-turbo_cpu_vad_nocontext",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.63,
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 0,
+    "glossar": null,
+    "vad_filter": true,
+    "condition_on_previous_text": false,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 2.05,
+    "transcribe_s": 17.22,
+    "transcribe_runs_s": [
+      17.58,
+      17.22
+    ],
+    "rtf": 0.278,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Pfiff, welche Produkte laufen am stärksten? Ganz vorne liegt der Tscheider nach, kommt der Koteblei beim Wein, ist die Marke deutlich höher, aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag.",
+    "wer": 0.0833,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": false,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  },
+  {
+    "timestamp": "2026-11-05T15:41:46",
+    "tag": "large-v3-turbo_cuda_vad_nocontext",
+    "model": "large-v3-turbo",
+    "model_dir": "C:\\Users\\Chrisi\\.cache\\huggingface\\hub\\models--mobiuslabsgmbh--faster-whisper-large-v3-turbo\\snapshots\\0a363e9161cbc7ed1431c9597a8ceaf0c4f78fcf",
+    "model_size_mb": 1621.7,
+    "download_or_cache_check_s": 0.63,
+    "device": "cuda",
+    "compute_type": "float16",
+    "cpu_threads": 0,
+    "glossar": null,
+    "vad_filter": true,
+    "condition_on_previous_text": false,
+    "cpu": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "audio_s": 61.89,
+    "load_s": 1.46,
+    "transcribe_s": 1.15,
+    "transcribe_runs_s": [
+      1.33,
+      1.15
+    ],
+    "rtf": 0.019,
+    "text": "Dr. Norwin, lass uns kurz den Workshop nächste Woche durchgehen, bevor das Team dazukommt. Gerne. Ich habe die Excel-Listen mit den Bestellungen aus dem dritten Quartal zusammengeführt. Es sind insgesamt 28 Kunden, die mehr als einmal bestellt haben. Für welche Produkte laufen am stärksten? Ganz vorne liegt der Schei danach, kommt der Koteblei beim Wein, ist die Marke deutlich höher. Aber die Mengen sind kleine. Das sollten wir im Workshop zeigen. Das Thema ist ja Agentic Engineering geil, so wie ein Agent mit solchen Listen arbeiten kann. Genau. Mein Vorschlag wäre, dass der Agent die Listen bereinigt und doppelte Kunden markiert. Die Entscheidung, was wir damit machen, bleibt bei uns. Einverstanden. Wichtig ist mir, dass keine Kundendaten in eine Cloud gehen. Wir arbeiten nur mit der anonymisierten Fassung. Dann bereite ich bis Freitag eine bereinigte Liste vor und schicke sie dir. Ich kümmere mich um die Einladung und kläre den Raum. Dann treffen wir uns am Montag um 9 Uhr noch einmal. Passt. Bis Montag.",
+    "wer": 0.0774,
+    "checks": {
+      "Zahl 28": true,
+      "Produkt Chai": false,
+      "Produkt Côte de Blaye": false,
+      "Fachbegriff Agentic Engineering": true
+    }
+  }
+]
