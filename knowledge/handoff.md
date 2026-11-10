@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-handoff
 status: active
 created: 2026-08-24
-updated: 2026-08-25
+updated: 2026-11-10
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -26,4 +26,35 @@ This Process Inbox contains only received deltas that still require verification
 
 ## Open handoff points
 
-Keine offenen Handoff-Punkte.
+### Glossary wording found by the independent site review
+
+- **Received:** 2026-11-10
+- **Source:** read-only review of the four public pages against `specification.md` and `design.md` by a fresh subagent, which read all glossary entries in both languages. Its findings on markup, contrast, touch targets and the glossary fragment are integrated and recorded in `journal.md`.
+- **Target:** `terms.md`, then `python scripts/build_glossary.py`.
+- **Context:** the points below concern term wording, which the author decides. None was changed.
+  - AI Harness is neuter in the German Full Lecture Notes and on the landing page (das AI Harness) and masculine in the Uni for Life notes and in the German sentences of Hook and Slash Command (der AI Harness).
+  - Acceptance appears as Acceptance and, in Agentic Edition Pipeline, as Abnahme. The plural of agent appears as Agenten and as Agents.
+  - German headwords differ in capitalisation (kontextuell plausible Lesung beside Asymmetrische Amplifikation), and some German definitions open without an article.
+  - The two languages say different things in Agent Memory (binding force, verbindliche Regeln), Docling (only the English names knowledge work, which also adds a related term on the German page), Frontier Model (only the German says Allzweck-LLM) and Governance Dilemma.
+  - Single renderings read weakly: Frontmatter (aus Schlüssel und Wert), Prompt Sensitivity against Promptwirkungen, Critical Cyber Capability against the plural kritische Cyberfähigkeiten, Test-Driven against Test Driven, Over-Distillation beside an untranslated Distillation. Governance Dilemma names an author without saying which, and Agent Teams names a vendor product in its public sentence.
+  - The glossary assigns Promptotyping and Grounded Vault to module 04, while the Methods card lists both under module 03.
+- **Next action:** take the points into the terminology review named in `plan.md`.
+- **Operator point:** term wording, see RD-002.
+
+### Interface copy and one leftover asset
+
+- **Received:** 2026-11-10
+- **Source:** the same review.
+- **Target:** `docs/index.html`, `docs/index.de.html`, `scripts/build_glossary.py`, `docs/assets/materials/videos.svg`.
+- **Context:** the English introduction says that LLMs operate inside AI Harnesses, the German one that they are used in them. The footer sentence on funding has no clear referent for its revision. The German glossary labels the order switch Ordnung, where Reihenfolge would read more naturally. The mark `docs/assets/materials/videos.svg` of the retired playlist card is published and referenced by no page.
+- **Next action:** decide the wording, and remove the unreferenced mark if it is no longer wanted.
+- **Operator point:** interface copy and deletion of a published file.
+
+### Monetary amount in a mirrored video title
+
+- **Received:** 2026-11-10
+- **Source:** the same review.
+- **Target:** `CLAUDE.md` or `data/videos.json`.
+- **Context:** the module 05 entry `QYeNESqKbSc` carries an amount in its original title, which both landing pages show. `CLAUDE.md` excludes monetary amounts anywhere in the repository and treats names in teaching material as research data, but says nothing on amounts in third-party titles.
+- **Next action:** state in `CLAUDE.md` that mirrored titles are quoted data, or shorten the display title in the register and on both pages.
+- **Operator point:** content boundary.

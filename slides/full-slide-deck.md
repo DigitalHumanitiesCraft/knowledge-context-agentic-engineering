@@ -740,18 +740,21 @@ Claude Code zeigt beide Stufen am selben Werkzeug. Im einfachen Lauf ist es ein 
 - Das Harness läuft ohne offene Sitzung weiter, auf einem eigenen Rechner in der Cloud.
 - Notizen und Arbeitsstand bleiben über Sitzungen hinweg erhalten.
 - Arbeit beginnt nach Zeitplan, bei einem Ereignis oder aus eigener Einschätzung des Agenten.
-- Der Prompt entfällt als erster Interventionspunkt. Beobachtungsrechte, erlaubte Handlungen, Auslöser und Protokoll stehen vor dem Betrieb fest.
-- Zuerst lesen und berichten lassen, Schreibrechte für Schritte, die ein fester Test prüft und die Versionierung zurücknimmt.
+- Der Auftrag wird einmal und im Voraus formuliert, der einzelne Lauf beginnt ohne anwesende Person. Beobachtungsrechte, erlaubte Handlungen, Auslöser, Rückgabepunkte und Protokoll stehen vor dem Betrieb fest.
+- Zuerst lesen und berichten lassen. Schreibrechte nur für Schritte, deren Ergebnis ein fester Test prüft und deren Änderung sich über die Versionierung zurücknehmen lässt.
 
-Anbieter nennen diese Form always-on agent (OpenAI dots, xAI Grok Bot) oder proactive agent (Anthropic Claude Duet), in der öffentlichen Diskussion kursiert auch Superagent. Proaktivität ist eine der vier Agenteneigenschaften nach Wooldridge und Jennings (1995), Dauerbetrieb, Auslöser und Gedächtnis sind Eigenschaften des Harness. Die Folie schließt an die vier Eigenschaften und an Loop Engineering an. Loop Engineering gestaltet Auslöser und feste Prüfungen für einen Ablauf, der dauerhaft laufende Agent entscheidet zusätzlich selbst, ob ein Anlass eine Handlung verlangt.
+Anbieter nennen diese Form always-on agent (OpenAI dots, xAI Grok Bot) oder proactive agent (Anthropic Claude Duet), DeepSeek führt einen Forschungsprototyp unter dem Namen superagent. Proaktivität ist eine der vier Agenteneigenschaften nach Wooldridge und Jennings (1995). Das Harness stellt Dauerbetrieb und Gedächtnis bereit, und feste Auslöser wie Zeitplan oder Ereignis sind Gegenstand des Loop Engineering. Ein proaktiver Agent entscheidet zusätzlich selbst, ob ein Anlass eine Handlung verlangt.
 
-Die Anbieter ziehen die Grenze nach Risiko, mit lesender Recherche, Zustimmung vor folgenreichen Handlungen und gesperrten Handlungsklassen. Offen bleiben vier Punkte, die das [Skriptum in Abschnitt 6.6](../script/full-lecture-notes-de.md#dauerhaft-laufende-und-proaktive-agenten) mit Belegen ausführt, der Unterschied zwischen Freigaberecht und wirksamer Kontrolle, eingeschleuste Anweisungen in Inhalten, die der Agent von sich aus liest, die Trefferquote unaufgeforderter Hilfe und die Zurechnung von Handlungen, die unter dem Namen der beauftragenden Person erscheinen.
+OpenAI und Anthropic ziehen die Grenze nach Risiko, mit lesender Recherche, Zustimmung vor folgenreichen Handlungen und gesperrten Handlungsklassen. Das [Skriptum führt in Abschnitt 6.6](../script/full-lecture-notes-de.md#dauerhaft-laufende-und-proaktive-agenten) mit Belegen aus, was dabei offen bleibt. Das Recht zur Freigabe ist noch keine wirksame Kontrolle. Inhalte, die der Agent von sich aus liest, können eingeschleuste Anweisungen tragen. Unaufgeforderte Hilfe trifft den Bedarf in einem Benchmark nur zum Teil. Handlungen über verbundene Konten erscheinen unter dem Namen der beauftragenden Person.
 
 Yang, Ke, Jiateng Liu, Jize Jiang, et al. „Proactive AI for Superintelligent Agents“. 2026. https://empathyang.github.io/Proactive-AI-for-Superintelligent-Agents/
 Greshake, Kai, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, und Mario Fritz. „Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection“. 2023. https://arxiv.org/abs/2302.12173
+Lu, Yaxi, Shenzhi Yang, Cheng Qian, et al. „Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance“. 2024. https://arxiv.org/abs/2410.12361
 OpenAI. Meet dots. https://learn.chatgpt.com/docs/dots
 Anthropic. Introducing Claude Duet. https://claude.com/resources/articles/claude-duet
+Anthropic. Automate work with scheduled tasks. https://code.claude.com/docs/en/routines
 xAI. Introducing Grok Bot. https://x.ai/news/introducing-grok-bot
+DeepSeek. dsh-superagent-prototype. https://github.com/deepseek-ai/dsh-superagent-prototype
 
 ## Hands-on: Forschungsauftrag und Quellenmaterial
 

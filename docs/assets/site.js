@@ -1,4 +1,4 @@
-// Progressive enhancement for the landing pages; all content works without it.
+// Progressive enhancement for the landing and glossary pages; all content works without it.
 //
 // Term definitions open on hover and keyboard focus through CSS alone. This
 // script adds Escape to dismiss an open definition (WCAG 1.4.13) and lets a
@@ -188,8 +188,9 @@ if (tools) {
     say(shown === 0 ? none : shown === 1 ? one : template.replace('{n}', shown));
   };
 
-  // A link to an entry or letter the current view hides clears the filter
-  // and keeps the order the reader chose.
+  // A link to an entry, letter or module group the current view hides clears
+  // the filter and keeps the order the reader chose, unless the target exists
+  // only in the other order.
   const reveal = () => {
     const target = location.hash ? document.getElementById(location.hash.slice(1)) : null;
     if (!target?.closest('[hidden]')) return;
@@ -197,6 +198,8 @@ if (tools) {
     tools.reset();
     tools.order.value = order;
     if (target.id.startsWith('letter-')) tools.order.value = 'letter';
+    // A module group exists only in module order, where its section is not parked.
+    if (target.classList.contains('glossary-group')) tools.order.value = 'module';
     apply();
     remember();
     target.scrollIntoView({ block: 'start' });

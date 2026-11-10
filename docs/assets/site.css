@@ -1,4 +1,4 @@
-/* Stylesheet for the two landing pages, index.html and index.de.html. No build step. */
+/* Stylesheet for the landing pages and the generated glossary pages. No build step. */
 
 /* Fonts are served from the site itself, so a page view makes no request to a
    font provider. Latin subsets from Fontsource 5.3.0, licence in fonts/OFL-*.txt. */
@@ -66,6 +66,7 @@
      the motif highlights without a second variant. */
   --accent: #0A7E7C;         /* 4.8:1, 4.4:1 on tint */
   --accent-on-tint: #097472; /* 5.0:1 on tint, footer links */
+  --accent-on-wash: #086A68; /* at least 5.1:1 on the module washes of hovered and focused rows */
 
   /* --- Identity palette, derived from the watercolor logo ---------------- */
   /* Four families measured in the mark itself. Used only as module marks, never
@@ -533,7 +534,8 @@ img { max-width: 100%; height: auto; }
   min-height: 1.6rem;
   margin-left: auto;
   border-radius: var(--radius);
-  opacity: 0.4;
+  /* The play mark is the only visible form of the link, so it keeps 3:1 at rest. */
+  opacity: 0.5;
 }
 
 .methods-video:hover,
@@ -634,7 +636,7 @@ a.resource-action:focus-visible {
 .video-module[open] > .video-module__summary::after { margin-top: 0.25rem; transform: rotate(-135deg); }
 
 .video-module__summary:hover .video-module__title,
-.video-module__summary:focus-visible .video-module__title { color: var(--accent); }
+.video-module__summary:focus-visible .video-module__title { color: var(--accent-on-wash); }
 
 .video-module__summary:focus-visible { outline-offset: -3px; }
 
@@ -699,7 +701,7 @@ a.resource-action:focus-visible {
 }
 
 .video-list a:hover,
-.video-list a:focus-visible { color: var(--accent); }
+.video-list a:focus-visible { color: var(--accent-on-wash); }
 
 .video-list time {
   flex: none;
@@ -1238,7 +1240,13 @@ a.resource-action:focus-visible {
     min-height: var(--tap);
   }
 
-  .methods-video { min-width: var(--tap); }
+  .site-identity-logo,
+  .language-nav a,
+  .methods-video,
+  .glossary-letters a,
+  .glossary-letters span { min-width: var(--tap); }
+
+  .glossary-letters { grid-template-columns: repeat(auto-fill, minmax(var(--tap), 1fr)); }
 
   /* Links that stand alone in a row reach the tap size too. The method name
      fills its row, and the video row moves its padding into the link, so a
