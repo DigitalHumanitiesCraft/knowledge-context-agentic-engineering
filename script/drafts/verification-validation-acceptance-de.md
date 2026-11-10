@@ -2,7 +2,7 @@
 title: Verification, Validation und Acceptance
 status: draft
 created: 2026-10-15
-updated: 2026-10-15
+updated: 2026-11-10
 language: de
 related: [../../knowledge/terms.md, ../full-lecture-notes-de.md, ../../slides/full-slide-deck.md]
 ---
@@ -17,13 +17,17 @@ Die Lernenden können an einem Editionsbeispiel unterscheiden, was ein technisch
 
 Ein AI Agent erzeugt aus einer Transkription eine TEI-Datei und daraus eine Editionsansicht. Der Schema-Check meldet keinen Fehler, und die Seite öffnet sich im Browser. Damit liegen technische Prüfergebnisse vor. Ob die Transkription die Quelle angemessen wiedergibt und die Oberfläche ihre Unsicherheiten erkennen lässt, muss gesondert untersucht werden.
 
+Die Lehrlinie unterscheidet drei Prüfformen, Technical Verification, Agentic Review und fachliche und wissenschaftliche Validierung. Acceptance ist die Entscheidung, die auf sie folgt.
+
 Technical Verification prüft die Übereinstimmung mit festgelegten, überprüfbaren Anforderungen. Dazu gehören XML-Wohlgeformtheit, Schema-Konformität, auflösbare Referenzen und das Verhalten der Transformation. Ein Schema-Check untersucht die kodierten Strukturen anhand des verwendeten Schemas. Seine Aussage hängt davon ab, welche Anforderungen dieses Schema tatsächlich ausdrückt.
 
-Validation bezeichnet in dieser Lehrlinie die fachliche Prüfung am Forschungszweck und an der Quelle. Bei einer digitalen Edition betrifft sie etwa die Angemessenheit einer Lesung, die Unterscheidung zwischen Ergänzung und unleserlicher Stelle und die Darstellung editorischer Unsicherheit. Automatisierte Vergleiche und agentische Reviews können dafür Befunde liefern. Quellenkenntnis und die Begründung einer editorischen Entscheidung gehören zur fachlichen Verantwortung im Projekt.
+Agentic Review ist eine begrenzte, werkzeuggestützte Untersuchung durch einen AI Agent, häufig einen Subagent mit frischem Kontext. Er prüft ein Artefakt, seinen Code, seine Daten oder die zugehörigen Wissensdokumente anhand benannter Kriterien, vergleicht mit den Quellen, führt Prüfungen aus und berichtet Befunde und offene Fragen. Sein Bericht hält fest, welche Quellen und Kriterien er verwendet hat und was er tatsächlich geprüft hat, denn nur in diesem Umfang trägt er als Evidenz.
+
+Fachliche und wissenschaftliche Validierung, kurz Validation, bezeichnet in dieser Lehrlinie die Prüfung am Forschungszweck und an der Quelle. Bei einer digitalen Edition betrifft sie etwa die Angemessenheit einer Lesung, die Unterscheidung zwischen Ergänzung und unleserlicher Stelle und die Darstellung editorischer Unsicherheit. Technical Verification und Agentic Review liefern dafür Befunde. Quellenkenntnis und die Begründung einer editorischen Entscheidung gehören zur fachlichen Verantwortung im Projekt.
 
 Acceptance ist die verantwortliche Annahme eines bezeichneten Zustands für einen bestimmten Zweck. Ein Zustand kann beispielsweise für eine interne Besprechung der Editionsansicht angenommen werden, während die Transkription noch fachlich geprüft wird. Eine Publikationsfreigabe braucht die für diesen weitergehenden Zweck erforderlichen Nachweise und eine eigene Entscheidung.
 
-Prüfverfahren, prüfende Rolle und Annahmeentscheidung erfüllen unterschiedliche Funktionen. Ein weiterer Agent kann eine zusätzliche Prüfung durchführen und übersehene Probleme benennen. Sein Bericht hält fest, welche Quellen und Kriterien er verwendet hat und was er tatsächlich geprüft hat. Die fachliche Verantwortung und die Acceptance richten sich weiterhin nach der vereinbarten Zuständigkeit.
+Prüfverfahren, prüfende Rolle und Annahmeentscheidung erfüllen unterschiedliche Funktionen. Technical Verification und Agentic Review gehören zum Engineering der Arbeit und lassen sich an Skripte und Agenten übergeben. Die wissenschaftliche Validierung bleibt bei den Forschenden, und die Acceptance richtet sich nach der vereinbarten Zuständigkeit.
 
 Die Fachsprache verwendet das Wort Validation auch für formale Prüfungen, etwa bei XML Schema Validation. Im Kurs benennen wir deshalb immer den Gegenstand der Prüfung. Der Ausdruck Schema-Validierung bezeichnet hier eine technische Prüfung. Er legt keine fachliche oder wissenschaftliche Annahme nahe.
 
@@ -35,19 +39,25 @@ Die Fachsprache verwendet das Wort Validation auch für formale Prüfungen, etwa
 - Der Browser zeigt, ob die Editionsansicht im geprüften Ablauf funktioniert.
 - Die Übereinstimmung einer Lesung mit der Quelle braucht einen eigenen Nachweis.
 
-### Folie 2. Fachliche Prüfung am Editionsfall
+### Folie 2. Agentic Review liefert Befunde
+
+- Ein Subagent mit frischem Kontext prüft anhand benannter Kriterien.
+- Der Bericht nennt Quellen, Kriterien und den tatsächlichen Prüfumfang.
+- Übereinstimmung zwischen Agenten ersetzt keinen Vergleich mit der Quelle.
+
+### Folie 3. Fachliche Prüfung am Editionsfall
 
 - Quelle und Transkription vergleichen.
 - Ergänzungen, Unsicherheiten und unleserliche Stellen unterscheiden.
 - Prüfen, ob die Editionsansicht diese Unterscheidungen erhält.
 
-### Folie 3. Acceptance benennt Zustand und Zweck
+### Folie 4. Acceptance benennt Zustand und Zweck
 
 - Welcher Daten-, Wissens- und Softwarestand wird angenommen?
 - Wofür reichen die vorhandenen Nachweise?
 - Welche Einschränkung gilt, und wer trägt die Entscheidung?
 
-### Folie 4. Ein Prüfbericht mit begrenzter Aussage
+### Folie 5. Ein Prüfbericht mit begrenzter Aussage
 
 Ein technischer Prüfbefund nennt Gegenstand, Kriterium, Ergebnis und Grenzen. Eine fachliche Entscheidung nennt Quelle und Begründung. Die Acceptance verbindet den bezeichneten Zustand mit dem angenommenen Verwendungszweck.
 
@@ -72,6 +82,8 @@ Der Vorschlag baut auf den deutschen Full Lecture Notes, Abschnitte 7.7 bis 7.9 
 Am 15. Oktober 2026 wurden die aktuelle deutsche Google-Docs-Fassung und der native Full Slide Deck lesend abgerufen. Die Begriffszuordnung von Abschnitt 7.7 entspricht dem lokalen deutschen Text. Die Bildunterschrift zu Abbildung 12 verwendet jedoch Deterministische Validation, während Technical Verification im Glossar die formale Prüfung bezeichnet. Der Entwurf löst diese Stelle durch Benennung des jeweiligen Prüfgegenstands auf. Das ist ein Vorschlag zur Autorenabnahme.
 
 Die ältere CLARIAH-Fassung nennt die formale Prüfung Validation und die fachliche Prüfung Scholarly verification. Das Glossar dokumentiert diese Zuordnung bereits als veranstaltungsspezifische Variante. Der Vorschlag verwendet die Begriffe der Full Lecture Notes. Der native Foliensatz enthält unter anderem die Folien 5. Verification und die TEI-Prüfung durch Subagents, aber keine entsprechende zusammenhängende Begriffsfolge. Die hier formulierte Folge ist ein Textentwurf für ihre Ergänzung.
+
+Am 10. November 2026 wurde der Entwurf mit der Begriffsentscheidung des Autors vom 5. November 2026 abgeglichen, die drei Prüfformen und die darauf folgende Acceptance festlegt. Der Lehrtext nennt seither Agentic Review als eigene Prüfform, und die Folienfolge enthält dafür eine eigene Folie. Die Formulierungen folgen den Einträgen Technical Verification, Agentic Review and LLM-as-a-Judge, Validation und Acceptance in knowledge/terms.md.
 
 Die internen Definitionen und ihre Wiedergaben wurden verglichen. Eine neue externe Literaturprüfung oder empirische Evaluation der Prüfverfahren wurde nicht durchgeführt. Die fachliche Abnahme, die Übernahme in die gepflegten Lecture Notes und die native Gestaltung der Folien stehen aus.
 

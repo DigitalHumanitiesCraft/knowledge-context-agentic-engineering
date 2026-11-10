@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-plan
 status: active
 created: 2026-08-20
-updated: 2026-11-05
+updated: 2026-11-10
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -26,17 +26,18 @@ This plan carries accepted future work and its entry and exit conditions. The Re
 
 ## Current milestone
 
-Publish the redesigned single page of 4 November 2026 together with the generated glossary pages of 5 November and check the live state. The current public contract lives in `specification.md`, an introduction, four material cards, the glossary card and the modules with their videos on each landing page, and two glossary pages, with no external resource. The local commits are not pushed, and on 2026-11-05 the live site still served the stylesheet version `20261015-1` and answered the German glossary URL with 404. Publication and the visual acceptance RD-017 remain author decisions.
+Close the six delivered workshop instances and obtain the author's visual acceptance of the published pages (RD-017). The single page of 4 November 2026 and the glossary pages of 5 November are published. On 2026-11-10 both landing pages, both glossary pages, the stylesheet and the script on the live site were byte-identical with `docs/` at `c8d4a66`, and the removed covers, downloads and registers answered with 404. The current public contract lives in `specification.md`. The commits of 2026-11-10 change the generated glossary pages and reach the site with the author's next push.
 
 ## Active sequence
 
-- After the author's push, check the live pages for the stylesheet and script version `20261105-2`, the absence of external requests, both glossary pages, the glossary link on the materials slide of the UFL deck, and 404 responses for the removed covers, downloads and title-slide image.
-- Teach the Uni for Life instance on 9 and 10 November 2026, then fill the delivery notes in its profile, have the author set the tag `2026-11-09-ufl` (RD-016) and only then remove the folder and its register entry.
+- After the author's push, compare the live glossary pages with `docs/` and check the entry Always-On Agent in both languages.
+- RD-016: the author sets the six tags of the taught states. One commit then removes the five earlier folders and their register entries and rewrites the source references that point into them. The Uni for Life folder follows once the author's report stands in its delivery notes and the place of its three local workflows is decided, because the deck of that workshop links them on the default branch.
 - Continue the separate terminology and teaching-content review of the Full Slide Deck and Full Lecture Notes. It includes the document-type and checking vocabulary, where `terms.md` and the UFL deck keep Declarative, Process and Action Documents and the UFL lecture notes follow the Promptotyping paper 1.0, and the UFL source anchors in `terms.md`, many of which still name section titles and hands-on numbers from before the lecture notes were realigned on 2026-11-05.
 - Fill the `*Blog.*` fields of `terms.md` once the planned glossary blog post exists, then rebuild the glossary pages.
 - Maintain workshop source material for actual teaching assignments without recreating individual event pages or Learning Routes.
-- Obtain bounded author feedback on the prepared Verification, Validation and Acceptance section linked from INDEX.md (RD-025). After acceptance, integrate the identified wording into the German notes and prepare the corresponding native slides. Other sections continue through their own source checks and acceptance.
-- RD-024: the Full Slidedeck still gives anyone with the link edit access (checked 2026-11-05); the author lowers it to reader access.
+- Obtain the author's acceptance of the prepared Verification, Validation and Acceptance section linked from INDEX.md (RD-025), which follows the terminology decision of 2026-11-05 since its reconciliation on 2026-11-10. After acceptance, integrate the wording into section 7.7 of the German notes with the caption of figure 12, into the English notes and the slide text, and prepare the corresponding native slides. Other sections continue through their own source checks and acceptance.
+- Transfer the section on always-on and proactive agents, added to the slide text and both lecture notes on 2026-11-10, into the Google versions of the deck and the notes once the author has read it.
+- RD-024: the Full Slide Deck still gives anyone with the link edit access (read on 2026-11-10), and the author lowers it to reader access.
 
 ## Completed milestones
 
