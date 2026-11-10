@@ -41,6 +41,22 @@ This Process Inbox contains only received deltas that still require verification
 - **Next action:** take the points into the terminology review named in `plan.md`.
 - **Operator point:** term wording, see RD-002.
 
+### Google Doc of the German lecture notes against the Markdown source
+
+- **Received:** 2026-11-10
+- **Source:** the Google Doc registered as the German Full Lecture Notes in `data/workshops.json`, last modified by the author on 2026-11-10 at 08:15 UTC, read through the Drive connector. Its unchanged text is secured in `script/drafts/google-doc-lecture-notes-de-2026-11-10.md`. A section-by-section comparison by word sequence was run against `script/full-lecture-notes-de.md` at `087cd39`.
+- **Target:** `script/full-lecture-notes-de.md`, `workshops/2026-11-09-ufl/lecture-notes.md`, `script/full-lecture-notes-en.md`, `script/modules/`, `knowledge/terms.md` and the `full` record in `data/workshops.json`.
+- **Context:** the author wrote in the Doc on 9 November, so the Doc holds text that no repository file has, while the governance rule names the repository as the canonical place. The Doc's title page calls it a workshop script, its register entry calls it the Full Lecture Notes.
+  - Only in the Doc: 1.6 Workshop-Praxis und Materialien, 2.5 Personal AI Agents, 6.8 KI-Governance, 6.9 Hands-on 3, 6.10 Autonomie und Systemzugriff, 6.11 Hands-on on autonomy and access, 6.12 Zwischenfazit and the closing Anmerkungen.
+  - Rewritten in the Doc, with the Doc further along: Abstract, Zu diesem Skriptum, 1.5, 2.1, 2.3, 2.4, 3.8 (Hands-on 1 on web research in place of the edition task), 5.5, 5.6, 5.8 (Hands-on 2), 6.4, 6.5 and the reference list.
+  - Lightly revised in the Doc: 1.3, 3.1, 3.2, 3.4, 3.6, 4.1, 4.2, 4.4, 5.3, 5.4 and chapter 8.
+  - Identical in both: 1.1, 1.2, 2.2, 3.3, 3.5, 3.7, 4.3, 4.5, 5.1, 5.2, 5.7, 6.1 to 6.3, all of chapter 7 and the templates A to D.
+  - Further along in the repository: 6.6 with the subsection on always-on agents of 2026-11-10, and 6.7 with the Research Starter Workflow, where the Doc holds a short supplementary exercise. In 4.6 the texts agree and only the heading differs.
+  - The Doc has already renamed the headings 1.2, 2.3 and 4.1, which in the repository still follow a title formula the author excludes.
+  - Section 2.5 of the Doc is the author's own treatment of the subject that the repository added on 2026-11-10 under the name always-on agent. It defines the Personal AI Agent after Wu et al. 2026, lists the same products and discusses delegation and human control.
+- **Next action:** after the author's decision on the role of the Doc, carry its sections into the chosen Markdown source section by section, fold the subsection of 6.6 into the vocabulary of 2.5 or withdraw it, and only then revise the English notes. The Google Doc itself stays untouched until the author decides how Docs are written.
+- **Operator point:** whether the Doc remains the Full Lecture Notes or becomes the Uni for Life script with its own register entry, and which wording holds where both sides changed.
+
 ### Personal AI Agent in the Uni for Life deck against Always-On Agent in the glossary
 
 - **Received:** 2026-11-10
