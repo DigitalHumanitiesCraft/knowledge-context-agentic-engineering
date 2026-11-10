@@ -41,6 +41,15 @@ This Process Inbox contains only received deltas that still require verification
 - **Next action:** take the points into the terminology review named in `plan.md`.
 - **Operator point:** term wording, see RD-002.
 
+### Personal AI Agent in the Uni for Life deck against Always-On Agent in the glossary
+
+- **Received:** 2026-11-10
+- **Source:** the Google Slides deck of the Uni for Life workshop, slide AI Harnesses (`h9128065016e2d17_0_1`), read on 2026-11-10 at revision `ixYLax6BAfYFoQ`.
+- **Target:** the entry Always-On Agent in `terms.md`, section 6.6 of the German Full Lecture Notes, the section Always-On and Proactive Agents of the English notes and the editorial slide in `slides/full-slide-deck.md`.
+- **Context:** the author's slide already defines a Personal AI Agent, after Wu et al. 2026 (arXiv:2611.03092), as an agent that keeps context across conversations, looks after a person's tasks over a longer time and acts on its own within agreed authority, and it lists dots, Grok Bot, Claude Duet, Hermes Agent and OpenClaw beside coding harnesses. The material added on 2026-11-10 describes the same products under the vendors' word always-on. Two names for overlapping things now stand side by side.
+- **Next action:** read Wu et al. 2026, sections 2.1, 2.2 and 4.2, then either make Personal AI Agent the headword and treat always-on as its mode of operation, or keep both with a stated relation.
+- **Operator point:** term wording.
+
 ### Interface copy and one leftover asset
 
 - **Received:** 2026-11-10
