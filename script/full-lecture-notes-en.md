@@ -659,6 +659,33 @@ The additional agents do not create truth by voting. Independent review can expo
 
 The purpose of multi agent orchestration is therefore to create structured trajectories of independent work and feedback, not merely to multiply model calls.
 
+## **Always-On and Proactive Agents**
+
+The work described so far begins with an assignment. A person states a goal, the agent works inside a session, and the run ends with the session. Since 2026 several vendors have offered agents whose harness keeps running without an open session. Such an **always-on agent** works on a computer of its own in the cloud, keeps notes and working state across sessions, can be reached through several channels such as an app, a chat tool or a call, and starts work on a schedule, on an event or on its own assessment that something needs doing.[^55] In public discussion the word superagent circulates for the same form.
+
+Conceptually this form continues what is known. Proactiveness, the pursuit of goals on the agent’s own initiative, has been one of the four classical agent properties since Wooldridge and Jennings, beside autonomy, reactivity and social ability.[^45] A proactive agent initiates goal-oriented action without a new explicit request.[^56] Continuous operation, triggers and memory are properties of the harness. A trigger can be a schedule, an event in a repository or a call to an interface, and the moment at which the agent becomes active cannot itself be a response to a query.
+
+In an edition project such an agent could check the transcriptions that arrived during the day against the schema every night, collect deviations and report in the morning. As long as it reads and reports, this amounts to a scheduled check. Once it corrects files on its own, writes to colleagues or publishes changes, it acts before anyone has ordered the step.
+
+Autonomy can be read as the extent of work performed between two human interventions. An always-on agent enlarges that extent and also moves the first intervention, because the prompt disappears as the place where a person sets goal, context and limits. In reactive systems the explicit request bounds many risks. A proactive agent can observe context, infer a need and decide on an action before the person has authorised it, so that risk already arises in its preparation.[^56] The intervention points are therefore fixed before operation:
+
+- which sources, accounts and folders the agent may observe,
+- which actions it performs without asking, which it only proposes and which stay blocked,
+- which triggers start it and under which condition a run ends,
+- where it is recorded what the agent did, on what occasion and on what basis,
+- who reads these records.
+
+The vendors draw the line by risk. With OpenAI’s dots, research that the agent starts on its own is read-only, and follow-up actions require the applicable permissions. Anthropic’s Claude Duet shows the planned action and waits for approval before it sends a message, pays, signs or deletes, and single kinds of action stay blocked even with approval. Scheduled tasks that Claude Code runs in the cloud start in a mode in which a classifier model decides on actions that would otherwise wait for approval.[^57] The survey by Yang and colleagues proposes risk-tiered consent for this, in which reversible low-risk actions proceed under defaults and consequential or irreversible ones require confirmation, because confirming every single step exhausts the person’s attention.[^56]
+
+Four limits remain.
+
+1. The right to approve differs from effective control. The agent selects which information it shows, which options it proposes and when it reports, and thereby gains real influence on the decision.[^56]
+2. An agent that reads mail, messages and web pages on its own processes third-party content while nobody is watching. Instructions planted in such content can steer an LLM-integrated system, including through e-mails sent to it and across sessions through its memory.[^58]
+3. Unrequested help meets the need only in part. In one benchmark the best model trained for the task reached an F1 score of 66.47 per cent in proactively offering assistance.[^59]
+4. With the scheduled tasks of Claude Code, whatever the agent does through connected accounts appears under the name of the person who owns the task.[^57] Responsibility has to remain traceable to the person who delegates and to the organisation that deploys the agent.[^56]
+
+For research data the rules of this chapter suggest an order. An always-on agent reads and reports first. It receives write permissions for steps whose result a fixed test checks and whose change version control can take back. Validation and acceptance stay with the responsible person.
+
 ## **Why AI Agents Need Context**
 
 As agentic trajectories become longer, the quality of context becomes increasingly important. Long running work accumulates intermediate outputs, errors, tool results and previous decisions. If all of this remains in one undifferentiated context, the agent may spend substantial effort navigating its own history rather than solving the current task.[^40]
@@ -749,6 +776,8 @@ The resulting shift is from individual model outputs towards the design of compl
 
 Allen, Bradley P., et al. “Knowledge Engineering Using Large Language Models.” *Transactions on Graph Data and Knowledge* 1, no. 1, 2023. https://doi.org/10.4230/TGDK.1.1.3.
 
+Anthropic. “Automate Work with Scheduled Tasks.” Claude Code Docs. https://code.claude.com/docs/en/routines.
+
 Anthropic. “Claude’s Character.” https://www.anthropic.com/research/claude-character.
 
 Anthropic. “Claude’s Constitution.” 2026. https://www.anthropic.com/constitution.
@@ -757,17 +786,23 @@ Anthropic. “Claude’s New Constitution.” 2026. https://www.anthropic.com/re
 
 Anthropic. “Effective Context Engineering for AI Agents.” 2025. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents.
 
+Anthropic. “Introducing Claude Duet.” 2026. https://claude.com/resources/articles/claude-duet.
+
 Bengio, Yoshua. “Godfather of AI: How To Make Safe Superintelligent AI.” Interview with Rob Wiblin. *80,000 Hours*, 2026. https://youtu.be/PZqDFs2sbiY.
 
 Brown, Tom B., et al. “Language Models are Few Shot Learners.” 2020. https://arxiv.org/abs/2005.14165.
 
 Chollet, François. “How I Think About LLM Prompt Engineering.” 2023. https://fchollet.substack.com/p/how-i-think-about-llm-prompt-engineering.
 
+DeepSeek. “dsh-superagent-prototype.” GitHub repository, 2026. https://github.com/deepseek-ai/dsh-superagent-prototype.
+
 Dell’Acqua, Fabrizio, et al. “Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of Artificial Intelligence on Knowledge Worker Productivity and Quality.” *Organization Science* 37, no. 2, 2026, 403 to 423. https://doi.org/10.1287/orsc.2025.21838.
 
 Gans, Joshua. “A Model of Artificial Jagged Intelligence.” 2026. https://doi.org/10.48550/arXiv.2601.07573.
 
 Geiger, Philipp. “Daten / Forschungsdaten.” 2024. https://doi.org/10.17175/wp_2023_003_v2.
+
+Greshake, Kai, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” 2023. https://doi.org/10.48550/arXiv.2302.12173.
 
 Hong, Kelly, Anton Troynikov, and Jeff Huber. *Context Rot: How Increasing Input Tokens Impacts LLM Performance*. Chroma, 2025. https://research.trychroma.com/context-rot.
 
@@ -777,9 +812,13 @@ Li, Chloe, Nevan Wichers, Sara Price, Samuel Marks, and Jon Kutasov. “Model Sp
 
 Lindsey, Jack, Wes Gurnee, Emmanuel Ameisen, et al. “On the Biology of a Large Language Model.” Transformer Circuits, 2025. https://transformer-circuits.pub/2025/attribution-graphs/biology.html.
 
+Lu, Yaxi, Shenzhi Yang, Cheng Qian, et al. “Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance.” 2024. https://arxiv.org/abs/2410.12361.
+
 Majithia, A., et al. “An Actionable Framework for AI Ready Data.” 2026. https://doi.org/10.1002/aaai.70054.
 
 Mei, Lingrui, Jiayu Yao, Yuyao Ge, et al. “A Survey of Context Engineering for Large Language Models.” 2025. https://doi.org/10.48550/arXiv.2507.13334.
+
+OpenAI. “Meet dots.” ChatGPT Learn, 2026. https://learn.chatgpt.com/docs/dots.
 
 Ouyang, Long, et al. “Training Language Models to Follow Instructions with Human Feedback.” 2022. https://arxiv.org/abs/2203.02155.
 
@@ -806,6 +845,10 @@ Wang, Guanzhi, Yuqi Xie, Yunfan Jiang, et al. “Voyager: An Open Ended Embodied
 Wilkinson, Mark D., et al. “The FAIR Guiding Principles for Scientific Data Management and Stewardship.” *Scientific Data* 3, 2016. https://doi.org/10.1038/sdata.2016.18.
 
 Wooldridge, Michael, and Nicholas R. Jennings. “Intelligent Agents: Theory and Practice.” *The Knowledge Engineering Review* 10, no. 2, 1995, 115 to 152. https://doi.org/10.1017/S0269888900008122.
+
+xAI. “Introducing Grok Bot.” 2026. https://x.ai/news/introducing-grok-bot.
+
+Yang, Ke, Jiateng Liu, Jize Jiang, et al. “Proactive AI for Superintelligent Agents.” Survey, 2026. https://empathyang.github.io/Proactive-AI-for-Superintelligent-Agents/.
 
 Zhong, Hailin, and Shengxin Zhu. “AI Harness Engineering: A Runtime Substrate for Foundation Model Software Agents.” 2026. https://doi.org/10.48550/arXiv.2605.13357.
 
@@ -1022,3 +1065,13 @@ Zhong, Hailin, and Shengxin Zhu. “AI Harness Engineering: A Runtime Substrate 
 [^53]: The term evaluation is used broadly here for assessment against explicit criteria. In research workflows this may include quantitative metrics, qualitative review and system level evaluation.
 
 [^54]: The distinction between technical verification and domain validation adapts established verification and validation terminology from software and systems engineering to AI supported research workflows. See Pollin, *Promptotyping*, review draft 0.9, 2026.
+
+[^55]: Examples as of 10 November 2026 are dots by OpenAI, Claude Duet by Anthropic and Grok Bot by xAI. OpenAI and xAI speak of always-on agents, Anthropic of a proactive agent. At that date Claude Duet was a research preview with a waitlist in the United States, Grok Bot was a beta, and the Pro tiers of dots were unavailable in the European Economic Area, the United Kingdom and Switzerland. The DeepSeek Harness team uses the name super-agent for a research prototype that it explicitly does not present as a product. OpenAI, “Meet dots,” https://learn.chatgpt.com/docs/dots; Anthropic, “Introducing Claude Duet,” 21 October 2026, https://claude.com/resources/articles/claude-duet; xAI, “Introducing Grok Bot,” 11 August 2026, https://x.ai/news/introducing-grok-bot; DeepSeek, “dsh-superagent-prototype,” https://github.com/deepseek-ai/dsh-superagent-prototype. All accessed 10 November 2026.
+
+[^56]: Ke Yang, Jiateng Liu, Jize Jiang, et al., “Proactive AI for Superintelligent Agents,” survey, 2026, https://empathyang.github.io/Proactive-AI-for-Superintelligent-Agents/. Sections 2.1, 4.1.4 and 7.2.1 to 7.2.3 were read for these notes. The definition is from section 2.1, the point on triggering from section 4.1.4, the risk before authorisation from section 7.2.1, the distinction between formal and effective control from section 7.2.2, and risk-tiered consent and traceable responsibility from section 7.2.3.
+
+[^57]: Anthropic, “Automate work with scheduled tasks,” Claude Code Docs, https://code.claude.com/docs/en/routines, accessed 10 November 2026.
+
+[^58]: Kai Greshake, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz, “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection,” 2023, https://arxiv.org/abs/2302.12173.
+
+[^59]: Yaxi Lu, Shenzhi Yang, Cheng Qian, et al., “Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance,” 2024, https://arxiv.org/abs/2410.12361. The figure is the one the abstract reports.

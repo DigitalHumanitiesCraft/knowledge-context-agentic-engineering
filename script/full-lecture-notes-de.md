@@ -70,7 +70,7 @@ Dieses Skriptum begleitet den gleichnamigen Foliensatz und folgt grundsätzlich 
   - [6.4 Werkzeuge, Berechtigungen und Reversibilität](#6-4-werkzeuge-berechtigungen-und-reversibilitat)  
   - [6.5 MCP, Subagents und Agent-to-Agent-Kommunikation](#6-5-mcp-subagents-und-agent-to-agent-kommunikation)  
   - [6.6 Versionierte Zwischenstände und menschliche Intervention](#6-6-versionierte-zwischenstande-und-menschliche-intervention)  
-  - [6.7 Hands-on: TEI erzeugen, validieren und ein Frontend implementieren](#6-7-hands-on-tei-erzeugen-validieren-und-ein-frontend-implementieren)  
+  - [6.7 Hands-on: Research Starter Workflow und Agentic Edition Pipeline](#6-7-hands-on-research-starter-workflow-und-agentic-edition-pipeline)  
 - [7\. Promptotyping](#7-promptotyping)  
   - [7.1 Definition und Grundprinzip](#7-1-definition-und-grundprinzip)  
   - [7.2 Preparation](#7-2-preparation)  
@@ -1116,6 +1116,33 @@ Typische menschliche Interventionspunkte sind:
 
 Agents können Evidenz sammeln. Sie übernehmen dadurch nicht automatisch die Autorität, ein Ergebnis fachlich zu validieren oder für einen Zweck zu akzeptieren.
 
+### Dauerhaft laufende und proaktive Agenten
+
+Die bisher beschriebene Arbeit beginnt mit einem Auftrag. Eine Person formuliert ein Ziel, der Agent arbeitet innerhalb einer Sitzung, und mit der Sitzung endet der Lauf. Seit 2026 bieten mehrere Anbieter Agenten an, deren Harness ohne offene Sitzung weiterläuft. Ein solcher **dauerhaft laufender Agent** (Always-On Agent) arbeitet auf einem eigenen Rechner in der Cloud, behält Notizen und Arbeitsstand über Sitzungen hinweg, ist über mehrere Kanäle wie App, Chat-Werkzeug oder Anruf erreichbar und beginnt Arbeit nach Zeitplan, bei einem Ereignis oder aufgrund der eigenen Einschätzung, dass etwas zu tun ist.[^6] In der öffentlichen Diskussion kursiert dafür auch das Wort Superagent.
+
+Begrifflich knüpft diese Form an Bekanntes an. Proaktivität, das Verfolgen von Zielen aus eigener Initiative, zählt seit Wooldridge und Jennings (1995) zu den vier klassischen Eigenschaften eines Agenten neben Autonomie, Reaktivität und sozialer Fähigkeit. Ein proaktiver Agent beginnt zielgerichtete Handlungen ohne neue ausdrückliche Anforderung (Yang et al. 2026, Abschnitt 2.1). Dauerbetrieb, Auslöser und Gedächtnis sind dabei Eigenschaften des Harness. Als Auslöser dienen etwa ein Zeitplan, ein Ereignis in einem Repository oder ein Aufruf über eine Schnittstelle. Wann der Agent tätig wird, kann dabei selbst keine Antwort auf eine Anfrage sein (Yang et al. 2026, Abschnitt 4.1.4).
+
+Im Editionsprojekt könnte ein solcher Agent jede Nacht die neu eingegangenen Transkriptionen gegen das Schema prüfen, Abweichungen sammeln und am Morgen berichten. Solange er liest und berichtet, entspricht das einer zeitgesteuerten Prüfung. Korrigiert er von sich aus Dateien, schreibt er Mitarbeitende an oder veröffentlicht er Änderungen, dann handelt er, bevor jemand den Schritt angeordnet hat.
+
+Autonomie bezeichnet in diesem Skriptum den Umfang der Arbeit zwischen zwei menschlichen Eingriffen (Abschnitt 6.2). Ein dauerhaft laufender Agent vergrößert diesen Umfang und verschiebt zugleich den ersten Eingriff, weil der Prompt als die Stelle entfällt, an der eine Person Ziel, Kontext und Grenzen setzt. In reaktiven Systemen begrenzt die ausdrückliche Anfrage viele Risiken. Ein proaktiver Agent kann Kontext beobachten, einen Bedarf erschließen und über eine Handlung entscheiden, bevor die Person sie autorisiert hat, sodass Risiko schon in seiner Vorbereitung entsteht (Yang et al. 2026, Abschnitt 7.2.1). Die Interventionspunkte dieses Abschnitts werden deshalb vor dem Betrieb festgelegt:
+
+- welche Quellen, Konten und Ordner der Agent beobachten darf,  
+- welche Handlungen er ohne Rückfrage ausführt, welche er nur vorschlägt und welche gesperrt bleiben,  
+- welche Auslöser ihn starten und unter welcher Bedingung ein Lauf endet,  
+- wo festgehalten wird, was er getan hat, aus welchem Anlass und auf welcher Grundlage,  
+- wer diese Aufzeichnungen liest.
+
+Die Anbieter ziehen die Grenze nach Risiko. Bei den dots von OpenAI ist die eigenständige Recherche lesend, und Folgehandlungen brauchen die jeweiligen Berechtigungen. Claude Duet von Anthropic zeigt vor dem Senden einer Nachricht, vor einer Zahlung, einer Unterschrift oder einer Löschung die geplante Handlung und wartet auf Zustimmung, einzelne Handlungen bleiben auch mit Zustimmung gesperrt. Zeitgesteuerte Aufgaben, die Claude Code in der Cloud ausführt, starten in einem Modus, in dem ein Klassifikationsmodell über Handlungen entscheidet, die sonst auf eine Freigabe warten würden. Yang et al. (2026, Abschnitt 7.2.3) schlagen dafür eine risikogestufte Zustimmung vor, bei der umkehrbare Handlungen mit geringem Risiko nach voreingestellten Regeln ablaufen und folgenreiche oder unumkehrbare eine Bestätigung verlangen, weil die Bestätigung jedes Einzelschritts die Aufmerksamkeit der Person erschöpft.
+
+Vier Grenzen bleiben bestehen.
+
+1. Das Recht zur Freigabe ist von wirksamer Kontrolle zu unterscheiden. Der Agent wählt aus, welche Information er zeigt, welche Optionen er vorlegt und wann er sich meldet, und gewinnt dadurch tatsächlichen Einfluss auf die Entscheidung (Yang et al. 2026, Abschnitt 7.2.2).  
+2. Ein Agent, der Mails, Nachrichten und Webseiten von sich aus liest, verarbeitet Inhalte Dritter, ohne dass jemand zusieht. In solchen Inhalten platzierte Anweisungen können ein LLM-gestütztes System steuern, auch über zugesandte E-Mails und über sein Gedächtnis hinweg (Greshake et al. 2023).  
+3. Unaufgeforderte Hilfe trifft den Bedarf nur zum Teil. In einem Benchmark erreichte das beste dafür trainierte Modell beim proaktiven Anbieten von Unterstützung einen F1-Wert von 66,47 Prozent (Lu et al. 2024).  
+4. Bei den zeitgesteuerten Aufgaben von Claude Code erscheint, was der Agent über verbundene Konten tut, unter dem Namen der Person, der die Aufgabe gehört. Die Verantwortung muss auf die Person, die delegiert, und auf die Organisation, die den Agenten einsetzt, zurückführbar bleiben (Yang et al. 2026, Abschnitte 7.2.2 und 7.2.3).
+
+Aus den Regeln dieses Kapitels folgt für Forschungsdaten eine Reihenfolge. Ein dauerhaft laufender Agent liest und berichtet zuerst. Schreibrechte erhält er für Schritte, deren Ergebnis ein fester Test prüft und deren Änderung die Versionierung zurücknehmen kann. Validierung und Acceptance bleiben an der Stelle, an der dieses Kapitel sie verortet, bei der verantwortlichen Person.
+
 ## 6.7 Hands-on: Research Starter Workflow und Agentic Edition Pipeline
 
 Die Übung verbindet die vorhandenen Aufgaben zu Forschungsdaten, Prompting, Wissensdokumenten und agentischer Implementierung am selben Material. Der Research Starter Workflow bestimmt Forschungsfrage, Quellenbasis und den ersten prüfbaren Arbeitsschritt. Die Agentic Edition Pipeline führt diesen Auftrag durch Transkription, Quellenprüfung im Viewer und TEI-Kodierung weiter. Eine vorinstallierte Pipeline oder ein Repository-Klon ist keine Voraussetzung.
@@ -1486,7 +1513,15 @@ Anthropic. 2025\. “Claude’s Character.” Anthropic Research.
 
 Anthropic. 2026\. “Claude’s Constitution.” Anthropic.
 
+Anthropic. 2026\. “Automate work with scheduled tasks.” Claude Code Docs. https://code.claude.com/docs/en/routines. Abgerufen am 10. November 2026.
+
+Anthropic. 2026\. “Introducing Claude Duet.” 21. Oktober 2026\. https://claude.com/resources/articles/claude-duet.
+
 Battle, Rick, and Teja Gollapudi. 2024\. “The Unreasonable Effectiveness of Eccentric Automatic Prompts.” arXiv:2402.10949.
+
+DeepSeek. 2026\. “dsh-superagent-prototype.” GitHub. https://github.com/deepseek-ai/dsh-superagent-prototype. Abgerufen am 10. November 2026.
+
+Greshake, Kai, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz. 2023\. “Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” arXiv:2302.12173.
 
 Hong, Kelly, Anton Troynikov, and Jeff Huber. 2025\. “Context Rot: How Increasing Input Tokens Impacts LLM Performance.” Chroma Research.
 
@@ -1496,7 +1531,11 @@ Li, Cheng, Jindong Wang, Yixuan Zhang, Kaijie Zhu, Wenxin Hou, Jianxun Lian, Fan
 
 Lindsey, Jack, Wes Gurnee, Emmanuel Ameisen, et al. 2025\. “On the Biology of a Large Language Model.” Transformer Circuits.
 
+Lu, Yaxi, Shenzhi Yang, Cheng Qian, et al. 2024\. “Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance.” arXiv:2410.12361.
+
 Mei, et al. 2025\. “Context Engineering for Large Language Models.” arXiv:2507.13334.
+
+OpenAI. 2026\. “Meet dots.” ChatGPT Learn. https://learn.chatgpt.com/docs/dots. Abgerufen am 10. November 2026.
 
 Pollin, Christopher. 2026\. “Asymmetric Amplification.” Digital Humanities Craft.
 
@@ -1505,6 +1544,12 @@ Pollin, Christopher. 2026\. “Promptotyping.” Manuskript in Vorbereitung.
 Rajeev, Meghana, Rajkumar Ramamurthy, Prapti Trivedi, et al. 2025\. “Cats Confuse Reasoning LLM: Query Agnostic Adversarial Triggers for Reasoning Models.” arXiv:2503.01781.
 
 Schulhoff, Sander, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Liu, et al. 2024\. “The Prompt Report: A Systematic Survey of Prompting Techniques.” arXiv:2406.06608.
+
+Wooldridge, Michael, and Nicholas R. Jennings. 1995\. “Intelligent Agents: Theory and Practice.” The Knowledge Engineering Review 10 (2): 115–152. https://doi.org/10.1017/S0269888900008122.
+
+xAI. 2026\. “Introducing Grok Bot.” 11. August 2026\. https://x.ai/news/introducing-grok-bot.
+
+Yang, Ke, Jiateng Liu, Jize Jiang, et al. 2026\. “Proactive AI for Superintelligent Agents.” Übersichtsarbeit. Google Research. https://empathyang.github.io/Proactive-AI-for-Superintelligent-Agents/.
 
 Yin, Ziqi, Hao Wang, Kaito Horio, Daisuke Kawahara, and Satoshi Sekine. 2024\. “Should We Respect LLMs? A Cross-Lingual Study on the Influence of Prompt Politeness on LLM Performance.” arXiv:2402.14531.
 
@@ -1704,3 +1749,5 @@ last\_reviewed:
 [^4]: Die nominelle Kontextgröße ist nicht mit einer garantierten effektiven Nutzung aller enthaltenen Information gleichzusetzen. Forschung zu Long-Context-Systemen untersucht unter anderem Positions-, Distraktor- und Retrievaleffekte.
 
 [^5]: MCP bezeichnet eine technische Spezifikation für die Verbindung von LLM-Anwendungen mit Werkzeugen und Datenquellen. Die konkrete Sicherheits- und Berechtigungsarchitektur hängt von der jeweiligen Implementation ab.
+
+[^6]: Beispiele mit Stand 10. November 2026 sind dots von OpenAI, Claude Duet von Anthropic und Grok Bot von xAI. OpenAI und xAI sprechen von always-on agents, Anthropic von einem proactive agent. Claude Duet war zu diesem Zeitpunkt eine Forschungsvorschau mit Warteliste in den USA und Grok Bot eine Beta, und die Pro-Stufen von dots waren im Europäischen Wirtschaftsraum, im Vereinigten Königreich und in der Schweiz nicht verfügbar. Die Bezeichnung super-agent verwendet das Harness-Team von DeepSeek für einen Forschungsprototyp, den es ausdrücklich nicht als Produkt ausweist. Die Angaben in diesem Abschnitt folgen den Seiten der Anbieter im Literaturverzeichnis. Von Yang et al. (2026) sind die Abschnitte 2.1, 4.1.4 und 7.2.1 bis 7.2.3 gelesen, von Lu et al. (2024) trägt die Zusammenfassung die genannte Zahl.

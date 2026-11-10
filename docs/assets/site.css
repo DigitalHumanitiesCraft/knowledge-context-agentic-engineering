@@ -1240,6 +1240,31 @@ a.resource-action:focus-visible {
 
   .methods-video { min-width: var(--tap); }
 
+  /* Links that stand alone in a row reach the tap size too. The method name
+     fills its row, and the video row moves its padding into the link, so a
+     one-line title grows to the tap size and a wrapped title keeps its height. */
+  .skip-link,
+  .block-link,
+  .glossary-entry__permalink a { min-height: var(--tap); }
+
+  .skip-link,
+  .glossary-entry__permalink a { display: inline-flex; align-items: center; }
+
+  .methods-list a:not(.methods-video) {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+  }
+
+  .video-list li { align-items: baseline; padding-block: 0; }
+
+  .video-list a {
+    display: flex;
+    align-items: center;
+    min-height: var(--tap);
+    padding-block: 0.35rem;
+  }
+
   /* The keyboard shortcut has nothing to offer on a touch screen. */
   .glossary-tools__hint { display: none; }
 }

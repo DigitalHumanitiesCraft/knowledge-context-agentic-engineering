@@ -1,6 +1,6 @@
 # Full Slide Deck
 
-Slide-text export of the Google deck of the teaching line, state of 2026-08-20. The original export is preserved below. The editorial hands-on sequence at the end links the existing topics into a cumulative exercise.
+Slide-text export of the Google deck of the teaching line, state of 2026-08-20. The original export is preserved below. The editorial hands-on sequence at the end links the existing topics into a cumulative exercise. The slide on always-on and proactive agents before that sequence is an editorial addition of 2026-11-10 that the Google deck does not yet hold.
 
 Knowledge, Context and Agentic Engineering for Knowledge Work
 
@@ -734,6 +734,24 @@ Agentic AI ist die nächste Stufe, aber nicht durch mehr Autonomie, sondern durc
 
 Claude Code zeigt beide Stufen am selben Werkzeug. Im einfachen Lauf ist es ein AI Agent. Sobald es über Subagenten Teilaufgaben an mehrere koordinierte Instanzen delegiert, die parallel arbeiten, bewegt es sich zur Agentic AI. Die Unterscheidung ist also keine Schublade, sondern beschreibt zwei Betriebsarten.
 
+
+## Dauerhaft laufende und proaktive Agenten
+
+- Das Harness läuft ohne offene Sitzung weiter, auf einem eigenen Rechner in der Cloud.
+- Notizen und Arbeitsstand bleiben über Sitzungen hinweg erhalten.
+- Arbeit beginnt nach Zeitplan, bei einem Ereignis oder aus eigener Einschätzung des Agenten.
+- Der Prompt entfällt als erster Interventionspunkt. Beobachtungsrechte, erlaubte Handlungen, Auslöser und Protokoll stehen vor dem Betrieb fest.
+- Zuerst lesen und berichten lassen, Schreibrechte für Schritte, die ein fester Test prüft und die Versionierung zurücknimmt.
+
+Anbieter nennen diese Form always-on agent (OpenAI dots, xAI Grok Bot) oder proactive agent (Anthropic Claude Duet), in der öffentlichen Diskussion kursiert auch Superagent. Proaktivität ist eine der vier Agenteneigenschaften nach Wooldridge und Jennings (1995), Dauerbetrieb, Auslöser und Gedächtnis sind Eigenschaften des Harness. Die Folie schließt an die vier Eigenschaften und an Loop Engineering an. Loop Engineering gestaltet Auslöser und feste Prüfungen für einen Ablauf, der dauerhaft laufende Agent entscheidet zusätzlich selbst, ob ein Anlass eine Handlung verlangt.
+
+Die Anbieter ziehen die Grenze nach Risiko, mit lesender Recherche, Zustimmung vor folgenreichen Handlungen und gesperrten Handlungsklassen. Offen bleiben vier Punkte, die das [Skriptum in Abschnitt 6.6](../script/full-lecture-notes-de.md#dauerhaft-laufende-und-proaktive-agenten) mit Belegen ausführt, der Unterschied zwischen Freigaberecht und wirksamer Kontrolle, eingeschleuste Anweisungen in Inhalten, die der Agent von sich aus liest, die Trefferquote unaufgeforderter Hilfe und die Zurechnung von Handlungen, die unter dem Namen der beauftragenden Person erscheinen.
+
+Yang, Ke, Jiateng Liu, Jize Jiang, et al. „Proactive AI for Superintelligent Agents“. 2026. https://empathyang.github.io/Proactive-AI-for-Superintelligent-Agents/
+Greshake, Kai, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, und Mario Fritz. „Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection“. 2023. https://arxiv.org/abs/2302.12173
+OpenAI. Meet dots. https://learn.chatgpt.com/docs/dots
+Anthropic. Introducing Claude Duet. https://claude.com/resources/articles/claude-duet
+xAI. Introducing Grok Bot. https://x.ai/news/introducing-grok-bot
 
 ## Hands-on: Forschungsauftrag und Quellenmaterial
 
