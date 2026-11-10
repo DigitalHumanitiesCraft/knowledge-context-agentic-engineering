@@ -7,10 +7,10 @@ workshop:
   event: "KUG Summer School 2026, University of Music and Performing Arts Graz"
   audience: "KUG Summer School participants"
   language: en
-  status: planned
-status: ready for rehearsal
+  status: delivered
+status: delivered
 created: 2026-08-20
-updated: 2026-08-31
+updated: 2026-11-10
 language: en
 authors: [Christopher Pollin]
 related: [../../knowledge/project.md, ../../slides/full-slide-deck.md, ../../script/full-lecture-notes-en.md]
@@ -79,4 +79,10 @@ The Stefan Zweig workflow and the M³GIM exercise chain are instance-specific. R
 
 ## Delivery notes
 
-Filled after the workshop is taught.
+Taught on 2026-09-16 and 17 at the KUG Summer School 2026 of the University of Music and Performing Arts Graz. The register has carried the instance as delivered since 2026-11-04. The state taught is commit `7c4a751`, the last commit before the teaching days, and RD-016 in `communication/research/director-log.md` names it as the target of the tag `2026-09-16-kug-m3gim`. The August platform with the Web Module of this instance belongs to that state. The folder did not change between that commit and the entry of these notes.
+
+Open points that the sources do not settle.
+
+- No report on the delivery is recorded in this repository, so the number of participants, the actual course of the sessions and deviations from the planned sequence are undocumented here.
+- Findings for the Full Slide Deck and the Full Lecture Notes from this delivery have no entry in `knowledge/journal.md`.
+- The open points listed above this section were not revisited after the delivery.

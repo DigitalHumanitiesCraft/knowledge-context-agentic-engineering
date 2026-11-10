@@ -7,15 +7,15 @@ workshop:
   event: "CLARIAH-AT Summer School 2026: Machine Learning for Digital Scholarly Editions"
   audience: digital humanities students (BA/MA level)
   language: en
-  status: planned
+  status: delivered
   slides: https://docs.google.com/presentation/d/1IdZJOM_xwg6WZXyu3-Am2MXVUkr0N-ivvhBU3Xn2Y4Q/edit
   script: https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-11-10
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
-status: in preparation
+status: delivered
 related: [lecture-notes.md, ../../knowledge/project.md, ../../knowledge/drafts/module-map.md]
 ---
 
@@ -58,8 +58,14 @@ Two opening sections, Applied Generative AI for Research Data Workflows and Huma
 | Script surface | [Google Doc](https://docs.google.com/document/d/1a9wl2r9X9Y72DMvCK-vTAIc1vIYZTCUg9MCJRm1MLxY/edit) | working surface, canonical state is `lecture-notes.md` |
 | Executable hands-on package | external repo [chpollin/zbz-ocr-tei](https://github.com/chpollin/zbz-ocr-tei), `workshops/clariah-at-2026/` | maintained outside this repo |
 | PPTX export per taught state | this folder | to be added after 2026-09-25 |
-| Cover | `docs/assets/covers/2026-09-25-clariah-at.png` | present |
+| Cover | retired from the published tree on 2026-11-04, preserved in git history at `e66901b` | not used |
 
 ## Delivery notes
 
-Filled after the workshop is taught.
+Taught on 2026-09-25 within the CLARIAH-AT Summer School 2026. The register has carried the instance as delivered since 2026-11-04. The state taught is commit `836b663`, the last commit before the teaching days, and RD-016 in `communication/research/director-log.md` names it as the target of the tag `2026-09-25-clariah-at`. Between that commit and the entry of these notes the folder changed only in the register path and, for single instances, in a literature record and a draft reference.
+
+Open points that the sources do not settle.
+
+- No report on the delivery is recorded in this repository, so the number of participants, the actual course of the sessions and deviations from the planned sequence are undocumented here.
+- Findings for the Full Slide Deck and the Full Lecture Notes from this delivery have no entry in `knowledge/journal.md`.
+- The open points listed above this section were not revisited after the delivery.

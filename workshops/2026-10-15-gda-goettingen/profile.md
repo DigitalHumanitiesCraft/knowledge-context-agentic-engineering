@@ -7,10 +7,10 @@ workshop:
   event: "Göttinger Digitale Akademie, Akademie der Wissenschaften zu Göttingen"
   audience: staff of academy research projects and library guests
   language: de
-  status: planned
-status: in preparation
+  status: delivered
+status: delivered
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-11-10
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -65,7 +65,7 @@ Rights state. The partner institute must clear the demo state for public display
 | Learning objectives | four, in finished prose | complete |
 | Block raster for the morning | arrival, introduction, demo, break, hands-on, discussion | complete at block level, carries no time values |
 | Demo script | two parts with a four-step fallback chain, meaning live demonstration, prepared screencast, screenshot sequence in the deck, and a walkable end state through git log and diffs | drafted |
-| Cover | `docs/assets/covers/2026-10-15-gda-goettingen.png` | present |
+| Cover | retired from the published tree on 2026-11-04, preserved in git history at `e66901b` | not used |
 
 Each fundamentals slide of the written texts carries a provenance field pointing at the slide of the Full Slide Deck it adapts, which is the delta model applied cleanly. Two of the slides are already phrased occasion-free and are candidates for intake into the complete material rather than into this profile alone, namely the agent-transformation slide and the artefact-checking slide.
 
@@ -88,4 +88,10 @@ The written document marks its own gaps, which are carried over here.
 
 ## Delivery notes
 
-Filled after the workshop is taught.
+Taught on 2026-10-15 at the Göttinger Digitale Akademie. The register has carried the instance as delivered since 2026-11-04. The state taught is commit `836b663`, the last commit before the teaching days, and RD-016 in `communication/research/director-log.md` names it as the target of the tag `2026-10-15-gda-goettingen`. The site restructuring was committed that evening, after the scheduled session, and belongs to a later state. Between that commit and the entry of these notes the folder changed only in the register path and, for single instances, in a literature record and a draft reference.
+
+Open points that the sources do not settle.
+
+- No report on the delivery is recorded in this repository, so the number of participants, the actual course of the sessions and deviations from the planned sequence are undocumented here.
+- Findings for the Full Slide Deck and the Full Lecture Notes from this delivery have no entry in `knowledge/journal.md`.
+- The open points listed above this section were not revisited after the delivery.

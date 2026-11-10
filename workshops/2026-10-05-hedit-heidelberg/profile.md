@@ -7,10 +7,10 @@ workshop:
   event: "Forschungsstelle HEDIT, Universität Heidelberg"
   audience: researchers from the editions projects of the research centre
   language: de
-  status: planned
-status: in preparation
+  status: delivered
+status: delivered
 created: 2026-08-20
-updated: 2026-09-23
+updated: 2026-11-10
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -25,7 +25,7 @@ This instance is the two-day unit registered for 2026-10-05 and 06 at the Forsch
 
 Three changes against the predecessor are declared in the sources. The model landscape moves to the frontier state at teaching time and includes a locally runnable open-weight alternative. Agentic coding with Claude Code moves from a side remark into a central method block. Two operational demonstration objects enter, the teiCrafter tool and the agentic edition pipeline. A standing operator decision makes teiCrafter the convergence point of the edition tooling.
 
-The register in `data/workshops.json` holds the entry and keeps the native deck and script links unset while retaining the existing cover. This profile documents the programme and the prerequisites. The local slide text and hands-on notes now derive the cumulative exercise from the Full material. Native deck production remains separate.
+The register in `data/workshops.json` holds the entry and keeps the native deck and script links unset. This profile documents the programme and the prerequisites. The local slide text and hands-on notes now derive the cumulative exercise from the Full material. Native deck production remains separate.
 
 The register title *HEDIT KI-Workshop 2026* is an inference. The source heading reads *HEDIT KI-Workshop Heidelberg 2026* and no externally announced title is documented anywhere, so the string should be replaced once the host publishes the programme.
 
@@ -75,7 +75,7 @@ Rights state. The rights-restricted material of the Zentralbibliothek Zürich is
 | Programme, learning objectives and prerequisites | operator's research vault | complete, the substance of this profile |
 | Drive folder | operator's Drive | exists, URL deliberately not reproduced here |
 | Demo material | worked Zweig example plus synthetic teiCrafter fixtures | decided 2026-08-05 |
-| Cover | `docs/assets/covers/2026-10-05-hedit-heidelberg.png` | present |
+| Cover | retired from the published tree on 2026-11-04, preserved in git history at `e66901b` | not used |
 
 ## Open points
 
@@ -88,4 +88,10 @@ Rights state. The rights-restricted material of the Zentralbibliothek Zürich is
 
 ## Delivery notes
 
-Filled after the workshop is taught.
+Taught on 2026-10-05 and 06 at the Forschungsstelle HEDIT of the Universität Heidelberg. The register has carried the instance as delivered since 2026-11-04. The state taught is commit `836b663`, the last commit before the teaching days, and RD-016 in `communication/research/director-log.md` names it as the target of the tag `2026-10-05-hedit-heidelberg`. Between that commit and the entry of these notes the folder changed only in the register path and, for single instances, in a literature record and a draft reference.
+
+Open points that the sources do not settle.
+
+- No report on the delivery is recorded in this repository, so the number of participants, the actual course of the sessions and deviations from the planned sequence are undocumented here.
+- Findings for the Full Slide Deck and the Full Lecture Notes from this delivery have no entry in `knowledge/journal.md`.
+- The open points listed above this section were not revisited after the delivery.

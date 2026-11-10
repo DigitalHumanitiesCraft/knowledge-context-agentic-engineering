@@ -7,10 +7,10 @@ workshop:
   event: Uni for Life, Universität Graz
   audience: professionals from companies and institutions across disciplines
   language: de
-  status: planned
-status: in preparation
+  status: delivered
+status: delivered
 created: 2026-08-20
-updated: 2026-11-05
+updated: 2026-11-10
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5.5)
@@ -85,9 +85,20 @@ The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03
 - The data folder linked on the Hands-on 6 slide holds the four Northwind files and is readable for anyone with the link, checked on 2026-11-05.
 - As checked on 2026-11-05, five slides of the deck carry the red draft marker, Das Wissensdokument im Vault (`wv_slide`), Aufbau des Vaults (`vg_slide`) and Loop Engineering (`lp_slide`) in the sessions, Docling (`dl_slide`) and Knowledge Documents (`pd_slide`) in the appendix. The slides Second Brain Vault (`sbv_slide`), Grounded Vault (`gvt_slide`) and Agentic Edition Pipeline (`aep_slide`) still announce their figure as to follow. The slide between the local pipelines and Promptotyping (`h51448df817bc677_0_1687`) holds an image without text and a speaker note left from another deck. These slides await the operator's acceptance, and the lecture notes follow their current text.
 - On 2026-11-05 the operator decided the terminology. The names of the Promptotyping paper 1.0 hold everywhere, declarative knowledge documents, process knowledge documents and agent instruction documents under the umbrella term Knowledge Document, and Declarative, Process and Action Documents remain the short names of the Promptotyping site. Checking has three forms, verification, agentic review and scholarly validation, followed by acceptance, and knowledge curation runs across all four forms of work. The lecture notes follow this wording. The deck still differs on three slides. `ptc_slide` and `pd_slide` mix the short names Declarative Documents and Process Documents with the paper name Agent Instruction Documents, and `ptc_slide` joins the reviewer subagent and the check script in one Verification row. The quality-assurance slide (`qs_slide`) labels the human visual check Abnahme, which collides with acceptance, so the lecture notes call it Sichtprüfung.
-- The materials slide and the lecture notes link the German glossary page, which reaches the public site only with the author's push of the local commits. On 2026-11-05 the live URL answered with 404.
+- The materials slide and the lecture notes link the German glossary page. It has been on the public site since the author's push, and on 2026-11-10 the live page was byte-identical with `docs/glossary.de.html`.
 - The operational counterpart of this profile, with prompts, logistics and correspondence, is the workshop document in the operator's research vault. Its slide sequence predates the current deck.
 
 ## Delivery notes
 
-Filled after the workshop is taught.
+Taught on 2026-11-09 and 10 in the three sessions named above, according to the author's statement of 2026-11-10. The state taught is commit `c8d4a66` of 2026-11-05, the last commit before the first session, and RD-016 in `communication/research/director-log.md` names it as the target of the tag `2026-11-09-ufl`. The lecture notes and this profile describe the deck as it stood on 2026-11-05, and the live deck stays in the author's Drive.
+
+The author's report on the delivery is pending. Until it is entered, the following points are open, and the folder stays in the working tree.
+
+- Which of the six hands-ons ran in which session, and what was shortened, moved or dropped against the teaching design above.
+- How the participants' own harnesses and subscriptions held up, and which technical obstacles cost time.
+- Which prompts and slides needed correction during the sessions.
+- Whether the five slides with the draft marker and the three slides with a pending figure, listed under Open points, were taught as they stood or changed beforehand.
+- Which findings go back into the Full Slide Deck, the Full Lecture Notes and `knowledge/terms.md`, and which matter for the runs fixed for 2027.
+- Whether a PPTX export of the taught deck is stored in this folder, as the versioning rule in `knowledge/governance.md` provides.
+
+Participant data stays out of this repository, so the notes record the course of the workshop and no names, affiliations or contributions of single participants.

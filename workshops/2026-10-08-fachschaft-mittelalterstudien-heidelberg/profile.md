@@ -7,10 +7,10 @@ workshop:
   event: "Fachschaft Mittelalterstudien, Universität Heidelberg"
   audience: students and early-career researchers in medieval studies
   language: de
-  status: planned
-status: in preparation
+  status: delivered
+status: delivered
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-11-10
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Fable 5)
@@ -65,7 +65,7 @@ The licence file of the source corpus names CC BY 4.0 with copyright at the Univ
 | Drive folder and participant data folder | operator's Drive | exist, URLs deliberately not reproduced here, publication blocked by the rights gate |
 | Mini repository with instruction layer and `knowledge/` folder | not created | planned |
 | Term apparatus | drawn from the glossary of the complete material and the Promptotyping paper definitions | available |
-| Cover | `docs/assets/covers/2026-10-08-fachschaft-mittelalterstudien-heidelberg.png` | present |
+| Cover | retired from the published tree on 2026-11-04, preserved in git history at `e66901b` | not used |
 
 ## Open points
 
@@ -78,4 +78,10 @@ The licence file of the source corpus names CC BY 4.0 with copyright at the Univ
 
 ## Delivery notes
 
-Filled after the workshop is taught.
+Taught on 2026-10-08 at the Universität Heidelberg for the student council of medieval studies. The register has carried the instance as delivered since 2026-11-04. The state taught is commit `836b663`, the last commit before the teaching days, and RD-016 in `communication/research/director-log.md` names it as the target of the tag `2026-10-08-fachschaft-mittelalterstudien-heidelberg`. Between that commit and the entry of these notes the folder changed only in the register path and, for single instances, in a literature record and a draft reference.
+
+Open points that the sources do not settle.
+
+- No report on the delivery is recorded in this repository, so the number of participants, the actual course of the sessions and deviations from the planned sequence are undocumented here.
+- Findings for the Full Slide Deck and the Full Lecture Notes from this delivery have no entry in `knowledge/journal.md`.
+- The open points listed above this section were not revisited after the delivery.
