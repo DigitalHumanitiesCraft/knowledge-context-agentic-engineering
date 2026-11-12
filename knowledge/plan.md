@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-plan
 status: active
 created: 2026-08-20
-updated: 2026-11-10
+updated: 2026-11-12
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -31,7 +31,7 @@ Close the six delivered workshop instances and obtain the author's visual accept
 ## Active sequence
 
 - After the author's push, compare the live glossary pages with `docs/` and check the entry Always-On Agent in both languages.
-- RD-016: the author sets the six tags of the taught states. One commit then removes the five earlier folders and their register entries and rewrites the source references that point into them. The Uni for Life folder follows once the author's report stands in its delivery notes and the place of its three local workflows is decided, because the deck of that workshop links them on the default branch.
+- RD-016: the author sets the six tags of the taught states. One commit then removes the five earlier folders and their register entries and rewrites the source references that point into them. The Uni for Life folder follows once the author's report stands in its delivery notes. Its three local workflows live in `local-workflows/` since 2026-11-12, and the decks link them there once the session working on the decks has changed the links.
 - Continue the separate terminology and teaching-content review of the Full Slide Deck and Full Lecture Notes. It includes the document-type and checking vocabulary, where `terms.md` and the UFL deck keep Declarative, Process and Action Documents and the UFL lecture notes follow the Promptotyping paper 1.0, and the UFL source anchors in `terms.md`, many of which still name section titles and hands-on numbers from before the lecture notes were realigned on 2026-11-05.
 - Fill the `*Blog.*` fields of `terms.md` once the planned glossary blog post exists, then rebuild the glossary pages.
 - Maintain workshop source material for actual teaching assignments without recreating individual event pages or Learning Routes.

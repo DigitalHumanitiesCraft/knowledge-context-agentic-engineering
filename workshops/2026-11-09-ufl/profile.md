@@ -10,7 +10,7 @@ workshop:
   status: delivered
 status: delivered
 created: 2026-08-20
-updated: 2026-11-10
+updated: 2026-11-12
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code (Claude Opus 5.5)
@@ -65,7 +65,7 @@ The fine module cut in `knowledge/drafts/module-map.md` remains a draft and pred
 
 The case is deliberately general and uses real material that outsiders understand. Sessions 1 and 2 work on live web sources from 2026, which each participant gathers anew. Participants may substitute a project of their own.
 
-Session 3 uses the material in [`data/`](data/README.md), four Excel files converted from Microsoft's Northwind sample database under the MIT License, together with a synthetic German customer e-mail. The hands-on prompt carries a shortened version of the mail without the personal remarks, phone number and address, and asks the group why those were left out. All persons and companies in it are fictional. The folder also holds the project-folder hook shown on the hook slide. The three local pipelines on the slide that follows open models, mail redaction, PDF to Markdown and speech to text, live in [`lokale-workflows/`](lokale-workflows/), each with its script, check and a README carrying the measurements of 2026-11-05. The mail redaction runs on the customer e-mail and `mitarbeitende.xlsx` from `data/`.
+Session 3 uses the material in [`data/`](data/README.md), four Excel files converted from Microsoft's Northwind sample database under the MIT License, together with a synthetic German customer e-mail. The hands-on prompt carries a shortened version of the mail without the personal remarks, phone number and address, and asks the group why those were left out. All persons and companies in it are fictional. The folder also holds the project-folder hook shown on the hook slide. The three local pipelines on the slide that follows open models, mail redaction, PDF to Markdown and speech to text, live in [`local-workflows/`](../../local-workflows/README.md) at the repository root, each with its script, check and a README carrying the measurements of 2026-11-05. The mail redaction runs on the customer e-mail and `mitarbeitende.xlsx` from `data/`.
 
 The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03 because it did not use real data. It is preserved in git history.
 
@@ -77,7 +77,7 @@ The synthetic institute scenario drafted on 2026-08-05 was dropped on 2026-11-03
 | Lecture Notes (Uni for Life 2026) | [`lecture-notes.md`](lecture-notes.md), German, following the live deck slide by slide | draft, follows the deck including session 3, except that Docling still stands in session 3 and AI watermarking keeps a section of its own in the appendix |
 | PPTX export per taught state | this folder | open |
 | Session 3 material and hook | [`data/`](data/README.md) | present |
-| Local pipelines for the slide on own pipelines | [`lokale-workflows/`](lokale-workflows/) | present, measured on 2026-11-05 |
+| Local pipelines for the slide on own pipelines | [`local-workflows/`](../../local-workflows/README.md) at the repository root, moved there from this folder on 2026-11-12 so that they outlive the instance | present, measured on 2026-11-05 |
 | Participant data folder | operator's Drive | still holds files of the dropped scenario |
 
 ## Open points

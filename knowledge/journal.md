@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
 status: active
 created: 2026-08-20
-updated: 2026-11-10
+updated: 2026-11-12
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -25,6 +25,10 @@ related: [project.md, specification.md, handoff.md]
 This journal is the curated retrospective provenance index of the project. Current facts and rules remain in the responsible Declarative and Action Documents, accepted future work in `plan.md`, open received deltas in `handoff.md`, and detailed revisions in Git.
 
 ## Entries
+
+### 2026-11-12 integrated | Local workflows moved out of the Uni for Life folder
+
+A session working on the general slide deck relayed the author's words of 2026-11-12 on the links of the four pipeline slides, that they all belong in this repository. The links pointed into `workshops/2026-11-09-ufl/lokale-workflows/`, a folder that leaves the tree once the instance is tagged. The three pipelines now live in `local-workflows/` at the repository root, an English folder name as the repository's naming rule asks, while the folder names, skill names and READMEs inside stay German because they are the skill identifiers and the material of a German workshop. The mail redaction read its test mail and employee table from the workshop's `data/` folder. Copies of both files and the Northwind licence notice now stand in `local-workflows/data/`, and `redact_mail.py` and its `SKILL.md` read from there, so the workflows no longer depend on the workshop folder, while the instance keeps its complete data until it is removed. The profile, the example-data README and the lecture notes of the instance, RD-016, `plan.md`, `INDEX.md` and the README point to the new place. Checked: the seven tests of the mail redaction pass in the new place and read the copied files, and ruff reports no finding. The pipelines themselves were not run again, since their paths are relative to their own folders and did not change. The links on the slides are changed by the session that writes the decks.
 
 ### 2026-11-10 corrected | The Google Doc of the German notes holds text the repository lacks
 

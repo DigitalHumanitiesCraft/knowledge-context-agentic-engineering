@@ -29,6 +29,7 @@ Only upcoming instances live in this repository. Once an instance has been taugh
 | `script/modules/` | The five-module cut of the lecture notes, with its coverage report in `script/COVERAGE.md` |
 | `slides/full-slide-deck.md` | The Full Slide Deck as text with speaker notes; the visual deck lives in Google Slides and is linked |
 | `data/videos.json` | The Video Playlist inventory, including order, primary module, any related modules and duration |
+| `local-workflows/` | Three local pipelines for module 04, mail redaction, PDF to Markdown and speech to text, each an installable skill with script, check and README |
 | `workshops/<id>/` | One folder per upcoming instance, holding `profile.md`, `slide-deck.md`, `lecture-notes.md` and `data/` |
 | `data/` | The registers `workshops.json` and `videos.json`, outside the published tree |
 | `docs/` | The platform (static site, GitHub Pages) |

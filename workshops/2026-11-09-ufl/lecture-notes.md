@@ -769,16 +769,16 @@ Den Grundsatz dahinter nennt van Strien (2026) Boring AI. Gemeint ist das kleins
 
 ### Eigene Pipelines: der Agent baut, das lokale Modell arbeitet
 
-Claude Code hat in der Vorbereitung des Workshops drei Pipelines gebaut und gemessen. Sie laufen ohne Cloud auf einem Rechner, ein Skript prüft das Ergebnis, und der Mensch gibt frei. Die Testdaten sind synthetisch, gemessen wurde am 5.11.2026 auf einem Desktop mit einer RTX 4080. Jede Pipeline liegt mit Skript, Prüfung und README in [`lokale-workflows/`](lokale-workflows/).
+Claude Code hat in der Vorbereitung des Workshops drei Pipelines gebaut und gemessen. Sie laufen ohne Cloud auf einem Rechner, ein Skript prüft das Ergebnis, und der Mensch gibt frei. Die Testdaten sind synthetisch, gemessen wurde am 5.11.2026 auf einem Desktop mit einer RTX 4080. Jede Pipeline liegt mit Skript, Prüfung und README in [`local-workflows/`](../../local-workflows/README.md).
 
 Mails anonymisieren
-: Ein Skript entfernt Adressen und Telefonnummern, das lokale LLM qwen3.5:9b benennt Namen und persönliche Umstände, und ein Prüfskript sucht nach Resten. Eine Mail dauert rund zwei Sekunden. Das kleinere qwen3.5:4b ließ den Satz zu Geburtsdaten durch, die Prüfung fing ihn ab ([`mail-anonymisieren/`](lokale-workflows/mail-anonymisieren/)).
+: Ein Skript entfernt Adressen und Telefonnummern, das lokale LLM qwen3.5:9b benennt Namen und persönliche Umstände, und ein Prüfskript sucht nach Resten. Eine Mail dauert rund zwei Sekunden. Das kleinere qwen3.5:4b ließ den Satz zu Geburtsdaten durch, die Prüfung fing ihn ab ([`mail-anonymisieren/`](../../local-workflows/mail-anonymisieren/README.md)).
 
 PDF zu Markdown
-: Docling überträgt Überschriften, Liste und Tabelle eines Test-PDFs vollständig und lässt Kopf- und Fußzeilen weg, während einfache Textextraktion die Tabelle zerreißt. Im zweispaltigen Teil verrutscht eine Überschrift zwischen die Spalten, und gescannte deutsche Seiten liest die Standard-OCR schwach ([`pdf-zu-markdown/`](lokale-workflows/pdf-zu-markdown/)).
+: Docling überträgt Überschriften, Liste und Tabelle eines Test-PDFs vollständig und lässt Kopf- und Fußzeilen weg, während einfache Textextraktion die Tabelle zerreißt. Im zweispaltigen Teil verrutscht eine Überschrift zwischen die Spalten, und gescannte deutsche Seiten liest die Standard-OCR schwach ([`pdf-zu-markdown/`](../../local-workflows/pdf-zu-markdown/README.md)).
 
 Sprache zu Text
-: Whisper transkribiert eine Minute Besprechung in 17 Sekunden auf der CPU, mit rund 5 % Wortfehlern, wenn eine Liste der Eigennamen mitgegeben wird. Ohne Liste wird „Côte de Blaye“ zu „Koteblei“ ([`sprache-zu-text/`](lokale-workflows/sprache-zu-text/)).
+: Whisper transkribiert eine Minute Besprechung in 17 Sekunden auf der CPU, mit rund 5 % Wortfehlern, wenn eine Liste der Eigennamen mitgegeben wird. Ohne Liste wird „Côte de Blaye“ zu „Koteblei“ ([`sprache-zu-text/`](../../local-workflows/sprache-zu-text/README.md)).
 
 Gebaut wurden die drei Pipelines von einem Hauptagenten, der sie als Aufträge an Subagents verteilte. Jeder Subagent arbeitete in einem eigenen Ordner, und der Auftrag nannte Ziel, Schreibpfad und Grenzen, etwa nur lokale Modelle, kein Commit und kein Push. Ein Bericht galt als ungeprüft, bis der Hauptagent ihn an den Dateien nachgeprüft hatte.
 

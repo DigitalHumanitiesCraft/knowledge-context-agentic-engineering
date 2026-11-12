@@ -56,7 +56,7 @@ from pathlib import Path
 from openpyxl import Workbook, load_workbook
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE.parents[1] / "data"
+DATA = HERE.parent / "data"  # test mail and employee table, shared beside the workflow folders
 # 127.0.0.1 instead of localhost: on Windows the IPv6 attempt first costs about two seconds per call.
 OLLAMA_URL = "http://127.0.0.1:11434/api/chat"
 

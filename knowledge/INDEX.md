@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-index
 status: draft
 created: 2026-08-20
-updated: 2026-11-05
+updated: 2026-11-12
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -46,6 +46,7 @@ This knowledge base documents the teaching-material contract, public platform, t
 - `knowledge/` contains canonical Promptotyping documents.
 - `knowledge/drafts/` contains decision preparation and source assessments. A draft has no canonical force until its result is written to the responsible document.
 - `script/`, `slides/` and `workshops/` contain maintained teaching material and workshop specialisations.
+- `local-workflows/` contains the three local pipelines of module 04, each an installable skill with its script, check and measured README, together with their test data.
 - `docs/` contains the static public platform, the only published tree. Its glossary pages are generated from `terms.md` and never edited by hand.
 - `scripts/` contains the glossary generator `build_glossary.py` with its tests and linter configuration. `python scripts/build_glossary.py --check` reports whether the generated pages match `terms.md`.
 - `data/` contains the machine-readable registers `workshops.json` and `videos.json`, which the pages mirror and which are not published.

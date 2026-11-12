@@ -13,7 +13,7 @@ Bevor du etwas installierst oder ausführst, erklärst du dem Menschen in wenige
 
 - was die Pipeline tut und dass keine Daten an einen Cloud-Dienst gehen,
 - welche Dateien dieser Ordner enthält: `redact_mail.py` mit allen drei Stufen, `test_redact_mail.py`, `pruefliste.json` für die Testmail, `testmails/` mit drei Abwandlungen und `ausgabe/` für die Ergebnisse,
-- dass die Testmail und `mitarbeitende.xlsx` unter `../../data/` liegen, die Pipeline also im geklonten Repository `DigitalHumanitiesCraft/knowledge-context-agentic-engineering` läuft,
+- dass die Testmail und `mitarbeitende.xlsx` unter `../data/` liegen, die Pipeline also im geklonten Repository `DigitalHumanitiesCraft/knowledge-context-agentic-engineering` läuft,
 - was fehlt und installiert werden müsste, mit Größe des Modells (`qwen3.5:9b` belegt rund 6,6 GB auf der Platte und lädt beim Lauf in Grafik- oder Arbeitsspeicher),
 - welche Grenzen der Abschnitt Grenzen in `README.md` nennt, mindestens dass bei einer echten Mail nur die allgemeinen Prüfungen laufen,
 - dass der Mensch eine eigene Mail selbst in seinem Terminal bereinigt, wie es der Abschnitt Eigene Daten beschreibt.
