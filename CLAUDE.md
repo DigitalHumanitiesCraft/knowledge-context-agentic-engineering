@@ -26,7 +26,7 @@ Teaching material and workshop platform for the teaching line *Knowledge, Contex
 - A video renders exactly once, under its primary module. A related module never produces a second card; it may appear as quiet metadata where the existing component carries it without materially increasing card height, and otherwise stays in the data and in the knowledge record.
 - Classify a video by its primary teaching function. The register records when it was last checked against the public playlist in its `checked` field. Playlist order is retained inside every module group.
 - Module 05 is the final module group and carries the seven accepted videos in their maintained playlist order, moving from broad accounts of ideology, power and control towards specialised AGI debates.
-- Video links use the canonical `https://www.youtube.com/watch?v=<id>` form. The page shows no preview images and loads nothing from YouTube; do not copy third-party thumbnails into the repository without a documented reuse right.
+- Video links use the canonical `https://www.youtube.com/watch?v=<id>` form. Each video row shows YouTube's thumbnail as a small preview, which `site.js` requests only when a reader opens a module group, so a page view sends nothing to YouTube; do not copy third-party thumbnails into the repository without a documented reuse right.
 - Write `Context Engineering` with a capital `C` in every public occurrence.
 
 ## Covers

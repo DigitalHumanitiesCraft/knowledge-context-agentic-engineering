@@ -685,6 +685,7 @@ a.resource-action:focus-visible {
   justify-content: space-between;
   gap: var(--s2);
   margin-inline: -0.6rem;
+  align-items: center;
   padding: 0.35rem 0.6rem;
   border-radius: var(--radius);
   font-size: var(--text-lg);
@@ -696,12 +697,41 @@ a.resource-action:focus-visible {
 .video-list li:focus-within { background-color: color-mix(in srgb, var(--module-color) 8%, transparent); }
 
 .video-list a {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
   color: var(--ink);
   text-decoration-color: var(--rule-mid);
 }
 
 .video-list a:hover,
 .video-list a:focus-visible { color: var(--accent-on-wash); }
+
+/* The preview frame exists only where site.js runs, which fills it with
+   YouTube's thumbnail once the group is opened. Without the script the row
+   shows title and duration alone, and no request reaches YouTube. */
+.video-thumb { display: none; }
+
+.js .video-thumb {
+  display: block;
+  flex: none;
+  width: 6rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--module-color) 12%, var(--tint));
+}
+
+.video-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .js .video-thumb { width: 4.5rem; }
+}
 
 .video-list time {
   flex: none;
@@ -1264,7 +1294,7 @@ a.resource-action:focus-visible {
     align-self: stretch;
   }
 
-  .video-list li { align-items: baseline; padding-block: 0; }
+  .video-list li { padding-block: 0; }
 
   .video-list a {
     display: flex;

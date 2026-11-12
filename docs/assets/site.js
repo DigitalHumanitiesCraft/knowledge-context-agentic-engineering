@@ -4,6 +4,11 @@
 // script adds Escape to dismiss an open definition (WCAG 1.4.13) and lets a
 // term that is a button, such as AI Harnesses, keep its definition open on
 // click or tap.
+
+// Marks the page for styles that only apply where this script runs, such as
+// the video preview frames.
+document.documentElement.classList.add('js');
+
 const terms = document.querySelectorAll('.term');
 
 const close = (term) => {
@@ -46,6 +51,26 @@ document.addEventListener('pointerdown', (event) => {
     if (term.classList.contains('term--open') && !term.contains(event.target)) close(term);
   }
 });
+
+// Video previews are YouTube's own thumbnails. They are requested only once a
+// reader opens a module group, so a page view sends nothing to YouTube, and
+// the image goes without a referrer.
+for (const group of document.querySelectorAll('.video-module')) {
+  group.addEventListener('toggle', () => {
+    if (!group.open) return;
+    for (const frame of group.querySelectorAll('.video-thumb[data-thumb]')) {
+      const img = document.createElement('img');
+      img.src = frame.dataset.thumb;
+      img.alt = '';
+      img.width = 320;
+      img.height = 180;
+      img.decoding = 'async';
+      img.referrerPolicy = 'no-referrer';
+      frame.append(img);
+      frame.removeAttribute('data-thumb');
+    }
+  });
+}
 
 // A link to a module, `#module-0N` or `#video-module-0N`, opens that module's
 // group on arrival, so the reader lands on its videos instead of a closed row.
