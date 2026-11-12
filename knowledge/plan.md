@@ -37,7 +37,7 @@ Close the six delivered workshop instances and obtain the author's visual accept
 - Maintain workshop source material for actual teaching assignments without recreating individual event pages or Learning Routes.
 - Obtain the author's acceptance of the prepared Verification, Validation and Acceptance section linked from INDEX.md (RD-025), which follows the terminology decision of 2026-11-05 since its reconciliation on 2026-11-10. After acceptance, integrate the wording into section 7.7 of the German notes with the caption of figure 12, into the English notes and the slide text, and prepare the corresponding native slides. Other sections continue through their own source checks and acceptance.
 - Transfer the section on always-on and proactive agents, added to the slide text and both lecture notes on 2026-11-10, into the Google versions of the deck and the notes once the author has read it.
-- RD-024: the Full Slide Deck still gives anyone with the link edit access (read on 2026-11-10), and the author lowers it to reader access.
+- Bring `slides/full-slide-deck.md` in line with the Google deck. On 2026-11-12 another session changed the deck on the author's instruction, removing its speaker notes and draft markers, shortening four slides with new figures, and preparing an import of slides from the Uni for Life deck, so the export of 2026-08-20 no longer describes it. A new export follows once the import is done, and the editorial slide on always-on agents is then checked against the deck and the author's own section on Personal AI Agents.
 
 ## Completed milestones
 

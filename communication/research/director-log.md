@@ -119,16 +119,6 @@ Identifiers are stable and are never reused. An `open` entry can be answered now
 - **Effect**: Records visual acceptance of the identified state. Publication has already taken place with the author's push, and teaching-content acceptance remains separate.
 - **Write-back**: `knowledge/design.md` and `knowledge/journal.md`.
 
-## RD-024 Full Slide Deck Google Slides permission
-
-- **Type**: Action
-- **Status**: open
-- **Required contribution**: In the sharing dialog of the Full Slide Deck, change general access for anyone with the link from Editor to Viewer.
-- **Recommendation**: Keep the document id and lower only the link permission, so that repository and page links remain stable. The named accounts with edit access are unaffected by this step.
-- **Basis**: the Full Slide Deck record in `data/workshops.json`. The permission list read through the Drive connector on 2026-11-10 still gives anyone with the link the role writer, as on 2026-08-26 and 2026-11-05.
-- **Effect**: Removes unintended public write access from the deck that the public page links for every reader.
-- **Write-back**: the Google Slides permission state, a re-read of the permission list and `knowledge/journal.md`.
-
 ## RD-025 Verification, Validation and Acceptance teaching section
 
 - **Type**: Acceptance
