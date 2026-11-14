@@ -17,7 +17,7 @@ updated: 2026-11-12
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
-related: [project.md, specification.md, terms.md, design.md, governance.md, journal.md, plan.md, handoff.md]
+related: [project.md, specification.md, terms.md, design.md, governance.md, journal.md, plan.md]
 ---
 
 # INDEX
@@ -33,9 +33,8 @@ This knowledge base documents the teaching-material contract, public platform, t
 | `terms.md` | Domain knowledge | Which English and German terms and source anchors are canonical, and which one-sentence definitions the public glossary shows? | accepted terminology or evidence changes, then a rebuild with `scripts/build_glossary.py` |
 | `design.md` | Design | Which hierarchy, interaction patterns and visual values guide the interface? | accepted UI or accessibility contract changes |
 | `governance.md` | Governance | Who may decide, write, verify, release and accept? | authority, provenance, rights or versioning changes |
-| `journal.md` | Provenance | Which substantive transition moved from which source into which target? | integrated, rejected, corrected or condensed transitions |
+| `journal.md` | Provenance and open deltas | Which received deltas still require verification or integration, and which substantive transition moved from which source into which target? | receipt or disposition of an open point, or an integrated, rejected, corrected or condensed transition |
 | `plan.md` | Plan | Which accepted future work is next and what proves its completion? | milestone entry, exit or dependency changes |
-| `handoff.md` | Process Inbox | Which received deltas still require verification or integration? | receipt or disposition of a handoff point |
 
 ## Teaching proposals
 
@@ -55,7 +54,7 @@ This knowledge base documents the teaching-material contract, public platform, t
 
 ## Reading paths
 
-- **New task:** `project.md` → `governance.md` → the document named by the task → `handoff.md`.
+- **New task:** `project.md` → `governance.md` → the document named by the task → the `## Open` section of `journal.md`.
 - **Platform or accessibility review:** `project.md` → `design.md` → `specification.md` → current code and registers.
 - **Teaching-content revision:** `project.md` → `terms.md` → the relevant Full material and workshop profile.
 - **Release or acceptance:** `governance.md` → `specification.md` → `plan.md` → the Research Director Log and current Operations evidence.

@@ -4,7 +4,7 @@ This repository uses `CLAUDE.md` as its canonical action layer across agent harn
 
 For every substantial task:
 
-1. Read `knowledge/INDEX.md` and `knowledge/handoff.md`.
+1. Read `knowledge/INDEX.md` and the `## Open` section at the beginning of `knowledge/journal.md`.
 2. Follow the routing in `knowledge/INDEX.md` to the relevant project documents.
 3. Verify project knowledge against the current repository state before acting.
 4. Record durable corrections in the responsible knowledge document when implementation changes the project contract.
