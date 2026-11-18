@@ -13,7 +13,7 @@ template:
   alias: https://dhcraft.org/Promptotyping/#promptotyping-document-journal
 status: active
 created: 2026-08-20
-updated: 2026-11-14
+updated: 2026-11-18
 language: en
 authors: [Christopher Pollin]
 generated-with: Claude Code and Codex
@@ -45,7 +45,21 @@ This journal is the curated retrospective provenance index of the project. Curre
 - Interface copy and one leftover asset (received 2026-11-10 from the same review). Target: `docs/index.html`, `docs/index.de.html`, `scripts/build_glossary.py`, `docs/assets/materials/videos.svg`. The English introduction says that LLMs operate inside AI Harnesses, the German one that they are used in them. The footer sentence on funding has no clear referent for its revision. The German glossary labels the order switch Ordnung, where Reihenfolge would read more naturally. The mark `docs/assets/materials/videos.svg` of the retired playlist card is published and referenced by no page. Next action: decide the wording, and remove the unreferenced mark if it is no longer wanted. Operator point: interface copy and deletion of a published file.
 - Monetary amount in a mirrored video title (received 2026-11-10 from the same review). Target: `CLAUDE.md` or `data/videos.json`. The module 05 entry `QYeNESqKbSc` carries an amount in its original title, which both landing pages show, and the playlist check of 2026-11-12 kept the original title. `CLAUDE.md` excludes monetary amounts anywhere in the repository and treats names in teaching material as research data, but says nothing on amounts in third-party titles. Next action: state in `CLAUDE.md` that mirrored titles are quoted data, or shorten the display title in the register and on both pages. Operator point: content boundary.
 
+- Waiting on the author (state of 2026-11-18, also recorded in the vault's ACTIVE-WORK under `^op-kce-seite-abnahme`, `^op-kce-tags`, `^op-kce-glossar-lemma`, `^op-kce-ufl-notizen` and `^op-kce-ufl-bericht`). Nothing below can move without his answer.
+  - RD-017: visual acceptance of both landing pages, including the video previews of 2026-11-12, and of both glossary pages.
+  - RD-025: acceptance of `script/drafts/verification-validation-acceptance-de.md`.
+  - RD-016: the six tags, with the commands in the Director Log. After them one commit removes the five earlier workshop folders and their register entries, as `plan.md` describes.
+  - A report of three to four sentences on the Uni for Life run of 9 and 10 November and the address of its workshop video, for the delivery notes in `workshops/2026-11-09-ufl/profile.md`. The folder leaves the tree only after that report and its tag.
+  - Whether Personal AI Agent becomes the headword in place of Always-On Agent, and whether section 2.5 of his Google Doc replaces the subsection of 6.6; see the two points above.
+  - Whether he wants speaker notes in the Uni for Life deck at all. Notes as spoken text stand in the deck for slides 1 to 8 and 10 to 12. Reviewed drafts for slides 13 to 78 are secured in `script/drafts/ufl-deck-speaker-notes-de-2026-11-10.md`; a further write to the deck was refused by the permission check on 2026-11-10 and needs his go-ahead. If he wants none, the eleven written notes stay or are removed on his word, and the draft can go.
+  - The address of the German video on superagents that triggered the section on always-on agents. It enters `data/videos.json` and a module group only with its address and a classification.
+- Lecture notes and slide-text export, for the next session of this repository (handed over 2026-11-18). No session currently works on the general Google deck or on the Google Doc of the German notes, so this step no longer waits for another session. Once the author has decided the role of the Google Doc and the headword question above, carry the Doc's sections into the chosen Markdown source as the point on the Google Doc describes, then revise `script/full-lecture-notes-en.md`, and export `slides/full-slide-deck.md` anew from the Google deck as the last item of the active sequence in `plan.md` describes. Source state: the Doc snapshot in `script/drafts/google-doc-lecture-notes-de-2026-11-10.md` and the deck as read through the Slides connector at the time of the work. Google files are written only with the author's go-ahead.
+
 ## Entries
+
+### 2026-11-18 verified | Live site matches ee2bbce, session handed over
+
+A hash comparison on 2026-11-18 found `index.html`, `index.de.html`, `glossary.html`, `glossary.de.html`, `assets/site.css` and `assets/site.js` on the live site identical with `docs/` at `ee2bbce`, so the video previews, the glossary entry Always-On Agent and the footer link to the DHCraft imprint are served. The step of `plan.md` that waited for this comparison left the active sequence. The session that worked on the page since 2026-11-10 ended on the research coordination's instruction. Its open questions to the author and the alignment of lecture notes and slide-text export now stand in `## Open`, and the reviewed speaker-note drafts for the Uni for Life deck moved from a session notes folder outside the repository into `script/drafts/` unchanged, so that they survive the session.
 
 ### 2026-11-14 integrated | handoff.md dissolved into the journal
 
